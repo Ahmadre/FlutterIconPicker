@@ -1,5 +1,5 @@
 /// IconPicker
-/// Copyright by Rebar Ahmad
+/// Author Rebar Ahmad
 /// https://github.com/Ahmadre
 /// rebar.ahmad@gmail.com
 
