@@ -2,7 +2,7 @@
 
 This package provides an IconPicker with all Material Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
 
-![IconPicker](https://github.com/Ahmadre/FlutterIconPicker/blob/master/assets/IconPicker.png)
+![IconPicker](https://github.com/Ahmadre/FlutterIconPicker/blob/master/assets/FlutterIconPicker.png)
 
 ## Usage
 
