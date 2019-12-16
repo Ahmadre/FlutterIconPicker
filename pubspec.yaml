@@ -1,8 +1,8 @@
 name: flutter_iconpicker
-description: A Picker for picking Icons in Flutter
+description: A Dialog for picking Icons in Flutter and use them anywhere
 version: 0.1.0
-author: Rebar Ahmad
 homepage: https://github.com/Ahmadre
+repository: https://github.com/Ahmadre/FlutterIconPicker
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
