@@ -1,5 +1,5 @@
 /// IconSearchbar
-/// Copyright Rebar Ahmad
+/// Author Rebar Ahmad
 /// https://github.com/Ahmadre
 /// rebar.ahmad@gmail.com
 
