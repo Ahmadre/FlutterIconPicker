@@ -8,6 +8,35 @@ This package provides an IconPicker with all Material Icons which can be picked 
 
 To use this package, add ```flutter_iconpicker``` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+### Result of IconPicker and further usage (saving and retreiving)
+
+The picker is returning (as shown in the example method ```_pickIcon()``` underneeth) an ```IconData``` which is nothing else then this class for example: 
+```dart
+  IconData(0xe3af, fontFamily: 'MaterialIcons');    // Icons.camera
+``` 
+that's representing an Material icon. 
+
+So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you can use the serialization methods:
+
+1. Import: 
+```dart
+  import 'package:flutter_iconpicker/Serialization/iconDataSerialization.dart';
+```
+
+2. Call this to convert the picked IconData to a Map:
+
+__IconData to Map__
+```dart
+  iconDataToMap(iconData)
+```
+
+3. You can retreive the IconData by passing the mapped IconData:
+
+__Map to IconData__
+```dart
+  mapToIconData(map)
+```
+
 ## Example
 
 ```dart

@@ -8,6 +8,7 @@ library flutter_iconpicker;
 import 'package:flutter/material.dart';
 import 'IconPicker/searchBar.dart';
 import 'IconPicker/iconPicker.dart';
+import 'Serialization/iconDataSerialization.dart';
 
 class FlutterIconPicker {
   /// Shows an AlertDialog where you can pick an Icon and use it instead of Icons.[ICONDATA]
