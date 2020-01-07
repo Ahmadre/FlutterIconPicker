@@ -68,8 +68,14 @@ class _IconPickerState extends State<IconPicker> {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.lerp(Alignment.topCenter, Alignment.center, .1),
-                colors: [Colors.white, Colors.white.withOpacity(.1)],
-                stops: [0.0, 1.0]),
+                colors: [
+                  Theme.of(context).dialogBackgroundColor,
+                  Theme.of(context).dialogBackgroundColor.withOpacity(.1)
+                ],
+                stops: [
+                  0.0,
+                  1.0
+                ]),
           ),
           child: Container(),
         ),
@@ -81,8 +87,14 @@ class _IconPickerState extends State<IconPicker> {
                 begin: Alignment.bottomCenter,
                 end: Alignment.lerp(
                     Alignment.bottomCenter, Alignment.center, .1),
-                colors: [Colors.white, Colors.white.withOpacity(.1)],
-                stops: [0.0, 1.0]),
+                colors: [
+                  Theme.of(context).dialogBackgroundColor,
+                  Theme.of(context).dialogBackgroundColor.withOpacity(.1)
+                ],
+                stops: [
+                  0.0,
+                  1.0
+                ]),
           ),
           child: Container(),
         ),

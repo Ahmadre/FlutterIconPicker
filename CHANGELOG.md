@@ -1,3 +1,8 @@
+## [0.1.4] - 07.01.2020
+
+* Support Light & Dark Mode with:
+    - ```Theme.of(context).dialogBackgroundColor``` for LinearGradient
+
 ## [0.1.3] - 02.01.2020
 
 * Add Serialization for persisting IconData
