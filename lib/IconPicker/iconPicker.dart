@@ -20,26 +20,37 @@ class IconPicker extends StatefulWidget {
 }
 
 class _IconPickerState extends State<IconPicker> {
+  List<Widget> iconList = [];
+
   @override
   void initState() {
     super.initState();
     IconPicker.iconMap = icons;
-    IconPicker.reload = setState;
+    _buildIcons(context);
+    IconPicker.reload = reload;
   }
 
-  _buildIcons(context) {
-    List<Widget> result = [];
+  reload() {
+    if (IconPicker.iconMap.isNotEmpty)
+      _buildIcons(context);
+    else
+      setState(() {
+        iconList = [];
+      });
+  }
 
-    IconPicker.iconMap.forEach((String key, IconData val) {
-      result.add(InkResponse(
+  _buildIcons(context) async {
+    iconList = [];
+    IconPicker.iconMap.forEach((String key, IconData val) async {
+      iconList.add(InkResponse(
         onTap: () => Navigator.pop(context, val),
         child: Icon(
           val,
           size: widget.iconSize,
         ),
       ));
+      setState(() {});
     });
-    return result;
   }
 
   @override
@@ -47,12 +58,12 @@ class _IconPickerState extends State<IconPicker> {
     return Stack(children: <Widget>[
       SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10),
+          padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
           child: Wrap(
               spacing: 5,
               runSpacing: 10,
               children: IconPicker.iconMap.length != 0
-                  ? _buildIcons(context)
+                  ? iconList
                   : [
                       Center(
                         child: Text(widget.noResultsText +

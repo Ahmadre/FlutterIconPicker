@@ -34,7 +34,7 @@ class _SearchBarState extends State<SearchBar> {
       } else {
         IconPicker.iconMap = {};
       }
-      IconPicker.reload(() => {});
+      IconPicker.reload();
     });
   }
 
@@ -44,23 +44,23 @@ class _SearchBarState extends State<SearchBar> {
       onChanged: (val) => _search(val),
       controller: SearchBar.searchTextController,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(top: 15),
+        contentPadding: const EdgeInsets.only(top: 15),
         hintText: widget.searchHintText,
-        prefixIcon: Icon(Icons.search),
+        prefixIcon: const Icon(Icons.search),
         suffixIcon: AnimatedSwitcher(
           child: SearchBar.searchTextController.text.isNotEmpty
               ? IconButton(
-                  icon: Icon(Icons.close),
+                  icon: const Icon(Icons.close),
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
                     IconPicker.iconMap = icons;
-                    IconPicker.reload(() => {});
+                    IconPicker.reload();
                   }),
                 )
-              : SizedBox(
+              : const SizedBox(
                   width: 10,
                 ),
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
         ),
       ),
     );

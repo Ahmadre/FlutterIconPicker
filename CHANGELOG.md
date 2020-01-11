@@ -1,3 +1,9 @@
+## [0.1.5] - 11.01.2020
+
+* Improve performance with loading icons on ```showIconPicker```
+    - render icons async
+    - add ```const``` where possible
+
 ## [0.1.4] - 07.01.2020
 
 * Support Light & Dark Mode with:

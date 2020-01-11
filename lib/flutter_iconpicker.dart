@@ -8,7 +8,6 @@ library flutter_iconpicker;
 import 'package:flutter/material.dart';
 import 'IconPicker/searchBar.dart';
 import 'IconPicker/iconPicker.dart';
-import 'Serialization/iconDataSerialization.dart';
 
 class FlutterIconPicker {
   /// Shows an AlertDialog where you can pick an Icon and use it instead of Icons.[ICONDATA]
@@ -45,7 +44,7 @@ class FlutterIconPicker {
             ),
             actions: [
               FlatButton(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 onPressed: () => Navigator.of(context).pop(),
                 child: closeChild,
               )
