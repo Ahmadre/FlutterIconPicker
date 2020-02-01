@@ -107,4 +107,4 @@ _pickIcon() async {
 ## Support
 Like my work? You can support me here:
 
-<a href="https://www.buymeacoffee.com/wyXvWnH" target="_blank"> ![https://www.buymeacoffee.com/wyXvWnH](https://cdn.buymeacoffee.com/buttons/lato-white.png =100x20)</a>
+<a href="https://www.buymeacoffee.com/wyXvWnH" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-white.png" alt="Buy Me A Coffee" height="51px" width="100px"></a>
