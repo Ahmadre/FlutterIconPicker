@@ -1,4 +1,4 @@
-## [0.8.1] - 20.03.2020
+## [0.8.2] - 20.03.2020
 
 * Add default values 
     - Fixes: [#3](https://github.com/Ahmadre/FlutterIconPicker/issues/3)

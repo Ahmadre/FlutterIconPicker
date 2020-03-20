@@ -18,19 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _icon;
   
 _pickIcon() async {
-  IconData icon = await FlutterIconPicker.showIconPicker(context,
-    iconSize: 40,
-    iconPickerShape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-    title: Text('Pick an icon',
-        style: TextStyle(fontWeight: FontWeight.bold)),
-    closeChild: Text(
-        'Close',
-        textScaleFactor: 1.25,
-    ),
-    searchHintText: 'Search icon...',
-    noResultsText: 'No results for:'
-  );
+  IconData icon = await FlutterIconPicker.showIconPicker(context);
   
   _icon = Icon(icon);
   setState((){});
