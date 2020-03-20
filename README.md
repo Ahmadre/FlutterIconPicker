@@ -91,8 +91,3 @@ _pickIcon() async {
   }
 }
 ```
-
-## Support
-Like my work? You can support me here:
-
-<a href="https://www.buymeacoffee.com/wyXvWnH" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-green.png" alt="Buy Me A Coffee" width="200px"></a>
