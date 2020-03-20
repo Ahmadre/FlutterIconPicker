@@ -13,7 +13,8 @@ class IconPicker extends StatefulWidget {
   static Function reload;
   static Map<String, IconData> iconMap;
 
-  IconPicker({this.iconSize, this.noResultsText, Key key}) : super(key: key);
+  IconPicker({this.iconSize, this.noResultsText, Key key})
+      : super(key: key);
 
   @override
   _IconPickerState createState() => _IconPickerState();

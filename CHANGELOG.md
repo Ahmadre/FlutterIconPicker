@@ -1,3 +1,9 @@
+## [0.8.1] - 20.03.2020
+
+* Add default values 
+    - Fixes: [#3](https://github.com/Ahmadre/FlutterIconPicker/issues/3)
+* Swiped last search
+
 ## [0.1.5] - 11.01.2020
 
 * Improve performance with loading icons on ```showIconPicker```

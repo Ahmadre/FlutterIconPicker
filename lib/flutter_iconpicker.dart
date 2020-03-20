@@ -21,12 +21,15 @@ class FlutterIconPicker {
   /// ```
   /// Note: If no icon is choosen or dialog is closed, it returns [null].
   static Future<IconData> showIconPicker(BuildContext context,
-      {double iconSize,
+      {double iconSize = 40,
       ShapeBorder iconPickerShape,
-      Widget title,
-      Widget closeChild,
-      String searchHintText,
-      String noResultsText}) async {
+      Widget title = const Text('Pick an icon'),
+      Widget closeChild = const Text(
+        'Close',
+        textScaleFactor: 1.25,
+      ),
+      String searchHintText = 'Search',
+      String noResultsText = 'No results for:'}) async {
     IconData iconPicked = await showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -51,6 +54,8 @@ class FlutterIconPicker {
             ]);
       },
     );
+
+    SearchBar.searchTextController.clear();
 
     if (iconPicked != null) {
       return iconPicked;
