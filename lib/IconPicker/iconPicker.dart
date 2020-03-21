@@ -4,9 +4,9 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
-import '../Models/IconPack.dart';
-import 'searchBar.dart';
-import 'Icons.dart';
+import 'package:flutter_iconpicker/IconPicker/Icons.dart' as SourceIcons;
+import 'package:flutter_iconpicker/IconPicker/searchBar.dart';
+import 'package:flutter_iconpicker/Models/IconPack.dart';
 
 class IconPicker extends StatefulWidget {
   final IconPack iconPack;
@@ -28,7 +28,7 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    IconPicker.iconMap = getSelectedPack(widget.iconPack);
+    IconPicker.iconMap = SourceIcons.getSelectedPack(widget.iconPack);
     _buildIcons(context);
     IconPicker.reload = reload;
   }
