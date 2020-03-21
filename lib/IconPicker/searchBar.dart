@@ -4,9 +4,9 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/IconPicker/Icons.dart';
-import 'package:flutter_iconpicker/IconPicker/IconPicker.dart';
-import 'package:flutter_iconpicker/Models/IconPack.dart';
+import '../Models/IconPack.dart';
+import 'IconPicker.dart';
+import 'Icons.dart';
 
 class SearchBar extends StatefulWidget {
   final IconPack iconPack;

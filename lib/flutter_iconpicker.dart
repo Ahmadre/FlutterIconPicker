@@ -6,9 +6,9 @@
 library flutter_iconpicker;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/IconPicker/IconPicker.dart';
-import 'package:flutter_iconpicker/IconPicker/SearchBar.dart';
-import 'package:flutter_iconpicker/Models/IconPack.dart';
+import 'IconPicker/IconPicker.dart';
+import 'IconPicker/SearchBar.dart';
+import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
   static Future<IconData> showIconPicker(BuildContext context,

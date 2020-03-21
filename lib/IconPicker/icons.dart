@@ -9,7 +9,7 @@ export 'Packs/Cupertino.dart';
 export 'Packs/FontAwesome.dart';
 export 'Packs/LineAwesome.dart';
 
-import 'package:flutter_iconpicker/Models/IconPack.dart';
+import '../Models/IconPack.dart';
 
 import 'Packs/Material.dart';
 import 'Packs/MaterialOutline.dart';
