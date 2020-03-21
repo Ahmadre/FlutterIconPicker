@@ -24,7 +24,7 @@ class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = new Map<String, IconData>();
 
-    icons.forEach((String key, IconData val) {
+    getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
       if (key.toLowerCase().contains(searchValue.toLowerCase())) {
         searchResult.putIfAbsent(key, () => val);
       }
