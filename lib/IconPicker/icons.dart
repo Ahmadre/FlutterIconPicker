@@ -1,7 +1,7 @@
 /// FlutterIconMap
 /// Author Rebar Ahmad
 /// https://github.com/Ahmadre
-/// rebar.ahmad@gmail.com 
+/// rebar.ahmad@gmail.com
 
 export 'Packs/Material.dart';
 export 'Packs/MaterialOutline.dart';

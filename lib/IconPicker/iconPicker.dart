@@ -1,7 +1,7 @@
 /// IconPicker
 /// Author Rebar Ahmad
 /// https://github.com/Ahmadre
-/// rebar.ahmad@gmail.com 
+/// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
 import 'icons.dart';
