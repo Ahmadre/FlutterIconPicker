@@ -5,12 +5,10 @@
 
 library flutter_iconpicker;
 
-export 'Models/IconPack.dart';
-
 import 'package:flutter/material.dart';
-import 'Models/IconPack.dart';
-import 'IconPicker/searchBar.dart';
-import 'IconPicker/iconPicker.dart';
+import 'package:flutter_iconpicker/IconPicker/IconPicker.dart';
+import 'package:flutter_iconpicker/IconPicker/SearchBar.dart';
+import 'package:flutter_iconpicker/Models/IconPack.dart';
 
 class FlutterIconPicker {
   static Future<IconData> showIconPicker(BuildContext context,

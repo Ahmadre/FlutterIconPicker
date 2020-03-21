@@ -19,25 +19,26 @@ import 'Packs/LineAwesome.dart';
 
 import 'package:flutter/widgets.dart';
 
-
-Map<String, IconData> getSelectedPack(IconPack pickedPack) {
-  switch (pickedPack) {
-    case IconPack.material:
-      return icons;
-      break;
-    case IconPack.materialOutline:
-      return materialOutline;
-      break;
-    case IconPack.cupertino:
-      return cupertinoIcons;
-      break;
-    case IconPack.fontAwesomeIcons:
-      return fontAwesomeIcons;
-      break;
-    case IconPack.lineAwesomeIcons:
-      return lineAwesomeIcons;
-      break;
-    default:
-      return icons;
+class IconManager {
+  static Map<String, IconData> getSelectedPack(IconPack pickedPack) {
+    switch (pickedPack) {
+      case IconPack.material:
+        return icons;
+        break;
+      case IconPack.materialOutline:
+        return materialOutline;
+        break;
+      case IconPack.cupertino:
+        return cupertinoIcons;
+        break;
+      case IconPack.fontAwesomeIcons:
+        return fontAwesomeIcons;
+        break;
+      case IconPack.lineAwesomeIcons:
+        return lineAwesomeIcons;
+        break;
+      default:
+        return icons;
+    }
   }
 }

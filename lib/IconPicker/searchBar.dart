@@ -4,10 +4,9 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/IconPicker/Icons.dart' as SourceIcons;
-import 'package:flutter_iconpicker/IconPicker/iconPicker.dart';
+import 'package:flutter_iconpicker/IconPicker/Icons.dart';
+import 'package:flutter_iconpicker/IconPicker/IconPicker.dart';
 import 'package:flutter_iconpicker/Models/IconPack.dart';
-
 
 class SearchBar extends StatefulWidget {
   final IconPack iconPack;
@@ -25,7 +24,8 @@ class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = new Map<String, IconData>();
 
-    SourceIcons.getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
+    IconManager.getSelectedPack(widget.iconPack)
+        .forEach((String key, IconData val) {
       if (key.toLowerCase().contains(searchValue.toLowerCase())) {
         searchResult.putIfAbsent(key, () => val);
       }
@@ -56,7 +56,8 @@ class _SearchBarState extends State<SearchBar> {
                   icon: const Icon(Icons.close),
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    IconPicker.iconMap = SourceIcons.getSelectedPack(widget.iconPack);
+                    IconPicker.iconMap =
+                        IconManager.getSelectedPack(widget.iconPack);
                     IconPicker.reload();
                   }),
                 )

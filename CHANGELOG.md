@@ -1,4 +1,4 @@
-## [1.0.2] - 21.03.2020
+## [1.0.3] - 21.03.2020
 
 * Add new IconPacks: `Material Outline`, `Cupertino`, `LineAwesome`, `FontAwesome`
     - Fixes: [#2](https://github.com/Ahmadre/FlutterIconPicker/issues/2)
