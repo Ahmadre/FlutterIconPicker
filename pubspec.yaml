@@ -24,22 +24,22 @@ flutter:
 
   fonts:
     - family: LineAwesomeIcons
-        fonts:
-          - asset: fonts/LineAwesomeIcons.ttf
-            style: normal
+      fonts:
+        - asset: fonts/LineAwesomeIcons.ttf
+          style: normal
     - family: FontAwesomeBrands
-        fonts:
-          - asset: fonts/fa-brands-400.ttf
-            style: normal
+      fonts:
+        - asset: fonts/fa-brands-400.ttf
+          style: normal
     - family: FontAwesomeSolid
-        fonts:
-          - asset: fonts/fa-solid-900.ttf
-            style: normal
+      fonts:
+        - asset: fonts/fa-solid-900.ttf
+          style: normal
     - family: FontAwesomeRegular
-        fonts:
-          - asset: fonts/fa-regular-400.ttf
-            style: normal
+      fonts:
+        - asset: fonts/fa-regular-400.ttf
+          style: normal
     - family: OMIcons
-        fonts:
-          - asset: fonts/outline_material.ttf
-            style: normal
+      fonts:
+        - asset: fonts/outline_material.ttf
+          style: normal
