@@ -6,7 +6,7 @@
 import 'package:flutter/material.dart';
 import '../Models/IconPack.dart';
 import 'iconPicker.dart';
-import 'Icons.dart';
+import 'icons.dart';
 
 class SearchBar extends StatefulWidget {
   final IconPack iconPack;
