@@ -1,6 +1,6 @@
 name: flutter_iconpicker
 description: A Dialog for picking Icons in Flutter and use them anywhere
-version: 0.8.2
+version: 1.0.0
 homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 
@@ -10,9 +10,35 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^0.1.2
+  line_awesome_icons: ^1.0.4+2
+  font_awesome_flutter: ^8.7.0
+  outline_material_icons: ^0.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
+  uses-material-design: true
+
+  - family: LineAwesomeIcons
+      fonts:
+        - asset: fonts/LineAwesomeIcons.ttf
+          style: normal
+  - family: FontAwesomeBrands
+      fonts:
+        - asset: fonts/fa-brands-400.ttf
+          style: normal
+  - family: FontAwesomeSolid
+      fonts:
+        - asset: fonts/fa-solid-900.ttf
+          style: normal
+  - family: FontAwesomeRegular
+      fonts:
+        - asset: fonts/fa-regular-400.ttf
+          style: normal
+  - family: OMIcons
+      fonts:
+        - asset: fonts/outline_material.ttf
+          style: normal

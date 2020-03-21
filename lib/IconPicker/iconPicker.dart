@@ -4,16 +4,19 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import '../Models/IconPack.dart';
 import 'searchBar.dart';
-import 'icons.dart';
+import 'Icons.dart';
 
 class IconPicker extends StatefulWidget {
+  final IconPack iconPack;
   final double iconSize;
   final String noResultsText;
   static Function reload;
   static Map<String, IconData> iconMap;
 
-  IconPicker({this.iconSize, this.noResultsText, Key key}) : super(key: key);
+  IconPicker({this.iconPack, this.iconSize, this.noResultsText, Key key})
+      : super(key: key);
 
   @override
   _IconPickerState createState() => _IconPickerState();
@@ -25,7 +28,7 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    IconPicker.iconMap = icons;
+    IconPicker.iconMap = getSelectedPack(widget.iconPack);
     _buildIcons(context);
     IconPicker.reload = reload;
   }

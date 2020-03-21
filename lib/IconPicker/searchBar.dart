@@ -4,15 +4,17 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import '../Models/IconPack.dart';
 import 'iconPicker.dart';
-import 'icons.dart';
+import 'Icons.dart';
 
 class SearchBar extends StatefulWidget {
+  final IconPack iconPack;
   final String searchHintText;
   static TextEditingController searchTextController =
       new TextEditingController();
 
-  SearchBar({this.searchHintText, Key key}) : super(key: key);
+  SearchBar({this.iconPack, this.searchHintText, Key key}) : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -53,7 +55,7 @@ class _SearchBarState extends State<SearchBar> {
                   icon: const Icon(Icons.close),
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    IconPicker.iconMap = icons;
+                    IconPicker.iconMap = getSelectedPack(widget.iconPack);
                     IconPicker.reload();
                   }),
                 )
