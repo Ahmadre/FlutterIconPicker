@@ -1,11 +1,11 @@
 /// IconSearchbar
 /// Author Rebar Ahmad
 /// https://github.com/Ahmadre
-/// rebar.ahmad@gmail.com
+/// rebar.ahmad@gmail.com 
 
 import 'package:flutter/material.dart';
 import '../Models/IconPack.dart';
-import 'IconPicker.dart';
+import 'iconPicker.dart';
 import 'Icons.dart';
 
 class SearchBar extends StatefulWidget {

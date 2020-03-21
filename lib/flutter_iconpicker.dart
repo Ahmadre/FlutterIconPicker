@@ -6,8 +6,8 @@
 library flutter_iconpicker;
 
 import 'package:flutter/material.dart';
-import 'IconPicker/IconPicker.dart';
-import 'IconPicker/SearchBar.dart';
+import 'IconPicker/iconPicker.dart';
+import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
