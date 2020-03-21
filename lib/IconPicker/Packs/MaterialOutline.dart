@@ -1,5 +1,3 @@
-library outline_material_icons;
-
 import 'package:flutter/widgets.dart';
 
 const Map<String, IconData> materialOutline = {

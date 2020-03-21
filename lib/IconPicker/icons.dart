@@ -9,6 +9,8 @@ export 'Packs/Cupertino.dart';
 export 'Packs/FontAwesome.dart';
 export 'Packs/LineAwesome.dart';
 
+import 'package:flutter_iconpicker/Models/IconPack.dart';
+
 import 'Packs/Material.dart';
 import 'Packs/MaterialOutline.dart';
 import 'Packs/Cupertino.dart';
@@ -16,7 +18,7 @@ import 'Packs/FontAwesome.dart';
 import 'Packs/LineAwesome.dart';
 
 import 'package:flutter/widgets.dart';
-import '../Models/IconPack.dart';
+
 
 Map<String, IconData> getSelectedPack(IconPack pickedPack) {
   switch (pickedPack) {

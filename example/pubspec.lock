@@ -69,13 +69,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_iconpicker:
+    dependency: "direct main"
+    description:
+      name: flutter_iconpicker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
   font_awesome_flutter:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
@@ -89,7 +96,7 @@ packages:
     source: hosted
     version: "2.1.4"
   line_awesome_icons:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: line_awesome_icons
       url: "https://pub.dartlang.org"
@@ -110,7 +117,7 @@ packages:
     source: hosted
     version: "1.1.8"
   outline_material_icons:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: outline_material_icons
       url: "https://pub.dartlang.org"
