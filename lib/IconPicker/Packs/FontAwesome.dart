@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/icon_data.dart';
+// import 'package:font_awesome_flutter/icon_data.dart';
+import 'package:font_awesome_flutter/src/icon_data.dart';
+
 
 const Map<String, IconData> fontAwesomeIcons = {
   'fiveHundredPx': const IconDataBrands(0xf26e),
