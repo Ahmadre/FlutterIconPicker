@@ -1,3 +1,7 @@
+## [1.1.1] - 31.03.2020
+
+* Fixed FontAwesome import
+
 ## [1.1.0] - 21.03.2020
 
 * Add new IconPacks: `Material Outline`, `Cupertino`, `LineAwesome`, `FontAwesome`
