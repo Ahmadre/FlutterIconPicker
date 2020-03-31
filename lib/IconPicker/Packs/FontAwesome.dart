@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:font_awesome_flutter/icon_data.dart';
 import 'package:font_awesome_flutter/src/icon_data.dart';
 
 
