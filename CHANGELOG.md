@@ -1,3 +1,13 @@
+## [1.1.3] - 04.05.2020
+
+* Performance optimization:
+    - Switch from `InkResponse` to `GestureDetector` for selecting Icons: [#6](https://github.com/Ahmadre/FlutterIconPicker/issues/6)
+
+## [1.1.2] - 27.04.2020
+
+* Add missing `fontPackage` to Serialization
+    - Thanks to: [PR5](https://github.com/Ahmadre/FlutterIconPicker/pull/5)
+
 ## [1.1.1] - 31.03.2020
 
 * Fixed FontAwesome import

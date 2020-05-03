@@ -45,7 +45,7 @@ class _IconPickerState extends State<IconPicker> {
   _buildIcons(context) async {
     iconList = [];
     IconPicker.iconMap.forEach((String key, IconData val) async {
-      iconList.add(InkResponse(
+      iconList.add(GestureDetector(
         onTap: () => Navigator.pop(context, val),
         child: Icon(
           val,
