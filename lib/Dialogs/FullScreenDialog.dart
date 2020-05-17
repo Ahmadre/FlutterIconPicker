@@ -61,7 +61,10 @@ class FullScreenDialog extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.close),
+                    icon: Icon(
+                      Icons.close,
+                      color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                    ),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
@@ -72,6 +75,7 @@ class FullScreenDialog extends StatelessWidget {
               searchIcon: searchIcon,
               searchClearIcon: searchClearIcon,
               searchHintText: searchHintText,
+              backgroundColor: backgroundColor,
             ),
             Expanded(
               child: IconPicker(

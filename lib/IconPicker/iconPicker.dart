@@ -89,22 +89,25 @@ class _IconPickerState extends State<IconPicker> {
                   ? iconList
                   : [
                       Center(
-                        child: RichText(
-                          text: TextSpan(
-                            text: widget.noResultsText + ' ',
-                            style: TextStyle(
-                              color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: SearchBar.searchTextController.text,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
-                                ),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 5),
+                          child: RichText(
+                            text: TextSpan(
+                              text: widget.noResultsText + ' ',
+                              style: TextStyle(
+                                color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
                               ),
-                            ],
+                              children: [
+                                TextSpan(
+                                  text: SearchBar.searchTextController.text,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

@@ -96,7 +96,10 @@ class DefaultDialog extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        icon: Icon(Icons.close),
+                        icon: Icon(
+                          Icons.close,
+                          color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                        ),
                         onPressed: () => Navigator.pop(context),
                       ),
                     ],
@@ -107,6 +110,7 @@ class DefaultDialog extends StatelessWidget {
                   searchIcon: searchIcon,
                   searchClearIcon: searchClearIcon,
                   searchHintText: searchHintText,
+                  backgroundColor: backgroundColor,
                 ),
                 Expanded(
                   child: IconPicker(
@@ -128,7 +132,13 @@ class DefaultDialog extends StatelessWidget {
       return AlertDialog(
         backgroundColor: backgroundColor,
         shape: iconPickerShape,
-        title: title,
+        title: DefaultTextStyle(
+          child: title,
+          style: TextStyle(
+            color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+            fontSize: 20,
+          ),
+        ),
         content: Container(
           constraints: constraints,
           child: Column(
@@ -138,6 +148,7 @@ class DefaultDialog extends StatelessWidget {
                 searchIcon: searchIcon,
                 searchClearIcon: searchClearIcon,
                 searchHintText: searchHintText,
+                backgroundColor: backgroundColor,
               ),
               Expanded(
                 child: IconPicker(

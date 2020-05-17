@@ -4,6 +4,7 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import '../Helpers/ColorBrightness.dart';
 import '../Models/IconPack.dart';
 import 'iconPicker.dart';
 import 'icons.dart';
@@ -14,6 +15,7 @@ class SearchBar extends StatefulWidget {
     @required this.searchHintText,
     @required this.searchIcon,
     @required this.searchClearIcon,
+    @required this.backgroundColor,
     Key key,
   }) : super(key: key);
 
@@ -21,6 +23,7 @@ class SearchBar extends StatefulWidget {
   final String searchHintText;
   final Icon searchIcon;
   final Icon searchClearIcon;
+  final Color backgroundColor;
 
   static TextEditingController searchTextController = new TextEditingController();
 
@@ -53,8 +56,14 @@ class _SearchBarState extends State<SearchBar> {
     return TextField(
       onChanged: (val) => _search(val),
       controller: SearchBar.searchTextController,
+      style: TextStyle(
+        color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+      ),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(top: 15),
+        hintStyle: TextStyle(
+          color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black54 : Colors.white54,
+        ),
         hintText: widget.searchHintText,
         prefixIcon: widget.searchIcon,
         suffixIcon: AnimatedSwitcher(
