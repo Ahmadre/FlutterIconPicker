@@ -7,16 +7,30 @@ import 'package:flutter/material.dart';
 import 'icons.dart';
 import 'searchBar.dart';
 import '../Models/IconPack.dart';
+import '../Helpers/ColorBrightness.dart';
 
 class IconPicker extends StatefulWidget {
   final IconPack iconPack;
   final double iconSize;
+  final Color iconColor;
   final String noResultsText;
+  final double mainAxisSpacing;
+  final double crossAxisSpacing;
+  final Color backgroundColor;
+
   static Function reload;
   static Map<String, IconData> iconMap;
 
-  IconPicker({this.iconPack, this.iconSize, this.noResultsText, Key key})
-      : super(key: key);
+  const IconPicker({
+    Key key,
+    @required this.iconPack,
+    @required this.iconSize,
+    @required this.noResultsText,
+    @required this.backgroundColor,
+    this.mainAxisSpacing,
+    this.crossAxisSpacing,
+    this.iconColor,
+  }) : super(key: key);
 
   @override
   _IconPickerState createState() => _IconPickerState();
@@ -50,6 +64,7 @@ class _IconPickerState extends State<IconPicker> {
         child: Icon(
           val,
           size: widget.iconSize,
+          color: widget.iconColor,
         ),
       ));
       setState(() {});
@@ -58,61 +73,82 @@ class _IconPickerState extends State<IconPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
-          child: Wrap(
-              spacing: 5,
-              runSpacing: 10,
+    return Stack(
+      children: <Widget>[
+        SingleChildScrollView(
+          child: Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(
+              top: 10,
+              bottom: 10,
+            ),
+            child: Wrap(
+              spacing: widget.mainAxisSpacing,
+              runSpacing: widget.crossAxisSpacing,
               children: IconPicker.iconMap.length != 0
                   ? iconList
                   : [
                       Center(
-                        child: Text(widget.noResultsText +
-                            ' ' +
-                            SearchBar.searchTextController.text),
-                      )
-                    ]),
-        ),
-      ),
-      IgnorePointer(
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.lerp(Alignment.topCenter, Alignment.center, .1),
-                colors: [
-                  Theme.of(context).dialogBackgroundColor,
-                  Theme.of(context).dialogBackgroundColor.withOpacity(.1)
-                ],
-                stops: [
-                  0.0,
-                  1.0
-                ]),
+                        child: RichText(
+                          text: TextSpan(
+                            text: widget.noResultsText + ' ',
+                            style: TextStyle(
+                              color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: SearchBar.searchTextController.text,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+            ),
           ),
-          child: Container(),
         ),
-      ),
-      IgnorePointer(
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.lerp(
-                    Alignment.bottomCenter, Alignment.center, .1),
-                colors: [
-                  Theme.of(context).dialogBackgroundColor,
-                  Theme.of(context).dialogBackgroundColor.withOpacity(.1)
-                ],
-                stops: [
-                  0.0,
-                  1.0
-                ]),
+        IgnorePointer(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.lerp(Alignment.topCenter, Alignment.center, .1),
+                  colors: [
+                    widget.backgroundColor,
+                    widget.backgroundColor.withOpacity(.1),
+                  ],
+                  stops: [
+                    0.0,
+                    1.0
+                  ]),
+            ),
+            child: Container(),
           ),
-          child: Container(),
         ),
-      )
-    ]);
+        IgnorePointer(
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .1),
+                  colors: [
+                    widget.backgroundColor,
+                    widget.backgroundColor.withOpacity(.1),
+                  ],
+                  stops: [
+                    0.0,
+                    1.0
+                  ]),
+            ),
+            child: Container(),
+          ),
+        ),
+      ],
+    );
   }
 }

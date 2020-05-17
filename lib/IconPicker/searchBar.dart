@@ -9,12 +9,20 @@ import 'iconPicker.dart';
 import 'icons.dart';
 
 class SearchBar extends StatefulWidget {
+  const SearchBar({
+    @required this.iconPack,
+    @required this.searchHintText,
+    @required this.searchIcon,
+    @required this.searchClearIcon,
+    Key key,
+  }) : super(key: key);
+
   final IconPack iconPack;
   final String searchHintText;
-  static TextEditingController searchTextController =
-      new TextEditingController();
+  final Icon searchIcon;
+  final Icon searchClearIcon;
 
-  SearchBar({this.iconPack, this.searchHintText, Key key}) : super(key: key);
+  static TextEditingController searchTextController = new TextEditingController();
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -24,8 +32,7 @@ class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = new Map<String, IconData>();
 
-    IconManager.getSelectedPack(widget.iconPack)
-        .forEach((String key, IconData val) {
+    IconManager.getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
       if (key.toLowerCase().contains(searchValue.toLowerCase())) {
         searchResult.putIfAbsent(key, () => val);
       }
@@ -49,15 +56,14 @@ class _SearchBarState extends State<SearchBar> {
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(top: 15),
         hintText: widget.searchHintText,
-        prefixIcon: const Icon(Icons.search),
+        prefixIcon: widget.searchIcon,
         suffixIcon: AnimatedSwitcher(
           child: SearchBar.searchTextController.text.isNotEmpty
               ? IconButton(
-                  icon: const Icon(Icons.close),
+                  icon: widget.searchClearIcon,
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    IconPicker.iconMap =
-                        IconManager.getSelectedPack(widget.iconPack);
+                    IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
                     IconPicker.reload();
                   }),
                 )

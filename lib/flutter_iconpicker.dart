@@ -5,84 +5,209 @@
 
 library flutter_iconpicker;
 
+export 'Models/IconPack.dart';
+export 'Serialization/iconDataSerialization.dart';
+
 import 'package:flutter/material.dart';
-import 'IconPicker/iconPicker.dart';
+import 'package:flutter_iconpicker/Dialogs/DefaultDialog.dart';
 import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
-  static Future<IconData> showIconPicker(BuildContext context,
-      {
+  static Future<IconData> showIconPicker(
+    BuildContext context, {
 
-      /// Size for every icon as [double]
-      /// Default: `40.0`
-      double iconSize = 40,
+    /// Adapts the dialog to the screen size.
+    /// Behaves like a "ModalDialog"
+    /// Defaults to `false`
+    bool adaptiveDialog = false,
 
-      /// The Dialog shape for the picker
-      /// Defaults to AlertDialog shape
-      ShapeBorder iconPickerShape,
+    /// Declares if the AlertDialog should dismiss when tapping on the outer barrier
+    /// Defaults to `true`
+    bool barrierDismissible = true,
 
-      /// The title for the Picker.
-      /// Sits above the [SearchBar] and [Icons].
-      /// Defaults to:
-      /// ```dart
-      ///   const Text('Pick an icon')
-      /// ```
-      Widget title = const Text('Pick an icon'),
+    /// The AlertDialog's barrierColor
+    Color barrierColor,
 
-      /// The child for the Widget `FlatButton`, which closes the dialog.
-      /// Sits underneeth everything.
-      /// Defaults to:
-      /// ```dart
-      ///   const Text(
-      ///     'Close',
-      ///     textScaleFactor: 1.25,
-      ///   ),
-      /// ```
-      Widget closeChild = const Text(
-        'Close',
-        textScaleFactor: 1.25,
-      ),
+    /// Size for every icon as [double]
+    /// Default: `40.0`
+    double iconSize = 40,
 
-      /// The Text to show when Searchbar-Term is empty
-      /// Default: `Search`
-      String searchHintText = 'Search',
+    /// The color of every Icon to be picked
+    /// Defaults to `Theme.of(context).iconTheme.color` settings
+    Color iconColor,
 
-      /// The text to show when no results where found for the search term
-      /// Default: `No results for:`
-      String noResultsText = 'No results for:',
+    /// How much space to place between children in a run in the main axis.
+    /// For example, if [spacing] is 10.0, the children will be spaced at least 10.0 logical pixels apart in the main axis.
+    /// Defaults to 5.0
+    double mainAxisSpacing = 5.0,
 
-      /// The mode which Icons to show
-      /// Modes: `material`, `cupertino` or `custom`
-      /// Default: `IconPack.material`
-      IconPack iconPackMode = IconPack.material}) async {
-    IconData iconPicked = await showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-            shape: iconPickerShape,
+    /// How much space to place between children in a run in the main axis.
+    /// For example, if [spacing] is 10.0, the children will be spaced at least 10.0 logical pixels apart in the main axis.
+    /// Defaults to 10.0
+    double crossAxisSpacing = 5.0,
+
+    /// The dialogs shape for the picker
+    /// Defaults to AlertDialog shape
+    ShapeBorder iconPickerShape,
+
+    /// The color for the AlertDialog's background color
+    /// Defaults to `Theme.of(context).dialogBackgroundColor` settings
+    Color backgroundColor,
+
+    /// The dialogs `BoxConstraints` for limiting/setting:
+    /// `maxHeight`, `maxWidth`, `minHeight`, `minWidth`
+    /// Defaults to:
+    /// ```dart
+    ///   const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678)
+    /// ```
+    BoxConstraints constraints,
+
+    /// The title for the Picker.
+    /// Sits above the [SearchBar] and [Icons].
+    /// Defaults to:
+    /// ```dart
+    ///   const Text('Pick an icon')
+    /// ```
+    Widget title = const Text('Pick an icon'),
+
+    /// The child for the Widget `FlatButton`, which closes the dialog.
+    /// Sits underneeth everything.
+    /// Defaults to:
+    /// ```dart
+    ///   const Text(
+    ///     'Close',
+    ///     textScaleFactor: 1.25,
+    ///   ),
+    /// ```
+    Widget closeChild = const Text(
+      'Close',
+      textScaleFactor: 1.25,
+    ),
+
+    /// The prefix icon before the search textfield
+    /// Defaults to:
+    /// ```dart
+    ///   const Icon(Icons.search)
+    /// ```
+    Icon searchIcon = const Icon(Icons.search),
+
+    /// The Text to show when Searchbar-Term is empty
+    /// Default: `Search`
+    String searchHintText = 'Search',
+
+    /// The suffix icon after the search textfield
+    /// Defaults to:
+    /// ```dart
+    ///   const Icon(Icons.close)
+    /// ```
+    Icon searchClearIcon = const Icon(Icons.close),
+
+    /// The text to show when no results where found for the search term
+    /// Default: `No results for:`
+    String noResultsText = 'No results for:',
+
+    /// The mode which Icons to show
+    /// Modes: `material`,
+    ///        `cupertino`,
+    ///        `materialOutline`,
+    ///        `fontAwesomeIcons`,
+    ///        `lineAwesomeIcons`
+    /// Default: `IconPack.material`
+    IconPack iconPackMode = IconPack.material,
+  }) async {
+    if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
+    if (constraints == null) {
+      if (adaptiveDialog) {
+        constraints = const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
+      } else {
+        constraints = const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
+      }
+    }
+    if (iconPickerShape == null) iconPickerShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
+    if (backgroundColor == null) backgroundColor = Theme.of(context).dialogBackgroundColor;
+
+    IconData iconPicked;
+
+    if (adaptiveDialog) {
+      if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
+        iconPicked = await showDialog(
+          barrierDismissible: barrierDismissible,
+          barrierColor: barrierColor,
+          context: context,
+          builder: (BuildContext context) => DefaultDialog(
+            adaptive: adaptiveDialog,
+            barrierDismissible: barrierDismissible,
+            barrierColor: barrierColor,
+            iconSize: iconSize,
+            iconColor: iconColor,
+            mainAxisSpacing: mainAxisSpacing,
+            crossAxisSpacing: crossAxisSpacing,
+            iconPickerShape: iconPickerShape,
+            backgroundColor: backgroundColor,
+            constraints: constraints,
             title: title,
-            content: Container(
-              constraints: BoxConstraints(maxHeight: 350, minWidth: 450),
-              child: Column(children: <Widget>[
-                SearchBar(
-                    iconPack: iconPackMode, searchHintText: searchHintText),
-                Flexible(
-                    child: IconPicker(
-                        iconPack: iconPackMode,
-                        noResultsText: noResultsText,
-                        iconSize: iconSize))
-              ]),
+            closeChild: closeChild,
+            searchIcon: searchIcon,
+            searchHintText: searchHintText,
+            searchClearIcon: searchClearIcon,
+            noResultsText: noResultsText,
+            iconPackMode: iconPackMode,
+          ),
+        );
+      } else {
+        iconPicked = await Navigator.push(
+          context,
+          MaterialPageRoute(
+            fullscreenDialog: true,
+            builder: (context) => DefaultDialog(
+              routedView: true,
+              adaptive: adaptiveDialog,
+              barrierDismissible: barrierDismissible,
+              barrierColor: barrierColor,
+              iconSize: iconSize,
+              iconColor: iconColor,
+              mainAxisSpacing: mainAxisSpacing,
+              crossAxisSpacing: crossAxisSpacing,
+              iconPickerShape: iconPickerShape,
+              backgroundColor: backgroundColor,
+              constraints: constraints,
+              title: title,
+              closeChild: closeChild,
+              searchIcon: searchIcon,
+              searchHintText: searchHintText,
+              searchClearIcon: searchClearIcon,
+              noResultsText: noResultsText,
+              iconPackMode: iconPackMode,
             ),
-            actions: [
-              FlatButton(
-                padding: const EdgeInsets.only(right: 20),
-                onPressed: () => Navigator.of(context).pop(),
-                child: closeChild,
-              )
-            ]);
-      },
-    );
+          ),
+        );
+      }
+    } else {
+      iconPicked = await showDialog(
+        barrierDismissible: barrierDismissible,
+        barrierColor: barrierColor,
+        context: context,
+        builder: (BuildContext context) => DefaultDialog(
+          barrierDismissible: barrierDismissible,
+          barrierColor: barrierColor,
+          iconSize: iconSize,
+          iconColor: iconColor,
+          mainAxisSpacing: mainAxisSpacing,
+          crossAxisSpacing: crossAxisSpacing,
+          iconPickerShape: iconPickerShape,
+          backgroundColor: backgroundColor,
+          constraints: constraints,
+          title: title,
+          closeChild: closeChild,
+          searchIcon: searchIcon,
+          searchHintText: searchHintText,
+          searchClearIcon: searchClearIcon,
+          noResultsText: noResultsText,
+          iconPackMode: iconPackMode,
+        ),
+      );
+    }
 
     SearchBar.searchTextController.clear();
 

@@ -1,3 +1,20 @@
+## [2.0.0] - 16.05.2020
+
+* Introducing: `AdaptiveDialog` with the help of [Rody Davis - Adaptive Dialogs](https://www.youtube.com/watch?v=AQybpww4MgQ)
+    - Minor changes and additions to improve `AdaptiveDialog` with `BoxConstraints` and `ShapeBorder`
+    - Use of raw `Dialog`
+* Update pub dependencies (Fixes on font_awesome_flutter landed)
+* Add AlertDialog `constraints` for custom dialog size
+* Add Color parameters for background and icons
+* Add Icon parameters for custom prefix and suffix icons in `SearchBar`
+* Add `ColorBrightness` to detect proper colors for texts depending of dialogs background color
+* Fix white gaps inside `IconPicker`
+* Add custom parameters: main and cross axis spacing between icons
+* Add `barrierDismissible` and `barrierColor`
+* Update Example: 
+    - add Theme-Modes
+    - add AdaptiveDialog switch
+
 ## [1.1.3] - 04.05.2020
 
 * Performance optimization:

@@ -35,13 +35,7 @@ that's representing an Material icon.
 
 So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you can use the serialization methods:
 
-1. Import:
-
-```dart
-  import 'package:flutter_iconpicker/Serialization/iconDataSerialization.dart';
-```
-
-2. Call this to convert the picked IconData to a Map:
+1. Call this to convert the picked IconData to a Map:
 
 **IconData to Map**
 
@@ -49,7 +43,7 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   iconDataToMap(iconData)
 ```
 
-3. You can retreive the IconData by passing the mapped IconData:
+2. You can retreive the IconData by passing the mapped IconData:
 
 **Map to IconData**
 
@@ -77,7 +71,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Widget _icon;
+  Icon _icon;
 
 _pickIcon() async {
   IconData icon = await FlutterIconPicker.showIconPicker(context, iconPackMode: IconPack.cupertino);
