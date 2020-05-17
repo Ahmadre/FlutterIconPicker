@@ -18,6 +18,28 @@ This package provides an IconPicker with supported Icons which can be picked thr
 
 To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+## API-Reference
+
+| __Parameter__           | __Type__           | __Default__ | __Short decscription__                |
+| ----------------------- | ------------------ | ----------- | ------------------------------------- |
+| context (only required) | `BuildContext`     | `-`         | Required due to `AlertDialog`'s base. |
+| adaptiveDialog          | `bool`             | `false`     | If `true`, IconPicker will adapt depending on the screen size. If `false`, IconPicker will show itself inside an AlertDialog. |
+| barrierDismissible      | `bool`             | `true`      | Defines if the user can dismiss the dialog by tapping on the outside barrier. |
+| iconSize                | `double`           | `40.0`      | Defines the size for the all icons, that can be picked. |
+| iconColor               | `Color`            | `Theme.of(context).iconTheme.color`      | Set the color for the all icons, that can be picked.  |
+| mainAxisSpacing         | `double`           | `5.0`      | How much space to place between children in a run in the main axis.  |
+| crossAxisSpacing        | `double`           | `5.0`      | How much space to place between children in a run in the cross axis. |
+| iconPickerShape         | `ShapeBorder`      | `RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))`      | The dialogs shape for the picker.  |
+| backgroundColor         | `Color`            | `Theme.of(context).dialogBackgroundColor`      | The color for the AlertDialog's background color. |
+| constraints         | `BoxConstraints`           | If `adaptiveDialog` == `true` then it's default is: `BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720)`, otherwise: `BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678)`.      | The dialogs `BoxConstraints` for limiting/setting: `maxHeight`, `maxWidth`, `minHeight` and `minWidth`.  |
+| title        | `Widget`           | `Text('Pick an icon')`      | The title for the Picker. Sits above the [SearchBar] and [Icons]. |
+| closeChild         | `Widget`           | `Text('Close',textScaleFactor: 1.25,)`      | The content for the `AlertDialog`'s action `FlatButton` which closes the default dialog. |
+| searchIcon        | `Icon`           | `Icon(Icons.search)`      | Sets the prefix icon in the [SearchBar] |
+| searchHintText    | `String`         | `'Search'`      | Sets the `hintText` in the `TextField` of [SearchBar] |
+| searchClearIcon   | `Icon`           | `Icon(Icons.close)`      | Sets the suffix icon in the [SearchBar] |
+| noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
+| iconPackMode   | `IconPack`           | `IconPack.material`      | The mode which Icons to show. |
+
 ### [New] IconPackMode
 
 You can now select the wished IconPack through the new argument: `iconPackMode`. This defaults to `IconPack.material`.

@@ -39,9 +39,9 @@ class FlutterIconPicker {
     /// Defaults to 5.0
     double mainAxisSpacing = 5.0,
 
-    /// How much space to place between children in a run in the main axis.
-    /// For example, if [spacing] is 10.0, the children will be spaced at least 10.0 logical pixels apart in the main axis.
-    /// Defaults to 10.0
+    /// How much space to place between children in a run in the cross axis.
+    /// For example, if [spacing] is 10.0, the children will be spaced at least 10.0 logical pixels apart in the cross axis.
+    /// Defaults to 5.0
     double crossAxisSpacing = 5.0,
 
     /// The dialogs shape for the picker
