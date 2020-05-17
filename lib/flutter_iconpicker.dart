@@ -26,10 +26,6 @@ class FlutterIconPicker {
     /// Defaults to `true`
     bool barrierDismissible = true,
 
-    /// The AlertDialog's barrierColor
-    /// Defaults to `Colors.black54`
-    Color barrierColor = Colors.black54,
-
     /// Size for every icon as [double]
     /// Default: `40.0`
     double iconSize = 40,
@@ -134,12 +130,10 @@ class FlutterIconPicker {
       if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
         iconPicked = await showDialog(
           barrierDismissible: barrierDismissible,
-          barrierColor: barrierColor,
           context: context,
           builder: (BuildContext context) => DefaultDialog(
             adaptive: adaptiveDialog,
             barrierDismissible: barrierDismissible,
-            barrierColor: barrierColor,
             iconSize: iconSize,
             iconColor: iconColor,
             mainAxisSpacing: mainAxisSpacing,
@@ -165,7 +159,6 @@ class FlutterIconPicker {
               routedView: true,
               adaptive: adaptiveDialog,
               barrierDismissible: barrierDismissible,
-              barrierColor: barrierColor,
               iconSize: iconSize,
               iconColor: iconColor,
               mainAxisSpacing: mainAxisSpacing,
@@ -187,11 +180,9 @@ class FlutterIconPicker {
     } else {
       iconPicked = await showDialog(
         barrierDismissible: barrierDismissible,
-        barrierColor: barrierColor,
         context: context,
         builder: (BuildContext context) => DefaultDialog(
           barrierDismissible: barrierDismissible,
-          barrierColor: barrierColor,
           iconSize: iconSize,
           iconColor: iconColor,
           mainAxisSpacing: mainAxisSpacing,

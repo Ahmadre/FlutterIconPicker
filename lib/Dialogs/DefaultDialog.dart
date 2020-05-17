@@ -12,7 +12,6 @@ class DefaultDialog extends StatelessWidget {
     this.routedView = false,
     this.adaptive = false,
     this.barrierDismissible,
-    this.barrierColor,
     this.iconSize,
     this.iconColor,
     this.mainAxisSpacing,
@@ -32,7 +31,6 @@ class DefaultDialog extends StatelessWidget {
   final bool routedView;
   final bool adaptive;
   final bool barrierDismissible;
-  final Color barrierColor;
   final double iconSize;
   final Color iconColor;
   final double mainAxisSpacing;

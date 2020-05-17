@@ -1,4 +1,4 @@
-## [2.0.1] - 17.05.2020
+## [2.0.3] - 17.05.2020
 
 * Introducing: `AdaptiveDialog` with the help of [Rody Davis - Adaptive Dialogs](https://www.youtube.com/watch?v=AQybpww4MgQ)
     - Minor changes and additions to improve `AdaptiveDialog` with `BoxConstraints` and `ShapeBorder`
@@ -10,7 +10,7 @@
 * Add `ColorBrightness` to detect proper colors for texts depending of dialogs background color
 * Fix white gaps inside `IconPicker`
 * Add custom parameters: main and cross axis spacing between icons
-* Add `barrierDismissible` and `barrierColor`
+* Add `barrierDismissible`
 * Update Example: 
     - add Theme-Modes
     - add AdaptiveDialog switch
