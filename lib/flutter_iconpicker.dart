@@ -9,7 +9,7 @@ export 'Models/IconPack.dart';
 export 'Serialization/iconDataSerialization.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/Dialogs/DefaultDialog.dart';
+import 'Dialogs/DefaultDialog.dart';
 import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
@@ -27,7 +27,8 @@ class FlutterIconPicker {
     bool barrierDismissible = true,
 
     /// The AlertDialog's barrierColor
-    Color barrierColor,
+    /// Defaults to `Colors.black54`
+    Color barrierColor = Colors.black54,
 
     /// Size for every icon as [double]
     /// Default: `40.0`
