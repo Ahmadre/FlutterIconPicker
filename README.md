@@ -38,6 +38,7 @@ To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.y
 | searchHintText    | `String`         | `'Search'`      | Sets the `hintText` in the `TextField` of [SearchBar] |
 | searchClearIcon   | `Icon`           | `Icon(Icons.close)`      | Sets the suffix icon in the [SearchBar] |
 | noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
+| showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon.<br> **WARNING for Flutter Web**: Until SKIA is disabled (like Flutter Web isn't ready for SKIA yet), this option could slow down the performance! |
 | iconPackMode   | `IconPack`           | `IconPack.material`      | The mode which Icons to show. |
 
 ### [New] IconPackMode

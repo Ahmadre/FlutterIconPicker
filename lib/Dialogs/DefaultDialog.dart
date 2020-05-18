@@ -11,6 +11,7 @@ class DefaultDialog extends StatelessWidget {
     Key key,
     this.routedView = false,
     this.adaptive = false,
+    this.showTooltips,
     this.barrierDismissible,
     this.iconSize,
     this.iconColor,
@@ -30,6 +31,7 @@ class DefaultDialog extends StatelessWidget {
 
   final bool routedView;
   final bool adaptive;
+  final bool showTooltips;
   final bool barrierDismissible;
   final double iconSize;
   final Color iconColor;
@@ -51,6 +53,7 @@ class DefaultDialog extends StatelessWidget {
     if (adaptive) {
       if (routedView) {
         return FullScreenDialog(
+          showTooltips: showTooltips,
           backgroundColor: backgroundColor,
           title: title,
           iconPackMode: iconPackMode,
@@ -112,6 +115,7 @@ class DefaultDialog extends StatelessWidget {
                 ),
                 Expanded(
                   child: IconPicker(
+                    showTooltips: showTooltips,
                     iconPack: iconPackMode,
                     iconColor: iconColor,
                     backgroundColor: backgroundColor,
@@ -150,6 +154,7 @@ class DefaultDialog extends StatelessWidget {
               ),
               Expanded(
                 child: IconPicker(
+                  showTooltips: showTooltips,
                   iconPack: iconPackMode,
                   iconColor: iconColor,
                   backgroundColor: backgroundColor,

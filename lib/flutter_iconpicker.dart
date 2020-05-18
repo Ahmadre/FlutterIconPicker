@@ -22,6 +22,11 @@ class FlutterIconPicker {
     /// Defaults to `false`
     bool adaptiveDialog = false,
 
+    /// Shows the labels underneeth the proper icon
+    /// WARNING ON FLUTTER WEB: Could slow down the performance unless SKIA is deactivated
+    /// Defaults to `false`
+    bool showTooltips = false,
+
     /// Declares if the AlertDialog should dismiss when tapping on the outer barrier
     /// Defaults to `true`
     bool barrierDismissible = true,
@@ -133,6 +138,7 @@ class FlutterIconPicker {
           context: context,
           builder: (BuildContext context) => DefaultDialog(
             adaptive: adaptiveDialog,
+            showTooltips: showTooltips,
             barrierDismissible: barrierDismissible,
             iconSize: iconSize,
             iconColor: iconColor,
@@ -158,6 +164,7 @@ class FlutterIconPicker {
             builder: (context) => DefaultDialog(
               routedView: true,
               adaptive: adaptiveDialog,
+              showTooltips: showTooltips,
               barrierDismissible: barrierDismissible,
               iconSize: iconSize,
               iconColor: iconColor,
@@ -182,6 +189,7 @@ class FlutterIconPicker {
         barrierDismissible: barrierDismissible,
         context: context,
         builder: (BuildContext context) => DefaultDialog(
+          showTooltips: showTooltips,
           barrierDismissible: barrierDismissible,
           iconSize: iconSize,
           iconColor: iconColor,

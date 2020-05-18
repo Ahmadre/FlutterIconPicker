@@ -48,7 +48,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Icon _icon;
-  bool isAdaptive = false;
+  bool isAdaptive = true;
 
   _pickIcon() async {
     IconData icon = await FlutterIconPicker.showIconPicker(

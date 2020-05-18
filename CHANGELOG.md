@@ -1,3 +1,7 @@
+## [2.0.5] - 18.05.2020
+
+* Add option `showTooltips` for showing the name of the icon in a `Tooltip`
+
 ## [2.0.4] - 17.05.2020
 
 * Introducing: `AdaptiveDialog` with the help of [Rody Davis - Adaptive Dialogs](https://www.youtube.com/watch?v=AQybpww4MgQ)

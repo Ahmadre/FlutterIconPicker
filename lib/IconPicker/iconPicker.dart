@@ -17,6 +17,7 @@ class IconPicker extends StatefulWidget {
   final double mainAxisSpacing;
   final double crossAxisSpacing;
   final Color backgroundColor;
+  final bool showTooltips;
 
   static Function reload;
   static Map<String, IconData> iconMap;
@@ -30,6 +31,7 @@ class IconPicker extends StatefulWidget {
     this.mainAxisSpacing,
     this.crossAxisSpacing,
     this.iconColor,
+    this.showTooltips,
   }) : super(key: key);
 
   @override
@@ -59,14 +61,25 @@ class _IconPickerState extends State<IconPicker> {
   _buildIcons(context) async {
     iconList = [];
     IconPicker.iconMap.forEach((String key, IconData val) async {
-      iconList.add(GestureDetector(
-        onTap: () => Navigator.pop(context, val),
-        child: Icon(
-          val,
-          size: widget.iconSize,
-          color: widget.iconColor,
+      iconList.add(
+        GestureDetector(
+          onTap: () => Navigator.pop(context, val),
+          child: widget.showTooltips
+              ? Tooltip(
+                  message: key,
+                  child: Icon(
+                    val,
+                    size: widget.iconSize,
+                    color: widget.iconColor,
+                  ),
+                )
+              : Icon(
+                  val,
+                  size: widget.iconSize,
+                  color: widget.iconColor,
+                ),
         ),
-      ));
+      );
       setState(() {});
     });
   }

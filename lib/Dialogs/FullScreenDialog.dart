@@ -7,6 +7,7 @@ import '../Models/IconPack.dart';
 class FullScreenDialog extends StatelessWidget {
   const FullScreenDialog({
     Key key,
+    @required this.showTooltips,
     @required this.backgroundColor,
     @required this.title,
     @required this.iconPackMode,
@@ -20,6 +21,7 @@ class FullScreenDialog extends StatelessWidget {
     @required this.crossAxisSpacing,
   }) : super(key: key);
 
+  final bool showTooltips;
   final Color backgroundColor;
   final Widget title;
   final IconPack iconPackMode;
@@ -79,6 +81,7 @@ class FullScreenDialog extends StatelessWidget {
             ),
             Expanded(
               child: IconPicker(
+                showTooltips: showTooltips,
                 iconPack: iconPackMode,
                 iconColor: iconColor,
                 backgroundColor: backgroundColor,
