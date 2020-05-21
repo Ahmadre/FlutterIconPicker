@@ -1,3 +1,7 @@
+## [2.0.6] - 21.05.2020
+
+* Fix `FontAwesomeIcons` Pack
+
 ## [2.0.5] - 18.05.2020
 
 * Add option `showTooltips` for showing the name of the icon in a `Tooltip`
