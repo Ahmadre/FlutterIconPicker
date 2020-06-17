@@ -1,7 +1,7 @@
 # FlutterIconPicker
 
 [![Version](https://img.shields.io/badge/pub-v2.0.6-blue)](https://pub.dev/packages/flutter_iconpicker)
-[![Generic badge](https://img.shields.io/badge/platform-android|ios|web|desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
+[![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20|%20desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
 
 This package provides an IconPicker with supported Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
 
