@@ -45,126 +45,115 @@ class _IconPickerState extends State<IconPicker> {
   void initState() {
     super.initState();
     IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
-    _buildIcons(context);
     IconPicker.reload = reload;
   }
 
   reload() {
-    if (IconPicker.iconMap.isNotEmpty)
-      _buildIcons(context);
-    else
-      setState(() {
-        iconList = [];
-      });
+    setState(() {});
   }
 
-  _buildIcons(context) async {
-    iconList = [];
-    IconPicker.iconMap.forEach((String key, IconData val) async {
-      iconList.add(
-        GestureDetector(
-          onTap: () => Navigator.pop(context, val),
-          child: widget.showTooltips
-              ? Tooltip(
-                  message: key,
-                  child: Icon(
-                    val,
-                    size: widget.iconSize,
-                    color: widget.iconColor,
+  Widget _getListEmptyMsg() => Container(
+        alignment: Alignment.topCenter,
+        child: Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: RichText(
+            text: TextSpan(
+              text: widget.noResultsText + ' ',
+              style: TextStyle(
+                color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+              ),
+              children: [
+                TextSpan(
+                  text: SearchBar.searchTextController.text,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
                   ),
-                )
-              : Icon(
-                  val,
-                  size: widget.iconSize,
-                  color: widget.iconColor,
                 ),
+              ],
+            ),
+          ),
         ),
       );
-      setState(() {});
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        SingleChildScrollView(
-          child: Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.only(
-              top: 10,
-              bottom: 10,
-            ),
-            child: Wrap(
-              spacing: widget.mainAxisSpacing,
-              runSpacing: widget.crossAxisSpacing,
-              children: IconPicker.iconMap.length != 0
-                  ? iconList
-                  : [
-                      Center(
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 5),
-                          child: RichText(
-                            text: TextSpan(
-                              text: widget.noResultsText + ' ',
-                              style: TextStyle(
-                                color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+    return Padding(
+      padding: const EdgeInsets.only(top: 5),
+      child: Stack(
+        children: <Widget>[
+          if (IconPicker.iconMap.length == 0)
+            _getListEmptyMsg()
+          else
+            Positioned.fill(
+              child: GridView.builder(
+                  itemCount: IconPicker.iconMap.length,
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    childAspectRatio: 1 / 1,
+                    mainAxisSpacing: 5,
+                    crossAxisSpacing: 5,
+                    maxCrossAxisExtent: widget.iconSize != null ? widget.iconSize + 10 : 50,
+                  ),
+                  itemBuilder: (context, index) {
+                    var item = IconPicker.iconMap.entries.elementAt(index);
+
+                    return GestureDetector(
+                      onTap: () => Navigator.pop(context, item.value),
+                      child: widget.showTooltips
+                          ? Tooltip(
+                              message: item.key,
+                              child: Icon(
+                                item.value,
+                                size: widget.iconSize,
+                                color: widget.iconColor,
                               ),
-                              children: [
-                                TextSpan(
-                                  text: SearchBar.searchTextController.text,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color:
-                                        ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
-                                  ),
-                                ),
-                              ],
+                            )
+                          : Icon(
+                              item.value,
+                              size: widget.iconSize,
+                              color: widget.iconColor,
                             ),
-                          ),
-                        ),
-                      ),
+                    );
+                  }),
+            ),
+          IgnorePointer(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.lerp(Alignment.topCenter, Alignment.center, .05),
+                    colors: [
+                      widget.backgroundColor,
+                      widget.backgroundColor.withOpacity(.1),
                     ],
+                    stops: [
+                      0.0,
+                      1.0
+                    ]),
+              ),
+              child: Container(),
             ),
           ),
-        ),
-        IgnorePointer(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.lerp(Alignment.topCenter, Alignment.center, .1),
-                  colors: [
-                    widget.backgroundColor,
-                    widget.backgroundColor.withOpacity(.1),
-                  ],
-                  stops: [
-                    0.0,
-                    1.0
-                  ]),
+          IgnorePointer(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .05),
+                    colors: [
+                      widget.backgroundColor,
+                      widget.backgroundColor.withOpacity(.1),
+                    ],
+                    stops: [
+                      0.0,
+                      1.0
+                    ]),
+              ),
+              child: Container(),
             ),
-            child: Container(),
           ),
-        ),
-        IgnorePointer(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .1),
-                  colors: [
-                    widget.backgroundColor,
-                    widget.backgroundColor.withOpacity(.1),
-                  ],
-                  stops: [
-                    0.0,
-                    1.0
-                  ]),
-            ),
-            child: Container(),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

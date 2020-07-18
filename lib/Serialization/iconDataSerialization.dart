@@ -20,7 +20,5 @@ Map<String, dynamic> iconDataToMap(IconData iconData) {
 /// Converts a Map to IconData.
 IconData mapToIconData(Map<String, dynamic> map) {
   return new IconData(map['codePoint'],
-      fontFamily: map['fontFamily'],
-      fontPackage: map['fontPackage'],
-      matchTextDirection: map['matchTextDirection']);
+      fontFamily: map['fontFamily'], fontPackage: map['fontPackage'], matchTextDirection: map['matchTextDirection']);
 }
