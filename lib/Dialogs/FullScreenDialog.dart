@@ -11,6 +11,7 @@ class FullScreenDialog extends StatelessWidget {
     @required this.backgroundColor,
     @required this.title,
     @required this.iconPackMode,
+    @required this.customIconPack,
     @required this.searchIcon,
     @required this.searchClearIcon,
     @required this.searchHintText,
@@ -25,6 +26,7 @@ class FullScreenDialog extends StatelessWidget {
   final Color backgroundColor;
   final Widget title;
   final IconPack iconPackMode;
+  final Map<String, IconData> customIconPack;
   final Icon searchIcon;
   final Icon searchClearIcon;
   final String searchHintText;
@@ -83,6 +85,7 @@ class FullScreenDialog extends StatelessWidget {
               child: IconPicker(
                 showTooltips: showTooltips,
                 iconPack: iconPackMode,
+                customIconPack: customIconPack,
                 iconColor: iconColor,
                 backgroundColor: backgroundColor,
                 noResultsText: noResultsText,

@@ -27,6 +27,7 @@ class DefaultDialog extends StatelessWidget {
     this.searchClearIcon,
     this.noResultsText,
     this.iconPackMode,
+    this.customIconPack,
   }) : super(key: key);
 
   final bool routedView;
@@ -47,6 +48,7 @@ class DefaultDialog extends StatelessWidget {
   final Icon searchClearIcon;
   final String noResultsText;
   final IconPack iconPackMode;
+  final Map<String, IconData> customIconPack;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,7 @@ class DefaultDialog extends StatelessWidget {
           backgroundColor: backgroundColor,
           title: title,
           iconPackMode: iconPackMode,
+          customIconPack: customIconPack,
           searchIcon: searchIcon,
           searchClearIcon: searchClearIcon,
           searchHintText: searchHintText,
@@ -117,6 +120,7 @@ class DefaultDialog extends StatelessWidget {
                   child: IconPicker(
                     showTooltips: showTooltips,
                     iconPack: iconPackMode,
+                    customIconPack: customIconPack,
                     iconColor: iconColor,
                     backgroundColor: backgroundColor,
                     noResultsText: noResultsText,
@@ -156,6 +160,7 @@ class DefaultDialog extends StatelessWidget {
                 child: IconPicker(
                   showTooltips: showTooltips,
                   iconPack: iconPackMode,
+                  customIconPack: customIconPack,
                   iconColor: iconColor,
                   backgroundColor: backgroundColor,
                   noResultsText: noResultsText,

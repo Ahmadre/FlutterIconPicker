@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       adaptiveDialog: isAdaptive,
       iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackMode: IconPack.cupertino,
+      iconPackMode: IconPack.fontAwesomeIcons,
     );
 
     if (icon != null) {

@@ -117,7 +117,13 @@ class FlutterIconPicker {
     ///        `lineAwesomeIcons`
     /// Default: `IconPack.material`
     IconPack iconPackMode = IconPack.material,
+
+    /// Provide here your custom IconPack in a [Map<String, IconData>]
+    /// to show your own collection of Icons to pick from
+    Map<String, IconData> customIconPack,
   }) async {
+    if (iconPackMode == IconPack.custom && customIconPack == null)
+      throw AssertionError('You need to provide your customIconPack if you set IconPack.custom');
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
@@ -154,6 +160,7 @@ class FlutterIconPicker {
             searchClearIcon: searchClearIcon,
             noResultsText: noResultsText,
             iconPackMode: iconPackMode,
+            customIconPack: customIconPack,
           ),
         );
       } else {
@@ -180,6 +187,7 @@ class FlutterIconPicker {
               searchClearIcon: searchClearIcon,
               noResultsText: noResultsText,
               iconPackMode: iconPackMode,
+              customIconPack: customIconPack,
             ),
           ),
         );
@@ -205,6 +213,7 @@ class FlutterIconPicker {
           searchClearIcon: searchClearIcon,
           noResultsText: noResultsText,
           iconPackMode: iconPackMode,
+          customIconPack: customIconPack,
         ),
       );
     }

@@ -11,6 +11,7 @@ import '../Helpers/ColorBrightness.dart';
 
 class IconPicker extends StatefulWidget {
   final IconPack iconPack;
+  final Map<String, IconData> customIconPack;
   final double iconSize;
   final Color iconColor;
   final String noResultsText;
@@ -32,6 +33,7 @@ class IconPicker extends StatefulWidget {
     this.crossAxisSpacing,
     this.iconColor,
     this.showTooltips,
+    this.customIconPack,
   }) : super(key: key);
 
   @override
@@ -39,12 +41,13 @@ class IconPicker extends StatefulWidget {
 }
 
 class _IconPickerState extends State<IconPicker> {
-  List<Widget> iconList = [];
-
   @override
   void initState() {
     super.initState();
-    IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
+    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
+      IconPicker.iconMap = widget.customIconPack;
+    else
+      IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
     IconPicker.reload = reload;
   }
 
