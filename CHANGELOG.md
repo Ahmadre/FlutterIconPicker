@@ -1,3 +1,12 @@
+## [2.1.0] - 18.07.2020
+
+* Major Performance fixes (Many thanks goes to: [Leonard Arnold](https://github.com/leonardarnold))
+  - Added dynamic `GridView.builder` with `SliverGridDelegateWithMaxCrossAxisExtent`
+  - Remove additional `_buildIcons` method
+* Add `custom` as a new IconPackMode so you can now add your own customized Icons
+* Add customIconPack as `Map<String, IconData>`
+* Update example with `myCustomIcons`
+
 ## [2.0.6] - 21.05.2020
 
 * Fix `FontAwesomeIcons` Pack
