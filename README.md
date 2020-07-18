@@ -1,6 +1,6 @@
 # FlutterIconPicker
 
-[![Version](https://img.shields.io/badge/pub-v2.0.6-blue)](https://pub.dev/packages/flutter_iconpicker)
+[![Version](https://img.shields.io/badge/pub-v2.1.2-blue)](https://pub.dev/packages/flutter_iconpicker)
 [![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20|%20desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
 
 This package provides an IconPicker with supported Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
@@ -43,11 +43,16 @@ To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.y
 | noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
 | showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon.<br> **WARNING for Flutter Web**: Until SKIA is disabled (like Flutter Web isn't ready for SKIA yet), this option could slow down the performance! |
 | iconPackMode   | `IconPack`           | `IconPack.material`      | The mode which Icons to show. |
+| customIconPack   | `Map<String, IconData>`           | `null`      | The customized icons that can be used instead. |
 
-### [New] IconPackMode
+### IconPackMode
 
 You can now select the wished IconPack through the new argument: `iconPackMode`. This defaults to `IconPack.material`.
 For further usage have a look in the example.
+
+### You own Icons
+
+If you don't want to use the default IconPacks, you can also provide your own IconPack by creating a `Map<String, IconData>` with the names of your icons and the specific IconData. Just pass it to `customIconPack` and set the iconPackMode: `IconPack.custom`.
 
 ### Result of IconPicker and further usage (saving and retreiving)
 

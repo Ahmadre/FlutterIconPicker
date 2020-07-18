@@ -1,4 +1,4 @@
-## [2.1.0] - 18.07.2020
+## [2.1.2] - 18.07.2020
 
 * Major Performance fixes (Many thanks goes to: [Leonard Arnold](https://github.com/leonardarnold))
   - Added dynamic `GridView.builder` with `SliverGridDelegateWithMaxCrossAxisExtent`
