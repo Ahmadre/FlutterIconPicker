@@ -111,6 +111,7 @@ class DefaultDialog extends StatelessWidget {
                 ),
                 SearchBar(
                   iconPack: iconPackMode,
+                  customIconPack: customIconPack,
                   searchIcon: searchIcon,
                   searchClearIcon: searchClearIcon,
                   searchHintText: searchHintText,
@@ -151,6 +152,7 @@ class DefaultDialog extends StatelessWidget {
             children: <Widget>[
               SearchBar(
                 iconPack: iconPackMode,
+                customIconPack: customIconPack,
                 searchIcon: searchIcon,
                 searchClearIcon: searchClearIcon,
                 searchHintText: searchHintText,

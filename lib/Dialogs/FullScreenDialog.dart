@@ -76,6 +76,7 @@ class FullScreenDialog extends StatelessWidget {
             ),
             SearchBar(
               iconPack: iconPackMode,
+              customIconPack: customIconPack,
               searchIcon: searchIcon,
               searchClearIcon: searchClearIcon,
               searchHintText: searchHintText,

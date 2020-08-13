@@ -16,10 +16,12 @@ class SearchBar extends StatefulWidget {
     @required this.searchIcon,
     @required this.searchClearIcon,
     @required this.backgroundColor,
+    this.customIconPack,
     Key key,
   }) : super(key: key);
 
   final IconPack iconPack;
+  final Map<String, IconData> customIconPack;
   final String searchHintText;
   final Icon searchIcon;
   final Icon searchClearIcon;
@@ -35,11 +37,18 @@ class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = new Map<String, IconData>();
 
-    IconManager.getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
-      if (key.toLowerCase().contains(searchValue.toLowerCase())) {
-        searchResult.putIfAbsent(key, () => val);
-      }
-    });
+    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
+      widget.customIconPack.forEach((String key, IconData val) {
+        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
+          searchResult.putIfAbsent(key, () => val);
+        }
+      });
+    else
+      IconManager.getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
+        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
+          searchResult.putIfAbsent(key, () => val);
+        }
+      });
 
     setState(() {
       if (searchResult.length != 0) {
@@ -72,7 +81,10 @@ class _SearchBarState extends State<SearchBar> {
                   icon: widget.searchClearIcon,
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
+                    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
+                      IconPicker.iconMap = widget.customIconPack;
+                    else
+                      IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
                     IconPicker.reload();
                   }),
                 )
