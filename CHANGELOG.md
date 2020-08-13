@@ -1,3 +1,8 @@
+## [2.1.3] - 13.08.2020
+
+* Fix Search-Bar if custom icons are selected
+  - Fixes: [#11](https://github.com/Ahmadre/FlutterIconPicker/issues/11)
+
 ## [2.1.2] - 18.07.2020
 
 * Major Performance fixes (Many thanks goes to: [Leonard Arnold](https://github.com/leonardarnold))
