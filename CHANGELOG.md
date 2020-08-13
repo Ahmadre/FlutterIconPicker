@@ -1,3 +1,7 @@
+## [2.1.5] - 13.08.2020
+
+* Format for publication with `dartfmt -w .`
+
 ## [2.1.4] - 13.08.2020
 
 * Fix Search-Bar if custom icons are selected
