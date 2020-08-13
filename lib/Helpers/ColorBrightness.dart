@@ -1,6 +1,6 @@
 // General Notice:
 // A port of [tinycolor2](https://github.com/bgrins/TinyColor) by [Brian Grinstead](https://github.com/bgrins)
-// 
+//
 // Copyright (c), Brian Grinstead, http://briangrinstead.com
 
 // Permission is hereby granted, free of charge, to any person obtaining
@@ -51,7 +51,8 @@ class ColorBrightness {
   Color _color;
 
   ColorBrightness(Color color) {
-    this._color = Color.fromARGB(color.alpha, color.red, color.green, color.blue);
+    this._color =
+        Color.fromARGB(color.alpha, color.red, color.green, color.blue);
   }
 
   bool isDark() {

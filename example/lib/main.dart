@@ -11,7 +11,8 @@ class FlutterIconPickerExample extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FlutterIconPickerExampleState createState() => _FlutterIconPickerExampleState();
+  _FlutterIconPickerExampleState createState() =>
+      _FlutterIconPickerExampleState();
 }
 
 class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
@@ -54,7 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
     IconData icon = await FlutterIconPicker.showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
-      iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      iconPickerShape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       iconPackMode: IconPack.fontAwesomeIcons,
     );
 
@@ -91,7 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 RaisedButton(
                   onPressed: _pickIcon,
-                  child: Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
+                  child:
+                      Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
                 ),
                 if (_icon != null)
                   RaisedButton(

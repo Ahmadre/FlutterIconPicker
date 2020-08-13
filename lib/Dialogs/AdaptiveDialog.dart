@@ -16,7 +16,8 @@ class AdaptiveDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, dimens) {
-        if (dimens.maxWidth < constraints.maxWidth || dimens.maxHeight < constraints.maxHeight) {
+        if (dimens.maxWidth < constraints.maxWidth ||
+            dimens.maxHeight < constraints.maxHeight) {
           return child;
         }
         return Center(

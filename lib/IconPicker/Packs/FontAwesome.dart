@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 const Map<String, IconData> fontAwesomeIcons = {
   'fiveHundredPx': FontAwesomeIcons.fiveHundredPx,
   'accessibleIcon': FontAwesomeIcons.accessibleIcon,
@@ -29,7 +28,8 @@ const Map<String, IconData> fontAwesomeIcons = {
   'amazon': FontAwesomeIcons.amazon,
   'amazonPay': FontAwesomeIcons.amazonPay,
   'ambulance': FontAwesomeIcons.ambulance,
-  'americanSignLanguageInterpreting': FontAwesomeIcons.americanSignLanguageInterpreting,
+  'americanSignLanguageInterpreting':
+      FontAwesomeIcons.americanSignLanguageInterpreting,
   'amilia': FontAwesomeIcons.amilia,
   'anchor': FontAwesomeIcons.anchor,
   'android': FontAwesomeIcons.android,

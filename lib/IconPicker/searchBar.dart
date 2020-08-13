@@ -27,7 +27,8 @@ class SearchBar extends StatefulWidget {
   final Icon searchClearIcon;
   final Color backgroundColor;
 
-  static TextEditingController searchTextController = new TextEditingController();
+  static TextEditingController searchTextController =
+      new TextEditingController();
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -44,7 +45,8 @@ class _SearchBarState extends State<SearchBar> {
         }
       });
     else
-      IconManager.getSelectedPack(widget.iconPack).forEach((String key, IconData val) {
+      IconManager.getSelectedPack(widget.iconPack)
+          .forEach((String key, IconData val) {
         if (key.toLowerCase().contains(searchValue.toLowerCase())) {
           searchResult.putIfAbsent(key, () => val);
         }
@@ -66,12 +68,16 @@ class _SearchBarState extends State<SearchBar> {
       onChanged: (val) => _search(val),
       controller: SearchBar.searchTextController,
       style: TextStyle(
-        color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+        color: ColorBrightness(widget.backgroundColor).isLight()
+            ? Colors.black
+            : Colors.white,
       ),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(top: 15),
         hintStyle: TextStyle(
-          color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black54 : Colors.white54,
+          color: ColorBrightness(widget.backgroundColor).isLight()
+              ? Colors.black54
+              : Colors.white54,
         ),
         hintText: widget.searchHintText,
         prefixIcon: widget.searchIcon,
@@ -81,10 +87,12 @@ class _SearchBarState extends State<SearchBar> {
                   icon: widget.searchClearIcon,
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
+                    if (widget.iconPack == IconPack.custom &&
+                        widget.customIconPack != null)
                       IconPicker.iconMap = widget.customIconPack;
                     else
-                      IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
+                      IconPicker.iconMap =
+                          IconManager.getSelectedPack(widget.iconPack);
                     IconPicker.reload();
                   }),
                 )

@@ -63,14 +63,18 @@ class _IconPickerState extends State<IconPicker> {
             text: TextSpan(
               text: widget.noResultsText + ' ',
               style: TextStyle(
-                color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+                color: ColorBrightness(widget.backgroundColor).isLight()
+                    ? Colors.black
+                    : Colors.white,
               ),
               children: [
                 TextSpan(
                   text: SearchBar.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: ColorBrightness(widget.backgroundColor).isLight() ? Colors.black : Colors.white,
+                    color: ColorBrightness(widget.backgroundColor).isLight()
+                        ? Colors.black
+                        : Colors.white,
                   ),
                 ),
               ],
@@ -95,7 +99,8 @@ class _IconPickerState extends State<IconPicker> {
                     childAspectRatio: 1 / 1,
                     mainAxisSpacing: 5,
                     crossAxisSpacing: 5,
-                    maxCrossAxisExtent: widget.iconSize != null ? widget.iconSize + 10 : 50,
+                    maxCrossAxisExtent:
+                        widget.iconSize != null ? widget.iconSize + 10 : 50,
                   ),
                   itemBuilder: (context, index) {
                     var item = IconPicker.iconMap.entries.elementAt(index);
@@ -124,7 +129,8 @@ class _IconPickerState extends State<IconPicker> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
-                    end: Alignment.lerp(Alignment.topCenter, Alignment.center, .05),
+                    end: Alignment.lerp(
+                        Alignment.topCenter, Alignment.center, .05),
                     colors: [
                       widget.backgroundColor,
                       widget.backgroundColor.withOpacity(.1),
@@ -142,7 +148,8 @@ class _IconPickerState extends State<IconPicker> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
-                    end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .05),
+                    end: Alignment.lerp(
+                        Alignment.bottomCenter, Alignment.center, .05),
                     colors: [
                       widget.backgroundColor,
                       widget.backgroundColor.withOpacity(.1),

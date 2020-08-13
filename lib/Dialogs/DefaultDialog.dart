@@ -94,7 +94,9 @@ class DefaultDialog extends StatelessWidget {
                         child: DefaultTextStyle(
                           child: title,
                           style: TextStyle(
-                            color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                            color: ColorBrightness(backgroundColor).isLight()
+                                ? Colors.black
+                                : Colors.white,
                             fontSize: 20,
                           ),
                         ),
@@ -102,7 +104,9 @@ class DefaultDialog extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.close,
-                          color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                          color: ColorBrightness(backgroundColor).isLight()
+                              ? Colors.black
+                              : Colors.white,
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
@@ -142,7 +146,9 @@ class DefaultDialog extends StatelessWidget {
         title: DefaultTextStyle(
           child: title,
           style: TextStyle(
-            color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+            color: ColorBrightness(backgroundColor).isLight()
+                ? Colors.black
+                : Colors.white,
             fontSize: 20,
           ),
         ),
