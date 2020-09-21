@@ -40,66 +40,64 @@ class FullScreenDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Padding(
-        padding: EdgeInsets.only(
-          top: 10,
-          bottom: 20,
-          left: 20,
-          right: 20,
-        ),
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: kToolbarHeight,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 6),
-                    child: DefaultTextStyle(
-                      child: title,
-                      style: TextStyle(
-                        color: ColorBrightness(backgroundColor).isLight()
-                            ? Colors.black
-                            : Colors.white,
-                        fontSize: 20,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 10,
+            bottom: 20,
+            left: 20,
+            right: 20,
+          ),
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: kToolbarHeight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 6),
+                      child: DefaultTextStyle(
+                        child: title,
+                        style: TextStyle(
+                          color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                          fontSize: 20,
+                        ),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.close,
-                      color: ColorBrightness(backgroundColor).isLight()
-                          ? Colors.black
-                          : Colors.white,
+                    IconButton(
+                      icon: Icon(
+                        Icons.close,
+                        color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                      ),
+                      onPressed: () => Navigator.pop(context),
                     ),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SearchBar(
-              iconPack: iconPackMode,
-              customIconPack: customIconPack,
-              searchIcon: searchIcon,
-              searchClearIcon: searchClearIcon,
-              searchHintText: searchHintText,
-              backgroundColor: backgroundColor,
-            ),
-            Expanded(
-              child: IconPicker(
-                showTooltips: showTooltips,
+              SearchBar(
                 iconPack: iconPackMode,
                 customIconPack: customIconPack,
-                iconColor: iconColor,
+                searchIcon: searchIcon,
+                searchClearIcon: searchClearIcon,
+                searchHintText: searchHintText,
                 backgroundColor: backgroundColor,
-                noResultsText: noResultsText,
-                iconSize: iconSize,
-                mainAxisSpacing: mainAxisSpacing,
-                crossAxisSpacing: crossAxisSpacing,
               ),
-            ),
-          ],
+              Expanded(
+                child: IconPicker(
+                  showTooltips: showTooltips,
+                  iconPack: iconPackMode,
+                  customIconPack: customIconPack,
+                  iconColor: iconColor,
+                  backgroundColor: backgroundColor,
+                  noResultsText: noResultsText,
+                  iconSize: iconSize,
+                  mainAxisSpacing: mainAxisSpacing,
+                  crossAxisSpacing: crossAxisSpacing,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
