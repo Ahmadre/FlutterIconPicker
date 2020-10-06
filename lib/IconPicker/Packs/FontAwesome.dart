@@ -13,7 +13,6 @@ const Map<String, IconData> fontAwesomeIcons = {
   'solidAddressCard': FontAwesomeIcons.solidAddressCard,
   'adjust': FontAwesomeIcons.adjust,
   'adn': FontAwesomeIcons.adn,
-  'adobe': FontAwesomeIcons.adobe,
   'adversal': FontAwesomeIcons.adversal,
   'affiliatetheme': FontAwesomeIcons.affiliatetheme,
   'airFreshener': FontAwesomeIcons.airFreshener,
