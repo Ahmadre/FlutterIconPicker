@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 
@@ -11,8 +12,7 @@ class FlutterIconPickerExample extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FlutterIconPickerExampleState createState() =>
-      _FlutterIconPickerExampleState();
+  _FlutterIconPickerExampleState createState() => _FlutterIconPickerExampleState();
 }
 
 class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
@@ -50,14 +50,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Icon _icon;
   bool isAdaptive = true;
+  bool showTooltips = false;
+  bool showSearch = true;
 
   _pickIcon() async {
     IconData icon = await FlutterIconPicker.showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
-      iconPickerShape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackMode: IconPack.fontAwesomeIcons,
+      showTooltips: showTooltips,
+      showSearchBar: showSearch,
+      iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      iconPackMode: IconPack.lineAwesomeIcons,
     );
 
     if (icon != null) {
@@ -93,8 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 RaisedButton(
                   onPressed: _pickIcon,
-                  child:
-                      Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
+                  child: Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
                 ),
                 if (_icon != null)
                   RaisedButton(
@@ -113,13 +115,30 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomSheet: Container(
         color: Colors.blue.shade500,
-        child: SwitchListTile.adaptive(
-          title: Text(
-            'Adaptive dialog',
-            style: TextStyle(color: Colors.white),
-          ),
-          value: isAdaptive,
-          onChanged: (val) => setState(() => isAdaptive = val),
+        child: Row(
+          children: [
+            Flexible(
+              child: SwitchListTile.adaptive(
+                title: Text('Show search-bar', style: TextStyle(color: Colors.white)),
+                value: showSearch,
+                onChanged: (val) => setState(() => showSearch = val),
+              ),
+            ),
+            Flexible(
+              child: SwitchListTile.adaptive(
+                title: Text('Show tooltips', style: TextStyle(color: Colors.white)),
+                value: showTooltips,
+                onChanged: (val) => setState(() => showTooltips = val),
+              ),
+            ),
+            Flexible(
+              child: SwitchListTile.adaptive(
+                title: Text('Adaptive dialog', style: TextStyle(color: Colors.white)),
+                value: isAdaptive,
+                onChanged: (val) => setState(() => isAdaptive = val),
+              ),
+            ),
+          ],
         ),
       ),
     );

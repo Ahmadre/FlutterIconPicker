@@ -7,7 +7,7 @@ export 'Packs/Material.dart';
 export 'Packs/MaterialOutline.dart';
 export 'Packs/Cupertino.dart';
 export 'Packs/FontAwesome.dart';
-export 'Packs/LineAwesome.dart';
+export 'Packs/LineIcons.dart';
 
 import '../Models/IconPack.dart';
 
@@ -15,7 +15,7 @@ import 'Packs/Material.dart';
 import 'Packs/MaterialOutline.dart';
 import 'Packs/Cupertino.dart';
 import 'Packs/FontAwesome.dart';
-import 'Packs/LineAwesome.dart';
+import 'Packs/LineIcons.dart';
 
 import 'package:flutter/widgets.dart';
 

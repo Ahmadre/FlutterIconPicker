@@ -9,6 +9,7 @@ import '../Models/IconPack.dart';
 class DefaultDialog extends StatelessWidget {
   const DefaultDialog({
     Key key,
+    this.showSearchBar,
     this.routedView = false,
     this.adaptive = false,
     this.showTooltips,
@@ -30,6 +31,7 @@ class DefaultDialog extends StatelessWidget {
     this.customIconPack,
   }) : super(key: key);
 
+  final bool showSearchBar;
   final bool routedView;
   final bool adaptive;
   final bool showTooltips;
@@ -55,6 +57,7 @@ class DefaultDialog extends StatelessWidget {
     if (adaptive) {
       if (routedView) {
         return FullScreenDialog(
+          showSearchBar: showSearchBar,
           showTooltips: showTooltips,
           backgroundColor: backgroundColor,
           title: title,
@@ -94,9 +97,7 @@ class DefaultDialog extends StatelessWidget {
                         child: DefaultTextStyle(
                           child: title,
                           style: TextStyle(
-                            color: ColorBrightness(backgroundColor).isLight()
-                                ? Colors.black
-                                : Colors.white,
+                            color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
                             fontSize: 20,
                           ),
                         ),
@@ -104,23 +105,22 @@ class DefaultDialog extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.close,
-                          color: ColorBrightness(backgroundColor).isLight()
-                              ? Colors.black
-                              : Colors.white,
+                          color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
                     ],
                   ),
                 ),
-                SearchBar(
-                  iconPack: iconPackMode,
-                  customIconPack: customIconPack,
-                  searchIcon: searchIcon,
-                  searchClearIcon: searchClearIcon,
-                  searchHintText: searchHintText,
-                  backgroundColor: backgroundColor,
-                ),
+                if (showSearchBar)
+                  SearchBar(
+                    iconPack: iconPackMode,
+                    customIconPack: customIconPack,
+                    searchIcon: searchIcon,
+                    searchClearIcon: searchClearIcon,
+                    searchHintText: searchHintText,
+                    backgroundColor: backgroundColor,
+                  ),
                 Expanded(
                   child: IconPicker(
                     showTooltips: showTooltips,
@@ -146,9 +146,7 @@ class DefaultDialog extends StatelessWidget {
         title: DefaultTextStyle(
           child: title,
           style: TextStyle(
-            color: ColorBrightness(backgroundColor).isLight()
-                ? Colors.black
-                : Colors.white,
+            color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
             fontSize: 20,
           ),
         ),
@@ -156,14 +154,15 @@ class DefaultDialog extends StatelessWidget {
           constraints: constraints,
           child: Column(
             children: <Widget>[
-              SearchBar(
-                iconPack: iconPackMode,
-                customIconPack: customIconPack,
-                searchIcon: searchIcon,
-                searchClearIcon: searchClearIcon,
-                searchHintText: searchHintText,
-                backgroundColor: backgroundColor,
-              ),
+              if (showSearchBar)
+                SearchBar(
+                  iconPack: iconPackMode,
+                  customIconPack: customIconPack,
+                  searchIcon: searchIcon,
+                  searchClearIcon: searchClearIcon,
+                  searchHintText: searchHintText,
+                  backgroundColor: backgroundColor,
+                ),
               Expanded(
                 child: IconPicker(
                   showTooltips: showTooltips,

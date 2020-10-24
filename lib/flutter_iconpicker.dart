@@ -17,6 +17,10 @@ class FlutterIconPicker {
   static Future<IconData> showIconPicker(
     BuildContext context, {
 
+    /// Defines if the searchbar will be
+    /// shown above the icons
+    bool showSearchBar = true,
+
     /// Adapts the dialog to the screen size.
     /// Behaves like a "ModalDialog"
     /// Defaults to `false`
@@ -123,23 +127,17 @@ class FlutterIconPicker {
     Map<String, IconData> customIconPack,
   }) async {
     if (iconPackMode == IconPack.custom && customIconPack == null)
-      throw AssertionError(
-          'You need to provide your customIconPack if you set IconPack.custom');
+      throw AssertionError('You need to provide your customIconPack if you set IconPack.custom');
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
-        constraints =
-            const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
+        constraints = const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
       } else {
-        constraints =
-            const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
+        constraints = const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
       }
     }
-    if (iconPickerShape == null)
-      iconPickerShape =
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
-    if (backgroundColor == null)
-      backgroundColor = Theme.of(context).dialogBackgroundColor;
+    if (iconPickerShape == null) iconPickerShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
+    if (backgroundColor == null) backgroundColor = Theme.of(context).dialogBackgroundColor;
 
     IconData iconPicked;
 
@@ -149,6 +147,7 @@ class FlutterIconPicker {
           barrierDismissible: barrierDismissible,
           context: context,
           builder: (BuildContext context) => DefaultDialog(
+            showSearchBar: showSearchBar,
             adaptive: adaptiveDialog,
             showTooltips: showTooltips,
             barrierDismissible: barrierDismissible,
@@ -175,6 +174,7 @@ class FlutterIconPicker {
           MaterialPageRoute(
             fullscreenDialog: true,
             builder: (context) => DefaultDialog(
+              showSearchBar: showSearchBar,
               routedView: true,
               adaptive: adaptiveDialog,
               showTooltips: showTooltips,
@@ -203,6 +203,7 @@ class FlutterIconPicker {
         barrierDismissible: barrierDismissible,
         context: context,
         builder: (BuildContext context) => DefaultDialog(
+          showSearchBar: showSearchBar,
           showTooltips: showTooltips,
           barrierDismissible: barrierDismissible,
           iconSize: iconSize,

@@ -7,6 +7,7 @@ import '../Models/IconPack.dart';
 class FullScreenDialog extends StatelessWidget {
   const FullScreenDialog({
     Key key,
+    @required this.showSearchBar,
     @required this.showTooltips,
     @required this.backgroundColor,
     @required this.title,
@@ -22,6 +23,7 @@ class FullScreenDialog extends StatelessWidget {
     @required this.crossAxisSpacing,
   }) : super(key: key);
 
+  final bool showSearchBar;
   final bool showTooltips;
   final Color backgroundColor;
   final Widget title;
@@ -75,14 +77,15 @@ class FullScreenDialog extends StatelessWidget {
                   ],
                 ),
               ),
-              SearchBar(
-                iconPack: iconPackMode,
-                customIconPack: customIconPack,
-                searchIcon: searchIcon,
-                searchClearIcon: searchClearIcon,
-                searchHintText: searchHintText,
-                backgroundColor: backgroundColor,
-              ),
+              if (showSearchBar)
+                SearchBar(
+                  iconPack: iconPackMode,
+                  customIconPack: customIconPack,
+                  searchIcon: searchIcon,
+                  searchClearIcon: searchClearIcon,
+                  searchHintText: searchHintText,
+                  backgroundColor: backgroundColor,
+                ),
               Expanded(
                 child: IconPicker(
                   showTooltips: showTooltips,
