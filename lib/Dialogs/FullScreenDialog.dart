@@ -62,7 +62,9 @@ class FullScreenDialog extends StatelessWidget {
                       child: DefaultTextStyle(
                         child: title,
                         style: TextStyle(
-                          color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                          color: ColorBrightness(backgroundColor).isLight()
+                              ? Colors.black
+                              : Colors.white,
                           fontSize: 20,
                         ),
                       ),
@@ -70,7 +72,9 @@ class FullScreenDialog extends StatelessWidget {
                     IconButton(
                       icon: Icon(
                         Icons.close,
-                        color: ColorBrightness(backgroundColor).isLight() ? Colors.black : Colors.white,
+                        color: ColorBrightness(backgroundColor).isLight()
+                            ? Colors.black
+                            : Colors.white,
                       ),
                       onPressed: () => Navigator.pop(context),
                     ),

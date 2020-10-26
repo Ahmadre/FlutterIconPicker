@@ -6,1548 +6,3088 @@ const _kFontFam = 'LineAwesomeIcons';
 const _kFontPackage = 'line_awesome_flutter';
 
 const Map<String, IconData> lineAwesomeIcons = {
-  'caret_square_right_1': const IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rock__hand__1': const IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_rolling_eyes_1': const IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_trash_1': const IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_up_1': const IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eye_slash_1': const IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'neutral_face_1': const IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map_1': const IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'building_1': const IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'copy_1': const IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dot_circle_1': const IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_with_big_eyes_1': const IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_tears_of_joy_1': const IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_half_1': const IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'audio_file_1': const IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_with_smiling_eyes_1': const IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smiling_face_1': const IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_maximize_1': const IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'loudly_crying_face_1': const IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sticky_note_1': const IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_restore_1': const IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angry_face_1': const IconData(0xe815, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_1': const IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'address_card_1': const IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment_1': const IconData(0xe818, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'object_ungroup_1': const IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'winking_face_1': const IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_close_1': const IconData(0xe81b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video_file_1': const IconData(0xe81c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope_1': const IconData(0xe81d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hushed_face_1': const IconData(0xe81e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_tongue_1': const IconData(0xe81f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_down_1': const IconData(0xe820, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pause_circle_1': const IconData(0xe821, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder_open_1': const IconData(0xe822, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder_1': const IconData(0xe823, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flag_1': const IconData(0xe824, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_right_1': const IconData(0xe825, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'minus_square_1': const IconData(0xe826, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_down_1': const IconData(0xe827, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'excel_file_1': const IconData(0xe828, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_left_1': const IconData(0xe829, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pointer__hand__1': const IconData(0xe82a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laugh_face_with_beaming_eyes_1': const IconData(0xe82b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snowflake_1': const IconData(0xe82c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_struck_1': const IconData(0xe82d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stop_circle_1': const IconData(0xe82e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comments_1': const IconData(0xe82f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'closed_captioning_1': const IconData(0xe830, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thumbs_down_1': const IconData(0xe831, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_winking_face_1': const IconData(0xe832, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'images_1': const IconData(0xe833, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'compass_1': const IconData(0xe834, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'code_file_1': const IconData(0xe835, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'squinting_face_with_tongue_1': const IconData(0xe836, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clipboard_1': const IconData(0xe837, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'newspaper_1': const IconData(0xe838, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_left_1': const IconData(0xe839, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'object_group_1': const IconData(0xe83a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'image_1': const IconData(0xe83b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'keyboard_1': const IconData(0xe83c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_squinting_face_1': const IconData(0xe83d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_down_1': const IconData(0xe83e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gem_1': const IconData(0xe83f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kissing_face_with_smiling_eyes_1': const IconData(0xe840, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'address_book_1': const IconData(0xe841, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_without_mouth_1': const IconData(0xe842, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paper_plane_1': const IconData(0xe843, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_up_1': const IconData(0xe844, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'play_circle_1': const IconData(0xe845, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'image_file_1': const IconData(0xe846, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dizzy_face_1': const IconData(0xe847, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laughing_winking_face_1': const IconData(0xe848, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_money_bill_1': const IconData(0xe849, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_times_1': const IconData(0xe84a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rolling_on_the_floor_laughing_1': const IconData(0xe84b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'times_circle_1': const IconData(0xe84c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_plus_1': const IconData(0xe84d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crying_face_1': const IconData(0xe84e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'powerpoint_file_1': const IconData(0xe84f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hdd_1': const IconData(0xe850, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hourglass_1': const IconData(0xe851, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'credit_card_1': const IconData(0xe852, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lemon_1': const IconData(0xe853, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bell_slash_1': const IconData(0xe854, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_grinning_face_1': const IconData(0xe855, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_right_1': const IconData(0xe856, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'archive_file_1': const IconData(0xe857, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lizard__hand__1': const IconData(0xe858, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laughing_squinting_face_1': const IconData(0xe859, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_1': const IconData(0xe85a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thumbs_up_1': const IconData(0xe85b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hospital_1': const IconData(0xe85c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kissing_face_1': const IconData(0xe85d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bar_chart_1': const IconData(0xe85e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_blowing_a_kiss_1': const IconData(0xe85f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'heart_1': const IconData(0xe860, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_comment_1': const IconData(0xe861, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plus_square_1': const IconData(0xe862, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_list_1': const IconData(0xe863, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smiling_face_with_heart_eyes_1': const IconData(0xe864, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_left_1': const IconData(0xe865, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'frowning_face_with_open_mouth_1': const IconData(0xe866, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tired_face_1': const IconData(0xe867, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'peace__hand__1': const IconData(0xe868, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_minus_1': const IconData(0xe869, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lightbulb_1': const IconData(0xe86a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'check_square_1': const IconData(0xe86b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_1': const IconData(0xe86c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spock__hand__1': const IconData(0xe86d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'identification_card_1': const IconData(0xe86e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_check_1': const IconData(0xe86f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'moon_1': const IconData(0xe870, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_1': const IconData(0xe871, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_1': const IconData(0xe872, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clock_1': const IconData(0xe873, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sun_1': const IconData(0xe874, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_up_1': const IconData(0xe875, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_circle_1': const IconData(0xe876, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope_open_1': const IconData(0xe877, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'edit_1': const IconData(0xe878, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'circle_1': const IconData(0xe879, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'word_file_1': const IconData(0xe87a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_file_1': const IconData(0xe87b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flushed_face_1': const IconData(0xe87c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'life_ring_1': const IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'beaming_face_with_smiling_eyes_1': const IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'square_1': const IconData(0xe87f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'question_circle_1': const IconData(0xe880, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eye_1': const IconData(0xe881, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pdf_file_1': const IconData(0xe882, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'frowning_face_1': const IconData(0xe883, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_minimize_1': const IconData(0xe884, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'registered_trademark_1': const IconData(0xe885, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment_dots_1': const IconData(0xe886, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'winking_face_with_tongue_1': const IconData(0xe887, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'futbol_1': const IconData(0xe888, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clone_1': const IconData(0xe889, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'share_square_1': const IconData(0xe88a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'copyright_1': const IconData(0xe88b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bell_1': const IconData(0xe88c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'identification_badge_1': const IconData(0xe88d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paper__hand__1': const IconData(0xe88e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'scissors__hand__1': const IconData(0xe88f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bookmark_1': const IconData(0xe890, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grimacing_face_1': const IconData(0xe891, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'check_circle_1': const IconData(0xe892, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_calendar_1': const IconData(0xe893, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'handshake_1': const IconData(0xe894, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'martini_glass': const IconData(0xf000, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'music': const IconData(0xf001, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'search': const IconData(0xf002, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'heart': const IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star': const IconData(0xf005, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user': const IconData(0xf007, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'film': const IconData(0xf008, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'th_large': const IconData(0xf009, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'th': const IconData(0xf00a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'th_list': const IconData(0xf00b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'check': const IconData(0xf00c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'times': const IconData(0xf00d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'search_plus': const IconData(0xf00e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'search_minus': const IconData(0xf010, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'power_off': const IconData(0xf011, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'signal': const IconData(0xf012, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cog': const IconData(0xf013, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'home': const IconData(0xf015, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clock': const IconData(0xf017, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'road': const IconData(0xf018, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'download': const IconData(0xf019, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'inbox': const IconData(0xf01c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'redo': const IconData(0xf01e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sync_icon': const IconData(0xf021, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_list': const IconData(0xf022, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lock': const IconData(0xf023, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flag': const IconData(0xf024, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'headphones': const IconData(0xf025, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'volume_off': const IconData(0xf026, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'volume_down': const IconData(0xf027, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'volume_up': const IconData(0xf028, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'qrcode': const IconData(0xf029, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'barcode': const IconData(0xf02a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tag': const IconData(0xf02b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tags': const IconData(0xf02c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'book': const IconData(0xf02d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bookmark': const IconData(0xf02e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'print': const IconData(0xf02f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'camera': const IconData(0xf030, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'font': const IconData(0xf031, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bold': const IconData(0xf032, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'italic': const IconData(0xf033, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'text_height': const IconData(0xf034, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'text_width': const IconData(0xf035, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'align_left': const IconData(0xf036, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'align_center': const IconData(0xf037, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'align_right': const IconData(0xf038, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'align_justify': const IconData(0xf039, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'list': const IconData(0xf03a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'outdent': const IconData(0xf03b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'indent': const IconData(0xf03c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video_1': const IconData(0xf03d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'image': const IconData(0xf03e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map_marker': const IconData(0xf041, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'adjust': const IconData(0xf042, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tint': const IconData(0xf043, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'edit': const IconData(0xf044, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'step_backward': const IconData(0xf048, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fast_backward': const IconData(0xf049, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'backward': const IconData(0xf04a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'play': const IconData(0xf04b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pause': const IconData(0xf04c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stop': const IconData(0xf04d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'forward': const IconData(0xf04e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fast_forward': const IconData(0xf050, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'step_forward': const IconData(0xf051, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eject': const IconData(0xf052, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_left': const IconData(0xf053, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_right': const IconData(0xf054, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plus_circle': const IconData(0xf055, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'minus_circle': const IconData(0xf056, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'times_circle': const IconData(0xf057, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'check_circle': const IconData(0xf058, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'question_circle': const IconData(0xf059, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'info_circle': const IconData(0xf05a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crosshairs': const IconData(0xf05b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ban': const IconData(0xf05e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_left': const IconData(0xf060, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_right': const IconData(0xf061, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_up': const IconData(0xf062, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_down': const IconData(0xf063, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'share': const IconData(0xf064, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'expand': const IconData(0xf065, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'compress': const IconData(0xf066, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plus': const IconData(0xf067, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'minus': const IconData(0xf068, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'asterisk': const IconData(0xf069, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'exclamation_circle': const IconData(0xf06a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gift': const IconData(0xf06b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'leaf': const IconData(0xf06c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fire': const IconData(0xf06d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eye': const IconData(0xf06e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eye_slash': const IconData(0xf070, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'exclamation_triangle': const IconData(0xf071, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plane': const IconData(0xf072, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_calendar': const IconData(0xf073, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'random': const IconData(0xf074, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment': const IconData(0xf075, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'magnet': const IconData(0xf076, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_up': const IconData(0xf077, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_down': const IconData(0xf078, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'retweet': const IconData(0xf079, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shopping_cart': const IconData(0xf07a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder': const IconData(0xf07b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder_open': const IconData(0xf07c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bar_chart': const IconData(0xf080, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'twitter_square': const IconData(0xf081, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'facebook_square': const IconData(0xf082, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'retro_camera': const IconData(0xf083, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'key': const IconData(0xf084, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cogs': const IconData(0xf085, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comments': const IconData(0xf086, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_half': const IconData(0xf089, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'linkedin': const IconData(0xf08c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thumbtack': const IconData(0xf08d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trophy': const IconData(0xf091, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'github_square': const IconData(0xf092, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'upload': const IconData(0xf093, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lemon': const IconData(0xf094, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phone': const IconData(0xf095, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phone_square': const IconData(0xf098, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'twitter': const IconData(0xf099, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'facebook': const IconData(0xf09a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'github': const IconData(0xf09b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'unlock': const IconData(0xf09c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'credit_card': const IconData(0xf09d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rss': const IconData(0xf09e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hdd': const IconData(0xf0a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bullhorn': const IconData(0xf0a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'certificate': const IconData(0xf0a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_right': const IconData(0xf0a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_left': const IconData(0xf0a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_up': const IconData(0xf0a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_pointing_down': const IconData(0xf0a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_circle_left': const IconData(0xf0a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_circle_right': const IconData(0xf0a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_circle_up': const IconData(0xf0aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'arrow_circle_down': const IconData(0xf0ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'globe': const IconData(0xf0ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wrench': const IconData(0xf0ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tasks': const IconData(0xf0ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'filter': const IconData(0xf0b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'briefcase': const IconData(0xf0b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrows': const IconData(0xf0b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'users': const IconData(0xf0c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'link': const IconData(0xf0c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud': const IconData(0xf0c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flask': const IconData(0xf0c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cut': const IconData(0xf0c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'copy': const IconData(0xf0c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paperclip': const IconData(0xf0c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'save': const IconData(0xf0c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'square': const IconData(0xf0c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bars': const IconData(0xf0c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'list_ul': const IconData(0xf0ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'list_ol': const IconData(0xf0cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'strikethrough': const IconData(0xf0cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'underline': const IconData(0xf0cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'table': const IconData(0xf0ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'magic': const IconData(0xf0d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'truck': const IconData(0xf0d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pinterest': const IconData(0xf0d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pinterest_square': const IconData(0xf0d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_plus_square': const IconData(0xf0d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_plus_g': const IconData(0xf0d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'money_bill': const IconData(0xf0d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_down': const IconData(0xf0d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_up': const IconData(0xf0d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_left': const IconData(0xf0d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_right': const IconData(0xf0da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'columns': const IconData(0xf0db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort': const IconData(0xf0dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_down__descending_': const IconData(0xf0dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_up__ascending_': const IconData(0xf0de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope': const IconData(0xf0e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'linkedin_in': const IconData(0xf0e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'undo': const IconData(0xf0e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gavel': const IconData(0xf0e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lightning_bolt': const IconData(0xf0e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sitemap': const IconData(0xf0e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'umbrella': const IconData(0xf0e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paste': const IconData(0xf0ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lightbulb': const IconData(0xf0eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'doctor': const IconData(0xf0f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stethoscope': const IconData(0xf0f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'suitcase': const IconData(0xf0f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bell': const IconData(0xf0f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'coffee': const IconData(0xf0f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hospital': const IconData(0xf0f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ambulance': const IconData(0xf0f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medkit': const IconData(0xf0fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fighter_jet': const IconData(0xf0fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'beer': const IconData(0xf0fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'h_square': const IconData(0xf0fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plus_square': const IconData(0xf0fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_double_left': const IconData(0xf100, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_double_right': const IconData(0xf101, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_double_up': const IconData(0xf102, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_double_down': const IconData(0xf103, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_left': const IconData(0xf104, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_right': const IconData(0xf105, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_up': const IconData(0xf106, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angle_down': const IconData(0xf107, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'desktop': const IconData(0xf108, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laptop': const IconData(0xf109, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tablet': const IconData(0xf10a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mobile_phone': const IconData(0xf10b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quote_left': const IconData(0xf10d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quote_right': const IconData(0xf10e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spinner': const IconData(0xf110, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'circle': const IconData(0xf111, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_github': const IconData(0xf113, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smiling_face': const IconData(0xf118, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'frowning_face': const IconData(0xf119, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'neutral_face': const IconData(0xf11a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gamepad': const IconData(0xf11b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'keyboard': const IconData(0xf11c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flag_checkered': const IconData(0xf11e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'terminal': const IconData(0xf120, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'code': const IconData(0xf121, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reply_all': const IconData(0xf122, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'location_arrow': const IconData(0xf124, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crop': const IconData(0xf125, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'code_branch': const IconData(0xf126, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'unlink': const IconData(0xf127, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'question': const IconData(0xf128, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'info': const IconData(0xf129, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'exclamation': const IconData(0xf12a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'superscript': const IconData(0xf12b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'subscript': const IconData(0xf12c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eraser': const IconData(0xf12d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'puzzle_piece': const IconData(0xf12e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'microphone': const IconData(0xf130, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'microphone_slash': const IconData(0xf131, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar': const IconData(0xf133, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fire_extinguisher': const IconData(0xf134, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rocket': const IconData(0xf135, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'maxcdn': const IconData(0xf136, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_circle_left': const IconData(0xf137, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_circle_right': const IconData(0xf138, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_circle_up': const IconData(0xf139, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chevron_circle_down': const IconData(0xf13a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'html_5_logo': const IconData(0xf13b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'css_3_logo': const IconData(0xf13c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'anchor': const IconData(0xf13d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_unlock': const IconData(0xf13e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bullseye': const IconData(0xf140, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'horizontal_ellipsis': const IconData(0xf141, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vertical_ellipsis': const IconData(0xf142, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rss_square': const IconData(0xf143, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'play_circle': const IconData(0xf144, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'minus_square': const IconData(0xf146, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'check_square': const IconData(0xf14a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pen_square': const IconData(0xf14b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'share_square': const IconData(0xf14d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'compass': const IconData(0xf14e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_down': const IconData(0xf150, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_up': const IconData(0xf151, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_right': const IconData(0xf152, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'euro_sign': const IconData(0xf153, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pound_sign': const IconData(0xf154, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dollar_sign': const IconData(0xf155, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'indian_rupee_sign': const IconData(0xf156, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yen_sign': const IconData(0xf157, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ruble_sign': const IconData(0xf158, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'won_sign': const IconData(0xf159, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'btc': const IconData(0xf15a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file': const IconData(0xf15b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_file': const IconData(0xf15c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_alphabetical_down': const IconData(0xf15d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_alphabetical_up': const IconData(0xf15e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_amount_down': const IconData(0xf160, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_amount_up': const IconData(0xf161, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_numeric_down': const IconData(0xf162, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sort_numeric_up': const IconData(0xf163, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thumbs_up': const IconData(0xf164, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thumbs_down': const IconData(0xf165, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'youtube': const IconData(0xf167, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'xing': const IconData(0xf168, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'xing_square': const IconData(0xf169, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dropbox': const IconData(0xf16b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stack_overflow': const IconData(0xf16c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'instagram': const IconData(0xf16d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flickr': const IconData(0xf16e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'app_net': const IconData(0xf170, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bitbucket': const IconData(0xf171, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tumblr': const IconData(0xf173, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tumblr_square': const IconData(0xf174, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'apple': const IconData(0xf179, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'windows': const IconData(0xf17a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'android': const IconData(0xf17b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'linux': const IconData(0xf17c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dribbble': const IconData(0xf17d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skype': const IconData(0xf17e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'foursquare': const IconData(0xf180, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trello': const IconData(0xf181, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'female': const IconData(0xf182, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'male': const IconData(0xf183, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gratipay__gittip_': const IconData(0xf184, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sun': const IconData(0xf185, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'moon': const IconData(0xf186, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'archive': const IconData(0xf187, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bug': const IconData(0xf188, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vk': const IconData(0xf189, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'weibo': const IconData(0xf18a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'renren': const IconData(0xf18b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pagelines': const IconData(0xf18c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stack_exchange': const IconData(0xf18d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'caret_square_left': const IconData(0xf191, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dot_circle': const IconData(0xf192, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wheelchair': const IconData(0xf193, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vimeo_square': const IconData(0xf194, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'turkish_lira_sign': const IconData(0xf195, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'space_shuttle': const IconData(0xf197, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'slack_logo': const IconData(0xf198, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope_square': const IconData(0xf199, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wordpress_logo': const IconData(0xf19a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'openid': const IconData(0xf19b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'university': const IconData(0xf19c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'graduation_cap': const IconData(0xf19d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yahoo_logo': const IconData(0xf19e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_logo': const IconData(0xf1a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reddit_logo': const IconData(0xf1a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reddit_square': const IconData(0xf1a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stumbleupon_circle': const IconData(0xf1a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stumbleupon_logo': const IconData(0xf1a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'delicious': const IconData(0xf1a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'digg_logo': const IconData(0xf1a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pied_piper_pp_logo__old_': const IconData(0xf1a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_pied_piper_logo': const IconData(0xf1a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'drupal_logo': const IconData(0xf1a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'joomla_logo': const IconData(0xf1aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'language': const IconData(0xf1ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fax': const IconData(0xf1ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'building': const IconData(0xf1ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'child': const IconData(0xf1ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paw': const IconData(0xf1b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cube': const IconData(0xf1b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cubes': const IconData(0xf1b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'behance': const IconData(0xf1b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'behance_square': const IconData(0xf1b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'steam': const IconData(0xf1b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'steam_square': const IconData(0xf1b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'recycle': const IconData(0xf1b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'car': const IconData(0xf1b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'taxi': const IconData(0xf1ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tree': const IconData(0xf1bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spotify': const IconData(0xf1bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'deviantart': const IconData(0xf1bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'soundcloud': const IconData(0xf1be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'database': const IconData(0xf1c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pdf_file': const IconData(0xf1c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'word_file': const IconData(0xf1c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'excel_file': const IconData(0xf1c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'powerpoint_file': const IconData(0xf1c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'image_file': const IconData(0xf1c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'archive_file': const IconData(0xf1c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'audio_file': const IconData(0xf1c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video_file': const IconData(0xf1c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'code_file': const IconData(0xf1c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vine': const IconData(0xf1ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'codepen': const IconData(0xf1cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jsfiddle': const IconData(0xf1cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'life_ring': const IconData(0xf1cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'circle_notched': const IconData(0xf1ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rebel_alliance': const IconData(0xf1d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'galactic_empire': const IconData(0xf1d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'git_square': const IconData(0xf1d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'git': const IconData(0xf1d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hacker_news': const IconData(0xf1d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tencent_weibo': const IconData(0xf1d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'qq': const IconData(0xf1d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'weixin__wechat_': const IconData(0xf1d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paper_plane': const IconData(0xf1d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'history': const IconData(0xf1da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'heading': const IconData(0xf1dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paragraph': const IconData(0xf1dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'horizontal_sliders': const IconData(0xf1de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_share': const IconData(0xf1e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_share_square': const IconData(0xf1e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bomb': const IconData(0xf1e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'futbol': const IconData(0xf1e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tty': const IconData(0xf1e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'binoculars': const IconData(0xf1e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plug': const IconData(0xf1e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'slideshare': const IconData(0xf1e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'twitch': const IconData(0xf1e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yelp': const IconData(0xf1e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'newspaper': const IconData(0xf1ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wifi': const IconData(0xf1eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calculator': const IconData(0xf1ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paypal': const IconData(0xf1ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_wallet': const IconData(0xf1ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'visa_credit_card': const IconData(0xf1f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mastercard_credit_card': const IconData(0xf1f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'discover_credit_card': const IconData(0xf1f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'american_express_credit_card': const IconData(0xf1f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paypal_credit_card': const IconData(0xf1f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stripe_credit_card': const IconData(0xf1f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bell_slash': const IconData(0xf1f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trash': const IconData(0xf1f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'copyright': const IconData(0xf1f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'at': const IconData(0xf1fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'eye_dropper': const IconData(0xf1fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paint_brush': const IconData(0xf1fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'birthday_cake': const IconData(0xf1fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'area_chart': const IconData(0xf1fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pie_chart': const IconData(0xf200, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'line_chart': const IconData(0xf201, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'last_fm': const IconData(0xf202, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'last_fm_square': const IconData(0xf203, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'toggle_off': const IconData(0xf204, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'toggle_on': const IconData(0xf205, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bicycle': const IconData(0xf206, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bus': const IconData(0xf207, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ioxhost': const IconData(0xf208, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angellist': const IconData(0xf209, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'closed_captioning': const IconData(0xf20a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shekel_sign': const IconData(0xf20b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'buysellads': const IconData(0xf20d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'connect_develop': const IconData(0xf20e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dashcube': const IconData(0xf210, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'forumbee': const IconData(0xf211, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'leanpub': const IconData(0xf212, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sellsy': const IconData(0xf213, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shirts_in_bulk': const IconData(0xf214, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'simplybuilt': const IconData(0xf215, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skyatlas': const IconData(0xf216, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'add_to_shopping_cart': const IconData(0xf217, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shopping_cart_arrow_down': const IconData(0xf218, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ship': const IconData(0xf21a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_secret': const IconData(0xf21b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'motorcycle': const IconData(0xf21c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'street_view': const IconData(0xf21d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'heartbeat': const IconData(0xf21e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'venus': const IconData(0xf221, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mars': const IconData(0xf222, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mercury': const IconData(0xf223, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'transgender': const IconData(0xf224, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_transgender': const IconData(0xf225, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'venus_double': const IconData(0xf226, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mars_double': const IconData(0xf227, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'venus_mars': const IconData(0xf228, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mars_stroke': const IconData(0xf229, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mars_stroke_vertical': const IconData(0xf22a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mars_stroke_horizontal': const IconData(0xf22b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'neuter': const IconData(0xf22c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'genderless': const IconData(0xf22d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pinterest_p': const IconData(0xf231, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'what_s_app': const IconData(0xf232, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'server': const IconData(0xf233, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_plus': const IconData(0xf234, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'remove_user': const IconData(0xf235, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bed': const IconData(0xf236, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'viacoin': const IconData(0xf237, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'train': const IconData(0xf238, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'subway': const IconData(0xf239, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medium': const IconData(0xf23a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'y_combinator': const IconData(0xf23b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'optin_monster': const IconData(0xf23c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'opencart': const IconData(0xf23d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'expeditedssl': const IconData(0xf23e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battery_full': const IconData(0xf240, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battery_3_4_full': const IconData(0xf241, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battery_1_2_full': const IconData(0xf242, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battery_1_4_full': const IconData(0xf243, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battery_empty': const IconData(0xf244, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mouse_pointer': const IconData(0xf245, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'i_beam_cursor': const IconData(0xf246, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'object_group': const IconData(0xf247, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'object_ungroup': const IconData(0xf248, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sticky_note': const IconData(0xf249, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jcb_credit_card': const IconData(0xf24b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'diner_s_club_credit_card': const IconData(0xf24c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clone': const IconData(0xf24d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'balance_scale': const IconData(0xf24e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hourglass_start': const IconData(0xf251, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hourglass_half': const IconData(0xf252, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hourglass_end': const IconData(0xf253, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hourglass': const IconData(0xf254, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rock__hand_': const IconData(0xf255, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paper__hand_': const IconData(0xf256, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'scissors__hand_': const IconData(0xf257, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lizard__hand_': const IconData(0xf258, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spock__hand_': const IconData(0xf259, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pointer__hand_': const IconData(0xf25a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'peace__hand_': const IconData(0xf25b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trademark': const IconData(0xf25c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'registered_trademark': const IconData(0xf25d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons': const IconData(0xf25e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gg_currency': const IconData(0xf260, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gg_currency_circle': const IconData(0xf261, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tripadvisor': const IconData(0xf262, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'odnoklassniki': const IconData(0xf263, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'odnoklassniki_square': const IconData(0xf264, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'get_pocket': const IconData(0xf265, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wikipedia_w': const IconData(0xf266, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'safari': const IconData(0xf267, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chrome': const IconData(0xf268, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'firefox': const IconData(0xf269, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'opera': const IconData(0xf26a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'internet_explorer': const IconData(0xf26b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'television': const IconData(0xf26c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'contao': const IconData(0xf26d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'px500': const IconData(0xf26e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'amazon': const IconData(0xf270, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_plus': const IconData(0xf271, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_minus': const IconData(0xf272, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_times': const IconData(0xf273, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_check': const IconData(0xf274, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'industry': const IconData(0xf275, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map_pin': const IconData(0xf276, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map_signs': const IconData(0xf277, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map': const IconData(0xf279, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_comment': const IconData(0xf27a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'houzz': const IconData(0xf27c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vimeo': const IconData(0xf27d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'font_awesome_black_tie': const IconData(0xf27e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fonticons': const IconData(0xf280, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reddit_alien': const IconData(0xf281, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'edge_browser': const IconData(0xf282, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'codie_pie': const IconData(0xf284, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'modx': const IconData(0xf285, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fort_awesome': const IconData(0xf286, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'usb': const IconData(0xf287, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'product_hunt': const IconData(0xf288, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mixcloud': const IconData(0xf289, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'scribd': const IconData(0xf28a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pause_circle': const IconData(0xf28b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stop_circle': const IconData(0xf28d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shopping_bag': const IconData(0xf290, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shopping_basket': const IconData(0xf291, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hashtag': const IconData(0xf292, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bluetooth_2': const IconData(0xf293, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bluetooth': const IconData(0xf294, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'percent': const IconData(0xf295, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gitlab': const IconData(0xf296, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wpbeginner': const IconData(0xf297, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wpforms': const IconData(0xf298, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envira_gallery': const IconData(0xf299, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'universal_access': const IconData(0xf29a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blind': const IconData(0xf29d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'audio_description': const IconData(0xf29e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phone_volume': const IconData(0xf2a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'braille': const IconData(0xf2a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'assistive_listening_systems': const IconData(0xf2a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'american_sign_language_interpreting': const IconData(0xf2a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'deaf': const IconData(0xf2a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'glide': const IconData(0xf2a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'glide_g': const IconData(0xf2a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sign_language': const IconData(0xf2a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'low_vision': const IconData(0xf2a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video': const IconData(0xf2a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video_square': const IconData(0xf2aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snapchat': const IconData(0xf2ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snapchat_ghost': const IconData(0xf2ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snapchat_square': const IconData(0xf2ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pied_piper_logo': const IconData(0xf2ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'first_order': const IconData(0xf2b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yoast': const IconData(0xf2b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'themeisle': const IconData(0xf2b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_plus': const IconData(0xf2b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'font_awesome': const IconData(0xf2b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'handshake': const IconData(0xf2b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope_open': const IconData(0xf2b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'linode': const IconData(0xf2b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'address_book': const IconData(0xf2b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'address_card': const IconData(0xf2bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_circle': const IconData(0xf2bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'identification_badge': const IconData(0xf2c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'identification_card': const IconData(0xf2c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quora': const IconData(0xf2c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'free_code_camp': const IconData(0xf2c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'telegram': const IconData(0xf2c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer_full': const IconData(0xf2c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer_3_4_full': const IconData(0xf2c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer_1_2_full': const IconData(0xf2c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer_1_4_full': const IconData(0xf2ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer_empty': const IconData(0xf2cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shower': const IconData(0xf2cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bath': const IconData(0xf2cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'podcast': const IconData(0xf2ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_maximize': const IconData(0xf2d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_minimize': const IconData(0xf2d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_restore': const IconData(0xf2d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bandcamp': const IconData(0xf2d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grav': const IconData(0xf2d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'etsy': const IconData(0xf2d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'imdb': const IconData(0xf2d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ravelry': const IconData(0xf2d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sellcast': const IconData(0xf2da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'microchip': const IconData(0xf2db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snowflake': const IconData(0xf2dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'superpowers': const IconData(0xf2dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wpexplorer': const IconData(0xf2de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'meetup': const IconData(0xf2e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'utensil_spoon': const IconData(0xf2e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'utensils': const IconData(0xf2e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_undo': const IconData(0xf2ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_trash': const IconData(0xf2ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sync': const IconData(0xf2f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stopwatch': const IconData(0xf2f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sign_out': const IconData(0xf2f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sign_in': const IconData(0xf2f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_redo': const IconData(0xf2f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'poo': const IconData(0xf2fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'images': const IconData(0xf302, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_pencil': const IconData(0xf303, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pen': const IconData(0xf304, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_pen': const IconData(0xf305, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_long_arrow_down': const IconData(0xf309, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_long_arrow_left': const IconData(0xf30a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_long_arrow_right': const IconData(0xf30b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_long_arrow_up': const IconData(0xf30c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_expand_arrows': const IconData(0xf31e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clipboard': const IconData(0xf328, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrows_horizontal': const IconData(0xf337, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrows_vertical': const IconData(0xf338, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_down': const IconData(0xf358, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_left': const IconData(0xf359, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_right': const IconData(0xf35a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_arrow_circle_up': const IconData(0xf35b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_font_awesome': const IconData(0xf35c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_external_link': const IconData(0xf35d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_external_link_square': const IconData(0xf360, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_exchange': const IconData(0xf362, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'accessible_icon': const IconData(0xf368, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'accusoft': const IconData(0xf369, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'adversal': const IconData(0xf36a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'affiliatetheme': const IconData(0xf36b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'algolia': const IconData(0xf36c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'amilia': const IconData(0xf36d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angry_creative': const IconData(0xf36e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'app_store': const IconData(0xf36f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ios_app_store': const IconData(0xf370, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'apper_systems_ab': const IconData(0xf371, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'asymmetrik__ltd_': const IconData(0xf372, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'audible': const IconData(0xf373, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'avianex': const IconData(0xf374, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'amazon_web_services__aws_': const IconData(0xf375, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bimobject': const IconData(0xf378, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bitcoin': const IconData(0xf379, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bity': const IconData(0xf37a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blackberry': const IconData(0xf37b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blogger': const IconData(0xf37c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blogger_b': const IconData(0xf37d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'b_rom_bel_experte_gmbh___co__kg_': const IconData(0xf37f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'centercode': const IconData(0xf380, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_cloud_download': const IconData(0xf381, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_cloud_upload': const IconData(0xf382, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloudscale_ch': const IconData(0xf383, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloudsmith': const IconData(0xf384, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloudversify': const IconData(0xf385, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cpanel': const IconData(0xf388, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_css3_logo': const IconData(0xf38b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cuttlefish': const IconData(0xf38c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dungeons___dragons': const IconData(0xf38d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'deploy_dog': const IconData(0xf38e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'deskpro': const IconData(0xf38f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'digital_ocean': const IconData(0xf391, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'discord': const IconData(0xf392, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'discourse': const IconData(0xf393, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dochub': const IconData(0xf394, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'docker': const IconData(0xf395, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'draft2digital': const IconData(0xf396, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dribbble_square': const IconData(0xf397, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dyalog': const IconData(0xf399, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'earlybirds': const IconData(0xf39a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'erlang': const IconData(0xf39d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'facebook_f': const IconData(0xf39e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'facebook_messenger': const IconData(0xf39f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'firstdraft': const IconData(0xf3a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fonticons_fi': const IconData(0xf3a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_fort_awesome': const IconData(0xf3a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'freebsd': const IconData(0xf3a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gem': const IconData(0xf3a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gitkraken': const IconData(0xf3a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gofore': const IconData(0xf3a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'goodreads': const IconData(0xf3a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'goodreads_g': const IconData(0xf3a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_drive': const IconData(0xf3aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'google_play': const IconData(0xf3ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gripfire__inc_': const IconData(0xf3ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grunt': const IconData(0xf3ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gulp': const IconData(0xf3ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hacker_news_square': const IconData(0xf3af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hireahelper': const IconData(0xf3b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hotjar': const IconData(0xf3b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hubspot': const IconData(0xf3b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'itunes': const IconData(0xf3b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'itunes_note': const IconData(0xf3b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jenkis': const IconData(0xf3b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'joget': const IconData(0xf3b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'javascript__js_': const IconData(0xf3b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'javascript__js__square': const IconData(0xf3b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'keycdn': const IconData(0xf3ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kickstarter': const IconData(0xf3bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kickstarter_k': const IconData(0xf3bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laravel': const IconData(0xf3bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_level_down': const IconData(0xf3be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_level_up': const IconData(0xf3bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'line': const IconData(0xf3c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lock_open': const IconData(0xf3c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'lyft': const IconData(0xf3c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'magento': const IconData(0xf3c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_map_marker': const IconData(0xf3c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medapps': const IconData(0xf3c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medium_m': const IconData(0xf3c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mrt': const IconData(0xf3c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_microphone': const IconData(0xf3c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'microsoft': const IconData(0xf3ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mix': const IconData(0xf3cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mizuni': const IconData(0xf3cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_mobile': const IconData(0xf3cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'monero': const IconData(0xf3d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_money_bill': const IconData(0xf3d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'napster': const IconData(0xf3d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'node_js_js': const IconData(0xf3d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'npm': const IconData(0xf3d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ns8': const IconData(0xf3d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'nutritionix': const IconData(0xf3d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'page4_corporation': const IconData(0xf3d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'palfed': const IconData(0xf3d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'patreon': const IconData(0xf3d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'periscope': const IconData(0xf3da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phabricator': const IconData(0xf3db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phoenix_framework': const IconData(0xf3dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phone_slash': const IconData(0xf3dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'playstation': const IconData(0xf3df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'portrait': const IconData(0xf3e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pushed': const IconData(0xf3e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'python': const IconData(0xf3e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'red_river': const IconData(0xf3e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wpressr': const IconData(0xf3e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reply': const IconData(0xf3e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'replyd': const IconData(0xf3e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'resolving': const IconData(0xf3e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rocket_chat': const IconData(0xf3e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rockrms': const IconData(0xf3e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'schlix': const IconData(0xf3ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'searchengin': const IconData(0xf3eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'servicestack': const IconData(0xf3ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_shield': const IconData(0xf3ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sistrix': const IconData(0xf3ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'slack_hashtag': const IconData(0xf3ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'speakap': const IconData(0xf3f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'staylinked': const IconData(0xf3f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'steam_symbol': const IconData(0xf3f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sticker_mule': const IconData(0xf3f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'studio_vinari': const IconData(0xf3f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'supple': const IconData(0xf3f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_tablet': const IconData(0xf3fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_tachometer': const IconData(0xf3fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'telegram_plane': const IconData(0xf3fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_ticket': const IconData(0xf3ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'uber': const IconData(0xf402, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'uikit': const IconData(0xf403, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'uniregistry': const IconData(0xf404, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'untappd': const IconData(0xf405, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_user': const IconData(0xf406, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'us_sunnah_foundation': const IconData(0xf407, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vaadin': const IconData(0xf408, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'viber': const IconData(0xf409, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vimeo_2': const IconData(0xf40a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vnv': const IconData(0xf40b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'what_s_app_square': const IconData(0xf40c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'whmcs': const IconData(0xf40d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'window_close': const IconData(0xf410, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wordpress_simple': const IconData(0xf411, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'xbox': const IconData(0xf412, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yandex': const IconData(0xf413, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yandex_international': const IconData(0xf414, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'apple_pay': const IconData(0xf415, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'apple_pay_credit_card': const IconData(0xf416, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fly': const IconData(0xf417, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'node_js': const IconData(0xf419, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'open_source_initiative': const IconData(0xf41a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'react': const IconData(0xf41b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'autoprefixer': const IconData(0xf41c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'less': const IconData(0xf41d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sass': const IconData(0xf41e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vue_js': const IconData(0xf41f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angular': const IconData(0xf420, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'aviato': const IconData(0xf421, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ember': const IconData(0xf423, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'font_awesome_flag': const IconData(0xf425, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gitter': const IconData(0xf426, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hooli': const IconData(0xf427, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'strava': const IconData(0xf428, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stripe': const IconData(0xf429, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stripe_s': const IconData(0xf42a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'typo3': const IconData(0xf42b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'amazon_pay': const IconData(0xf42c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'amazon_pay_credit_card': const IconData(0xf42d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ethereum': const IconData(0xf42e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'korvue': const IconData(0xf42f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'elementor': const IconData(0xf430, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'youtube_square': const IconData(0xf431, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'baseball_ball': const IconData(0xf433, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'basketball_ball': const IconData(0xf434, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bowling_ball': const IconData(0xf436, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess': const IconData(0xf439, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_bishop': const IconData(0xf43a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_board': const IconData(0xf43c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_king': const IconData(0xf43f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_knight': const IconData(0xf441, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_pawn': const IconData(0xf443, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_queen': const IconData(0xf445, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chess_rook': const IconData(0xf447, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dumbbell': const IconData(0xf44b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flipboard': const IconData(0xf44d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'football_ball': const IconData(0xf44e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'golf_ball': const IconData(0xf450, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hips': const IconData(0xf452, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hockey_puck': const IconData(0xf453, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'php': const IconData(0xf457, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quidditch': const IconData(0xf458, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quinscape': const IconData(0xf459, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'square_full': const IconData(0xf45c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'table_tennis': const IconData(0xf45d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'volleyball_ball': const IconData(0xf45f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'allergies': const IconData(0xf461, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'band_aid': const IconData(0xf462, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'box': const IconData(0xf466, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'boxes': const IconData(0xf468, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medical_briefcase': const IconData(0xf469, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'burn': const IconData(0xf46a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'capsules': const IconData(0xf46b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clipboard_with_check': const IconData(0xf46c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'clipboard_list': const IconData(0xf46d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'diagnoses': const IconData(0xf470, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dna': const IconData(0xf471, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dolly': const IconData(0xf472, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dolly_flatbed': const IconData(0xf474, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medical_file': const IconData(0xf477, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_medical_file': const IconData(0xf478, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'first_aid': const IconData(0xf479, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_hospital': const IconData(0xf47d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hospital_symbol': const IconData(0xf47e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_identification_card': const IconData(0xf47f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medical_notes': const IconData(0xf481, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pallet': const IconData(0xf482, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pills': const IconData(0xf484, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'prescription_bottle': const IconData(0xf485, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_prescription_bottle': const IconData(0xf486, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'procedures': const IconData(0xf487, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shipping_fast': const IconData(0xf48b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smoking': const IconData(0xf48d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'syringe': const IconData(0xf48e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tablets': const IconData(0xf490, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'thermometer': const IconData(0xf491, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vial': const IconData(0xf492, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vials': const IconData(0xf493, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'warehouse': const IconData(0xf494, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'weight': const IconData(0xf496, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'x_ray': const IconData(0xf497, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'box_open': const IconData(0xf49e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment_dots': const IconData(0xf4ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment_slash': const IconData(0xf4b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'couch': const IconData(0xf4b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'donate': const IconData(0xf4b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dove': const IconData(0xf4ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_holding': const IconData(0xf4bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_holding_heart': const IconData(0xf4be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_holding_us_dollar': const IconData(0xf4c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hands': const IconData(0xf4c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'helping_hands': const IconData(0xf4c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'parachute_box': const IconData(0xf4cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'people_carry': const IconData(0xf4ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'piggy_bank': const IconData(0xf4d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'readme': const IconData(0xf4d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ribbon': const IconData(0xf4d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'route': const IconData(0xf4d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'seedling': const IconData(0xf4d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sign': const IconData(0xf4d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'winking_face': const IconData(0xf4da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tape': const IconData(0xf4db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'truck_loading': const IconData(0xf4de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'truck_moving': const IconData(0xf4df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'video_slash': const IconData(0xf4e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wine_glass': const IconData(0xf4e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'java': const IconData(0xf4e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pied_piper_hat': const IconData(0xf4e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_attribution': const IconData(0xf4e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_noncommercial': const IconData(0xf4e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_right_1':
+      const IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rock__hand__1':
+      const IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_rolling_eyes_1':
+      const IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_trash_1':
+      const IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_up_1':
+      const IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eye_slash_1':
+      const IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'neutral_face_1':
+      const IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map_1':
+      const IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'building_1':
+      const IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'copy_1':
+      const IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dot_circle_1':
+      const IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_with_big_eyes_1':
+      const IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_tears_of_joy_1':
+      const IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_half_1':
+      const IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'audio_file_1':
+      const IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_with_smiling_eyes_1':
+      const IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smiling_face_1':
+      const IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_maximize_1':
+      const IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'loudly_crying_face_1':
+      const IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sticky_note_1':
+      const IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_restore_1':
+      const IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angry_face_1':
+      const IconData(0xe815, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_1':
+      const IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'address_card_1':
+      const IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment_1':
+      const IconData(0xe818, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'object_ungroup_1':
+      const IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'winking_face_1':
+      const IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_close_1':
+      const IconData(0xe81b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video_file_1':
+      const IconData(0xe81c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope_1':
+      const IconData(0xe81d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hushed_face_1':
+      const IconData(0xe81e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_tongue_1':
+      const IconData(0xe81f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_down_1':
+      const IconData(0xe820, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pause_circle_1':
+      const IconData(0xe821, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder_open_1':
+      const IconData(0xe822, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder_1':
+      const IconData(0xe823, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flag_1':
+      const IconData(0xe824, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_right_1':
+      const IconData(0xe825, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'minus_square_1':
+      const IconData(0xe826, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_down_1':
+      const IconData(0xe827, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'excel_file_1':
+      const IconData(0xe828, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_left_1':
+      const IconData(0xe829, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pointer__hand__1':
+      const IconData(0xe82a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laugh_face_with_beaming_eyes_1':
+      const IconData(0xe82b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snowflake_1':
+      const IconData(0xe82c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_struck_1':
+      const IconData(0xe82d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stop_circle_1':
+      const IconData(0xe82e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comments_1':
+      const IconData(0xe82f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'closed_captioning_1':
+      const IconData(0xe830, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thumbs_down_1':
+      const IconData(0xe831, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_winking_face_1':
+      const IconData(0xe832, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'images_1':
+      const IconData(0xe833, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'compass_1':
+      const IconData(0xe834, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'code_file_1':
+      const IconData(0xe835, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'squinting_face_with_tongue_1':
+      const IconData(0xe836, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clipboard_1':
+      const IconData(0xe837, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'newspaper_1':
+      const IconData(0xe838, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_left_1':
+      const IconData(0xe839, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'object_group_1':
+      const IconData(0xe83a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'image_1':
+      const IconData(0xe83b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'keyboard_1':
+      const IconData(0xe83c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_squinting_face_1':
+      const IconData(0xe83d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_down_1':
+      const IconData(0xe83e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gem_1':
+      const IconData(0xe83f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kissing_face_with_smiling_eyes_1':
+      const IconData(0xe840, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'address_book_1':
+      const IconData(0xe841, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_without_mouth_1':
+      const IconData(0xe842, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paper_plane_1':
+      const IconData(0xe843, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_up_1':
+      const IconData(0xe844, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'play_circle_1':
+      const IconData(0xe845, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'image_file_1':
+      const IconData(0xe846, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dizzy_face_1':
+      const IconData(0xe847, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laughing_winking_face_1':
+      const IconData(0xe848, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_money_bill_1':
+      const IconData(0xe849, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_times_1':
+      const IconData(0xe84a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rolling_on_the_floor_laughing_1':
+      const IconData(0xe84b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'times_circle_1':
+      const IconData(0xe84c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_plus_1':
+      const IconData(0xe84d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crying_face_1':
+      const IconData(0xe84e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'powerpoint_file_1':
+      const IconData(0xe84f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hdd_1':
+      const IconData(0xe850, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hourglass_1':
+      const IconData(0xe851, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'credit_card_1':
+      const IconData(0xe852, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lemon_1':
+      const IconData(0xe853, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bell_slash_1':
+      const IconData(0xe854, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_grinning_face_1':
+      const IconData(0xe855, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_right_1':
+      const IconData(0xe856, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'archive_file_1':
+      const IconData(0xe857, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lizard__hand__1':
+      const IconData(0xe858, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laughing_squinting_face_1':
+      const IconData(0xe859, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_1':
+      const IconData(0xe85a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thumbs_up_1':
+      const IconData(0xe85b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hospital_1':
+      const IconData(0xe85c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kissing_face_1':
+      const IconData(0xe85d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bar_chart_1':
+      const IconData(0xe85e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_blowing_a_kiss_1':
+      const IconData(0xe85f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'heart_1':
+      const IconData(0xe860, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_comment_1':
+      const IconData(0xe861, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plus_square_1':
+      const IconData(0xe862, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_list_1':
+      const IconData(0xe863, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smiling_face_with_heart_eyes_1':
+      const IconData(0xe864, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_left_1':
+      const IconData(0xe865, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'frowning_face_with_open_mouth_1':
+      const IconData(0xe866, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tired_face_1':
+      const IconData(0xe867, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'peace__hand__1':
+      const IconData(0xe868, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_minus_1':
+      const IconData(0xe869, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lightbulb_1':
+      const IconData(0xe86a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'check_square_1':
+      const IconData(0xe86b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_1':
+      const IconData(0xe86c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spock__hand__1':
+      const IconData(0xe86d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'identification_card_1':
+      const IconData(0xe86e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_check_1':
+      const IconData(0xe86f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'moon_1':
+      const IconData(0xe870, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_1':
+      const IconData(0xe871, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_1':
+      const IconData(0xe872, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clock_1':
+      const IconData(0xe873, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sun_1':
+      const IconData(0xe874, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_up_1':
+      const IconData(0xe875, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_circle_1':
+      const IconData(0xe876, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope_open_1':
+      const IconData(0xe877, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'edit_1':
+      const IconData(0xe878, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'circle_1':
+      const IconData(0xe879, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'word_file_1':
+      const IconData(0xe87a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_file_1':
+      const IconData(0xe87b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flushed_face_1':
+      const IconData(0xe87c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'life_ring_1':
+      const IconData(0xe87d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'beaming_face_with_smiling_eyes_1':
+      const IconData(0xe87e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'square_1':
+      const IconData(0xe87f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'question_circle_1':
+      const IconData(0xe880, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eye_1':
+      const IconData(0xe881, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pdf_file_1':
+      const IconData(0xe882, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'frowning_face_1':
+      const IconData(0xe883, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_minimize_1':
+      const IconData(0xe884, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'registered_trademark_1':
+      const IconData(0xe885, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment_dots_1':
+      const IconData(0xe886, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'winking_face_with_tongue_1':
+      const IconData(0xe887, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'futbol_1':
+      const IconData(0xe888, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clone_1':
+      const IconData(0xe889, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'share_square_1':
+      const IconData(0xe88a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'copyright_1':
+      const IconData(0xe88b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bell_1':
+      const IconData(0xe88c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'identification_badge_1':
+      const IconData(0xe88d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paper__hand__1':
+      const IconData(0xe88e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'scissors__hand__1':
+      const IconData(0xe88f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bookmark_1':
+      const IconData(0xe890, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grimacing_face_1':
+      const IconData(0xe891, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'check_circle_1':
+      const IconData(0xe892, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_calendar_1':
+      const IconData(0xe893, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'handshake_1':
+      const IconData(0xe894, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'martini_glass':
+      const IconData(0xf000, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'music':
+      const IconData(0xf001, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'search':
+      const IconData(0xf002, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'heart':
+      const IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star':
+      const IconData(0xf005, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user':
+      const IconData(0xf007, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'film':
+      const IconData(0xf008, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'th_large':
+      const IconData(0xf009, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'th':
+      const IconData(0xf00a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'th_list':
+      const IconData(0xf00b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'check':
+      const IconData(0xf00c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'times':
+      const IconData(0xf00d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'search_plus':
+      const IconData(0xf00e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'search_minus':
+      const IconData(0xf010, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'power_off':
+      const IconData(0xf011, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'signal':
+      const IconData(0xf012, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cog':
+      const IconData(0xf013, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'home':
+      const IconData(0xf015, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clock':
+      const IconData(0xf017, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'road':
+      const IconData(0xf018, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'download':
+      const IconData(0xf019, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'inbox':
+      const IconData(0xf01c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'redo':
+      const IconData(0xf01e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sync_icon':
+      const IconData(0xf021, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_list':
+      const IconData(0xf022, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lock':
+      const IconData(0xf023, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flag':
+      const IconData(0xf024, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'headphones':
+      const IconData(0xf025, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'volume_off':
+      const IconData(0xf026, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'volume_down':
+      const IconData(0xf027, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'volume_up':
+      const IconData(0xf028, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'qrcode':
+      const IconData(0xf029, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'barcode':
+      const IconData(0xf02a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tag':
+      const IconData(0xf02b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tags':
+      const IconData(0xf02c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'book':
+      const IconData(0xf02d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bookmark':
+      const IconData(0xf02e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'print':
+      const IconData(0xf02f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'camera':
+      const IconData(0xf030, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'font':
+      const IconData(0xf031, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bold':
+      const IconData(0xf032, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'italic':
+      const IconData(0xf033, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'text_height':
+      const IconData(0xf034, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'text_width':
+      const IconData(0xf035, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'align_left':
+      const IconData(0xf036, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'align_center':
+      const IconData(0xf037, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'align_right':
+      const IconData(0xf038, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'align_justify':
+      const IconData(0xf039, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'list':
+      const IconData(0xf03a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'outdent':
+      const IconData(0xf03b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'indent':
+      const IconData(0xf03c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video_1':
+      const IconData(0xf03d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'image':
+      const IconData(0xf03e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map_marker':
+      const IconData(0xf041, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'adjust':
+      const IconData(0xf042, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tint':
+      const IconData(0xf043, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'edit':
+      const IconData(0xf044, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'step_backward':
+      const IconData(0xf048, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fast_backward':
+      const IconData(0xf049, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'backward':
+      const IconData(0xf04a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'play':
+      const IconData(0xf04b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pause':
+      const IconData(0xf04c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stop':
+      const IconData(0xf04d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'forward':
+      const IconData(0xf04e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fast_forward':
+      const IconData(0xf050, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'step_forward':
+      const IconData(0xf051, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eject':
+      const IconData(0xf052, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_left':
+      const IconData(0xf053, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_right':
+      const IconData(0xf054, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plus_circle':
+      const IconData(0xf055, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'minus_circle':
+      const IconData(0xf056, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'times_circle':
+      const IconData(0xf057, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'check_circle':
+      const IconData(0xf058, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'question_circle':
+      const IconData(0xf059, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'info_circle':
+      const IconData(0xf05a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crosshairs':
+      const IconData(0xf05b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ban':
+      const IconData(0xf05e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_left':
+      const IconData(0xf060, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_right':
+      const IconData(0xf061, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_up':
+      const IconData(0xf062, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_down':
+      const IconData(0xf063, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'share':
+      const IconData(0xf064, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'expand':
+      const IconData(0xf065, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'compress':
+      const IconData(0xf066, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plus':
+      const IconData(0xf067, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'minus':
+      const IconData(0xf068, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'asterisk':
+      const IconData(0xf069, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'exclamation_circle':
+      const IconData(0xf06a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gift':
+      const IconData(0xf06b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'leaf':
+      const IconData(0xf06c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fire':
+      const IconData(0xf06d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eye':
+      const IconData(0xf06e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eye_slash':
+      const IconData(0xf070, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'exclamation_triangle':
+      const IconData(0xf071, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plane':
+      const IconData(0xf072, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_calendar':
+      const IconData(0xf073, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'random':
+      const IconData(0xf074, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment':
+      const IconData(0xf075, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'magnet':
+      const IconData(0xf076, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_up':
+      const IconData(0xf077, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_down':
+      const IconData(0xf078, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'retweet':
+      const IconData(0xf079, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shopping_cart':
+      const IconData(0xf07a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder':
+      const IconData(0xf07b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder_open':
+      const IconData(0xf07c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bar_chart':
+      const IconData(0xf080, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'twitter_square':
+      const IconData(0xf081, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'facebook_square':
+      const IconData(0xf082, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'retro_camera':
+      const IconData(0xf083, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'key':
+      const IconData(0xf084, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cogs':
+      const IconData(0xf085, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comments':
+      const IconData(0xf086, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_half':
+      const IconData(0xf089, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'linkedin':
+      const IconData(0xf08c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thumbtack':
+      const IconData(0xf08d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trophy':
+      const IconData(0xf091, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'github_square':
+      const IconData(0xf092, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'upload':
+      const IconData(0xf093, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lemon':
+      const IconData(0xf094, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phone':
+      const IconData(0xf095, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phone_square':
+      const IconData(0xf098, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'twitter':
+      const IconData(0xf099, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'facebook':
+      const IconData(0xf09a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'github':
+      const IconData(0xf09b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'unlock':
+      const IconData(0xf09c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'credit_card':
+      const IconData(0xf09d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rss':
+      const IconData(0xf09e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hdd':
+      const IconData(0xf0a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bullhorn':
+      const IconData(0xf0a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'certificate':
+      const IconData(0xf0a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_right':
+      const IconData(0xf0a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_left':
+      const IconData(0xf0a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_up':
+      const IconData(0xf0a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_pointing_down':
+      const IconData(0xf0a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_circle_left':
+      const IconData(0xf0a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_circle_right':
+      const IconData(0xf0a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_circle_up':
+      const IconData(0xf0aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'arrow_circle_down':
+      const IconData(0xf0ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'globe':
+      const IconData(0xf0ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wrench':
+      const IconData(0xf0ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tasks':
+      const IconData(0xf0ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'filter':
+      const IconData(0xf0b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'briefcase':
+      const IconData(0xf0b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrows':
+      const IconData(0xf0b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'users':
+      const IconData(0xf0c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'link':
+      const IconData(0xf0c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud':
+      const IconData(0xf0c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flask':
+      const IconData(0xf0c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cut':
+      const IconData(0xf0c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'copy':
+      const IconData(0xf0c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paperclip':
+      const IconData(0xf0c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'save':
+      const IconData(0xf0c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'square':
+      const IconData(0xf0c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bars':
+      const IconData(0xf0c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'list_ul':
+      const IconData(0xf0ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'list_ol':
+      const IconData(0xf0cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'strikethrough':
+      const IconData(0xf0cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'underline':
+      const IconData(0xf0cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'table':
+      const IconData(0xf0ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'magic':
+      const IconData(0xf0d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'truck':
+      const IconData(0xf0d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pinterest':
+      const IconData(0xf0d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pinterest_square':
+      const IconData(0xf0d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_plus_square':
+      const IconData(0xf0d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_plus_g':
+      const IconData(0xf0d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'money_bill':
+      const IconData(0xf0d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_down':
+      const IconData(0xf0d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_up':
+      const IconData(0xf0d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_left':
+      const IconData(0xf0d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_right':
+      const IconData(0xf0da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'columns':
+      const IconData(0xf0db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort':
+      const IconData(0xf0dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_down__descending_':
+      const IconData(0xf0dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_up__ascending_':
+      const IconData(0xf0de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope':
+      const IconData(0xf0e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'linkedin_in':
+      const IconData(0xf0e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'undo':
+      const IconData(0xf0e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gavel':
+      const IconData(0xf0e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lightning_bolt':
+      const IconData(0xf0e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sitemap':
+      const IconData(0xf0e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'umbrella':
+      const IconData(0xf0e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paste':
+      const IconData(0xf0ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lightbulb':
+      const IconData(0xf0eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'doctor':
+      const IconData(0xf0f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stethoscope':
+      const IconData(0xf0f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'suitcase':
+      const IconData(0xf0f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bell':
+      const IconData(0xf0f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'coffee':
+      const IconData(0xf0f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hospital':
+      const IconData(0xf0f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ambulance':
+      const IconData(0xf0f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medkit':
+      const IconData(0xf0fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fighter_jet':
+      const IconData(0xf0fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'beer':
+      const IconData(0xf0fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'h_square':
+      const IconData(0xf0fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plus_square':
+      const IconData(0xf0fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_double_left':
+      const IconData(0xf100, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_double_right':
+      const IconData(0xf101, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_double_up':
+      const IconData(0xf102, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_double_down':
+      const IconData(0xf103, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_left':
+      const IconData(0xf104, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_right':
+      const IconData(0xf105, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_up':
+      const IconData(0xf106, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angle_down':
+      const IconData(0xf107, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'desktop':
+      const IconData(0xf108, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laptop':
+      const IconData(0xf109, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tablet':
+      const IconData(0xf10a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mobile_phone':
+      const IconData(0xf10b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quote_left':
+      const IconData(0xf10d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quote_right':
+      const IconData(0xf10e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spinner':
+      const IconData(0xf110, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'circle':
+      const IconData(0xf111, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_github':
+      const IconData(0xf113, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smiling_face':
+      const IconData(0xf118, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'frowning_face':
+      const IconData(0xf119, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'neutral_face':
+      const IconData(0xf11a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gamepad':
+      const IconData(0xf11b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'keyboard':
+      const IconData(0xf11c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flag_checkered':
+      const IconData(0xf11e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'terminal':
+      const IconData(0xf120, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'code':
+      const IconData(0xf121, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reply_all':
+      const IconData(0xf122, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'location_arrow':
+      const IconData(0xf124, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crop':
+      const IconData(0xf125, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'code_branch':
+      const IconData(0xf126, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'unlink':
+      const IconData(0xf127, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'question':
+      const IconData(0xf128, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'info':
+      const IconData(0xf129, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'exclamation':
+      const IconData(0xf12a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'superscript':
+      const IconData(0xf12b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'subscript':
+      const IconData(0xf12c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eraser':
+      const IconData(0xf12d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'puzzle_piece':
+      const IconData(0xf12e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'microphone':
+      const IconData(0xf130, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'microphone_slash':
+      const IconData(0xf131, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar':
+      const IconData(0xf133, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fire_extinguisher':
+      const IconData(0xf134, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rocket':
+      const IconData(0xf135, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'maxcdn':
+      const IconData(0xf136, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_circle_left':
+      const IconData(0xf137, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_circle_right':
+      const IconData(0xf138, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_circle_up':
+      const IconData(0xf139, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chevron_circle_down':
+      const IconData(0xf13a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'html_5_logo':
+      const IconData(0xf13b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'css_3_logo':
+      const IconData(0xf13c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'anchor':
+      const IconData(0xf13d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_unlock':
+      const IconData(0xf13e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bullseye':
+      const IconData(0xf140, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'horizontal_ellipsis':
+      const IconData(0xf141, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vertical_ellipsis':
+      const IconData(0xf142, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rss_square':
+      const IconData(0xf143, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'play_circle':
+      const IconData(0xf144, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'minus_square':
+      const IconData(0xf146, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'check_square':
+      const IconData(0xf14a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pen_square':
+      const IconData(0xf14b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'share_square':
+      const IconData(0xf14d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'compass':
+      const IconData(0xf14e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_down':
+      const IconData(0xf150, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_up':
+      const IconData(0xf151, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_right':
+      const IconData(0xf152, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'euro_sign':
+      const IconData(0xf153, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pound_sign':
+      const IconData(0xf154, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dollar_sign':
+      const IconData(0xf155, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'indian_rupee_sign':
+      const IconData(0xf156, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yen_sign':
+      const IconData(0xf157, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ruble_sign':
+      const IconData(0xf158, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'won_sign':
+      const IconData(0xf159, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'btc':
+      const IconData(0xf15a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file':
+      const IconData(0xf15b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_file':
+      const IconData(0xf15c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_alphabetical_down':
+      const IconData(0xf15d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_alphabetical_up':
+      const IconData(0xf15e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_amount_down':
+      const IconData(0xf160, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_amount_up':
+      const IconData(0xf161, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_numeric_down':
+      const IconData(0xf162, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sort_numeric_up':
+      const IconData(0xf163, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thumbs_up':
+      const IconData(0xf164, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thumbs_down':
+      const IconData(0xf165, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'youtube':
+      const IconData(0xf167, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'xing':
+      const IconData(0xf168, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'xing_square':
+      const IconData(0xf169, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dropbox':
+      const IconData(0xf16b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stack_overflow':
+      const IconData(0xf16c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'instagram':
+      const IconData(0xf16d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flickr':
+      const IconData(0xf16e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'app_net':
+      const IconData(0xf170, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bitbucket':
+      const IconData(0xf171, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tumblr':
+      const IconData(0xf173, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tumblr_square':
+      const IconData(0xf174, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'apple':
+      const IconData(0xf179, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'windows':
+      const IconData(0xf17a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'android':
+      const IconData(0xf17b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'linux':
+      const IconData(0xf17c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dribbble':
+      const IconData(0xf17d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skype':
+      const IconData(0xf17e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'foursquare':
+      const IconData(0xf180, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trello':
+      const IconData(0xf181, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'female':
+      const IconData(0xf182, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'male':
+      const IconData(0xf183, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gratipay__gittip_':
+      const IconData(0xf184, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sun':
+      const IconData(0xf185, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'moon':
+      const IconData(0xf186, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'archive':
+      const IconData(0xf187, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bug':
+      const IconData(0xf188, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vk':
+      const IconData(0xf189, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'weibo':
+      const IconData(0xf18a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'renren':
+      const IconData(0xf18b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pagelines':
+      const IconData(0xf18c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stack_exchange':
+      const IconData(0xf18d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'caret_square_left':
+      const IconData(0xf191, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dot_circle':
+      const IconData(0xf192, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wheelchair':
+      const IconData(0xf193, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vimeo_square':
+      const IconData(0xf194, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'turkish_lira_sign':
+      const IconData(0xf195, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'space_shuttle':
+      const IconData(0xf197, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'slack_logo':
+      const IconData(0xf198, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope_square':
+      const IconData(0xf199, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wordpress_logo':
+      const IconData(0xf19a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'openid':
+      const IconData(0xf19b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'university':
+      const IconData(0xf19c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'graduation_cap':
+      const IconData(0xf19d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yahoo_logo':
+      const IconData(0xf19e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_logo':
+      const IconData(0xf1a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reddit_logo':
+      const IconData(0xf1a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reddit_square':
+      const IconData(0xf1a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stumbleupon_circle':
+      const IconData(0xf1a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stumbleupon_logo':
+      const IconData(0xf1a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'delicious':
+      const IconData(0xf1a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'digg_logo':
+      const IconData(0xf1a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pied_piper_pp_logo__old_':
+      const IconData(0xf1a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_pied_piper_logo':
+      const IconData(0xf1a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'drupal_logo':
+      const IconData(0xf1a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'joomla_logo':
+      const IconData(0xf1aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'language':
+      const IconData(0xf1ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fax':
+      const IconData(0xf1ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'building':
+      const IconData(0xf1ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'child':
+      const IconData(0xf1ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paw':
+      const IconData(0xf1b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cube':
+      const IconData(0xf1b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cubes':
+      const IconData(0xf1b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'behance':
+      const IconData(0xf1b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'behance_square':
+      const IconData(0xf1b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'steam':
+      const IconData(0xf1b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'steam_square':
+      const IconData(0xf1b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'recycle':
+      const IconData(0xf1b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'car':
+      const IconData(0xf1b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'taxi':
+      const IconData(0xf1ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tree':
+      const IconData(0xf1bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spotify':
+      const IconData(0xf1bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'deviantart':
+      const IconData(0xf1bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'soundcloud':
+      const IconData(0xf1be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'database':
+      const IconData(0xf1c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pdf_file':
+      const IconData(0xf1c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'word_file':
+      const IconData(0xf1c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'excel_file':
+      const IconData(0xf1c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'powerpoint_file':
+      const IconData(0xf1c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'image_file':
+      const IconData(0xf1c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'archive_file':
+      const IconData(0xf1c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'audio_file':
+      const IconData(0xf1c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video_file':
+      const IconData(0xf1c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'code_file':
+      const IconData(0xf1c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vine':
+      const IconData(0xf1ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'codepen':
+      const IconData(0xf1cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jsfiddle':
+      const IconData(0xf1cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'life_ring':
+      const IconData(0xf1cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'circle_notched':
+      const IconData(0xf1ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rebel_alliance':
+      const IconData(0xf1d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'galactic_empire':
+      const IconData(0xf1d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'git_square':
+      const IconData(0xf1d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'git':
+      const IconData(0xf1d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hacker_news':
+      const IconData(0xf1d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tencent_weibo':
+      const IconData(0xf1d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'qq':
+      const IconData(0xf1d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'weixin__wechat_':
+      const IconData(0xf1d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paper_plane':
+      const IconData(0xf1d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'history':
+      const IconData(0xf1da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'heading':
+      const IconData(0xf1dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paragraph':
+      const IconData(0xf1dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'horizontal_sliders':
+      const IconData(0xf1de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_share':
+      const IconData(0xf1e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_share_square':
+      const IconData(0xf1e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bomb':
+      const IconData(0xf1e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'futbol':
+      const IconData(0xf1e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tty':
+      const IconData(0xf1e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'binoculars':
+      const IconData(0xf1e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plug':
+      const IconData(0xf1e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'slideshare':
+      const IconData(0xf1e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'twitch':
+      const IconData(0xf1e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yelp':
+      const IconData(0xf1e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'newspaper':
+      const IconData(0xf1ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wifi':
+      const IconData(0xf1eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calculator':
+      const IconData(0xf1ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paypal':
+      const IconData(0xf1ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_wallet':
+      const IconData(0xf1ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'visa_credit_card':
+      const IconData(0xf1f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mastercard_credit_card':
+      const IconData(0xf1f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'discover_credit_card':
+      const IconData(0xf1f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'american_express_credit_card':
+      const IconData(0xf1f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paypal_credit_card':
+      const IconData(0xf1f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stripe_credit_card':
+      const IconData(0xf1f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bell_slash':
+      const IconData(0xf1f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trash':
+      const IconData(0xf1f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'copyright':
+      const IconData(0xf1f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'at':
+      const IconData(0xf1fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'eye_dropper':
+      const IconData(0xf1fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paint_brush':
+      const IconData(0xf1fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'birthday_cake':
+      const IconData(0xf1fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'area_chart':
+      const IconData(0xf1fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pie_chart':
+      const IconData(0xf200, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'line_chart':
+      const IconData(0xf201, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'last_fm':
+      const IconData(0xf202, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'last_fm_square':
+      const IconData(0xf203, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'toggle_off':
+      const IconData(0xf204, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'toggle_on':
+      const IconData(0xf205, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bicycle':
+      const IconData(0xf206, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bus':
+      const IconData(0xf207, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ioxhost':
+      const IconData(0xf208, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angellist':
+      const IconData(0xf209, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'closed_captioning':
+      const IconData(0xf20a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shekel_sign':
+      const IconData(0xf20b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'buysellads':
+      const IconData(0xf20d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'connect_develop':
+      const IconData(0xf20e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dashcube':
+      const IconData(0xf210, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'forumbee':
+      const IconData(0xf211, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'leanpub':
+      const IconData(0xf212, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sellsy':
+      const IconData(0xf213, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shirts_in_bulk':
+      const IconData(0xf214, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'simplybuilt':
+      const IconData(0xf215, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skyatlas':
+      const IconData(0xf216, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'add_to_shopping_cart':
+      const IconData(0xf217, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shopping_cart_arrow_down':
+      const IconData(0xf218, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ship':
+      const IconData(0xf21a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_secret':
+      const IconData(0xf21b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'motorcycle':
+      const IconData(0xf21c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'street_view':
+      const IconData(0xf21d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'heartbeat':
+      const IconData(0xf21e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'venus':
+      const IconData(0xf221, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mars':
+      const IconData(0xf222, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mercury':
+      const IconData(0xf223, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'transgender':
+      const IconData(0xf224, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_transgender':
+      const IconData(0xf225, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'venus_double':
+      const IconData(0xf226, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mars_double':
+      const IconData(0xf227, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'venus_mars':
+      const IconData(0xf228, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mars_stroke':
+      const IconData(0xf229, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mars_stroke_vertical':
+      const IconData(0xf22a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mars_stroke_horizontal':
+      const IconData(0xf22b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'neuter':
+      const IconData(0xf22c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'genderless':
+      const IconData(0xf22d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pinterest_p':
+      const IconData(0xf231, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'what_s_app':
+      const IconData(0xf232, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'server':
+      const IconData(0xf233, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_plus':
+      const IconData(0xf234, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'remove_user':
+      const IconData(0xf235, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bed':
+      const IconData(0xf236, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'viacoin':
+      const IconData(0xf237, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'train':
+      const IconData(0xf238, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'subway':
+      const IconData(0xf239, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medium':
+      const IconData(0xf23a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'y_combinator':
+      const IconData(0xf23b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'optin_monster':
+      const IconData(0xf23c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'opencart':
+      const IconData(0xf23d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'expeditedssl':
+      const IconData(0xf23e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battery_full':
+      const IconData(0xf240, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battery_3_4_full':
+      const IconData(0xf241, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battery_1_2_full':
+      const IconData(0xf242, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battery_1_4_full':
+      const IconData(0xf243, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battery_empty':
+      const IconData(0xf244, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mouse_pointer':
+      const IconData(0xf245, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'i_beam_cursor':
+      const IconData(0xf246, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'object_group':
+      const IconData(0xf247, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'object_ungroup':
+      const IconData(0xf248, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sticky_note':
+      const IconData(0xf249, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jcb_credit_card':
+      const IconData(0xf24b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'diner_s_club_credit_card':
+      const IconData(0xf24c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clone':
+      const IconData(0xf24d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'balance_scale':
+      const IconData(0xf24e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hourglass_start':
+      const IconData(0xf251, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hourglass_half':
+      const IconData(0xf252, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hourglass_end':
+      const IconData(0xf253, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hourglass':
+      const IconData(0xf254, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rock__hand_':
+      const IconData(0xf255, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paper__hand_':
+      const IconData(0xf256, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'scissors__hand_':
+      const IconData(0xf257, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lizard__hand_':
+      const IconData(0xf258, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spock__hand_':
+      const IconData(0xf259, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pointer__hand_':
+      const IconData(0xf25a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'peace__hand_':
+      const IconData(0xf25b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trademark':
+      const IconData(0xf25c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'registered_trademark':
+      const IconData(0xf25d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons':
+      const IconData(0xf25e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gg_currency':
+      const IconData(0xf260, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gg_currency_circle':
+      const IconData(0xf261, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tripadvisor':
+      const IconData(0xf262, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'odnoklassniki':
+      const IconData(0xf263, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'odnoklassniki_square':
+      const IconData(0xf264, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'get_pocket':
+      const IconData(0xf265, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wikipedia_w':
+      const IconData(0xf266, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'safari':
+      const IconData(0xf267, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chrome':
+      const IconData(0xf268, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'firefox':
+      const IconData(0xf269, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'opera':
+      const IconData(0xf26a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'internet_explorer':
+      const IconData(0xf26b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'television':
+      const IconData(0xf26c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'contao':
+      const IconData(0xf26d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'px500':
+      const IconData(0xf26e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'amazon':
+      const IconData(0xf270, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_plus':
+      const IconData(0xf271, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_minus':
+      const IconData(0xf272, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_times':
+      const IconData(0xf273, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_check':
+      const IconData(0xf274, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'industry':
+      const IconData(0xf275, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map_pin':
+      const IconData(0xf276, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map_signs':
+      const IconData(0xf277, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map':
+      const IconData(0xf279, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_comment':
+      const IconData(0xf27a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'houzz':
+      const IconData(0xf27c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vimeo':
+      const IconData(0xf27d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'font_awesome_black_tie':
+      const IconData(0xf27e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fonticons':
+      const IconData(0xf280, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reddit_alien':
+      const IconData(0xf281, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'edge_browser':
+      const IconData(0xf282, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'codie_pie':
+      const IconData(0xf284, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'modx':
+      const IconData(0xf285, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fort_awesome':
+      const IconData(0xf286, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'usb':
+      const IconData(0xf287, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'product_hunt':
+      const IconData(0xf288, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mixcloud':
+      const IconData(0xf289, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'scribd':
+      const IconData(0xf28a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pause_circle':
+      const IconData(0xf28b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stop_circle':
+      const IconData(0xf28d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shopping_bag':
+      const IconData(0xf290, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shopping_basket':
+      const IconData(0xf291, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hashtag':
+      const IconData(0xf292, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bluetooth_2':
+      const IconData(0xf293, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bluetooth':
+      const IconData(0xf294, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'percent':
+      const IconData(0xf295, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gitlab':
+      const IconData(0xf296, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wpbeginner':
+      const IconData(0xf297, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wpforms':
+      const IconData(0xf298, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envira_gallery':
+      const IconData(0xf299, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'universal_access':
+      const IconData(0xf29a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blind':
+      const IconData(0xf29d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'audio_description':
+      const IconData(0xf29e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phone_volume':
+      const IconData(0xf2a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'braille':
+      const IconData(0xf2a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'assistive_listening_systems':
+      const IconData(0xf2a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'american_sign_language_interpreting':
+      const IconData(0xf2a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'deaf':
+      const IconData(0xf2a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'glide':
+      const IconData(0xf2a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'glide_g':
+      const IconData(0xf2a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sign_language':
+      const IconData(0xf2a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'low_vision':
+      const IconData(0xf2a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video':
+      const IconData(0xf2a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video_square':
+      const IconData(0xf2aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snapchat':
+      const IconData(0xf2ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snapchat_ghost':
+      const IconData(0xf2ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snapchat_square':
+      const IconData(0xf2ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pied_piper_logo':
+      const IconData(0xf2ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'first_order':
+      const IconData(0xf2b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yoast':
+      const IconData(0xf2b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'themeisle':
+      const IconData(0xf2b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_plus':
+      const IconData(0xf2b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'font_awesome':
+      const IconData(0xf2b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'handshake':
+      const IconData(0xf2b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope_open':
+      const IconData(0xf2b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'linode':
+      const IconData(0xf2b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'address_book':
+      const IconData(0xf2b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'address_card':
+      const IconData(0xf2bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_circle':
+      const IconData(0xf2bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'identification_badge':
+      const IconData(0xf2c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'identification_card':
+      const IconData(0xf2c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quora':
+      const IconData(0xf2c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'free_code_camp':
+      const IconData(0xf2c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'telegram':
+      const IconData(0xf2c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer_full':
+      const IconData(0xf2c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer_3_4_full':
+      const IconData(0xf2c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer_1_2_full':
+      const IconData(0xf2c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer_1_4_full':
+      const IconData(0xf2ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer_empty':
+      const IconData(0xf2cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shower':
+      const IconData(0xf2cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bath':
+      const IconData(0xf2cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'podcast':
+      const IconData(0xf2ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_maximize':
+      const IconData(0xf2d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_minimize':
+      const IconData(0xf2d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_restore':
+      const IconData(0xf2d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bandcamp':
+      const IconData(0xf2d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grav':
+      const IconData(0xf2d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'etsy':
+      const IconData(0xf2d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'imdb':
+      const IconData(0xf2d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ravelry':
+      const IconData(0xf2d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sellcast':
+      const IconData(0xf2da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'microchip':
+      const IconData(0xf2db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snowflake':
+      const IconData(0xf2dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'superpowers':
+      const IconData(0xf2dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wpexplorer':
+      const IconData(0xf2de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'meetup':
+      const IconData(0xf2e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'utensil_spoon':
+      const IconData(0xf2e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'utensils':
+      const IconData(0xf2e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_undo':
+      const IconData(0xf2ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_trash':
+      const IconData(0xf2ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sync':
+      const IconData(0xf2f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stopwatch':
+      const IconData(0xf2f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sign_out':
+      const IconData(0xf2f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sign_in':
+      const IconData(0xf2f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_redo':
+      const IconData(0xf2f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'poo':
+      const IconData(0xf2fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'images':
+      const IconData(0xf302, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_pencil':
+      const IconData(0xf303, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pen':
+      const IconData(0xf304, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_pen':
+      const IconData(0xf305, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_long_arrow_down':
+      const IconData(0xf309, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_long_arrow_left':
+      const IconData(0xf30a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_long_arrow_right':
+      const IconData(0xf30b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_long_arrow_up':
+      const IconData(0xf30c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_expand_arrows':
+      const IconData(0xf31e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clipboard':
+      const IconData(0xf328, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrows_horizontal':
+      const IconData(0xf337, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrows_vertical':
+      const IconData(0xf338, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_down':
+      const IconData(0xf358, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_left':
+      const IconData(0xf359, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_right':
+      const IconData(0xf35a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_arrow_circle_up':
+      const IconData(0xf35b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_font_awesome':
+      const IconData(0xf35c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_external_link':
+      const IconData(0xf35d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_external_link_square':
+      const IconData(0xf360, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_exchange':
+      const IconData(0xf362, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'accessible_icon':
+      const IconData(0xf368, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'accusoft':
+      const IconData(0xf369, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'adversal':
+      const IconData(0xf36a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'affiliatetheme':
+      const IconData(0xf36b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'algolia':
+      const IconData(0xf36c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'amilia':
+      const IconData(0xf36d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angry_creative':
+      const IconData(0xf36e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'app_store':
+      const IconData(0xf36f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ios_app_store':
+      const IconData(0xf370, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'apper_systems_ab':
+      const IconData(0xf371, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'asymmetrik__ltd_':
+      const IconData(0xf372, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'audible':
+      const IconData(0xf373, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'avianex':
+      const IconData(0xf374, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'amazon_web_services__aws_':
+      const IconData(0xf375, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bimobject':
+      const IconData(0xf378, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bitcoin':
+      const IconData(0xf379, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bity':
+      const IconData(0xf37a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blackberry':
+      const IconData(0xf37b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blogger':
+      const IconData(0xf37c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blogger_b':
+      const IconData(0xf37d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'b_rom_bel_experte_gmbh___co__kg_':
+      const IconData(0xf37f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'centercode':
+      const IconData(0xf380, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_cloud_download':
+      const IconData(0xf381, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_cloud_upload':
+      const IconData(0xf382, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloudscale_ch':
+      const IconData(0xf383, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloudsmith':
+      const IconData(0xf384, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloudversify':
+      const IconData(0xf385, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cpanel':
+      const IconData(0xf388, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_css3_logo':
+      const IconData(0xf38b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cuttlefish':
+      const IconData(0xf38c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dungeons___dragons':
+      const IconData(0xf38d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'deploy_dog':
+      const IconData(0xf38e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'deskpro':
+      const IconData(0xf38f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'digital_ocean':
+      const IconData(0xf391, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'discord':
+      const IconData(0xf392, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'discourse':
+      const IconData(0xf393, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dochub':
+      const IconData(0xf394, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'docker':
+      const IconData(0xf395, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'draft2digital':
+      const IconData(0xf396, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dribbble_square':
+      const IconData(0xf397, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dyalog':
+      const IconData(0xf399, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'earlybirds':
+      const IconData(0xf39a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'erlang':
+      const IconData(0xf39d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'facebook_f':
+      const IconData(0xf39e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'facebook_messenger':
+      const IconData(0xf39f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'firstdraft':
+      const IconData(0xf3a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fonticons_fi':
+      const IconData(0xf3a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_fort_awesome':
+      const IconData(0xf3a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'freebsd':
+      const IconData(0xf3a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gem':
+      const IconData(0xf3a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gitkraken':
+      const IconData(0xf3a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gofore':
+      const IconData(0xf3a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'goodreads':
+      const IconData(0xf3a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'goodreads_g':
+      const IconData(0xf3a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_drive':
+      const IconData(0xf3aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'google_play':
+      const IconData(0xf3ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gripfire__inc_':
+      const IconData(0xf3ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grunt':
+      const IconData(0xf3ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gulp':
+      const IconData(0xf3ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hacker_news_square':
+      const IconData(0xf3af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hireahelper':
+      const IconData(0xf3b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hotjar':
+      const IconData(0xf3b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hubspot':
+      const IconData(0xf3b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'itunes':
+      const IconData(0xf3b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'itunes_note':
+      const IconData(0xf3b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jenkis':
+      const IconData(0xf3b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'joget':
+      const IconData(0xf3b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'javascript__js_':
+      const IconData(0xf3b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'javascript__js__square':
+      const IconData(0xf3b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'keycdn':
+      const IconData(0xf3ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kickstarter':
+      const IconData(0xf3bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kickstarter_k':
+      const IconData(0xf3bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laravel':
+      const IconData(0xf3bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_level_down':
+      const IconData(0xf3be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_level_up':
+      const IconData(0xf3bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'line':
+      const IconData(0xf3c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lock_open':
+      const IconData(0xf3c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'lyft':
+      const IconData(0xf3c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'magento':
+      const IconData(0xf3c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_map_marker':
+      const IconData(0xf3c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medapps':
+      const IconData(0xf3c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medium_m':
+      const IconData(0xf3c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mrt':
+      const IconData(0xf3c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_microphone':
+      const IconData(0xf3c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'microsoft':
+      const IconData(0xf3ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mix':
+      const IconData(0xf3cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mizuni':
+      const IconData(0xf3cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_mobile':
+      const IconData(0xf3cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'monero':
+      const IconData(0xf3d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_money_bill':
+      const IconData(0xf3d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'napster':
+      const IconData(0xf3d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'node_js_js':
+      const IconData(0xf3d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'npm':
+      const IconData(0xf3d4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ns8':
+      const IconData(0xf3d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'nutritionix':
+      const IconData(0xf3d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'page4_corporation':
+      const IconData(0xf3d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'palfed':
+      const IconData(0xf3d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'patreon':
+      const IconData(0xf3d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'periscope':
+      const IconData(0xf3da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phabricator':
+      const IconData(0xf3db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phoenix_framework':
+      const IconData(0xf3dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phone_slash':
+      const IconData(0xf3dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'playstation':
+      const IconData(0xf3df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'portrait':
+      const IconData(0xf3e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pushed':
+      const IconData(0xf3e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'python':
+      const IconData(0xf3e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'red_river':
+      const IconData(0xf3e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wpressr':
+      const IconData(0xf3e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reply':
+      const IconData(0xf3e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'replyd':
+      const IconData(0xf3e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'resolving':
+      const IconData(0xf3e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rocket_chat':
+      const IconData(0xf3e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rockrms':
+      const IconData(0xf3e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'schlix':
+      const IconData(0xf3ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'searchengin':
+      const IconData(0xf3eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'servicestack':
+      const IconData(0xf3ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_shield':
+      const IconData(0xf3ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sistrix':
+      const IconData(0xf3ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'slack_hashtag':
+      const IconData(0xf3ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'speakap':
+      const IconData(0xf3f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'staylinked':
+      const IconData(0xf3f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'steam_symbol':
+      const IconData(0xf3f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sticker_mule':
+      const IconData(0xf3f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'studio_vinari':
+      const IconData(0xf3f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'supple':
+      const IconData(0xf3f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_tablet':
+      const IconData(0xf3fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_tachometer':
+      const IconData(0xf3fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'telegram_plane':
+      const IconData(0xf3fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_ticket':
+      const IconData(0xf3ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'uber':
+      const IconData(0xf402, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'uikit':
+      const IconData(0xf403, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'uniregistry':
+      const IconData(0xf404, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'untappd':
+      const IconData(0xf405, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_user':
+      const IconData(0xf406, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'us_sunnah_foundation':
+      const IconData(0xf407, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vaadin':
+      const IconData(0xf408, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'viber':
+      const IconData(0xf409, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vimeo_2':
+      const IconData(0xf40a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vnv':
+      const IconData(0xf40b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'what_s_app_square':
+      const IconData(0xf40c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'whmcs':
+      const IconData(0xf40d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'window_close':
+      const IconData(0xf410, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wordpress_simple':
+      const IconData(0xf411, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'xbox':
+      const IconData(0xf412, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yandex':
+      const IconData(0xf413, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yandex_international':
+      const IconData(0xf414, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'apple_pay':
+      const IconData(0xf415, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'apple_pay_credit_card':
+      const IconData(0xf416, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fly':
+      const IconData(0xf417, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'node_js':
+      const IconData(0xf419, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'open_source_initiative':
+      const IconData(0xf41a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'react':
+      const IconData(0xf41b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'autoprefixer':
+      const IconData(0xf41c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'less':
+      const IconData(0xf41d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sass':
+      const IconData(0xf41e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vue_js':
+      const IconData(0xf41f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angular':
+      const IconData(0xf420, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'aviato':
+      const IconData(0xf421, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ember':
+      const IconData(0xf423, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'font_awesome_flag':
+      const IconData(0xf425, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gitter':
+      const IconData(0xf426, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hooli':
+      const IconData(0xf427, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'strava':
+      const IconData(0xf428, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stripe':
+      const IconData(0xf429, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stripe_s':
+      const IconData(0xf42a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'typo3':
+      const IconData(0xf42b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'amazon_pay':
+      const IconData(0xf42c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'amazon_pay_credit_card':
+      const IconData(0xf42d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ethereum':
+      const IconData(0xf42e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'korvue':
+      const IconData(0xf42f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'elementor':
+      const IconData(0xf430, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'youtube_square':
+      const IconData(0xf431, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'baseball_ball':
+      const IconData(0xf433, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'basketball_ball':
+      const IconData(0xf434, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bowling_ball':
+      const IconData(0xf436, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess':
+      const IconData(0xf439, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_bishop':
+      const IconData(0xf43a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_board':
+      const IconData(0xf43c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_king':
+      const IconData(0xf43f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_knight':
+      const IconData(0xf441, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_pawn':
+      const IconData(0xf443, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_queen':
+      const IconData(0xf445, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chess_rook':
+      const IconData(0xf447, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dumbbell':
+      const IconData(0xf44b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flipboard':
+      const IconData(0xf44d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'football_ball':
+      const IconData(0xf44e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'golf_ball':
+      const IconData(0xf450, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hips':
+      const IconData(0xf452, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hockey_puck':
+      const IconData(0xf453, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'php':
+      const IconData(0xf457, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quidditch':
+      const IconData(0xf458, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quinscape':
+      const IconData(0xf459, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'square_full':
+      const IconData(0xf45c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'table_tennis':
+      const IconData(0xf45d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'volleyball_ball':
+      const IconData(0xf45f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'allergies':
+      const IconData(0xf461, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'band_aid':
+      const IconData(0xf462, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'box':
+      const IconData(0xf466, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'boxes':
+      const IconData(0xf468, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medical_briefcase':
+      const IconData(0xf469, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'burn':
+      const IconData(0xf46a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'capsules':
+      const IconData(0xf46b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clipboard_with_check':
+      const IconData(0xf46c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'clipboard_list':
+      const IconData(0xf46d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'diagnoses':
+      const IconData(0xf470, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dna':
+      const IconData(0xf471, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dolly':
+      const IconData(0xf472, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dolly_flatbed':
+      const IconData(0xf474, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medical_file':
+      const IconData(0xf477, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_medical_file':
+      const IconData(0xf478, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'first_aid':
+      const IconData(0xf479, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_hospital':
+      const IconData(0xf47d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hospital_symbol':
+      const IconData(0xf47e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_identification_card':
+      const IconData(0xf47f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medical_notes':
+      const IconData(0xf481, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pallet':
+      const IconData(0xf482, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pills':
+      const IconData(0xf484, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'prescription_bottle':
+      const IconData(0xf485, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_prescription_bottle':
+      const IconData(0xf486, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'procedures':
+      const IconData(0xf487, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shipping_fast':
+      const IconData(0xf48b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smoking':
+      const IconData(0xf48d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'syringe':
+      const IconData(0xf48e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tablets':
+      const IconData(0xf490, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'thermometer':
+      const IconData(0xf491, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vial':
+      const IconData(0xf492, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vials':
+      const IconData(0xf493, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'warehouse':
+      const IconData(0xf494, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'weight':
+      const IconData(0xf496, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'x_ray':
+      const IconData(0xf497, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'box_open':
+      const IconData(0xf49e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment_dots':
+      const IconData(0xf4ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment_slash':
+      const IconData(0xf4b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'couch':
+      const IconData(0xf4b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'donate':
+      const IconData(0xf4b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dove':
+      const IconData(0xf4ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_holding':
+      const IconData(0xf4bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_holding_heart':
+      const IconData(0xf4be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_holding_us_dollar':
+      const IconData(0xf4c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hands':
+      const IconData(0xf4c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'helping_hands':
+      const IconData(0xf4c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'parachute_box':
+      const IconData(0xf4cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'people_carry':
+      const IconData(0xf4ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'piggy_bank':
+      const IconData(0xf4d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'readme':
+      const IconData(0xf4d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ribbon':
+      const IconData(0xf4d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'route':
+      const IconData(0xf4d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'seedling':
+      const IconData(0xf4d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sign':
+      const IconData(0xf4d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'winking_face':
+      const IconData(0xf4da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tape':
+      const IconData(0xf4db, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'truck_loading':
+      const IconData(0xf4de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'truck_moving':
+      const IconData(0xf4df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'video_slash':
+      const IconData(0xf4e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wine_glass':
+      const IconData(0xf4e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'java':
+      const IconData(0xf4e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pied_piper_hat':
+      const IconData(0xf4e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_attribution':
+      const IconData(0xf4e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_noncommercial':
+      const IconData(0xf4e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
   'creative_commons_noncommercial__euro_sign_':
       const IconData(0xf4e9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
   'creative_commons_noncommercial__yen_sign_':
       const IconData(0xf4ea, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_no_derivative_works': const IconData(0xf4eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_public_domain': const IconData(0xf4ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_creative_commons_public_domain': const IconData(0xf4ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_remix': const IconData(0xf4ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_share_alike': const IconData(0xf4ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_sampling': const IconData(0xf4f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_sampling__': const IconData(0xf4f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_share': const IconData(0xf4f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'creative_commons_cc0': const IconData(0xf4f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ebay': const IconData(0xf4f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'keybase': const IconData(0xf4f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mastodon': const IconData(0xf4f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'r_project': const IconData(0xf4f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'researchgate': const IconData(0xf4f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'teamspeak': const IconData(0xf4f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_user_slash': const IconData(0xf4fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_astronaut': const IconData(0xf4fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_check': const IconData(0xf4fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_clock': const IconData(0xf4fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_cog': const IconData(0xf4fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_edit': const IconData(0xf4ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_friends': const IconData(0xf500, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_graduate': const IconData(0xf501, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_lock': const IconData(0xf502, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_minus': const IconData(0xf503, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_ninja': const IconData(0xf504, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_shield': const IconData(0xf505, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_slash': const IconData(0xf506, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_tag': const IconData(0xf507, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_tie': const IconData(0xf508, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'users_cog': const IconData(0xf509, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_first_order': const IconData(0xf50a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fulcrum': const IconData(0xf50b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'galactic_republic': const IconData(0xf50c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'galactic_senate': const IconData(0xf50d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jedi_order': const IconData(0xf50e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mandalorian': const IconData(0xf50f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'old_republic': const IconData(0xf510, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'phoenix_squadron': const IconData(0xf511, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sith': const IconData(0xf512, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trade_federation': const IconData(0xf513, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wolf_pack_battalion': const IconData(0xf514, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'balance_scale__left_weighted_': const IconData(0xf515, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'balance_scale__right_weighted_': const IconData(0xf516, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blender': const IconData(0xf517, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'book_open': const IconData(0xf518, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'broadcast_tower': const IconData(0xf519, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'broom': const IconData(0xf51a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chalkboard': const IconData(0xf51b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chalkboard_teacher': const IconData(0xf51c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'church': const IconData(0xf51d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'coins': const IconData(0xf51e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'compact_disc': const IconData(0xf51f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crow': const IconData(0xf520, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crown': const IconData(0xf521, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice': const IconData(0xf522, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_five': const IconData(0xf523, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_four': const IconData(0xf524, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_one': const IconData(0xf525, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_six': const IconData(0xf526, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_three': const IconData(0xf527, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_two': const IconData(0xf528, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'divide': const IconData(0xf529, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'door_closed': const IconData(0xf52a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'door_open': const IconData(0xf52b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'equals': const IconData(0xf52c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'feather': const IconData(0xf52d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'frog': const IconData(0xf52e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gas_pump': const IconData(0xf52f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'glasses': const IconData(0xf530, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'greater_than': const IconData(0xf531, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'greater_than_equal_to': const IconData(0xf532, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'helicopter': const IconData(0xf533, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'infinity': const IconData(0xf534, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kiwi_bird': const IconData(0xf535, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'less_than': const IconData(0xf536, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'less_than_equal_to': const IconData(0xf537, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'memory': const IconData(0xf538, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_microphone_slash': const IconData(0xf539, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wavy_money_bill': const IconData(0xf53a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_wavy_money_bill': const IconData(0xf53b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'money_check': const IconData(0xf53c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_money_check': const IconData(0xf53d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'not_equal': const IconData(0xf53e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'palette': const IconData(0xf53f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'parking': const IconData(0xf540, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'percentage': const IconData(0xf541, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'project_diagram': const IconData(0xf542, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'receipt': const IconData(0xf543, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'robot': const IconData(0xf544, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ruler': const IconData(0xf545, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ruler_combined': const IconData(0xf546, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ruler_horizontal': const IconData(0xf547, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ruler_vertical': const IconData(0xf548, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'school': const IconData(0xf549, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'screwdriver': const IconData(0xf54a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shoe_prints': const IconData(0xf54b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skull': const IconData(0xf54c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smoking_ban': const IconData(0xf54d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'store': const IconData(0xf54e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_store': const IconData(0xf54f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stream': const IconData(0xf550, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stroopwafel': const IconData(0xf551, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'toolbox': const IconData(0xf552, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  't_shirt': const IconData(0xf553, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'walking': const IconData(0xf554, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wallet': const IconData(0xf555, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'angry_face': const IconData(0xf556, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'archway': const IconData(0xf557, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'atlas': const IconData(0xf558, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'award': const IconData(0xf559, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'backspace': const IconData(0xf55a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bezier_curve': const IconData(0xf55b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bong': const IconData(0xf55c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'brush': const IconData(0xf55d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bus_alt': const IconData(0xf55e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cannabis': const IconData(0xf55f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'double_check': const IconData(0xf560, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cocktail': const IconData(0xf561, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'concierge_bell': const IconData(0xf562, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cookie': const IconData(0xf563, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cookie_bite': const IconData(0xf564, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_crop': const IconData(0xf565, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'digital_tachograph': const IconData(0xf566, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dizzy_face': const IconData(0xf567, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'drafting_compass': const IconData(0xf568, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'drum': const IconData(0xf569, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'drum_steelpan': const IconData(0xf56a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_feather': const IconData(0xf56b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_contract': const IconData(0xf56c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_download': const IconData(0xf56d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_export': const IconData(0xf56e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_import': const IconData(0xf56f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_invoice': const IconData(0xf570, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_invoice_with_us_dollar': const IconData(0xf571, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_prescription': const IconData(0xf572, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_signature': const IconData(0xf573, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_upload': const IconData(0xf574, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fill': const IconData(0xf575, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fill_drip': const IconData(0xf576, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fingerprint': const IconData(0xf577, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fish': const IconData(0xf578, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'flushed_face': const IconData(0xf579, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'frowning_face_with_open_mouth': const IconData(0xf57a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_glass_martini': const IconData(0xf57b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'globe_with_africa_shown': const IconData(0xf57c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'globe_with_americas_shown': const IconData(0xf57d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'globe_with_asia_shown': const IconData(0xf57e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grimacing_face': const IconData(0xf57f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face': const IconData(0xf580, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_grinning_face': const IconData(0xf581, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_with_smiling_eyes': const IconData(0xf582, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_with_sweat': const IconData(0xf583, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smiling_face_with_heart_eyes': const IconData(0xf584, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_squinting_face': const IconData(0xf585, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rolling_on_the_floor_laughing': const IconData(0xf586, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_struck': const IconData(0xf587, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_tears_of_joy': const IconData(0xf588, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_tongue': const IconData(0xf589, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'squinting_face_with_tongue': const IconData(0xf58a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'winking_face_with_tongue': const IconData(0xf58b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_winking_face': const IconData(0xf58c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grip_horizontal': const IconData(0xf58d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grip_vertical': const IconData(0xf58e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_headphones': const IconData(0xf58f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'headset': const IconData(0xf590, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'highlighter': const IconData(0xf591, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hornbill': const IconData(0xf592, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hot_tub': const IconData(0xf593, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hotel': const IconData(0xf594, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'joint': const IconData(0xf595, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kissing_face': const IconData(0xf596, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kissing_face_with_smiling_eyes': const IconData(0xf597, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_blowing_a_kiss': const IconData(0xf598, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grinning_face_with_big_eyes': const IconData(0xf599, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laugh_face_with_beaming_eyes': const IconData(0xf59a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laughing_squinting_face': const IconData(0xf59b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laughing_winking_face': const IconData(0xf59c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'luggage_cart': const IconData(0xf59d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mailchimp': const IconData(0xf59e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'map_marked': const IconData(0xf59f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_map_marked': const IconData(0xf5a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'marker': const IconData(0xf5a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medal': const IconData(0xf5a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'megaport': const IconData(0xf5a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_without_mouth': const IconData(0xf5a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'face_with_rolling_eyes': const IconData(0xf5a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'monument': const IconData(0xf5a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mortar_pestle': const IconData(0xf5a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'nimblr': const IconData(0xf5a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'paint_roller': const IconData(0xf5aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'passport': const IconData(0xf5ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pen_fancy': const IconData(0xf5ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pen_nib': const IconData(0xf5ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pencil_ruler': const IconData(0xf5ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plane_arrival': const IconData(0xf5af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'plane_departure': const IconData(0xf5b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'prescription': const IconData(0xf5b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rev_io': const IconData(0xf5b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crying_face': const IconData(0xf5b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'loudly_crying_face': const IconData(0xf5b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shopware': const IconData(0xf5b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shuttle_van': const IconData(0xf5b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'signature': const IconData(0xf5b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'beaming_face_with_smiling_eyes': const IconData(0xf5b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'solar_panel': const IconData(0xf5ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spa': const IconData(0xf5bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'splotch': const IconData(0xf5bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spray_can': const IconData(0xf5bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'squarespace': const IconData(0xf5be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stamp': const IconData(0xf5bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_star_half': const IconData(0xf5c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'suitcase_rolling': const IconData(0xf5c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hushed_face': const IconData(0xf5c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'swatchbook': const IconData(0xf5c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'swimmer': const IconData(0xf5c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'swimming_pool': const IconData(0xf5c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'themeco': const IconData(0xf5c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tint_slash': const IconData(0xf5c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tired_face': const IconData(0xf5c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tooth': const IconData(0xf5c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'umbrella_beach': const IconData(0xf5ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vector_square': const IconData(0xf5cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'weebly': const IconData(0xf5cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hanging_weight': const IconData(0xf5cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_wine_glas': const IconData(0xf5ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wix': const IconData(0xf5cf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'air_freshener': const IconData(0xf5d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fruit_apple': const IconData(0xf5d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'atom': const IconData(0xf5d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bone': const IconData(0xf5d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'book_reader': const IconData(0xf5da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'brain': const IconData(0xf5dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_car': const IconData(0xf5de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'car_battery': const IconData(0xf5df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'car_crash': const IconData(0xf5e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'car_side': const IconData(0xf5e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'charging_station': const IconData(0xf5e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'directions': const IconData(0xf5eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'draw_polygon': const IconData(0xf5ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ello': const IconData(0xf5f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hackerrank': const IconData(0xf5f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kaggle': const IconData(0xf5fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laptop_code': const IconData(0xf5fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'layer_group': const IconData(0xf5fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'markdown': const IconData(0xf60f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'microscope': const IconData(0xf610, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'neos': const IconData(0xf612, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'oil_can': const IconData(0xf613, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'poop': const IconData(0xf619, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'shapes': const IconData(0xf61f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_of_life': const IconData(0xf621, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'teeth': const IconData(0xf62e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'teeth_open': const IconData(0xf62f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'theater_masks': const IconData(0xf630, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'traffic_light': const IconData(0xf637, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'truck_monster': const IconData(0xf63b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'truck_side': const IconData(0xf63c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'zhihu': const IconData(0xf63f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ad': const IconData(0xf641, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alipay': const IconData(0xf642, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ankh': const IconData(0xf644, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bible': const IconData(0xf647, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'business_time': const IconData(0xf64a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'city': const IconData(0xf64f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comment_dollar': const IconData(0xf651, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'comments_dollar': const IconData(0xf653, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cross': const IconData(0xf654, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dharmachakra': const IconData(0xf655, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'envelope_open_text': const IconData(0xf658, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder_minus': const IconData(0xf65d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'folder_plus': const IconData(0xf65e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'funnel_dollar': const IconData(0xf662, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gopuram': const IconData(0xf664, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hamsa': const IconData(0xf665, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'haykal': const IconData(0xf666, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jedi': const IconData(0xf669, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'journal_of_the_whills': const IconData(0xf66a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'kaaba': const IconData(0xf66b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'khanda': const IconData(0xf66d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'landmark': const IconData(0xf66f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mail_bulk': const IconData(0xf674, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'menorah': const IconData(0xf676, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mosque': const IconData(0xf678, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'om': const IconData(0xf679, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pastafarianism': const IconData(0xf67b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'peace': const IconData(0xf67c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'place_of_worship': const IconData(0xf67f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'poll': const IconData(0xf681, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'poll_h': const IconData(0xf682, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pray': const IconData(0xf683, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'praying_hands': const IconData(0xf684, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'quran': const IconData(0xf687, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'search_dollar': const IconData(0xf688, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'search_location': const IconData(0xf689, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'socks': const IconData(0xf696, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_square_root': const IconData(0xf698, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_and_crescent': const IconData(0xf699, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'star_of_david': const IconData(0xf69a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'synagogue': const IconData(0xf69b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'the_red_yeti': const IconData(0xf69d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'torah': const IconData(0xf6a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'torii_gate': const IconData(0xf6a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vihara': const IconData(0xf6a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'volume_mute': const IconData(0xf6a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yin_yang': const IconData(0xf6ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'acquisitions_incorporated': const IconData(0xf6af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blender_phone': const IconData(0xf6b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'book_of_the_dead': const IconData(0xf6b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'campground': const IconData(0xf6bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cat': const IconData(0xf6be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chair': const IconData(0xf6c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_moon': const IconData(0xf6c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_sun': const IconData(0xf6c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'critical_role': const IconData(0xf6c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'd_d_beyond': const IconData(0xf6ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dev': const IconData(0xf6cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_d20': const IconData(0xf6cf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dice_d6': const IconData(0xf6d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dog': const IconData(0xf6d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dragon': const IconData(0xf6d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'drumstick_with_bite_taken_out': const IconData(0xf6d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dungeon': const IconData(0xf6d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fantasy_flight_games': const IconData(0xf6dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'file_csv': const IconData(0xf6dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'raised_fist': const IconData(0xf6de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ghost': const IconData(0xf6e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hammer': const IconData(0xf6e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hanukiah': const IconData(0xf6e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wizard_s_hat': const IconData(0xf6e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hiking': const IconData(0xf6ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hippo': const IconData(0xf6ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'horse': const IconData(0xf6f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'damaged_house': const IconData(0xf6f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hryvnia': const IconData(0xf6f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mask': const IconData(0xf6fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mountain': const IconData(0xf6fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wired_network': const IconData(0xf6ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'otter': const IconData(0xf700, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'penny_arcade': const IconData(0xf704, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ring': const IconData(0xf70b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'running': const IconData(0xf70c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'scroll': const IconData(0xf70e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skull___crossbones': const IconData(0xf714, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'slash': const IconData(0xf715, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spider': const IconData(0xf717, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'toilet_paper': const IconData(0xf71e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tractor': const IconData(0xf722, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'user_injured': const IconData(0xf728, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cardboard_vr': const IconData(0xf729, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wind': const IconData(0xf72e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wine_bottle': const IconData(0xf72f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'wizards_of_the_coast': const IconData(0xf730, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'think_peaks': const IconData(0xf731, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with__a_chance_of__meatball': const IconData(0xf73b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_moon_and_rain': const IconData(0xf73c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_rain': const IconData(0xf73d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_heavy_showers': const IconData(0xf740, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cloud_with_sun_and_rain': const IconData(0xf743, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'democrat': const IconData(0xf747, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'united_states_of_america_flag': const IconData(0xf74d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'meteor': const IconData(0xf753, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'person_entering_booth': const IconData(0xf756, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'poo_storm': const IconData(0xf75a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'rainbow': const IconData(0xf75b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'reacteurope': const IconData(0xf75d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'republican': const IconData(0xf75e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'smog': const IconData(0xf75f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'high_temperature': const IconData(0xf769, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'low_temperature': const IconData(0xf76b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'vote_yea': const IconData(0xf772, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'water': const IconData(0xf773, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'adobe': const IconData(0xf778, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'artstation': const IconData(0xf77a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'atlassian': const IconData(0xf77b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'baby': const IconData(0xf77c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'baby_carriage': const IconData(0xf77d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'biohazard': const IconData(0xf780, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'blog': const IconData(0xf781, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_with_day_focus': const IconData(0xf783, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'calendar_with_week_focus': const IconData(0xf784, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'canadian_maple_leaf': const IconData(0xf785, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'candy_cane': const IconData(0xf786, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'carrot': const IconData(0xf787, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cash_register': const IconData(0xf788, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'centos': const IconData(0xf789, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_compress_arrows': const IconData(0xf78c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'confluence': const IconData(0xf78d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dhl': const IconData(0xf790, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'diaspora': const IconData(0xf791, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dumpster': const IconData(0xf793, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'dumpster_fire': const IconData(0xf794, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ethernet': const IconData(0xf796, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fedex': const IconData(0xf797, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fedora': const IconData(0xf798, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'figma': const IconData(0xf799, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'gifts': const IconData(0xf79c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'glass_cheers': const IconData(0xf79f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'glass_whiskey': const IconData(0xf7a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'globe_with_europe_shown': const IconData(0xf7a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grip_lines': const IconData(0xf7a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'grip_lines_vertical': const IconData(0xf7a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'guitar': const IconData(0xf7a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'heart_broken': const IconData(0xf7a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'holly_berry': const IconData(0xf7aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'horse_head': const IconData(0xf7ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'icicles': const IconData(0xf7ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'igloo': const IconData(0xf7ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'intercom': const IconData(0xf7af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'invision': const IconData(0xf7b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'jira': const IconData(0xf7b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mendeley': const IconData(0xf7b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mitten': const IconData(0xf7b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mug_hot': const IconData(0xf7b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'radiation': const IconData(0xf7b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_radiation': const IconData(0xf7ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'raspberry_pi': const IconData(0xf7bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'redhat': const IconData(0xf7bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'restroom': const IconData(0xf7bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'satellite': const IconData(0xf7bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'satellite_dish': const IconData(0xf7c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sd_card': const IconData(0xf7c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sim_card': const IconData(0xf7c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skating': const IconData(0xf7c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sketch': const IconData(0xf7c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skiing': const IconData(0xf7c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'skiing_nordic': const IconData(0xf7ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sleigh': const IconData(0xf7cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sms': const IconData(0xf7cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snowboarding': const IconData(0xf7ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snowman': const IconData(0xf7d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'snowplow': const IconData(0xf7d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'sourcetree': const IconData(0xf7d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'suse': const IconData(0xf7d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tenge': const IconData(0xf7d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'toilet': const IconData(0xf7d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tools': const IconData(0xf7d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'tram': const IconData(0xf7da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ubuntu': const IconData(0xf7df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ups': const IconData(0xf7e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'united_states_postal_service': const IconData(0xf7e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yarn': const IconData(0xf7e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_fire': const IconData(0xf7e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bacon': const IconData(0xf7e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medical_book': const IconData(0xf7e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bread_slice': const IconData(0xf7ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cheese': const IconData(0xf7ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'medical_clinic': const IconData(0xf7f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_medical_chat': const IconData(0xf7f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'crutch': const IconData(0xf7f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'egg': const IconData(0xf7fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hamburger': const IconData(0xf805, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hand_with_middle_finger_raised': const IconData(0xf806, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hard_hat': const IconData(0xf807, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hot_dog': const IconData(0xf80f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'ice_cream': const IconData(0xf810, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'laptop_medical': const IconData(0xf812, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pager': const IconData(0xf815, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'hot_pepper': const IconData(0xf816, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'pizza_slice': const IconData(0xf818, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'trash_restore': const IconData(0xf829, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternative_trash_restore': const IconData(0xf82a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'nurse': const IconData(0xf82f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'airbnb': const IconData(0xf834, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'battle_net': const IconData(0xf835, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'bootstrap': const IconData(0xf836, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'buffer': const IconData(0xf837, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'chromecast': const IconData(0xf838, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'evernote': const IconData(0xf839, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'itch_io': const IconData(0xf83a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'salesforce': const IconData(0xf83b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'speaker_deck': const IconData(0xf83c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'symfony': const IconData(0xf83d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'square_wave': const IconData(0xf83e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'waze': const IconData(0xf83f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'yammer': const IconData(0xf840, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'git_alt': const IconData(0xf841, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'stackpath': const IconData(0xf842, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'biking': const IconData(0xf84a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'border_all': const IconData(0xf84c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'border_none': const IconData(0xf850, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'border_style': const IconData(0xf853, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'fan': const IconData(0xf863, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'icons': const IconData(0xf86d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_phone': const IconData(0xf879, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_phone_square': const IconData(0xf87b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'photo_video': const IconData(0xf87c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'remove_format': const IconData(0xf87d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_alphabetical_down': const IconData(0xf881, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_alphabetical_up': const IconData(0xf882, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_amount_down': const IconData(0xf884, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_amount_up': const IconData(0xf885, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_numeric_down': const IconData(0xf886, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'alternate_sort_numeric_up': const IconData(0xf887, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'spell_check': const IconData(0xf891, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'voicemail': const IconData(0xf897, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cotton_bureau': const IconData(0xf89e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'buy_n_large': const IconData(0xf8a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cowboy_hat': const IconData(0xf8c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'cowboy_hat_side': const IconData(0xf8c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'material_design_for_bootstrap': const IconData(0xf8ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'mouse': const IconData(0xf8cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'orcid': const IconData(0xf8d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'record_vinyl': const IconData(0xf8d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'swift': const IconData(0xf8e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
-  'umbraco': const IconData(0xf8e8, fontFamily: _kFontFam, fontPackage: _kFontPackage)
+  'creative_commons_no_derivative_works':
+      const IconData(0xf4eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_public_domain':
+      const IconData(0xf4ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_creative_commons_public_domain':
+      const IconData(0xf4ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_remix':
+      const IconData(0xf4ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_share_alike':
+      const IconData(0xf4ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_sampling':
+      const IconData(0xf4f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_sampling__':
+      const IconData(0xf4f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_share':
+      const IconData(0xf4f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'creative_commons_cc0':
+      const IconData(0xf4f3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ebay':
+      const IconData(0xf4f4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'keybase':
+      const IconData(0xf4f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mastodon':
+      const IconData(0xf4f6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'r_project':
+      const IconData(0xf4f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'researchgate':
+      const IconData(0xf4f8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'teamspeak':
+      const IconData(0xf4f9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_user_slash':
+      const IconData(0xf4fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_astronaut':
+      const IconData(0xf4fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_check':
+      const IconData(0xf4fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_clock':
+      const IconData(0xf4fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_cog':
+      const IconData(0xf4fe, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_edit':
+      const IconData(0xf4ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_friends':
+      const IconData(0xf500, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_graduate':
+      const IconData(0xf501, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_lock':
+      const IconData(0xf502, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_minus':
+      const IconData(0xf503, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_ninja':
+      const IconData(0xf504, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_shield':
+      const IconData(0xf505, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_slash':
+      const IconData(0xf506, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_tag':
+      const IconData(0xf507, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_tie':
+      const IconData(0xf508, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'users_cog':
+      const IconData(0xf509, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_first_order':
+      const IconData(0xf50a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fulcrum':
+      const IconData(0xf50b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'galactic_republic':
+      const IconData(0xf50c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'galactic_senate':
+      const IconData(0xf50d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jedi_order':
+      const IconData(0xf50e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mandalorian':
+      const IconData(0xf50f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'old_republic':
+      const IconData(0xf510, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'phoenix_squadron':
+      const IconData(0xf511, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sith':
+      const IconData(0xf512, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trade_federation':
+      const IconData(0xf513, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wolf_pack_battalion':
+      const IconData(0xf514, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'balance_scale__left_weighted_':
+      const IconData(0xf515, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'balance_scale__right_weighted_':
+      const IconData(0xf516, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blender':
+      const IconData(0xf517, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'book_open':
+      const IconData(0xf518, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'broadcast_tower':
+      const IconData(0xf519, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'broom':
+      const IconData(0xf51a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chalkboard':
+      const IconData(0xf51b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chalkboard_teacher':
+      const IconData(0xf51c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'church':
+      const IconData(0xf51d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'coins':
+      const IconData(0xf51e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'compact_disc':
+      const IconData(0xf51f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crow':
+      const IconData(0xf520, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crown':
+      const IconData(0xf521, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice':
+      const IconData(0xf522, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_five':
+      const IconData(0xf523, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_four':
+      const IconData(0xf524, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_one':
+      const IconData(0xf525, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_six':
+      const IconData(0xf526, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_three':
+      const IconData(0xf527, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_two':
+      const IconData(0xf528, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'divide':
+      const IconData(0xf529, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'door_closed':
+      const IconData(0xf52a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'door_open':
+      const IconData(0xf52b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'equals':
+      const IconData(0xf52c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'feather':
+      const IconData(0xf52d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'frog':
+      const IconData(0xf52e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gas_pump':
+      const IconData(0xf52f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'glasses':
+      const IconData(0xf530, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'greater_than':
+      const IconData(0xf531, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'greater_than_equal_to':
+      const IconData(0xf532, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'helicopter':
+      const IconData(0xf533, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'infinity':
+      const IconData(0xf534, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kiwi_bird':
+      const IconData(0xf535, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'less_than':
+      const IconData(0xf536, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'less_than_equal_to':
+      const IconData(0xf537, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'memory':
+      const IconData(0xf538, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_microphone_slash':
+      const IconData(0xf539, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wavy_money_bill':
+      const IconData(0xf53a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_wavy_money_bill':
+      const IconData(0xf53b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'money_check':
+      const IconData(0xf53c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_money_check':
+      const IconData(0xf53d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'not_equal':
+      const IconData(0xf53e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'palette':
+      const IconData(0xf53f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'parking':
+      const IconData(0xf540, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'percentage':
+      const IconData(0xf541, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'project_diagram':
+      const IconData(0xf542, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'receipt':
+      const IconData(0xf543, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'robot':
+      const IconData(0xf544, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ruler':
+      const IconData(0xf545, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ruler_combined':
+      const IconData(0xf546, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ruler_horizontal':
+      const IconData(0xf547, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ruler_vertical':
+      const IconData(0xf548, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'school':
+      const IconData(0xf549, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'screwdriver':
+      const IconData(0xf54a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shoe_prints':
+      const IconData(0xf54b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skull':
+      const IconData(0xf54c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smoking_ban':
+      const IconData(0xf54d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'store':
+      const IconData(0xf54e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_store':
+      const IconData(0xf54f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stream':
+      const IconData(0xf550, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stroopwafel':
+      const IconData(0xf551, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'toolbox':
+      const IconData(0xf552, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  't_shirt':
+      const IconData(0xf553, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'walking':
+      const IconData(0xf554, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wallet':
+      const IconData(0xf555, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'angry_face':
+      const IconData(0xf556, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'archway':
+      const IconData(0xf557, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'atlas':
+      const IconData(0xf558, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'award':
+      const IconData(0xf559, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'backspace':
+      const IconData(0xf55a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bezier_curve':
+      const IconData(0xf55b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bong':
+      const IconData(0xf55c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'brush':
+      const IconData(0xf55d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bus_alt':
+      const IconData(0xf55e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cannabis':
+      const IconData(0xf55f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'double_check':
+      const IconData(0xf560, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cocktail':
+      const IconData(0xf561, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'concierge_bell':
+      const IconData(0xf562, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cookie':
+      const IconData(0xf563, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cookie_bite':
+      const IconData(0xf564, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_crop':
+      const IconData(0xf565, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'digital_tachograph':
+      const IconData(0xf566, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dizzy_face':
+      const IconData(0xf567, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'drafting_compass':
+      const IconData(0xf568, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'drum':
+      const IconData(0xf569, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'drum_steelpan':
+      const IconData(0xf56a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_feather':
+      const IconData(0xf56b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_contract':
+      const IconData(0xf56c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_download':
+      const IconData(0xf56d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_export':
+      const IconData(0xf56e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_import':
+      const IconData(0xf56f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_invoice':
+      const IconData(0xf570, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_invoice_with_us_dollar':
+      const IconData(0xf571, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_prescription':
+      const IconData(0xf572, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_signature':
+      const IconData(0xf573, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_upload':
+      const IconData(0xf574, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fill':
+      const IconData(0xf575, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fill_drip':
+      const IconData(0xf576, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fingerprint':
+      const IconData(0xf577, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fish':
+      const IconData(0xf578, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'flushed_face':
+      const IconData(0xf579, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'frowning_face_with_open_mouth':
+      const IconData(0xf57a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_glass_martini':
+      const IconData(0xf57b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'globe_with_africa_shown':
+      const IconData(0xf57c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'globe_with_americas_shown':
+      const IconData(0xf57d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'globe_with_asia_shown':
+      const IconData(0xf57e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grimacing_face':
+      const IconData(0xf57f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face':
+      const IconData(0xf580, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_grinning_face':
+      const IconData(0xf581, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_with_smiling_eyes':
+      const IconData(0xf582, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_with_sweat':
+      const IconData(0xf583, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smiling_face_with_heart_eyes':
+      const IconData(0xf584, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_squinting_face':
+      const IconData(0xf585, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rolling_on_the_floor_laughing':
+      const IconData(0xf586, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_struck':
+      const IconData(0xf587, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_tears_of_joy':
+      const IconData(0xf588, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_tongue':
+      const IconData(0xf589, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'squinting_face_with_tongue':
+      const IconData(0xf58a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'winking_face_with_tongue':
+      const IconData(0xf58b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_winking_face':
+      const IconData(0xf58c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grip_horizontal':
+      const IconData(0xf58d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grip_vertical':
+      const IconData(0xf58e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_headphones':
+      const IconData(0xf58f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'headset':
+      const IconData(0xf590, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'highlighter':
+      const IconData(0xf591, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hornbill':
+      const IconData(0xf592, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hot_tub':
+      const IconData(0xf593, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hotel':
+      const IconData(0xf594, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'joint':
+      const IconData(0xf595, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kissing_face':
+      const IconData(0xf596, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kissing_face_with_smiling_eyes':
+      const IconData(0xf597, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_blowing_a_kiss':
+      const IconData(0xf598, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grinning_face_with_big_eyes':
+      const IconData(0xf599, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laugh_face_with_beaming_eyes':
+      const IconData(0xf59a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laughing_squinting_face':
+      const IconData(0xf59b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laughing_winking_face':
+      const IconData(0xf59c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'luggage_cart':
+      const IconData(0xf59d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mailchimp':
+      const IconData(0xf59e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'map_marked':
+      const IconData(0xf59f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_map_marked':
+      const IconData(0xf5a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'marker':
+      const IconData(0xf5a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medal':
+      const IconData(0xf5a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'megaport':
+      const IconData(0xf5a3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_without_mouth':
+      const IconData(0xf5a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'face_with_rolling_eyes':
+      const IconData(0xf5a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'monument':
+      const IconData(0xf5a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mortar_pestle':
+      const IconData(0xf5a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'nimblr':
+      const IconData(0xf5a8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'paint_roller':
+      const IconData(0xf5aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'passport':
+      const IconData(0xf5ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pen_fancy':
+      const IconData(0xf5ac, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pen_nib':
+      const IconData(0xf5ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pencil_ruler':
+      const IconData(0xf5ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plane_arrival':
+      const IconData(0xf5af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'plane_departure':
+      const IconData(0xf5b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'prescription':
+      const IconData(0xf5b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rev_io':
+      const IconData(0xf5b2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crying_face':
+      const IconData(0xf5b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'loudly_crying_face':
+      const IconData(0xf5b4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shopware':
+      const IconData(0xf5b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shuttle_van':
+      const IconData(0xf5b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'signature':
+      const IconData(0xf5b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'beaming_face_with_smiling_eyes':
+      const IconData(0xf5b8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'solar_panel':
+      const IconData(0xf5ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spa':
+      const IconData(0xf5bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'splotch':
+      const IconData(0xf5bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spray_can':
+      const IconData(0xf5bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'squarespace':
+      const IconData(0xf5be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stamp':
+      const IconData(0xf5bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_star_half':
+      const IconData(0xf5c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'suitcase_rolling':
+      const IconData(0xf5c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hushed_face':
+      const IconData(0xf5c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'swatchbook':
+      const IconData(0xf5c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'swimmer':
+      const IconData(0xf5c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'swimming_pool':
+      const IconData(0xf5c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'themeco':
+      const IconData(0xf5c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tint_slash':
+      const IconData(0xf5c7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tired_face':
+      const IconData(0xf5c8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tooth':
+      const IconData(0xf5c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'umbrella_beach':
+      const IconData(0xf5ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vector_square':
+      const IconData(0xf5cb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'weebly':
+      const IconData(0xf5cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hanging_weight':
+      const IconData(0xf5cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_wine_glas':
+      const IconData(0xf5ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wix':
+      const IconData(0xf5cf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'air_freshener':
+      const IconData(0xf5d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fruit_apple':
+      const IconData(0xf5d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'atom':
+      const IconData(0xf5d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bone':
+      const IconData(0xf5d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'book_reader':
+      const IconData(0xf5da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'brain':
+      const IconData(0xf5dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_car':
+      const IconData(0xf5de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'car_battery':
+      const IconData(0xf5df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'car_crash':
+      const IconData(0xf5e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'car_side':
+      const IconData(0xf5e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'charging_station':
+      const IconData(0xf5e7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'directions':
+      const IconData(0xf5eb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'draw_polygon':
+      const IconData(0xf5ee, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ello':
+      const IconData(0xf5f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hackerrank':
+      const IconData(0xf5f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kaggle':
+      const IconData(0xf5fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laptop_code':
+      const IconData(0xf5fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'layer_group':
+      const IconData(0xf5fd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'markdown':
+      const IconData(0xf60f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'microscope':
+      const IconData(0xf610, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'neos':
+      const IconData(0xf612, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'oil_can':
+      const IconData(0xf613, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'poop':
+      const IconData(0xf619, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'shapes':
+      const IconData(0xf61f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_of_life':
+      const IconData(0xf621, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'teeth':
+      const IconData(0xf62e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'teeth_open':
+      const IconData(0xf62f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'theater_masks':
+      const IconData(0xf630, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'traffic_light':
+      const IconData(0xf637, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'truck_monster':
+      const IconData(0xf63b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'truck_side':
+      const IconData(0xf63c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'zhihu':
+      const IconData(0xf63f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ad':
+      const IconData(0xf641, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alipay':
+      const IconData(0xf642, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ankh':
+      const IconData(0xf644, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bible':
+      const IconData(0xf647, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'business_time':
+      const IconData(0xf64a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'city':
+      const IconData(0xf64f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comment_dollar':
+      const IconData(0xf651, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'comments_dollar':
+      const IconData(0xf653, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cross':
+      const IconData(0xf654, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dharmachakra':
+      const IconData(0xf655, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'envelope_open_text':
+      const IconData(0xf658, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder_minus':
+      const IconData(0xf65d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'folder_plus':
+      const IconData(0xf65e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'funnel_dollar':
+      const IconData(0xf662, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gopuram':
+      const IconData(0xf664, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hamsa':
+      const IconData(0xf665, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'haykal':
+      const IconData(0xf666, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jedi':
+      const IconData(0xf669, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'journal_of_the_whills':
+      const IconData(0xf66a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'kaaba':
+      const IconData(0xf66b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'khanda':
+      const IconData(0xf66d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'landmark':
+      const IconData(0xf66f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mail_bulk':
+      const IconData(0xf674, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'menorah':
+      const IconData(0xf676, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mosque':
+      const IconData(0xf678, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'om':
+      const IconData(0xf679, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pastafarianism':
+      const IconData(0xf67b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'peace':
+      const IconData(0xf67c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'place_of_worship':
+      const IconData(0xf67f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'poll':
+      const IconData(0xf681, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'poll_h':
+      const IconData(0xf682, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pray':
+      const IconData(0xf683, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'praying_hands':
+      const IconData(0xf684, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'quran':
+      const IconData(0xf687, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'search_dollar':
+      const IconData(0xf688, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'search_location':
+      const IconData(0xf689, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'socks':
+      const IconData(0xf696, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_square_root':
+      const IconData(0xf698, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_and_crescent':
+      const IconData(0xf699, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'star_of_david':
+      const IconData(0xf69a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'synagogue':
+      const IconData(0xf69b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'the_red_yeti':
+      const IconData(0xf69d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'torah':
+      const IconData(0xf6a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'torii_gate':
+      const IconData(0xf6a1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vihara':
+      const IconData(0xf6a7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'volume_mute':
+      const IconData(0xf6a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yin_yang':
+      const IconData(0xf6ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'acquisitions_incorporated':
+      const IconData(0xf6af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blender_phone':
+      const IconData(0xf6b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'book_of_the_dead':
+      const IconData(0xf6b7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'campground':
+      const IconData(0xf6bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cat':
+      const IconData(0xf6be, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chair':
+      const IconData(0xf6c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_moon':
+      const IconData(0xf6c3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_sun':
+      const IconData(0xf6c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'critical_role':
+      const IconData(0xf6c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'd_d_beyond':
+      const IconData(0xf6ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dev':
+      const IconData(0xf6cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_d20':
+      const IconData(0xf6cf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dice_d6':
+      const IconData(0xf6d1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dog':
+      const IconData(0xf6d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dragon':
+      const IconData(0xf6d5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'drumstick_with_bite_taken_out':
+      const IconData(0xf6d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dungeon':
+      const IconData(0xf6d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fantasy_flight_games':
+      const IconData(0xf6dc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'file_csv':
+      const IconData(0xf6dd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'raised_fist':
+      const IconData(0xf6de, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ghost':
+      const IconData(0xf6e2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hammer':
+      const IconData(0xf6e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hanukiah':
+      const IconData(0xf6e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wizard_s_hat':
+      const IconData(0xf6e8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hiking':
+      const IconData(0xf6ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hippo':
+      const IconData(0xf6ed, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'horse':
+      const IconData(0xf6f0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'damaged_house':
+      const IconData(0xf6f1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hryvnia':
+      const IconData(0xf6f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mask':
+      const IconData(0xf6fa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mountain':
+      const IconData(0xf6fc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wired_network':
+      const IconData(0xf6ff, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'otter':
+      const IconData(0xf700, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'penny_arcade':
+      const IconData(0xf704, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ring':
+      const IconData(0xf70b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'running':
+      const IconData(0xf70c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'scroll':
+      const IconData(0xf70e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skull___crossbones':
+      const IconData(0xf714, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'slash':
+      const IconData(0xf715, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spider':
+      const IconData(0xf717, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'toilet_paper':
+      const IconData(0xf71e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tractor':
+      const IconData(0xf722, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'user_injured':
+      const IconData(0xf728, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cardboard_vr':
+      const IconData(0xf729, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wind':
+      const IconData(0xf72e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wine_bottle':
+      const IconData(0xf72f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'wizards_of_the_coast':
+      const IconData(0xf730, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'think_peaks':
+      const IconData(0xf731, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with__a_chance_of__meatball':
+      const IconData(0xf73b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_moon_and_rain':
+      const IconData(0xf73c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_rain':
+      const IconData(0xf73d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_heavy_showers':
+      const IconData(0xf740, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cloud_with_sun_and_rain':
+      const IconData(0xf743, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'democrat':
+      const IconData(0xf747, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'united_states_of_america_flag':
+      const IconData(0xf74d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'meteor':
+      const IconData(0xf753, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'person_entering_booth':
+      const IconData(0xf756, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'poo_storm':
+      const IconData(0xf75a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'rainbow':
+      const IconData(0xf75b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'reacteurope':
+      const IconData(0xf75d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'republican':
+      const IconData(0xf75e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'smog':
+      const IconData(0xf75f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'high_temperature':
+      const IconData(0xf769, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'low_temperature':
+      const IconData(0xf76b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'vote_yea':
+      const IconData(0xf772, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'water':
+      const IconData(0xf773, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'adobe':
+      const IconData(0xf778, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'artstation':
+      const IconData(0xf77a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'atlassian':
+      const IconData(0xf77b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'baby':
+      const IconData(0xf77c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'baby_carriage':
+      const IconData(0xf77d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'biohazard':
+      const IconData(0xf780, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'blog':
+      const IconData(0xf781, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_with_day_focus':
+      const IconData(0xf783, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'calendar_with_week_focus':
+      const IconData(0xf784, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'canadian_maple_leaf':
+      const IconData(0xf785, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'candy_cane':
+      const IconData(0xf786, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'carrot':
+      const IconData(0xf787, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cash_register':
+      const IconData(0xf788, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'centos':
+      const IconData(0xf789, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_compress_arrows':
+      const IconData(0xf78c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'confluence':
+      const IconData(0xf78d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dhl':
+      const IconData(0xf790, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'diaspora':
+      const IconData(0xf791, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dumpster':
+      const IconData(0xf793, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'dumpster_fire':
+      const IconData(0xf794, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ethernet':
+      const IconData(0xf796, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fedex':
+      const IconData(0xf797, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fedora':
+      const IconData(0xf798, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'figma':
+      const IconData(0xf799, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'gifts':
+      const IconData(0xf79c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'glass_cheers':
+      const IconData(0xf79f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'glass_whiskey':
+      const IconData(0xf7a0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'globe_with_europe_shown':
+      const IconData(0xf7a2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grip_lines':
+      const IconData(0xf7a4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'grip_lines_vertical':
+      const IconData(0xf7a5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'guitar':
+      const IconData(0xf7a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'heart_broken':
+      const IconData(0xf7a9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'holly_berry':
+      const IconData(0xf7aa, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'horse_head':
+      const IconData(0xf7ab, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'icicles':
+      const IconData(0xf7ad, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'igloo':
+      const IconData(0xf7ae, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'intercom':
+      const IconData(0xf7af, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'invision':
+      const IconData(0xf7b0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'jira':
+      const IconData(0xf7b1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mendeley':
+      const IconData(0xf7b3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mitten':
+      const IconData(0xf7b5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mug_hot':
+      const IconData(0xf7b6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'radiation':
+      const IconData(0xf7b9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_radiation':
+      const IconData(0xf7ba, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'raspberry_pi':
+      const IconData(0xf7bb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'redhat':
+      const IconData(0xf7bc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'restroom':
+      const IconData(0xf7bd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'satellite':
+      const IconData(0xf7bf, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'satellite_dish':
+      const IconData(0xf7c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sd_card':
+      const IconData(0xf7c2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sim_card':
+      const IconData(0xf7c4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skating':
+      const IconData(0xf7c5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sketch':
+      const IconData(0xf7c6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skiing':
+      const IconData(0xf7c9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'skiing_nordic':
+      const IconData(0xf7ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sleigh':
+      const IconData(0xf7cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sms':
+      const IconData(0xf7cd, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snowboarding':
+      const IconData(0xf7ce, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snowman':
+      const IconData(0xf7d0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'snowplow':
+      const IconData(0xf7d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'sourcetree':
+      const IconData(0xf7d3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'suse':
+      const IconData(0xf7d6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tenge':
+      const IconData(0xf7d7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'toilet':
+      const IconData(0xf7d8, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tools':
+      const IconData(0xf7d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'tram':
+      const IconData(0xf7da, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ubuntu':
+      const IconData(0xf7df, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ups':
+      const IconData(0xf7e0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'united_states_postal_service':
+      const IconData(0xf7e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yarn':
+      const IconData(0xf7e3, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_fire':
+      const IconData(0xf7e4, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bacon':
+      const IconData(0xf7e5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medical_book':
+      const IconData(0xf7e6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bread_slice':
+      const IconData(0xf7ec, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cheese':
+      const IconData(0xf7ef, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'medical_clinic':
+      const IconData(0xf7f2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_medical_chat':
+      const IconData(0xf7f5, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'crutch':
+      const IconData(0xf7f7, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'egg':
+      const IconData(0xf7fb, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hamburger':
+      const IconData(0xf805, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hand_with_middle_finger_raised':
+      const IconData(0xf806, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hard_hat':
+      const IconData(0xf807, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hot_dog':
+      const IconData(0xf80f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'ice_cream':
+      const IconData(0xf810, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'laptop_medical':
+      const IconData(0xf812, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pager':
+      const IconData(0xf815, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'hot_pepper':
+      const IconData(0xf816, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'pizza_slice':
+      const IconData(0xf818, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'trash_restore':
+      const IconData(0xf829, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternative_trash_restore':
+      const IconData(0xf82a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'nurse':
+      const IconData(0xf82f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'airbnb':
+      const IconData(0xf834, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'battle_net':
+      const IconData(0xf835, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'bootstrap':
+      const IconData(0xf836, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'buffer':
+      const IconData(0xf837, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'chromecast':
+      const IconData(0xf838, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'evernote':
+      const IconData(0xf839, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'itch_io':
+      const IconData(0xf83a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'salesforce':
+      const IconData(0xf83b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'speaker_deck':
+      const IconData(0xf83c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'symfony':
+      const IconData(0xf83d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'square_wave':
+      const IconData(0xf83e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'waze':
+      const IconData(0xf83f, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'yammer':
+      const IconData(0xf840, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'git_alt':
+      const IconData(0xf841, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'stackpath':
+      const IconData(0xf842, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'biking':
+      const IconData(0xf84a, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'border_all':
+      const IconData(0xf84c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'border_none':
+      const IconData(0xf850, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'border_style':
+      const IconData(0xf853, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'fan':
+      const IconData(0xf863, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'icons':
+      const IconData(0xf86d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_phone':
+      const IconData(0xf879, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_phone_square':
+      const IconData(0xf87b, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'photo_video':
+      const IconData(0xf87c, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'remove_format':
+      const IconData(0xf87d, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_alphabetical_down':
+      const IconData(0xf881, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_alphabetical_up':
+      const IconData(0xf882, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_amount_down':
+      const IconData(0xf884, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_amount_up':
+      const IconData(0xf885, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_numeric_down':
+      const IconData(0xf886, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'alternate_sort_numeric_up':
+      const IconData(0xf887, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'spell_check':
+      const IconData(0xf891, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'voicemail':
+      const IconData(0xf897, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cotton_bureau':
+      const IconData(0xf89e, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'buy_n_large':
+      const IconData(0xf8a6, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cowboy_hat':
+      const IconData(0xf8c0, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'cowboy_hat_side':
+      const IconData(0xf8c1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'material_design_for_bootstrap':
+      const IconData(0xf8ca, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'mouse':
+      const IconData(0xf8cc, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'orcid':
+      const IconData(0xf8d2, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'record_vinyl':
+      const IconData(0xf8d9, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'swift':
+      const IconData(0xf8e1, fontFamily: _kFontFam, fontPackage: _kFontPackage),
+  'umbraco':
+      const IconData(0xf8e8, fontFamily: _kFontFam, fontPackage: _kFontPackage)
 };

@@ -127,17 +127,23 @@ class FlutterIconPicker {
     Map<String, IconData> customIconPack,
   }) async {
     if (iconPackMode == IconPack.custom && customIconPack == null)
-      throw AssertionError('You need to provide your customIconPack if you set IconPack.custom');
+      throw AssertionError(
+          'You need to provide your customIconPack if you set IconPack.custom');
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
-        constraints = const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
+        constraints =
+            const BoxConstraints(maxHeight: 500, minWidth: 450, maxWidth: 720);
       } else {
-        constraints = const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
+        constraints =
+            const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
       }
     }
-    if (iconPickerShape == null) iconPickerShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
-    if (backgroundColor == null) backgroundColor = Theme.of(context).dialogBackgroundColor;
+    if (iconPickerShape == null)
+      iconPickerShape =
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
+    if (backgroundColor == null)
+      backgroundColor = Theme.of(context).dialogBackgroundColor;
 
     IconData iconPicked;
 
