@@ -1,3 +1,11 @@
+## [2.2.1] - 26.10.2020
+
+* Update dependencies (Cupertino, LineAwesome, FontAwesome)
+  - Fixes: [#16](https://github.com/Ahmadre/FlutterIconPicker/issues/16)
+  - Fixes: [#18](https://github.com/Ahmadre/FlutterIconPicker/issues/18)
+* Add `showSearchBar`
+  - Fixes: [#15](https://github.com/Ahmadre/FlutterIconPicker/issues/15)
+
 ## [2.1.5] - 13.08.2020
 
 * Format for publication with `dartfmt -w .`
