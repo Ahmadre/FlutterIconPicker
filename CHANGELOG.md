@@ -1,4 +1,4 @@
-## [2.2.1] - 26.10.2020
+## [2.2.2] - 26.10.2020
 
 * Update dependencies (Cupertino, LineAwesome, FontAwesome)
   - Fixes: [#16](https://github.com/Ahmadre/FlutterIconPicker/issues/16)
