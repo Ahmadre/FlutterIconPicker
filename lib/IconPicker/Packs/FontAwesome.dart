@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const Map<String, IconData> fontAwesomeIcons = {
+Map<String, IconData> fontAwesomeIcons = {
   'fiveHundredPx': FontAwesomeIcons.fiveHundredPx,
   'accessibleIcon': FontAwesomeIcons.accessibleIcon,
   'accusoft': FontAwesomeIcons.accusoft,
@@ -13,7 +13,6 @@ const Map<String, IconData> fontAwesomeIcons = {
   'solidAddressCard': FontAwesomeIcons.solidAddressCard,
   'adjust': FontAwesomeIcons.adjust,
   'adn': FontAwesomeIcons.adn,
-  'adobe': FontAwesomeIcons.adobe,
   'adversal': FontAwesomeIcons.adversal,
   'affiliatetheme': FontAwesomeIcons.affiliatetheme,
   'airFreshener': FontAwesomeIcons.airFreshener,
@@ -570,9 +569,6 @@ const Map<String, IconData> fontAwesomeIcons = {
   'fontAwesome': FontAwesomeIcons.fontAwesome,
   'fontAwesomeAlt': FontAwesomeIcons.fontAwesomeAlt,
   'fontAwesomeFlag': FontAwesomeIcons.fontAwesomeFlag,
-  'fontAwesomeLogoFull': FontAwesomeIcons.fontAwesomeLogoFull,
-  'solidFontAwesomeLogoFull': FontAwesomeIcons.solidFontAwesomeLogoFull,
-  'brandsFontAwesomeLogoFull': FontAwesomeIcons.brandsFontAwesomeLogoFull,
   'fonticons': FontAwesomeIcons.fonticons,
   'fonticonsFi': FontAwesomeIcons.fonticonsFi,
   'footballBall': FontAwesomeIcons.footballBall,

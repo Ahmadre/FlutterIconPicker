@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ">=1.0.0"
-  font_awesome_flutter: 8.8.1
+  font_awesome_flutter: 8.10.0
   line_awesome_flutter: 1.0.1
   outline_material_icons: 0.1.1
 
