@@ -1,5 +1,6 @@
 # FlutterIconPicker
 
+![ci](https://github.com/Ahmadre/FlutterIconPicker/actions/workflows/dart.yml/badge.svg)
 [![Version](https://img.shields.io/badge/pub-v3.0.0-blue)](https://pub.dev/packages/flutter_iconpicker)
 [![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20|%20desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
 
