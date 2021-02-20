@@ -21,8 +21,8 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1.4.0
       with:
-        flutter-version: '1.22.4'
-        channel: master
+        flutter-version: '1.26.0-17.6.pre'
+        channel: beta
     - run: flutter pub get
     - run: flutter analyze
     - run: flutter test
