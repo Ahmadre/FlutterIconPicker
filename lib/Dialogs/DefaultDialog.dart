@@ -186,8 +186,12 @@ class DefaultDialog extends StatelessWidget {
           ),
         ),
         actions: [
-          FlatButton(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+          TextButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.resolveWith(
+                (states) => const EdgeInsets.symmetric(horizontal: 20),
+              ),
+            ),
             onPressed: () => Navigator.of(context).pop(),
             child: closeChild,
           ),

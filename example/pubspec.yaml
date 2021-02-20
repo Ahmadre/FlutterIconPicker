@@ -19,8 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_iconpicker:
-    path: ../
+  flutter_iconpicker: ^2.2.2
   line_icons: ^0.2.0
 
 dev_dependencies:

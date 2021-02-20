@@ -12,7 +12,8 @@ class FlutterIconPickerExample extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _FlutterIconPickerExampleState createState() => _FlutterIconPickerExampleState();
+  _FlutterIconPickerExampleState createState() =>
+      _FlutterIconPickerExampleState();
 }
 
 class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
@@ -59,7 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
       showSearchBar: showSearch,
-      iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      iconPickerShape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       iconPackMode: IconPack.lineAwesomeIcons,
     );
 
@@ -94,12 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ButtonBar(
               alignment: MainAxisAlignment.center,
               children: [
-                RaisedButton(
+                ElevatedButton(
                   onPressed: _pickIcon,
-                  child: Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
+                  child:
+                      Text(_icon != null ? 'Change Icon' : 'Open IconPicker'),
                 ),
                 if (_icon != null)
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => setState(() => _icon = null),
                     child: Text('Clear Icon'),
                   ),
@@ -119,21 +122,24 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show search-bar', style: TextStyle(color: Colors.white)),
+                title: Text('Show search-bar',
+                    style: TextStyle(color: Colors.white)),
                 value: showSearch,
                 onChanged: (val) => setState(() => showSearch = val),
               ),
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show tooltips', style: TextStyle(color: Colors.white)),
+                title: Text('Show tooltips',
+                    style: TextStyle(color: Colors.white)),
                 value: showTooltips,
                 onChanged: (val) => setState(() => showTooltips = val),
               ),
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Adaptive dialog', style: TextStyle(color: Colors.white)),
+                title: Text('Adaptive dialog',
+                    style: TextStyle(color: Colors.white)),
                 value: isAdaptive,
                 onChanged: (val) => setState(() => isAdaptive = val),
               ),
