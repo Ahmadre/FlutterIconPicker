@@ -1,6 +1,6 @@
 # FlutterIconPicker
 
-[![Version](https://img.shields.io/badge/pub-v2.2.2-blue)](https://pub.dev/packages/flutter_iconpicker)
+[![Version](https://img.shields.io/badge/pub-v2.2.3-blue)](https://pub.dev/packages/flutter_iconpicker)
 [![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20|%20desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
 
 This package provides an IconPicker with supported (or custom provided) Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
@@ -41,7 +41,7 @@ To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.y
 | searchHintText    | `String`         | `'Search'`      | Sets the `hintText` in the `TextField` of [SearchBar] |
 | searchClearIcon   | `Icon`           | `Icon(Icons.close)`      | Sets the suffix icon in the [SearchBar] |
 | noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
-| showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon.<br> **WARNING for Flutter Web**: Until SKIA is disabled (like Flutter Web isn't ready for SKIA yet), this option could slow down the performance! |
+| showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon. |
 | showSearchBar   | `bool`           | `true`      | Shows the search bar above the icons if `true` |
 | iconPackMode   | `IconPack`           | `IconPack.material`      | The mode which Icons to show. |
 | customIconPack   | `Map<String, IconData>`           | `null`      | The customized icons that can be used instead. |

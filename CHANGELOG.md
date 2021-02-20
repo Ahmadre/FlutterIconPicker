@@ -1,3 +1,8 @@
+## [2.2.3] - 20.02.2021
+
+* Update flutter components
+* clean-up
+
 ## [2.2.2] - 26.10.2020
 
 * Update dependencies (Cupertino, LineAwesome, FontAwesome)
