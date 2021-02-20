@@ -1,3 +1,8 @@
+## [3.0.0-nullsafety] - 20.02.2021
+
+* Migrate to nullsafety
+    - Use 2.2.3 if you are not ready for nullsafety yet
+
 ## [2.2.3] - 20.02.2021
 
 * Update flutter components

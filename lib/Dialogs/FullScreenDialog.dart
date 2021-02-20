@@ -6,37 +6,37 @@ import '../Models/IconPack.dart';
 
 class FullScreenDialog extends StatelessWidget {
   const FullScreenDialog({
-    Key key,
-    @required this.showSearchBar,
-    @required this.showTooltips,
-    @required this.backgroundColor,
-    @required this.title,
-    @required this.iconPackMode,
-    @required this.customIconPack,
-    @required this.searchIcon,
-    @required this.searchClearIcon,
-    @required this.searchHintText,
-    @required this.iconColor,
-    @required this.noResultsText,
-    @required this.iconSize,
-    @required this.mainAxisSpacing,
-    @required this.crossAxisSpacing,
+    Key? key,
+    required this.showSearchBar,
+    required this.showTooltips,
+    required this.backgroundColor,
+    required this.title,
+    required this.iconPackMode,
+    required this.customIconPack,
+    required this.searchIcon,
+    required this.searchClearIcon,
+    required this.searchHintText,
+    required this.iconColor,
+    required this.noResultsText,
+    required this.iconSize,
+    required this.mainAxisSpacing,
+    required this.crossAxisSpacing,
   }) : super(key: key);
 
-  final bool showSearchBar;
-  final bool showTooltips;
-  final Color backgroundColor;
-  final Widget title;
-  final IconPack iconPackMode;
-  final Map<String, IconData> customIconPack;
-  final Icon searchIcon;
-  final Icon searchClearIcon;
-  final String searchHintText;
-  final Color iconColor;
-  final String noResultsText;
-  final double iconSize;
-  final double mainAxisSpacing;
-  final double crossAxisSpacing;
+  final bool? showSearchBar;
+  final bool? showTooltips;
+  final Color? backgroundColor;
+  final Widget? title;
+  final IconPack? iconPackMode;
+  final Map<String, IconData>? customIconPack;
+  final Icon? searchIcon;
+  final Icon? searchClearIcon;
+  final String? searchHintText;
+  final Color? iconColor;
+  final String? noResultsText;
+  final double? iconSize;
+  final double? mainAxisSpacing;
+  final double? crossAxisSpacing;
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +60,9 @@ class FullScreenDialog extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 6),
                       child: DefaultTextStyle(
-                        child: title,
+                        child: title!,
                         style: TextStyle(
-                          color: ColorBrightness(backgroundColor).isLight()
+                          color: ColorBrightness(backgroundColor!).isLight()
                               ? Colors.black
                               : Colors.white,
                           fontSize: 20,
@@ -72,7 +72,7 @@ class FullScreenDialog extends StatelessWidget {
                     IconButton(
                       icon: Icon(
                         Icons.close,
-                        color: ColorBrightness(backgroundColor).isLight()
+                        color: ColorBrightness(backgroundColor!).isLight()
                             ? Colors.black
                             : Colors.white,
                       ),
@@ -81,7 +81,7 @@ class FullScreenDialog extends StatelessWidget {
                   ],
                 ),
               ),
-              if (showSearchBar)
+              if (showSearchBar!)
                 SearchBar(
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,

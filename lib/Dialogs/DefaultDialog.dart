@@ -8,7 +8,7 @@ import '../Models/IconPack.dart';
 
 class DefaultDialog extends StatelessWidget {
   const DefaultDialog({
-    Key key,
+    Key? key,
     this.showSearchBar,
     this.routedView = false,
     this.adaptive = false,
@@ -31,26 +31,26 @@ class DefaultDialog extends StatelessWidget {
     this.customIconPack,
   }) : super(key: key);
 
-  final bool showSearchBar;
+  final bool? showSearchBar;
   final bool routedView;
   final bool adaptive;
-  final bool showTooltips;
-  final bool barrierDismissible;
-  final double iconSize;
-  final Color iconColor;
-  final double mainAxisSpacing;
-  final double crossAxisSpacing;
-  final ShapeBorder iconPickerShape;
-  final Color backgroundColor;
-  final BoxConstraints constraints;
-  final Widget title;
-  final Widget closeChild;
-  final Icon searchIcon;
-  final String searchHintText;
-  final Icon searchClearIcon;
-  final String noResultsText;
-  final IconPack iconPackMode;
-  final Map<String, IconData> customIconPack;
+  final bool? showTooltips;
+  final bool? barrierDismissible;
+  final double? iconSize;
+  final Color? iconColor;
+  final double? mainAxisSpacing;
+  final double? crossAxisSpacing;
+  final ShapeBorder? iconPickerShape;
+  final Color? backgroundColor;
+  final BoxConstraints? constraints;
+  final Widget? title;
+  final Widget? closeChild;
+  final Icon? searchIcon;
+  final String? searchHintText;
+  final Icon? searchClearIcon;
+  final String? noResultsText;
+  final IconPack? iconPackMode;
+  final Map<String, IconData>? customIconPack;
 
   @override
   Widget build(BuildContext context) {
@@ -95,9 +95,9 @@ class DefaultDialog extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 6),
                         child: DefaultTextStyle(
-                          child: title,
+                          child: title!,
                           style: TextStyle(
-                            color: ColorBrightness(backgroundColor).isLight()
+                            color: ColorBrightness(backgroundColor!).isLight()
                                 ? Colors.black
                                 : Colors.white,
                             fontSize: 20,
@@ -107,7 +107,7 @@ class DefaultDialog extends StatelessWidget {
                       IconButton(
                         icon: Icon(
                           Icons.close,
-                          color: ColorBrightness(backgroundColor).isLight()
+                          color: ColorBrightness(backgroundColor!).isLight()
                               ? Colors.black
                               : Colors.white,
                         ),
@@ -116,7 +116,7 @@ class DefaultDialog extends StatelessWidget {
                     ],
                   ),
                 ),
-                if (showSearchBar)
+                if (showSearchBar!)
                   SearchBar(
                     iconPack: iconPackMode,
                     customIconPack: customIconPack,
@@ -148,9 +148,9 @@ class DefaultDialog extends StatelessWidget {
         backgroundColor: backgroundColor,
         shape: iconPickerShape,
         title: DefaultTextStyle(
-          child: title,
+          child: title!,
           style: TextStyle(
-            color: ColorBrightness(backgroundColor).isLight()
+            color: ColorBrightness(backgroundColor!).isLight()
                 ? Colors.black
                 : Colors.white,
             fontSize: 20,
@@ -160,7 +160,7 @@ class DefaultDialog extends StatelessWidget {
           constraints: constraints,
           child: Column(
             children: <Widget>[
-              if (showSearchBar)
+              if (showSearchBar!)
                 SearchBar(
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,
@@ -193,7 +193,7 @@ class DefaultDialog extends StatelessWidget {
               ),
             ),
             onPressed: () => Navigator.of(context).pop(),
-            child: closeChild,
+            child: closeChild!,
           ),
         ],
       );
