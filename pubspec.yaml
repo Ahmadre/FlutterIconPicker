@@ -39,7 +39,3 @@ flutter:
       fonts:
         - asset: fonts/fa-regular-400.ttf
           style: normal
-    - family: OMIcons
-      fonts:
-        - asset: fonts/outline_material.ttf
-          style: normal
