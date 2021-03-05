@@ -27,8 +27,7 @@ class SearchBar extends StatefulWidget {
   final Icon? searchClearIcon;
   final Color? backgroundColor;
 
-  static TextEditingController searchTextController =
-      new TextEditingController();
+  static TextEditingController searchTextController = TextEditingController();
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -36,7 +35,7 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
-    Map<String, IconData> searchResult = new Map<String, IconData>();
+    Map<String, IconData> searchResult = Map<String, IconData>();
 
     if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
       widget.customIconPack!.forEach((String key, IconData val) {
