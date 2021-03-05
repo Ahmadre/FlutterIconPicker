@@ -3,9 +3,6 @@ enum IconPack {
   /// The official Material Icons by Flutter
   material,
 
-  /// The official Material Icons in outline shape
-  materialOutline,
-
   /// The official Cupertino Icons (Apple Design)
   cupertino,
 

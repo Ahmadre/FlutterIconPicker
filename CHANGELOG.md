@@ -1,7 +1,11 @@
-## [3.0.0-nullsafety] - 20.02.2021
+## [3.0.0-nullsafety] - 05.03.2021
 
 * Migrate to nullsafety
-    - Use 2.2.3 if you are not ready for nullsafety yet
+    - Use `2.2.3` if you are not ready for null-safety yet
+* Remove some dependencies to be more independent with null-safety
+* Update Material Icons:
+    - Add all `Sharp`, `Rounded` and `Outlined` icons
+    - General clean up and update with Flutter `2.0.1`
 
 ## [2.2.3] - 20.02.2021
 

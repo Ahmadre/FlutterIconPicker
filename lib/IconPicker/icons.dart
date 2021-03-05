@@ -4,7 +4,6 @@
 /// rebar.ahmad@gmail.com
 
 export 'Packs/Material.dart';
-export 'Packs/MaterialOutline.dart';
 export 'Packs/Cupertino.dart';
 export 'Packs/FontAwesome.dart';
 export 'Packs/LineIcons.dart';
@@ -12,7 +11,6 @@ export 'Packs/LineIcons.dart';
 import '../Models/IconPack.dart';
 
 import 'Packs/Material.dart';
-import 'Packs/MaterialOutline.dart';
 import 'Packs/Cupertino.dart';
 import 'Packs/FontAwesome.dart';
 import 'Packs/LineIcons.dart';
@@ -24,8 +22,6 @@ class IconManager {
     switch (pickedPack) {
       case IconPack.material:
         return icons;
-      case IconPack.materialOutline:
-        return materialOutline;
       case IconPack.cupertino:
         return cupertinoIcons;
       case IconPack.fontAwesomeIcons:

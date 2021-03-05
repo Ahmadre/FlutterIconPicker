@@ -13,7 +13,7 @@ This package provides an IconPicker with supported (or custom provided) Icons wh
 |     IconPack     | Supported |
 | :--------------: | :-------: |
 |     Material     |    ✅     |
-| Material Outline |    ✅     |
+| (includes Sharp, Rounded and Outlined)||
 |    Cupertino     |    ✅     |
 |   FontAwesome    |    ✅     |
 |   LineAwesome    |    ✅     |
