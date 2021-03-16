@@ -1,4 +1,4 @@
-## [3.0.0-nullsafety] - 05.03.2021
+## [3.0.0] - 05.03.2021
 
 * Migrate to nullsafety
     - Use `2.2.3` if you are not ready for null-safety yet
