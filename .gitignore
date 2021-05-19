@@ -29,6 +29,8 @@
 .pub-cache/
 .pub/
 build/
+.fvm
+example/.fvm
 
 # Android related
 **/android/**/gradle-wrapper.jar

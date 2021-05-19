@@ -1,3 +1,9 @@
+## [3.0.1] - 20.05.2021
+
+* Fix and adapt to constant changes in IconPacks (especially: MaterialIcons) changes in `codePoints`
+  - Fixes: [#19](https://github.com/Ahmadre/FlutterIconPicker/issues/19) - many thanks to [Piotr Merski](https://github.com/merskip) for his solution here :)
+* Update example-project with explicit DB example (hive + provider)
+
 ## [3.0.0] - 05.03.2021
 
 * Migrate to nullsafety

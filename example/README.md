@@ -1,6 +1,6 @@
 # fluttericonpickerexample
 
-A new Flutter project.
+Example project for FlutterIconPicker
 
 ## Getting Started
 

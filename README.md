@@ -1,7 +1,7 @@
 # FlutterIconPicker
 
 ![ci](https://github.com/Ahmadre/FlutterIconPicker/actions/workflows/dart.yml/badge.svg)
-[![Version](https://img.shields.io/badge/pub-v3.0.0-blue)](https://pub.dev/packages/flutter_iconpicker)
+[![Version](https://img.shields.io/badge/pub-v3.0.1-blue)](https://pub.dev/packages/flutter_iconpicker)
 [![Generic badge](https://img.shields.io/badge/platform-android%20|%20ios%20|%20web%20|%20desktop-blue.svg)](https://pub.dev/packages/flutter_iconpicker)
 
 This package provides an IconPicker with supported (or custom provided) Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
@@ -73,7 +73,7 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
 **IconData to Map**
 
 ```dart
-  iconDataToMap(iconData)
+  serializeIcon(iconData)
 ```
 
 2. You can retreive the IconData by passing the mapped IconData:
@@ -81,10 +81,12 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
 **Map to IconData**
 
 ```dart
-  mapToIconData(map)
+  deserializeIcon(map)
 ```
 
 ## Example
+
+> If you're looking for a complete example with DB storage, jump in here: [ExampleProject](example/lib)
 
 ```dart
 import 'package:flutter/material.dart';
