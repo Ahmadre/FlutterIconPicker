@@ -1,3 +1,10 @@
+## [3.0.1+1] - 20.05.2021
+
+* __Breaking Change__: 
+  - `iconDataToMap` is now named: `serializeIcon`
+    - Works still the same with a little addition: `serializeIcon(IconData icon, {IconPack iconPack})`
+  - `mapToIconData` is now named: `deserializeIcon`
+
 ## [3.0.1] - 20.05.2021
 
 * Fix and adapt to constant changes in IconPacks (especially: MaterialIcons) changes in `codePoints`
