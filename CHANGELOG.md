@@ -1,3 +1,8 @@
+## [3.0.1+2] - 20.05.2021
+
+* Remove main dependencies `hive` and `provider`, because PubSpec-Assist for IntelliJ did something wrong here
+  - Thanks to: [#21](https://github.com/Ahmadre/FlutterIconPicker/pull/21)
+
 ## [3.0.1+1] - 20.05.2021
 
 * __Breaking Change__: 
