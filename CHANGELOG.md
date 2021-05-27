@@ -1,3 +1,8 @@
+## [3.0.2] - 27.05.2021
+
+* Update MaterialIcons to pick through `Icons` rather then `IconData`
+  - Fixes: [#22](https://github.com/Ahmadre/FlutterIconPicker/issues/22)
+
 ## [3.0.1+2] - 20.05.2021
 
 * Remove main dependencies `hive` and `provider`, because PubSpec-Assist for IntelliJ did something wrong here

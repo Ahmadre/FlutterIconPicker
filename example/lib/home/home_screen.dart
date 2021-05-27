@@ -101,7 +101,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   AnimatedSwitcher(
                 duration: Duration(milliseconds: 300),
                 child: notifier.iconData != null
-                    ? Icon(notifier.iconData)
+                    ? Column(
+                        children: [
+                          Icon(notifier.iconData),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                            'Database Entry:\n${serializeIcon(notifier.iconData).toString()}',
+                          ),
+                        ],
+                      )
                     : Container(),
               ),
             ),
