@@ -1,6 +1,8 @@
-## [3.0.2] - 27.05.2021
+## [3.0.3] - 02.09.20213
 
 * Fix outdated Material Icons.
+ - Fixes: [#25](https://github.com/Ahmadre/FlutterIconPicker/issues/25)
+   - Thanks to: [#28](https://github.com/Ahmadre/FlutterIconPicker/pull/28)
 
 ## [3.0.2] - 27.05.2021
 
