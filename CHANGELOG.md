@@ -1,3 +1,8 @@
+## [3.1.0] - 26.12.2021
+
+* [BREAKING-CHANGE]:
+  - `iconPackMode` is now `iconPackModes`, where you can add a `List<IconPack>` to provide users multiple packs (including your own `customIconPack`). You can also use only a single pack, just do: `[IconPack.blabla]`
+    - Thanks for Feature Request: [#34](https://github.com/Ahmadre/FlutterIconPicker/issues/34)
 ## [3.0.5] - 26.12.2021
 
 * Fix outdated Material Icons.
