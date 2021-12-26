@@ -27,7 +27,7 @@ class FullScreenDialog extends StatelessWidget {
   final bool? showTooltips;
   final Color? backgroundColor;
   final Widget? title;
-  final IconPack? iconPackMode;
+  final List<IconPack>? iconPackMode;
   final Map<String, IconData>? customIconPack;
   final Icon? searchIcon;
   final Icon? searchClearIcon;

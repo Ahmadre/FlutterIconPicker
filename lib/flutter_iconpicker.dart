@@ -113,22 +113,19 @@ class FlutterIconPicker {
     /// Default: `No results for:`
     String noResultsText = 'No results for:',
 
-    /// The mode which Icons to show
+    /// The modes which Icons to show
     /// Modes: `material`,
     ///        `cupertino`,
     ///        `materialOutline`,
     ///        `fontAwesomeIcons`,
     ///        `lineAwesomeIcons`
     /// Default: `IconPack.material`
-    IconPack iconPackMode = IconPack.material,
+    List<IconPack> iconPackModes = const <IconPack>[],
 
     /// Provide here your custom IconPack in a [Map<String, IconData>]
     /// to show your own collection of Icons to pick from
     Map<String, IconData>? customIconPack,
   }) async {
-    if (iconPackMode == IconPack.custom && customIconPack == null)
-      throw AssertionError(
-          'You need to provide your customIconPack if you set IconPack.custom');
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
@@ -170,7 +167,7 @@ class FlutterIconPicker {
             searchHintText: searchHintText,
             searchClearIcon: searchClearIcon,
             noResultsText: noResultsText,
-            iconPackMode: iconPackMode,
+            iconPackMode: iconPackModes,
             customIconPack: customIconPack,
           ),
         );
@@ -198,7 +195,7 @@ class FlutterIconPicker {
               searchHintText: searchHintText,
               searchClearIcon: searchClearIcon,
               noResultsText: noResultsText,
-              iconPackMode: iconPackMode,
+              iconPackMode: iconPackModes,
               customIconPack: customIconPack,
             ),
           ),
@@ -225,7 +222,7 @@ class FlutterIconPicker {
           searchHintText: searchHintText,
           searchClearIcon: searchClearIcon,
           noResultsText: noResultsText,
-          iconPackMode: iconPackMode,
+          iconPackMode: iconPackModes,
           customIconPack: customIconPack,
         ),
       );

@@ -20,7 +20,7 @@ class SearchBar extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  final IconPack? iconPack;
+  final List<IconPack>? iconPack;
   final Map<String, IconData>? customIconPack;
   final String? searchHintText;
   final Icon? searchIcon;
@@ -37,19 +37,21 @@ class _SearchBarState extends State<SearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = Map<String, IconData>();
 
-    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
+    for (var pack in widget.iconPack!) {
+      IconManager.getSelectedPack(pack).forEach((String key, IconData val) {
+        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
+          searchResult.putIfAbsent(key, () => val);
+        }
+      });
+    }
+
+    if (widget.customIconPack != null) {
       widget.customIconPack!.forEach((String key, IconData val) {
         if (key.toLowerCase().contains(searchValue.toLowerCase())) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
-    else
-      IconManager.getSelectedPack(widget.iconPack)
-          .forEach((String key, IconData val) {
-        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
-          searchResult.putIfAbsent(key, () => val);
-        }
-      });
+    }
 
     setState(() {
       if (searchResult.length != 0) {
@@ -86,12 +88,15 @@ class _SearchBarState extends State<SearchBar> {
                   icon: widget.searchClearIcon!,
                   onPressed: () => setState(() {
                     SearchBar.searchTextController.clear();
-                    if (widget.iconPack == IconPack.custom &&
-                        widget.customIconPack != null)
-                      IconPicker.iconMap = widget.customIconPack;
-                    else
-                      IconPicker.iconMap =
-                          IconManager.getSelectedPack(widget.iconPack);
+                    if (widget.customIconPack != null)
+                      IconPicker.iconMap.addAll(widget.customIconPack ?? {});
+
+                    if (widget.iconPack != null)
+                      for (var pack in widget.iconPack!) {
+                        IconPicker.iconMap
+                            .addAll(IconManager.getSelectedPack(pack));
+                      }
+
                     IconPicker.reload();
                   }),
                 )

@@ -10,7 +10,7 @@ import '../Models/IconPack.dart';
 import '../Helpers/ColorBrightness.dart';
 
 class IconPicker extends StatefulWidget {
-  final IconPack? iconPack;
+  final List<IconPack>? iconPack;
   final Map<String, IconData>? customIconPack;
   final double? iconSize;
   final Color? iconColor;
@@ -21,7 +21,7 @@ class IconPicker extends StatefulWidget {
   final bool? showTooltips;
 
   static late Function reload;
-  static Map<String, IconData>? iconMap;
+  static Map<String, IconData> iconMap = {};
 
   const IconPicker({
     Key? key,
@@ -44,10 +44,13 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    if (widget.iconPack == IconPack.custom && widget.customIconPack != null)
-      IconPicker.iconMap = widget.customIconPack;
-    else
-      IconPicker.iconMap = IconManager.getSelectedPack(widget.iconPack);
+    if (widget.customIconPack != null)
+      IconPicker.iconMap.addAll(widget.customIconPack ?? {});
+
+    if (widget.iconPack != null)
+      for (var pack in widget.iconPack!) {
+        IconPicker.iconMap.addAll(IconManager.getSelectedPack(pack));
+      }
     IconPicker.reload = reload;
   }
 
@@ -89,12 +92,12 @@ class _IconPickerState extends State<IconPicker> {
       padding: const EdgeInsets.only(top: 5),
       child: Stack(
         children: <Widget>[
-          if (IconPicker.iconMap!.length == 0)
+          if (IconPicker.iconMap.length == 0)
             _getListEmptyMsg()
           else
             Positioned.fill(
               child: GridView.builder(
-                  itemCount: IconPicker.iconMap!.length,
+                  itemCount: IconPicker.iconMap.length,
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     childAspectRatio: 1 / 1,
                     mainAxisSpacing: 5,
@@ -103,7 +106,7 @@ class _IconPickerState extends State<IconPicker> {
                         widget.iconSize != null ? widget.iconSize! + 10 : 50,
                   ),
                   itemBuilder: (context, index) {
-                    var item = IconPicker.iconMap!.entries.elementAt(index);
+                    var item = IconPicker.iconMap.entries.elementAt(index);
 
                     return GestureDetector(
                       onTap: () => Navigator.pop(context, item.value),

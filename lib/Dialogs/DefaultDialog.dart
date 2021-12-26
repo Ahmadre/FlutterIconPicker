@@ -49,7 +49,7 @@ class DefaultDialog extends StatelessWidget {
   final String? searchHintText;
   final Icon? searchClearIcon;
   final String? noResultsText;
-  final IconPack? iconPackMode;
+  final List<IconPack>? iconPackMode;
   final Map<String, IconData>? customIconPack;
 
   @override
