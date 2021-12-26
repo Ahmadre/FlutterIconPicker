@@ -113,6 +113,14 @@ class FlutterIconPicker {
     /// Default: `No results for:`
     String noResultsText = 'No results for:',
 
+    @Deprecated(
+      'Use iconPackModes instead. '
+      'You must provide now a List<IconPack>. '
+      'This feature was deprecated after v3.0.5. ',
+    )
+    /// Replace `iconPackMode` with `iconPackModes` which is now a List<IconPack>
+    IconPack? iconPackMode,
+
     /// The modes which Icons to show
     /// Modes: `material`,
     ///        `cupertino`,
@@ -120,12 +128,13 @@ class FlutterIconPicker {
     ///        `fontAwesomeIcons`,
     ///        `lineAwesomeIcons`
     /// Default: `IconPack.material`
-    List<IconPack> iconPackModes = const <IconPack>[],
+    List<IconPack> iconPackModes = const <IconPack>[IconPack.material],
 
     /// Provide here your custom IconPack in a [Map<String, IconData>]
     /// to show your own collection of Icons to pick from
     Map<String, IconData>? customIconPack,
   }) async {
+    if (iconPackMode != null) iconPackModes = [iconPackMode];
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
@@ -136,6 +145,7 @@ class FlutterIconPicker {
             const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
       }
     }
+
     if (iconPickerShape == null)
       iconPickerShape =
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));

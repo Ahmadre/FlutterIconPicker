@@ -44,12 +44,12 @@ To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.y
 | noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
 | showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon. |
 | showSearchBar   | `bool`           | `true`      | Shows the search bar above the icons if `true` |
-| iconPackMode   | `IconPack`           | `IconPack.material`      | The mode which Icons to show. |
+| iconPackModes   | `List<IconPack>`           | `const <IconPack>[IconPack.material]`      | The modes which Icons to show. |
 | customIconPack   | `Map<String, IconData>`           | `null`      | The customized icons that can be used instead. |
 
 ### IconPackMode
 
-You can select the wished IconPack through the argument: `iconPackMode`. This defaults to `IconPack.material`.
+You can select the wished IconPacks through the argument: `iconPackModes`. This defaults to `const <IconPack>[IconPack.material]`.
 For further usage have a look in the example.
 
 ### You own Icons
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Icon _icon;
 
 _pickIcon() async {
-  IconData icon = await FlutterIconPicker.showIconPicker(context, iconPackMode: IconPack.cupertino);
+  IconData icon = await FlutterIconPicker.showIconPicker(context, iconPackModes: [IconPack.cupertino]);
 
   _icon = Icon(icon);
   setState((){});
