@@ -1,3 +1,13 @@
+## [3.0.5] - 26.12.2021
+
+* Fix outdated Material Icons.
+  - Fixes: [#29](https://github.com/Ahmadre/FlutterIconPicker/issues/29)
+    - Thanks to: [#32](https://github.com/Ahmadre/FlutterIconPicker/pull/32)
+* Fix outdated Font Awesome Icons.
+  - Fixes: [#30](https://github.com/Ahmadre/FlutterIconPicker/issues/30)
+    - Thanks to: [#31](https://github.com/Ahmadre/FlutterIconPicker/pull/31)
+* Update dependencies
+
 ## [3.0.4] - 02.09.20213
 
 * Fix outdated Material Icons.
