@@ -93,50 +93,55 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: HomeScreen()
-  ));
+  runApp(
+    const MaterialApp(
+      home: HomeScreen(),
+    ),
+  );
 }
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Icon _icon;
+  Icon? _icon;
 
-_pickIcon() async {
-  IconData icon = await FlutterIconPicker.showIconPicker(context, iconPackModes: [IconPack.cupertino]);
+  _pickIcon() async {
+    IconData? icon = await FlutterIconPicker.showIconPicker(context,
+        iconPackModes: [IconPack.cupertino]);
 
-  _icon = Icon(icon);
-  setState((){});
+    _icon = Icon(icon);
+    setState(() {});
 
-  debugPrint('Picked Icon:  $icon');
-}
+    debugPrint('Picked Icon:  $icon');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          RaisedButton(
-            onPressed: _pickIcon,
-            child: Text('Open IconPicker'),
-          ),
-          SizedBox(height: 10),
-          AnimatedSwitcher(
-            duration: Duration(milliseconds: 300),
-            child: _icon != null ? _icon : Container()
-          )
-        ])
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: _pickIcon,
+              child: const Text('Open IconPicker'),
+            ),
+            const SizedBox(height: 10),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: _icon ?? Container(),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
 ```
