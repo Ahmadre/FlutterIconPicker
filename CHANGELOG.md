@@ -1,3 +1,7 @@
+## [3.1.1] - 29.12.2021
+
+* Remove `iconPackMode`. Use now: `iconPackModes`, where you can add a `List<IconPack>` to provide users multiple packs (including your own `customIconPack`).
+
 ## [3.1.0] - 26.12.2021
 
 * [BREAKING-CHANGE]:
