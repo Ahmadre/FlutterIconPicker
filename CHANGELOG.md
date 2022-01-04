@@ -1,3 +1,7 @@
+## [3.1.2] - 04.01.2022
+
+* Fixed default return Material Icons wiht new `iconPackModes` interface. Thanks to [jlnrrg](https://github.com/jlnrrg) for his hint in [#34](https://github.com/Ahmadre/FlutterIconPicker/issues/34#issuecomment-1003804252)
+
 ## [3.1.1] - 29.12.2021
 
 * Remove `iconPackMode`. Use now: `iconPackModes`, where you can add a `List<IconPack>` to provide users multiple packs (including your own `customIconPack`).
