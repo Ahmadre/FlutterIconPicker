@@ -55,9 +55,9 @@ class _SearchBarState extends State<SearchBar> {
 
     setState(() {
       if (searchResult.length != 0) {
-        IconPicker.iconMap = searchResult;
+        IconPicker.iconMap.addAll(searchResult);
       } else {
-        IconPicker.iconMap = {};
+        IconPicker.iconMap.removeAll();
       }
       IconPicker.reload();
     });
