@@ -23,7 +23,6 @@ dependencies:
     path: ../
   hive: ^2.0.4
   path_provider: ^2.0.1
-  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

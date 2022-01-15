@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:fluttericonpickerexample/app/app_brightness.dart';
 import 'package:fluttericonpickerexample/app/icon_notifier.dart';
-import 'package:fluttericonpickerexample/multiple_pickers/home_2.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({
+class HomeScreen2 extends StatefulWidget {
+  const HomeScreen2({
     Key key,
   }) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreen2State createState() => _HomeScreen2State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreen2State extends State<HomeScreen2> {
   IconNotifier notifier;
 
   bool isAdaptive = true;
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       showSearchBar: showSearch,
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
+      iconPackModes: [IconPack.material],
     );
 
     if (icon != null) {
@@ -51,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Icon Picker Demo'),
+        title: Text('Multiple Pickers'),
         actions: [
           IconButton(
             icon: Icon(notifier.brightness.icon),
@@ -72,15 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {});
             },
             tooltip: 'Switch brightness',
-          ),
-          IconButton(
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => HomeScreen2(),
-              ),
-            ),
-            icon: const Icon(Icons.arrow_forward_rounded),
-            tooltip: 'Show next picker',
           ),
         ],
       ),

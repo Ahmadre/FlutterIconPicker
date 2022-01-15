@@ -4,12 +4,14 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/controllers/icon_controller.dart';
+import 'package:provider/provider.dart';
 import 'icons.dart';
-import 'searchBar.dart';
 import '../Models/IconPack.dart';
 import '../Helpers/ColorBrightness.dart';
 
 class IconPicker extends StatefulWidget {
+  final IconController iconController;
   final List<IconPack>? iconPack;
   final Map<String, IconData>? customIconPack;
   final double? iconSize;
@@ -20,11 +22,9 @@ class IconPicker extends StatefulWidget {
   final Color? backgroundColor;
   final bool? showTooltips;
 
-  static late Function reload;
-  static Map<String, IconData> iconMap = {};
-
   const IconPicker({
     Key? key,
+    required this.iconController,
     required this.iconPack,
     required this.iconSize,
     required this.noResultsText,
@@ -44,18 +44,17 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    if (widget.customIconPack != null)
-      IconPicker.iconMap.addAll(widget.customIconPack ?? {});
-
-    if (widget.iconPack != null)
-      for (var pack in widget.iconPack!) {
-        IconPicker.iconMap.addAll(IconManager.getSelectedPack(pack));
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      if (widget.customIconPack != null) {
+        if (mounted) widget.iconController.addAll(widget.customIconPack ?? {});
       }
-    IconPicker.reload = reload;
-  }
 
-  reload() {
-    setState(() {});
+      if (widget.iconPack != null)
+        for (var pack in widget.iconPack!) {
+          if (mounted)
+            widget.iconController.addAll(IconManager.getSelectedPack(pack));
+        }
+    });
   }
 
   Widget _getListEmptyMsg() => Container(
@@ -72,7 +71,7 @@ class _IconPickerState extends State<IconPicker> {
               ),
               children: [
                 TextSpan(
-                  text: SearchBar.searchTextController.text,
+                  text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: ColorBrightness(widget.backgroundColor!).isLight()
@@ -88,84 +87,86 @@ class _IconPickerState extends State<IconPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 5),
-      child: Stack(
-        children: <Widget>[
-          if (IconPicker.iconMap.length == 0)
-            _getListEmptyMsg()
-          else
-            Positioned.fill(
-              child: GridView.builder(
-                  itemCount: IconPicker.iconMap.length,
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    childAspectRatio: 1 / 1,
-                    mainAxisSpacing: 5,
-                    crossAxisSpacing: 5,
-                    maxCrossAxisExtent:
-                        widget.iconSize != null ? widget.iconSize! + 10 : 50,
-                  ),
-                  itemBuilder: (context, index) {
-                    var item = IconPicker.iconMap.entries.elementAt(index);
+    return Consumer<IconController>(
+      builder: (ctx, controller, _) => Padding(
+        padding: const EdgeInsets.only(top: 5),
+        child: Stack(
+          children: <Widget>[
+            if (controller.icons.length == 0)
+              _getListEmptyMsg()
+            else
+              Positioned.fill(
+                child: GridView.builder(
+                    itemCount: controller.length,
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      childAspectRatio: 1 / 1,
+                      mainAxisSpacing: 5,
+                      crossAxisSpacing: 5,
+                      maxCrossAxisExtent:
+                          widget.iconSize != null ? widget.iconSize! + 10 : 50,
+                    ),
+                    itemBuilder: (context, index) {
+                      var item = controller.entries.elementAt(index);
 
-                    return GestureDetector(
-                      onTap: () => Navigator.pop(context, item.value),
-                      child: widget.showTooltips!
-                          ? Tooltip(
-                              message: item.key,
-                              child: Icon(
+                      return GestureDetector(
+                        onTap: () => Navigator.pop(context, item.value),
+                        child: widget.showTooltips!
+                            ? Tooltip(
+                                message: item.key,
+                                child: Icon(
+                                  item.value,
+                                  size: widget.iconSize,
+                                  color: widget.iconColor,
+                                ),
+                              )
+                            : Icon(
                                 item.value,
                                 size: widget.iconSize,
                                 color: widget.iconColor,
                               ),
-                            )
-                          : Icon(
-                              item.value,
-                              size: widget.iconSize,
-                              color: widget.iconColor,
-                            ),
-                    );
-                  }),
-            ),
-          IgnorePointer(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.lerp(
-                        Alignment.topCenter, Alignment.center, .05)!,
-                    colors: [
-                      widget.backgroundColor!,
-                      widget.backgroundColor!.withOpacity(.1),
-                    ],
-                    stops: [
-                      0.0,
-                      1.0
-                    ]),
+                      );
+                    }),
               ),
-              child: Container(),
-            ),
-          ),
-          IgnorePointer(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.lerp(
-                        Alignment.bottomCenter, Alignment.center, .05)!,
-                    colors: [
-                      widget.backgroundColor!,
-                      widget.backgroundColor!.withOpacity(.1),
-                    ],
-                    stops: [
-                      0.0,
-                      1.0
-                    ]),
+            IgnorePointer(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.lerp(
+                          Alignment.topCenter, Alignment.center, .05)!,
+                      colors: [
+                        widget.backgroundColor!,
+                        widget.backgroundColor!.withOpacity(.1),
+                      ],
+                      stops: [
+                        0.0,
+                        1.0
+                      ]),
+                ),
+                child: Container(),
               ),
-              child: Container(),
             ),
-          ),
-        ],
+            IgnorePointer(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.lerp(
+                          Alignment.bottomCenter, Alignment.center, .05)!,
+                      colors: [
+                        widget.backgroundColor!,
+                        widget.backgroundColor!.withOpacity(.1),
+                      ],
+                      stops: [
+                        0.0,
+                        1.0
+                      ]),
+                ),
+                child: Container(),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
