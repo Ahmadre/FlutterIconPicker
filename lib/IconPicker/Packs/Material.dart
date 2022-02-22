@@ -4891,7 +4891,7 @@ Map<String, IconData> icons = {
   'pie_chart_outline_outlined': Icons.pie_chart_outline_outlined,
   'pie_chart_sharp': Icons.pie_chart_sharp,
   'pie_chart_rounded': Icons.pie_chart_rounded,
-  'pie_chart_outlined': Icons.pie_chart_outlined,
+  // 'pie_chart_outlined': Icons.pie_chart_outlined,
   'pin': Icons.pin,
   'pin_drop': Icons.pin_drop,
   'pin_drop_sharp': Icons.pin_drop_sharp,
