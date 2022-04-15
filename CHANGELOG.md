@@ -1,3 +1,8 @@
+## [3.1.3] - 16.04.2022
+
+* Fixed `pie_chart_outlined` not exists.
+  - Thanks to: [#43](https://github.com/Ahmadre/FlutterIconPicker/pull/43)
+
 ## [3.1.2] - 04.01.2022
 
 * Fixed default return Material Icons wiht new `iconPackModes` interface. Thanks to [jlnrrg](https://github.com/jlnrrg) for his hint in [#34](https://github.com/Ahmadre/FlutterIconPicker/issues/34#issuecomment-1003804252)
