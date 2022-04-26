@@ -9,10 +9,10 @@ environment:
   sdk: ">=2.13.0 <3.0.0"
   flutter: ">=2.2.0"
 dependencies:
-  cupertino_icons: ^1.0.3
+  cupertino_icons: ^1.0.4
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^9.0.0
+  font_awesome_flutter: ^10.1.0
   provider: any
 dev_dependencies:
   flutter_test:
