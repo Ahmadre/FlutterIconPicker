@@ -1,3 +1,9 @@
+## [3.1.4] - 26.04.2022
+
+* Update Dependencies
+* Update `font_awesome_flutter` icons
+* Fix Format
+
 ## [3.1.3] - 16.04.2022
 
 * Fixed `pie_chart_outlined` not exists.
