@@ -44,7 +44,7 @@ class _IconPickerState extends State<IconPicker> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (widget.customIconPack != null) {
         if (mounted) widget.iconController.addAll(widget.customIconPack ?? {});
       }
