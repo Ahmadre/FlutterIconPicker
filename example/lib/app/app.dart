@@ -12,7 +12,7 @@ class FlutterIconPickerExample extends StatefulWidget {
   final IconNotifier notifier;
 
   @override
-  _FlutterIconPickerExampleState createState() =>
+  State<FlutterIconPickerExample> createState() =>
       _FlutterIconPickerExampleState();
 }
 
@@ -25,7 +25,7 @@ class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
       value: widget.notifier,
       builder: (BuildContext ctx, Widget w) => Consumer<IconNotifier>(
         builder: (BuildContext iconCtx, dynamic d, Widget iconW) => MaterialApp(
-          home: HomeScreen(),
+          home: const HomeScreen(),
           debugShowCheckedModeBanner: false,
           themeMode: widget.notifier.brightness.mode,
           darkTheme: ThemeData(brightness: Brightness.dark),
