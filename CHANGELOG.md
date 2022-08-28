@@ -1,4 +1,8 @@
-## [3.2.0] - 26.04.2022
+## [3.2.1] - 29.08.2022
+
+* Fix mainAxisSpacing and crossAxisSpacing. Thanks for the hint [#41](https://github.com/Ahmadre/FlutterIconPicker/issues/41)
+
+## [3.2.0] - 29.08.2022
 
 * [BREAKING-CHANGE]:
   - Update `CupertinoIcons` icon call by static accessor -> please check if your already stored icons matches and can be resolved!

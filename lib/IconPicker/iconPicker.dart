@@ -100,8 +100,8 @@ class _IconPickerState extends State<IconPicker> {
                     itemCount: controller.length,
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                       childAspectRatio: 1 / 1,
-                      mainAxisSpacing: 5,
-                      crossAxisSpacing: 5,
+                      mainAxisSpacing: widget.mainAxisSpacing ?? 5,
+                      crossAxisSpacing: widget.crossAxisSpacing ?? 5,
                       maxCrossAxisExtent:
                           widget.iconSize != null ? widget.iconSize! + 10 : 50,
                     ),
