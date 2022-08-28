@@ -50,7 +50,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Multiple Pickers'),
+        title: const Text('Multiple Pickers'),
         actions: [
           IconButton(
             icon: Icon(notifier.brightness.icon),
@@ -91,20 +91,20 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 if (notifier.iconData != null)
                   ElevatedButton(
                     onPressed: () => setState(() => notifier.iconData = null),
-                    child: Text('Clear Icon'),
+                    child: const Text('Clear Icon'),
                   ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Consumer<IconNotifier>(
               builder: (BuildContext ctx, dynamic d, Widget w) =>
                   AnimatedSwitcher(
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 child: notifier.iconData != null
                     ? Column(
                         children: [
                           Icon(notifier.iconData),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Text(
@@ -124,7 +124,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
           children: [
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show search-bar',
+                title: const Text('Show search-bar',
                     style: TextStyle(color: Colors.white)),
                 value: showSearch,
                 onChanged: (val) => setState(() => showSearch = val),
@@ -132,7 +132,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show tooltips',
+                title: const Text('Show tooltips',
                     style: TextStyle(color: Colors.white)),
                 value: showTooltips,
                 onChanged: (val) => setState(() => showTooltips = val),
@@ -140,7 +140,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Adaptive dialog',
+                title: const Text('Adaptive dialog',
                     style: TextStyle(color: Colors.white)),
                 value: isAdaptive,
                 onChanged: (val) => setState(() => isAdaptive = val),
