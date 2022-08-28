@@ -1,2 +1,0 @@
-/home/takum/GitHubContrib/FlutterIconPicker/example/android/app/src/main/kotlin/com/example/fluttericonpickerexample/MainActivity.kt
-/home/takum/GitHubContrib/FlutterIconPicker/example/android/app/src/main/kotlin/com/example/example/MainActivity.kt
