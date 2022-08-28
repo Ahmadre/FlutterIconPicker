@@ -1,3 +1,11 @@
+## [3.2.0] - 26.04.2022
+
+* [BREAKING-CHANGE]:
+  - Update `CupertinoIcons` icon call by static accessor -> please check if your already stored icons matches and can be resolved!
+* Update dependencies to latest Flutter 3.0.5 Release
+* Update Material Icons to latest Icons from Stable branch
+* Update Cupertino Icons to latest Icons from Stable branch
+
 ## [3.1.4+1] - 26.04.2022
 
 * Update Docs
