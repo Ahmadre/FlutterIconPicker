@@ -40,7 +40,7 @@ To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.y
 
 ## API-Reference
 
-| __Parameter__           | __Type__           | __Default__ | __Short description__                |
+| **Parameter**           | **Type**           | **Default** | **Short description**                |
 | ----------------------- | ------------------ | ----------- | ------------------------------------- |
 | context (only required) | `BuildContext`     | `-`         | Required due to `AlertDialog`'s base. |
 | adaptiveDialog          | `bool`             | `false`     | If `true`, IconPicker will adapt depending on the screen size. If `false`, IconPicker will show itself inside an AlertDialog. |
