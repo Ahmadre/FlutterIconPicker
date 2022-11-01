@@ -1,4 +1,4 @@
-## [3.1.3] - 01.11.2022
+## [3.2.2] - 01.11.2022
 
 * 📝 Add Disclaimer to Readme (please read!)
 * ⬆️ Update dependencies (based on `flutter stable 3.3.6`):
