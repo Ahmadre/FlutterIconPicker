@@ -126,7 +126,7 @@ class FlutterIconPicker {
     /// Provide here your custom IconPack in a [Map<String, IconData>]
     /// to show your own collection of Icons to pick from
     Map<String, IconData>? customIconPack,
-  }) async {    
+  }) async {
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {

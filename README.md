@@ -38,6 +38,12 @@ For example if you want to provide `material` icons, copy the actual icons from 
 
 To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+### Building
+
+If you build your app it may fail because of this package. #TreeShakeIcons
+
+To be able to build your app, add to your build command the flag: `--no-tree-shake-icons` and you should be good to go!
+
 ## API-Reference
 
 | **Parameter**           | **Type**           | **Default** | **Short description**                |

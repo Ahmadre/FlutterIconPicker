@@ -26,7 +26,7 @@ class IconController with ChangeNotifier {
   get entries => _icons.entries;
 
   void addAll(Map<String, IconData> pack) {
-    _icons.addAll(pack);    
+    _icons.addAll(pack);
     notifyListeners();
   }
 

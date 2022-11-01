@@ -1,6 +1,6 @@
 name: fluttericonpickerexample
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -21,12 +21,13 @@ dependencies:
     sdk: flutter
   flutter_iconpicker:
     path: ../
-  hive: ^2.0.4
-  path_provider: ^2.0.1
+  hive: ^2.2.3
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

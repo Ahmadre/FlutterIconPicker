@@ -6,6 +6,33 @@
   * Cupertino Icons
   * FontAwesome Icons
 
+## [3.2.1] - 29.08.2022
+
+* Fix mainAxisSpacing and crossAxisSpacing. Thanks for the hint [#41](https://github.com/Ahmadre/FlutterIconPicker/issues/41)
+
+## [3.2.0] - 29.08.2022
+
+* [BREAKING-CHANGE]:
+  * Update `CupertinoIcons` icon call by static accessor -> please check if your already stored icons matches and can be resolved!
+* Update dependencies to latest Flutter 3.0.5 Release
+* Update Material Icons to latest Icons from Stable branch
+* Update Cupertino Icons to latest Icons from Stable branch
+
+## [3.1.4+1] - 26.04.2022
+
+* Update Docs
+
+## [3.1.4] - 26.04.2022
+
+* Update Dependencies
+* Update `font_awesome_flutter` icons
+* Fix Format
+
+## [3.1.3] - 16.04.2022
+
+* Fixed `pie_chart_outlined` not exists.
+  * Thanks to: [#43](https://github.com/Ahmadre/FlutterIconPicker/pull/43)
+
 ## [3.1.2] - 04.01.2022
 
 * Fixed default return Material Icons wiht new `iconPackModes` interface. Thanks to [jlnrrg](https://github.com/jlnrrg) for his hint in [#34](https://github.com/Ahmadre/FlutterIconPicker/issues/34#issuecomment-1003804252)
