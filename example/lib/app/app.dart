@@ -5,11 +5,11 @@ import 'package:provider/provider.dart';
 
 class FlutterIconPickerExample extends StatefulWidget {
   const FlutterIconPickerExample({
-    Key key,
+    Key? key,
     this.notifier,
   }) : super(key: key);
 
-  final IconNotifier notifier;
+  final IconNotifier? notifier;
 
   @override
   _FlutterIconPickerExampleState createState() =>
@@ -23,11 +23,11 @@ class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: widget.notifier,
-      builder: (BuildContext ctx, Widget w) => Consumer<IconNotifier>(
-        builder: (BuildContext iconCtx, dynamic d, Widget iconW) => MaterialApp(
+      builder: (BuildContext ctx, Widget? w) => Consumer<IconNotifier>(
+        builder: (BuildContext iconCtx, dynamic d, Widget? iconW) => MaterialApp(
           home: const HomeScreen(),
           debugShowCheckedModeBanner: false,
-          themeMode: widget.notifier.brightness.mode,
+          themeMode: widget.notifier!.brightness.mode,
           darkTheme: ThemeData(brightness: Brightness.dark),
           theme: ThemeData(brightness: Brightness.light),
         ),
