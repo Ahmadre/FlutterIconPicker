@@ -1,37 +1,37 @@
----
 name: flutter_iconpicker
-description: A Dialog for picking Icons in Flutter and use them anywhere. Can be used
-  as a default Dialog or as a Adaptive Dialog.
-version: 3.0.4
+description: A Dialog for picking Icons in Flutter and use them anywhere. Can be
+  used as a default Dialog or as a Adaptive Dialog.
+version: 3.2.2
 homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 environment:
   sdk: '>=2.13.0 <3.0.0'
-  flutter: '>=2.2.0'
+  flutter: '>=3.0.0'
 dependencies:
+  cupertino_icons: ^1.0.5
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.3
-  font_awesome_flutter: ^9.0.0
+  font_awesome_flutter: ^10.2.1
+  provider: ^6.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter:
   uses-material-design: true
   fonts:
-  - family: LineAwesomeIcons
-    fonts:
-    - asset: fonts/LineAwesome.ttf
-      style: normal
-  - family: FontAwesomeBrands
-    fonts:
-    - asset: fonts/fa-brands-400.ttf
-      style: normal
-  - family: FontAwesomeSolid
-    fonts:
-    - asset: fonts/fa-solid-900.ttf
-      style: normal
-  - family: FontAwesomeRegular
-    fonts:
-    - asset: fonts/fa-regular-400.ttf
-      style: normal
+    - family: LineAwesomeIcons
+      fonts:
+        - asset: fonts/LineAwesome.ttf
+          style: normal
+    - family: FontAwesomeBrands
+      fonts:
+        - asset: fonts/fa-brands-400.ttf
+          style: normal
+    - family: FontAwesomeSolid
+      fonts:
+        - asset: fonts/fa-solid-900.ttf
+          style: normal
+    - family: FontAwesomeRegular
+      fonts:
+        - asset: fonts/fa-regular-400.ttf
+          style: normal

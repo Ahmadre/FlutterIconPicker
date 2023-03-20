@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import '../Helpers/ColorBrightness.dart';
 import '../IconPicker/iconPicker.dart';
 import '../IconPicker/searchBar.dart';
@@ -7,6 +8,7 @@ import '../Models/IconPack.dart';
 class FullScreenDialog extends StatelessWidget {
   const FullScreenDialog({
     Key? key,
+    required this.iconController,
     required this.showSearchBar,
     required this.showTooltips,
     required this.backgroundColor,
@@ -23,11 +25,12 @@ class FullScreenDialog extends StatelessWidget {
     required this.crossAxisSpacing,
   }) : super(key: key);
 
+  final IconController iconController;
   final bool? showSearchBar;
   final bool? showTooltips;
   final Color? backgroundColor;
   final Widget? title;
-  final IconPack? iconPackMode;
+  final List<IconPack>? iconPackMode;
   final Map<String, IconData>? customIconPack;
   final Icon? searchIcon;
   final Icon? searchClearIcon;
@@ -83,6 +86,7 @@ class FullScreenDialog extends StatelessWidget {
               ),
               if (showSearchBar!)
                 SearchBar(
+                  iconController: iconController,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,
                   searchIcon: searchIcon,
@@ -92,6 +96,7 @@ class FullScreenDialog extends StatelessWidget {
                 ),
               Expanded(
                 child: IconPicker(
+                  iconController: iconController,
                   showTooltips: showTooltips,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,

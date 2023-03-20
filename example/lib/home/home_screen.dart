@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:fluttericonpickerexample/app/app_brightness.dart';
 import 'package:fluttericonpickerexample/app/icon_notifier.dart';
+import 'package:fluttericonpickerexample/multiple_pickers/home_2.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       showSearchBar: showSearch,
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackMode: IconPack.cupertino,
+      iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
     );
 
     if (icon != null) {
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Icon Picker Demo'),
+        title: const Text('Flutter Icon Picker Demo'),
         actions: [
           IconButton(
             icon: Icon(notifier.brightness.icon),
@@ -72,6 +73,15 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             tooltip: 'Switch brightness',
           ),
+          IconButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (ctx) => const HomeScreen2(),
+              ),
+            ),
+            icon: const Icon(Icons.arrow_forward_rounded),
+            tooltip: 'Show next picker',
+          ),
         ],
       ),
       body: Center(
@@ -91,20 +101,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (notifier.iconData != null)
                   ElevatedButton(
                     onPressed: () => setState(() => notifier.iconData = null),
-                    child: Text('Clear Icon'),
+                    child: const Text('Clear Icon'),
                   ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Consumer<IconNotifier>(
               builder: (BuildContext ctx, dynamic d, Widget w) =>
                   AnimatedSwitcher(
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 child: notifier.iconData != null
                     ? Column(
                         children: [
                           Icon(notifier.iconData),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Text(
@@ -124,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show search-bar',
+                title: const Text('Show search-bar',
                     style: TextStyle(color: Colors.white)),
                 value: showSearch,
                 onChanged: (val) => setState(() => showSearch = val),
@@ -132,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Show tooltips',
+                title: const Text('Show tooltips',
                     style: TextStyle(color: Colors.white)),
                 value: showTooltips,
                 onChanged: (val) => setState(() => showTooltips = val),
@@ -140,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: Text('Adaptive dialog',
+                title: const Text('Adaptive dialog',
                     style: TextStyle(color: Colors.white)),
                 value: isAdaptive,
                 onChanged: (val) => setState(() => isAdaptive = val),

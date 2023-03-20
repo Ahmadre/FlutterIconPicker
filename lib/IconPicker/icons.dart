@@ -29,7 +29,7 @@ class IconManager {
       case IconPack.lineAwesomeIcons:
         return lineAwesomeIcons;
       default:
-        return icons;
+        return <String, IconData>{};
     }
   }
 }

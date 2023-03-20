@@ -9,6 +9,7 @@ export 'Models/IconPack.dart';
 export 'Serialization/iconDataSerialization.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/DefaultDialog.dart';
 import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
@@ -113,22 +114,19 @@ class FlutterIconPicker {
     /// Default: `No results for:`
     String noResultsText = 'No results for:',
 
-    /// The mode which Icons to show
+    /// The modes which Icons to show
     /// Modes: `material`,
     ///        `cupertino`,
     ///        `materialOutline`,
     ///        `fontAwesomeIcons`,
     ///        `lineAwesomeIcons`
     /// Default: `IconPack.material`
-    IconPack iconPackMode = IconPack.material,
+    List<IconPack> iconPackModes = const <IconPack>[IconPack.material],
 
     /// Provide here your custom IconPack in a [Map<String, IconData>]
     /// to show your own collection of Icons to pick from
     Map<String, IconData>? customIconPack,
   }) async {
-    if (iconPackMode == IconPack.custom && customIconPack == null)
-      throw AssertionError(
-          'You need to provide your customIconPack if you set IconPack.custom');
     if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
     if (constraints == null) {
       if (adaptiveDialog) {
@@ -139,6 +137,7 @@ class FlutterIconPicker {
             const BoxConstraints(maxHeight: 350, minWidth: 450, maxWidth: 678);
       }
     }
+
     if (iconPickerShape == null)
       iconPickerShape =
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0));
@@ -147,12 +146,15 @@ class FlutterIconPicker {
 
     IconData? iconPicked;
 
+    final controller = IconController();
+
     if (adaptiveDialog) {
       if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
         iconPicked = await showDialog(
           barrierDismissible: barrierDismissible,
           context: context,
           builder: (BuildContext context) => DefaultDialog(
+            controller: controller,
             showSearchBar: showSearchBar,
             adaptive: adaptiveDialog,
             showTooltips: showTooltips,
@@ -170,7 +172,7 @@ class FlutterIconPicker {
             searchHintText: searchHintText,
             searchClearIcon: searchClearIcon,
             noResultsText: noResultsText,
-            iconPackMode: iconPackMode,
+            iconPackMode: iconPackModes,
             customIconPack: customIconPack,
           ),
         );
@@ -180,6 +182,7 @@ class FlutterIconPicker {
           MaterialPageRoute(
             fullscreenDialog: true,
             builder: (context) => DefaultDialog(
+              controller: controller,
               showSearchBar: showSearchBar,
               routedView: true,
               adaptive: adaptiveDialog,
@@ -198,7 +201,7 @@ class FlutterIconPicker {
               searchHintText: searchHintText,
               searchClearIcon: searchClearIcon,
               noResultsText: noResultsText,
-              iconPackMode: iconPackMode,
+              iconPackMode: iconPackModes,
               customIconPack: customIconPack,
             ),
           ),
@@ -209,6 +212,7 @@ class FlutterIconPicker {
         barrierDismissible: barrierDismissible,
         context: context,
         builder: (BuildContext context) => DefaultDialog(
+          controller: controller,
           showSearchBar: showSearchBar,
           showTooltips: showTooltips,
           barrierDismissible: barrierDismissible,
@@ -225,13 +229,13 @@ class FlutterIconPicker {
           searchHintText: searchHintText,
           searchClearIcon: searchClearIcon,
           noResultsText: noResultsText,
-          iconPackMode: iconPackMode,
+          iconPackMode: iconPackModes,
           customIconPack: customIconPack,
         ),
       );
     }
 
-    SearchBar.searchTextController.clear();
+    controller.searchTextController.clear();
 
     if (iconPicked != null) {
       return iconPicked;
