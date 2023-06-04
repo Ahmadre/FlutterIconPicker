@@ -44,6 +44,8 @@ If you build your app it may fail because of this package. #TreeShakeIcons
 
 To be able to build your app, add to your build command the flag: `--no-tree-shake-icons` and you should be good to go!
 
+For more see: [flutter/flutter#16311](https://github.com/flutter/flutter/issues/16311)
+
 ## API-Reference
 
 | **Parameter**           | **Type**           | **Default** | **Short description**                |
