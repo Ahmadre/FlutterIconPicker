@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 class HomeScreen2 extends StatefulWidget {
   const HomeScreen2({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class HomeScreen2 extends StatefulWidget {
 }
 
 class _HomeScreen2State extends State<HomeScreen2> {
-  IconNotifier notifier;
+  late IconNotifier notifier;
 
   bool isAdaptive = true;
   bool showTooltips = false;
@@ -27,7 +27,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   }
 
   _pickIcon() async {
-    IconData icon = await FlutterIconPicker.showIconPicker(
+    IconData? icon = await FlutterIconPicker.showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
@@ -97,7 +97,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
             ),
             const SizedBox(height: 10),
             Consumer<IconNotifier>(
-              builder: (BuildContext ctx, dynamic d, Widget w) =>
+              builder: (BuildContext ctx, dynamic d, Widget? w) =>
                   AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
                 child: notifier.iconData != null
@@ -108,7 +108,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(notifier.iconData).toString()}',
+                            'Database Entry:\n${serializeIcon(notifier.iconData!).toString()}',
                           ),
                         ],
                       )
