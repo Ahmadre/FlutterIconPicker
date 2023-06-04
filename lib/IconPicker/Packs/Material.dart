@@ -25628,18 +25628,6 @@ Map<String, IconData> icons = {
   /// <i class="material-icons-outlined md-36">west</i> &#x2014; material icon named "west" (outlined).
   'west_outlined': Icons.west_outlined,
 
-  /// /// <i class="material-icons md-36">whatsapp</i> &#x2014; material icon named "whatsapp".
-  /// 'whatsapp': Icons.whatsapp,
-
-  /// /// <i class="material-icons-sharp md-36">whatsapp</i> &#x2014; material icon named "whatsapp" (sharp).
-  /// 'whatsapp_sharp': Icons.whatsapp_sharp,
-
-  /// /// <i class="material-icons-round md-36">whatsapp</i> &#x2014; material icon named "whatsapp" (round).
-  /// 'whatsapp_rounded': Icons.whatsapp_rounded,
-
-  /// /// <i class="material-icons-outlined md-36">whatsapp</i> &#x2014; material icon named "whatsapp" (outlined).
-  /// 'whatsapp_outlined': Icons.whatsapp_outlined,
-
   /// <i class="material-icons md-36">whatshot</i> &#x2014; material icon named "whatshot".
   'whatshot': Icons.whatshot,
 
