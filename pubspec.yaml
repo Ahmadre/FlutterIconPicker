@@ -5,8 +5,7 @@ version: 3.2.3
 homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 environment:
-  sdk: '>=3.0.0'
-  flutter: '>=3.0.0'
+  sdk: ^3.0.0
 dependencies:
   cupertino_icons: ^1.0.5
   flutter:
