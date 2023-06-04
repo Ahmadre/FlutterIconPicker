@@ -16,7 +16,7 @@ class AppBrightness {
   final IconData icon;
   final String label;
 
-  static AppBrightness from(String value) {
+  static AppBrightness from(String? value) {
     return values.singleWhere(
       (el) => el.value == value,
       orElse: () => AppBrightness.system,
