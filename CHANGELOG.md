@@ -1,4 +1,4 @@
-## [3.2.3] - 01.11.2022
+## [3.2.3] - 04.06.2023
 
 * ⬆️ Update to latest `flutter 3.10.*`
 * ⬆️ Update dependencies:
