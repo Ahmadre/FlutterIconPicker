@@ -1,3 +1,10 @@
+## [3.2.3] - 01.11.2022
+
+* ⬆️ Update to latest `flutter 3.10.*`
+* ⬆️ Update dependencies:
+  * Material Icons
+  * FontAwesome Icons
+
 ## [3.2.2] - 01.11.2022
 
 * 📝 Add Disclaimer to Readme (please read!)
