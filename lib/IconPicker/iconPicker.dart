@@ -10,8 +10,8 @@ import 'icons.dart';
 import '../Models/IconPack.dart';
 import '../Helpers/ColorBrightness.dart';
 
-class IconPicker extends StatefulWidget {
-  final IconController iconController;
+class FIPIconPicker extends StatefulWidget {
+  final FIPIconController iconController;
   final List<IconPack>? iconPack;
   final Map<String, IconData>? customIconPack;
   final double? iconSize;
@@ -22,7 +22,7 @@ class IconPicker extends StatefulWidget {
   final Color? backgroundColor;
   final bool? showTooltips;
 
-  const IconPicker({
+  const FIPIconPicker({
     Key? key,
     required this.iconController,
     required this.iconPack,
@@ -37,10 +37,10 @@ class IconPicker extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _IconPickerState createState() => _IconPickerState();
+  _FIPIconPickerState createState() => _FIPIconPickerState();
 }
 
-class _IconPickerState extends State<IconPicker> {
+class _FIPIconPickerState extends State<FIPIconPicker> {
   @override
   void initState() {
     super.initState();
@@ -52,7 +52,7 @@ class _IconPickerState extends State<IconPicker> {
       if (widget.iconPack != null)
         for (var pack in widget.iconPack!) {
           if (mounted)
-            widget.iconController.addAll(IconManager.getSelectedPack(pack));
+            widget.iconController.addAll(FIPIconManager.getSelectedPack(pack));
         }
     });
   }
@@ -65,7 +65,7 @@ class _IconPickerState extends State<IconPicker> {
             text: TextSpan(
               text: widget.noResultsText! + ' ',
               style: TextStyle(
-                color: ColorBrightness(widget.backgroundColor!).isLight()
+                color: FIPColorBrightness(widget.backgroundColor!).isLight()
                     ? Colors.black
                     : Colors.white,
               ),
@@ -74,7 +74,7 @@ class _IconPickerState extends State<IconPicker> {
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: ColorBrightness(widget.backgroundColor!).isLight()
+                    color: FIPColorBrightness(widget.backgroundColor!).isLight()
                         ? Colors.black
                         : Colors.white,
                   ),
@@ -87,7 +87,7 @@ class _IconPickerState extends State<IconPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<IconController>(
+    return Consumer<FIPIconController>(
       builder: (ctx, controller, _) => Padding(
         padding: const EdgeInsets.only(top: 5),
         child: Stack(

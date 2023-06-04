@@ -8,8 +8,8 @@ import '../IconPicker/iconPicker.dart';
 import '../IconPicker/searchBar.dart';
 import '../Models/IconPack.dart';
 
-class DefaultDialog extends StatelessWidget {
-  const DefaultDialog({
+class FIPDefaultDialog extends StatelessWidget {
+  const FIPDefaultDialog({
     Key? key,
     required this.controller,
     this.showSearchBar,
@@ -34,7 +34,7 @@ class DefaultDialog extends StatelessWidget {
     this.customIconPack,
   }) : super(key: key);
 
-  final IconController controller;
+  final FIPIconController controller;
   final bool? showSearchBar;
   final bool routedView;
   final bool adaptive;
@@ -63,7 +63,7 @@ class DefaultDialog extends StatelessWidget {
       builder: (ctx, w) {
         if (adaptive) {
           if (routedView) {
-            return FullScreenDialog(
+            return FIPFullScreenDialog(
               iconController: controller,
               showSearchBar: showSearchBar,
               showTooltips: showTooltips,
@@ -106,7 +106,7 @@ class DefaultDialog extends StatelessWidget {
                               child: title!,
                               style: TextStyle(
                                 color:
-                                    ColorBrightness(backgroundColor!).isLight()
+                                    FIPColorBrightness(backgroundColor!).isLight()
                                         ? Colors.black
                                         : Colors.white,
                                 fontSize: 20,
@@ -116,7 +116,7 @@ class DefaultDialog extends StatelessWidget {
                           IconButton(
                             icon: Icon(
                               Icons.close,
-                              color: ColorBrightness(backgroundColor!).isLight()
+                              color: FIPColorBrightness(backgroundColor!).isLight()
                                   ? Colors.black
                                   : Colors.white,
                             ),
@@ -126,7 +126,7 @@ class DefaultDialog extends StatelessWidget {
                       ),
                     ),
                     if (showSearchBar!)
-                      SearchBar(
+                      FIPSearchBar(
                         iconController: controller,
                         iconPack: iconPackMode,
                         customIconPack: customIconPack,
@@ -136,7 +136,7 @@ class DefaultDialog extends StatelessWidget {
                         backgroundColor: backgroundColor,
                       ),
                     Expanded(
-                      child: IconPicker(
+                      child: FIPIconPicker(
                         iconController: controller,
                         showTooltips: showTooltips,
                         iconPack: iconPackMode,
@@ -161,7 +161,7 @@ class DefaultDialog extends StatelessWidget {
             title: DefaultTextStyle(
               child: title!,
               style: TextStyle(
-                color: ColorBrightness(backgroundColor!).isLight()
+                color: FIPColorBrightness(backgroundColor!).isLight()
                     ? Colors.black
                     : Colors.white,
                 fontSize: 20,
@@ -172,7 +172,7 @@ class DefaultDialog extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   if (showSearchBar!)
-                    SearchBar(
+                    FIPSearchBar(
                       iconController: controller,
                       iconPack: iconPackMode,
                       customIconPack: customIconPack,
@@ -182,7 +182,7 @@ class DefaultDialog extends StatelessWidget {
                       backgroundColor: backgroundColor,
                     ),
                   Expanded(
-                    child: IconPicker(
+                    child: FIPIconPicker(
                       iconController: controller,
                       showTooltips: showTooltips,
                       iconPack: iconPackMode,

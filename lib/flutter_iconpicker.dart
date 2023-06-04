@@ -11,7 +11,6 @@ export 'Serialization/iconDataSerialization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/DefaultDialog.dart';
-import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
@@ -146,14 +145,14 @@ class FlutterIconPicker {
 
     IconData? iconPicked;
 
-    final controller = IconController();
+    final controller = FIPIconController();
 
     if (adaptiveDialog) {
       if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
         iconPicked = await showDialog(
           barrierDismissible: barrierDismissible,
           context: context,
-          builder: (BuildContext context) => DefaultDialog(
+          builder: (BuildContext context) => FIPDefaultDialog(
             controller: controller,
             showSearchBar: showSearchBar,
             adaptive: adaptiveDialog,
@@ -181,7 +180,7 @@ class FlutterIconPicker {
           context,
           MaterialPageRoute(
             fullscreenDialog: true,
-            builder: (context) => DefaultDialog(
+            builder: (context) => FIPDefaultDialog(
               controller: controller,
               showSearchBar: showSearchBar,
               routedView: true,
@@ -211,7 +210,7 @@ class FlutterIconPicker {
       iconPicked = await showDialog(
         barrierDismissible: barrierDismissible,
         context: context,
-        builder: (BuildContext context) => DefaultDialog(
+        builder: (BuildContext context) => FIPDefaultDialog(
           controller: controller,
           showSearchBar: showSearchBar,
           showTooltips: showTooltips,

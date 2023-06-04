@@ -17,7 +17,7 @@ import 'Packs/LineIcons.dart';
 
 import 'package:flutter/widgets.dart';
 
-class IconManager {
+class FIPIconManager {
   static Map<String, IconData> getSelectedPack(IconPack? pickedPack) {
     switch (pickedPack) {
       case IconPack.material:

@@ -47,10 +47,10 @@
 
 import 'package:flutter/material.dart';
 
-class ColorBrightness {
+class FIPColorBrightness {
   late Color _color;
 
-  ColorBrightness(Color color) {
+  FIPColorBrightness(Color color) {
     this._color =
         Color.fromARGB(color.alpha, color.red, color.green, color.blue);
   }

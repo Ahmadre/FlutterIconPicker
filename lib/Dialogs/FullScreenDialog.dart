@@ -5,8 +5,8 @@ import '../IconPicker/iconPicker.dart';
 import '../IconPicker/searchBar.dart';
 import '../Models/IconPack.dart';
 
-class FullScreenDialog extends StatelessWidget {
-  const FullScreenDialog({
+class FIPFullScreenDialog extends StatelessWidget {
+  const FIPFullScreenDialog({
     Key? key,
     required this.iconController,
     required this.showSearchBar,
@@ -25,7 +25,7 @@ class FullScreenDialog extends StatelessWidget {
     required this.crossAxisSpacing,
   }) : super(key: key);
 
-  final IconController iconController;
+  final FIPIconController iconController;
   final bool? showSearchBar;
   final bool? showTooltips;
   final Color? backgroundColor;
@@ -65,7 +65,7 @@ class FullScreenDialog extends StatelessWidget {
                       child: DefaultTextStyle(
                         child: title!,
                         style: TextStyle(
-                          color: ColorBrightness(backgroundColor!).isLight()
+                          color: FIPColorBrightness(backgroundColor!).isLight()
                               ? Colors.black
                               : Colors.white,
                           fontSize: 20,
@@ -75,7 +75,7 @@ class FullScreenDialog extends StatelessWidget {
                     IconButton(
                       icon: Icon(
                         Icons.close,
-                        color: ColorBrightness(backgroundColor!).isLight()
+                        color: FIPColorBrightness(backgroundColor!).isLight()
                             ? Colors.black
                             : Colors.white,
                       ),
@@ -85,7 +85,7 @@ class FullScreenDialog extends StatelessWidget {
                 ),
               ),
               if (showSearchBar!)
-                SearchBar(
+                FIPSearchBar(
                   iconController: iconController,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,
@@ -95,7 +95,7 @@ class FullScreenDialog extends StatelessWidget {
                   backgroundColor: backgroundColor,
                 ),
               Expanded(
-                child: IconPicker(
+                child: FIPIconPicker(
                   iconController: iconController,
                   showTooltips: showTooltips,
                   iconPack: iconPackMode,

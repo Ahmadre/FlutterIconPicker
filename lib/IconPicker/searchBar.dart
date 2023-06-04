@@ -10,8 +10,8 @@ import '../Helpers/ColorBrightness.dart';
 import '../Models/IconPack.dart';
 import 'icons.dart';
 
-class SearchBar extends StatefulWidget {
-  const SearchBar({
+class FIPSearchBar extends StatefulWidget {
+  const FIPSearchBar({
     required this.iconController,
     required this.iconPack,
     required this.searchHintText,
@@ -22,7 +22,7 @@ class SearchBar extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  final IconController iconController;
+  final FIPIconController iconController;
   final List<IconPack>? iconPack;
   final Map<String, IconData>? customIconPack;
   final String? searchHintText;
@@ -31,15 +31,15 @@ class SearchBar extends StatefulWidget {
   final Color? backgroundColor;
 
   @override
-  _SearchBarState createState() => _SearchBarState();
+  _FIPSearchBarState createState() => _FIPSearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar> {
+class _FIPSearchBarState extends State<FIPSearchBar> {
   _search(String searchValue) {
     Map<String, IconData> searchResult = Map<String, IconData>();
 
     for (var pack in widget.iconPack!) {
-      IconManager.getSelectedPack(pack).forEach((String key, IconData val) {
+      FIPIconManager.getSelectedPack(pack).forEach((String key, IconData val) {
         if (key.toLowerCase().contains(searchValue.toLowerCase())) {
           searchResult.putIfAbsent(key, () => val);
         }
@@ -65,19 +65,19 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<IconController>(builder: (ctx, controller, _) {
+    return Consumer<FIPIconController>(builder: (ctx, controller, _) {
       return TextField(
         onChanged: (val) => _search(val),
         controller: controller.searchTextController,
         style: TextStyle(
-          color: ColorBrightness(widget.backgroundColor!).isLight()
+          color: FIPColorBrightness(widget.backgroundColor!).isLight()
               ? Colors.black
               : Colors.white,
         ),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(top: 15),
           hintStyle: TextStyle(
-            color: ColorBrightness(widget.backgroundColor!).isLight()
+            color: FIPColorBrightness(widget.backgroundColor!).isLight()
                 ? Colors.black54
                 : Colors.white54,
           ),
@@ -94,7 +94,7 @@ class _SearchBarState extends State<SearchBar> {
 
                       if (widget.iconPack != null)
                         for (var pack in widget.iconPack!) {
-                          controller.addAll(IconManager.getSelectedPack(pack));
+                          controller.addAll(FIPIconManager.getSelectedPack(pack));
                         }
                     }),
                   )

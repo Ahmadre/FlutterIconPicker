@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class IconController with ChangeNotifier {
-  IconController();
+class FIPIconController with ChangeNotifier {
+  FIPIconController();
 
   Map<String, IconData> _icons = {};
 
