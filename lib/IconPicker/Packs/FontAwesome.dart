@@ -1817,11 +1817,6 @@ Map<String, IconData> fontAwesomeIcons = {
   /// https://fontawesome.com/icons/child-reaching?style=solid
   'childReaching': FontAwesomeIcons.childReaching,
 
-  /// Solid Child Rifle icon
-  ///
-  /// https://fontawesome.com/icons/child-rifle?style=solid
-  'childRifle': FontAwesomeIcons.childRifle,
-
   /// Solid Children icon
   ///
   /// https://fontawesome.com/icons/children?style=solid
