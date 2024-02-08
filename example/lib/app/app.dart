@@ -24,7 +24,8 @@ class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
     return ChangeNotifierProvider.value(
       value: widget.notifier,
       builder: (BuildContext ctx, Widget? w) => Consumer<IconNotifier>(
-        builder: (BuildContext iconCtx, dynamic d, Widget? iconW) => MaterialApp(
+        builder: (BuildContext iconCtx, dynamic d, Widget? iconW) =>
+            MaterialApp(
           home: const HomeScreen(),
           debugShowCheckedModeBanner: false,
           themeMode: widget.notifier!.brightness.mode,

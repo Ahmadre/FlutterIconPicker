@@ -4,6 +4,7 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import '../Helpers/ColorBrightness.dart';
@@ -11,7 +12,7 @@ import '../Models/IconPack.dart';
 import 'icons.dart';
 
 class FIPSearchBar extends StatefulWidget {
-  const FIPSearchBar({
+  FIPSearchBar({
     required this.iconController,
     required this.iconPack,
     required this.searchHintText,
@@ -19,6 +20,7 @@ class FIPSearchBar extends StatefulWidget {
     required this.searchClearIcon,
     required this.backgroundColor,
     this.customIconPack,
+    this.searchComparator,
     Key? key,
   }) : super(key: key);
 
@@ -29,18 +31,26 @@ class FIPSearchBar extends StatefulWidget {
   final Icon? searchIcon;
   final Icon? searchClearIcon;
   final Color? backgroundColor;
+  final SearchComparator? searchComparator;
 
   @override
   _FIPSearchBarState createState() => _FIPSearchBarState();
 }
 
 class _FIPSearchBarState extends State<FIPSearchBar> {
+  SearchComparator _defaultSearchComparator =
+      (String searchValue, IconPickerIcon icon) =>
+          icon.name.toLowerCase().contains(searchValue.toLowerCase());
+  late final searchComparator =
+      widget.searchComparator ?? _defaultSearchComparator;
+
   _search(String searchValue) {
     Map<String, IconData> searchResult = Map<String, IconData>();
 
     for (var pack in widget.iconPack!) {
       FIPIconManager.getSelectedPack(pack).forEach((String key, IconData val) {
-        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
+        if (searchComparator.call(
+            searchValue, IconPickerIcon(name: key, data: val))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
@@ -48,7 +58,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
     if (widget.customIconPack != null) {
       widget.customIconPack!.forEach((String key, IconData val) {
-        if (key.toLowerCase().contains(searchValue.toLowerCase())) {
+        if (searchComparator.call(
+            searchValue, IconPickerIcon(name: key, data: val))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
@@ -94,7 +105,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
                       if (widget.iconPack != null)
                         for (var pack in widget.iconPack!) {
-                          controller.addAll(FIPIconManager.getSelectedPack(pack));
+                          controller
+                              .addAll(FIPIconManager.getSelectedPack(pack));
                         }
                     }),
                   )

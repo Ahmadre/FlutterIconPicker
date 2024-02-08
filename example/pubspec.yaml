@@ -13,7 +13,7 @@ dependencies:
   flutter_iconpicker:
     path: ../
   hive: ^2.2.3
-  path_provider: ^2.0.12
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:
