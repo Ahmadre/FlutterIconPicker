@@ -65,6 +65,7 @@ For more see: [flutter/flutter#16311](https://github.com/flutter/flutter/issues/
 | searchIcon        | `Icon`           | `Icon(Icons.search)`      | Sets the prefix icon in the [SearchBar] |
 | searchHintText    | `String`         | `'Search'`      | Sets the `hintText` in the `TextField` of [SearchBar] |
 | searchClearIcon   | `Icon`           | `Icon(Icons.close)`      | Sets the suffix icon in the [SearchBar] |
+| searchComparator   | `SearchComparator`           | `(String searchValue, IconPickerIcon icon) => icon.name.toLowerCase().contains(searchValue.toLowerCase())`      | The [searchComparator] can be used to define a custom search function which should return a [bool] |
 | noResultsText     | `String`         | `'No results for:'`      | The text to show when no results where found for the search term. |
 | showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon. |
 | showSearchBar   | `bool`           | `true`      | Shows the search bar above the icons if `true` |

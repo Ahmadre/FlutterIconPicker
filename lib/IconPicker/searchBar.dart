@@ -39,9 +39,8 @@ class FIPSearchBar extends StatefulWidget {
 
 class _FIPSearchBarState extends State<FIPSearchBar> {
   SearchComparator _defaultSearchComparator =
-      (String searchValue, IconPickerIcon icon) {
-    return icon.name.toLowerCase().contains(searchValue.toLowerCase());
-  };
+      (String searchValue, IconPickerIcon icon) =>
+          icon.name.toLowerCase().contains(searchValue.toLowerCase());
   late final searchComparator =
       widget.searchComparator ?? _defaultSearchComparator;
 
