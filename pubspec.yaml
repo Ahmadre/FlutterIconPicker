@@ -7,11 +7,12 @@ repository: https://github.com/Ahmadre/FlutterIconPicker
 environment:
   sdk: ^3.0.0
 dependencies:
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.6
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.2.1
-  provider: ^6.0.4
+  font_awesome_flutter: ^10.7.0
+  provider: ^6.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
