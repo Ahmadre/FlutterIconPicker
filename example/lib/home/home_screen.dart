@@ -36,6 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
+      searchComparator: (String search, IconPickerIcon icon) =>
+          search
+              .toLowerCase()
+              .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+          icon.name.toLowerCase().contains(search.toLowerCase()),
     );
 
     if (icon != null) {
