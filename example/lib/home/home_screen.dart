@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _pickIcon() async {
-    IconData? icon = await FlutterIconPicker.showIconPicker(
+    IconData? icon = await showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
