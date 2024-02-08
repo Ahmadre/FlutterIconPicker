@@ -26,13 +26,15 @@ For example if you want to provide `material` icons, copy the actual icons from 
 
 ## Supported IconPacks
 
-|     IconPack     | Supported |
-| :--------------: | :-------: |
-|     Material     |    ✅     |
-| (includes Sharp, Rounded and Outlined)||
-|    Cupertino     |    ✅     |
-|   FontAwesome    |    ✅     |
-|   LineAwesome    |    ✅     |
+|     IconPack        | Supported |
+| :-----------------: | :-------: |
+|     Material        |    ✅     |
+|  Material Sharp     |    ✅     |
+|  Material Rounded   |    ✅     |
+|  Material Outlined  |    ✅     |
+|    Cupertino        |    ✅     |
+|   FontAwesome       |    ✅     |
+|   LineAwesome       |    ✅     |
 
 ## Usage
 
