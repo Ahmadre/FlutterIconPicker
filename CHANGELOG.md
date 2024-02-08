@@ -1,3 +1,9 @@
+## [3.3.1] - 08.02.2024
+
+* ⬆️ Update dependencies
+  * Seperate Material Icons
+* 📝 Update documentation
+
 ## [3.3.0] - 08.02.2024
 
 * 🔍 Add `searchComparator` to define a custom search function which can be used instead
