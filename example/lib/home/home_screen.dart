@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       showSearchBar: showSearch,
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackModes: [IconPack.cupertino, IconPack.lineAwesomeIcons],
+      iconPackModes: [IconPack.material],
       searchComparator: (String search, IconPickerIcon icon) =>
           search
               .toLowerCase()
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (icon != null) {
-      notifier.iconData = icon;
+      notifier.setIconData(icon, pack: IconPack.material);
       setState(() {});
 
       debugPrint(
@@ -105,25 +105,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 if (notifier.iconData != null)
                   ElevatedButton(
-                    onPressed: () => setState(() => notifier.iconData = null),
+                    onPressed: () async {
+                      await notifier.clearIconData();
+                      setState(() {});
+                    },
                     child: const Text('Clear Icon'),
                   ),
               ],
             ),
             const SizedBox(height: 10),
             Consumer<IconNotifier>(
-              builder: (BuildContext ctx, dynamic d, Widget? w) =>
-                  AnimatedSwitcher(
+              builder: (ctx, iconNotifier, _) => AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: notifier.iconData != null
+                child: iconNotifier.iconData != null
                     ? Column(
                         children: [
-                          Icon(notifier.iconData),
+                          Icon(iconNotifier.iconData),
                           const SizedBox(
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(notifier.iconData!).toString()}',
+                            'Database Entry:\n${serializeIcon(iconNotifier.iconData!, iconPack: IconPack.material).toString()}',
                           ),
                         ],
                       )

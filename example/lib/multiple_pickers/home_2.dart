@@ -38,7 +38,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
     );
 
     if (icon != null) {
-      notifier.iconData = icon;
+      notifier.setIconData(icon, pack: IconPack.material);
       setState(() {});
 
       debugPrint(
@@ -90,7 +90,10 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 ),
                 if (notifier.iconData != null)
                   ElevatedButton(
-                    onPressed: () => setState(() => notifier.iconData = null),
+                    onPressed: () async {
+                      await notifier.clearIconData();
+                      setState(() {});
+                    },
                     child: const Text('Clear Icon'),
                   ),
               ],
@@ -108,7 +111,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(notifier.iconData!).toString()}',
+                            'Database Entry:\n${serializeIcon(notifier.iconData!, iconPack: IconPack.material).toString()}',
                           ),
                         ],
                       )

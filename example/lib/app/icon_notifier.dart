@@ -21,20 +21,28 @@ class IconNotifier extends ChangeNotifier {
 
   IconData? get iconData => _iconData;
 
-  set iconData(IconData? value) {
+  void setIconData(
+    IconData value, {
+    IconPack? pack,
+  }) {
     if (_iconData == value) {
       return;
     }
 
     _iconData = value;
 
-    if (value == null) {
-      box.delete('iconData');
-      notifyListeners();
-      return;
-    }
+    box.put(
+      'iconData',
+      serializeIcon(
+        _iconData!,
+        iconPack: pack,
+      ),
+    );
+    notifyListeners();
+  }
 
-    box.put('iconData', serializeIcon(_iconData!));
+  Future<void> clearIconData() async {
+    await box.delete('iconData');
     notifyListeners();
   }
 
@@ -65,7 +73,10 @@ class IconNotifier extends ChangeNotifier {
     }
 
     final iconData = await box.get('iconData') != null
-        ? deserializeIcon(Map<String, dynamic>.from(await box.get('iconData')))
+        ? deserializeIcon(
+            Map<String, dynamic>.from(await box.get('iconData')),
+            iconPack: IconPack.material,
+          )
         : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));
