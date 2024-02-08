@@ -8,6 +8,11 @@ export 'Packs/Cupertino.dart';
 export 'Packs/FontAwesome.dart';
 export 'Packs/LineIcons.dart';
 
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialDefault.dart';
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart';
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialRounded.dart';
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialSharp.dart';
+
 import '../Models/IconPack.dart';
 
 import 'Packs/Material.dart';
@@ -21,7 +26,15 @@ class FIPIconManager {
   static Map<String, IconData> getSelectedPack(IconPack? pickedPack) {
     switch (pickedPack) {
       case IconPack.material:
-        return icons;
+        return defaultIcons;
+      case IconPack.allMaterial:
+        return allIcons;
+      case IconPack.sharpMaterial:
+        return sharpIcons;
+      case IconPack.roundedMaterial:
+        return roundedIcons;
+      case IconPack.outlinedMaterial:
+        return outlinedIcons;
       case IconPack.cupertino:
         return cupertinoIcons;
       case IconPack.fontAwesomeIcons:
