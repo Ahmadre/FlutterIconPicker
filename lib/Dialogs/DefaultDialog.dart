@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
+import '../Models/icon_picker_icon.dart';
 import 'FullScreenDialog.dart';
 import 'AdaptiveDialog.dart';
 import '../Helpers/ColorBrightness.dart';
@@ -29,6 +30,7 @@ class FIPDefaultDialog extends StatelessWidget {
     this.searchIcon,
     this.searchHintText,
     this.searchClearIcon,
+    this.searchComparator,
     this.noResultsText,
     this.iconPackMode,
     this.customIconPack,
@@ -52,6 +54,7 @@ class FIPDefaultDialog extends StatelessWidget {
   final Icon? searchIcon;
   final String? searchHintText;
   final Icon? searchClearIcon;
+  final SearchComparator? searchComparator;
   final String? noResultsText;
   final List<IconPack>? iconPackMode;
   final Map<String, IconData>? customIconPack;
@@ -79,6 +82,7 @@ class FIPDefaultDialog extends StatelessWidget {
               iconSize: iconSize,
               mainAxisSpacing: mainAxisSpacing,
               crossAxisSpacing: crossAxisSpacing,
+              searchComparator: searchComparator,
             );
           }
           return AdaptiveDialog(
@@ -134,6 +138,7 @@ class FIPDefaultDialog extends StatelessWidget {
                         searchClearIcon: searchClearIcon,
                         searchHintText: searchHintText,
                         backgroundColor: backgroundColor,
+                        searchComparator: searchComparator,
                       ),
                     Expanded(
                       child: FIPIconPicker(
@@ -180,6 +185,7 @@ class FIPDefaultDialog extends StatelessWidget {
                       searchClearIcon: searchClearIcon,
                       searchHintText: searchHintText,
                       backgroundColor: backgroundColor,
+                      searchComparator: searchComparator,
                     ),
                   Expanded(
                     child: FIPIconPicker(

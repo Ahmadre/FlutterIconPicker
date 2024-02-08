@@ -5,13 +5,15 @@
 
 library flutter_iconpicker;
 
+export 'Models/icon_picker_icon.dart';
 export 'Models/IconPack.dart';
 export 'Serialization/iconDataSerialization.dart';
 
 import 'package:flutter/material.dart';
+import 'Models/IconPack.dart';
+import 'Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/DefaultDialog.dart';
-import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
   static Future<IconData?> showIconPicker(
@@ -88,7 +90,7 @@ class FlutterIconPicker {
     /// ```
     Widget closeChild = const Text(
       'Close',
-      textScaleFactor: 1.25,
+      textScaler: const TextScaler.linear(1.25),
     ),
 
     /// The prefix icon before the search textfield
@@ -108,6 +110,11 @@ class FlutterIconPicker {
     ///   const Icon(Icons.close)
     /// ```
     Icon searchClearIcon = const Icon(Icons.close),
+
+    /// The searchComparator can be used to define a custom search function
+    /// 
+    /// Default: `icon.name.toLowerCase().contains(search.toLowerCase())`
+    SearchComparator? searchComparator,
 
     /// The text to show when no results where found for the search term
     /// Default: `No results for:`
@@ -173,6 +180,7 @@ class FlutterIconPicker {
             noResultsText: noResultsText,
             iconPackMode: iconPackModes,
             customIconPack: customIconPack,
+            searchComparator: searchComparator,
           ),
         );
       } else {
@@ -202,6 +210,7 @@ class FlutterIconPicker {
               noResultsText: noResultsText,
               iconPackMode: iconPackModes,
               customIconPack: customIconPack,
+              searchComparator: searchComparator,
             ),
           ),
         );
@@ -230,6 +239,7 @@ class FlutterIconPicker {
           noResultsText: noResultsText,
           iconPackMode: iconPackModes,
           customIconPack: customIconPack,
+          searchComparator: searchComparator,
         ),
       );
     }

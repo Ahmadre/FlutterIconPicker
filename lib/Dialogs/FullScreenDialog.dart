@@ -4,6 +4,7 @@ import '../Helpers/ColorBrightness.dart';
 import '../IconPicker/iconPicker.dart';
 import '../IconPicker/searchBar.dart';
 import '../Models/IconPack.dart';
+import '../Models/icon_picker_icon.dart';
 
 class FIPFullScreenDialog extends StatelessWidget {
   const FIPFullScreenDialog({
@@ -17,6 +18,7 @@ class FIPFullScreenDialog extends StatelessWidget {
     required this.customIconPack,
     required this.searchIcon,
     required this.searchClearIcon,
+    required this.searchComparator,
     required this.searchHintText,
     required this.iconColor,
     required this.noResultsText,
@@ -34,6 +36,7 @@ class FIPFullScreenDialog extends StatelessWidget {
   final Map<String, IconData>? customIconPack;
   final Icon? searchIcon;
   final Icon? searchClearIcon;
+  final SearchComparator? searchComparator;
   final String? searchHintText;
   final Color? iconColor;
   final String? noResultsText;
@@ -93,6 +96,7 @@ class FIPFullScreenDialog extends StatelessWidget {
                   searchClearIcon: searchClearIcon,
                   searchHintText: searchHintText,
                   backgroundColor: backgroundColor,
+                  searchComparator: searchComparator,
                 ),
               Expanded(
                 child: FIPIconPicker(
