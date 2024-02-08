@@ -111,6 +111,39 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   deserializeIcon(map)
 ```
 
+## Migration-Guide when updating to 3.3.1 (BREAKING Change)
+
+> Material icons are now separated into:
+
+- Default -> only normal icons (without Sharp, Rounded, Outlined)
+- All -> All Material Icons (including Sharp, Rounded, Outlined)
+- Sharp -> Only Sharp Material Icons
+- Rounded -> Only Rouned Material Icons
+- Outlined -> Only Outlined Material Icons
+
+⚠ Use `IconPack.allMaterial` instead, if you still want to display all Material Icons. The old enum value was: `IconPack.material` ⚠ 
+
+If you work with Material Icons please always pass the corresponding IconPack via the optional parameter when serializing:
+
+```dart
+serializeIcon(_iconData, iconPack: IconPack.allMaterial);
+    
+...
+    
+deserializeIcon(
+  Map<String, dynamic>.from(await box.get('iconData')),
+  iconPack: IconPack.allMaterial,
+);
+```
+
+If you display directly using `serializeIcon` function, als consider it:
+
+```dart
+Text(
+  'Database Entry:\n${serializeIcon(_iconData, iconPack: IconPack.allMaterial).toString()}',
+),
+```
+
 ## Example
 
 > If you're looking for a complete example with DB storage, jump in here: [ExampleProject](example/lib)
