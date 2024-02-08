@@ -111,14 +111,16 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   deserializeIcon(map)
 ```
 
-## Migration-Guide when updating to 3.3.1 (BREAKING Change)
+## Migration-Guide when updating to >= 3.3.1 (BREAKING Change)
+
+The IconPicker is now called via `IconData? icon = await showIconPicker(...` and not anymore like: `IconData? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
 
 > Material icons are now separated into:
 
 - Default -> only normal icons (without Sharp, Rounded, Outlined)
 - All -> All Material Icons (including Sharp, Rounded, Outlined)
 - Sharp -> Only Sharp Material Icons
-- Rounded -> Only Rouned Material Icons
+- Rounded -> Only Rounded Material Icons
 - Outlined -> Only Outlined Material Icons
 
 ⚠ Use `IconPack.allMaterial` instead, if you still want to display all Material Icons. The old enum value was: `IconPack.material` ⚠ 

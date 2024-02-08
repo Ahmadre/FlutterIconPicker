@@ -1,3 +1,9 @@
+## [3.3.2] - 09.02.2024
+
+* ⬆️ [BREAKING CHANGE] Update main interface
+  * The IconPicker is now called via `IconData? icon = await showIconPicker(...` and not anymore like: `IconData? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
+* 📝 Update documentation
+
 ## [3.3.1] - 08.02.2024
 
 * ⬆️ [BREAKING CHANGE] Update dependencies
