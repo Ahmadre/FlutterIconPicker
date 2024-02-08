@@ -6,13 +6,14 @@ typedef SearchComparator = bool Function(String search, IconPickerIcon icon);
 
 /// The IconPickerIcon is a data-class that holds the IconData and the name of the icon
 /// It is used to display the icon in the IconPicker
-/// 
+///
 /// or
-/// 
+///
 /// to provide it to outisde of the IconPicker to compare it
 class IconPickerIcon extends Equatable {
   /// The name of the icon represents the `key`
   final String name;
+
   /// The IconData of the icon like `codePoint`, `fontFamily`, `fontPackage`, `matchTextDirection`
   final IconData data;
 

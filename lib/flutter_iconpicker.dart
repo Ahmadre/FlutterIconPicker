@@ -18,7 +18,6 @@ import 'Dialogs/DefaultDialog.dart';
 class FlutterIconPicker {
   static Future<IconData?> showIconPicker(
     BuildContext context, {
-
     /// Defines if the searchbar will be
     /// shown above the icons
     bool showSearchBar = true,
@@ -112,7 +111,7 @@ class FlutterIconPicker {
     Icon searchClearIcon = const Icon(Icons.close),
 
     /// The searchComparator can be used to define a custom search function
-    /// 
+    ///
     /// Default: `icon.name.toLowerCase().contains(search.toLowerCase())`
     SearchComparator? searchComparator,
 

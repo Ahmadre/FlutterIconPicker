@@ -38,17 +38,20 @@ class FIPSearchBar extends StatefulWidget {
 }
 
 class _FIPSearchBarState extends State<FIPSearchBar> {
-  SearchComparator _defaultSearchComparator = (String searchValue, IconPickerIcon icon) {
+  SearchComparator _defaultSearchComparator =
+      (String searchValue, IconPickerIcon icon) {
     return icon.name.toLowerCase().contains(searchValue.toLowerCase());
   };
-  late final searchComparator = widget.searchComparator ?? _defaultSearchComparator;
+  late final searchComparator =
+      widget.searchComparator ?? _defaultSearchComparator;
 
   _search(String searchValue) {
     Map<String, IconData> searchResult = Map<String, IconData>();
 
     for (var pack in widget.iconPack!) {
       FIPIconManager.getSelectedPack(pack).forEach((String key, IconData val) {
-        if (searchComparator.call(searchValue, IconPickerIcon(name: key, data: val))) {
+        if (searchComparator.call(
+            searchValue, IconPickerIcon(name: key, data: val))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
@@ -56,7 +59,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
     if (widget.customIconPack != null) {
       widget.customIconPack!.forEach((String key, IconData val) {
-        if (searchComparator.call(searchValue, IconPickerIcon(name: key, data: val))) {
+        if (searchComparator.call(
+            searchValue, IconPickerIcon(name: key, data: val))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
@@ -102,7 +106,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
                       if (widget.iconPack != null)
                         for (var pack in widget.iconPack!) {
-                          controller.addAll(FIPIconManager.getSelectedPack(pack));
+                          controller
+                              .addAll(FIPIconManager.getSelectedPack(pack));
                         }
                     }),
                   )

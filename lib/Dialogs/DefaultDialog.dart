@@ -109,10 +109,10 @@ class FIPDefaultDialog extends StatelessWidget {
                             child: DefaultTextStyle(
                               child: title!,
                               style: TextStyle(
-                                color:
-                                    FIPColorBrightness(backgroundColor!).isLight()
-                                        ? Colors.black
-                                        : Colors.white,
+                                color: FIPColorBrightness(backgroundColor!)
+                                        .isLight()
+                                    ? Colors.black
+                                    : Colors.white,
                                 fontSize: 20,
                               ),
                             ),
@@ -120,9 +120,10 @@ class FIPDefaultDialog extends StatelessWidget {
                           IconButton(
                             icon: Icon(
                               Icons.close,
-                              color: FIPColorBrightness(backgroundColor!).isLight()
-                                  ? Colors.black
-                                  : Colors.white,
+                              color:
+                                  FIPColorBrightness(backgroundColor!).isLight()
+                                      ? Colors.black
+                                      : Colors.white,
                             ),
                             onPressed: () => Navigator.pop(context),
                           ),
