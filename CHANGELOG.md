@@ -1,3 +1,11 @@
+## [3.3.0] - 08.02.2024
+
+* 🔍 Add `searchComparator` to define a custom search function which can be used instead
+  * Thanks to [xunafay](https://github.com/xunafay) for the hint in [#61](https://github.com/Ahmadre/FlutterIconPicker/issues/61)
+* ⬆️ Update to latest `flutter 3.16.*`
+* ⬆️ Update dependencies
+* 📝 Update documentation
+
 ## [3.2.4] - 04.06.2023
 
 * ⬆️ Update to latest `flutter 3.10.*`
