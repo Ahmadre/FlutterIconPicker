@@ -7,6 +7,8 @@ import 'package:path_provider/path_provider.dart';
 import 'app_brightness.dart';
 
 class IconNotifier extends ChangeNotifier {
+  static final starterPacks = <IconPack>[IconPack.material];
+
   IconNotifier._(
     IconData? iconData,
     AppBrightness brightness,
@@ -75,7 +77,7 @@ class IconNotifier extends ChangeNotifier {
     final iconData = await box.get('iconData') != null
         ? deserializeIcon(
             Map<String, dynamic>.from(await box.get('iconData')),
-            iconPack: IconPack.material,
+            iconPack: IconNotifier.starterPacks.first,
           )
         : null;
 

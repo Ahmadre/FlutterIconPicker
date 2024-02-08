@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       showSearchBar: showSearch,
       iconPickerShape:
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackModes: [IconPack.material],
+      iconPackModes: IconNotifier.starterPacks,
       searchComparator: (String search, IconPickerIcon icon) =>
           search
               .toLowerCase()
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (icon != null) {
-      notifier.setIconData(icon, pack: IconPack.material);
+      notifier.setIconData(icon, pack: IconNotifier.starterPacks.first);
       setState(() {});
 
       debugPrint(
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(iconNotifier.iconData!, iconPack: IconPack.material).toString()}',
+                            'Database Entry:\n${serializeIcon(iconNotifier.iconData!, iconPack: IconNotifier.starterPacks.first).toString()}',
                           ),
                         ],
                       )
