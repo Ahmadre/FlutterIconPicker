@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'app_brightness.dart';
 
 class IconNotifier extends ChangeNotifier {
-  static final starterPacks = <IconPack>[IconPack.material];
+  static final starterPacks = <IconPack>[IconPack.cupertino];
 
   IconNotifier._(
     IconData? iconData,

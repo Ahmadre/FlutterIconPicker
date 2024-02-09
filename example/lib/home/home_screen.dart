@@ -27,14 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
     notifier = Provider.of<IconNotifier>(context, listen: false);
   }
 
-  _pickIcon() async {
+  Future<void> _pickIcon() async {
     IconData? icon = await showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
       showSearchBar: showSearch,
       iconPickerShape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       iconPackModes: IconNotifier.starterPacks,
       searchComparator: (String search, IconPickerIcon icon) =>
           search

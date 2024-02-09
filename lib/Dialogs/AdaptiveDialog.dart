@@ -24,6 +24,7 @@ class AdaptiveDialog extends StatelessWidget {
           child: ConstrainedBox(
             constraints: constraints!,
             child: Dialog(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
               shape: shape,
               child: child,
             ),
