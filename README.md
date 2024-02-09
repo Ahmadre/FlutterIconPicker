@@ -6,7 +6,7 @@
 
 This package provides an IconPicker with supported (or custom provided) Icons which can be picked through an AlertDialog. All Icons are mapped with its names in the IconData. This is necessary to make it possible to search through the icons. Fulltextsearch including a note if no results where found.
 
-![IconPicker](https://github.com/Ahmadre/FlutterIconPicker/blob/master/assets/FlutterIconPicker.png)
+![IconPicker](https://raw.githubusercontent.com/Ahmadre/FlutterIconPicker/master/assets/FlutterIconPicker3.jpg)
 
 ## Disclaimer (Important)
 
@@ -111,7 +111,7 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   deserializeIcon(map)
 ```
 
-## Migration-Guide when updating to >= 3.3.1 (BREAKING Change)
+## Migration-Guide when updating to >= 3.3.1 (BREAKING CHANGE)
 
 The IconPicker is now called via `IconData? icon = await showIconPicker(...` and not anymore like: `IconData? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
 
