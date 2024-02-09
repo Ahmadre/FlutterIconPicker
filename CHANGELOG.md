@@ -1,3 +1,8 @@
+## [3.3.3] - 09.02.2024
+
+* 🐛 Fix `iconPickerShape` was not applied anymore with Material 3
+* 📝 Update documentation
+
 ## [3.3.2] - 09.02.2024
 
 * ⬆️ [BREAKING CHANGE] Update main interface
@@ -8,7 +13,7 @@
 
 * ⬆️ [BREAKING CHANGE] Update dependencies
   * Seperate Material Icons
-  * Please check this [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to-331-breaking-change) for more information
+  * Please check this [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to--331-breaking-change) for more information
 * 📝 Update documentation
 
 ## [3.3.0] - 08.02.2024
