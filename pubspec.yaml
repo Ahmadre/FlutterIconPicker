@@ -14,6 +14,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   provider: ^6.1.1
 dev_dependencies:
+  dcli: ^3.3.5
   flutter_test:
     sdk: flutter
 flutter:
