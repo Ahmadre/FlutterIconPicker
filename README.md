@@ -248,7 +248,7 @@ For more see:
 dart run flutter_iconpicker:generate-packs --help
 ```
 
-This dart cli program generated all IconPacks you need.
+This dart cli program generates all IconPacks you need.
 
 If you tend to change your IconPacks, you always have to re-run that command!
 
