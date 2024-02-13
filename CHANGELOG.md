@@ -1,3 +1,7 @@
+## [3.4.1] - 14.02.2024
+
+* 🐛 Fix `generate-packs` command for macOS
+
 ## [3.4.0] - 14.02.2024
 
 * 🐛 Fix App Size (Flutter app bundles were increased around >= 1 MB)
