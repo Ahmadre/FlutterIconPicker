@@ -24,12 +24,22 @@ Future<void> main(List<String> arguments) async {
     workingDirectory: argResults[workingDirectory] as String,
   ).forEach((filePath) {
     if (!filePath.contains('test.dart')) {
+      bool foundImport = false;
+      bool foundUsage = false;
       read(filePath).forEach((line) {
-        if (RegExp('r/(.*)package:flutter_iconpicker/s').hasMatch(line) &&
-            RegExp('r/(.*)showIconPicker/s').hasMatch(line)) {
-          print(filePath);
+        if (line.contains('package:flutter_iconpicker')) {
+          foundImport = true;
+          return;
+        }
+        if (line.contains('showIconPicker')) {
+          foundUsage = true;
+          return;
         }
       });
+
+      if (foundImport && foundUsage) {
+        print(filePath);
+      }
     }
   });
 
