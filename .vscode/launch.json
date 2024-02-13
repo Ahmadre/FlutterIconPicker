@@ -16,6 +16,13 @@
       "request": "launch",
       "type": "dart",
       "args": ["-d", "chrome"]
-    }
+    },
+    {
+      "name": "Test strip unused packs",
+      "request": "launch",
+      "type": "dart",
+      "program": "bin/strip-unused-packs.dart",
+      "args": ["-d", "./example"]
+    },
   ]
 }

@@ -1,16 +1,40 @@
+import 'dart:io';
+
+import 'package:args/args.dart';
 import 'package:dcli/dcli.dart';
 
-Future<void> main() async {
-  final progress = Progress.print();
+const workingDirectory = 'working-directory';
+
+Future<void> main(List<String> arguments) async {
+  exitCode = 0; // Presume success
+
+  final parser = ArgParser()
+    ..addOption(workingDirectory, defaultsTo: '.', abbr: 'd');
+  ArgResults argResults = parser.parse(arguments);
+
+  print(
+      '-- Scanning unused Packs in: ${argResults[workingDirectory] as String} --');
+
+  final progress = Progress.print(capture: true);
 
   /// 1. Get all files which uses `showIconPicker` AND imports us
-  final dartFiles = find(
+  find(
     '*.dart',
     progress: progress,
-  ).forEach((file) {
-    if (RegExp('r/(.*)package:flutter_iconpicker/s').hasMatch(file) &&
-        RegExp('r/(.*)showIconPicker/s').hasMatch(file)) {}
+    workingDirectory: argResults[workingDirectory] as String,
+  ).forEach((filePath) {
+    if (!filePath.contains('test.dart')) {
+      read(filePath).forEach((line) {
+        if (RegExp('r/(.*)package:flutter_iconpicker/s').hasMatch(line) &&
+            RegExp('r/(.*)showIconPicker/s').hasMatch(line)) {
+          print(filePath);
+        }
+      });
+    }
   });
 
+  // List<String> entities = fileList;
+
   progress.close();
+  print('-- Scan finished --');
 }
