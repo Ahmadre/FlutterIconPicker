@@ -1,3 +1,7 @@
+## [3.4.1+1] - 14.02.2024
+
+* 📝 Update documentation
+
 ## [3.4.1] - 14.02.2024
 
 * 🐛 Fix `generate-packs` command for macOS
