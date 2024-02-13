@@ -109,7 +109,6 @@ Future<String> getBasePackagePath() async {
         .replaceAll(Platform.pathSeparator, '/')
         .replaceFirst('/', '');
   }
-  print(resultPath);
   return resultPath;
 }
 
