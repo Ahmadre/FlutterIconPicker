@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:isolate';
 
 import 'package:args/args.dart';
 import 'package:dcli/dcli.dart';
@@ -46,6 +47,11 @@ Future<void> main(List<String> arguments) async {
   /// 2. Get iconPackModes value as List<IconPack>
   
   /// 3. Strip out unused Packs (dart files) by comparing the value from step 2. with the enum IconPack.values
+
+  /// Get the current path of package to strip out files
+  final packageUri = Uri.parse('package:flutter_iconpicker/flutter_iconpicker.dart');
+  final uri = await Isolate.resolvePackageUri(packageUri);
+  print(uri);
 
   progress.close();
   print('✅ Scan finished');
