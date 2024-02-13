@@ -14,12 +14,11 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
+  path: ^1.8.3
   provider: ^6.1.1
 dev_dependencies:
-
   flutter_test:
     sdk: flutter
-  path: ^1.8.3
 flutter:
   uses-material-design: true
   fonts:
