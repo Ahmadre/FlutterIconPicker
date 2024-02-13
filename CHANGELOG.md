@@ -1,7 +1,7 @@
 ## [3.4.0] - 14.02.2024
 
 * 🐛 Fix App Size (Flutter app bundles were increased around >= 1 MB)
-  * `IconPack`'s are now generated on demand! For more see: [Troubleshooting](https://github.com/Ahmadre/FlutterIconPicker/tree/46-way-to-exclude-packs?tab=readme-ov-file#troubleshooting) to generate the Icons you need as a developer!
+  * `IconPack`'s are now generated on demand! For more see: [Troubleshooting](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#troubleshooting) to generate the Icons you need as a developer!
   * Also see: `dart run flutter_iconpicker:generate-packs --help` for general usage
 * 📝 Update documentation
 
