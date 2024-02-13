@@ -13,7 +13,8 @@ Future<void> main(List<String> arguments) async {
   ArgResults argResults = parser.parse(arguments);
 
   print(
-      '-- Scanning unused Packs in: ${argResults[workingDirectory] as String} --');
+      '🔍 Scanning unused Packs in: ${argResults[workingDirectory] as String}');
+      
 
   final progress = Progress.print(capture: true);
 
@@ -43,8 +44,10 @@ Future<void> main(List<String> arguments) async {
     }
   });
 
-  // List<String> entities = fileList;
+  /// 2. Get iconPackModes value as List<IconPack>
+  
+  /// 3. Strip out unused Packs (dart files) by comparing the value from step 2. with the enum IconPack.values
 
   progress.close();
-  print('-- Scan finished --');
+  print('✅ Scan finished');
 }
