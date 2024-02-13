@@ -7,62 +7,64 @@ import 'package:flutter_iconpicker/Models/IconPack.dart';
 import 'package:flutter_iconpicker/extensions/string_extensions.dart';
 import 'package:path/path.dart' as path;
 
-const workingDirectory = 'working-directory';
+const packs = 'packs';
+const help = 'help';
+const clear = 'clear';
 
 Future<void> main(List<String> arguments) async {
   exitCode = 0; // Presume success
 
   final parser = ArgParser()
-    ..addOption(workingDirectory, defaultsTo: '.', abbr: 'd');
-  ArgResults argResults = parser.parse(arguments);
+    ..addFlag(help, help: 'Shows how to use generate-packs command', abbr: 'h')
+    ..addFlag(clear, help: 'Clears all generated packs', abbr: 'c')
+    ..addOption(
+      packs,
+      help:
+          'Defines which packs to generate for your project with --packs or -p followed by the pack name/s.\n❗custom icons are now allowed❗',
+      valueHelp: 'material,cupertino,...',
+      mandatory: true,
+      abbr: 'p',
+    );
 
-  print(
-      '🔍 Scanning unused Packs in: ${argResults[workingDirectory] as String}');
+  if (arguments.isEmpty ||
+      arguments.contains('--help') ||
+      arguments.contains('-h')) {
+    print(parser.usage);
+    return;
+  }
+
+  ArgResults argResults = parser.parse(arguments);
 
   final progress = Progress.print(capture: true);
 
   /// Get path of users FlutterIconPicker instance for code generation
   final basePackagePath = await getBasePackagePath();
 
-  /// Reset Packs to initial state (no packs available)
+  if (argResults[clear] as bool) {
+    print('🛠️  Removing generated Packs');
+  }
+
+  /// 1. Reset Packs to initial state (no packs available)
   emptyIconPacks(packagePath: basePackagePath);
 
-  /// 1. Get all files which uses `showIconPicker` AND imports us
-  find(
-    '*.dart',
-    progress: progress,
-    workingDirectory: argResults[workingDirectory] as String,
-  ).forEach((filePath) {
-    if (!filePath.contains('test.dart')) {
-      bool foundImport = false;
-      bool foundUsage = false;
-      read(filePath).forEach((line) {
-        if (line.contains('package:flutter_iconpicker')) {
-          foundImport = true;
-          return;
-        }
-        if (line.contains('showIconPicker')) {
-          foundUsage = true;
-          return;
-        }
-      });
+  if (argResults[clear] as bool) {
+    print('⚠️  Removed all generated Packs');
+    return;
+  }
 
-      if (foundImport && foundUsage) {
-        print(filePath);
-      }
-    }
-  });
+  print('🛠️  Start generating Packs');
 
-  /// 2. Get iconPackModes value as List<IconPack>
-  final foundPacks = <IconPack>[IconPack.cupertino];
+  /// 2. Get requiredPacks as List<IconPack> from CLI
+  final requiredPacks =
+      parseIconPacks((argResults[packs] as String).split(','));
 
-  /// 3. Strip out unused Packs (dart files) by comparing the value from step 2. with the enum IconPack.values
-  foundPacks.forEach(
+  /// 3. Generate Icons which the developer needs
+  requiredPacks.forEach(
     (pack) => generateIconPack(packagePath: basePackagePath, pack: pack),
   );
 
   progress.close();
-  print('✅ Scan finished');
+  print('✅ Finished generating Packs');
 }
 
 void emptyIconPacks({
@@ -101,4 +103,18 @@ Future<String> getBasePackagePath() async {
     resultPath = resultPath.replaceAll(Platform.pathSeparator, '/');
   }
   return resultPath;
+}
+
+List<IconPack> parseIconPacks(List<String> rawPacks) {
+  List<IconPack> result = <IconPack>[];
+  List<String> inputPacks =
+      rawPacks.map((name) => name.toLowerCase().trim()).toList();
+
+  IconPack.values.forEach((pack) {
+    if (inputPacks.contains(pack.name.toLowerCase().trim())) {
+      result.add(pack);
+    }
+  });
+
+  return result;
 }

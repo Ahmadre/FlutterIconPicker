@@ -232,13 +232,23 @@ My selected IconPacks are not displayed when I set the `iconPackModes: [...]`!
 
 IconPacks are very large in size and are generated on demand by you as the developer to always keep your app size as small as possible!
 
-To generate the IconPacks you use in your whole app, just execute following command:
+To generate the IconPacks you need, just execute following command:
 
 ```bash
-dart run flutter_iconpicker:strip-unused-packs
+dart run flutter_iconpicker:generate-packs --packs <material,cupertino,..>
 ```
 
-This dart cli program strips out all unused packs. It will only generate the packs you use and need.
+> Replace `<material,cupertino,..>` with the IconPack names you want! E.g. `--packs material,cupertino` (comma separated!)
+
+For the complete list of available pack names see: [Available IconPacks](lib\Models\IconPack.dart) (only those with path!)
+
+For more see:
+
+```bash
+dart run flutter_iconpicker:generate-packs --help
+```
+
+This dart cli program generated all IconPacks you need.
 
 If you tend to change your IconPacks, you always have to re-run that command!
 
