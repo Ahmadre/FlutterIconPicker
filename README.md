@@ -207,3 +207,49 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 ```
+
+## Troubleshooting
+
+**Problem:**
+
+```bash
+This application cannot tree shake icons fonts. It has non-constant instances of IconData at the following locations:
+  - file:///C:/Users/You/Development/FlutterIconPicker/lib/Serialization/iconDataSerialization.dart:127:16
+Target web_release_bundle failed: Exception: Avoid non-constant invocations of IconData or try to build again with --no-tree-shake-icons.
+```
+
+**Solution:**
+
+Add to your build command: `--no-tree-shake-icons`.
+
+--
+
+**Problem:**
+
+My selected IconPacks are not displayed when I set the `iconPackModes: [...]`!
+
+**Solution:**
+
+IconPacks are very large in size and are generated on demand by you as the developer to always keep your app size as small as possible!
+
+To generate the IconPacks you need, just execute following command:
+
+```bash
+dart run flutter_iconpicker:generate-packs --packs <material,cupertino,..>
+```
+
+> Replace `<material,cupertino,..>` with the IconPack names you want! E.g. `--packs material,cupertino` (comma separated!)
+
+For the complete list of available pack names see: [Available IconPacks](lib/Models/IconPack.dart) (only those with path!)
+
+For more see:
+
+```bash
+dart run flutter_iconpicker:generate-packs --help
+```
+
+This dart cli program generates all IconPacks you need.
+
+If you tend to change your IconPacks, you always have to re-run that command!
+
+To make it easier you can setup this command easily as a pre-script running before launching your flutter app (For info on this if you use VSCode have a look at: https://code.visualstudio.com/docs/editor/tasks). This automates your development workcycle and for building release apps, just run that dart script before building.

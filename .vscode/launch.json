@@ -16,6 +16,13 @@
       "request": "launch",
       "type": "dart",
       "args": ["-d", "chrome"]
-    }
+    },
+    {
+      "name": "Test generate icon packs",
+      "request": "launch",
+      "type": "dart",
+      "program": "bin/generate-packs.dart",
+      "args": ["-p", "cupertino"]
+    },
   ]
 }
