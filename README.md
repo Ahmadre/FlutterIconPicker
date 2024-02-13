@@ -240,7 +240,7 @@ dart run flutter_iconpicker:generate-packs --packs <material,cupertino,..>
 
 > Replace `<material,cupertino,..>` with the IconPack names you want! E.g. `--packs material,cupertino` (comma separated!)
 
-For the complete list of available pack names see: [Available IconPacks](lib\Models\IconPack.dart) (only those with path!)
+For the complete list of available pack names see: [Available IconPacks](lib/Models/IconPack.dart) (only those with path!)
 
 For more see:
 
