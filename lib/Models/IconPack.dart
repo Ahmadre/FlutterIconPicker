@@ -28,6 +28,6 @@ enum IconPack {
   custom;
 
   const IconPack({this.path});
-  
+
   final String? path;
 }

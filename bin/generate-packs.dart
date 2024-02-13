@@ -8,6 +8,7 @@ import 'package:flutter_iconpicker/extensions/string_extensions.dart';
 import 'package:path/path.dart' as path;
 
 const packs = 'packs';
+const all = 'all';
 const help = 'help';
 const clear = 'clear';
 
@@ -17,12 +18,13 @@ Future<void> main(List<String> arguments) async {
   final parser = ArgParser()
     ..addFlag(help, help: 'Shows how to use generate-packs command', abbr: 'h')
     ..addFlag(clear, help: 'Clears all generated packs', abbr: 'c')
+    ..addFlag(all, help: 'Generates all icon packs', abbr: 'a')
     ..addOption(
       packs,
       help:
           'Defines which packs to generate for your project with --packs or -p followed by the pack name/s.\n❗custom icons are now allowed❗',
       valueHelp: 'material,cupertino,...',
-      mandatory: true,
+      defaultsTo: 'material',
       abbr: 'p',
     );
 
@@ -35,10 +37,10 @@ Future<void> main(List<String> arguments) async {
 
   ArgResults argResults = parser.parse(arguments);
 
-  final progress = Progress.print(capture: true);
-
   /// Get path of users FlutterIconPicker instance for code generation
   final basePackagePath = await getBasePackagePath();
+
+  final generateAll = argResults[all] as bool;
 
   if (argResults[clear] as bool) {
     print('🛠️  Removing generated Packs');
@@ -54,16 +56,23 @@ Future<void> main(List<String> arguments) async {
 
   print('🛠️  Start generating Packs');
 
-  /// 2. Get requiredPacks as List<IconPack> from CLI
-  final requiredPacks =
-      parseIconPacks((argResults[packs] as String).split(','));
+  if (generateAll) {
+    generateAllIconPacks(packagePath: basePackagePath);
+  } else {
+    final progress = Progress.print(capture: true);
 
-  /// 3. Generate Icons which the developer needs
-  requiredPacks.forEach(
-    (pack) => generateIconPack(packagePath: basePackagePath, pack: pack),
-  );
+    /// 2. Get requiredPacks as List<IconPack> from CLI
+    final requiredPacks =
+        parseIconPacks((argResults[packs] as String).split(','));
 
-  progress.close();
+    /// 3. Generate Icons which the developer needs
+    requiredPacks.forEach(
+      (pack) => generateIconPack(packagePath: basePackagePath, pack: pack),
+    );
+
+    progress.close();
+  }
+
   print('✅ Finished generating Packs');
 }
 
@@ -118,3 +127,7 @@ List<IconPack> parseIconPacks(List<String> rawPacks) {
 
   return result;
 }
+
+void generateAllIconPacks({required String packagePath}) => IconPack.values
+    .where((p) => p.path.isNotNullOrBlank)
+    .forEach((pack) => generateIconPack(packagePath: packagePath, pack: pack));

@@ -18,11 +18,11 @@
       "args": ["-d", "chrome"]
     },
     {
-      "name": "Test strip unused packs",
+      "name": "Test generate icon packs",
       "request": "launch",
       "type": "dart",
-      "program": "bin/strip-unused-packs.dart",
-      "args": ["-d", "./example"]
+      "program": "bin/generate-packs.dart",
+      "args": ["-p", "cupertino"]
     },
   ]
 }
