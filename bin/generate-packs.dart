@@ -28,9 +28,7 @@ Future<void> main(List<String> arguments) async {
       abbr: 'p',
     );
 
-  if (arguments.isEmpty ||
-      arguments.contains('--help') ||
-      arguments.contains('-h')) {
+  if (arguments.contains('--help') || arguments.contains('-h')) {
     print(parser.usage);
     return;
   }
