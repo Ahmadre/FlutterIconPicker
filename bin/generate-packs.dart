@@ -103,12 +103,13 @@ Future<String> getBasePackagePath() async {
   final packageUri =
       Uri.parse('package:flutter_iconpicker/flutter_iconpicker.dart');
   final packagePath = (await Isolate.resolvePackageUri(packageUri));
-  String resultPath = path
-      .dirname(packagePath!.path.replaceAll('lib', ''))
-      .replaceFirst('/', '');
+  String resultPath = path.dirname(packagePath!.path.replaceAll('lib', ''));
   if (Platform.isWindows) {
-    resultPath = resultPath.replaceAll(Platform.pathSeparator, '/');
+    resultPath = resultPath
+        .replaceAll(Platform.pathSeparator, '/')
+        .replaceFirst('/', '');
   }
+  print(resultPath);
   return resultPath;
 }
 
