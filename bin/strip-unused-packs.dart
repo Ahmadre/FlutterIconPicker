@@ -14,7 +14,6 @@ Future<void> main(List<String> arguments) async {
 
   print(
       '🔍 Scanning unused Packs in: ${argResults[workingDirectory] as String}');
-      
 
   final progress = Progress.print(capture: true);
 
