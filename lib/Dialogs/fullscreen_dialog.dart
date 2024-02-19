@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
-import '../IconPicker/searchbar.dart';
+import '../IconPicker/search_bar.dart';
 import '../Models/icon_pack.dart';
 import '../Models/icon_picker_icon.dart';
 

@@ -6,7 +6,7 @@ import 'fullscreen_dialog.dart';
 import 'adaptive_dialog.dart';
 import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
-import '../IconPicker/searchbar.dart';
+import '../IconPicker/search_bar.dart';
 import '../Models/icon_pack.dart';
 
 class FIPDefaultDialog extends StatelessWidget {
