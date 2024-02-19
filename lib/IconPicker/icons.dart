@@ -13,7 +13,7 @@ import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart';
 import 'package:flutter_iconpicker/IconPicker/Packs/MaterialRounded.dart';
 import 'package:flutter_iconpicker/IconPicker/Packs/MaterialSharp.dart';
 
-import '../Models/IconPack.dart';
+import '../Models/icon_pack.dart';
 
 import 'Packs/Material.dart';
 import 'Packs/Cupertino.dart';

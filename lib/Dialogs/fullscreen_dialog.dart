@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
-import '../Helpers/ColorBrightness.dart';
-import '../IconPicker/iconPicker.dart';
-import '../IconPicker/searchBar.dart';
-import '../Models/IconPack.dart';
+import '../Helpers/color_brightness.dart';
+import '../IconPicker/icon_picker.dart';
+import '../IconPicker/searchbar.dart';
+import '../Models/icon_pack.dart';
 import '../Models/icon_picker_icon.dart';
 
 class FIPFullScreenDialog extends StatelessWidget {

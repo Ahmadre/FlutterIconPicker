@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import '../Models/icon_picker_icon.dart';
-import 'FullScreenDialog.dart';
-import 'AdaptiveDialog.dart';
-import '../Helpers/ColorBrightness.dart';
-import '../IconPicker/iconPicker.dart';
-import '../IconPicker/searchBar.dart';
-import '../Models/IconPack.dart';
+import 'fullscreen_dialog.dart';
+import 'adaptive_dialog.dart';
+import '../Helpers/color_brightness.dart';
+import '../IconPicker/icon_picker.dart';
+import '../IconPicker/searchbar.dart';
+import '../Models/icon_pack.dart';
 
 class FIPDefaultDialog extends StatelessWidget {
   const FIPDefaultDialog({

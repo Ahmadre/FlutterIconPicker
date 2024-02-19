@@ -6,14 +6,14 @@
 library flutter_iconpicker;
 
 export 'Models/icon_picker_icon.dart';
-export 'Models/IconPack.dart';
-export 'Serialization/iconDataSerialization.dart';
+export 'Models/icon_pack.dart';
+export 'Serialization/icondata_serialization.dart';
 
 import 'package:flutter/material.dart';
-import 'Models/IconPack.dart';
+import 'Models/icon_pack.dart';
 import 'Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
-import 'Dialogs/DefaultDialog.dart';
+import 'Dialogs/default_dialog.dart';
 
 Future<IconData?> showIconPicker(
   BuildContext context, {

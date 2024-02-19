@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import 'icons.dart';
-import '../Models/IconPack.dart';
-import '../Helpers/ColorBrightness.dart';
+import '../Models/icon_pack.dart';
+import '../Helpers/color_brightness.dart';
 
 class FIPIconPicker extends StatefulWidget {
   final FIPIconController iconController;

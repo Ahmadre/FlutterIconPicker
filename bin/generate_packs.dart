@@ -3,9 +3,9 @@ import 'dart:isolate';
 
 import 'package:args/args.dart';
 import 'package:dcli/dcli.dart';
-import 'package:flutter_iconpicker/Models/IconPack.dart';
-import 'package:flutter_iconpicker/extensions/string_extensions.dart';
+import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:path/path.dart' as path;
+import 'package:flutter_iconpicker/extensions/string_extensions.dart';
 
 const packs = 'packs';
 const all = 'all';

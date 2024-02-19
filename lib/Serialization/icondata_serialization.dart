@@ -16,7 +16,7 @@ import 'package:flutter_iconpicker/IconPicker/Packs/MaterialRounded.dart'
 import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart'
     as OutlinedMaterial;
 
-import 'package:flutter_iconpicker/Models/IconPack.dart';
+import 'package:flutter_iconpicker/Models/icon_pack.dart';
 
 Map<String, dynamic>? serializeIcon(IconData icon, {IconPack? iconPack}) {
   if (iconPack == null) {
