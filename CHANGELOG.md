@@ -1,16 +1,20 @@
+## [3.4.3] - 14.02.2024
+
+* ⬆️ Upgrade dependencies to latest Flutter 3.19.*
+
 ## [3.4.2] - 14.02.2024
 
 * 📝 Update documentation
 
 ## [3.4.1] - 14.02.2024
 
-* 🐛 Fix `generate-packs` command for macOS
+* 🐛 Fix `generate_packs` command for macOS
 
 ## [3.4.0] - 14.02.2024
 
 * 🐛 Fix App Size (Flutter app bundles were increased around >= 1 MB)
   * `IconPack`'s are now generated on demand! For more see: [Troubleshooting](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#troubleshooting) to generate the Icons you need as a developer!
-  * Also see: `dart run flutter_iconpicker:generate-packs --help` for general usage
+  * Also see: `dart run flutter_iconpicker:generate_packs --help` for general usage
 * 📝 Update documentation
 
 ## [3.3.3] - 09.02.2024

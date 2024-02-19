@@ -235,7 +235,7 @@ IconPacks are very large in size and are generated on demand by you as the devel
 To generate the IconPacks you need, just execute following command:
 
 ```bash
-dart run flutter_iconpicker:generate-packs --packs <material,cupertino,..>
+dart run flutter_iconpicker:generate_packs --packs <material,cupertino,..>
 ```
 
 > Replace `<material,cupertino,..>` with the IconPack names you want! E.g. `--packs material,cupertino` (comma separated!)
@@ -245,7 +245,7 @@ For the complete list of available pack names see: [Available IconPacks](lib/Mod
 For more see:
 
 ```bash
-dart run flutter_iconpicker:generate-packs --help
+dart run flutter_iconpicker:generate_packs --help
 ```
 
 This dart cli program generates all IconPacks you need.

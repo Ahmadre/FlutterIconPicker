@@ -21,7 +21,7 @@
       "name": "Test generate icon packs",
       "request": "launch",
       "type": "dart",
-      "program": "bin/generate-packs.dart",
+      "program": "bin/generate_packs.dart",
       "args": ["-p", "cupertino"]
     },
   ]
