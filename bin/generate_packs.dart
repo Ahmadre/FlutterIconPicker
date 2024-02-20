@@ -22,7 +22,7 @@ Future<void> main(List<String> arguments) async {
     ..addOption(
       packs,
       help:
-          'Defines which packs to generate for your project with --packs or -p followed by the pack name/s.\n❗custom icons are now allowed❗',
+          'Defines which packs to generate for your project with --packs or -p followed by the pack name/s.\n❗custom icons are not allowed❗',
       valueHelp: 'material,cupertino,...',
       defaultsTo: 'material',
       abbr: 'p',
