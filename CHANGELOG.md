@@ -1,3 +1,7 @@
+## [3.4.4] - 20.02.2024
+
+* 📝 Fix documentation
+
 ## [3.4.3] - 19.02.2024
 
 * ⬆️ Update dependencies to latest Flutter 3.19.*
