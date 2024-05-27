@@ -40,6 +40,32 @@ For example if you want to provide `material` icons, copy the actual icons from 
 
 To use this package, add `flutter_iconpicker` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+### Before Getting Started (Important)
+
+IconPacks are very large in size and are generated on demand by you as the developer to always keep your app size as small as possible!
+
+To generate the IconPacks you need, just execute following command:
+
+```bash
+dart run flutter_iconpicker:generate_packs --packs <material,cupertino,..>
+```
+
+> Replace `<material,cupertino,..>` with the IconPack names you want! E.g. `--packs material,cupertino` (comma separated!)
+
+For the complete list of available pack names see: [Available IconPacks](lib/Models/icon_pack.dart) (only those with path!)
+
+For more see:
+
+```bash
+dart run flutter_iconpicker:generate_packs --help
+```
+
+This dart cli program generates all IconPacks you need.
+
+If you tend to change your IconPacks, you always have to re-run that command!
+
+To make it easier you can setup this command easily as a pre-script running before launching your flutter app (For info on this if you use VSCode have a look at: https://code.visualstudio.com/docs/editor/tasks). This automates your development workcycle and for building release apps, just run that dart script before building.
+
 ### Building
 
 If you build your app it may fail because of this package. #TreeShakeIcons
