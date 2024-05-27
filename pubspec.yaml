@@ -16,13 +16,8 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   path: ^1.9.0
   provider: ^6.1.2
-
-dev_dependencies:
   args: ^2.5.0
-  dcli: ^4.0.1
-
-dependency_overrides: 
-  meta: ^1.15.0
+  dcli: ^4.0.1-beta.4
 
 flutter:
   uses-material-design: true
