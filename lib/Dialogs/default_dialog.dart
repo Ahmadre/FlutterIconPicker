@@ -208,8 +208,8 @@ class FIPDefaultDialog extends StatelessWidget {
             actions: [
               TextButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.resolveWith(
-                    (states) => const EdgeInsets.symmetric(horizontal: 20),
+                  padding: WidgetStateProperty.all(
+                    EdgeInsets.symmetric(horizontal: 20),
                   ),
                 ),
                 onPressed: () => Navigator.of(context).pop(),
