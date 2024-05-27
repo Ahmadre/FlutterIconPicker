@@ -6,7 +6,7 @@ homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 
 environment:
-  sdk: ^3.0.0
+  sdk: '>=3.3.4'
 
 dependencies:
   cupertino_icons: ^1.0.8
