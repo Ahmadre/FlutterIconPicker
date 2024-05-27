@@ -4,8 +4,10 @@ description: A Dialog for picking Icons in Flutter and use them anywhere. Can be
 version: 3.4.4
 homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
+
 environment:
   sdk: ^3.0.0
+
 dependencies:
   cupertino_icons: ^1.0.8
   equatable: ^2.0.5
@@ -14,11 +16,14 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   path: ^1.9.0
   provider: ^6.1.2
+
 dev_dependencies:
   args: ^2.5.0
-  dcli: ^3.3.5
-  flutter_test:
-    sdk: flutter
+  dcli: ^4.0.1
+
+dependency_overrides: 
+  meta: ^1.15.0
+
 flutter:
   uses-material-design: true
   fonts:
