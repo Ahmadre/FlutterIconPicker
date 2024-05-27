@@ -57,8 +57,6 @@ Future<void> main(List<String> arguments) async {
   if (generateAll) {
     generateAllIconPacks(packagePath: basePackagePath);
   } else {
-    final progress = Progress.print(capture: true);
-
     /// 2. Get requiredPacks as List<IconPack> from CLI
     final requiredPacks =
         parseIconPacks((argResults[packs] as String).split(','));
@@ -67,8 +65,6 @@ Future<void> main(List<String> arguments) async {
     requiredPacks.forEach(
       (pack) => generateIconPack(packagePath: basePackagePath, pack: pack),
     );
-
-    progress.close();
   }
 
   print('✅ Finished generating Packs');
