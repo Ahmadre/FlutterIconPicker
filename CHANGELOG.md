@@ -1,3 +1,8 @@
+## [3.4.6] - 10.07.2024
+
+* 🐛 (Windows): Support empty strings in project path
+  * Thanks to: [#71](https://github.com/Ahmadre/FlutterIconPicker/issues/71)
+
 ## [3.4.5] - 27.05.2024
 
 * ⬆️ Update dependencies to latest Flutter 3.22.* and Dart SDK 3.3.*
