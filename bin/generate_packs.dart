@@ -103,7 +103,8 @@ Future<String> getBasePackagePath() async {
   if (Platform.isWindows) {
     resultPath = resultPath
         .replaceAll(Platform.pathSeparator, '/')
-        .replaceFirst('/', '');
+        .replaceFirst('/', '')
+        .replaceAll('%20', ' ');
   }
   return resultPath;
 }
