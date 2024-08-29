@@ -1,3 +1,8 @@
+## [3.4.7] - 29.08.2024
+
+* ⬆️ Update dependencies to latest Flutter `3.24.*` and Dart SDK `3.5.*`
+* ⬆️ Update `dcli` to `6.0.5`
+
 ## [3.4.6] - 10.07.2024
 
 * 🐛 (Windows): Support empty strings in project path
