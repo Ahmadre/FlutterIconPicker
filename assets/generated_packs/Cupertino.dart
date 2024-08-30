@@ -1,4748 +1,4991 @@
-// Copyright 2014 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_iconpicker/Models/icon_pack.dart';
+import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
 const String iconFont = 'CupertinoIcons';
 const String iconFontPackage = 'cupertino_icons';
 
-const Map<String, IconData> cupertinoIcons = {
-  /// <i class='cupertino-icons md-36'>chevron_left</i> &#x2014; Cupertino icon for a thin left chevron.
-  /// This is the same icon as [chevron_left] in cupertino_icons 1.0.0+.
-  'left_chevron': CupertinoIcons.left_chevron,
-
-  /// <i class='cupertino-icons md-36'>chevron_right</i> &#x2014; Cupertino icon for a thin right chevron.
-  /// This is the same icon as [chevron_right] in cupertino_icons 1.0.0+.
-  'right_chevron': CupertinoIcons.right_chevron,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up</i> &#x2014; Cupertino icon for an iOS style share icon with an arrow pointing up from a box. This icon is not filled in.
-  /// This is the same icon as [square_arrow_up] and [share_up] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [share_solid], which is similar, but filled in.
-  ///  * [share_up], for another (pre-iOS 7) version of this icon.
-  'share': CupertinoIcons.share,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up_fill</i> &#x2014; Cupertino icon for an iOS style share icon with an arrow pointing up from a box. This icon is filled in.
-  /// This is the same icon as [square_arrow_up_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [share], which is similar, but not filled in.
-  ///  * [share_up], for another (pre-iOS 7) version of this icon.
-  'share_solid': CupertinoIcons.share_solid,
-
-  /// <i class='cupertino-icons md-36'>book</i> &#x2014; Cupertino icon for a book silhouette spread open. This icon is not filled in.
-  /// See also:
-  ///
-  ///  * [book_solid], which is similar, but filled in.
-  'book': CupertinoIcons.book,
-
-  /// <i class='cupertino-icons md-36'>book_fill</i> &#x2014; Cupertino icon for a book silhouette spread open. This icon is filled in.
-  /// This is the same icon as [book_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [book], which is similar, but not filled in.
-  'book_solid': CupertinoIcons.book_solid,
-
-  /// <i class='cupertino-icons md-36'>bookmark</i> &#x2014; Cupertino icon for a book silhouette spread open containing a bookmark in the upper right. This icon is not filled in.
-  ///
-  /// See also:
-  ///
-  ///  * [bookmark_solid], which is similar, but filled in.
-  'bookmark': CupertinoIcons.bookmark,
-
-  /// <i class='cupertino-icons md-36'>bookmark_fill</i> &#x2014; Cupertino icon for a book silhouette spread open containing a bookmark in the upper right. This icon is filled in.
-  /// This is the same icon as [bookmark_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [bookmark], which is similar, but not filled in.
-  'bookmark_solid': CupertinoIcons.bookmark_solid,
-
-  /// <i class='cupertino-icons md-36'>info_circle</i> &#x2014; Cupertino icon for a letter 'i' in a circle.
-  /// This is the same icon as [info_circle] in cupertino_icons 1.0.0+.
-  'info': CupertinoIcons.info,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left</i> &#x2014; Cupertino icon for a curved up and left pointing arrow.
-  /// This is the same icon as [arrowshape_turn_up_left] in cupertino_icons 1.0.0+.
-  ///
-  /// For another version of this icon, see [reply_thick_solid].
-  'reply': CupertinoIcons.reply,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble</i> &#x2014; Cupertino icon for a chat bubble.
-  /// This is the same icon as [chat_bubble] in cupertino_icons 1.0.0+.
-  'conversation_bubble': CupertinoIcons.conversation_bubble,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle</i> &#x2014; Cupertino icon for a person's silhouette in a circle.
-  /// This is the same icon as [person_crop_circle] in cupertino_icons 1.0.0+.
-  'profile_circled': CupertinoIcons.profile_circled,
-
-  /// <i class='cupertino-icons md-36'>plus_circle</i> &#x2014; Cupertino icon for a '+' sign in a circle.
-  /// This is the same icon as [plus_circle] in cupertino_icons 1.0.0+.
-  'plus_circled': CupertinoIcons.plus_circled,
-
-  /// <i class='cupertino-icons md-36'>minus_circle</i> &#x2014; Cupertino icon for a '-' sign in a circle.
-  /// This is the same icon as [minus_circle] in cupertino_icons 1.0.0+.
-  'minus_circled': CupertinoIcons.minus_circled,
-
-  /// <i class='cupertino-icons md-36'>flag</i> &#x2014; Cupertino icon for a right facing flag and pole outline.
-  'flag': CupertinoIcons.flag,
-
-  /// <i class='cupertino-icons md-36'>search</i> &#x2014; Cupertino icon for a magnifier loop outline.
-  'search': CupertinoIcons.search,
-
-  /// <i class='cupertino-icons md-36'>checkmark</i> &#x2014; Cupertino icon for a checkmark.
-  /// This is the same icon as [checkmark] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [check_mark_circled], which consists of this check mark and a circle surrounding it.
-  'check_mark': CupertinoIcons.check_mark,
-
-  /// <i class='cupertino-icons md-36'>checkmark_circle</i> &#x2014; Cupertino icon for a checkmark in a circle. The circle is not filled in.
-  /// This is the same icon as [checkmark_circle] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [check_mark_circled_solid], which is similar, but filled in.
-  ///  * [check_mark], which is the check mark without a circle.
-  'check_mark_circled': CupertinoIcons.check_mark_circled,
-
-  /// <i class='cupertino-icons md-36'>checkmark_circle_fill</i> &#x2014; Cupertino icon for a checkmark in a circle. The circle is filled in.
-  /// This is the same icon as [checkmark_circle_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [check_mark_circled], which is similar, but not filled in.
-  'check_mark_circled_solid': CupertinoIcons.check_mark_circled_solid,
-
-  /// <i class='cupertino-icons md-36'>circle</i> &#x2014; Cupertino icon for an empty circle (a ring).  An un-selected radio button.
-  ///
-  /// See also:
-  ///
-  ///  * [circle_filled], which is similar but filled in.
-  'circle': CupertinoIcons.circle,
-
-  /// <i class='cupertino-icons md-36'>circle_fill</i> &#x2014; Cupertino icon for a filled circle.  The circle is surrounded by a ring.  A selected radio button.
-  /// This is the same icon as [circle_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [circle], which is similar but not filled in.
-  'circle_filled': CupertinoIcons.circle_filled,
-
-  /// <i class='cupertino-icons md-36'>chevron_back</i> &#x2014; Cupertino icon for a thicker left chevron used in iOS for the navigation bar back button.
-  /// This is the same icon as [chevron_back] in cupertino_icons 1.0.0+.
-  'back': CupertinoIcons.back,
-
-  /// <i class='cupertino-icons md-36'>chevron_forward</i> &#x2014; Cupertino icon for a thicker right chevron that's the reverse of [back].
-  /// This is the same icon as [chevron_forward] in cupertino_icons 1.0.0+.
-  'forward': CupertinoIcons.forward,
-
-  /// <i class='cupertino-icons md-36'>house</i> &#x2014; Cupertino icon for an outline of a simple front-facing house.
-  /// This is the same icon as [house] in cupertino_icons 1.0.0+.
-  'home': CupertinoIcons.home,
-
-  /// <i class='cupertino-icons md-36'>cart</i> &#x2014; Cupertino icon for a right-facing shopping cart outline.
-  /// This is the same icon as [cart] in cupertino_icons 1.0.0+.
-  'shopping_cart': CupertinoIcons.shopping_cart,
-
-  /// <i class='cupertino-icons md-36'>ellipsis</i> &#x2014; Cupertino icon for three solid dots.
-  'ellipsis': CupertinoIcons.ellipsis,
-
-  /// <i class='cupertino-icons md-36'>phone</i> &#x2014; Cupertino icon for a phone handset outline.
-  'phone': CupertinoIcons.phone,
-
-  /// <i class='cupertino-icons md-36'>phone_fill</i> &#x2014; Cupertino icon for a phone handset.
-  /// This is the same icon as [phone_fill] in cupertino_icons 1.0.0+.
-  'phone_solid': CupertinoIcons.phone_solid,
-
-  /// <i class='cupertino-icons md-36'>arrow_down</i> &#x2014; Cupertino icon for a solid down arrow.
-  /// This is the same icon as [arrow_down] in cupertino_icons 1.0.0+.
-  'down_arrow': CupertinoIcons.down_arrow,
-
-  /// <i class='cupertino-icons md-36'>arrow_up</i> &#x2014; Cupertino icon for a solid up arrow.
-  /// This is the same icon as [arrow_up] in cupertino_icons 1.0.0+.
-  'up_arrow': CupertinoIcons.up_arrow,
-
-  /// <i class='cupertino-icons md-36'>battery_100</i> &#x2014; Cupertino icon for a charging battery.
-  /// This is the same icon as [battery_100], [battery_full] and [battery_75_percent] in cupertino_icons 1.0.0+.
-  'battery_charging': CupertinoIcons.battery_charging,
-
-  /// <i class='cupertino-icons md-36'>battery_0</i> &#x2014; Cupertino icon for an empty battery.
-  /// This is the same icon as [battery_0] in cupertino_icons 1.0.0+.
-  'battery_empty': CupertinoIcons.battery_empty,
-
-  /// <i class='cupertino-icons md-36'>battery_100</i> &#x2014; Cupertino icon for a full battery.
-  /// This is the same icon as [battery_100], [battery_charging] and [battery_75_percent] in cupertino_icons 1.0.0+.
-  'battery_full': CupertinoIcons.battery_full,
-
-  /// <i class='cupertino-icons md-36'>battery_100</i> &#x2014; Cupertino icon for a 75% charged battery.
-  /// This is the same icon as [battery_100], [battery_charging] and [battery_full] in cupertino_icons 1.0.0+.
-  'battery_75_percent': CupertinoIcons.battery_75_percent,
-
-  /// <i class='cupertino-icons md-36'>battery_25</i> &#x2014; Cupertino icon for a 25% charged battery.
-  /// This is the same icon as [battery_25] in cupertino_icons 1.0.0+.
-  'battery_25_percent': CupertinoIcons.battery_25_percent,
-
-  /// <i class='cupertino-icons md-36'>bluetooth</i> &#x2014; Cupertino icon for the Bluetooth logo.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  'bluetooth': CupertinoIcons.bluetooth,
-
-  /// <i class='cupertino-icons md-36'>arrow_counterclockwise</i> &#x2014; Cupertino icon for a restart arrow, pointing downwards.
-  /// This is the same icon as [arrow_counterclockwise] in cupertino_icons 1.0.0+.
-  'restart': CupertinoIcons.restart,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_2</i> &#x2014; Cupertino icon for two curved up and left pointing arrows.
-  /// This is the same icon as [arrowshape_turn_up_left_2] in cupertino_icons 1.0.0+.
-  'reply_all': CupertinoIcons.reply_all,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_2_fill</i> &#x2014; Cupertino icon for a curved up and left pointing arrow.
-  /// This is the same icon as [arrowshape_turn_up_left_2_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// For another version of this icon, see [reply].
-  'reply_thick_solid': CupertinoIcons.reply_thick_solid,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up</i> &#x2014; Cupertino icon for an iOS style share icon with an arrow pointing upwards to the right from a box.
-  /// This is the same icon as [square_arrow_up] and [share_up] in cupertino_icons 1.0.0+.
-  ///
-  /// For another version of this icon (introduced in iOS 7), see [share].
-  'share_up': CupertinoIcons.share_up,
-
-  /// <i class='cupertino-icons md-36'>shuffle_medium</i> &#x2014; Cupertino icon for two thin right-facing intertwined arrows.
-  /// This is the same icon as [shuffle_medium] and [shuffle_thick] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [shuffle_medium], with slightly thicker arrows.
-  ///  * [shuffle_thick], with thicker, bold arrows.
-  'shuffle': CupertinoIcons.shuffle,
-
-  /// <i class='cupertino-icons md-36'>shuffle</i> &#x2014; Cupertino icon for an two medium thickness right-facing intertwined arrows.
-  /// This is the same icon as [shuffle] and [shuffle_thick] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [shuffle], with thin arrows.
-  ///  * [shuffle_thick], with thicker, bold arrows.
-  'shuffle_medium': CupertinoIcons.shuffle_medium,
-
-  /// <i class='cupertino-icons md-36'>shuffle_medium</i> &#x2014; Cupertino icon for two thick right-facing intertwined arrows.
-  /// This is the same icon as [shuffle_medium] and [shuffle] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [shuffle], with thin arrows.
-  ///  * [shuffle_medium], with slightly thinner arrows.
-  'shuffle_thick': CupertinoIcons.shuffle_thick,
-
-  /// <i class='cupertino-icons md-36'>camera</i> &#x2014; Cupertino icon for a camera for still photographs. This icon is filled in.
-  /// This is the same icon as [camera] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [photo_camera], which is similar, but not filled in.
-  ///  * [video_camera_solid], for the moving picture equivalent.
-  'photo_camera': CupertinoIcons.photo_camera,
-
-  /// <i class='cupertino-icons md-36'>camera_fill</i> &#x2014; Cupertino icon for a camera for still photographs. This icon is not filled in.
-  /// This is the same icon as [camera_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [photo_camera_solid], which is similar, but filled in.
-  ///  * [video_camera], for the moving picture equivalent.
-  'photo_camera_solid': CupertinoIcons.photo_camera_solid,
-
-  /// <i class='cupertino-icons md-36'>videocam</i> &#x2014; Cupertino icon for a camera for moving pictures. This icon is not filled in.
-  /// This is the same icon as [videocam] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [video_camera_solid], which is similar, but filled in.
-  ///  * [photo_camera], for the still photograph equivalent.
-  'video_camera': CupertinoIcons.video_camera,
-
-  /// <i class='cupertino-icons md-36'>videocam_fill</i> &#x2014; Cupertino icon for a camera for moving pictures. This icon is filled in.
-  /// This is the same icon as [videocam_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [video_camera], which is similar, but not filled in.
-  ///  * [photo_camera_solid], for the still photograph equivalent.
-  'video_camera_solid': CupertinoIcons.video_camera_solid,
-
-  /// <i class='cupertino-icons md-36'>camera_rotate</i> &#x2014; Cupertino icon for a camera containing two circular arrows pointing at each other, which indicate switching. This icon is not filled in.
-  /// This is the same icon as [camera_rotate] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [switch_camera_solid], which is similar, but filled in.
-  'switch_camera': CupertinoIcons.switch_camera,
-
-  /// <i class='cupertino-icons md-36'>camera_rotate_fill</i> &#x2014; Cupertino icon for a camera containing two circular arrows pointing at each other, which indicate switching. This icon is filled in.
-  /// This is the same icon as [camera_rotate_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [switch_camera], which is similar, but not filled in.
-  'switch_camera_solid': CupertinoIcons.switch_camera_solid,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack</i> &#x2014; Cupertino icon for a collection of folders, which store collections of files, i.e. an album. This icon is not filled in.
-  /// This is the same icon as [rectangle_stack] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [collections_solid], which is similar, but filled in.
-  'collections': CupertinoIcons.collections,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_fill</i> &#x2014; Cupertino icon for a collection of folders, which store collections of files, i.e. an album. This icon is filled in.
-  /// This is the same icon as [rectangle_stack_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [collections], which is similar, but not filled in.
-  'collections_solid': CupertinoIcons.collections_solid,
-
-  /// <i class='cupertino-icons md-36'>folder_open</i> &#x2014; Cupertino icon for a single folder, which stores multiple files. This icon is not filled in.
-  /// This is the same icon as [folder_open] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [folder_solid], which is similar, but filled in.
-  ///  * [folder_open], which is the pre-iOS 7 version of this icon.
-  'folder': CupertinoIcons.folder,
-
-  /// <i class='cupertino-icons md-36'>folder_fill</i> &#x2014; Cupertino icon for a single folder, which stores multiple files. This icon is filled in.
-  /// This is the same icon as [folder_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [folder], which is similar, but not filled in.
-  ///  * [folder_open], which is the pre-iOS 7 version of this icon and not filled in.
-  'folder_solid': CupertinoIcons.folder_solid,
-
-  /// <i class='cupertino-icons md-36'>folder</i> &#x2014; Cupertino icon for a single folder that indicates being opened. A folder like this typically stores multiple files.
-  /// This is the same icon as [folder] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [folder], which is the equivalent of this icon for iOS versions later than or equal to iOS 7.
-  'folder_open': CupertinoIcons.folder_open,
-
-  /// <i class='cupertino-icons md-36'>trash</i> &#x2014; Cupertino icon for a trash bin for removing items. This icon is not filled in.
-  /// This is the same icon as [trash] and [delete_simple] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [delete_solid], which is similar, but filled in.
-  'delete': CupertinoIcons.delete,
-
-  /// <i class='cupertino-icons md-36'>trash_fill</i> &#x2014; Cupertino icon for a trash bin for removing items. This icon is filled in.
-  /// This is the same icon as [trash_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [delete], which is similar, but not filled in.
-  'delete_solid': CupertinoIcons.delete_solid,
-
-  /// <i class='cupertino-icons md-36'>trash</i> &#x2014; Cupertino icon for a trash bin with minimal detail for removing items.
-  /// This is the same icon as [trash] and [delete] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [delete], which is the iOS 7 equivalent of this icon with richer detail.
-  'delete_simple': CupertinoIcons.delete_simple,
-
-  /// <i class='cupertino-icons md-36'>pen</i> &#x2014; Cupertino icon for a simple pen.
-  ///
-  /// See also:
-  ///
-  ///  * [pencil], which is similar, but has less detail and looks like a pencil.
-  'pen': CupertinoIcons.pen,
-
-  /// <i class='cupertino-icons md-36'>pencil</i> &#x2014; Cupertino icon for a simple pencil.
-  ///
-  /// See also:
-  ///
-  ///  * [pen], which is similar, but has more detail and looks like a pen.
-  'pencil': CupertinoIcons.pencil,
-
-  /// <i class='cupertino-icons md-36'>square_pencil</i> &#x2014; Cupertino icon for a box for writing and a pen on top (that indicates the writing). This icon is not filled in.
-  /// This is the same icon as [square_pencil] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [create_solid], which is similar, but filled in.
-  ///  * [pencil], which is just a pencil.
-  ///  * [pen], which is just a pen.
-  'create': CupertinoIcons.create,
-
-  /// <i class='cupertino-icons md-36'>square_pencil_fill</i> &#x2014; Cupertino icon for a box for writing and a pen on top (that indicates the writing). This icon is filled in.
-  /// This is the same icon as [square_pencil_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [create], which is similar, but not filled in.
-  ///  * [pencil], which is just a pencil.
-  ///  * [pen], which is just a pen.
-  'create_solid': CupertinoIcons.create_solid,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start.
-  /// This is the same icon as [arrow_clockwise], [refresh_thin] and [refresh_thick] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh_circled], which is this icon put in a circle.
-  ///  * [refresh_thin], which is an arrow of the same concept, but thinner and with a smaller gap in between its end and start.
-  ///  * [refresh_thick], which is similar, but rotated 45 degrees clockwise and thicker.
-  ///  * [refresh_bold], which is similar, but rotated 90 degrees clockwise and much thicker.
-  'refresh': CupertinoIcons.refresh,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise_circle</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start surrounded by a circle. This is icon is not filled in.
-  /// This is the same icon as [arrow_clockwise_circle] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh_circled_solid], which is similar, but filled in.
-  ///  * [refresh], which is the arrow of this icon without a circle.
-  'refresh_circled': CupertinoIcons.refresh_circled,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise_circle_fill</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start surrounded by a circle. This is icon is filled in.
-  /// This is the same icon as [arrow_clockwise_circle_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh_circled], which is similar, but not filled in.
-  ///  * [refresh], which is the arrow of this icon filled in without a circle.
-  'refresh_circled_solid': CupertinoIcons.refresh_circled_solid,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start.
-  /// This is the same icon as [arrow_clockwise], [refresh] and [refresh_thick] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh], which is an arrow of the same concept, but thicker and with a larger gap in between its end and start.
-  'refresh_thin': CupertinoIcons.refresh_thin,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start.
-  /// This is the same icon as [arrow_clockwise], [refresh_thin] and [refresh] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh], which is similar, but rotated 45 degrees anti-clockwise and thinner.
-  ///  * [refresh_bold], which is similar, but rotated 45 degrees clockwise and thicker.
-  'refresh_thick': CupertinoIcons.refresh_thick,
-
-  /// <i class='cupertino-icons md-36'>arrow_counterclockwise</i> &#x2014; Cupertino icon for an arrow on a circular path with its end pointing at its start.
-  /// This is the same icon as [arrow_counterclockwise] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [refresh_thick], which is similar, but rotated 45 degrees anti-clockwise and thinner.
-  ///  * [refresh], which is similar, but rotated 90 degrees anti-clockwise and much thinner.
-  'refresh_bold': CupertinoIcons.refresh_bold,
-
-  /// <i class='cupertino-icons md-36'>xmark</i> &#x2014; Cupertino icon for a cross of two diagonal lines from edge to edge crossing in an angle of 90 degrees, which is used for dismissal.
-  /// This is the same icon as [xmark] and [clear] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clear_circled], which uses this cross as a blank space in a filled out circled.
-  ///  * [clear], which uses a thinner cross and is the iOS 7 equivalent of this icon.
-  'clear_thick': CupertinoIcons.clear_thick,
-
-  /// <i class='cupertino-icons md-36'>xmark_circle_fill</i> &#x2014; Cupertino icon for a cross of two diagonal lines from edge to edge crossing in an angle of 90 degrees, which is used for dismissal, used as a blank space in a circle.
-  /// This is the same icon as [xmark_circle_fill] and [clear_circled_solid] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clear], which is equivalent to the cross of this icon without a circle.
-  ///  * [clear_circled_solid], which is similar, but uses a thinner cross.
-  'clear_thick_circled': CupertinoIcons.clear_thick_circled,
-
-  /// <i class='cupertino-icons md-36'>xmark</i> &#x2014; Cupertino icon for a cross of two diagonal lines from edge to edge crossing in an angle of 90 degrees, which is used for dismissal.
-  /// This is the same icon as [xmark] and [clear_thick] in cupertino_icons 1.0.0+.
-  ///
-  ///
-  /// See also:
-  ///
-  ///  * [clear_circled], which consists of this cross and a circle surrounding it.
-  ///  * [clear], which uses a thicker cross and is the pre-iOS 7 equivalent of this icon.
-  'clear': CupertinoIcons.clear,
-
-  /// <i class='cupertino-icons md-36'>xmark_circle</i> &#x2014; Cupertino icon for a cross of two diagonal lines from edge to edge crossing in an angle of 90 degrees, which is used for dismissal, surrounded by circle. This icon is not filled in.
-  /// This is the same icon as [xmark_circle] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clear_circled_solid], which is similar, but filled in.
-  ///  * [clear], which is the standalone cross of this icon.
-  'clear_circled': CupertinoIcons.clear_circled,
-
-  /// <i class='cupertino-icons md-36'>xmark_circle_fill</i> &#x2014; Cupertino icon for a cross of two diagonal lines from edge to edge crossing in an angle of 90 degrees, which is used for dismissal, used as a blank space in a circle. This icon is filled in.
-  /// This is the same icon as [xmark_circle_fill] and [clear_thick_circled] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clear_circled], which is similar, but not filled in.
-  'clear_circled_solid': CupertinoIcons.clear_circled_solid,
-
-  /// <i class='cupertino-icons md-36'>plus</i> &#x2014; Cupertino icon for an two straight lines, one horizontal and one vertical, meeting in the middle, which is the equivalent of a plus sign.
-  /// This is the same icon as [plus] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [plus_circled], which is the pre-iOS 7 version of this icon with a thicker cross.
-  ///  * [add_circled], which consists of the plus and a circle around it.
-  'add': CupertinoIcons.add,
-
-  /// <i class='cupertino-icons md-36'>plus_circle</i> &#x2014; Cupertino icon for an two straight lines, one horizontal and one vertical, meeting in the middle, which is the equivalent of a plus sign, surrounded by a circle. This icon is not filled in.
-  /// This is the same icon as [plus_circle] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [plus_circled], which is the pre-iOS 7 version of this icon with a thicker cross and a filled in circle.
-  ///  * [add_circled_solid], which is similar, but filled in.
-  'add_circled': CupertinoIcons.add_circled,
-
-  /// <i class='cupertino-icons md-36'>plus_circle_fill</i> &#x2014; Cupertino icon for an two straight lines, one horizontal and one vertical, meeting in the middle, which is the equivalent of a plus sign, surrounded by a circle. This icon is not filled in.
-  /// This is the same icon as [plus_circle_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [plus_circled], which is the pre-iOS 7 version of this icon with a thicker cross.
-  ///  * [add_circled], which is similar, but not filled in.
-  'add_circled_solid': CupertinoIcons.add_circled_solid,
-
-  /// <i class='cupertino-icons md-36'>gear_alt</i> &#x2014; Cupertino icon for a gear with eight cogs. This icon is not filled in.
-  /// This is the same icon as [gear_alt] and [gear_big] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [gear_solid], which is similar, but filled in.
-  ///  * [gear_big], which is the pre-iOS 7 version of this icon and appears bigger because of fewer and bigger cogs.
-  ///  * [settings], which is another cogwheel with a different design.
-  'gear': CupertinoIcons.gear,
-
-  /// <i class='cupertino-icons md-36'>gear_alt_fill</i> &#x2014; Cupertino icon for a gear with eight cogs. This icon is filled in.
-  /// This is the same icon as [gear_alt_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [gear], which is similar, but not filled in.
-  ///  * [settings_solid], which is another cogwheel with a different design.
-  'gear_solid': CupertinoIcons.gear_solid,
-
-  /// <i class='cupertino-icons md-36'>gear_alt</i> &#x2014; Cupertino icon for a gear with six cogs.
-  /// This is the same icon as [gear_alt] and [gear] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [gear], which is the iOS 7 version of this icon and appears smaller because of more and larger cogs.
-  ///  * [settings_solid], which is another cogwheel with a different design.
-  'gear_big': CupertinoIcons.gear_big,
-
-  /// <i class='cupertino-icons md-36'>settings</i> &#x2014; Cupertino icon for a cogwheel with many cogs and decoration in the middle. This icon is not filled in.
-  ///
-  /// See also:
-  ///
-  ///  * [settings_solid], which is similar, but filled in.
-  ///  * [gear], which is another cogwheel with a different design.
-  'settings': CupertinoIcons.settings,
-
-  /// <i class='cupertino-icons md-36'>settings_solid</i> &#x2014; Cupertino icon for a cogwheel with many cogs and decoration in the middle. This icon is filled in.
-  ///
-  /// See also:
-  ///
-  ///  * [settings], which is similar, but not filled in.
-  ///  * [gear_solid], which is another cogwheel with a different design.
-  'settings_solid': CupertinoIcons.settings_solid,
-
-  /// <i class='cupertino-icons md-36'>music_note</i> &#x2014; Cupertino icon for a symbol representing a solid single musical note.
-  ///
-  /// See also:
-  ///
-  ///  * [double_music_note], which is similar, but with 2 connected notes.
-  'music_note': CupertinoIcons.music_note,
-
-  /// <i class='cupertino-icons md-36'>music_note_2</i> &#x2014; Cupertino icon for a symbol representing 2 connected musical notes.
-  /// This is the same icon as [music_note_2] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [music_note], which is similar, but with a single note.
-  'double_music_note': CupertinoIcons.double_music_note,
-
-  /// <i class='cupertino-icons md-36'>play</i> &#x2014; Cupertino icon for a triangle facing to the right. This icon is not filled in.
-  /// This is the same icon as [play] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [play_arrow_solid], which is similar, but filled in.
-  'play_arrow': CupertinoIcons.play_arrow,
-
-  /// <i class='cupertino-icons md-36'>play_fill</i> &#x2014; Cupertino icon for a triangle facing to the right. This icon is filled in.
-  /// This is the same icon as [play_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [play_arrow], which is similar, but not filled in.
-  'play_arrow_solid': CupertinoIcons.play_arrow_solid,
-
-  /// <i class='cupertino-icons md-36'>pause</i> &#x2014; Cupertino icon for an two vertical rectangles. This icon is not filled in.
-  ///
-  /// See also:
-  ///
-  ///  * [pause_solid], which is similar, but filled in.
-  'pause': CupertinoIcons.pause,
-
-  /// <i class='cupertino-icons md-36'>pause_fill</i> &#x2014; Cupertino icon for an two vertical rectangles. This icon is filled in.
-  /// This is the same icon as [pause_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [pause], which is similar, but not filled in.
-  'pause_solid': CupertinoIcons.pause_solid,
-
-  /// <i class='cupertino-icons md-36'>infinite</i> &#x2014; Cupertino icon for the infinity symbol.
-  /// This is the same icon as [infinite] and [loop_thick] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [loop_thick], which is similar, but thicker.
-  'loop': CupertinoIcons.loop,
-
-  /// <i class='cupertino-icons md-36'>infinite</i> &#x2014; Cupertino icon for the infinity symbol.
-  /// This is the same icon as [infinite] and [loop] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [loop], which is similar, but thinner.
-  'loop_thick': CupertinoIcons.loop_thick,
-
-  /// <i class='cupertino-icons md-36'>speaker_1_fill</i> &#x2014; Cupertino icon for a speaker with a single small sound wave.
-  /// This is the same icon as [speaker_1_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [volume_mute], which is similar, but has no sound waves.
-  ///  * [volume_off], which is similar, but with an additional larger sound wave and a diagonal line crossing the whole icon.
-  ///  * [volume_up], which has an additional larger sound wave next to the small one.
-  'volume_down': CupertinoIcons.volume_down,
-
-  /// <i class='cupertino-icons md-36'>speaker_fill</i> &#x2014; Cupertino icon for a speaker symbol.
-  /// This is the same icon as [speaker_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [volume_down], which is similar, but adds a small sound wave.
-  ///  * [volume_off], which is similar, but adds a small and a large sound wave and a diagonal line crossing the whole icon.
-  ///  * [volume_up], which is similar, but has a small and a large sound wave.
-  'volume_mute': CupertinoIcons.volume_mute,
-
-  /// <i class='cupertino-icons md-36'>speaker_slash_fill</i> &#x2014; Cupertino icon for a speaker with a small and a large sound wave and a diagonal line crossing the whole icon.
-  /// This is the same icon as [speaker_slash_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [volume_down], which is similar, but not crossed out and only has the small wave.
-  ///  * [volume_mute], which is similar, but not crossed out.
-  ///  * [volume_up], which is the version of this icon that is not crossed out.
-  'volume_off': CupertinoIcons.volume_off,
-
-  /// <i class='cupertino-icons md-36'>speaker_3_fill</i> &#x2014; Cupertino icon for a speaker with a small and a large sound wave.
-  /// This is the same icon as [speaker_3_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [volume_down], which is similar, but only has the small sound wave.
-  ///  * [volume_mute], which is similar, but has no sound waves.
-  ///  * [volume_off], which is the crossed out version of this icon.
-  'volume_up': CupertinoIcons.volume_up,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_arrow_down_right</i> &#x2014; Cupertino icon for all four corners of a square facing inwards.
-  /// This is the same icon as [arrow_up_left_arrow_down_right] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [fullscreen_exit], which is similar, but has the corners facing outwards.
-  'fullscreen': CupertinoIcons.fullscreen,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_arrow_up_left</i> &#x2014; Cupertino icon for all four corners of a square facing outwards.
-  /// This is the same icon as [arrow_down_right_arrow_up_left] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [fullscreen], which is similar, but has the corners facing inwards.
-  'fullscreen_exit': CupertinoIcons.fullscreen_exit,
-
-  /// <i class='cupertino-icons md-36'>mic_slash</i> &#x2014; Cupertino icon for a filled in microphone with a diagonal line crossing it.
-  /// This is the same icon as [mic_slash] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [mic], which is similar, but not filled in and without a diagonal line.
-  ///  * [mic_solid], which is similar, but without a diagonal line.
-  'mic_off': CupertinoIcons.mic_off,
-
-  /// <i class='cupertino-icons md-36'>mic</i> &#x2014; Cupertino icon for a microphone.
-  ///
-  /// See also:
-  ///
-  ///  * [mic_solid], which is similar, but filled in.
-  ///  * [mic_off], which is similar, but filled in and with a diagonal line crossing the icon.
-  'mic': CupertinoIcons.mic,
-
-  /// <i class='cupertino-icons md-36'>mic_fill</i> &#x2014; Cupertino icon for a filled in microphone.
-  /// This is the same icon as [mic_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [mic], which is similar, but not filled in.
-  ///  * [mic_off], which is similar, but with a diagonal line crossing the icon.
-  'mic_solid': CupertinoIcons.mic_solid,
-
-  /// <i class='cupertino-icons md-36'>time</i> &#x2014; Cupertino icon for a circle with a dotted clock face inside with hands showing 10:30.
-  /// This is the same icon as [time] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clock_solid], which is similar, but filled in.
-  ///  * [time], which is similar, but without dots on the clock face.
-  ///  * [time_solid], which is similar, but filled in and without dots on the clock face.
-  'clock': CupertinoIcons.clock,
-
-  /// <i class='cupertino-icons md-36'>clock_fill</i> &#x2014; Cupertino icon for a filled in circle with a dotted clock face inside with hands showing 10:30.
-  /// This is the same icon as [clock_fill] and [time_solid] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [clock], which is similar, but not filled in.
-  ///  * [time], which is similar, but not filled in and without dots on the clock face.
-  ///  * [time_solid], which is similar, but without dots on the clock face.
-  'clock_solid': CupertinoIcons.clock_solid,
-
-  /// <i class='cupertino-icons md-36'>clock</i> &#x2014; Cupertino icon for a circle with a 90 degree angle shape in the center, resembling a clock with hands showing 09:00.
-  /// This is the same icon as [clock] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [time_solid], which is similar, but filled in.
-  ///  * [clock], which is similar, but with dots on the clock face.
-  ///  * [clock_solid], which is similar, but filled in and with dots on the clock face.
-  'time': CupertinoIcons.time,
-
-  /// <i class='cupertino-icons md-36'>clock_fill</i> &#x2014; Cupertino icon for a filled in circle with a 90 degree angle shape in the center, resembling a clock with hands showing 09:00.
-  /// This is the same icon as [clock_fill] and [clock_solid] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [time], which is similar, but not filled in.
-  ///  * [clock], which is similar, but not filled in and with dots on the clock face.
-  ///  * [clock_solid], which is similar, but with dots on the clock face.
-  'time_solid': CupertinoIcons.time_solid,
-
-  /// <i class='cupertino-icons md-36'>lock</i> &#x2014; Cupertino icon for an unlocked padlock.
-  /// This is the same icon as [lock] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [padlock_solid], which is similar, but filled in.
-  'padlock': CupertinoIcons.padlock,
-
-  /// <i class='cupertino-icons md-36'>lock_fill</i> &#x2014; Cupertino icon for an unlocked padlock.
-  /// This is the same icon as [lock_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [padlock], which is similar, but not filled in.
-  'padlock_solid': CupertinoIcons.padlock_solid,
-
-  /// <i class='cupertino-icons md-36'>eye</i> &#x2014; Cupertino icon for an open eye.
-  ///
-  /// See also:
-  ///
-  ///  * [eye_solid], which is similar, but filled in.
-  'eye': CupertinoIcons.eye,
-
-  /// <i class='cupertino-icons md-36'>eye_fill</i> &#x2014; Cupertino icon for an open eye.
-  /// This is the same icon as [eye_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [eye], which is similar, but not filled in.
-  'eye_solid': CupertinoIcons.eye_solid,
-
-  /// <i class='cupertino-icons md-36'>person</i> &#x2014; Cupertino icon for a single person. This icon is not filled in.
-  ///
-  /// See also:
-  ///
-  ///  * [person_solid], which is similar, but filled in.
-  ///  * [person_add], which has an additional plus sign next to the person.
-  ///  * [group], which consists of three people.
-  'person': CupertinoIcons.person,
-
-  /// <i class='cupertino-icons md-36'>person_fill</i> &#x2014; Cupertino icon for a single person. This icon is filled in.
-  /// This is the same icon as [person_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [person], which is similar, but not filled in.
-  ///  * [person_add_solid], which has an additional plus sign next to the person.
-  ///  * [group_solid], which consists of three people.
-  'person_solid': CupertinoIcons.person_solid,
-
-  /// <i class='cupertino-icons md-36'>person_badge_plus</i> &#x2014; Cupertino icon for a single person with a plus sign next to it. This icon is not filled in.
-  /// This is the same icon as [person_badge_plus] in cupertino_icons 1.0.0+.x
-  ///
-  /// See also:
-  ///
-  ///  * [person_add_solid], which is similar, but filled in.
-  ///  * [person], which is just the person.
-  ///  * [group], which consists of three people.
-  'person_add': CupertinoIcons.person_add,
-
-  /// <i class='cupertino-icons md-36'>person_badge_plus_fill</i> &#x2014; Cupertino icon for a single person with a plus sign next to it. This icon is filled in.
-  /// This is the same icon as [person_badge_plus_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [person_add], which is similar, but not filled in.
-  ///  * [person_solid], which is just the person.
-  ///  * [group_solid], which consists of three people.
-  'person_add_solid': CupertinoIcons.person_add_solid,
-
-  /// <i class='cupertino-icons md-36'>person_3</i> &#x2014; Cupertino icon for a group of three people. This icon is not filled in.
-  /// This is the same icon as [person_3] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [group_solid], which is similar, but filled in.
-  ///  * [person], which is just a single person.
-  'group': CupertinoIcons.group,
-
-  /// <i class='cupertino-icons md-36'>person_3_fill</i> &#x2014; Cupertino icon for a group of three people. This icon is filled in.
-  /// This is the same icon as [person_3_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [group], which is similar, but not filled in.
-  ///  * [person_solid], which is just a single person.
-  'group_solid': CupertinoIcons.group_solid,
-
-  /// <i class='cupertino-icons md-36'>envelope</i> &#x2014; Cupertino icon for the outline of a closed mail envelope.
-  /// This is the same icon as [envelope] in cupertino_icons 1.0.0+.
-  'mail': CupertinoIcons.mail,
-
-  /// <i class='cupertino-icons md-36'>envelope_fill</i> &#x2014; Cupertino icon for a closed mail envelope. This icon is filled in.
-  /// This is the same icon as [envelope_fill] in cupertino_icons 1.0.0+.
-  'mail_solid': CupertinoIcons.mail_solid,
-
-  /// <i class='cupertino-icons md-36'>location</i> &#x2014; Cupertino icon for a location pin.
-  'location': CupertinoIcons.location,
-
-  /// <i class='cupertino-icons md-36'>placemark_fill</i> &#x2014; Cupertino icon for a location pin. This icon is filled in.
-  /// This is the same icon as [placemark_fill] in cupertino_icons 1.0.0+.
-  'location_solid': CupertinoIcons.location_solid,
-
-  /// <i class='cupertino-icons md-36'>tags</i> &#x2014; Cupertino icon for the outline of a sticker tag.
-  /// This is the same icon as [tags] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [tags], similar but with 2 overlapping tags.
-  'tag': CupertinoIcons.tag,
-
-  /// <i class='cupertino-icons md-36'>tag_fill</i> &#x2014; Cupertino icon for a sticker tag. This icon is filled in.
-  /// This is the same icon as [tag_fill] and [tags_solid] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [tags_solid], similar but with 2 overlapping tags.
-  'tag_solid': CupertinoIcons.tag_solid,
-
-  /// <i class='cupertino-icons md-36'>tag</i> &#x2014; Cupertino icon for outlines of 2 overlapping sticker tags.
-  /// This is the same icon as [tag] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [tag], similar but with only one tag.
-  'tags': CupertinoIcons.tags,
-
-  /// <i class='cupertino-icons md-36'>tag_fill</i> &#x2014; Cupertino icon for 2 overlapping sticker tags. This icon is filled in.
-  /// This is the same icon as [tag_fill] and [tag_solid] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [tag_solid], similar but with only one tag.
-  'tags_solid': CupertinoIcons.tags_solid,
-
-  /// <i class='cupertino-icons md-36'>bus</i> &#x2014; Cupertino icon for a filled in bus.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  'bus': CupertinoIcons.bus,
-
-  /// <i class='cupertino-icons md-36'>car_fill</i> &#x2014; Cupertino icon for a filled in car.
-  /// This is the same icon as [car_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [car_detailed], similar, but a more detailed and realistic representation.
-  'car': CupertinoIcons.car,
-
-  /// <i class='cupertino-icons md-36'>car_detailed</i> &#x2014; Cupertino icon for a filled in detailed, realistic car.
-  ///
-  /// See also:
-  ///
-  ///  * [car], similar, but a more simple representation.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  'car_detailed': CupertinoIcons.car_detailed,
-
-  /// <i class='cupertino-icons md-36'>train_style_one</i> &#x2014; Cupertino icon for a filled in train with a window divided in half and two headlights.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [train_style_two], similar, but with a full, undivided window and a single, centered headlight.
-  'train_style_one': CupertinoIcons.train_style_one,
-
-  /// <i class='cupertino-icons md-36'>train_style_two</i> &#x2014; Cupertino icon for a filled in train with a window and a single, centered headlight.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [train_style_one], similar, but with a with a window divided in half and two headlights.
-  'train_style_two': CupertinoIcons.train_style_two,
-
-  /// <i class='cupertino-icons md-36'>paw</i> &#x2014; Cupertino icon for an outlined paw.
-  ///
-  /// See also:
-  ///
-  ///  * [paw_solid], similar, but filled in.
-  'paw': CupertinoIcons.paw,
-
-  /// <i class='cupertino-icons md-36'>paw</i> &#x2014; Cupertino icon for a filled in paw.
-  /// This is the same icon as [paw] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [paw], similar, but not filled in.
-  'paw_solid': CupertinoIcons.paw_solid,
-
-  /// <i class='cupertino-icons md-36'>gamecontroller</i> &#x2014; Cupertino icon for an outlined game controller.
-  /// This is the same icon as [gamecontroller] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [game_controller_solid], similar, but filled in.
-  'game_controller': CupertinoIcons.game_controller,
-
-  /// <i class='cupertino-icons md-36'>gamecontroller_fill</i> &#x2014; Cupertino icon for a filled in game controller.
-  /// This is the same icon as [gamecontroller_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [game_controller], similar, but not filled in.
-  'game_controller_solid': CupertinoIcons.game_controller_solid,
-
-  /// <i class='cupertino-icons md-36'>lab_flask</i> &#x2014; Cupertino icon for an outlined lab flask.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [lab_flask_solid], similar, but filled in.
-  'lab_flask': CupertinoIcons.lab_flask,
-
-  /// <i class='cupertino-icons md-36'>lab_flask_solid</i> &#x2014; Cupertino icon for a filled in lab flask.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [lab_flask], similar, but not filled in.
-  'lab_flask_solid': CupertinoIcons.lab_flask_solid,
-
-  /// <i class='cupertino-icons md-36'>heart</i> &#x2014; Cupertino icon for an outlined heart shape. Can be used to indicate like or favorite states.
-  ///
-  /// See also:
-  ///
-  ///  * [heart_solid], same shape, but filled in.
-  'heart': CupertinoIcons.heart,
-
-  /// <i class='cupertino-icons md-36'>heart_solid</i> &#x2014; Cupertino icon for a filled heart shape. Can be used to indicate like or favorite states.
-  /// This is the same icon as [heart_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [heart], same shape, but not filled in.
-  'heart_solid': CupertinoIcons.heart_solid,
-
-  /// <i class='cupertino-icons md-36'>bell</i> &#x2014; Cupertino icon for an outlined bell. Can be used to represent notifications.
-  ///
-  /// See also:
-  ///
-  ///  * [bell_solid], same shape, but filled in.
-  'bell': CupertinoIcons.bell,
-
-  /// <i class='cupertino-icons md-36'>bell_fill</i> &#x2014; Cupertino icon for a filled bell. Can be used represent notifications.
-  /// This is the same icon as [bell_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [bell], same shape, but not filled in.
-  'bell_solid': CupertinoIcons.bell_solid,
-
-  /// <i class='cupertino-icons md-36'>news</i> &#x2014; Cupertino icon for an outlined folded newspaper icon.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [news_solid], same shape, but filled in.
-  'news': CupertinoIcons.news,
-
-  /// <i class='cupertino-icons md-36'>news_solid</i> &#x2014; Cupertino icon for a filled folded newspaper icon.
-  /// This icon is available in cupertino_icons 1.0.0+ for backward
-  /// compatibility but not part of Apple icons' aesthetics.
-  ///
-  /// See also:
-  ///
-  ///  * [news], same shape, but not filled in.
-  'news_solid': CupertinoIcons.news_solid,
-
-  /// <i class='cupertino-icons md-36'>sun_max</i> &#x2014; Cupertino icon for an outlined brightness icon.
-  /// This is the same icon as [sun_max] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [brightness_solid], same shape, but filled in.
-  'brightness': CupertinoIcons.brightness,
-
-  /// <i class='cupertino-icons md-36'>sun_max_fill</i> &#x2014; Cupertino icon for a filled in brightness icon.
-  /// This is the same icon as [sun_max_fill] in cupertino_icons 1.0.0+.
-  ///
-  /// See also:
-  ///
-  ///  * [brightness], same shape, but not filled in.
-  'brightness_solid': CupertinoIcons.brightness_solid,
-  // END LEGACY PRE SF SYMBOLS NAMES
-  // ===========================================================================
-
-  // ===========================================================================
-  // BEGIN GENERATED SF SYMBOLS NAMES
-  /// <i class='cupertino-icons md-36'>airplane</i> &#x2014; Cupertino icon named "airplane". Available on cupertino_icons package 1.0.0+ only.
-  'airplane': CupertinoIcons.airplane,
-
-  /// <i class='cupertino-icons md-36'>alarm</i> &#x2014; Cupertino icon named "alarm". Available on cupertino_icons package 1.0.0+ only.
-  'alarm': CupertinoIcons.alarm,
-
-  /// <i class='cupertino-icons md-36'>alarm_fill</i> &#x2014; Cupertino icon named "alarm_fill". Available on cupertino_icons package 1.0.0+ only.
-  'alarm_fill': CupertinoIcons.alarm_fill,
-
-  /// <i class='cupertino-icons md-36'>alt</i> &#x2014; Cupertino icon named "alt". Available on cupertino_icons package 1.0.0+ only.
-  'alt': CupertinoIcons.alt,
-
-  /// <i class='cupertino-icons md-36'>ant</i> &#x2014; Cupertino icon named "ant". Available on cupertino_icons package 1.0.0+ only.
-  'ant': CupertinoIcons.ant,
-
-  /// <i class='cupertino-icons md-36'>ant_circle</i> &#x2014; Cupertino icon named "ant_circle". Available on cupertino_icons package 1.0.0+ only.
-  'ant_circle': CupertinoIcons.ant_circle,
-
-  /// <i class='cupertino-icons md-36'>ant_circle_fill</i> &#x2014; Cupertino icon named "ant_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ant_circle_fill': CupertinoIcons.ant_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>ant_fill</i> &#x2014; Cupertino icon named "ant_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ant_fill': CupertinoIcons.ant_fill,
-
-  /// <i class='cupertino-icons md-36'>antenna_radiowaves_left_right</i> &#x2014; Cupertino icon named "antenna_radiowaves_left_right". Available on cupertino_icons package 1.0.0+ only.
-  'antenna_radiowaves_left_right': CupertinoIcons.antenna_radiowaves_left_right,
-
-  /// <i class='cupertino-icons md-36'>app</i> &#x2014; Cupertino icon named "app". Available on cupertino_icons package 1.0.0+ only.
-  'app': CupertinoIcons.app,
-
-  /// <i class='cupertino-icons md-36'>app_badge</i> &#x2014; Cupertino icon named "app_badge". Available on cupertino_icons package 1.0.0+ only.
-  'app_badge': CupertinoIcons.app_badge,
-
-  /// <i class='cupertino-icons md-36'>app_badge_fill</i> &#x2014; Cupertino icon named "app_badge_fill". Available on cupertino_icons package 1.0.0+ only.
-  'app_badge_fill': CupertinoIcons.app_badge_fill,
-
-  /// <i class='cupertino-icons md-36'>app_fill</i> &#x2014; Cupertino icon named "app_fill". Available on cupertino_icons package 1.0.0+ only.
-  'app_fill': CupertinoIcons.app_fill,
-
-  /// <i class='cupertino-icons md-36'>archivebox</i> &#x2014; Cupertino icon named "archivebox". Available on cupertino_icons package 1.0.0+ only.
-  'archivebox': CupertinoIcons.archivebox,
-
-  /// <i class='cupertino-icons md-36'>archivebox_fill</i> &#x2014; Cupertino icon named "archivebox_fill". Available on cupertino_icons package 1.0.0+ only.
-  'archivebox_fill': CupertinoIcons.archivebox_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_2_circlepath</i> &#x2014; Cupertino icon named "arrow_2_circlepath". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_2_circlepath': CupertinoIcons.arrow_2_circlepath,
-
-  /// <i class='cupertino-icons md-36'>arrow_2_circlepath_circle</i> &#x2014; Cupertino icon named "arrow_2_circlepath_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_2_circlepath_circle': CupertinoIcons.arrow_2_circlepath_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_2_circlepath_circle_fill</i> &#x2014; Cupertino icon named "arrow_2_circlepath_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_2_circlepath_circle_fill':
-      CupertinoIcons.arrow_2_circlepath_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_2_squarepath</i> &#x2014; Cupertino icon named "arrow_2_squarepath". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_2_squarepath': CupertinoIcons.arrow_2_squarepath,
-
-  /// <i class='cupertino-icons md-36'>arrow_3_trianglepath</i> &#x2014; Cupertino icon named "arrow_3_trianglepath". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_3_trianglepath': CupertinoIcons.arrow_3_trianglepath,
-
-  /// <i class='cupertino-icons md-36'>arrow_branch</i> &#x2014; Cupertino icon named "arrow_branch". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_branch': CupertinoIcons.arrow_branch,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise</i> &#x2014; Cupertino icon named "arrow_clockwise". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [refresh] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [refresh_thin] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [refresh_thick] which is available in cupertino_icons 0.1.3.
-  'arrow_clockwise': CupertinoIcons.arrow_clockwise,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise_circle</i> &#x2014; Cupertino icon named "arrow_clockwise_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [refresh_circled] which is available in cupertino_icons 0.1.3.
-  'arrow_clockwise_circle': CupertinoIcons.arrow_clockwise_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_clockwise_circle_fill</i> &#x2014; Cupertino icon named "arrow_clockwise_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [refresh_circled_solid] which is available in cupertino_icons 0.1.3.
-  'arrow_clockwise_circle_fill': CupertinoIcons.arrow_clockwise_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_counterclockwise</i> &#x2014; Cupertino icon named "arrow_counterclockwise". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [restart] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [refresh_bold] which is available in cupertino_icons 0.1.3.
-  'arrow_counterclockwise': CupertinoIcons.arrow_counterclockwise,
-
-  /// <i class='cupertino-icons md-36'>arrow_counterclockwise_circle</i> &#x2014; Cupertino icon named "arrow_counterclockwise_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_counterclockwise_circle': CupertinoIcons.arrow_counterclockwise_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_counterclockwise_circle_fill</i> &#x2014; Cupertino icon named "arrow_counterclockwise_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_counterclockwise_circle_fill':
-      CupertinoIcons.arrow_counterclockwise_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down</i> &#x2014; Cupertino icon named "arrow_down". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [down_arrow] which is available in cupertino_icons 0.1.3.
-  'arrow_down': CupertinoIcons.arrow_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_circle</i> &#x2014; Cupertino icon named "arrow_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_circle': CupertinoIcons.arrow_down_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_circle_fill</i> &#x2014; Cupertino icon named "arrow_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_circle_fill': CupertinoIcons.arrow_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_doc</i> &#x2014; Cupertino icon named "arrow_down_doc". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_doc': CupertinoIcons.arrow_down_doc,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_doc_fill</i> &#x2014; Cupertino icon named "arrow_down_doc_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_doc_fill': CupertinoIcons.arrow_down_doc_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_left</i> &#x2014; Cupertino icon named "arrow_down_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_left': CupertinoIcons.arrow_down_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_left_circle</i> &#x2014; Cupertino icon named "arrow_down_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_left_circle': CupertinoIcons.arrow_down_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_left_circle_fill</i> &#x2014; Cupertino icon named "arrow_down_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_left_circle_fill': CupertinoIcons.arrow_down_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_left_square</i> &#x2014; Cupertino icon named "arrow_down_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_left_square': CupertinoIcons.arrow_down_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_left_square_fill</i> &#x2014; Cupertino icon named "arrow_down_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_left_square_fill': CupertinoIcons.arrow_down_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right</i> &#x2014; Cupertino icon named "arrow_down_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_right': CupertinoIcons.arrow_down_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_arrow_up_left</i> &#x2014; Cupertino icon named "arrow_down_right_arrow_up_left". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [fullscreen_exit] which is available in cupertino_icons 0.1.3.
-  'arrow_down_right_arrow_up_left':
-      CupertinoIcons.arrow_down_right_arrow_up_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_circle</i> &#x2014; Cupertino icon named "arrow_down_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_right_circle': CupertinoIcons.arrow_down_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_circle_fill</i> &#x2014; Cupertino icon named "arrow_down_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_right_circle_fill': CupertinoIcons.arrow_down_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_square</i> &#x2014; Cupertino icon named "arrow_down_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_right_square': CupertinoIcons.arrow_down_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_right_square_fill</i> &#x2014; Cupertino icon named "arrow_down_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_right_square_fill': CupertinoIcons.arrow_down_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_square</i> &#x2014; Cupertino icon named "arrow_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_square': CupertinoIcons.arrow_down_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_square_fill</i> &#x2014; Cupertino icon named "arrow_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_square_fill': CupertinoIcons.arrow_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_to_line</i> &#x2014; Cupertino icon named "arrow_down_to_line". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_to_line': CupertinoIcons.arrow_down_to_line,
-
-  /// <i class='cupertino-icons md-36'>arrow_down_to_line_alt</i> &#x2014; Cupertino icon named "arrow_down_to_line_alt". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_down_to_line_alt': CupertinoIcons.arrow_down_to_line_alt,
-
-  /// <i class='cupertino-icons md-36'>arrow_left</i> &#x2014; Cupertino icon named "arrow_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left': CupertinoIcons.arrow_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_circle</i> &#x2014; Cupertino icon named "arrow_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_circle': CupertinoIcons.arrow_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_circle_fill</i> &#x2014; Cupertino icon named "arrow_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_circle_fill': CupertinoIcons.arrow_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_right</i> &#x2014; Cupertino icon named "arrow_left_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_right': CupertinoIcons.arrow_left_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_right_circle</i> &#x2014; Cupertino icon named "arrow_left_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_right_circle': CupertinoIcons.arrow_left_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_right_circle_fill</i> &#x2014; Cupertino icon named "arrow_left_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_right_circle_fill': CupertinoIcons.arrow_left_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_right_square</i> &#x2014; Cupertino icon named "arrow_left_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_right_square': CupertinoIcons.arrow_left_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_right_square_fill</i> &#x2014; Cupertino icon named "arrow_left_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_right_square_fill': CupertinoIcons.arrow_left_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_square</i> &#x2014; Cupertino icon named "arrow_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_square': CupertinoIcons.arrow_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_square_fill</i> &#x2014; Cupertino icon named "arrow_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_square_fill': CupertinoIcons.arrow_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_to_line</i> &#x2014; Cupertino icon named "arrow_left_to_line". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_to_line': CupertinoIcons.arrow_left_to_line,
-
-  /// <i class='cupertino-icons md-36'>arrow_left_to_line_alt</i> &#x2014; Cupertino icon named "arrow_left_to_line_alt". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_left_to_line_alt': CupertinoIcons.arrow_left_to_line_alt,
-
-  /// <i class='cupertino-icons md-36'>arrow_merge</i> &#x2014; Cupertino icon named "arrow_merge". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_merge': CupertinoIcons.arrow_merge,
-
-  /// <i class='cupertino-icons md-36'>arrow_right</i> &#x2014; Cupertino icon named "arrow_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right': CupertinoIcons.arrow_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_arrow_left</i> &#x2014; Cupertino icon named "arrow_right_arrow_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_arrow_left': CupertinoIcons.arrow_right_arrow_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_arrow_left_circle</i> &#x2014; Cupertino icon named "arrow_right_arrow_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_arrow_left_circle': CupertinoIcons.arrow_right_arrow_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_arrow_left_circle_fill</i> &#x2014; Cupertino icon named "arrow_right_arrow_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_arrow_left_circle_fill':
-      CupertinoIcons.arrow_right_arrow_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_arrow_left_square</i> &#x2014; Cupertino icon named "arrow_right_arrow_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_arrow_left_square': CupertinoIcons.arrow_right_arrow_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_arrow_left_square_fill</i> &#x2014; Cupertino icon named "arrow_right_arrow_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_arrow_left_square_fill':
-      CupertinoIcons.arrow_right_arrow_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_circle</i> &#x2014; Cupertino icon named "arrow_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_circle': CupertinoIcons.arrow_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_circle_fill</i> &#x2014; Cupertino icon named "arrow_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_circle_fill': CupertinoIcons.arrow_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_square</i> &#x2014; Cupertino icon named "arrow_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_square': CupertinoIcons.arrow_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_square_fill</i> &#x2014; Cupertino icon named "arrow_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_square_fill': CupertinoIcons.arrow_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_to_line</i> &#x2014; Cupertino icon named "arrow_right_to_line". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_to_line': CupertinoIcons.arrow_right_to_line,
-
-  /// <i class='cupertino-icons md-36'>arrow_right_to_line_alt</i> &#x2014; Cupertino icon named "arrow_right_to_line_alt". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_right_to_line_alt': CupertinoIcons.arrow_right_to_line_alt,
-
-  /// <i class='cupertino-icons md-36'>arrow_swap</i> &#x2014; Cupertino icon named "arrow_swap". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_swap': CupertinoIcons.arrow_swap,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_down_left</i> &#x2014; Cupertino icon named "arrow_turn_down_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_down_left': CupertinoIcons.arrow_turn_down_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_down_right</i> &#x2014; Cupertino icon named "arrow_turn_down_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_down_right': CupertinoIcons.arrow_turn_down_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_left_down</i> &#x2014; Cupertino icon named "arrow_turn_left_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_left_down': CupertinoIcons.arrow_turn_left_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_left_up</i> &#x2014; Cupertino icon named "arrow_turn_left_up". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_left_up': CupertinoIcons.arrow_turn_left_up,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_right_down</i> &#x2014; Cupertino icon named "arrow_turn_right_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_right_down': CupertinoIcons.arrow_turn_right_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_right_up</i> &#x2014; Cupertino icon named "arrow_turn_right_up". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_right_up': CupertinoIcons.arrow_turn_right_up,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_up_left</i> &#x2014; Cupertino icon named "arrow_turn_up_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_up_left': CupertinoIcons.arrow_turn_up_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_turn_up_right</i> &#x2014; Cupertino icon named "arrow_turn_up_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_turn_up_right': CupertinoIcons.arrow_turn_up_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_up</i> &#x2014; Cupertino icon named "arrow_up". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [up_arrow] which is available in cupertino_icons 0.1.3.
-  'arrow_up': CupertinoIcons.arrow_up,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_arrow_down</i> &#x2014; Cupertino icon named "arrow_up_arrow_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_arrow_down': CupertinoIcons.arrow_up_arrow_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_arrow_down_circle</i> &#x2014; Cupertino icon named "arrow_up_arrow_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_arrow_down_circle': CupertinoIcons.arrow_up_arrow_down_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_arrow_down_circle_fill</i> &#x2014; Cupertino icon named "arrow_up_arrow_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_arrow_down_circle_fill':
-      CupertinoIcons.arrow_up_arrow_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_arrow_down_square</i> &#x2014; Cupertino icon named "arrow_up_arrow_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_arrow_down_square': CupertinoIcons.arrow_up_arrow_down_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_arrow_down_square_fill</i> &#x2014; Cupertino icon named "arrow_up_arrow_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_arrow_down_square_fill':
-      CupertinoIcons.arrow_up_arrow_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_bin</i> &#x2014; Cupertino icon named "arrow_up_bin". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_bin': CupertinoIcons.arrow_up_bin,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_bin_fill</i> &#x2014; Cupertino icon named "arrow_up_bin_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_bin_fill': CupertinoIcons.arrow_up_bin_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_circle</i> &#x2014; Cupertino icon named "arrow_up_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_circle': CupertinoIcons.arrow_up_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_circle_fill</i> &#x2014; Cupertino icon named "arrow_up_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_circle_fill': CupertinoIcons.arrow_up_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_doc</i> &#x2014; Cupertino icon named "arrow_up_doc". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_doc': CupertinoIcons.arrow_up_doc,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_doc_fill</i> &#x2014; Cupertino icon named "arrow_up_doc_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_doc_fill': CupertinoIcons.arrow_up_doc_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_down</i> &#x2014; Cupertino icon named "arrow_up_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_down': CupertinoIcons.arrow_up_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_down_circle</i> &#x2014; Cupertino icon named "arrow_up_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_down_circle': CupertinoIcons.arrow_up_down_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_down_circle_fill</i> &#x2014; Cupertino icon named "arrow_up_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_down_circle_fill': CupertinoIcons.arrow_up_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_down_square</i> &#x2014; Cupertino icon named "arrow_up_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_down_square': CupertinoIcons.arrow_up_down_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_down_square_fill</i> &#x2014; Cupertino icon named "arrow_up_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_down_square_fill': CupertinoIcons.arrow_up_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left</i> &#x2014; Cupertino icon named "arrow_up_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_left': CupertinoIcons.arrow_up_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_arrow_down_right</i> &#x2014; Cupertino icon named "arrow_up_left_arrow_down_right". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [fullscreen] which is available in cupertino_icons 0.1.3.
-  'arrow_up_left_arrow_down_right':
-      CupertinoIcons.arrow_up_left_arrow_down_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_circle</i> &#x2014; Cupertino icon named "arrow_up_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_left_circle': CupertinoIcons.arrow_up_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_circle_fill</i> &#x2014; Cupertino icon named "arrow_up_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_left_circle_fill': CupertinoIcons.arrow_up_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_square</i> &#x2014; Cupertino icon named "arrow_up_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_left_square': CupertinoIcons.arrow_up_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_left_square_fill</i> &#x2014; Cupertino icon named "arrow_up_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_left_square_fill': CupertinoIcons.arrow_up_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right</i> &#x2014; Cupertino icon named "arrow_up_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right': CupertinoIcons.arrow_up_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_circle</i> &#x2014; Cupertino icon named "arrow_up_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_circle': CupertinoIcons.arrow_up_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_circle_fill</i> &#x2014; Cupertino icon named "arrow_up_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_circle_fill': CupertinoIcons.arrow_up_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_diamond</i> &#x2014; Cupertino icon named "arrow_up_right_diamond". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_diamond': CupertinoIcons.arrow_up_right_diamond,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_diamond_fill</i> &#x2014; Cupertino icon named "arrow_up_right_diamond_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_diamond_fill': CupertinoIcons.arrow_up_right_diamond_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_square</i> &#x2014; Cupertino icon named "arrow_up_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_square': CupertinoIcons.arrow_up_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_right_square_fill</i> &#x2014; Cupertino icon named "arrow_up_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_right_square_fill': CupertinoIcons.arrow_up_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_square</i> &#x2014; Cupertino icon named "arrow_up_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_square': CupertinoIcons.arrow_up_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_square_fill</i> &#x2014; Cupertino icon named "arrow_up_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_square_fill': CupertinoIcons.arrow_up_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_to_line</i> &#x2014; Cupertino icon named "arrow_up_to_line". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_to_line': CupertinoIcons.arrow_up_to_line,
-
-  /// <i class='cupertino-icons md-36'>arrow_up_to_line_alt</i> &#x2014; Cupertino icon named "arrow_up_to_line_alt". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_up_to_line_alt': CupertinoIcons.arrow_up_to_line_alt,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_down</i> &#x2014; Cupertino icon named "arrow_uturn_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_down': CupertinoIcons.arrow_uturn_down,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_down_circle</i> &#x2014; Cupertino icon named "arrow_uturn_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_down_circle': CupertinoIcons.arrow_uturn_down_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_down_circle_fill</i> &#x2014; Cupertino icon named "arrow_uturn_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_down_circle_fill': CupertinoIcons.arrow_uturn_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_down_square</i> &#x2014; Cupertino icon named "arrow_uturn_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_down_square': CupertinoIcons.arrow_uturn_down_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_down_square_fill</i> &#x2014; Cupertino icon named "arrow_uturn_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_down_square_fill': CupertinoIcons.arrow_uturn_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_left</i> &#x2014; Cupertino icon named "arrow_uturn_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_left': CupertinoIcons.arrow_uturn_left,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_left_circle</i> &#x2014; Cupertino icon named "arrow_uturn_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_left_circle': CupertinoIcons.arrow_uturn_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_left_circle_fill</i> &#x2014; Cupertino icon named "arrow_uturn_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_left_circle_fill': CupertinoIcons.arrow_uturn_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_left_square</i> &#x2014; Cupertino icon named "arrow_uturn_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_left_square': CupertinoIcons.arrow_uturn_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_left_square_fill</i> &#x2014; Cupertino icon named "arrow_uturn_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_left_square_fill': CupertinoIcons.arrow_uturn_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_right</i> &#x2014; Cupertino icon named "arrow_uturn_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_right': CupertinoIcons.arrow_uturn_right,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_right_circle</i> &#x2014; Cupertino icon named "arrow_uturn_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_right_circle': CupertinoIcons.arrow_uturn_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_right_circle_fill</i> &#x2014; Cupertino icon named "arrow_uturn_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_right_circle_fill': CupertinoIcons.arrow_uturn_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_right_square</i> &#x2014; Cupertino icon named "arrow_uturn_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_right_square': CupertinoIcons.arrow_uturn_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_right_square_fill</i> &#x2014; Cupertino icon named "arrow_uturn_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_right_square_fill': CupertinoIcons.arrow_uturn_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_up</i> &#x2014; Cupertino icon named "arrow_uturn_up". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_up': CupertinoIcons.arrow_uturn_up,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_up_circle</i> &#x2014; Cupertino icon named "arrow_uturn_up_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_up_circle': CupertinoIcons.arrow_uturn_up_circle,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_up_circle_fill</i> &#x2014; Cupertino icon named "arrow_uturn_up_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_up_circle_fill': CupertinoIcons.arrow_uturn_up_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_up_square</i> &#x2014; Cupertino icon named "arrow_uturn_up_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_up_square': CupertinoIcons.arrow_uturn_up_square,
-
-  /// <i class='cupertino-icons md-36'>arrow_uturn_up_square_fill</i> &#x2014; Cupertino icon named "arrow_uturn_up_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrow_uturn_up_square_fill': CupertinoIcons.arrow_uturn_up_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [reply] which is available in cupertino_icons 0.1.3.
-  'arrowshape_turn_up_left': CupertinoIcons.arrowshape_turn_up_left,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_2</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left_2". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [reply_all] which is available in cupertino_icons 0.1.3.
-  'arrowshape_turn_up_left_2': CupertinoIcons.arrowshape_turn_up_left_2,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_2_fill</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [reply_thick_solid] which is available in cupertino_icons 0.1.3.
-  'arrowshape_turn_up_left_2_fill':
-      CupertinoIcons.arrowshape_turn_up_left_2_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_circle</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_left_circle':
-      CupertinoIcons.arrowshape_turn_up_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_circle_fill</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_left_circle_fill':
-      CupertinoIcons.arrowshape_turn_up_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_left_fill</i> &#x2014; Cupertino icon named "arrowshape_turn_up_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_left_fill': CupertinoIcons.arrowshape_turn_up_left_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_right</i> &#x2014; Cupertino icon named "arrowshape_turn_up_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_right': CupertinoIcons.arrowshape_turn_up_right,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_right_circle</i> &#x2014; Cupertino icon named "arrowshape_turn_up_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_right_circle':
-      CupertinoIcons.arrowshape_turn_up_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_right_circle_fill</i> &#x2014; Cupertino icon named "arrowshape_turn_up_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_right_circle_fill':
-      CupertinoIcons.arrowshape_turn_up_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowshape_turn_up_right_fill</i> &#x2014; Cupertino icon named "arrowshape_turn_up_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowshape_turn_up_right_fill': CupertinoIcons.arrowshape_turn_up_right_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down</i> &#x2014; Cupertino icon named "arrowtriangle_down". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down': CupertinoIcons.arrowtriangle_down,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down_circle</i> &#x2014; Cupertino icon named "arrowtriangle_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down_circle': CupertinoIcons.arrowtriangle_down_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down_circle_fill</i> &#x2014; Cupertino icon named "arrowtriangle_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down_circle_fill':
-      CupertinoIcons.arrowtriangle_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down_fill</i> &#x2014; Cupertino icon named "arrowtriangle_down_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down_fill': CupertinoIcons.arrowtriangle_down_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down_square</i> &#x2014; Cupertino icon named "arrowtriangle_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down_square': CupertinoIcons.arrowtriangle_down_square,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_down_square_fill</i> &#x2014; Cupertino icon named "arrowtriangle_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_down_square_fill':
-      CupertinoIcons.arrowtriangle_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left</i> &#x2014; Cupertino icon named "arrowtriangle_left". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left': CupertinoIcons.arrowtriangle_left,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left_circle</i> &#x2014; Cupertino icon named "arrowtriangle_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left_circle': CupertinoIcons.arrowtriangle_left_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left_circle_fill</i> &#x2014; Cupertino icon named "arrowtriangle_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left_circle_fill':
-      CupertinoIcons.arrowtriangle_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left_fill</i> &#x2014; Cupertino icon named "arrowtriangle_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left_fill': CupertinoIcons.arrowtriangle_left_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left_square</i> &#x2014; Cupertino icon named "arrowtriangle_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left_square': CupertinoIcons.arrowtriangle_left_square,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_left_square_fill</i> &#x2014; Cupertino icon named "arrowtriangle_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_left_square_fill':
-      CupertinoIcons.arrowtriangle_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right</i> &#x2014; Cupertino icon named "arrowtriangle_right". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right': CupertinoIcons.arrowtriangle_right,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right_circle</i> &#x2014; Cupertino icon named "arrowtriangle_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right_circle': CupertinoIcons.arrowtriangle_right_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right_circle_fill</i> &#x2014; Cupertino icon named "arrowtriangle_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right_circle_fill':
-      CupertinoIcons.arrowtriangle_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right_fill</i> &#x2014; Cupertino icon named "arrowtriangle_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right_fill': CupertinoIcons.arrowtriangle_right_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right_square</i> &#x2014; Cupertino icon named "arrowtriangle_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right_square': CupertinoIcons.arrowtriangle_right_square,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_right_square_fill</i> &#x2014; Cupertino icon named "arrowtriangle_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_right_square_fill':
-      CupertinoIcons.arrowtriangle_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up</i> &#x2014; Cupertino icon named "arrowtriangle_up". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up': CupertinoIcons.arrowtriangle_up,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up_circle</i> &#x2014; Cupertino icon named "arrowtriangle_up_circle". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up_circle': CupertinoIcons.arrowtriangle_up_circle,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up_circle_fill</i> &#x2014; Cupertino icon named "arrowtriangle_up_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up_circle_fill': CupertinoIcons.arrowtriangle_up_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up_fill</i> &#x2014; Cupertino icon named "arrowtriangle_up_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up_fill': CupertinoIcons.arrowtriangle_up_fill,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up_square</i> &#x2014; Cupertino icon named "arrowtriangle_up_square". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up_square': CupertinoIcons.arrowtriangle_up_square,
-
-  /// <i class='cupertino-icons md-36'>arrowtriangle_up_square_fill</i> &#x2014; Cupertino icon named "arrowtriangle_up_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'arrowtriangle_up_square_fill': CupertinoIcons.arrowtriangle_up_square_fill,
-
-  /// <i class='cupertino-icons md-36'>asterisk_circle</i> &#x2014; Cupertino icon named "asterisk_circle". Available on cupertino_icons package 1.0.0+ only.
-  'asterisk_circle': CupertinoIcons.asterisk_circle,
-
-  /// <i class='cupertino-icons md-36'>asterisk_circle_fill</i> &#x2014; Cupertino icon named "asterisk_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'asterisk_circle_fill': CupertinoIcons.asterisk_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>at</i> &#x2014; Cupertino icon named "at". Available on cupertino_icons package 1.0.0+ only.
-  'at': CupertinoIcons.at,
-
-  /// <i class='cupertino-icons md-36'>at_badge_minus</i> &#x2014; Cupertino icon named "at_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'at_badge_minus': CupertinoIcons.at_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>at_badge_plus</i> &#x2014; Cupertino icon named "at_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'at_badge_plus': CupertinoIcons.at_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>at_circle</i> &#x2014; Cupertino icon named "at_circle". Available on cupertino_icons package 1.0.0+ only.
-  'at_circle': CupertinoIcons.at_circle,
-
-  /// <i class='cupertino-icons md-36'>at_circle_fill</i> &#x2014; Cupertino icon named "at_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'at_circle_fill': CupertinoIcons.at_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>backward</i> &#x2014; Cupertino icon named "backward". Available on cupertino_icons package 1.0.0+ only.
-  'backward': CupertinoIcons.backward,
-
-  /// <i class='cupertino-icons md-36'>backward_end</i> &#x2014; Cupertino icon named "backward_end". Available on cupertino_icons package 1.0.0+ only.
-  'backward_end': CupertinoIcons.backward_end,
-
-  /// <i class='cupertino-icons md-36'>backward_end_alt</i> &#x2014; Cupertino icon named "backward_end_alt". Available on cupertino_icons package 1.0.0+ only.
-  'backward_end_alt': CupertinoIcons.backward_end_alt,
-
-  /// <i class='cupertino-icons md-36'>backward_end_alt_fill</i> &#x2014; Cupertino icon named "backward_end_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'backward_end_alt_fill': CupertinoIcons.backward_end_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>backward_end_fill</i> &#x2014; Cupertino icon named "backward_end_fill". Available on cupertino_icons package 1.0.0+ only.
-  'backward_end_fill': CupertinoIcons.backward_end_fill,
-
-  /// <i class='cupertino-icons md-36'>backward_fill</i> &#x2014; Cupertino icon named "backward_fill". Available on cupertino_icons package 1.0.0+ only.
-  'backward_fill': CupertinoIcons.backward_fill,
-
-  /// <i class='cupertino-icons md-36'>badge_plus_radiowaves_right</i> &#x2014; Cupertino icon named "badge_plus_radiowaves_right". Available on cupertino_icons package 1.0.0+ only.
-  'badge_plus_radiowaves_right': CupertinoIcons.badge_plus_radiowaves_right,
-
-  /// <i class='cupertino-icons md-36'>bag</i> &#x2014; Cupertino icon named "bag". Available on cupertino_icons package 1.0.0+ only.
-  'bag': CupertinoIcons.bag,
-
-  /// <i class='cupertino-icons md-36'>bag_badge_minus</i> &#x2014; Cupertino icon named "bag_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'bag_badge_minus': CupertinoIcons.bag_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>bag_badge_plus</i> &#x2014; Cupertino icon named "bag_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'bag_badge_plus': CupertinoIcons.bag_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>bag_fill</i> &#x2014; Cupertino icon named "bag_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bag_fill': CupertinoIcons.bag_fill,
-
-  /// <i class='cupertino-icons md-36'>bag_fill_badge_minus</i> &#x2014; Cupertino icon named "bag_fill_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'bag_fill_badge_minus': CupertinoIcons.bag_fill_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>bag_fill_badge_plus</i> &#x2014; Cupertino icon named "bag_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'bag_fill_badge_plus': CupertinoIcons.bag_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>bandage</i> &#x2014; Cupertino icon named "bandage". Available on cupertino_icons package 1.0.0+ only.
-  'bandage': CupertinoIcons.bandage,
-
-  /// <i class='cupertino-icons md-36'>bandage_fill</i> &#x2014; Cupertino icon named "bandage_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bandage_fill': CupertinoIcons.bandage_fill,
-
-  /// <i class='cupertino-icons md-36'>barcode</i> &#x2014; Cupertino icon named "barcode". Available on cupertino_icons package 1.0.0+ only.
-  'barcode': CupertinoIcons.barcode,
-
-  /// <i class='cupertino-icons md-36'>barcode_viewfinder</i> &#x2014; Cupertino icon named "barcode_viewfinder". Available on cupertino_icons package 1.0.0+ only.
-  'barcode_viewfinder': CupertinoIcons.barcode_viewfinder,
-
-  /// <i class='cupertino-icons md-36'>bars</i> &#x2014; Cupertino icon named "bars". Available on cupertino_icons package 1.0.0+ only.
-  'bars': CupertinoIcons.bars,
-
-  /// <i class='cupertino-icons md-36'>battery_0</i> &#x2014; Cupertino icon named "battery_0". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [battery_empty] which is available in cupertino_icons 0.1.3.
-  'battery_0': CupertinoIcons.battery_0,
-
-  /// <i class='cupertino-icons md-36'>battery_100</i> &#x2014; Cupertino icon named "battery_100". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [battery_charging] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [battery_full] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [battery_75_percent] which is available in cupertino_icons 0.1.3.
-  'battery_100': CupertinoIcons.battery_100,
-
-  /// <i class='cupertino-icons md-36'>battery_25</i> &#x2014; Cupertino icon named "battery_25". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [battery_25_percent] which is available in cupertino_icons 0.1.3.
-  'battery_25': CupertinoIcons.battery_25,
-
-  /// <i class='cupertino-icons md-36'>bed_double</i> &#x2014; Cupertino icon named "bed_double". Available on cupertino_icons package 1.0.0+ only.
-  'bed_double': CupertinoIcons.bed_double,
-
-  /// <i class='cupertino-icons md-36'>bed_double_fill</i> &#x2014; Cupertino icon named "bed_double_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bed_double_fill': CupertinoIcons.bed_double_fill,
-
-  /// <i class='cupertino-icons md-36'>bell_circle</i> &#x2014; Cupertino icon named "bell_circle". Available on cupertino_icons package 1.0.0+ only.
-  'bell_circle': CupertinoIcons.bell_circle,
-
-  /// <i class='cupertino-icons md-36'>bell_circle_fill</i> &#x2014; Cupertino icon named "bell_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bell_circle_fill': CupertinoIcons.bell_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>bell_fill</i> &#x2014; Cupertino icon named "bell_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [bell_solid] which is available in cupertino_icons 0.1.3.
-  'bell_fill': CupertinoIcons.bell_fill,
-
-  /// <i class='cupertino-icons md-36'>bell_slash</i> &#x2014; Cupertino icon named "bell_slash". Available on cupertino_icons package 1.0.0+ only.
-  'bell_slash': CupertinoIcons.bell_slash,
-
-  /// <i class='cupertino-icons md-36'>bell_slash_fill</i> &#x2014; Cupertino icon named "bell_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bell_slash_fill': CupertinoIcons.bell_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>bin_xmark</i> &#x2014; Cupertino icon named "bin_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'bin_xmark': CupertinoIcons.bin_xmark,
-
-  /// <i class='cupertino-icons md-36'>bin_xmark_fill</i> &#x2014; Cupertino icon named "bin_xmark_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bin_xmark_fill': CupertinoIcons.bin_xmark_fill,
-
-  /// <i class='cupertino-icons md-36'>bitcoin</i> &#x2014; Cupertino icon named "bitcoin". Available on cupertino_icons package 1.0.0+ only.
-  'bitcoin': CupertinoIcons.bitcoin,
-
-  /// <i class='cupertino-icons md-36'>bitcoin_circle</i> &#x2014; Cupertino icon named "bitcoin_circle". Available on cupertino_icons package 1.0.0+ only.
-  'bitcoin_circle': CupertinoIcons.bitcoin_circle,
-
-  /// <i class='cupertino-icons md-36'>bitcoin_circle_fill</i> &#x2014; Cupertino icon named "bitcoin_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bitcoin_circle_fill': CupertinoIcons.bitcoin_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>bold</i> &#x2014; Cupertino icon named "bold". Available on cupertino_icons package 1.0.0+ only.
-  'bold': CupertinoIcons.bold,
-
-  /// <i class='cupertino-icons md-36'>bold_italic_underline</i> &#x2014; Cupertino icon named "bold_italic_underline". Available on cupertino_icons package 1.0.0+ only.
-  'bold_italic_underline': CupertinoIcons.bold_italic_underline,
-
-  /// <i class='cupertino-icons md-36'>bold_underline</i> &#x2014; Cupertino icon named "bold_underline". Available on cupertino_icons package 1.0.0+ only.
-  'bold_underline': CupertinoIcons.bold_underline,
-
-  /// <i class='cupertino-icons md-36'>bolt</i> &#x2014; Cupertino icon named "bolt". Available on cupertino_icons package 1.0.0+ only.
-  'bolt': CupertinoIcons.bolt,
-
-  /// <i class='cupertino-icons md-36'>bolt_badge_a</i> &#x2014; Cupertino icon named "bolt_badge_a". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_badge_a': CupertinoIcons.bolt_badge_a,
-
-  /// <i class='cupertino-icons md-36'>bolt_badge_a_fill</i> &#x2014; Cupertino icon named "bolt_badge_a_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_badge_a_fill': CupertinoIcons.bolt_badge_a_fill,
-
-  /// <i class='cupertino-icons md-36'>bolt_circle</i> &#x2014; Cupertino icon named "bolt_circle". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_circle': CupertinoIcons.bolt_circle,
-
-  /// <i class='cupertino-icons md-36'>bolt_circle_fill</i> &#x2014; Cupertino icon named "bolt_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_circle_fill': CupertinoIcons.bolt_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>bolt_fill</i> &#x2014; Cupertino icon named "bolt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_fill': CupertinoIcons.bolt_fill,
-
-  /// <i class='cupertino-icons md-36'>bolt_horizontal</i> &#x2014; Cupertino icon named "bolt_horizontal". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_horizontal': CupertinoIcons.bolt_horizontal,
-
-  /// <i class='cupertino-icons md-36'>bolt_horizontal_circle</i> &#x2014; Cupertino icon named "bolt_horizontal_circle". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_horizontal_circle': CupertinoIcons.bolt_horizontal_circle,
-
-  /// <i class='cupertino-icons md-36'>bolt_horizontal_circle_fill</i> &#x2014; Cupertino icon named "bolt_horizontal_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_horizontal_circle_fill': CupertinoIcons.bolt_horizontal_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>bolt_horizontal_fill</i> &#x2014; Cupertino icon named "bolt_horizontal_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_horizontal_fill': CupertinoIcons.bolt_horizontal_fill,
-
-  /// <i class='cupertino-icons md-36'>bolt_slash</i> &#x2014; Cupertino icon named "bolt_slash". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_slash': CupertinoIcons.bolt_slash,
-
-  /// <i class='cupertino-icons md-36'>bolt_slash_fill</i> &#x2014; Cupertino icon named "bolt_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bolt_slash_fill': CupertinoIcons.bolt_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>book_circle</i> &#x2014; Cupertino icon named "book_circle". Available on cupertino_icons package 1.0.0+ only.
-  'book_circle': CupertinoIcons.book_circle,
-
-  /// <i class='cupertino-icons md-36'>book_circle_fill</i> &#x2014; Cupertino icon named "book_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'book_circle_fill': CupertinoIcons.book_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>book_fill</i> &#x2014; Cupertino icon named "book_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [book_solid] which is available in cupertino_icons 0.1.3.
-  'book_fill': CupertinoIcons.book_fill,
-
-  /// <i class='cupertino-icons md-36'>bookmark_fill</i> &#x2014; Cupertino icon named "bookmark_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [bookmark_solid] which is available in cupertino_icons 0.1.3.
-  'bookmark_fill': CupertinoIcons.bookmark_fill,
-
-  /// <i class='cupertino-icons md-36'>briefcase</i> &#x2014; Cupertino icon named "briefcase". Available on cupertino_icons package 1.0.0+ only.
-  'briefcase': CupertinoIcons.briefcase,
-
-  /// <i class='cupertino-icons md-36'>briefcase_fill</i> &#x2014; Cupertino icon named "briefcase_fill". Available on cupertino_icons package 1.0.0+ only.
-  'briefcase_fill': CupertinoIcons.briefcase_fill,
-
-  /// <i class='cupertino-icons md-36'>bubble_left</i> &#x2014; Cupertino icon named "bubble_left". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_left': CupertinoIcons.bubble_left,
-
-  /// <i class='cupertino-icons md-36'>bubble_left_bubble_right</i> &#x2014; Cupertino icon named "bubble_left_bubble_right". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_left_bubble_right': CupertinoIcons.bubble_left_bubble_right,
-
-  /// <i class='cupertino-icons md-36'>bubble_left_bubble_right_fill</i> &#x2014; Cupertino icon named "bubble_left_bubble_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_left_bubble_right_fill': CupertinoIcons.bubble_left_bubble_right_fill,
-
-  /// <i class='cupertino-icons md-36'>bubble_left_fill</i> &#x2014; Cupertino icon named "bubble_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_left_fill': CupertinoIcons.bubble_left_fill,
-
-  /// <i class='cupertino-icons md-36'>bubble_middle_bottom</i> &#x2014; Cupertino icon named "bubble_middle_bottom". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_middle_bottom': CupertinoIcons.bubble_middle_bottom,
-
-  /// <i class='cupertino-icons md-36'>bubble_middle_bottom_fill</i> &#x2014; Cupertino icon named "bubble_middle_bottom_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_middle_bottom_fill': CupertinoIcons.bubble_middle_bottom_fill,
-
-  /// <i class='cupertino-icons md-36'>bubble_middle_top</i> &#x2014; Cupertino icon named "bubble_middle_top". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_middle_top': CupertinoIcons.bubble_middle_top,
-
-  /// <i class='cupertino-icons md-36'>bubble_middle_top_fill</i> &#x2014; Cupertino icon named "bubble_middle_top_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_middle_top_fill': CupertinoIcons.bubble_middle_top_fill,
-
-  /// <i class='cupertino-icons md-36'>bubble_right</i> &#x2014; Cupertino icon named "bubble_right". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_right': CupertinoIcons.bubble_right,
-
-  /// <i class='cupertino-icons md-36'>bubble_right_fill</i> &#x2014; Cupertino icon named "bubble_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'bubble_right_fill': CupertinoIcons.bubble_right_fill,
-
-  /// <i class='cupertino-icons md-36'>building_2_fill</i> &#x2014; Cupertino icon named "building_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'building_2_fill': CupertinoIcons.building_2_fill,
-
-  /// <i class='cupertino-icons md-36'>burn</i> &#x2014; Cupertino icon named "burn". Available on cupertino_icons package 1.0.0+ only.
-  'burn': CupertinoIcons.burn,
-
-  /// <i class='cupertino-icons md-36'>burst</i> &#x2014; Cupertino icon named "burst". Available on cupertino_icons package 1.0.0+ only.
-  'burst': CupertinoIcons.burst,
-
-  /// <i class='cupertino-icons md-36'>burst_fill</i> &#x2014; Cupertino icon named "burst_fill". Available on cupertino_icons package 1.0.0+ only.
-  'burst_fill': CupertinoIcons.burst_fill,
-
-  /// <i class='cupertino-icons md-36'>calendar</i> &#x2014; Cupertino icon named "calendar". Available on cupertino_icons package 1.0.0+ only.
-  'calendar': CupertinoIcons.calendar,
-
-  /// <i class='cupertino-icons md-36'>calendar_badge_minus</i> &#x2014; Cupertino icon named "calendar_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'calendar_badge_minus': CupertinoIcons.calendar_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>calendar_badge_plus</i> &#x2014; Cupertino icon named "calendar_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'calendar_badge_plus': CupertinoIcons.calendar_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>calendar_circle</i> &#x2014; Cupertino icon named "calendar_circle". Available on cupertino_icons package 1.0.0+ only.
-  'calendar_circle': CupertinoIcons.calendar_circle,
-
-  /// <i class='cupertino-icons md-36'>calendar_circle_fill</i> &#x2014; Cupertino icon named "calendar_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'calendar_circle_fill': CupertinoIcons.calendar_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>calendar_today</i> &#x2014; Cupertino icon named "calendar_today". Available on cupertino_icons package 1.0.0+ only.
-  'calendar_today': CupertinoIcons.calendar_today,
-
-  /// <i class='cupertino-icons md-36'>camera</i> &#x2014; Cupertino icon named "camera". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [photo_camera] which is available in cupertino_icons 0.1.3.
-  'camera': CupertinoIcons.camera,
-
-  /// <i class='cupertino-icons md-36'>camera_circle</i> &#x2014; Cupertino icon named "camera_circle". Available on cupertino_icons package 1.0.0+ only.
-  'camera_circle': CupertinoIcons.camera_circle,
-
-  /// <i class='cupertino-icons md-36'>camera_circle_fill</i> &#x2014; Cupertino icon named "camera_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'camera_circle_fill': CupertinoIcons.camera_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>camera_fill</i> &#x2014; Cupertino icon named "camera_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [photo_camera_solid] which is available in cupertino_icons 0.1.3.
-  'camera_fill': CupertinoIcons.camera_fill,
-
-  /// <i class='cupertino-icons md-36'>camera_on_rectangle</i> &#x2014; Cupertino icon named "camera_on_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'camera_on_rectangle': CupertinoIcons.camera_on_rectangle,
-
-  /// <i class='cupertino-icons md-36'>camera_on_rectangle_fill</i> &#x2014; Cupertino icon named "camera_on_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'camera_on_rectangle_fill': CupertinoIcons.camera_on_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>camera_rotate</i> &#x2014; Cupertino icon named "camera_rotate". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [switch_camera] which is available in cupertino_icons 0.1.3.
-  'camera_rotate': CupertinoIcons.camera_rotate,
-
-  /// <i class='cupertino-icons md-36'>camera_rotate_fill</i> &#x2014; Cupertino icon named "camera_rotate_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [switch_camera_solid] which is available in cupertino_icons 0.1.3.
-  'camera_rotate_fill': CupertinoIcons.camera_rotate_fill,
-
-  /// <i class='cupertino-icons md-36'>camera_viewfinder</i> &#x2014; Cupertino icon named "camera_viewfinder". Available on cupertino_icons package 1.0.0+ only.
-  'camera_viewfinder': CupertinoIcons.camera_viewfinder,
-
-  /// <i class='cupertino-icons md-36'>capslock</i> &#x2014; Cupertino icon named "capslock". Available on cupertino_icons package 1.0.0+ only.
-  'capslock': CupertinoIcons.capslock,
-
-  /// <i class='cupertino-icons md-36'>capslock_fill</i> &#x2014; Cupertino icon named "capslock_fill". Available on cupertino_icons package 1.0.0+ only.
-  'capslock_fill': CupertinoIcons.capslock_fill,
-
-  /// <i class='cupertino-icons md-36'>capsule</i> &#x2014; Cupertino icon named "capsule". Available on cupertino_icons package 1.0.0+ only.
-  'capsule': CupertinoIcons.capsule,
-
-  /// <i class='cupertino-icons md-36'>capsule_fill</i> &#x2014; Cupertino icon named "capsule_fill". Available on cupertino_icons package 1.0.0+ only.
-  'capsule_fill': CupertinoIcons.capsule_fill,
-
-  /// <i class='cupertino-icons md-36'>captions_bubble</i> &#x2014; Cupertino icon named "captions_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'captions_bubble': CupertinoIcons.captions_bubble,
-
-  /// <i class='cupertino-icons md-36'>captions_bubble_fill</i> &#x2014; Cupertino icon named "captions_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'captions_bubble_fill': CupertinoIcons.captions_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>car_fill</i> &#x2014; Cupertino icon named "car_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [car] which is available in cupertino_icons 0.1.3.
-  'car_fill': CupertinoIcons.car_fill,
-
-  /// <i class='cupertino-icons md-36'>cart</i> &#x2014; Cupertino icon named "cart". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [shopping_cart] which is available in cupertino_icons 0.1.3.
-  'cart': CupertinoIcons.cart,
-
-  /// <i class='cupertino-icons md-36'>cart_badge_minus</i> &#x2014; Cupertino icon named "cart_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'cart_badge_minus': CupertinoIcons.cart_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>cart_badge_plus</i> &#x2014; Cupertino icon named "cart_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'cart_badge_plus': CupertinoIcons.cart_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>cart_fill</i> &#x2014; Cupertino icon named "cart_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cart_fill': CupertinoIcons.cart_fill,
-
-  /// <i class='cupertino-icons md-36'>cart_fill_badge_minus</i> &#x2014; Cupertino icon named "cart_fill_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'cart_fill_badge_minus': CupertinoIcons.cart_fill_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>cart_fill_badge_plus</i> &#x2014; Cupertino icon named "cart_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'cart_fill_badge_plus': CupertinoIcons.cart_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>chart_bar</i> &#x2014; Cupertino icon named "chart_bar". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar': CupertinoIcons.chart_bar,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_alt_fill</i> &#x2014; Cupertino icon named "chart_bar_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_alt_fill': CupertinoIcons.chart_bar_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_circle</i> &#x2014; Cupertino icon named "chart_bar_circle". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_circle': CupertinoIcons.chart_bar_circle,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_circle_fill</i> &#x2014; Cupertino icon named "chart_bar_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_circle_fill': CupertinoIcons.chart_bar_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_fill</i> &#x2014; Cupertino icon named "chart_bar_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_fill': CupertinoIcons.chart_bar_fill,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_square</i> &#x2014; Cupertino icon named "chart_bar_square". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_square': CupertinoIcons.chart_bar_square,
-
-  /// <i class='cupertino-icons md-36'>chart_bar_square_fill</i> &#x2014; Cupertino icon named "chart_bar_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chart_bar_square_fill': CupertinoIcons.chart_bar_square_fill,
-
-  /// <i class='cupertino-icons md-36'>chart_pie</i> &#x2014; Cupertino icon named "chart_pie". Available on cupertino_icons package 1.0.0+ only.
-  'chart_pie': CupertinoIcons.chart_pie,
-
-  /// <i class='cupertino-icons md-36'>chart_pie_fill</i> &#x2014; Cupertino icon named "chart_pie_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chart_pie_fill': CupertinoIcons.chart_pie_fill,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble</i> &#x2014; Cupertino icon named "chat_bubble". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [conversation_bubble] which is available in cupertino_icons 0.1.3.
-  'chat_bubble': CupertinoIcons.chat_bubble,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble_2</i> &#x2014; Cupertino icon named "chat_bubble_2". Available on cupertino_icons package 1.0.0+ only.
-  'chat_bubble_2': CupertinoIcons.chat_bubble_2,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble_2_fill</i> &#x2014; Cupertino icon named "chat_bubble_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chat_bubble_2_fill': CupertinoIcons.chat_bubble_2_fill,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble_fill</i> &#x2014; Cupertino icon named "chat_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chat_bubble_fill': CupertinoIcons.chat_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble_text</i> &#x2014; Cupertino icon named "chat_bubble_text". Available on cupertino_icons package 1.0.0+ only.
-  'chat_bubble_text': CupertinoIcons.chat_bubble_text,
-
-  /// <i class='cupertino-icons md-36'>chat_bubble_text_fill</i> &#x2014; Cupertino icon named "chat_bubble_text_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chat_bubble_text_fill': CupertinoIcons.chat_bubble_text_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark</i> &#x2014; Cupertino icon named "checkmark". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [check_mark] which is available in cupertino_icons 0.1.3.
-  'checkmark': CupertinoIcons.checkmark,
-
-  /// <i class='cupertino-icons md-36'>checkmark_alt</i> &#x2014; Cupertino icon named "checkmark_alt". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_alt': CupertinoIcons.checkmark_alt,
-
-  /// <i class='cupertino-icons md-36'>checkmark_alt_circle</i> &#x2014; Cupertino icon named "checkmark_alt_circle". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_alt_circle': CupertinoIcons.checkmark_alt_circle,
-
-  /// <i class='cupertino-icons md-36'>checkmark_alt_circle_fill</i> &#x2014; Cupertino icon named "checkmark_alt_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_alt_circle_fill': CupertinoIcons.checkmark_alt_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark_circle</i> &#x2014; Cupertino icon named "checkmark_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [check_mark_circled] which is available in cupertino_icons 0.1.3.
-  'checkmark_circle': CupertinoIcons.checkmark_circle,
-
-  /// <i class='cupertino-icons md-36'>checkmark_circle_fill</i> &#x2014; Cupertino icon named "checkmark_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [check_mark_circled_solid] which is available in cupertino_icons 0.1.3.
-  'checkmark_circle_fill': CupertinoIcons.checkmark_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark_rectangle</i> &#x2014; Cupertino icon named "checkmark_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_rectangle': CupertinoIcons.checkmark_rectangle,
-
-  /// <i class='cupertino-icons md-36'>checkmark_rectangle_fill</i> &#x2014; Cupertino icon named "checkmark_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_rectangle_fill': CupertinoIcons.checkmark_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark_seal</i> &#x2014; Cupertino icon named "checkmark_seal". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_seal': CupertinoIcons.checkmark_seal,
-
-  /// <i class='cupertino-icons md-36'>checkmark_seal_fill</i> &#x2014; Cupertino icon named "checkmark_seal_fill". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_seal_fill': CupertinoIcons.checkmark_seal_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark_shield</i> &#x2014; Cupertino icon named "checkmark_shield". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_shield': CupertinoIcons.checkmark_shield,
-
-  /// <i class='cupertino-icons md-36'>checkmark_shield_fill</i> &#x2014; Cupertino icon named "checkmark_shield_fill". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_shield_fill': CupertinoIcons.checkmark_shield_fill,
-
-  /// <i class='cupertino-icons md-36'>checkmark_square</i> &#x2014; Cupertino icon named "checkmark_square". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_square': CupertinoIcons.checkmark_square,
-
-  /// <i class='cupertino-icons md-36'>checkmark_square_fill</i> &#x2014; Cupertino icon named "checkmark_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'checkmark_square_fill': CupertinoIcons.checkmark_square_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_back</i> &#x2014; Cupertino icon named "chevron_back". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [back] which is available in cupertino_icons 0.1.3.
-  'chevron_back': CupertinoIcons.chevron_back,
-
-  /// <i class='cupertino-icons md-36'>chevron_compact_down</i> &#x2014; Cupertino icon named "chevron_compact_down". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_compact_down': CupertinoIcons.chevron_compact_down,
-
-  /// <i class='cupertino-icons md-36'>chevron_compact_left</i> &#x2014; Cupertino icon named "chevron_compact_left". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_compact_left': CupertinoIcons.chevron_compact_left,
-
-  /// <i class='cupertino-icons md-36'>chevron_compact_right</i> &#x2014; Cupertino icon named "chevron_compact_right". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_compact_right': CupertinoIcons.chevron_compact_right,
-
-  /// <i class='cupertino-icons md-36'>chevron_compact_up</i> &#x2014; Cupertino icon named "chevron_compact_up". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_compact_up': CupertinoIcons.chevron_compact_up,
-
-  /// <i class='cupertino-icons md-36'>chevron_down</i> &#x2014; Cupertino icon named "chevron_down". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_down': CupertinoIcons.chevron_down,
-
-  /// <i class='cupertino-icons md-36'>chevron_down_circle</i> &#x2014; Cupertino icon named "chevron_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_down_circle': CupertinoIcons.chevron_down_circle,
-
-  /// <i class='cupertino-icons md-36'>chevron_down_circle_fill</i> &#x2014; Cupertino icon named "chevron_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_down_circle_fill': CupertinoIcons.chevron_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_down_square</i> &#x2014; Cupertino icon named "chevron_down_square". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_down_square': CupertinoIcons.chevron_down_square,
-
-  /// <i class='cupertino-icons md-36'>chevron_down_square_fill</i> &#x2014; Cupertino icon named "chevron_down_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_down_square_fill': CupertinoIcons.chevron_down_square_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_forward</i> &#x2014; Cupertino icon named "chevron_forward". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [forward] which is available in cupertino_icons 0.1.3.
-  'chevron_forward': CupertinoIcons.chevron_forward,
-
-  /// <i class='cupertino-icons md-36'>chevron_left</i> &#x2014; Cupertino icon named "chevron_left". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [left_chevron] which is available in cupertino_icons 0.1.3.
-  'chevron_left': CupertinoIcons.chevron_left,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_2</i> &#x2014; Cupertino icon named "chevron_left_2". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_2': CupertinoIcons.chevron_left_2,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_circle</i> &#x2014; Cupertino icon named "chevron_left_circle". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_circle': CupertinoIcons.chevron_left_circle,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_circle_fill</i> &#x2014; Cupertino icon named "chevron_left_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_circle_fill': CupertinoIcons.chevron_left_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_slash_chevron_right</i> &#x2014; Cupertino icon named "chevron_left_slash_chevron_right". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_slash_chevron_right':
-      CupertinoIcons.chevron_left_slash_chevron_right,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_square</i> &#x2014; Cupertino icon named "chevron_left_square". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_square': CupertinoIcons.chevron_left_square,
-
-  /// <i class='cupertino-icons md-36'>chevron_left_square_fill</i> &#x2014; Cupertino icon named "chevron_left_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_left_square_fill': CupertinoIcons.chevron_left_square_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_right</i> &#x2014; Cupertino icon named "chevron_right". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [right_chevron] which is available in cupertino_icons 0.1.3.
-  'chevron_right': CupertinoIcons.chevron_right,
-
-  /// <i class='cupertino-icons md-36'>chevron_right_2</i> &#x2014; Cupertino icon named "chevron_right_2". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_right_2': CupertinoIcons.chevron_right_2,
-
-  /// <i class='cupertino-icons md-36'>chevron_right_circle</i> &#x2014; Cupertino icon named "chevron_right_circle". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_right_circle': CupertinoIcons.chevron_right_circle,
-
-  /// <i class='cupertino-icons md-36'>chevron_right_circle_fill</i> &#x2014; Cupertino icon named "chevron_right_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_right_circle_fill': CupertinoIcons.chevron_right_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_right_square</i> &#x2014; Cupertino icon named "chevron_right_square". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_right_square': CupertinoIcons.chevron_right_square,
-
-  /// <i class='cupertino-icons md-36'>chevron_right_square_fill</i> &#x2014; Cupertino icon named "chevron_right_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_right_square_fill': CupertinoIcons.chevron_right_square_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_up</i> &#x2014; Cupertino icon named "chevron_up". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up': CupertinoIcons.chevron_up,
-
-  /// <i class='cupertino-icons md-36'>chevron_up_chevron_down</i> &#x2014; Cupertino icon named "chevron_up_chevron_down". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up_chevron_down': CupertinoIcons.chevron_up_chevron_down,
-
-  /// <i class='cupertino-icons md-36'>chevron_up_circle</i> &#x2014; Cupertino icon named "chevron_up_circle". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up_circle': CupertinoIcons.chevron_up_circle,
-
-  /// <i class='cupertino-icons md-36'>chevron_up_circle_fill</i> &#x2014; Cupertino icon named "chevron_up_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up_circle_fill': CupertinoIcons.chevron_up_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>chevron_up_square</i> &#x2014; Cupertino icon named "chevron_up_square". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up_square': CupertinoIcons.chevron_up_square,
-
-  /// <i class='cupertino-icons md-36'>chevron_up_square_fill</i> &#x2014; Cupertino icon named "chevron_up_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'chevron_up_square_fill': CupertinoIcons.chevron_up_square_fill,
-
-  /// <i class='cupertino-icons md-36'>circle_bottomthird_split</i> &#x2014; Cupertino icon named "circle_bottomthird_split". Available on cupertino_icons package 1.0.0+ only.
-  'circle_bottomthird_split': CupertinoIcons.circle_bottomthird_split,
-
-  /// <i class='cupertino-icons md-36'>circle_fill</i> &#x2014; Cupertino icon named "circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [circle_filled] which is available in cupertino_icons 0.1.3.
-  'circle_fill': CupertinoIcons.circle_fill,
-
-  /// <i class='cupertino-icons md-36'>circle_grid_3x3</i> &#x2014; Cupertino icon named "circle_grid_3x3". Available on cupertino_icons package 1.0.0+ only.
-  'circle_grid_3x3': CupertinoIcons.circle_grid_3x3,
-
-  /// <i class='cupertino-icons md-36'>circle_grid_3x3_fill</i> &#x2014; Cupertino icon named "circle_grid_3x3_fill". Available on cupertino_icons package 1.0.0+ only.
-  'circle_grid_3x3_fill': CupertinoIcons.circle_grid_3x3_fill,
-
-  /// <i class='cupertino-icons md-36'>circle_grid_hex</i> &#x2014; Cupertino icon named "circle_grid_hex". Available on cupertino_icons package 1.0.0+ only.
-  'circle_grid_hex': CupertinoIcons.circle_grid_hex,
-
-  /// <i class='cupertino-icons md-36'>circle_grid_hex_fill</i> &#x2014; Cupertino icon named "circle_grid_hex_fill". Available on cupertino_icons package 1.0.0+ only.
-  'circle_grid_hex_fill': CupertinoIcons.circle_grid_hex_fill,
-
-  /// <i class='cupertino-icons md-36'>circle_lefthalf_fill</i> &#x2014; Cupertino icon named "circle_lefthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'circle_lefthalf_fill': CupertinoIcons.circle_lefthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>circle_righthalf_fill</i> &#x2014; Cupertino icon named "circle_righthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'circle_righthalf_fill': CupertinoIcons.circle_righthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>clear_fill</i> &#x2014; Cupertino icon named "clear_fill". Available on cupertino_icons package 1.0.0+ only.
-  'clear_fill': CupertinoIcons.clear_fill,
-
-  /// <i class='cupertino-icons md-36'>clock_fill</i> &#x2014; Cupertino icon named "clock_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [clock_solid] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [time_solid] which is available in cupertino_icons 0.1.3.
-  'clock_fill': CupertinoIcons.clock_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud</i> &#x2014; Cupertino icon named "cloud". Available on cupertino_icons package 1.0.0+ only.
-  'cloud': CupertinoIcons.cloud,
-
-  /// <i class='cupertino-icons md-36'>cloud_bolt</i> &#x2014; Cupertino icon named "cloud_bolt". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_bolt': CupertinoIcons.cloud_bolt,
-
-  /// <i class='cupertino-icons md-36'>cloud_bolt_fill</i> &#x2014; Cupertino icon named "cloud_bolt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_bolt_fill': CupertinoIcons.cloud_bolt_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_bolt_rain</i> &#x2014; Cupertino icon named "cloud_bolt_rain". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_bolt_rain': CupertinoIcons.cloud_bolt_rain,
-
-  /// <i class='cupertino-icons md-36'>cloud_bolt_rain_fill</i> &#x2014; Cupertino icon named "cloud_bolt_rain_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_bolt_rain_fill': CupertinoIcons.cloud_bolt_rain_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_download</i> &#x2014; Cupertino icon named "cloud_download". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_download': CupertinoIcons.cloud_download,
-
-  /// <i class='cupertino-icons md-36'>cloud_download_fill</i> &#x2014; Cupertino icon named "cloud_download_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_download_fill': CupertinoIcons.cloud_download_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_drizzle</i> &#x2014; Cupertino icon named "cloud_drizzle". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_drizzle': CupertinoIcons.cloud_drizzle,
-
-  /// <i class='cupertino-icons md-36'>cloud_drizzle_fill</i> &#x2014; Cupertino icon named "cloud_drizzle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_drizzle_fill': CupertinoIcons.cloud_drizzle_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_fill</i> &#x2014; Cupertino icon named "cloud_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_fill': CupertinoIcons.cloud_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_fog</i> &#x2014; Cupertino icon named "cloud_fog". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_fog': CupertinoIcons.cloud_fog,
-
-  /// <i class='cupertino-icons md-36'>cloud_fog_fill</i> &#x2014; Cupertino icon named "cloud_fog_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_fog_fill': CupertinoIcons.cloud_fog_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_hail</i> &#x2014; Cupertino icon named "cloud_hail". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_hail': CupertinoIcons.cloud_hail,
-
-  /// <i class='cupertino-icons md-36'>cloud_hail_fill</i> &#x2014; Cupertino icon named "cloud_hail_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_hail_fill': CupertinoIcons.cloud_hail_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_heavyrain</i> &#x2014; Cupertino icon named "cloud_heavyrain". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_heavyrain': CupertinoIcons.cloud_heavyrain,
-
-  /// <i class='cupertino-icons md-36'>cloud_heavyrain_fill</i> &#x2014; Cupertino icon named "cloud_heavyrain_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_heavyrain_fill': CupertinoIcons.cloud_heavyrain_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon</i> &#x2014; Cupertino icon named "cloud_moon". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon': CupertinoIcons.cloud_moon,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon_bolt</i> &#x2014; Cupertino icon named "cloud_moon_bolt". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon_bolt': CupertinoIcons.cloud_moon_bolt,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon_bolt_fill</i> &#x2014; Cupertino icon named "cloud_moon_bolt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon_bolt_fill': CupertinoIcons.cloud_moon_bolt_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon_fill</i> &#x2014; Cupertino icon named "cloud_moon_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon_fill': CupertinoIcons.cloud_moon_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon_rain</i> &#x2014; Cupertino icon named "cloud_moon_rain". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon_rain': CupertinoIcons.cloud_moon_rain,
-
-  /// <i class='cupertino-icons md-36'>cloud_moon_rain_fill</i> &#x2014; Cupertino icon named "cloud_moon_rain_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_moon_rain_fill': CupertinoIcons.cloud_moon_rain_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_rain</i> &#x2014; Cupertino icon named "cloud_rain". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_rain': CupertinoIcons.cloud_rain,
-
-  /// <i class='cupertino-icons md-36'>cloud_rain_fill</i> &#x2014; Cupertino icon named "cloud_rain_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_rain_fill': CupertinoIcons.cloud_rain_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_sleet</i> &#x2014; Cupertino icon named "cloud_sleet". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sleet': CupertinoIcons.cloud_sleet,
-
-  /// <i class='cupertino-icons md-36'>cloud_sleet_fill</i> &#x2014; Cupertino icon named "cloud_sleet_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sleet_fill': CupertinoIcons.cloud_sleet_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_snow</i> &#x2014; Cupertino icon named "cloud_snow". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_snow': CupertinoIcons.cloud_snow,
-
-  /// <i class='cupertino-icons md-36'>cloud_snow_fill</i> &#x2014; Cupertino icon named "cloud_snow_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_snow_fill': CupertinoIcons.cloud_snow_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun</i> &#x2014; Cupertino icon named "cloud_sun". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun': CupertinoIcons.cloud_sun,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun_bolt</i> &#x2014; Cupertino icon named "cloud_sun_bolt". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun_bolt': CupertinoIcons.cloud_sun_bolt,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun_bolt_fill</i> &#x2014; Cupertino icon named "cloud_sun_bolt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun_bolt_fill': CupertinoIcons.cloud_sun_bolt_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun_fill</i> &#x2014; Cupertino icon named "cloud_sun_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun_fill': CupertinoIcons.cloud_sun_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun_rain</i> &#x2014; Cupertino icon named "cloud_sun_rain". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun_rain': CupertinoIcons.cloud_sun_rain,
-
-  /// <i class='cupertino-icons md-36'>cloud_sun_rain_fill</i> &#x2014; Cupertino icon named "cloud_sun_rain_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_sun_rain_fill': CupertinoIcons.cloud_sun_rain_fill,
-
-  /// <i class='cupertino-icons md-36'>cloud_upload</i> &#x2014; Cupertino icon named "cloud_upload". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_upload': CupertinoIcons.cloud_upload,
-
-  /// <i class='cupertino-icons md-36'>cloud_upload_fill</i> &#x2014; Cupertino icon named "cloud_upload_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cloud_upload_fill': CupertinoIcons.cloud_upload_fill,
-
-  /// <i class='cupertino-icons md-36'>color_filter</i> &#x2014; Cupertino icon named "color_filter". Available on cupertino_icons package 1.0.0+ only.
-  'color_filter': CupertinoIcons.color_filter,
-
-  /// <i class='cupertino-icons md-36'>color_filter_fill</i> &#x2014; Cupertino icon named "color_filter_fill". Available on cupertino_icons package 1.0.0+ only.
-  'color_filter_fill': CupertinoIcons.color_filter_fill,
-
-  /// <i class='cupertino-icons md-36'>command</i> &#x2014; Cupertino icon named "command". Available on cupertino_icons package 1.0.0+ only.
-  'command': CupertinoIcons.command,
-
-  /// <i class='cupertino-icons md-36'>compass</i> &#x2014; Cupertino icon named "compass". Available on cupertino_icons package 1.0.0+ only.
-  'compass': CupertinoIcons.compass,
-
-  /// <i class='cupertino-icons md-36'>compass_fill</i> &#x2014; Cupertino icon named "compass_fill". Available on cupertino_icons package 1.0.0+ only.
-  'compass_fill': CupertinoIcons.compass_fill,
-
-  /// <i class='cupertino-icons md-36'>control</i> &#x2014; Cupertino icon named "control". Available on cupertino_icons package 1.0.0+ only.
-  'control': CupertinoIcons.control,
-
-  /// <i class='cupertino-icons md-36'>creditcard</i> &#x2014; Cupertino icon named "creditcard". Available on cupertino_icons package 1.0.0+ only.
-  'creditcard': CupertinoIcons.creditcard,
-
-  /// <i class='cupertino-icons md-36'>creditcard_fill</i> &#x2014; Cupertino icon named "creditcard_fill". Available on cupertino_icons package 1.0.0+ only.
-  'creditcard_fill': CupertinoIcons.creditcard_fill,
-
-  /// <i class='cupertino-icons md-36'>crop</i> &#x2014; Cupertino icon named "crop". Available on cupertino_icons package 1.0.0+ only.
-  'crop': CupertinoIcons.crop,
-
-  /// <i class='cupertino-icons md-36'>crop_rotate</i> &#x2014; Cupertino icon named "crop_rotate". Available on cupertino_icons package 1.0.0+ only.
-  'crop_rotate': CupertinoIcons.crop_rotate,
-
-  /// <i class='cupertino-icons md-36'>cube</i> &#x2014; Cupertino icon named "cube". Available on cupertino_icons package 1.0.0+ only.
-  'cube': CupertinoIcons.cube,
-
-  /// <i class='cupertino-icons md-36'>cube_box</i> &#x2014; Cupertino icon named "cube_box". Available on cupertino_icons package 1.0.0+ only.
-  'cube_box': CupertinoIcons.cube_box,
-
-  /// <i class='cupertino-icons md-36'>cube_box_fill</i> &#x2014; Cupertino icon named "cube_box_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cube_box_fill': CupertinoIcons.cube_box_fill,
-
-  /// <i class='cupertino-icons md-36'>cube_fill</i> &#x2014; Cupertino icon named "cube_fill". Available on cupertino_icons package 1.0.0+ only.
-  'cube_fill': CupertinoIcons.cube_fill,
-
-  /// <i class='cupertino-icons md-36'>cursor_rays</i> &#x2014; Cupertino icon named "cursor_rays". Available on cupertino_icons package 1.0.0+ only.
-  'cursor_rays': CupertinoIcons.cursor_rays,
-
-  /// <i class='cupertino-icons md-36'>decrease_indent</i> &#x2014; Cupertino icon named "decrease_indent". Available on cupertino_icons package 1.0.0+ only.
-  'decrease_indent': CupertinoIcons.decrease_indent,
-
-  /// <i class='cupertino-icons md-36'>decrease_quotelevel</i> &#x2014; Cupertino icon named "decrease_quotelevel". Available on cupertino_icons package 1.0.0+ only.
-  'decrease_quotelevel': CupertinoIcons.decrease_quotelevel,
-
-  /// <i class='cupertino-icons md-36'>delete_left</i> &#x2014; Cupertino icon named "delete_left". Available on cupertino_icons package 1.0.0+ only.
-  'delete_left': CupertinoIcons.delete_left,
-
-  /// <i class='cupertino-icons md-36'>delete_left_fill</i> &#x2014; Cupertino icon named "delete_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'delete_left_fill': CupertinoIcons.delete_left_fill,
-
-  /// <i class='cupertino-icons md-36'>delete_right</i> &#x2014; Cupertino icon named "delete_right". Available on cupertino_icons package 1.0.0+ only.
-  'delete_right': CupertinoIcons.delete_right,
-
-  /// <i class='cupertino-icons md-36'>delete_right_fill</i> &#x2014; Cupertino icon named "delete_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'delete_right_fill': CupertinoIcons.delete_right_fill,
-
-  /// <i class='cupertino-icons md-36'>desktopcomputer</i> &#x2014; Cupertino icon named "desktopcomputer". Available on cupertino_icons package 1.0.0+ only.
-  'desktopcomputer': CupertinoIcons.desktopcomputer,
-
-  /// <i class='cupertino-icons md-36'>device_desktop</i> &#x2014; Cupertino icon named "device_desktop". Available on cupertino_icons package 1.0.0+ only.
-  'device_desktop': CupertinoIcons.device_desktop,
-
-  /// <i class='cupertino-icons md-36'>device_laptop</i> &#x2014; Cupertino icon named "device_laptop". Available on cupertino_icons package 1.0.0+ only.
-  'device_laptop': CupertinoIcons.device_laptop,
-
-  /// <i class='cupertino-icons md-36'>device_phone_landscape</i> &#x2014; Cupertino icon named "device_phone_landscape". Available on cupertino_icons package 1.0.0+ only.
-  'device_phone_landscape': CupertinoIcons.device_phone_landscape,
-
-  /// <i class='cupertino-icons md-36'>device_phone_portrait</i> &#x2014; Cupertino icon named "device_phone_portrait". Available on cupertino_icons package 1.0.0+ only.
-  'device_phone_portrait': CupertinoIcons.device_phone_portrait,
-
-  /// <i class='cupertino-icons md-36'>dial</i> &#x2014; Cupertino icon named "dial". Available on cupertino_icons package 1.0.0+ only.
-  'dial': CupertinoIcons.dial,
-
-  /// <i class='cupertino-icons md-36'>dial_fill</i> &#x2014; Cupertino icon named "dial_fill". Available on cupertino_icons package 1.0.0+ only.
-  'dial_fill': CupertinoIcons.dial_fill,
-
-  /// <i class='cupertino-icons md-36'>divide</i> &#x2014; Cupertino icon named "divide". Available on cupertino_icons package 1.0.0+ only.
-  'divide': CupertinoIcons.divide,
-
-  /// <i class='cupertino-icons md-36'>divide_circle</i> &#x2014; Cupertino icon named "divide_circle". Available on cupertino_icons package 1.0.0+ only.
-  'divide_circle': CupertinoIcons.divide_circle,
-
-  /// <i class='cupertino-icons md-36'>divide_circle_fill</i> &#x2014; Cupertino icon named "divide_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'divide_circle_fill': CupertinoIcons.divide_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>divide_square</i> &#x2014; Cupertino icon named "divide_square". Available on cupertino_icons package 1.0.0+ only.
-  'divide_square': CupertinoIcons.divide_square,
-
-  /// <i class='cupertino-icons md-36'>divide_square_fill</i> &#x2014; Cupertino icon named "divide_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'divide_square_fill': CupertinoIcons.divide_square_fill,
-
-  /// <i class='cupertino-icons md-36'>doc</i> &#x2014; Cupertino icon named "doc". Available on cupertino_icons package 1.0.0+ only.
-  'doc': CupertinoIcons.doc,
-
-  /// <i class='cupertino-icons md-36'>doc_append</i> &#x2014; Cupertino icon named "doc_append". Available on cupertino_icons package 1.0.0+ only.
-  'doc_append': CupertinoIcons.doc_append,
-
-  /// <i class='cupertino-icons md-36'>doc_chart</i> &#x2014; Cupertino icon named "doc_chart". Available on cupertino_icons package 1.0.0+ only.
-  'doc_chart': CupertinoIcons.doc_chart,
-
-  /// <i class='cupertino-icons md-36'>doc_chart_fill</i> &#x2014; Cupertino icon named "doc_chart_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_chart_fill': CupertinoIcons.doc_chart_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_checkmark</i> &#x2014; Cupertino icon named "doc_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'doc_checkmark': CupertinoIcons.doc_checkmark,
-
-  /// <i class='cupertino-icons md-36'>doc_checkmark_fill</i> &#x2014; Cupertino icon named "doc_checkmark_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_checkmark_fill': CupertinoIcons.doc_checkmark_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_circle</i> &#x2014; Cupertino icon named "doc_circle". Available on cupertino_icons package 1.0.0+ only.
-  'doc_circle': CupertinoIcons.doc_circle,
-
-  /// <i class='cupertino-icons md-36'>doc_circle_fill</i> &#x2014; Cupertino icon named "doc_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_circle_fill': CupertinoIcons.doc_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_fill</i> &#x2014; Cupertino icon named "doc_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_fill': CupertinoIcons.doc_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_on_clipboard</i> &#x2014; Cupertino icon named "doc_on_clipboard". Available on cupertino_icons package 1.0.0+ only.
-  'doc_on_clipboard': CupertinoIcons.doc_on_clipboard,
-
-  /// <i class='cupertino-icons md-36'>doc_on_clipboard_fill</i> &#x2014; Cupertino icon named "doc_on_clipboard_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_on_clipboard_fill': CupertinoIcons.doc_on_clipboard_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_on_doc</i> &#x2014; Cupertino icon named "doc_on_doc". Available on cupertino_icons package 1.0.0+ only.
-  'doc_on_doc': CupertinoIcons.doc_on_doc,
-
-  /// <i class='cupertino-icons md-36'>doc_on_doc_fill</i> &#x2014; Cupertino icon named "doc_on_doc_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_on_doc_fill': CupertinoIcons.doc_on_doc_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_person</i> &#x2014; Cupertino icon named "doc_person". Available on cupertino_icons package 1.0.0+ only.
-  'doc_person': CupertinoIcons.doc_person,
-
-  /// <i class='cupertino-icons md-36'>doc_person_fill</i> &#x2014; Cupertino icon named "doc_person_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_person_fill': CupertinoIcons.doc_person_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_plaintext</i> &#x2014; Cupertino icon named "doc_plaintext". Available on cupertino_icons package 1.0.0+ only.
-  'doc_plaintext': CupertinoIcons.doc_plaintext,
-
-  /// <i class='cupertino-icons md-36'>doc_richtext</i> &#x2014; Cupertino icon named "doc_richtext". Available on cupertino_icons package 1.0.0+ only.
-  'doc_richtext': CupertinoIcons.doc_richtext,
-
-  /// <i class='cupertino-icons md-36'>doc_text</i> &#x2014; Cupertino icon named "doc_text". Available on cupertino_icons package 1.0.0+ only.
-  'doc_text': CupertinoIcons.doc_text,
-
-  /// <i class='cupertino-icons md-36'>doc_text_fill</i> &#x2014; Cupertino icon named "doc_text_fill". Available on cupertino_icons package 1.0.0+ only.
-  'doc_text_fill': CupertinoIcons.doc_text_fill,
-
-  /// <i class='cupertino-icons md-36'>doc_text_search</i> &#x2014; Cupertino icon named "doc_text_search". Available on cupertino_icons package 1.0.0+ only.
-  'doc_text_search': CupertinoIcons.doc_text_search,
-
-  /// <i class='cupertino-icons md-36'>doc_text_viewfinder</i> &#x2014; Cupertino icon named "doc_text_viewfinder". Available on cupertino_icons package 1.0.0+ only.
-  'doc_text_viewfinder': CupertinoIcons.doc_text_viewfinder,
-
-  /// <i class='cupertino-icons md-36'>dot_radiowaves_left_right</i> &#x2014; Cupertino icon named "dot_radiowaves_left_right". Available on cupertino_icons package 1.0.0+ only.
-  'dot_radiowaves_left_right': CupertinoIcons.dot_radiowaves_left_right,
-
-  /// <i class='cupertino-icons md-36'>dot_radiowaves_right</i> &#x2014; Cupertino icon named "dot_radiowaves_right". Available on cupertino_icons package 1.0.0+ only.
-  'dot_radiowaves_right': CupertinoIcons.dot_radiowaves_right,
-
-  /// <i class='cupertino-icons md-36'>dot_square</i> &#x2014; Cupertino icon named "dot_square". Available on cupertino_icons package 1.0.0+ only.
-  'dot_square': CupertinoIcons.dot_square,
-
-  /// <i class='cupertino-icons md-36'>dot_square_fill</i> &#x2014; Cupertino icon named "dot_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'dot_square_fill': CupertinoIcons.dot_square_fill,
-
-  /// <i class='cupertino-icons md-36'>download_circle</i> &#x2014; Cupertino icon named "download_circle". Available on cupertino_icons package 1.0.0+ only.
-  'download_circle': CupertinoIcons.download_circle,
-
-  /// <i class='cupertino-icons md-36'>download_circle_fill</i> &#x2014; Cupertino icon named "download_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'download_circle_fill': CupertinoIcons.download_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>drop</i> &#x2014; Cupertino icon named "drop". Available on cupertino_icons package 1.0.0+ only.
-  'drop': CupertinoIcons.drop,
-
-  /// <i class='cupertino-icons md-36'>drop_fill</i> &#x2014; Cupertino icon named "drop_fill". Available on cupertino_icons package 1.0.0+ only.
-  'drop_fill': CupertinoIcons.drop_fill,
-
-  /// <i class='cupertino-icons md-36'>drop_triangle</i> &#x2014; Cupertino icon named "drop_triangle". Available on cupertino_icons package 1.0.0+ only.
-  'drop_triangle': CupertinoIcons.drop_triangle,
-
-  /// <i class='cupertino-icons md-36'>drop_triangle_fill</i> &#x2014; Cupertino icon named "drop_triangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'drop_triangle_fill': CupertinoIcons.drop_triangle_fill,
-
-  /// <i class='cupertino-icons md-36'>ear</i> &#x2014; Cupertino icon named "ear". Available on cupertino_icons package 1.0.0+ only.
-  'ear': CupertinoIcons.ear,
-
-  /// <i class='cupertino-icons md-36'>eject</i> &#x2014; Cupertino icon named "eject". Available on cupertino_icons package 1.0.0+ only.
-  'eject': CupertinoIcons.eject,
-
-  /// <i class='cupertino-icons md-36'>eject_fill</i> &#x2014; Cupertino icon named "eject_fill". Available on cupertino_icons package 1.0.0+ only.
-  'eject_fill': CupertinoIcons.eject_fill,
-
-  /// <i class='cupertino-icons md-36'>ellipses_bubble</i> &#x2014; Cupertino icon named "ellipses_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'ellipses_bubble': CupertinoIcons.ellipses_bubble,
-
-  /// <i class='cupertino-icons md-36'>ellipses_bubble_fill</i> &#x2014; Cupertino icon named "ellipses_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ellipses_bubble_fill': CupertinoIcons.ellipses_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>ellipsis_circle</i> &#x2014; Cupertino icon named "ellipsis_circle". Available on cupertino_icons package 1.0.0+ only.
-  'ellipsis_circle': CupertinoIcons.ellipsis_circle,
-
-  /// <i class='cupertino-icons md-36'>ellipsis_circle_fill</i> &#x2014; Cupertino icon named "ellipsis_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ellipsis_circle_fill': CupertinoIcons.ellipsis_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>ellipsis_vertical</i> &#x2014; Cupertino icon named "ellipsis_vertical". Available on cupertino_icons package 1.0.0+ only.
-  'ellipsis_vertical': CupertinoIcons.ellipsis_vertical,
-
-  /// <i class='cupertino-icons md-36'>ellipsis_vertical_circle</i> &#x2014; Cupertino icon named "ellipsis_vertical_circle". Available on cupertino_icons package 1.0.0+ only.
-  'ellipsis_vertical_circle': CupertinoIcons.ellipsis_vertical_circle,
-
-  /// <i class='cupertino-icons md-36'>ellipsis_vertical_circle_fill</i> &#x2014; Cupertino icon named "ellipsis_vertical_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ellipsis_vertical_circle_fill': CupertinoIcons.ellipsis_vertical_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>envelope</i> &#x2014; Cupertino icon named "envelope". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [mail] which is available in cupertino_icons 0.1.3.
-  'envelope': CupertinoIcons.envelope,
-
-  /// <i class='cupertino-icons md-36'>envelope_badge</i> &#x2014; Cupertino icon named "envelope_badge". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_badge': CupertinoIcons.envelope_badge,
-
-  /// <i class='cupertino-icons md-36'>envelope_badge_fill</i> &#x2014; Cupertino icon named "envelope_badge_fill". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_badge_fill': CupertinoIcons.envelope_badge_fill,
-
-  /// <i class='cupertino-icons md-36'>envelope_circle</i> &#x2014; Cupertino icon named "envelope_circle". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_circle': CupertinoIcons.envelope_circle,
-
-  /// <i class='cupertino-icons md-36'>envelope_circle_fill</i> &#x2014; Cupertino icon named "envelope_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_circle_fill': CupertinoIcons.envelope_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>envelope_fill</i> &#x2014; Cupertino icon named "envelope_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [mail_solid] which is available in cupertino_icons 0.1.3.
-  'envelope_fill': CupertinoIcons.envelope_fill,
-
-  /// <i class='cupertino-icons md-36'>envelope_open</i> &#x2014; Cupertino icon named "envelope_open". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_open': CupertinoIcons.envelope_open,
-
-  /// <i class='cupertino-icons md-36'>envelope_open_fill</i> &#x2014; Cupertino icon named "envelope_open_fill". Available on cupertino_icons package 1.0.0+ only.
-  'envelope_open_fill': CupertinoIcons.envelope_open_fill,
-
-  /// <i class='cupertino-icons md-36'>equal</i> &#x2014; Cupertino icon named "equal". Available on cupertino_icons package 1.0.0+ only.
-  'equal': CupertinoIcons.equal,
-
-  /// <i class='cupertino-icons md-36'>equal_circle</i> &#x2014; Cupertino icon named "equal_circle". Available on cupertino_icons package 1.0.0+ only.
-  'equal_circle': CupertinoIcons.equal_circle,
-
-  /// <i class='cupertino-icons md-36'>equal_circle_fill</i> &#x2014; Cupertino icon named "equal_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'equal_circle_fill': CupertinoIcons.equal_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>equal_square</i> &#x2014; Cupertino icon named "equal_square". Available on cupertino_icons package 1.0.0+ only.
-  'equal_square': CupertinoIcons.equal_square,
-
-  /// <i class='cupertino-icons md-36'>equal_square_fill</i> &#x2014; Cupertino icon named "equal_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'equal_square_fill': CupertinoIcons.equal_square_fill,
-
-  /// <i class='cupertino-icons md-36'>escape</i> &#x2014; Cupertino icon named "escape". Available on cupertino_icons package 1.0.0+ only.
-  'escape': CupertinoIcons.escape,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark</i> &#x2014; Cupertino icon named "exclamationmark". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark': CupertinoIcons.exclamationmark,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_bubble</i> &#x2014; Cupertino icon named "exclamationmark_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_bubble': CupertinoIcons.exclamationmark_bubble,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_bubble_fill</i> &#x2014; Cupertino icon named "exclamationmark_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_bubble_fill': CupertinoIcons.exclamationmark_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_circle</i> &#x2014; Cupertino icon named "exclamationmark_circle". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_circle': CupertinoIcons.exclamationmark_circle,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_circle_fill</i> &#x2014; Cupertino icon named "exclamationmark_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_circle_fill': CupertinoIcons.exclamationmark_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_octagon</i> &#x2014; Cupertino icon named "exclamationmark_octagon". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_octagon': CupertinoIcons.exclamationmark_octagon,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_octagon_fill</i> &#x2014; Cupertino icon named "exclamationmark_octagon_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_octagon_fill': CupertinoIcons.exclamationmark_octagon_fill,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_shield</i> &#x2014; Cupertino icon named "exclamationmark_shield". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_shield': CupertinoIcons.exclamationmark_shield,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_shield_fill</i> &#x2014; Cupertino icon named "exclamationmark_shield_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_shield_fill': CupertinoIcons.exclamationmark_shield_fill,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_square</i> &#x2014; Cupertino icon named "exclamationmark_square". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_square': CupertinoIcons.exclamationmark_square,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_square_fill</i> &#x2014; Cupertino icon named "exclamationmark_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_square_fill': CupertinoIcons.exclamationmark_square_fill,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_triangle</i> &#x2014; Cupertino icon named "exclamationmark_triangle". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_triangle': CupertinoIcons.exclamationmark_triangle,
-
-  /// <i class='cupertino-icons md-36'>exclamationmark_triangle_fill</i> &#x2014; Cupertino icon named "exclamationmark_triangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'exclamationmark_triangle_fill': CupertinoIcons.exclamationmark_triangle_fill,
-
-  /// <i class='cupertino-icons md-36'>eye_fill</i> &#x2014; Cupertino icon named "eye_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [eye_solid] which is available in cupertino_icons 0.1.3.
-  'eye_fill': CupertinoIcons.eye_fill,
-
-  /// <i class='cupertino-icons md-36'>eye_slash</i> &#x2014; Cupertino icon named "eye_slash". Available on cupertino_icons package 1.0.0+ only.
-  'eye_slash': CupertinoIcons.eye_slash,
-
-  /// <i class='cupertino-icons md-36'>eye_slash_fill</i> &#x2014; Cupertino icon named "eye_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'eye_slash_fill': CupertinoIcons.eye_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>eyedropper</i> &#x2014; Cupertino icon named "eyedropper". Available on cupertino_icons package 1.0.0+ only.
-  'eyedropper': CupertinoIcons.eyedropper,
-
-  /// <i class='cupertino-icons md-36'>eyedropper_full</i> &#x2014; Cupertino icon named "eyedropper_full". Available on cupertino_icons package 1.0.0+ only.
-  'eyedropper_full': CupertinoIcons.eyedropper_full,
-
-  /// <i class='cupertino-icons md-36'>eyedropper_halffull</i> &#x2014; Cupertino icon named "eyedropper_halffull". Available on cupertino_icons package 1.0.0+ only.
-  'eyedropper_halffull': CupertinoIcons.eyedropper_halffull,
-
-  /// <i class='cupertino-icons md-36'>eyeglasses</i> &#x2014; Cupertino icon named "eyeglasses". Available on cupertino_icons package 1.0.0+ only.
-  'eyeglasses': CupertinoIcons.eyeglasses,
-
-  /// <i class='cupertino-icons md-36'>f_cursive</i> &#x2014; Cupertino icon named "f_cursive". Available on cupertino_icons package 1.0.0+ only.
-  'f_cursive': CupertinoIcons.f_cursive,
-
-  /// <i class='cupertino-icons md-36'>f_cursive_circle</i> &#x2014; Cupertino icon named "f_cursive_circle". Available on cupertino_icons package 1.0.0+ only.
-  'f_cursive_circle': CupertinoIcons.f_cursive_circle,
-
-  /// <i class='cupertino-icons md-36'>f_cursive_circle_fill</i> &#x2014; Cupertino icon named "f_cursive_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'f_cursive_circle_fill': CupertinoIcons.f_cursive_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>film</i> &#x2014; Cupertino icon named "film". Available on cupertino_icons package 1.0.0+ only.
-  'film': CupertinoIcons.film,
-
-  /// <i class='cupertino-icons md-36'>film_fill</i> &#x2014; Cupertino icon named "film_fill". Available on cupertino_icons package 1.0.0+ only.
-  'film_fill': CupertinoIcons.film_fill,
-
-  /// <i class='cupertino-icons md-36'>flag_circle</i> &#x2014; Cupertino icon named "flag_circle". Available on cupertino_icons package 1.0.0+ only.
-  'flag_circle': CupertinoIcons.flag_circle,
-
-  /// <i class='cupertino-icons md-36'>flag_circle_fill</i> &#x2014; Cupertino icon named "flag_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'flag_circle_fill': CupertinoIcons.flag_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>flag_fill</i> &#x2014; Cupertino icon named "flag_fill". Available on cupertino_icons package 1.0.0+ only.
-  'flag_fill': CupertinoIcons.flag_fill,
-
-  /// <i class='cupertino-icons md-36'>flag_slash</i> &#x2014; Cupertino icon named "flag_slash". Available on cupertino_icons package 1.0.0+ only.
-  'flag_slash': CupertinoIcons.flag_slash,
-
-  /// <i class='cupertino-icons md-36'>flag_slash_fill</i> &#x2014; Cupertino icon named "flag_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'flag_slash_fill': CupertinoIcons.flag_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>flame</i> &#x2014; Cupertino icon named "flame". Available on cupertino_icons package 1.0.0+ only.
-  'flame': CupertinoIcons.flame,
-
-  /// <i class='cupertino-icons md-36'>flame_fill</i> &#x2014; Cupertino icon named "flame_fill". Available on cupertino_icons package 1.0.0+ only.
-  'flame_fill': CupertinoIcons.flame_fill,
-
-  /// <i class='cupertino-icons md-36'>floppy_disk</i> &#x2014; Cupertino icon named "floppy_disk". Available on cupertino_icons package 1.0.0+ only.
-  'floppy_disk': CupertinoIcons.floppy_disk,
-
-  /// <i class='cupertino-icons md-36'>flowchart</i> &#x2014; Cupertino icon named "flowchart". Available on cupertino_icons package 1.0.0+ only.
-  'flowchart': CupertinoIcons.flowchart,
-
-  /// <i class='cupertino-icons md-36'>flowchart_fill</i> &#x2014; Cupertino icon named "flowchart_fill". Available on cupertino_icons package 1.0.0+ only.
-  'flowchart_fill': CupertinoIcons.flowchart_fill,
-
-  /// <i class='cupertino-icons md-36'>folder_badge_minus</i> &#x2014; Cupertino icon named "folder_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'folder_badge_minus': CupertinoIcons.folder_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>folder_badge_person_crop</i> &#x2014; Cupertino icon named "folder_badge_person_crop". Available on cupertino_icons package 1.0.0+ only.
-  'folder_badge_person_crop': CupertinoIcons.folder_badge_person_crop,
-
-  /// <i class='cupertino-icons md-36'>folder_badge_plus</i> &#x2014; Cupertino icon named "folder_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'folder_badge_plus': CupertinoIcons.folder_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>folder_circle</i> &#x2014; Cupertino icon named "folder_circle". Available on cupertino_icons package 1.0.0+ only.
-  'folder_circle': CupertinoIcons.folder_circle,
-
-  /// <i class='cupertino-icons md-36'>folder_circle_fill</i> &#x2014; Cupertino icon named "folder_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'folder_circle_fill': CupertinoIcons.folder_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>folder_fill</i> &#x2014; Cupertino icon named "folder_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [folder_solid] which is available in cupertino_icons 0.1.3.
-  'folder_fill': CupertinoIcons.folder_fill,
-
-  /// <i class='cupertino-icons md-36'>folder_fill_badge_minus</i> &#x2014; Cupertino icon named "folder_fill_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'folder_fill_badge_minus': CupertinoIcons.folder_fill_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>folder_fill_badge_person_crop</i> &#x2014; Cupertino icon named "folder_fill_badge_person_crop". Available on cupertino_icons package 1.0.0+ only.
-  'folder_fill_badge_person_crop': CupertinoIcons.folder_fill_badge_person_crop,
-
-  /// <i class='cupertino-icons md-36'>folder_fill_badge_plus</i> &#x2014; Cupertino icon named "folder_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'folder_fill_badge_plus': CupertinoIcons.folder_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>forward_end</i> &#x2014; Cupertino icon named "forward_end". Available on cupertino_icons package 1.0.0+ only.
-  'forward_end': CupertinoIcons.forward_end,
-
-  /// <i class='cupertino-icons md-36'>forward_end_alt</i> &#x2014; Cupertino icon named "forward_end_alt". Available on cupertino_icons package 1.0.0+ only.
-  'forward_end_alt': CupertinoIcons.forward_end_alt,
-
-  /// <i class='cupertino-icons md-36'>forward_end_alt_fill</i> &#x2014; Cupertino icon named "forward_end_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'forward_end_alt_fill': CupertinoIcons.forward_end_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>forward_end_fill</i> &#x2014; Cupertino icon named "forward_end_fill". Available on cupertino_icons package 1.0.0+ only.
-  'forward_end_fill': CupertinoIcons.forward_end_fill,
-
-  /// <i class='cupertino-icons md-36'>forward_fill</i> &#x2014; Cupertino icon named "forward_fill". Available on cupertino_icons package 1.0.0+ only.
-  'forward_fill': CupertinoIcons.forward_fill,
-
-  /// <i class='cupertino-icons md-36'>function</i> &#x2014; Cupertino icon named "function". Available on cupertino_icons package 1.0.0+ only.
-  'function': CupertinoIcons.function,
-
-  /// <i class='cupertino-icons md-36'>fx</i> &#x2014; Cupertino icon named "fx". Available on cupertino_icons package 1.0.0+ only.
-  'fx': CupertinoIcons.fx,
-
-  /// <i class='cupertino-icons md-36'>gamecontroller</i> &#x2014; Cupertino icon named "gamecontroller". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [game_controller] which is available in cupertino_icons 0.1.3.
-  'gamecontroller': CupertinoIcons.gamecontroller,
-
-  /// <i class='cupertino-icons md-36'>gamecontroller_alt_fill</i> &#x2014; Cupertino icon named "gamecontroller_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'gamecontroller_alt_fill': CupertinoIcons.gamecontroller_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>gamecontroller_fill</i> &#x2014; Cupertino icon named "gamecontroller_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [game_controller_solid] which is available in cupertino_icons 0.1.3.
-  'gamecontroller_fill': CupertinoIcons.gamecontroller_fill,
-
-  /// <i class='cupertino-icons md-36'>gauge</i> &#x2014; Cupertino icon named "gauge". Available on cupertino_icons package 1.0.0+ only.
-  'gauge': CupertinoIcons.gauge,
-
-  /// <i class='cupertino-icons md-36'>gauge_badge_minus</i> &#x2014; Cupertino icon named "gauge_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'gauge_badge_minus': CupertinoIcons.gauge_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>gauge_badge_plus</i> &#x2014; Cupertino icon named "gauge_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'gauge_badge_plus': CupertinoIcons.gauge_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>gear_alt</i> &#x2014; Cupertino icon named "gear_alt". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [gear] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [gear_big] which is available in cupertino_icons 0.1.3.
-  'gear_alt': CupertinoIcons.gear_alt,
-
-  /// <i class='cupertino-icons md-36'>gear_alt_fill</i> &#x2014; Cupertino icon named "gear_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [gear_solid] which is available in cupertino_icons 0.1.3.
-  'gear_alt_fill': CupertinoIcons.gear_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>gift</i> &#x2014; Cupertino icon named "gift". Available on cupertino_icons package 1.0.0+ only.
-  'gift': CupertinoIcons.gift,
-
-  /// <i class='cupertino-icons md-36'>gift_alt</i> &#x2014; Cupertino icon named "gift_alt". Available on cupertino_icons package 1.0.0+ only.
-  'gift_alt': CupertinoIcons.gift_alt,
-
-  /// <i class='cupertino-icons md-36'>gift_alt_fill</i> &#x2014; Cupertino icon named "gift_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'gift_alt_fill': CupertinoIcons.gift_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>gift_fill</i> &#x2014; Cupertino icon named "gift_fill". Available on cupertino_icons package 1.0.0+ only.
-  'gift_fill': CupertinoIcons.gift_fill,
-
-  /// <i class='cupertino-icons md-36'>globe</i> &#x2014; Cupertino icon named "globe". Available on cupertino_icons package 1.0.0+ only.
-  'globe': CupertinoIcons.globe,
-
-  /// <i class='cupertino-icons md-36'>gobackward</i> &#x2014; Cupertino icon named "gobackward". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward': CupertinoIcons.gobackward,
-
-  /// <i class='cupertino-icons md-36'>gobackward_10</i> &#x2014; Cupertino icon named "gobackward_10". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_10': CupertinoIcons.gobackward_10,
-
-  /// <i class='cupertino-icons md-36'>gobackward_15</i> &#x2014; Cupertino icon named "gobackward_15". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_15': CupertinoIcons.gobackward_15,
-
-  /// <i class='cupertino-icons md-36'>gobackward_30</i> &#x2014; Cupertino icon named "gobackward_30". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_30': CupertinoIcons.gobackward_30,
-
-  /// <i class='cupertino-icons md-36'>gobackward_45</i> &#x2014; Cupertino icon named "gobackward_45". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_45': CupertinoIcons.gobackward_45,
-
-  /// <i class='cupertino-icons md-36'>gobackward_60</i> &#x2014; Cupertino icon named "gobackward_60". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_60': CupertinoIcons.gobackward_60,
-
-  /// <i class='cupertino-icons md-36'>gobackward_75</i> &#x2014; Cupertino icon named "gobackward_75". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_75': CupertinoIcons.gobackward_75,
-
-  /// <i class='cupertino-icons md-36'>gobackward_90</i> &#x2014; Cupertino icon named "gobackward_90". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_90': CupertinoIcons.gobackward_90,
-
-  /// <i class='cupertino-icons md-36'>gobackward_minus</i> &#x2014; Cupertino icon named "gobackward_minus". Available on cupertino_icons package 1.0.0+ only.
-  'gobackward_minus': CupertinoIcons.gobackward_minus,
-
-  /// <i class='cupertino-icons md-36'>goforward</i> &#x2014; Cupertino icon named "goforward". Available on cupertino_icons package 1.0.0+ only.
-  'goforward': CupertinoIcons.goforward,
-
-  /// <i class='cupertino-icons md-36'>goforward_10</i> &#x2014; Cupertino icon named "goforward_10". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_10': CupertinoIcons.goforward_10,
-
-  /// <i class='cupertino-icons md-36'>goforward_15</i> &#x2014; Cupertino icon named "goforward_15". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_15': CupertinoIcons.goforward_15,
-
-  /// <i class='cupertino-icons md-36'>goforward_30</i> &#x2014; Cupertino icon named "goforward_30". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_30': CupertinoIcons.goforward_30,
-
-  /// <i class='cupertino-icons md-36'>goforward_45</i> &#x2014; Cupertino icon named "goforward_45". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_45': CupertinoIcons.goforward_45,
-
-  /// <i class='cupertino-icons md-36'>goforward_60</i> &#x2014; Cupertino icon named "goforward_60". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_60': CupertinoIcons.goforward_60,
-
-  /// <i class='cupertino-icons md-36'>goforward_75</i> &#x2014; Cupertino icon named "goforward_75". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_75': CupertinoIcons.goforward_75,
-
-  /// <i class='cupertino-icons md-36'>goforward_90</i> &#x2014; Cupertino icon named "goforward_90". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_90': CupertinoIcons.goforward_90,
-
-  /// <i class='cupertino-icons md-36'>goforward_plus</i> &#x2014; Cupertino icon named "goforward_plus". Available on cupertino_icons package 1.0.0+ only.
-  'goforward_plus': CupertinoIcons.goforward_plus,
-
-  /// <i class='cupertino-icons md-36'>graph_circle</i> &#x2014; Cupertino icon named "graph_circle". Available on cupertino_icons package 1.0.0+ only.
-  'graph_circle': CupertinoIcons.graph_circle,
-
-  /// <i class='cupertino-icons md-36'>graph_circle_fill</i> &#x2014; Cupertino icon named "graph_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'graph_circle_fill': CupertinoIcons.graph_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>graph_square</i> &#x2014; Cupertino icon named "graph_square". Available on cupertino_icons package 1.0.0+ only.
-  'graph_square': CupertinoIcons.graph_square,
-
-  /// <i class='cupertino-icons md-36'>graph_square_fill</i> &#x2014; Cupertino icon named "graph_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'graph_square_fill': CupertinoIcons.graph_square_fill,
-
-  /// <i class='cupertino-icons md-36'>greaterthan</i> &#x2014; Cupertino icon named "greaterthan". Available on cupertino_icons package 1.0.0+ only.
-  'greaterthan': CupertinoIcons.greaterthan,
-
-  /// <i class='cupertino-icons md-36'>greaterthan_circle</i> &#x2014; Cupertino icon named "greaterthan_circle". Available on cupertino_icons package 1.0.0+ only.
-  'greaterthan_circle': CupertinoIcons.greaterthan_circle,
-
-  /// <i class='cupertino-icons md-36'>greaterthan_circle_fill</i> &#x2014; Cupertino icon named "greaterthan_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'greaterthan_circle_fill': CupertinoIcons.greaterthan_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>greaterthan_square</i> &#x2014; Cupertino icon named "greaterthan_square". Available on cupertino_icons package 1.0.0+ only.
-  'greaterthan_square': CupertinoIcons.greaterthan_square,
-
-  /// <i class='cupertino-icons md-36'>greaterthan_square_fill</i> &#x2014; Cupertino icon named "greaterthan_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'greaterthan_square_fill': CupertinoIcons.greaterthan_square_fill,
-
-  /// <i class='cupertino-icons md-36'>grid</i> &#x2014; Cupertino icon named "grid". Available on cupertino_icons package 1.0.0+ only.
-  'grid': CupertinoIcons.grid,
-
-  /// <i class='cupertino-icons md-36'>grid_circle</i> &#x2014; Cupertino icon named "grid_circle". Available on cupertino_icons package 1.0.0+ only.
-  'grid_circle': CupertinoIcons.grid_circle,
-
-  /// <i class='cupertino-icons md-36'>grid_circle_fill</i> &#x2014; Cupertino icon named "grid_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'grid_circle_fill': CupertinoIcons.grid_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>guitars</i> &#x2014; Cupertino icon named "guitars". Available on cupertino_icons package 1.0.0+ only.
-  'guitars': CupertinoIcons.guitars,
-
-  /// <i class='cupertino-icons md-36'>hammer</i> &#x2014; Cupertino icon named "hammer". Available on cupertino_icons package 1.0.0+ only.
-  'hammer': CupertinoIcons.hammer,
-
-  /// <i class='cupertino-icons md-36'>hammer_fill</i> &#x2014; Cupertino icon named "hammer_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hammer_fill': CupertinoIcons.hammer_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_draw</i> &#x2014; Cupertino icon named "hand_draw". Available on cupertino_icons package 1.0.0+ only.
-  'hand_draw': CupertinoIcons.hand_draw,
-
-  /// <i class='cupertino-icons md-36'>hand_draw_fill</i> &#x2014; Cupertino icon named "hand_draw_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_draw_fill': CupertinoIcons.hand_draw_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_point_left</i> &#x2014; Cupertino icon named "hand_point_left". Available on cupertino_icons package 1.0.0+ only.
-  'hand_point_left': CupertinoIcons.hand_point_left,
-
-  /// <i class='cupertino-icons md-36'>hand_point_left_fill</i> &#x2014; Cupertino icon named "hand_point_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_point_left_fill': CupertinoIcons.hand_point_left_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_point_right</i> &#x2014; Cupertino icon named "hand_point_right". Available on cupertino_icons package 1.0.0+ only.
-  'hand_point_right': CupertinoIcons.hand_point_right,
-
-  /// <i class='cupertino-icons md-36'>hand_point_right_fill</i> &#x2014; Cupertino icon named "hand_point_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_point_right_fill': CupertinoIcons.hand_point_right_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_raised</i> &#x2014; Cupertino icon named "hand_raised". Available on cupertino_icons package 1.0.0+ only.
-  'hand_raised': CupertinoIcons.hand_raised,
-
-  /// <i class='cupertino-icons md-36'>hand_raised_fill</i> &#x2014; Cupertino icon named "hand_raised_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_raised_fill': CupertinoIcons.hand_raised_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_raised_slash</i> &#x2014; Cupertino icon named "hand_raised_slash". Available on cupertino_icons package 1.0.0+ only.
-  'hand_raised_slash': CupertinoIcons.hand_raised_slash,
-
-  /// <i class='cupertino-icons md-36'>hand_raised_slash_fill</i> &#x2014; Cupertino icon named "hand_raised_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_raised_slash_fill': CupertinoIcons.hand_raised_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_thumbsdown</i> &#x2014; Cupertino icon named "hand_thumbsdown". Available on cupertino_icons package 1.0.0+ only.
-  'hand_thumbsdown': CupertinoIcons.hand_thumbsdown,
-
-  /// <i class='cupertino-icons md-36'>hand_thumbsdown_fill</i> &#x2014; Cupertino icon named "hand_thumbsdown_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_thumbsdown_fill': CupertinoIcons.hand_thumbsdown_fill,
-
-  /// <i class='cupertino-icons md-36'>hand_thumbsup</i> &#x2014; Cupertino icon named "hand_thumbsup". Available on cupertino_icons package 1.0.0+ only.
-  'hand_thumbsup': CupertinoIcons.hand_thumbsup,
-
-  /// <i class='cupertino-icons md-36'>hand_thumbsup_fill</i> &#x2014; Cupertino icon named "hand_thumbsup_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hand_thumbsup_fill': CupertinoIcons.hand_thumbsup_fill,
-
-  /// <i class='cupertino-icons md-36'>hare</i> &#x2014; Cupertino icon named "hare". Available on cupertino_icons package 1.0.0+ only.
-  'hare': CupertinoIcons.hare,
-
-  /// <i class='cupertino-icons md-36'>hare_fill</i> &#x2014; Cupertino icon named "hare_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hare_fill': CupertinoIcons.hare_fill,
-
-  /// <i class='cupertino-icons md-36'>headphones</i> &#x2014; Cupertino icon named "headphones". Available on cupertino_icons package 1.0.0+ only.
-  'headphones': CupertinoIcons.headphones,
-
-  /// <i class='cupertino-icons md-36'>heart_circle</i> &#x2014; Cupertino icon named "heart_circle". Available on cupertino_icons package 1.0.0+ only.
-  'heart_circle': CupertinoIcons.heart_circle,
-
-  /// <i class='cupertino-icons md-36'>heart_circle_fill</i> &#x2014; Cupertino icon named "heart_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'heart_circle_fill': CupertinoIcons.heart_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>heart_fill</i> &#x2014; Cupertino icon named "heart_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [heart_solid] which is available in cupertino_icons 0.1.3.
-  'heart_fill': CupertinoIcons.heart_fill,
-
-  /// <i class='cupertino-icons md-36'>heart_slash</i> &#x2014; Cupertino icon named "heart_slash". Available on cupertino_icons package 1.0.0+ only.
-  'heart_slash': CupertinoIcons.heart_slash,
-
-  /// <i class='cupertino-icons md-36'>heart_slash_circle</i> &#x2014; Cupertino icon named "heart_slash_circle". Available on cupertino_icons package 1.0.0+ only.
-  'heart_slash_circle': CupertinoIcons.heart_slash_circle,
-
-  /// <i class='cupertino-icons md-36'>heart_slash_circle_fill</i> &#x2014; Cupertino icon named "heart_slash_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'heart_slash_circle_fill': CupertinoIcons.heart_slash_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>heart_slash_fill</i> &#x2014; Cupertino icon named "heart_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'heart_slash_fill': CupertinoIcons.heart_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>helm</i> &#x2014; Cupertino icon named "helm". Available on cupertino_icons package 1.0.0+ only.
-  'helm': CupertinoIcons.helm,
-
-  /// <i class='cupertino-icons md-36'>hexagon</i> &#x2014; Cupertino icon named "hexagon". Available on cupertino_icons package 1.0.0+ only.
-  'hexagon': CupertinoIcons.hexagon,
-
-  /// <i class='cupertino-icons md-36'>hexagon_fill</i> &#x2014; Cupertino icon named "hexagon_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hexagon_fill': CupertinoIcons.hexagon_fill,
-
-  /// <i class='cupertino-icons md-36'>hifispeaker</i> &#x2014; Cupertino icon named "hifispeaker". Available on cupertino_icons package 1.0.0+ only.
-  'hifispeaker': CupertinoIcons.hifispeaker,
-
-  /// <i class='cupertino-icons md-36'>hifispeaker_fill</i> &#x2014; Cupertino icon named "hifispeaker_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hifispeaker_fill': CupertinoIcons.hifispeaker_fill,
-
-  /// <i class='cupertino-icons md-36'>hourglass</i> &#x2014; Cupertino icon named "hourglass". Available on cupertino_icons package 1.0.0+ only.
-  'hourglass': CupertinoIcons.hourglass,
-
-  /// <i class='cupertino-icons md-36'>hourglass_bottomhalf_fill</i> &#x2014; Cupertino icon named "hourglass_bottomhalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hourglass_bottomhalf_fill': CupertinoIcons.hourglass_bottomhalf_fill,
-
-  /// <i class='cupertino-icons md-36'>hourglass_tophalf_fill</i> &#x2014; Cupertino icon named "hourglass_tophalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'hourglass_tophalf_fill': CupertinoIcons.hourglass_tophalf_fill,
-
-  /// <i class='cupertino-icons md-36'>house</i> &#x2014; Cupertino icon named "house". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [home] which is available in cupertino_icons 0.1.3.
-  'house': CupertinoIcons.house,
-
-  /// <i class='cupertino-icons md-36'>house_alt</i> &#x2014; Cupertino icon named "house_alt". Available on cupertino_icons package 1.0.0+ only.
-  'house_alt': CupertinoIcons.house_alt,
-
-  /// <i class='cupertino-icons md-36'>house_alt_fill</i> &#x2014; Cupertino icon named "house_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'house_alt_fill': CupertinoIcons.house_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>house_fill</i> &#x2014; Cupertino icon named "house_fill". Available on cupertino_icons package 1.0.0+ only.
-  'house_fill': CupertinoIcons.house_fill,
-
-  /// <i class='cupertino-icons md-36'>hurricane</i> &#x2014; Cupertino icon named "hurricane". Available on cupertino_icons package 1.0.0+ only.
-  'hurricane': CupertinoIcons.hurricane,
-
-  /// <i class='cupertino-icons md-36'>increase_indent</i> &#x2014; Cupertino icon named "increase_indent". Available on cupertino_icons package 1.0.0+ only.
-  'increase_indent': CupertinoIcons.increase_indent,
-
-  /// <i class='cupertino-icons md-36'>increase_quotelevel</i> &#x2014; Cupertino icon named "increase_quotelevel". Available on cupertino_icons package 1.0.0+ only.
-  'increase_quotelevel': CupertinoIcons.increase_quotelevel,
-
-  /// <i class='cupertino-icons md-36'>infinite</i> &#x2014; Cupertino icon named "infinite". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [loop] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [loop_thick] which is available in cupertino_icons 0.1.3.
-  'infinite': CupertinoIcons.infinite,
-
-  /// <i class='cupertino-icons md-36'>info_circle</i> &#x2014; Cupertino icon named "info_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [info] which is available in cupertino_icons 0.1.3.
-  'info_circle': CupertinoIcons.info_circle,
-
-  /// <i class='cupertino-icons md-36'>info_circle_fill</i> &#x2014; Cupertino icon named "info_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'info_circle_fill': CupertinoIcons.info_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>italic</i> &#x2014; Cupertino icon named "italic". Available on cupertino_icons package 1.0.0+ only.
-  'italic': CupertinoIcons.italic,
-
-  /// <i class='cupertino-icons md-36'>keyboard</i> &#x2014; Cupertino icon named "keyboard". Available on cupertino_icons package 1.0.0+ only.
-  'keyboard': CupertinoIcons.keyboard,
-
-  /// <i class='cupertino-icons md-36'>keyboard_chevron_compact_down</i> &#x2014; Cupertino icon named "keyboard_chevron_compact_down". Available on cupertino_icons package 1.0.0+ only.
-  'keyboard_chevron_compact_down': CupertinoIcons.keyboard_chevron_compact_down,
-
-  /// <i class='cupertino-icons md-36'>largecircle_fill_circle</i> &#x2014; Cupertino icon named "largecircle_fill_circle". Available on cupertino_icons package 1.0.0+ only.
-  'largecircle_fill_circle': CupertinoIcons.largecircle_fill_circle,
-
-  /// <i class='cupertino-icons md-36'>lasso</i> &#x2014; Cupertino icon named "lasso". Available on cupertino_icons package 1.0.0+ only.
-  'lasso': CupertinoIcons.lasso,
-
-  /// <i class='cupertino-icons md-36'>layers</i> &#x2014; Cupertino icon named "layers". Available on cupertino_icons package 1.0.0+ only.
-  'layers': CupertinoIcons.layers,
-
-  /// <i class='cupertino-icons md-36'>layers_alt</i> &#x2014; Cupertino icon named "layers_alt". Available on cupertino_icons package 1.0.0+ only.
-  'layers_alt': CupertinoIcons.layers_alt,
-
-  /// <i class='cupertino-icons md-36'>layers_alt_fill</i> &#x2014; Cupertino icon named "layers_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'layers_alt_fill': CupertinoIcons.layers_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>layers_fill</i> &#x2014; Cupertino icon named "layers_fill". Available on cupertino_icons package 1.0.0+ only.
-  'layers_fill': CupertinoIcons.layers_fill,
-
-  /// <i class='cupertino-icons md-36'>leaf_arrow_circlepath</i> &#x2014; Cupertino icon named "leaf_arrow_circlepath". Available on cupertino_icons package 1.0.0+ only.
-  'leaf_arrow_circlepath': CupertinoIcons.leaf_arrow_circlepath,
-
-  /// <i class='cupertino-icons md-36'>lessthan</i> &#x2014; Cupertino icon named "lessthan". Available on cupertino_icons package 1.0.0+ only.
-  'lessthan': CupertinoIcons.lessthan,
-
-  /// <i class='cupertino-icons md-36'>lessthan_circle</i> &#x2014; Cupertino icon named "lessthan_circle". Available on cupertino_icons package 1.0.0+ only.
-  'lessthan_circle': CupertinoIcons.lessthan_circle,
-
-  /// <i class='cupertino-icons md-36'>lessthan_circle_fill</i> &#x2014; Cupertino icon named "lessthan_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lessthan_circle_fill': CupertinoIcons.lessthan_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>lessthan_square</i> &#x2014; Cupertino icon named "lessthan_square". Available on cupertino_icons package 1.0.0+ only.
-  'lessthan_square': CupertinoIcons.lessthan_square,
-
-  /// <i class='cupertino-icons md-36'>lessthan_square_fill</i> &#x2014; Cupertino icon named "lessthan_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lessthan_square_fill': CupertinoIcons.lessthan_square_fill,
-
-  /// <i class='cupertino-icons md-36'>light_max</i> &#x2014; Cupertino icon named "light_max". Available on cupertino_icons package 1.0.0+ only.
-  'light_max': CupertinoIcons.light_max,
-
-  /// <i class='cupertino-icons md-36'>light_min</i> &#x2014; Cupertino icon named "light_min". Available on cupertino_icons package 1.0.0+ only.
-  'light_min': CupertinoIcons.light_min,
-
-  /// <i class='cupertino-icons md-36'>lightbulb</i> &#x2014; Cupertino icon named "lightbulb". Available on cupertino_icons package 1.0.0+ only.
-  'lightbulb': CupertinoIcons.lightbulb,
-
-  /// <i class='cupertino-icons md-36'>lightbulb_fill</i> &#x2014; Cupertino icon named "lightbulb_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lightbulb_fill': CupertinoIcons.lightbulb_fill,
-
-  /// <i class='cupertino-icons md-36'>lightbulb_slash</i> &#x2014; Cupertino icon named "lightbulb_slash". Available on cupertino_icons package 1.0.0+ only.
-  'lightbulb_slash': CupertinoIcons.lightbulb_slash,
-
-  /// <i class='cupertino-icons md-36'>lightbulb_slash_fill</i> &#x2014; Cupertino icon named "lightbulb_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lightbulb_slash_fill': CupertinoIcons.lightbulb_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>line_horizontal_3</i> &#x2014; Cupertino icon named "line_horizontal_3". Available on cupertino_icons package 1.0.0+ only.
-  'line_horizontal_3': CupertinoIcons.line_horizontal_3,
-
-  /// <i class='cupertino-icons md-36'>line_horizontal_3_decrease</i> &#x2014; Cupertino icon named "line_horizontal_3_decrease". Available on cupertino_icons package 1.0.0+ only.
-  'line_horizontal_3_decrease': CupertinoIcons.line_horizontal_3_decrease,
-
-  /// <i class='cupertino-icons md-36'>line_horizontal_3_decrease_circle</i> &#x2014; Cupertino icon named "line_horizontal_3_decrease_circle". Available on cupertino_icons package 1.0.0+ only.
-  'line_horizontal_3_decrease_circle':
-      CupertinoIcons.line_horizontal_3_decrease_circle,
-
-  /// <i class='cupertino-icons md-36'>line_horizontal_3_decrease_circle_fill</i> &#x2014; Cupertino icon named "line_horizontal_3_decrease_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'line_horizontal_3_decrease_circle_fill':
-      CupertinoIcons.line_horizontal_3_decrease_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>link</i> &#x2014; Cupertino icon named "link". Available on cupertino_icons package 1.0.0+ only.
-  'link': CupertinoIcons.link,
-
-  /// <i class='cupertino-icons md-36'>link_circle</i> &#x2014; Cupertino icon named "link_circle". Available on cupertino_icons package 1.0.0+ only.
-  'link_circle': CupertinoIcons.link_circle,
-
-  /// <i class='cupertino-icons md-36'>link_circle_fill</i> &#x2014; Cupertino icon named "link_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'link_circle_fill': CupertinoIcons.link_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>list_bullet</i> &#x2014; Cupertino icon named "list_bullet". Available on cupertino_icons package 1.0.0+ only.
-  'list_bullet': CupertinoIcons.list_bullet,
-
-  /// <i class='cupertino-icons md-36'>list_bullet_below_rectangle</i> &#x2014; Cupertino icon named "list_bullet_below_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'list_bullet_below_rectangle': CupertinoIcons.list_bullet_below_rectangle,
-
-  /// <i class='cupertino-icons md-36'>list_bullet_indent</i> &#x2014; Cupertino icon named "list_bullet_indent". Available on cupertino_icons package 1.0.0+ only.
-  'list_bullet_indent': CupertinoIcons.list_bullet_indent,
-
-  /// <i class='cupertino-icons md-36'>list_dash</i> &#x2014; Cupertino icon named "list_dash". Available on cupertino_icons package 1.0.0+ only.
-  'list_dash': CupertinoIcons.list_dash,
-
-  /// <i class='cupertino-icons md-36'>list_number</i> &#x2014; Cupertino icon named "list_number". Available on cupertino_icons package 1.0.0+ only.
-  'list_number': CupertinoIcons.list_number,
-
-  /// <i class='cupertino-icons md-36'>list_number_rtl</i> &#x2014; Cupertino icon named "list_number_rtl". Available on cupertino_icons package 1.0.0+ only.
-  'list_number_rtl': CupertinoIcons.list_number_rtl,
-
-  /// <i class='cupertino-icons md-36'>location_circle</i> &#x2014; Cupertino icon named "location_circle". Available on cupertino_icons package 1.0.0+ only.
-  'location_circle': CupertinoIcons.location_circle,
-
-  /// <i class='cupertino-icons md-36'>location_circle_fill</i> &#x2014; Cupertino icon named "location_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'location_circle_fill': CupertinoIcons.location_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>location_fill</i> &#x2014; Cupertino icon named "location_fill". Available on cupertino_icons package 1.0.0+ only.
-  'location_fill': CupertinoIcons.location_fill,
-
-  /// <i class='cupertino-icons md-36'>location_north</i> &#x2014; Cupertino icon named "location_north". Available on cupertino_icons package 1.0.0+ only.
-  'location_north': CupertinoIcons.location_north,
-
-  /// <i class='cupertino-icons md-36'>location_north_fill</i> &#x2014; Cupertino icon named "location_north_fill". Available on cupertino_icons package 1.0.0+ only.
-  'location_north_fill': CupertinoIcons.location_north_fill,
-
-  /// <i class='cupertino-icons md-36'>location_north_line</i> &#x2014; Cupertino icon named "location_north_line". Available on cupertino_icons package 1.0.0+ only.
-  'location_north_line': CupertinoIcons.location_north_line,
-
-  /// <i class='cupertino-icons md-36'>location_north_line_fill</i> &#x2014; Cupertino icon named "location_north_line_fill". Available on cupertino_icons package 1.0.0+ only.
-  'location_north_line_fill': CupertinoIcons.location_north_line_fill,
-
-  /// <i class='cupertino-icons md-36'>location_slash</i> &#x2014; Cupertino icon named "location_slash". Available on cupertino_icons package 1.0.0+ only.
-  'location_slash': CupertinoIcons.location_slash,
-
-  /// <i class='cupertino-icons md-36'>location_slash_fill</i> &#x2014; Cupertino icon named "location_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'location_slash_fill': CupertinoIcons.location_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>lock</i> &#x2014; Cupertino icon named "lock". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [padlock] which is available in cupertino_icons 0.1.3.
-  'lock': CupertinoIcons.lock,
-
-  /// <i class='cupertino-icons md-36'>lock_circle</i> &#x2014; Cupertino icon named "lock_circle". Available on cupertino_icons package 1.0.0+ only.
-  'lock_circle': CupertinoIcons.lock_circle,
-
-  /// <i class='cupertino-icons md-36'>lock_circle_fill</i> &#x2014; Cupertino icon named "lock_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lock_circle_fill': CupertinoIcons.lock_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>lock_fill</i> &#x2014; Cupertino icon named "lock_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [padlock_solid] which is available in cupertino_icons 0.1.3.
-  'lock_fill': CupertinoIcons.lock_fill,
-
-  /// <i class='cupertino-icons md-36'>lock_open</i> &#x2014; Cupertino icon named "lock_open". Available on cupertino_icons package 1.0.0+ only.
-  'lock_open': CupertinoIcons.lock_open,
-
-  /// <i class='cupertino-icons md-36'>lock_open_fill</i> &#x2014; Cupertino icon named "lock_open_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lock_open_fill': CupertinoIcons.lock_open_fill,
-
-  /// <i class='cupertino-icons md-36'>lock_rotation</i> &#x2014; Cupertino icon named "lock_rotation". Available on cupertino_icons package 1.0.0+ only.
-  'lock_rotation': CupertinoIcons.lock_rotation,
-
-  /// <i class='cupertino-icons md-36'>lock_rotation_open</i> &#x2014; Cupertino icon named "lock_rotation_open". Available on cupertino_icons package 1.0.0+ only.
-  'lock_rotation_open': CupertinoIcons.lock_rotation_open,
-
-  /// <i class='cupertino-icons md-36'>lock_shield</i> &#x2014; Cupertino icon named "lock_shield". Available on cupertino_icons package 1.0.0+ only.
-  'lock_shield': CupertinoIcons.lock_shield,
-
-  /// <i class='cupertino-icons md-36'>lock_shield_fill</i> &#x2014; Cupertino icon named "lock_shield_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lock_shield_fill': CupertinoIcons.lock_shield_fill,
-
-  /// <i class='cupertino-icons md-36'>lock_slash</i> &#x2014; Cupertino icon named "lock_slash". Available on cupertino_icons package 1.0.0+ only.
-  'lock_slash': CupertinoIcons.lock_slash,
-
-  /// <i class='cupertino-icons md-36'>lock_slash_fill</i> &#x2014; Cupertino icon named "lock_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'lock_slash_fill': CupertinoIcons.lock_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>macwindow</i> &#x2014; Cupertino icon named "macwindow". Available on cupertino_icons package 1.0.0+ only.
-  'macwindow': CupertinoIcons.macwindow,
-
-  /// <i class='cupertino-icons md-36'>map</i> &#x2014; Cupertino icon named "map". Available on cupertino_icons package 1.0.0+ only.
-  'map': CupertinoIcons.map,
-
-  /// <i class='cupertino-icons md-36'>map_fill</i> &#x2014; Cupertino icon named "map_fill". Available on cupertino_icons package 1.0.0+ only.
-  'map_fill': CupertinoIcons.map_fill,
-
-  /// <i class='cupertino-icons md-36'>map_pin</i> &#x2014; Cupertino icon named "map_pin". Available on cupertino_icons package 1.0.0+ only.
-  'map_pin': CupertinoIcons.map_pin,
-
-  /// <i class='cupertino-icons md-36'>map_pin_ellipse</i> &#x2014; Cupertino icon named "map_pin_ellipse". Available on cupertino_icons package 1.0.0+ only.
-  'map_pin_ellipse': CupertinoIcons.map_pin_ellipse,
-
-  /// <i class='cupertino-icons md-36'>map_pin_slash</i> &#x2014; Cupertino icon named "map_pin_slash". Available on cupertino_icons package 1.0.0+ only.
-  'map_pin_slash': CupertinoIcons.map_pin_slash,
-
-  /// <i class='cupertino-icons md-36'>memories</i> &#x2014; Cupertino icon named "memories". Available on cupertino_icons package 1.0.0+ only.
-  'memories': CupertinoIcons.memories,
-
-  /// <i class='cupertino-icons md-36'>memories_badge_minus</i> &#x2014; Cupertino icon named "memories_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'memories_badge_minus': CupertinoIcons.memories_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>memories_badge_plus</i> &#x2014; Cupertino icon named "memories_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'memories_badge_plus': CupertinoIcons.memories_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>metronome</i> &#x2014; Cupertino icon named "metronome". Available on cupertino_icons package 1.0.0+ only.
-  'metronome': CupertinoIcons.metronome,
-
-  /// <i class='cupertino-icons md-36'>mic_circle</i> &#x2014; Cupertino icon named "mic_circle". Available on cupertino_icons package 1.0.0+ only.
-  'mic_circle': CupertinoIcons.mic_circle,
-
-  /// <i class='cupertino-icons md-36'>mic_circle_fill</i> &#x2014; Cupertino icon named "mic_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'mic_circle_fill': CupertinoIcons.mic_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>mic_fill</i> &#x2014; Cupertino icon named "mic_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [mic_solid] which is available in cupertino_icons 0.1.3.
-  'mic_fill': CupertinoIcons.mic_fill,
-
-  /// <i class='cupertino-icons md-36'>mic_slash</i> &#x2014; Cupertino icon named "mic_slash". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [mic_off] which is available in cupertino_icons 0.1.3.
-  'mic_slash': CupertinoIcons.mic_slash,
-
-  /// <i class='cupertino-icons md-36'>mic_slash_fill</i> &#x2014; Cupertino icon named "mic_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'mic_slash_fill': CupertinoIcons.mic_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>minus</i> &#x2014; Cupertino icon named "minus". Available on cupertino_icons package 1.0.0+ only.
-  'minus': CupertinoIcons.minus,
-
-  /// <i class='cupertino-icons md-36'>minus_circle</i> &#x2014; Cupertino icon named "minus_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [minus_circled] which is available in cupertino_icons 0.1.3.
-  'minus_circle': CupertinoIcons.minus_circle,
-
-  /// <i class='cupertino-icons md-36'>minus_circle_fill</i> &#x2014; Cupertino icon named "minus_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'minus_circle_fill': CupertinoIcons.minus_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>minus_rectangle</i> &#x2014; Cupertino icon named "minus_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'minus_rectangle': CupertinoIcons.minus_rectangle,
-
-  /// <i class='cupertino-icons md-36'>minus_rectangle_fill</i> &#x2014; Cupertino icon named "minus_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'minus_rectangle_fill': CupertinoIcons.minus_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>minus_slash_plus</i> &#x2014; Cupertino icon named "minus_slash_plus". Available on cupertino_icons package 1.0.0+ only.
-  'minus_slash_plus': CupertinoIcons.minus_slash_plus,
-
-  /// <i class='cupertino-icons md-36'>minus_square</i> &#x2014; Cupertino icon named "minus_square". Available on cupertino_icons package 1.0.0+ only.
-  'minus_square': CupertinoIcons.minus_square,
-
-  /// <i class='cupertino-icons md-36'>minus_square_fill</i> &#x2014; Cupertino icon named "minus_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'minus_square_fill': CupertinoIcons.minus_square_fill,
-
-  /// <i class='cupertino-icons md-36'>money_dollar</i> &#x2014; Cupertino icon named "money_dollar". Available on cupertino_icons package 1.0.0+ only.
-  'money_dollar': CupertinoIcons.money_dollar,
-
-  /// <i class='cupertino-icons md-36'>money_dollar_circle</i> &#x2014; Cupertino icon named "money_dollar_circle". Available on cupertino_icons package 1.0.0+ only.
-  'money_dollar_circle': CupertinoIcons.money_dollar_circle,
-
-  /// <i class='cupertino-icons md-36'>money_dollar_circle_fill</i> &#x2014; Cupertino icon named "money_dollar_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'money_dollar_circle_fill': CupertinoIcons.money_dollar_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>money_euro</i> &#x2014; Cupertino icon named "money_euro". Available on cupertino_icons package 1.0.0+ only.
-  'money_euro': CupertinoIcons.money_euro,
-
-  /// <i class='cupertino-icons md-36'>money_euro_circle</i> &#x2014; Cupertino icon named "money_euro_circle". Available on cupertino_icons package 1.0.0+ only.
-  'money_euro_circle': CupertinoIcons.money_euro_circle,
-
-  /// <i class='cupertino-icons md-36'>money_euro_circle_fill</i> &#x2014; Cupertino icon named "money_euro_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'money_euro_circle_fill': CupertinoIcons.money_euro_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>money_pound</i> &#x2014; Cupertino icon named "money_pound". Available on cupertino_icons package 1.0.0+ only.
-  'money_pound': CupertinoIcons.money_pound,
-
-  /// <i class='cupertino-icons md-36'>money_pound_circle</i> &#x2014; Cupertino icon named "money_pound_circle". Available on cupertino_icons package 1.0.0+ only.
-  'money_pound_circle': CupertinoIcons.money_pound_circle,
-
-  /// <i class='cupertino-icons md-36'>money_pound_circle_fill</i> &#x2014; Cupertino icon named "money_pound_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'money_pound_circle_fill': CupertinoIcons.money_pound_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>money_rubl</i> &#x2014; Cupertino icon named "money_rubl". Available on cupertino_icons package 1.0.0+ only.
-  'money_rubl': CupertinoIcons.money_rubl,
-
-  /// <i class='cupertino-icons md-36'>money_rubl_circle</i> &#x2014; Cupertino icon named "money_rubl_circle". Available on cupertino_icons package 1.0.0+ only.
-  'money_rubl_circle': CupertinoIcons.money_rubl_circle,
-
-  /// <i class='cupertino-icons md-36'>money_rubl_circle_fill</i> &#x2014; Cupertino icon named "money_rubl_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'money_rubl_circle_fill': CupertinoIcons.money_rubl_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>money_yen</i> &#x2014; Cupertino icon named "money_yen". Available on cupertino_icons package 1.0.0+ only.
-  'money_yen': CupertinoIcons.money_yen,
-
-  /// <i class='cupertino-icons md-36'>money_yen_circle</i> &#x2014; Cupertino icon named "money_yen_circle". Available on cupertino_icons package 1.0.0+ only.
-  'money_yen_circle': CupertinoIcons.money_yen_circle,
-
-  /// <i class='cupertino-icons md-36'>money_yen_circle_fill</i> &#x2014; Cupertino icon named "money_yen_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'money_yen_circle_fill': CupertinoIcons.money_yen_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>moon</i> &#x2014; Cupertino icon named "moon". Available on cupertino_icons package 1.0.0+ only.
-  'moon': CupertinoIcons.moon,
-
-  /// <i class='cupertino-icons md-36'>moon_circle</i> &#x2014; Cupertino icon named "moon_circle". Available on cupertino_icons package 1.0.0+ only.
-  'moon_circle': CupertinoIcons.moon_circle,
-
-  /// <i class='cupertino-icons md-36'>moon_circle_fill</i> &#x2014; Cupertino icon named "moon_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'moon_circle_fill': CupertinoIcons.moon_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>moon_fill</i> &#x2014; Cupertino icon named "moon_fill". Available on cupertino_icons package 1.0.0+ only.
-  'moon_fill': CupertinoIcons.moon_fill,
-
-  /// <i class='cupertino-icons md-36'>moon_stars</i> &#x2014; Cupertino icon named "moon_stars". Available on cupertino_icons package 1.0.0+ only.
-  'moon_stars': CupertinoIcons.moon_stars,
-
-  /// <i class='cupertino-icons md-36'>moon_stars_fill</i> &#x2014; Cupertino icon named "moon_stars_fill". Available on cupertino_icons package 1.0.0+ only.
-  'moon_stars_fill': CupertinoIcons.moon_stars_fill,
-
-  /// <i class='cupertino-icons md-36'>moon_zzz</i> &#x2014; Cupertino icon named "moon_zzz". Available on cupertino_icons package 1.0.0+ only.
-  'moon_zzz': CupertinoIcons.moon_zzz,
-
-  /// <i class='cupertino-icons md-36'>moon_zzz_fill</i> &#x2014; Cupertino icon named "moon_zzz_fill". Available on cupertino_icons package 1.0.0+ only.
-  'moon_zzz_fill': CupertinoIcons.moon_zzz_fill,
-
-  /// <i class='cupertino-icons md-36'>move</i> &#x2014; Cupertino icon named "move". Available on cupertino_icons package 1.0.0+ only.
-  'move': CupertinoIcons.move,
-
-  /// <i class='cupertino-icons md-36'>multiply</i> &#x2014; Cupertino icon named "multiply". Available on cupertino_icons package 1.0.0+ only.
-  'multiply': CupertinoIcons.multiply,
-
-  /// <i class='cupertino-icons md-36'>multiply_circle</i> &#x2014; Cupertino icon named "multiply_circle". Available on cupertino_icons package 1.0.0+ only.
-  'multiply_circle': CupertinoIcons.multiply_circle,
-
-  /// <i class='cupertino-icons md-36'>multiply_circle_fill</i> &#x2014; Cupertino icon named "multiply_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'multiply_circle_fill': CupertinoIcons.multiply_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>multiply_square</i> &#x2014; Cupertino icon named "multiply_square". Available on cupertino_icons package 1.0.0+ only.
-  'multiply_square': CupertinoIcons.multiply_square,
-
-  /// <i class='cupertino-icons md-36'>multiply_square_fill</i> &#x2014; Cupertino icon named "multiply_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'multiply_square_fill': CupertinoIcons.multiply_square_fill,
-
-  /// <i class='cupertino-icons md-36'>music_albums</i> &#x2014; Cupertino icon named "music_albums". Available on cupertino_icons package 1.0.0+ only.
-  'music_albums': CupertinoIcons.music_albums,
-
-  /// <i class='cupertino-icons md-36'>music_albums_fill</i> &#x2014; Cupertino icon named "music_albums_fill". Available on cupertino_icons package 1.0.0+ only.
-  'music_albums_fill': CupertinoIcons.music_albums_fill,
-
-  /// <i class='cupertino-icons md-36'>music_house</i> &#x2014; Cupertino icon named "music_house". Available on cupertino_icons package 1.0.0+ only.
-  'music_house': CupertinoIcons.music_house,
-
-  /// <i class='cupertino-icons md-36'>music_house_fill</i> &#x2014; Cupertino icon named "music_house_fill". Available on cupertino_icons package 1.0.0+ only.
-  'music_house_fill': CupertinoIcons.music_house_fill,
-
-  /// <i class='cupertino-icons md-36'>music_mic</i> &#x2014; Cupertino icon named "music_mic". Available on cupertino_icons package 1.0.0+ only.
-  'music_mic': CupertinoIcons.music_mic,
-
-  /// <i class='cupertino-icons md-36'>music_note_2</i> &#x2014; Cupertino icon named "music_note_2". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [double_music_note] which is available in cupertino_icons 0.1.3.
-  'music_note_2': CupertinoIcons.music_note_2,
-
-  /// <i class='cupertino-icons md-36'>music_note_list</i> &#x2014; Cupertino icon named "music_note_list". Available on cupertino_icons package 1.0.0+ only.
-  'music_note_list': CupertinoIcons.music_note_list,
-
-  /// <i class='cupertino-icons md-36'>nosign</i> &#x2014; Cupertino icon named "nosign". Available on cupertino_icons package 1.0.0+ only.
-  'nosign': CupertinoIcons.nosign,
-
-  /// <i class='cupertino-icons md-36'>number</i> &#x2014; Cupertino icon named "number". Available on cupertino_icons package 1.0.0+ only.
-  'number': CupertinoIcons.number,
-
-  /// <i class='cupertino-icons md-36'>number_circle</i> &#x2014; Cupertino icon named "number_circle". Available on cupertino_icons package 1.0.0+ only.
-  'number_circle': CupertinoIcons.number_circle,
-
-  /// <i class='cupertino-icons md-36'>number_circle_fill</i> &#x2014; Cupertino icon named "number_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'number_circle_fill': CupertinoIcons.number_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>number_square</i> &#x2014; Cupertino icon named "number_square". Available on cupertino_icons package 1.0.0+ only.
-  'number_square': CupertinoIcons.number_square,
-
-  /// <i class='cupertino-icons md-36'>number_square_fill</i> &#x2014; Cupertino icon named "number_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'number_square_fill': CupertinoIcons.number_square_fill,
-
-  /// <i class='cupertino-icons md-36'>option</i> &#x2014; Cupertino icon named "option". Available on cupertino_icons package 1.0.0+ only.
-  'option': CupertinoIcons.option,
-
-  /// <i class='cupertino-icons md-36'>paintbrush</i> &#x2014; Cupertino icon named "paintbrush". Available on cupertino_icons package 1.0.0+ only.
-  'paintbrush': CupertinoIcons.paintbrush,
-
-  /// <i class='cupertino-icons md-36'>paintbrush_fill</i> &#x2014; Cupertino icon named "paintbrush_fill". Available on cupertino_icons package 1.0.0+ only.
-  'paintbrush_fill': CupertinoIcons.paintbrush_fill,
-
-  /// <i class='cupertino-icons md-36'>pano</i> &#x2014; Cupertino icon named "pano". Available on cupertino_icons package 1.0.0+ only.
-  'pano': CupertinoIcons.pano,
-
-  /// <i class='cupertino-icons md-36'>pano_fill</i> &#x2014; Cupertino icon named "pano_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pano_fill': CupertinoIcons.pano_fill,
-
-  /// <i class='cupertino-icons md-36'>paperclip</i> &#x2014; Cupertino icon named "paperclip". Available on cupertino_icons package 1.0.0+ only.
-  'paperclip': CupertinoIcons.paperclip,
-
-  /// <i class='cupertino-icons md-36'>paperplane</i> &#x2014; Cupertino icon named "paperplane". Available on cupertino_icons package 1.0.0+ only.
-  'paperplane': CupertinoIcons.paperplane,
-
-  /// <i class='cupertino-icons md-36'>paperplane_fill</i> &#x2014; Cupertino icon named "paperplane_fill". Available on cupertino_icons package 1.0.0+ only.
-  'paperplane_fill': CupertinoIcons.paperplane_fill,
-
-  /// <i class='cupertino-icons md-36'>paragraph</i> &#x2014; Cupertino icon named "paragraph". Available on cupertino_icons package 1.0.0+ only.
-  'paragraph': CupertinoIcons.paragraph,
-
-  /// <i class='cupertino-icons md-36'>pause_circle</i> &#x2014; Cupertino icon named "pause_circle". Available on cupertino_icons package 1.0.0+ only.
-  'pause_circle': CupertinoIcons.pause_circle,
-
-  /// <i class='cupertino-icons md-36'>pause_circle_fill</i> &#x2014; Cupertino icon named "pause_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pause_circle_fill': CupertinoIcons.pause_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>pause_fill</i> &#x2014; Cupertino icon named "pause_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [pause_solid] which is available in cupertino_icons 0.1.3.
-  'pause_fill': CupertinoIcons.pause_fill,
-
-  /// <i class='cupertino-icons md-36'>pause_rectangle</i> &#x2014; Cupertino icon named "pause_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'pause_rectangle': CupertinoIcons.pause_rectangle,
-
-  /// <i class='cupertino-icons md-36'>pause_rectangle_fill</i> &#x2014; Cupertino icon named "pause_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pause_rectangle_fill': CupertinoIcons.pause_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>pencil_circle</i> &#x2014; Cupertino icon named "pencil_circle". Available on cupertino_icons package 1.0.0+ only.
-  'pencil_circle': CupertinoIcons.pencil_circle,
-
-  /// <i class='cupertino-icons md-36'>pencil_circle_fill</i> &#x2014; Cupertino icon named "pencil_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pencil_circle_fill': CupertinoIcons.pencil_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>pencil_ellipsis_rectangle</i> &#x2014; Cupertino icon named "pencil_ellipsis_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'pencil_ellipsis_rectangle': CupertinoIcons.pencil_ellipsis_rectangle,
-
-  /// <i class='cupertino-icons md-36'>pencil_outline</i> &#x2014; Cupertino icon named "pencil_outline". Available on cupertino_icons package 1.0.0+ only.
-  'pencil_outline': CupertinoIcons.pencil_outline,
-
-  /// <i class='cupertino-icons md-36'>pencil_slash</i> &#x2014; Cupertino icon named "pencil_slash". Available on cupertino_icons package 1.0.0+ only.
-  'pencil_slash': CupertinoIcons.pencil_slash,
-
-  /// <i class='cupertino-icons md-36'>percent</i> &#x2014; Cupertino icon named "percent". Available on cupertino_icons package 1.0.0+ only.
-  'percent': CupertinoIcons.percent,
-
-  /// <i class='cupertino-icons md-36'>person_2</i> &#x2014; Cupertino icon named "person_2". Available on cupertino_icons package 1.0.0+ only.
-  'person_2': CupertinoIcons.person_2,
-
-  /// <i class='cupertino-icons md-36'>person_2_alt</i> &#x2014; Cupertino icon named "person_2_alt". Available on cupertino_icons package 1.0.0+ only.
-  'person_2_alt': CupertinoIcons.person_2_alt,
-
-  /// <i class='cupertino-icons md-36'>person_2_fill</i> &#x2014; Cupertino icon named "person_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_2_fill': CupertinoIcons.person_2_fill,
-
-  /// <i class='cupertino-icons md-36'>person_2_square_stack</i> &#x2014; Cupertino icon named "person_2_square_stack". Available on cupertino_icons package 1.0.0+ only.
-  'person_2_square_stack': CupertinoIcons.person_2_square_stack,
-
-  /// <i class='cupertino-icons md-36'>person_2_square_stack_fill</i> &#x2014; Cupertino icon named "person_2_square_stack_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_2_square_stack_fill': CupertinoIcons.person_2_square_stack_fill,
-
-  /// <i class='cupertino-icons md-36'>person_3</i> &#x2014; Cupertino icon named "person_3". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [group] which is available in cupertino_icons 0.1.3.
-  'person_3': CupertinoIcons.person_3,
-
-  /// <i class='cupertino-icons md-36'>person_3_fill</i> &#x2014; Cupertino icon named "person_3_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [group_solid] which is available in cupertino_icons 0.1.3.
-  'person_3_fill': CupertinoIcons.person_3_fill,
-
-  /// <i class='cupertino-icons md-36'>person_alt</i> &#x2014; Cupertino icon named "person_alt". Available on cupertino_icons package 1.0.0+ only.
-  'person_alt': CupertinoIcons.person_alt,
-
-  /// <i class='cupertino-icons md-36'>person_alt_circle</i> &#x2014; Cupertino icon named "person_alt_circle". Available on cupertino_icons package 1.0.0+ only.
-  'person_alt_circle': CupertinoIcons.person_alt_circle,
-
-  /// <i class='cupertino-icons md-36'>person_alt_circle_fill</i> &#x2014; Cupertino icon named "person_alt_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_alt_circle_fill': CupertinoIcons.person_alt_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>person_badge_minus</i> &#x2014; Cupertino icon named "person_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'person_badge_minus': CupertinoIcons.person_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>person_badge_minus_fill</i> &#x2014; Cupertino icon named "person_badge_minus_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_badge_minus_fill': CupertinoIcons.person_badge_minus_fill,
-
-  /// <i class='cupertino-icons md-36'>person_badge_plus</i> &#x2014; Cupertino icon named "person_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [person_add] which is available in cupertino_icons 0.1.3.
-  'person_badge_plus': CupertinoIcons.person_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>person_badge_plus_fill</i> &#x2014; Cupertino icon named "person_badge_plus_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [person_add_solid] which is available in cupertino_icons 0.1.3.
-  'person_badge_plus_fill': CupertinoIcons.person_badge_plus_fill,
-
-  /// <i class='cupertino-icons md-36'>person_circle</i> &#x2014; Cupertino icon named "person_circle". Available on cupertino_icons package 1.0.0+ only.
-  'person_circle': CupertinoIcons.person_circle,
-
-  /// <i class='cupertino-icons md-36'>person_circle_fill</i> &#x2014; Cupertino icon named "person_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_circle_fill': CupertinoIcons.person_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle</i> &#x2014; Cupertino icon named "person_crop_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [profile_circled] which is available in cupertino_icons 0.1.3.
-  'person_crop_circle': CupertinoIcons.person_crop_circle,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_badge_checkmark</i> &#x2014; Cupertino icon named "person_crop_circle_badge_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_badge_checkmark':
-      CupertinoIcons.person_crop_circle_badge_checkmark,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_badge_exclam</i> &#x2014; Cupertino icon named "person_crop_circle_badge_exclam". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_badge_exclam':
-      CupertinoIcons.person_crop_circle_badge_exclam,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_badge_minus</i> &#x2014; Cupertino icon named "person_crop_circle_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_badge_minus':
-      CupertinoIcons.person_crop_circle_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_badge_plus</i> &#x2014; Cupertino icon named "person_crop_circle_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_badge_plus': CupertinoIcons.person_crop_circle_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_badge_xmark</i> &#x2014; Cupertino icon named "person_crop_circle_badge_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_badge_xmark':
-      CupertinoIcons.person_crop_circle_badge_xmark,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill</i> &#x2014; Cupertino icon named "person_crop_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill': CupertinoIcons.person_crop_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill_badge_checkmark</i> &#x2014; Cupertino icon named "person_crop_circle_fill_badge_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill_badge_checkmark':
-      CupertinoIcons.person_crop_circle_fill_badge_checkmark,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill_badge_exclam</i> &#x2014; Cupertino icon named "person_crop_circle_fill_badge_exclam". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill_badge_exclam':
-      CupertinoIcons.person_crop_circle_fill_badge_exclam,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill_badge_minus</i> &#x2014; Cupertino icon named "person_crop_circle_fill_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill_badge_minus':
-      CupertinoIcons.person_crop_circle_fill_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill_badge_plus</i> &#x2014; Cupertino icon named "person_crop_circle_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill_badge_plus':
-      CupertinoIcons.person_crop_circle_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>person_crop_circle_fill_badge_xmark</i> &#x2014; Cupertino icon named "person_crop_circle_fill_badge_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_circle_fill_badge_xmark':
-      CupertinoIcons.person_crop_circle_fill_badge_xmark,
-
-  /// <i class='cupertino-icons md-36'>person_crop_rectangle</i> &#x2014; Cupertino icon named "person_crop_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_rectangle': CupertinoIcons.person_crop_rectangle,
-
-  /// <i class='cupertino-icons md-36'>person_crop_rectangle_fill</i> &#x2014; Cupertino icon named "person_crop_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_rectangle_fill': CupertinoIcons.person_crop_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>person_crop_square</i> &#x2014; Cupertino icon named "person_crop_square". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_square': CupertinoIcons.person_crop_square,
-
-  /// <i class='cupertino-icons md-36'>person_crop_square_fill</i> &#x2014; Cupertino icon named "person_crop_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'person_crop_square_fill': CupertinoIcons.person_crop_square_fill,
-
-  /// <i class='cupertino-icons md-36'>person_fill</i> &#x2014; Cupertino icon named "person_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [person_solid] which is available in cupertino_icons 0.1.3.
-  'person_fill': CupertinoIcons.person_fill,
-
-  /// <i class='cupertino-icons md-36'>personalhotspot</i> &#x2014; Cupertino icon named "personalhotspot". Available on cupertino_icons package 1.0.0+ only.
-  'personalhotspot': CupertinoIcons.personalhotspot,
-
-  /// <i class='cupertino-icons md-36'>perspective</i> &#x2014; Cupertino icon named "perspective". Available on cupertino_icons package 1.0.0+ only.
-  'perspective': CupertinoIcons.perspective,
-
-  /// <i class='cupertino-icons md-36'>phone_arrow_down_left</i> &#x2014; Cupertino icon named "phone_arrow_down_left". Available on cupertino_icons package 1.0.0+ only.
-  'phone_arrow_down_left': CupertinoIcons.phone_arrow_down_left,
-
-  /// <i class='cupertino-icons md-36'>phone_arrow_right</i> &#x2014; Cupertino icon named "phone_arrow_right". Available on cupertino_icons package 1.0.0+ only.
-  'phone_arrow_right': CupertinoIcons.phone_arrow_right,
-
-  /// <i class='cupertino-icons md-36'>phone_arrow_up_right</i> &#x2014; Cupertino icon named "phone_arrow_up_right". Available on cupertino_icons package 1.0.0+ only.
-  'phone_arrow_up_right': CupertinoIcons.phone_arrow_up_right,
-
-  /// <i class='cupertino-icons md-36'>phone_badge_plus</i> &#x2014; Cupertino icon named "phone_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'phone_badge_plus': CupertinoIcons.phone_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>phone_circle</i> &#x2014; Cupertino icon named "phone_circle". Available on cupertino_icons package 1.0.0+ only.
-  'phone_circle': CupertinoIcons.phone_circle,
-
-  /// <i class='cupertino-icons md-36'>phone_circle_fill</i> &#x2014; Cupertino icon named "phone_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'phone_circle_fill': CupertinoIcons.phone_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>phone_down</i> &#x2014; Cupertino icon named "phone_down". Available on cupertino_icons package 1.0.0+ only.
-  'phone_down': CupertinoIcons.phone_down,
-
-  /// <i class='cupertino-icons md-36'>phone_down_circle</i> &#x2014; Cupertino icon named "phone_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'phone_down_circle': CupertinoIcons.phone_down_circle,
-
-  /// <i class='cupertino-icons md-36'>phone_down_circle_fill</i> &#x2014; Cupertino icon named "phone_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'phone_down_circle_fill': CupertinoIcons.phone_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>phone_down_fill</i> &#x2014; Cupertino icon named "phone_down_fill". Available on cupertino_icons package 1.0.0+ only.
-  'phone_down_fill': CupertinoIcons.phone_down_fill,
-
-  /// <i class='cupertino-icons md-36'>phone_fill</i> &#x2014; Cupertino icon named "phone_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [phone_solid] which is available in cupertino_icons 0.1.3.
-  'phone_fill': CupertinoIcons.phone_fill,
-
-  /// <i class='cupertino-icons md-36'>phone_fill_arrow_down_left</i> &#x2014; Cupertino icon named "phone_fill_arrow_down_left". Available on cupertino_icons package 1.0.0+ only.
-  'phone_fill_arrow_down_left': CupertinoIcons.phone_fill_arrow_down_left,
-
-  /// <i class='cupertino-icons md-36'>phone_fill_arrow_right</i> &#x2014; Cupertino icon named "phone_fill_arrow_right". Available on cupertino_icons package 1.0.0+ only.
-  'phone_fill_arrow_right': CupertinoIcons.phone_fill_arrow_right,
-
-  /// <i class='cupertino-icons md-36'>phone_fill_arrow_up_right</i> &#x2014; Cupertino icon named "phone_fill_arrow_up_right". Available on cupertino_icons package 1.0.0+ only.
-  'phone_fill_arrow_up_right': CupertinoIcons.phone_fill_arrow_up_right,
-
-  /// <i class='cupertino-icons md-36'>phone_fill_badge_plus</i> &#x2014; Cupertino icon named "phone_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'phone_fill_badge_plus': CupertinoIcons.phone_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>photo</i> &#x2014; Cupertino icon named "photo". Available on cupertino_icons package 1.0.0+ only.
-  'photo': CupertinoIcons.photo,
-
-  /// <i class='cupertino-icons md-36'>photo_fill</i> &#x2014; Cupertino icon named "photo_fill". Available on cupertino_icons package 1.0.0+ only.
-  'photo_fill': CupertinoIcons.photo_fill,
-
-  /// <i class='cupertino-icons md-36'>photo_fill_on_rectangle_fill</i> &#x2014; Cupertino icon named "photo_fill_on_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'photo_fill_on_rectangle_fill': CupertinoIcons.photo_fill_on_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>photo_on_rectangle</i> &#x2014; Cupertino icon named "photo_on_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'photo_on_rectangle': CupertinoIcons.photo_on_rectangle,
-
-  /// <i class='cupertino-icons md-36'>piano</i> &#x2014; Cupertino icon named "piano". Available on cupertino_icons package 1.0.0+ only.
-  'piano': CupertinoIcons.piano,
-
-  /// <i class='cupertino-icons md-36'>pin</i> &#x2014; Cupertino icon named "pin". Available on cupertino_icons package 1.0.0+ only.
-  'pin': CupertinoIcons.pin,
-
-  /// <i class='cupertino-icons md-36'>pin_fill</i> &#x2014; Cupertino icon named "pin_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pin_fill': CupertinoIcons.pin_fill,
-
-  /// <i class='cupertino-icons md-36'>pin_slash</i> &#x2014; Cupertino icon named "pin_slash". Available on cupertino_icons package 1.0.0+ only.
-  'pin_slash': CupertinoIcons.pin_slash,
-
-  /// <i class='cupertino-icons md-36'>pin_slash_fill</i> &#x2014; Cupertino icon named "pin_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'pin_slash_fill': CupertinoIcons.pin_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>placemark</i> &#x2014; Cupertino icon named "placemark". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [location] which is available in cupertino_icons 0.1.3.
-  'placemark': CupertinoIcons.placemark,
-
-  /// <i class='cupertino-icons md-36'>placemark_fill</i> &#x2014; Cupertino icon named "placemark_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [location_solid] which is available in cupertino_icons 0.1.3.
-  'placemark_fill': CupertinoIcons.placemark_fill,
-
-  /// <i class='cupertino-icons md-36'>play</i> &#x2014; Cupertino icon named "play". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [play_arrow] which is available in cupertino_icons 0.1.3.
-  'play': CupertinoIcons.play,
-
-  /// <i class='cupertino-icons md-36'>play_circle</i> &#x2014; Cupertino icon named "play_circle". Available on cupertino_icons package 1.0.0+ only.
-  'play_circle': CupertinoIcons.play_circle,
-
-  /// <i class='cupertino-icons md-36'>play_circle_fill</i> &#x2014; Cupertino icon named "play_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'play_circle_fill': CupertinoIcons.play_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>play_fill</i> &#x2014; Cupertino icon named "play_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [play_arrow_solid] which is available in cupertino_icons 0.1.3.
-  'play_fill': CupertinoIcons.play_fill,
-
-  /// <i class='cupertino-icons md-36'>play_rectangle</i> &#x2014; Cupertino icon named "play_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'play_rectangle': CupertinoIcons.play_rectangle,
-
-  /// <i class='cupertino-icons md-36'>play_rectangle_fill</i> &#x2014; Cupertino icon named "play_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'play_rectangle_fill': CupertinoIcons.play_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>playpause</i> &#x2014; Cupertino icon named "playpause". Available on cupertino_icons package 1.0.0+ only.
-  'playpause': CupertinoIcons.playpause,
-
-  /// <i class='cupertino-icons md-36'>playpause_fill</i> &#x2014; Cupertino icon named "playpause_fill". Available on cupertino_icons package 1.0.0+ only.
-  'playpause_fill': CupertinoIcons.playpause_fill,
-
-  /// <i class='cupertino-icons md-36'>plus</i> &#x2014; Cupertino icon named "plus". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [add] which is available in cupertino_icons 0.1.3.
-  'plus': CupertinoIcons.plus,
-
-  /// <i class='cupertino-icons md-36'>plus_app</i> &#x2014; Cupertino icon named "plus_app". Available on cupertino_icons package 1.0.0+ only.
-  'plus_app': CupertinoIcons.plus_app,
-
-  /// <i class='cupertino-icons md-36'>plus_app_fill</i> &#x2014; Cupertino icon named "plus_app_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_app_fill': CupertinoIcons.plus_app_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_bubble</i> &#x2014; Cupertino icon named "plus_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'plus_bubble': CupertinoIcons.plus_bubble,
-
-  /// <i class='cupertino-icons md-36'>plus_bubble_fill</i> &#x2014; Cupertino icon named "plus_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_bubble_fill': CupertinoIcons.plus_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_circle</i> &#x2014; Cupertino icon named "plus_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [plus_circled] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [add_circled] which is available in cupertino_icons 0.1.3.
-  'plus_circle': CupertinoIcons.plus_circle,
-
-  /// <i class='cupertino-icons md-36'>plus_circle_fill</i> &#x2014; Cupertino icon named "plus_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [add_circled_solid] which is available in cupertino_icons 0.1.3.
-  'plus_circle_fill': CupertinoIcons.plus_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_rectangle</i> &#x2014; Cupertino icon named "plus_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'plus_rectangle': CupertinoIcons.plus_rectangle,
-
-  /// <i class='cupertino-icons md-36'>plus_rectangle_fill</i> &#x2014; Cupertino icon named "plus_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_rectangle_fill': CupertinoIcons.plus_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_rectangle_fill_on_rectangle_fill</i> &#x2014; Cupertino icon named "plus_rectangle_fill_on_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_rectangle_fill_on_rectangle_fill':
-      CupertinoIcons.plus_rectangle_fill_on_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_rectangle_on_rectangle</i> &#x2014; Cupertino icon named "plus_rectangle_on_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'plus_rectangle_on_rectangle': CupertinoIcons.plus_rectangle_on_rectangle,
-
-  /// <i class='cupertino-icons md-36'>plus_slash_minus</i> &#x2014; Cupertino icon named "plus_slash_minus". Available on cupertino_icons package 1.0.0+ only.
-  'plus_slash_minus': CupertinoIcons.plus_slash_minus,
-
-  /// <i class='cupertino-icons md-36'>plus_square</i> &#x2014; Cupertino icon named "plus_square". Available on cupertino_icons package 1.0.0+ only.
-  'plus_square': CupertinoIcons.plus_square,
-
-  /// <i class='cupertino-icons md-36'>plus_square_fill</i> &#x2014; Cupertino icon named "plus_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_square_fill': CupertinoIcons.plus_square_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_square_fill_on_square_fill</i> &#x2014; Cupertino icon named "plus_square_fill_on_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plus_square_fill_on_square_fill':
-      CupertinoIcons.plus_square_fill_on_square_fill,
-
-  /// <i class='cupertino-icons md-36'>plus_square_on_square</i> &#x2014; Cupertino icon named "plus_square_on_square". Available on cupertino_icons package 1.0.0+ only.
-  'plus_square_on_square': CupertinoIcons.plus_square_on_square,
-
-  /// <i class='cupertino-icons md-36'>plusminus</i> &#x2014; Cupertino icon named "plusminus". Available on cupertino_icons package 1.0.0+ only.
-  'plusminus': CupertinoIcons.plusminus,
-
-  /// <i class='cupertino-icons md-36'>plusminus_circle</i> &#x2014; Cupertino icon named "plusminus_circle". Available on cupertino_icons package 1.0.0+ only.
-  'plusminus_circle': CupertinoIcons.plusminus_circle,
-
-  /// <i class='cupertino-icons md-36'>plusminus_circle_fill</i> &#x2014; Cupertino icon named "plusminus_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'plusminus_circle_fill': CupertinoIcons.plusminus_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>power</i> &#x2014; Cupertino icon named "power". Available on cupertino_icons package 1.0.0+ only.
-  'power': CupertinoIcons.power,
-
-  /// <i class='cupertino-icons md-36'>printer</i> &#x2014; Cupertino icon named "printer". Available on cupertino_icons package 1.0.0+ only.
-  'printer': CupertinoIcons.printer,
-
-  /// <i class='cupertino-icons md-36'>printer_fill</i> &#x2014; Cupertino icon named "printer_fill". Available on cupertino_icons package 1.0.0+ only.
-  'printer_fill': CupertinoIcons.printer_fill,
-
-  /// <i class='cupertino-icons md-36'>projective</i> &#x2014; Cupertino icon named "projective". Available on cupertino_icons package 1.0.0+ only.
-  'projective': CupertinoIcons.projective,
-
-  /// <i class='cupertino-icons md-36'>purchased</i> &#x2014; Cupertino icon named "purchased". Available on cupertino_icons package 1.0.0+ only.
-  'purchased': CupertinoIcons.purchased,
-
-  /// <i class='cupertino-icons md-36'>purchased_circle</i> &#x2014; Cupertino icon named "purchased_circle". Available on cupertino_icons package 1.0.0+ only.
-  'purchased_circle': CupertinoIcons.purchased_circle,
-
-  /// <i class='cupertino-icons md-36'>purchased_circle_fill</i> &#x2014; Cupertino icon named "purchased_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'purchased_circle_fill': CupertinoIcons.purchased_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>qrcode</i> &#x2014; Cupertino icon named "qrcode". Available on cupertino_icons package 1.0.0+ only.
-  'qrcode': CupertinoIcons.qrcode,
-
-  /// <i class='cupertino-icons md-36'>qrcode_viewfinder</i> &#x2014; Cupertino icon named "qrcode_viewfinder". Available on cupertino_icons package 1.0.0+ only.
-  'qrcode_viewfinder': CupertinoIcons.qrcode_viewfinder,
-
-  /// <i class='cupertino-icons md-36'>question</i> &#x2014; Cupertino icon named "question". Available on cupertino_icons package 1.0.0+ only.
-  'question': CupertinoIcons.question,
-
-  /// <i class='cupertino-icons md-36'>question_circle</i> &#x2014; Cupertino icon named "question_circle". Available on cupertino_icons package 1.0.0+ only.
-  'question_circle': CupertinoIcons.question_circle,
-
-  /// <i class='cupertino-icons md-36'>question_circle_fill</i> &#x2014; Cupertino icon named "question_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'question_circle_fill': CupertinoIcons.question_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>question_diamond</i> &#x2014; Cupertino icon named "question_diamond". Available on cupertino_icons package 1.0.0+ only.
-  'question_diamond': CupertinoIcons.question_diamond,
-
-  /// <i class='cupertino-icons md-36'>question_diamond_fill</i> &#x2014; Cupertino icon named "question_diamond_fill". Available on cupertino_icons package 1.0.0+ only.
-  'question_diamond_fill': CupertinoIcons.question_diamond_fill,
-
-  /// <i class='cupertino-icons md-36'>question_square</i> &#x2014; Cupertino icon named "question_square". Available on cupertino_icons package 1.0.0+ only.
-  'question_square': CupertinoIcons.question_square,
-
-  /// <i class='cupertino-icons md-36'>question_square_fill</i> &#x2014; Cupertino icon named "question_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'question_square_fill': CupertinoIcons.question_square_fill,
-
-  /// <i class='cupertino-icons md-36'>quote_bubble</i> &#x2014; Cupertino icon named "quote_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'quote_bubble': CupertinoIcons.quote_bubble,
-
-  /// <i class='cupertino-icons md-36'>quote_bubble_fill</i> &#x2014; Cupertino icon named "quote_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'quote_bubble_fill': CupertinoIcons.quote_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>radiowaves_left</i> &#x2014; Cupertino icon named "radiowaves_left". Available on cupertino_icons package 1.0.0+ only.
-  'radiowaves_left': CupertinoIcons.radiowaves_left,
-
-  /// <i class='cupertino-icons md-36'>radiowaves_right</i> &#x2014; Cupertino icon named "radiowaves_right". Available on cupertino_icons package 1.0.0+ only.
-  'radiowaves_right': CupertinoIcons.radiowaves_right,
-
-  /// <i class='cupertino-icons md-36'>rays</i> &#x2014; Cupertino icon named "rays". Available on cupertino_icons package 1.0.0+ only.
-  'rays': CupertinoIcons.rays,
-
-  /// <i class='cupertino-icons md-36'>recordingtape</i> &#x2014; Cupertino icon named "recordingtape". Available on cupertino_icons package 1.0.0+ only.
-  'recordingtape': CupertinoIcons.recordingtape,
-
-  /// <i class='cupertino-icons md-36'>rectangle</i> &#x2014; Cupertino icon named "rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle': CupertinoIcons.rectangle,
-
-  /// <i class='cupertino-icons md-36'>rectangle_3_offgrid</i> &#x2014; Cupertino icon named "rectangle_3_offgrid". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_3_offgrid': CupertinoIcons.rectangle_3_offgrid,
-
-  /// <i class='cupertino-icons md-36'>rectangle_3_offgrid_fill</i> &#x2014; Cupertino icon named "rectangle_3_offgrid_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_3_offgrid_fill': CupertinoIcons.rectangle_3_offgrid_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_arrow_up_right_arrow_down_left</i> &#x2014; Cupertino icon named "rectangle_arrow_up_right_arrow_down_left". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_arrow_up_right_arrow_down_left':
-      CupertinoIcons.rectangle_arrow_up_right_arrow_down_left,
-
-  /// <i class='cupertino-icons md-36'>rectangle_arrow_up_right_arrow_down_left_slash</i> &#x2014; Cupertino icon named "rectangle_arrow_up_right_arrow_down_left_slash". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_arrow_up_right_arrow_down_left_slash':
-      CupertinoIcons.rectangle_arrow_up_right_arrow_down_left_slash,
-
-  /// <i class='cupertino-icons md-36'>rectangle_badge_checkmark</i> &#x2014; Cupertino icon named "rectangle_badge_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_badge_checkmark': CupertinoIcons.rectangle_badge_checkmark,
-
-  /// <i class='cupertino-icons md-36'>rectangle_badge_xmark</i> &#x2014; Cupertino icon named "rectangle_badge_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_badge_xmark': CupertinoIcons.rectangle_badge_xmark,
-
-  /// <i class='cupertino-icons md-36'>rectangle_compress_vertical</i> &#x2014; Cupertino icon named "rectangle_compress_vertical". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_compress_vertical': CupertinoIcons.rectangle_compress_vertical,
-
-  /// <i class='cupertino-icons md-36'>rectangle_dock</i> &#x2014; Cupertino icon named "rectangle_dock". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_dock': CupertinoIcons.rectangle_dock,
-
-  /// <i class='cupertino-icons md-36'>rectangle_expand_vertical</i> &#x2014; Cupertino icon named "rectangle_expand_vertical". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_expand_vertical': CupertinoIcons.rectangle_expand_vertical,
-
-  /// <i class='cupertino-icons md-36'>rectangle_fill</i> &#x2014; Cupertino icon named "rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_fill': CupertinoIcons.rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_fill_badge_checkmark</i> &#x2014; Cupertino icon named "rectangle_fill_badge_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_fill_badge_checkmark':
-      CupertinoIcons.rectangle_fill_badge_checkmark,
-
-  /// <i class='cupertino-icons md-36'>rectangle_fill_badge_xmark</i> &#x2014; Cupertino icon named "rectangle_fill_badge_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_fill_badge_xmark': CupertinoIcons.rectangle_fill_badge_xmark,
-
-  /// <i class='cupertino-icons md-36'>rectangle_fill_on_rectangle_angled_fill</i> &#x2014; Cupertino icon named "rectangle_fill_on_rectangle_angled_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_fill_on_rectangle_angled_fill':
-      CupertinoIcons.rectangle_fill_on_rectangle_angled_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_fill_on_rectangle_fill</i> &#x2014; Cupertino icon named "rectangle_fill_on_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_fill_on_rectangle_fill':
-      CupertinoIcons.rectangle_fill_on_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_1x2</i> &#x2014; Cupertino icon named "rectangle_grid_1x2". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_1x2': CupertinoIcons.rectangle_grid_1x2,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_1x2_fill</i> &#x2014; Cupertino icon named "rectangle_grid_1x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_1x2_fill': CupertinoIcons.rectangle_grid_1x2_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_2x2</i> &#x2014; Cupertino icon named "rectangle_grid_2x2". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_2x2': CupertinoIcons.rectangle_grid_2x2,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_2x2_fill</i> &#x2014; Cupertino icon named "rectangle_grid_2x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_2x2_fill': CupertinoIcons.rectangle_grid_2x2_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_3x2</i> &#x2014; Cupertino icon named "rectangle_grid_3x2". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_3x2': CupertinoIcons.rectangle_grid_3x2,
-
-  /// <i class='cupertino-icons md-36'>rectangle_grid_3x2_fill</i> &#x2014; Cupertino icon named "rectangle_grid_3x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_grid_3x2_fill': CupertinoIcons.rectangle_grid_3x2_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_on_rectangle</i> &#x2014; Cupertino icon named "rectangle_on_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_on_rectangle': CupertinoIcons.rectangle_on_rectangle,
-
-  /// <i class='cupertino-icons md-36'>rectangle_on_rectangle_angled</i> &#x2014; Cupertino icon named "rectangle_on_rectangle_angled". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_on_rectangle_angled': CupertinoIcons.rectangle_on_rectangle_angled,
-
-  /// <i class='cupertino-icons md-36'>rectangle_paperclip</i> &#x2014; Cupertino icon named "rectangle_paperclip". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_paperclip': CupertinoIcons.rectangle_paperclip,
-
-  /// <i class='cupertino-icons md-36'>rectangle_split_3x1</i> &#x2014; Cupertino icon named "rectangle_split_3x1". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_split_3x1': CupertinoIcons.rectangle_split_3x1,
-
-  /// <i class='cupertino-icons md-36'>rectangle_split_3x1_fill</i> &#x2014; Cupertino icon named "rectangle_split_3x1_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_split_3x1_fill': CupertinoIcons.rectangle_split_3x1_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_split_3x3</i> &#x2014; Cupertino icon named "rectangle_split_3x3". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_split_3x3': CupertinoIcons.rectangle_split_3x3,
-
-  /// <i class='cupertino-icons md-36'>rectangle_split_3x3_fill</i> &#x2014; Cupertino icon named "rectangle_split_3x3_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_split_3x3_fill': CupertinoIcons.rectangle_split_3x3_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack</i> &#x2014; Cupertino icon named "rectangle_stack". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [collections] which is available in cupertino_icons 0.1.3.
-  'rectangle_stack': CupertinoIcons.rectangle_stack,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_badge_minus</i> &#x2014; Cupertino icon named "rectangle_stack_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_badge_minus': CupertinoIcons.rectangle_stack_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_badge_person_crop</i> &#x2014; Cupertino icon named "rectangle_stack_badge_person_crop". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_badge_person_crop':
-      CupertinoIcons.rectangle_stack_badge_person_crop,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_badge_plus</i> &#x2014; Cupertino icon named "rectangle_stack_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_badge_plus': CupertinoIcons.rectangle_stack_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_fill</i> &#x2014; Cupertino icon named "rectangle_stack_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [collections_solid] which is available in cupertino_icons 0.1.3.
-  'rectangle_stack_fill': CupertinoIcons.rectangle_stack_fill,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_fill_badge_minus</i> &#x2014; Cupertino icon named "rectangle_stack_fill_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_fill_badge_minus':
-      CupertinoIcons.rectangle_stack_fill_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_fill_badge_person_crop</i> &#x2014; Cupertino icon named "rectangle_stack_fill_badge_person_crop". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_fill_badge_person_crop':
-      CupertinoIcons.rectangle_stack_fill_badge_person_crop,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_fill_badge_plus</i> &#x2014; Cupertino icon named "rectangle_stack_fill_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_fill_badge_plus':
-      CupertinoIcons.rectangle_stack_fill_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_person_crop</i> &#x2014; Cupertino icon named "rectangle_stack_person_crop". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_person_crop': CupertinoIcons.rectangle_stack_person_crop,
-
-  /// <i class='cupertino-icons md-36'>rectangle_stack_person_crop_fill</i> &#x2014; Cupertino icon named "rectangle_stack_person_crop_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rectangle_stack_person_crop_fill':
-      CupertinoIcons.rectangle_stack_person_crop_fill,
-
-  /// <i class='cupertino-icons md-36'>repeat</i> &#x2014; Cupertino icon named "repeat". Available on cupertino_icons package 1.0.0+ only.
-  'repeat': CupertinoIcons.repeat,
-
-  /// <i class='cupertino-icons md-36'>repeat_1</i> &#x2014; Cupertino icon named "repeat_1". Available on cupertino_icons package 1.0.0+ only.
-  'repeat_1': CupertinoIcons.repeat_1,
-
-  /// <i class='cupertino-icons md-36'>resize</i> &#x2014; Cupertino icon named "resize". Available on cupertino_icons package 1.0.0+ only.
-  'resize': CupertinoIcons.resize,
-
-  /// <i class='cupertino-icons md-36'>resize_h</i> &#x2014; Cupertino icon named "resize_h". Available on cupertino_icons package 1.0.0+ only.
-  'resize_h': CupertinoIcons.resize_h,
-
-  /// <i class='cupertino-icons md-36'>resize_v</i> &#x2014; Cupertino icon named "resize_v". Available on cupertino_icons package 1.0.0+ only.
-  'resize_v': CupertinoIcons.resize_v,
-
-  /// <i class='cupertino-icons md-36'>return_icon</i> &#x2014; Cupertino icon named "return_icon". Available on cupertino_icons package 1.0.0+ only.
-  'return_icon': CupertinoIcons.return_icon,
-
-  /// <i class='cupertino-icons md-36'>rhombus</i> &#x2014; Cupertino icon named "rhombus". Available on cupertino_icons package 1.0.0+ only.
-  'rhombus': CupertinoIcons.rhombus,
-
-  /// <i class='cupertino-icons md-36'>rhombus_fill</i> &#x2014; Cupertino icon named "rhombus_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rhombus_fill': CupertinoIcons.rhombus_fill,
-
-  /// <i class='cupertino-icons md-36'>rocket</i> &#x2014; Cupertino icon named "rocket". Available on cupertino_icons package 1.0.0+ only.
-  'rocket': CupertinoIcons.rocket,
-
-  /// <i class='cupertino-icons md-36'>rocket_fill</i> &#x2014; Cupertino icon named "rocket_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rocket_fill': CupertinoIcons.rocket_fill,
-
-  /// <i class='cupertino-icons md-36'>rosette</i> &#x2014; Cupertino icon named "rosette". Available on cupertino_icons package 1.0.0+ only.
-  'rosette': CupertinoIcons.rosette,
-
-  /// <i class='cupertino-icons md-36'>rotate_left</i> &#x2014; Cupertino icon named "rotate_left". Available on cupertino_icons package 1.0.0+ only.
-  'rotate_left': CupertinoIcons.rotate_left,
-
-  /// <i class='cupertino-icons md-36'>rotate_left_fill</i> &#x2014; Cupertino icon named "rotate_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rotate_left_fill': CupertinoIcons.rotate_left_fill,
-
-  /// <i class='cupertino-icons md-36'>rotate_right</i> &#x2014; Cupertino icon named "rotate_right". Available on cupertino_icons package 1.0.0+ only.
-  'rotate_right': CupertinoIcons.rotate_right,
-
-  /// <i class='cupertino-icons md-36'>rotate_right_fill</i> &#x2014; Cupertino icon named "rotate_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'rotate_right_fill': CupertinoIcons.rotate_right_fill,
-
-  /// <i class='cupertino-icons md-36'>scissors</i> &#x2014; Cupertino icon named "scissors". Available on cupertino_icons package 1.0.0+ only.
-  'scissors': CupertinoIcons.scissors,
-
-  /// <i class='cupertino-icons md-36'>scissors_alt</i> &#x2014; Cupertino icon named "scissors_alt". Available on cupertino_icons package 1.0.0+ only.
-  'scissors_alt': CupertinoIcons.scissors_alt,
-
-  /// <i class='cupertino-icons md-36'>scope</i> &#x2014; Cupertino icon named "scope". Available on cupertino_icons package 1.0.0+ only.
-  'scope': CupertinoIcons.scope,
-
-  /// <i class='cupertino-icons md-36'>scribble</i> &#x2014; Cupertino icon named "scribble". Available on cupertino_icons package 1.0.0+ only.
-  'scribble': CupertinoIcons.scribble,
-
-  /// <i class='cupertino-icons md-36'>search_circle</i> &#x2014; Cupertino icon named "search_circle". Available on cupertino_icons package 1.0.0+ only.
-  'search_circle': CupertinoIcons.search_circle,
-
-  /// <i class='cupertino-icons md-36'>search_circle_fill</i> &#x2014; Cupertino icon named "search_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'search_circle_fill': CupertinoIcons.search_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>selection_pin_in_out</i> &#x2014; Cupertino icon named "selection_pin_in_out". Available on cupertino_icons package 1.0.0+ only.
-  'selection_pin_in_out': CupertinoIcons.selection_pin_in_out,
-
-  /// <i class='cupertino-icons md-36'>shield</i> &#x2014; Cupertino icon named "shield". Available on cupertino_icons package 1.0.0+ only.
-  'shield': CupertinoIcons.shield,
-
-  /// <i class='cupertino-icons md-36'>shield_fill</i> &#x2014; Cupertino icon named "shield_fill". Available on cupertino_icons package 1.0.0+ only.
-  'shield_fill': CupertinoIcons.shield_fill,
-
-  /// <i class='cupertino-icons md-36'>shield_lefthalf_fill</i> &#x2014; Cupertino icon named "shield_lefthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'shield_lefthalf_fill': CupertinoIcons.shield_lefthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>shield_slash</i> &#x2014; Cupertino icon named "shield_slash". Available on cupertino_icons package 1.0.0+ only.
-  'shield_slash': CupertinoIcons.shield_slash,
-
-  /// <i class='cupertino-icons md-36'>shield_slash_fill</i> &#x2014; Cupertino icon named "shield_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'shield_slash_fill': CupertinoIcons.shield_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>shift</i> &#x2014; Cupertino icon named "shift". Available on cupertino_icons package 1.0.0+ only.
-  'shift': CupertinoIcons.shift,
-
-  /// <i class='cupertino-icons md-36'>shift_fill</i> &#x2014; Cupertino icon named "shift_fill". Available on cupertino_icons package 1.0.0+ only.
-  'shift_fill': CupertinoIcons.shift_fill,
-
-  /// <i class='cupertino-icons md-36'>sidebar_left</i> &#x2014; Cupertino icon named "sidebar_left". Available on cupertino_icons package 1.0.0+ only.
-  'sidebar_left': CupertinoIcons.sidebar_left,
-
-  /// <i class='cupertino-icons md-36'>sidebar_right</i> &#x2014; Cupertino icon named "sidebar_right". Available on cupertino_icons package 1.0.0+ only.
-  'sidebar_right': CupertinoIcons.sidebar_right,
-
-  /// <i class='cupertino-icons md-36'>signature</i> &#x2014; Cupertino icon named "signature". Available on cupertino_icons package 1.0.0+ only.
-  'signature': CupertinoIcons.signature,
-
-  /// <i class='cupertino-icons md-36'>skew</i> &#x2014; Cupertino icon named "skew". Available on cupertino_icons package 1.0.0+ only.
-  'skew': CupertinoIcons.skew,
-
-  /// <i class='cupertino-icons md-36'>slash_circle</i> &#x2014; Cupertino icon named "slash_circle". Available on cupertino_icons package 1.0.0+ only.
-  'slash_circle': CupertinoIcons.slash_circle,
-
-  /// <i class='cupertino-icons md-36'>slash_circle_fill</i> &#x2014; Cupertino icon named "slash_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'slash_circle_fill': CupertinoIcons.slash_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>slider_horizontal_3</i> &#x2014; Cupertino icon named "slider_horizontal_3". Available on cupertino_icons package 1.0.0+ only.
-  'slider_horizontal_3': CupertinoIcons.slider_horizontal_3,
-
-  /// <i class='cupertino-icons md-36'>slider_horizontal_below_rectangle</i> &#x2014; Cupertino icon named "slider_horizontal_below_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'slider_horizontal_below_rectangle':
-      CupertinoIcons.slider_horizontal_below_rectangle,
-
-  /// <i class='cupertino-icons md-36'>slowmo</i> &#x2014; Cupertino icon named "slowmo". Available on cupertino_icons package 1.0.0+ only.
-  'slowmo': CupertinoIcons.slowmo,
-
-  /// <i class='cupertino-icons md-36'>smallcircle_circle</i> &#x2014; Cupertino icon named "smallcircle_circle". Available on cupertino_icons package 1.0.0+ only.
-  'smallcircle_circle': CupertinoIcons.smallcircle_circle,
-
-  /// <i class='cupertino-icons md-36'>smallcircle_circle_fill</i> &#x2014; Cupertino icon named "smallcircle_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'smallcircle_circle_fill': CupertinoIcons.smallcircle_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>smallcircle_fill_circle</i> &#x2014; Cupertino icon named "smallcircle_fill_circle". Available on cupertino_icons package 1.0.0+ only.
-  'smallcircle_fill_circle': CupertinoIcons.smallcircle_fill_circle,
-
-  /// <i class='cupertino-icons md-36'>smallcircle_fill_circle_fill</i> &#x2014; Cupertino icon named "smallcircle_fill_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'smallcircle_fill_circle_fill': CupertinoIcons.smallcircle_fill_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>smiley</i> &#x2014; Cupertino icon named "smiley". Available on cupertino_icons package 1.0.0+ only.
-  'smiley': CupertinoIcons.smiley,
-
-  /// <i class='cupertino-icons md-36'>smiley_fill</i> &#x2014; Cupertino icon named "smiley_fill". Available on cupertino_icons package 1.0.0+ only.
-  'smiley_fill': CupertinoIcons.smiley_fill,
-
-  /// <i class='cupertino-icons md-36'>smoke</i> &#x2014; Cupertino icon named "smoke". Available on cupertino_icons package 1.0.0+ only.
-  'smoke': CupertinoIcons.smoke,
-
-  /// <i class='cupertino-icons md-36'>smoke_fill</i> &#x2014; Cupertino icon named "smoke_fill". Available on cupertino_icons package 1.0.0+ only.
-  'smoke_fill': CupertinoIcons.smoke_fill,
-
-  /// <i class='cupertino-icons md-36'>snow</i> &#x2014; Cupertino icon named "snow". Available on cupertino_icons package 1.0.0+ only.
-  'snow': CupertinoIcons.snow,
-
-  /// <i class='cupertino-icons md-36'>sort_down</i> &#x2014; Cupertino icon named "sort_down". Available on cupertino_icons package 1.0.0+ only.
-  'sort_down': CupertinoIcons.sort_down,
-
-  /// <i class='cupertino-icons md-36'>sort_down_circle</i> &#x2014; Cupertino icon named "sort_down_circle". Available on cupertino_icons package 1.0.0+ only.
-  'sort_down_circle': CupertinoIcons.sort_down_circle,
-
-  /// <i class='cupertino-icons md-36'>sort_down_circle_fill</i> &#x2014; Cupertino icon named "sort_down_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sort_down_circle_fill': CupertinoIcons.sort_down_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>sort_up</i> &#x2014; Cupertino icon named "sort_up". Available on cupertino_icons package 1.0.0+ only.
-  'sort_up': CupertinoIcons.sort_up,
-
-  /// <i class='cupertino-icons md-36'>sort_up_circle</i> &#x2014; Cupertino icon named "sort_up_circle". Available on cupertino_icons package 1.0.0+ only.
-  'sort_up_circle': CupertinoIcons.sort_up_circle,
-
-  /// <i class='cupertino-icons md-36'>sort_up_circle_fill</i> &#x2014; Cupertino icon named "sort_up_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sort_up_circle_fill': CupertinoIcons.sort_up_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>sparkles</i> &#x2014; Cupertino icon named "sparkles". Available on cupertino_icons package 1.0.0+ only.
-  'sparkles': CupertinoIcons.sparkles,
-
-  /// <i class='cupertino-icons md-36'>speaker</i> &#x2014; Cupertino icon named "speaker". Available on cupertino_icons package 1.0.0+ only.
-  'speaker': CupertinoIcons.speaker,
-
-  /// <i class='cupertino-icons md-36'>speaker_1</i> &#x2014; Cupertino icon named "speaker_1". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_1': CupertinoIcons.speaker_1,
-
-  /// <i class='cupertino-icons md-36'>speaker_1_fill</i> &#x2014; Cupertino icon named "speaker_1_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [volume_down] which is available in cupertino_icons 0.1.3.
-  'speaker_1_fill': CupertinoIcons.speaker_1_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_2</i> &#x2014; Cupertino icon named "speaker_2". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_2': CupertinoIcons.speaker_2,
-
-  /// <i class='cupertino-icons md-36'>speaker_2_fill</i> &#x2014; Cupertino icon named "speaker_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_2_fill': CupertinoIcons.speaker_2_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_3</i> &#x2014; Cupertino icon named "speaker_3". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_3': CupertinoIcons.speaker_3,
-
-  /// <i class='cupertino-icons md-36'>speaker_3_fill</i> &#x2014; Cupertino icon named "speaker_3_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [volume_up] which is available in cupertino_icons 0.1.3.
-  'speaker_3_fill': CupertinoIcons.speaker_3_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_fill</i> &#x2014; Cupertino icon named "speaker_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [volume_mute] which is available in cupertino_icons 0.1.3.
-  'speaker_fill': CupertinoIcons.speaker_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_slash</i> &#x2014; Cupertino icon named "speaker_slash". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_slash': CupertinoIcons.speaker_slash,
-
-  /// <i class='cupertino-icons md-36'>speaker_slash_fill</i> &#x2014; Cupertino icon named "speaker_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [volume_off] which is available in cupertino_icons 0.1.3.
-  'speaker_slash_fill': CupertinoIcons.speaker_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_slash_fill_rtl</i> &#x2014; Cupertino icon named "speaker_slash_fill_rtl". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_slash_fill_rtl': CupertinoIcons.speaker_slash_fill_rtl,
-
-  /// <i class='cupertino-icons md-36'>speaker_slash_rtl</i> &#x2014; Cupertino icon named "speaker_slash_rtl". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_slash_rtl': CupertinoIcons.speaker_slash_rtl,
-
-  /// <i class='cupertino-icons md-36'>speaker_zzz</i> &#x2014; Cupertino icon named "speaker_zzz". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_zzz': CupertinoIcons.speaker_zzz,
-
-  /// <i class='cupertino-icons md-36'>speaker_zzz_fill</i> &#x2014; Cupertino icon named "speaker_zzz_fill". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_zzz_fill': CupertinoIcons.speaker_zzz_fill,
-
-  /// <i class='cupertino-icons md-36'>speaker_zzz_fill_rtl</i> &#x2014; Cupertino icon named "speaker_zzz_fill_rtl". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_zzz_fill_rtl': CupertinoIcons.speaker_zzz_fill_rtl,
-
-  /// <i class='cupertino-icons md-36'>speaker_zzz_rtl</i> &#x2014; Cupertino icon named "speaker_zzz_rtl". Available on cupertino_icons package 1.0.0+ only.
-  'speaker_zzz_rtl': CupertinoIcons.speaker_zzz_rtl,
-
-  /// <i class='cupertino-icons md-36'>speedometer</i> &#x2014; Cupertino icon named "speedometer". Available on cupertino_icons package 1.0.0+ only.
-  'speedometer': CupertinoIcons.speedometer,
-
-  /// <i class='cupertino-icons md-36'>sportscourt</i> &#x2014; Cupertino icon named "sportscourt". Available on cupertino_icons package 1.0.0+ only.
-  'sportscourt': CupertinoIcons.sportscourt,
-
-  /// <i class='cupertino-icons md-36'>sportscourt_fill</i> &#x2014; Cupertino icon named "sportscourt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sportscourt_fill': CupertinoIcons.sportscourt_fill,
-
-  /// <i class='cupertino-icons md-36'>square</i> &#x2014; Cupertino icon named "square". Available on cupertino_icons package 1.0.0+ only.
-  'square': CupertinoIcons.square,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_down</i> &#x2014; Cupertino icon named "square_arrow_down". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_down': CupertinoIcons.square_arrow_down,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_down_fill</i> &#x2014; Cupertino icon named "square_arrow_down_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_down_fill': CupertinoIcons.square_arrow_down_fill,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_down_on_square</i> &#x2014; Cupertino icon named "square_arrow_down_on_square". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_down_on_square': CupertinoIcons.square_arrow_down_on_square,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_down_on_square_fill</i> &#x2014; Cupertino icon named "square_arrow_down_on_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_down_on_square_fill':
-      CupertinoIcons.square_arrow_down_on_square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_left</i> &#x2014; Cupertino icon named "square_arrow_left". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_left': CupertinoIcons.square_arrow_left,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_left_fill</i> &#x2014; Cupertino icon named "square_arrow_left_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_left_fill': CupertinoIcons.square_arrow_left_fill,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_right</i> &#x2014; Cupertino icon named "square_arrow_right". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_right': CupertinoIcons.square_arrow_right,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_right_fill</i> &#x2014; Cupertino icon named "square_arrow_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_right_fill': CupertinoIcons.square_arrow_right_fill,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up</i> &#x2014; Cupertino icon named "square_arrow_up". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [share] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [share_up] which is available in cupertino_icons 0.1.3.
-  'square_arrow_up': CupertinoIcons.square_arrow_up,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up_fill</i> &#x2014; Cupertino icon named "square_arrow_up_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [share_solid] which is available in cupertino_icons 0.1.3.
-  'square_arrow_up_fill': CupertinoIcons.square_arrow_up_fill,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up_on_square</i> &#x2014; Cupertino icon named "square_arrow_up_on_square". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_up_on_square': CupertinoIcons.square_arrow_up_on_square,
-
-  /// <i class='cupertino-icons md-36'>square_arrow_up_on_square_fill</i> &#x2014; Cupertino icon named "square_arrow_up_on_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_arrow_up_on_square_fill':
-      CupertinoIcons.square_arrow_up_on_square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_favorites</i> &#x2014; Cupertino icon named "square_favorites". Available on cupertino_icons package 1.0.0+ only.
-  'square_favorites': CupertinoIcons.square_favorites,
-
-  /// <i class='cupertino-icons md-36'>square_favorites_alt</i> &#x2014; Cupertino icon named "square_favorites_alt". Available on cupertino_icons package 1.0.0+ only.
-  'square_favorites_alt': CupertinoIcons.square_favorites_alt,
-
-  /// <i class='cupertino-icons md-36'>square_favorites_alt_fill</i> &#x2014; Cupertino icon named "square_favorites_alt_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_favorites_alt_fill': CupertinoIcons.square_favorites_alt_fill,
-
-  /// <i class='cupertino-icons md-36'>square_favorites_fill</i> &#x2014; Cupertino icon named "square_favorites_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_favorites_fill': CupertinoIcons.square_favorites_fill,
-
-  /// <i class='cupertino-icons md-36'>square_fill</i> &#x2014; Cupertino icon named "square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_fill': CupertinoIcons.square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_fill_line_vertical_square</i> &#x2014; Cupertino icon named "square_fill_line_vertical_square". Available on cupertino_icons package 1.0.0+ only.
-  'square_fill_line_vertical_square':
-      CupertinoIcons.square_fill_line_vertical_square,
-
-  /// <i class='cupertino-icons md-36'>square_fill_line_vertical_square_fill</i> &#x2014; Cupertino icon named "square_fill_line_vertical_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_fill_line_vertical_square_fill':
-      CupertinoIcons.square_fill_line_vertical_square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_fill_on_circle_fill</i> &#x2014; Cupertino icon named "square_fill_on_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_fill_on_circle_fill': CupertinoIcons.square_fill_on_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>square_fill_on_square_fill</i> &#x2014; Cupertino icon named "square_fill_on_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_fill_on_square_fill': CupertinoIcons.square_fill_on_square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_grid_2x2</i> &#x2014; Cupertino icon named "square_grid_2x2". Available on cupertino_icons package 1.0.0+ only.
-  'square_grid_2x2': CupertinoIcons.square_grid_2x2,
-
-  /// <i class='cupertino-icons md-36'>square_grid_2x2_fill</i> &#x2014; Cupertino icon named "square_grid_2x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_grid_2x2_fill': CupertinoIcons.square_grid_2x2_fill,
-
-  /// <i class='cupertino-icons md-36'>square_grid_3x2</i> &#x2014; Cupertino icon named "square_grid_3x2". Available on cupertino_icons package 1.0.0+ only.
-  'square_grid_3x2': CupertinoIcons.square_grid_3x2,
-
-  /// <i class='cupertino-icons md-36'>square_grid_3x2_fill</i> &#x2014; Cupertino icon named "square_grid_3x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_grid_3x2_fill': CupertinoIcons.square_grid_3x2_fill,
-
-  /// <i class='cupertino-icons md-36'>square_grid_4x3_fill</i> &#x2014; Cupertino icon named "square_grid_4x3_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_grid_4x3_fill': CupertinoIcons.square_grid_4x3_fill,
-
-  /// <i class='cupertino-icons md-36'>square_lefthalf_fill</i> &#x2014; Cupertino icon named "square_lefthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_lefthalf_fill': CupertinoIcons.square_lefthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>square_line_vertical_square</i> &#x2014; Cupertino icon named "square_line_vertical_square". Available on cupertino_icons package 1.0.0+ only.
-  'square_line_vertical_square': CupertinoIcons.square_line_vertical_square,
-
-  /// <i class='cupertino-icons md-36'>square_line_vertical_square_fill</i> &#x2014; Cupertino icon named "square_line_vertical_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_line_vertical_square_fill':
-      CupertinoIcons.square_line_vertical_square_fill,
-
-  /// <i class='cupertino-icons md-36'>square_list</i> &#x2014; Cupertino icon named "square_list". Available on cupertino_icons package 1.0.0+ only.
-  'square_list': CupertinoIcons.square_list,
-
-  /// <i class='cupertino-icons md-36'>square_list_fill</i> &#x2014; Cupertino icon named "square_list_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_list_fill': CupertinoIcons.square_list_fill,
-
-  /// <i class='cupertino-icons md-36'>square_on_circle</i> &#x2014; Cupertino icon named "square_on_circle". Available on cupertino_icons package 1.0.0+ only.
-  'square_on_circle': CupertinoIcons.square_on_circle,
-
-  /// <i class='cupertino-icons md-36'>square_on_square</i> &#x2014; Cupertino icon named "square_on_square". Available on cupertino_icons package 1.0.0+ only.
-  'square_on_square': CupertinoIcons.square_on_square,
-
-  /// <i class='cupertino-icons md-36'>square_pencil</i> &#x2014; Cupertino icon named "square_pencil". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [create] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [create_solid] which is available in cupertino_icons 0.1.3.
-  'square_pencil': CupertinoIcons.square_pencil,
-
-  /// <i class='cupertino-icons md-36'>square_pencil_fill</i> &#x2014; Cupertino icon named "square_pencil_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [create] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [create_solid] which is available in cupertino_icons 0.1.3.
-  'square_pencil_fill': CupertinoIcons.square_pencil_fill,
-
-  /// <i class='cupertino-icons md-36'>square_righthalf_fill</i> &#x2014; Cupertino icon named "square_righthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_righthalf_fill': CupertinoIcons.square_righthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>square_split_1x2</i> &#x2014; Cupertino icon named "square_split_1x2". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_1x2': CupertinoIcons.square_split_1x2,
-
-  /// <i class='cupertino-icons md-36'>square_split_1x2_fill</i> &#x2014; Cupertino icon named "square_split_1x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_1x2_fill': CupertinoIcons.square_split_1x2_fill,
-
-  /// <i class='cupertino-icons md-36'>square_split_2x1</i> &#x2014; Cupertino icon named "square_split_2x1". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_2x1': CupertinoIcons.square_split_2x1,
-
-  /// <i class='cupertino-icons md-36'>square_split_2x1_fill</i> &#x2014; Cupertino icon named "square_split_2x1_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_2x1_fill': CupertinoIcons.square_split_2x1_fill,
-
-  /// <i class='cupertino-icons md-36'>square_split_2x2</i> &#x2014; Cupertino icon named "square_split_2x2". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_2x2': CupertinoIcons.square_split_2x2,
-
-  /// <i class='cupertino-icons md-36'>square_split_2x2_fill</i> &#x2014; Cupertino icon named "square_split_2x2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_split_2x2_fill': CupertinoIcons.square_split_2x2_fill,
-
-  /// <i class='cupertino-icons md-36'>square_stack</i> &#x2014; Cupertino icon named "square_stack". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack': CupertinoIcons.square_stack,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_down_dottedline</i> &#x2014; Cupertino icon named "square_stack_3d_down_dottedline". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_down_dottedline':
-      CupertinoIcons.square_stack_3d_down_dottedline,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_down_right</i> &#x2014; Cupertino icon named "square_stack_3d_down_right". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_down_right': CupertinoIcons.square_stack_3d_down_right,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_down_right_fill</i> &#x2014; Cupertino icon named "square_stack_3d_down_right_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_down_right_fill':
-      CupertinoIcons.square_stack_3d_down_right_fill,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_up</i> &#x2014; Cupertino icon named "square_stack_3d_up". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_up': CupertinoIcons.square_stack_3d_up,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_up_fill</i> &#x2014; Cupertino icon named "square_stack_3d_up_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_up_fill': CupertinoIcons.square_stack_3d_up_fill,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_up_slash</i> &#x2014; Cupertino icon named "square_stack_3d_up_slash". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_up_slash': CupertinoIcons.square_stack_3d_up_slash,
-
-  /// <i class='cupertino-icons md-36'>square_stack_3d_up_slash_fill</i> &#x2014; Cupertino icon named "square_stack_3d_up_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_3d_up_slash_fill': CupertinoIcons.square_stack_3d_up_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>square_stack_fill</i> &#x2014; Cupertino icon named "square_stack_fill". Available on cupertino_icons package 1.0.0+ only.
-  'square_stack_fill': CupertinoIcons.square_stack_fill,
-
-  /// <i class='cupertino-icons md-36'>squares_below_rectangle</i> &#x2014; Cupertino icon named "squares_below_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'squares_below_rectangle': CupertinoIcons.squares_below_rectangle,
-
-  /// <i class='cupertino-icons md-36'>star</i> &#x2014; Cupertino icon named "star". Available on cupertino_icons package 1.0.0+ only.
-  'star': CupertinoIcons.star,
-
-  /// <i class='cupertino-icons md-36'>star_circle</i> &#x2014; Cupertino icon named "star_circle". Available on cupertino_icons package 1.0.0+ only.
-  'star_circle': CupertinoIcons.star_circle,
-
-  /// <i class='cupertino-icons md-36'>star_circle_fill</i> &#x2014; Cupertino icon named "star_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'star_circle_fill': CupertinoIcons.star_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>star_fill</i> &#x2014; Cupertino icon named "star_fill". Available on cupertino_icons package 1.0.0+ only.
-  'star_fill': CupertinoIcons.star_fill,
-
-  /// <i class='cupertino-icons md-36'>star_lefthalf_fill</i> &#x2014; Cupertino icon named "star_lefthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'star_lefthalf_fill': CupertinoIcons.star_lefthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>star_slash</i> &#x2014; Cupertino icon named "star_slash". Available on cupertino_icons package 1.0.0+ only.
-  'star_slash': CupertinoIcons.star_slash,
-
-  /// <i class='cupertino-icons md-36'>star_slash_fill</i> &#x2014; Cupertino icon named "star_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'star_slash_fill': CupertinoIcons.star_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>staroflife</i> &#x2014; Cupertino icon named "staroflife". Available on cupertino_icons package 1.0.0+ only.
-  'staroflife': CupertinoIcons.staroflife,
-
-  /// <i class='cupertino-icons md-36'>staroflife_fill</i> &#x2014; Cupertino icon named "staroflife_fill". Available on cupertino_icons package 1.0.0+ only.
-  'staroflife_fill': CupertinoIcons.staroflife_fill,
-
-  /// <i class='cupertino-icons md-36'>stop</i> &#x2014; Cupertino icon named "stop". Available on cupertino_icons package 1.0.0+ only.
-  'stop': CupertinoIcons.stop,
-
-  /// <i class='cupertino-icons md-36'>stop_circle</i> &#x2014; Cupertino icon named "stop_circle". Available on cupertino_icons package 1.0.0+ only.
-  'stop_circle': CupertinoIcons.stop_circle,
-
-  /// <i class='cupertino-icons md-36'>stop_circle_fill</i> &#x2014; Cupertino icon named "stop_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'stop_circle_fill': CupertinoIcons.stop_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>stop_fill</i> &#x2014; Cupertino icon named "stop_fill". Available on cupertino_icons package 1.0.0+ only.
-  'stop_fill': CupertinoIcons.stop_fill,
-
-  /// <i class='cupertino-icons md-36'>stopwatch</i> &#x2014; Cupertino icon named "stopwatch". Available on cupertino_icons package 1.0.0+ only.
-  'stopwatch': CupertinoIcons.stopwatch,
-
-  /// <i class='cupertino-icons md-36'>stopwatch_fill</i> &#x2014; Cupertino icon named "stopwatch_fill". Available on cupertino_icons package 1.0.0+ only.
-  'stopwatch_fill': CupertinoIcons.stopwatch_fill,
-
-  /// <i class='cupertino-icons md-36'>strikethrough</i> &#x2014; Cupertino icon named "strikethrough". Available on cupertino_icons package 1.0.0+ only.
-  'strikethrough': CupertinoIcons.strikethrough,
-
-  /// <i class='cupertino-icons md-36'>suit_club</i> &#x2014; Cupertino icon named "suit_club". Available on cupertino_icons package 1.0.0+ only.
-  'suit_club': CupertinoIcons.suit_club,
-
-  /// <i class='cupertino-icons md-36'>suit_club_fill</i> &#x2014; Cupertino icon named "suit_club_fill". Available on cupertino_icons package 1.0.0+ only.
-  'suit_club_fill': CupertinoIcons.suit_club_fill,
-
-  /// <i class='cupertino-icons md-36'>suit_diamond</i> &#x2014; Cupertino icon named "suit_diamond". Available on cupertino_icons package 1.0.0+ only.
-  'suit_diamond': CupertinoIcons.suit_diamond,
-
-  /// <i class='cupertino-icons md-36'>suit_diamond_fill</i> &#x2014; Cupertino icon named "suit_diamond_fill". Available on cupertino_icons package 1.0.0+ only.
-  'suit_diamond_fill': CupertinoIcons.suit_diamond_fill,
-
-  /// <i class='cupertino-icons md-36'>suit_heart</i> &#x2014; Cupertino icon named "suit_heart". Available on cupertino_icons package 1.0.0+ only.
-  'suit_heart': CupertinoIcons.suit_heart,
-
-  /// <i class='cupertino-icons md-36'>suit_heart_fill</i> &#x2014; Cupertino icon named "suit_heart_fill". Available on cupertino_icons package 1.0.0+ only.
-  'suit_heart_fill': CupertinoIcons.suit_heart_fill,
-
-  /// <i class='cupertino-icons md-36'>suit_spade</i> &#x2014; Cupertino icon named "suit_spade". Available on cupertino_icons package 1.0.0+ only.
-  'suit_spade': CupertinoIcons.suit_spade,
-
-  /// <i class='cupertino-icons md-36'>suit_spade_fill</i> &#x2014; Cupertino icon named "suit_spade_fill". Available on cupertino_icons package 1.0.0+ only.
-  'suit_spade_fill': CupertinoIcons.suit_spade_fill,
-
-  /// <i class='cupertino-icons md-36'>sum</i> &#x2014; Cupertino icon named "sum". Available on cupertino_icons package 1.0.0+ only.
-  'sum': CupertinoIcons.sum,
-
-  /// <i class='cupertino-icons md-36'>sun_dust</i> &#x2014; Cupertino icon named "sun_dust". Available on cupertino_icons package 1.0.0+ only.
-  'sun_dust': CupertinoIcons.sun_dust,
-
-  /// <i class='cupertino-icons md-36'>sun_dust_fill</i> &#x2014; Cupertino icon named "sun_dust_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sun_dust_fill': CupertinoIcons.sun_dust_fill,
-
-  /// <i class='cupertino-icons md-36'>sun_haze</i> &#x2014; Cupertino icon named "sun_haze". Available on cupertino_icons package 1.0.0+ only.
-  'sun_haze': CupertinoIcons.sun_haze,
-
-  /// <i class='cupertino-icons md-36'>sun_haze_fill</i> &#x2014; Cupertino icon named "sun_haze_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sun_haze_fill': CupertinoIcons.sun_haze_fill,
-
-  /// <i class='cupertino-icons md-36'>sun_max</i> &#x2014; Cupertino icon named "sun_max". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [brightness] which is available in cupertino_icons 0.1.3.
-  'sun_max': CupertinoIcons.sun_max,
-
-  /// <i class='cupertino-icons md-36'>sun_max_fill</i> &#x2014; Cupertino icon named "sun_max_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [brightness_solid] which is available in cupertino_icons 0.1.3.
-  'sun_max_fill': CupertinoIcons.sun_max_fill,
-
-  /// <i class='cupertino-icons md-36'>sun_min</i> &#x2014; Cupertino icon named "sun_min". Available on cupertino_icons package 1.0.0+ only.
-  'sun_min': CupertinoIcons.sun_min,
-
-  /// <i class='cupertino-icons md-36'>sun_min_fill</i> &#x2014; Cupertino icon named "sun_min_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sun_min_fill': CupertinoIcons.sun_min_fill,
-
-  /// <i class='cupertino-icons md-36'>sunrise</i> &#x2014; Cupertino icon named "sunrise". Available on cupertino_icons package 1.0.0+ only.
-  'sunrise': CupertinoIcons.sunrise,
-
-  /// <i class='cupertino-icons md-36'>sunrise_fill</i> &#x2014; Cupertino icon named "sunrise_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sunrise_fill': CupertinoIcons.sunrise_fill,
-
-  /// <i class='cupertino-icons md-36'>sunset</i> &#x2014; Cupertino icon named "sunset". Available on cupertino_icons package 1.0.0+ only.
-  'sunset': CupertinoIcons.sunset,
-
-  /// <i class='cupertino-icons md-36'>sunset_fill</i> &#x2014; Cupertino icon named "sunset_fill". Available on cupertino_icons package 1.0.0+ only.
-  'sunset_fill': CupertinoIcons.sunset_fill,
-
-  /// <i class='cupertino-icons md-36'>t_bubble</i> &#x2014; Cupertino icon named "t_bubble". Available on cupertino_icons package 1.0.0+ only.
-  't_bubble': CupertinoIcons.t_bubble,
-
-  /// <i class='cupertino-icons md-36'>t_bubble_fill</i> &#x2014; Cupertino icon named "t_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  't_bubble_fill': CupertinoIcons.t_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>table</i> &#x2014; Cupertino icon named "table". Available on cupertino_icons package 1.0.0+ only.
-  'table': CupertinoIcons.table,
-
-  /// <i class='cupertino-icons md-36'>table_badge_more</i> &#x2014; Cupertino icon named "table_badge_more". Available on cupertino_icons package 1.0.0+ only.
-  'table_badge_more': CupertinoIcons.table_badge_more,
-
-  /// <i class='cupertino-icons md-36'>table_badge_more_fill</i> &#x2014; Cupertino icon named "table_badge_more_fill". Available on cupertino_icons package 1.0.0+ only.
-  'table_badge_more_fill': CupertinoIcons.table_badge_more_fill,
-
-  /// <i class='cupertino-icons md-36'>table_fill</i> &#x2014; Cupertino icon named "table_fill". Available on cupertino_icons package 1.0.0+ only.
-  'table_fill': CupertinoIcons.table_fill,
-
-  /// <i class='cupertino-icons md-36'>tag_circle</i> &#x2014; Cupertino icon named "tag_circle". Available on cupertino_icons package 1.0.0+ only.
-  'tag_circle': CupertinoIcons.tag_circle,
-
-  /// <i class='cupertino-icons md-36'>tag_circle_fill</i> &#x2014; Cupertino icon named "tag_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tag_circle_fill': CupertinoIcons.tag_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>tag_fill</i> &#x2014; Cupertino icon named "tag_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [tag_solid] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [tags_solid] which is available in cupertino_icons 0.1.3.
-  'tag_fill': CupertinoIcons.tag_fill,
-
-  /// <i class='cupertino-icons md-36'>text_aligncenter</i> &#x2014; Cupertino icon named "text_aligncenter". Available on cupertino_icons package 1.0.0+ only.
-  'text_aligncenter': CupertinoIcons.text_aligncenter,
-
-  /// <i class='cupertino-icons md-36'>text_alignleft</i> &#x2014; Cupertino icon named "text_alignleft". Available on cupertino_icons package 1.0.0+ only.
-  'text_alignleft': CupertinoIcons.text_alignleft,
-
-  /// <i class='cupertino-icons md-36'>text_alignright</i> &#x2014; Cupertino icon named "text_alignright". Available on cupertino_icons package 1.0.0+ only.
-  'text_alignright': CupertinoIcons.text_alignright,
-
-  /// <i class='cupertino-icons md-36'>text_append</i> &#x2014; Cupertino icon named "text_append". Available on cupertino_icons package 1.0.0+ only.
-  'text_append': CupertinoIcons.text_append,
-
-  /// <i class='cupertino-icons md-36'>text_badge_checkmark</i> &#x2014; Cupertino icon named "text_badge_checkmark". Available on cupertino_icons package 1.0.0+ only.
-  'text_badge_checkmark': CupertinoIcons.text_badge_checkmark,
-
-  /// <i class='cupertino-icons md-36'>text_badge_minus</i> &#x2014; Cupertino icon named "text_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'text_badge_minus': CupertinoIcons.text_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>text_badge_plus</i> &#x2014; Cupertino icon named "text_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'text_badge_plus': CupertinoIcons.text_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>text_badge_star</i> &#x2014; Cupertino icon named "text_badge_star". Available on cupertino_icons package 1.0.0+ only.
-  'text_badge_star': CupertinoIcons.text_badge_star,
-
-  /// <i class='cupertino-icons md-36'>text_badge_xmark</i> &#x2014; Cupertino icon named "text_badge_xmark". Available on cupertino_icons package 1.0.0+ only.
-  'text_badge_xmark': CupertinoIcons.text_badge_xmark,
-
-  /// <i class='cupertino-icons md-36'>text_bubble</i> &#x2014; Cupertino icon named "text_bubble". Available on cupertino_icons package 1.0.0+ only.
-  'text_bubble': CupertinoIcons.text_bubble,
-
-  /// <i class='cupertino-icons md-36'>text_bubble_fill</i> &#x2014; Cupertino icon named "text_bubble_fill". Available on cupertino_icons package 1.0.0+ only.
-  'text_bubble_fill': CupertinoIcons.text_bubble_fill,
-
-  /// <i class='cupertino-icons md-36'>text_cursor</i> &#x2014; Cupertino icon named "text_cursor". Available on cupertino_icons package 1.0.0+ only.
-  'text_cursor': CupertinoIcons.text_cursor,
-
-  /// <i class='cupertino-icons md-36'>text_insert</i> &#x2014; Cupertino icon named "text_insert". Available on cupertino_icons package 1.0.0+ only.
-  'text_insert': CupertinoIcons.text_insert,
-
-  /// <i class='cupertino-icons md-36'>text_justify</i> &#x2014; Cupertino icon named "text_justify". Available on cupertino_icons package 1.0.0+ only.
-  'text_justify': CupertinoIcons.text_justify,
-
-  /// <i class='cupertino-icons md-36'>text_justifyleft</i> &#x2014; Cupertino icon named "text_justifyleft". Available on cupertino_icons package 1.0.0+ only.
-  'text_justifyleft': CupertinoIcons.text_justifyleft,
-
-  /// <i class='cupertino-icons md-36'>text_justifyright</i> &#x2014; Cupertino icon named "text_justifyright". Available on cupertino_icons package 1.0.0+ only.
-  'text_justifyright': CupertinoIcons.text_justifyright,
-
-  /// <i class='cupertino-icons md-36'>text_quote</i> &#x2014; Cupertino icon named "text_quote". Available on cupertino_icons package 1.0.0+ only.
-  'text_quote': CupertinoIcons.text_quote,
-
-  /// <i class='cupertino-icons md-36'>textbox</i> &#x2014; Cupertino icon named "textbox". Available on cupertino_icons package 1.0.0+ only.
-  'textbox': CupertinoIcons.textbox,
-
-  /// <i class='cupertino-icons md-36'>textformat</i> &#x2014; Cupertino icon named "textformat". Available on cupertino_icons package 1.0.0+ only.
-  'textformat': CupertinoIcons.textformat,
-
-  /// <i class='cupertino-icons md-36'>textformat_123</i> &#x2014; Cupertino icon named "textformat_123". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_123': CupertinoIcons.textformat_123,
-
-  /// <i class='cupertino-icons md-36'>textformat_abc</i> &#x2014; Cupertino icon named "textformat_abc". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_abc': CupertinoIcons.textformat_abc,
-
-  /// <i class='cupertino-icons md-36'>textformat_abc_dottedunderline</i> &#x2014; Cupertino icon named "textformat_abc_dottedunderline". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_abc_dottedunderline':
-      CupertinoIcons.textformat_abc_dottedunderline,
-
-  /// <i class='cupertino-icons md-36'>textformat_alt</i> &#x2014; Cupertino icon named "textformat_alt". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_alt': CupertinoIcons.textformat_alt,
-
-  /// <i class='cupertino-icons md-36'>textformat_size</i> &#x2014; Cupertino icon named "textformat_size". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_size': CupertinoIcons.textformat_size,
-
-  /// <i class='cupertino-icons md-36'>textformat_subscript</i> &#x2014; Cupertino icon named "textformat_subscript". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_subscript': CupertinoIcons.textformat_subscript,
-
-  /// <i class='cupertino-icons md-36'>textformat_superscript</i> &#x2014; Cupertino icon named "textformat_superscript". Available on cupertino_icons package 1.0.0+ only.
-  'textformat_superscript': CupertinoIcons.textformat_superscript,
-
-  /// <i class='cupertino-icons md-36'>thermometer</i> &#x2014; Cupertino icon named "thermometer". Available on cupertino_icons package 1.0.0+ only.
-  'thermometer': CupertinoIcons.thermometer,
-
-  /// <i class='cupertino-icons md-36'>thermometer_snowflake</i> &#x2014; Cupertino icon named "thermometer_snowflake". Available on cupertino_icons package 1.0.0+ only.
-  'thermometer_snowflake': CupertinoIcons.thermometer_snowflake,
-
-  /// <i class='cupertino-icons md-36'>thermometer_sun</i> &#x2014; Cupertino icon named "thermometer_sun". Available on cupertino_icons package 1.0.0+ only.
-  'thermometer_sun': CupertinoIcons.thermometer_sun,
-
-  /// <i class='cupertino-icons md-36'>ticket</i> &#x2014; Cupertino icon named "ticket". Available on cupertino_icons package 1.0.0+ only.
-  'ticket': CupertinoIcons.ticket,
-
-  /// <i class='cupertino-icons md-36'>ticket_fill</i> &#x2014; Cupertino icon named "ticket_fill". Available on cupertino_icons package 1.0.0+ only.
-  'ticket_fill': CupertinoIcons.ticket_fill,
-
-  /// <i class='cupertino-icons md-36'>tickets</i> &#x2014; Cupertino icon named "tickets". Available on cupertino_icons package 1.0.0+ only.
-  'tickets': CupertinoIcons.tickets,
-
-  /// <i class='cupertino-icons md-36'>tickets_fill</i> &#x2014; Cupertino icon named "tickets_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tickets_fill': CupertinoIcons.tickets_fill,
-
-  /// <i class='cupertino-icons md-36'>timelapse</i> &#x2014; Cupertino icon named "timelapse". Available on cupertino_icons package 1.0.0+ only.
-  'timelapse': CupertinoIcons.timelapse,
-
-  /// <i class='cupertino-icons md-36'>timer</i> &#x2014; Cupertino icon named "timer". Available on cupertino_icons package 1.0.0+ only.
-  'timer': CupertinoIcons.timer,
-
-  /// <i class='cupertino-icons md-36'>timer_fill</i> &#x2014; Cupertino icon named "timer_fill". Available on cupertino_icons package 1.0.0+ only.
-  'timer_fill': CupertinoIcons.timer_fill,
-
-  /// <i class='cupertino-icons md-36'>today</i> &#x2014; Cupertino icon named "today". Available on cupertino_icons package 1.0.0+ only.
-  'today': CupertinoIcons.today,
-
-  /// <i class='cupertino-icons md-36'>today_fill</i> &#x2014; Cupertino icon named "today_fill". Available on cupertino_icons package 1.0.0+ only.
-  'today_fill': CupertinoIcons.today_fill,
-
-  /// <i class='cupertino-icons md-36'>tornado</i> &#x2014; Cupertino icon named "tornado". Available on cupertino_icons package 1.0.0+ only.
-  'tornado': CupertinoIcons.tornado,
-
-  /// <i class='cupertino-icons md-36'>tortoise</i> &#x2014; Cupertino icon named "tortoise". Available on cupertino_icons package 1.0.0+ only.
-  'tortoise': CupertinoIcons.tortoise,
-
-  /// <i class='cupertino-icons md-36'>tortoise_fill</i> &#x2014; Cupertino icon named "tortoise_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tortoise_fill': CupertinoIcons.tortoise_fill,
-
-  /// <i class='cupertino-icons md-36'>tram_fill</i> &#x2014; Cupertino icon named "tram_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tram_fill': CupertinoIcons.tram_fill,
-
-  /// <i class='cupertino-icons md-36'>trash</i> &#x2014; Cupertino icon named "trash". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [delete] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [delete_simple] which is available in cupertino_icons 0.1.3.
-  'trash': CupertinoIcons.trash,
-
-  /// <i class='cupertino-icons md-36'>trash_circle</i> &#x2014; Cupertino icon named "trash_circle". Available on cupertino_icons package 1.0.0+ only.
-  'trash_circle': CupertinoIcons.trash_circle,
-
-  /// <i class='cupertino-icons md-36'>trash_circle_fill</i> &#x2014; Cupertino icon named "trash_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'trash_circle_fill': CupertinoIcons.trash_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>trash_fill</i> &#x2014; Cupertino icon named "trash_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [delete_solid] which is available in cupertino_icons 0.1.3.
-  'trash_fill': CupertinoIcons.trash_fill,
-
-  /// <i class='cupertino-icons md-36'>trash_slash</i> &#x2014; Cupertino icon named "trash_slash". Available on cupertino_icons package 1.0.0+ only.
-  'trash_slash': CupertinoIcons.trash_slash,
-
-  /// <i class='cupertino-icons md-36'>trash_slash_fill</i> &#x2014; Cupertino icon named "trash_slash_fill". Available on cupertino_icons package 1.0.0+ only.
-  'trash_slash_fill': CupertinoIcons.trash_slash_fill,
-
-  /// <i class='cupertino-icons md-36'>tray</i> &#x2014; Cupertino icon named "tray". Available on cupertino_icons package 1.0.0+ only.
-  'tray': CupertinoIcons.tray,
-
-  /// <i class='cupertino-icons md-36'>tray_2</i> &#x2014; Cupertino icon named "tray_2". Available on cupertino_icons package 1.0.0+ only.
-  'tray_2': CupertinoIcons.tray_2,
-
-  /// <i class='cupertino-icons md-36'>tray_2_fill</i> &#x2014; Cupertino icon named "tray_2_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tray_2_fill': CupertinoIcons.tray_2_fill,
-
-  /// <i class='cupertino-icons md-36'>tray_arrow_down</i> &#x2014; Cupertino icon named "tray_arrow_down". Available on cupertino_icons package 1.0.0+ only.
-  'tray_arrow_down': CupertinoIcons.tray_arrow_down,
-
-  /// <i class='cupertino-icons md-36'>tray_arrow_down_fill</i> &#x2014; Cupertino icon named "tray_arrow_down_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tray_arrow_down_fill': CupertinoIcons.tray_arrow_down_fill,
-
-  /// <i class='cupertino-icons md-36'>tray_arrow_up</i> &#x2014; Cupertino icon named "tray_arrow_up". Available on cupertino_icons package 1.0.0+ only.
-  'tray_arrow_up': CupertinoIcons.tray_arrow_up,
-
-  /// <i class='cupertino-icons md-36'>tray_arrow_up_fill</i> &#x2014; Cupertino icon named "tray_arrow_up_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tray_arrow_up_fill': CupertinoIcons.tray_arrow_up_fill,
-
-  /// <i class='cupertino-icons md-36'>tray_fill</i> &#x2014; Cupertino icon named "tray_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tray_fill': CupertinoIcons.tray_fill,
-
-  /// <i class='cupertino-icons md-36'>tray_full</i> &#x2014; Cupertino icon named "tray_full". Available on cupertino_icons package 1.0.0+ only.
-  'tray_full': CupertinoIcons.tray_full,
-
-  /// <i class='cupertino-icons md-36'>tray_full_fill</i> &#x2014; Cupertino icon named "tray_full_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tray_full_fill': CupertinoIcons.tray_full_fill,
-
-  /// <i class='cupertino-icons md-36'>tree</i> &#x2014; Cupertino icon named "tree". Available on cupertino_icons package 1.0.0+ only.
-  'tree': CupertinoIcons.tree,
-
-  /// <i class='cupertino-icons md-36'>triangle</i> &#x2014; Cupertino icon named "triangle". Available on cupertino_icons package 1.0.0+ only.
-  'triangle': CupertinoIcons.triangle,
-
-  /// <i class='cupertino-icons md-36'>triangle_fill</i> &#x2014; Cupertino icon named "triangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'triangle_fill': CupertinoIcons.triangle_fill,
-
-  /// <i class='cupertino-icons md-36'>triangle_lefthalf_fill</i> &#x2014; Cupertino icon named "triangle_lefthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'triangle_lefthalf_fill': CupertinoIcons.triangle_lefthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>triangle_righthalf_fill</i> &#x2014; Cupertino icon named "triangle_righthalf_fill". Available on cupertino_icons package 1.0.0+ only.
-  'triangle_righthalf_fill': CupertinoIcons.triangle_righthalf_fill,
-
-  /// <i class='cupertino-icons md-36'>tropicalstorm</i> &#x2014; Cupertino icon named "tropicalstorm". Available on cupertino_icons package 1.0.0+ only.
-  'tropicalstorm': CupertinoIcons.tropicalstorm,
-
-  /// <i class='cupertino-icons md-36'>tuningfork</i> &#x2014; Cupertino icon named "tuningfork". Available on cupertino_icons package 1.0.0+ only.
-  'tuningfork': CupertinoIcons.tuningfork,
-
-  /// <i class='cupertino-icons md-36'>tv</i> &#x2014; Cupertino icon named "tv". Available on cupertino_icons package 1.0.0+ only.
-  'tv': CupertinoIcons.tv,
-
-  /// <i class='cupertino-icons md-36'>tv_circle</i> &#x2014; Cupertino icon named "tv_circle". Available on cupertino_icons package 1.0.0+ only.
-  'tv_circle': CupertinoIcons.tv_circle,
-
-  /// <i class='cupertino-icons md-36'>tv_circle_fill</i> &#x2014; Cupertino icon named "tv_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tv_circle_fill': CupertinoIcons.tv_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>tv_fill</i> &#x2014; Cupertino icon named "tv_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tv_fill': CupertinoIcons.tv_fill,
-
-  /// <i class='cupertino-icons md-36'>tv_music_note</i> &#x2014; Cupertino icon named "tv_music_note". Available on cupertino_icons package 1.0.0+ only.
-  'tv_music_note': CupertinoIcons.tv_music_note,
-
-  /// <i class='cupertino-icons md-36'>tv_music_note_fill</i> &#x2014; Cupertino icon named "tv_music_note_fill". Available on cupertino_icons package 1.0.0+ only.
-  'tv_music_note_fill': CupertinoIcons.tv_music_note_fill,
-
-  /// <i class='cupertino-icons md-36'>uiwindow_split_2x1</i> &#x2014; Cupertino icon named "uiwindow_split_2x1". Available on cupertino_icons package 1.0.0+ only.
-  'uiwindow_split_2x1': CupertinoIcons.uiwindow_split_2x1,
-
-  /// <i class='cupertino-icons md-36'>umbrella</i> &#x2014; Cupertino icon named "umbrella". Available on cupertino_icons package 1.0.0+ only.
-  'umbrella': CupertinoIcons.umbrella,
-
-  /// <i class='cupertino-icons md-36'>umbrella_fill</i> &#x2014; Cupertino icon named "umbrella_fill". Available on cupertino_icons package 1.0.0+ only.
-  'umbrella_fill': CupertinoIcons.umbrella_fill,
-
-  /// <i class='cupertino-icons md-36'>underline</i> &#x2014; Cupertino icon named "underline". Available on cupertino_icons package 1.0.0+ only.
-  'underline': CupertinoIcons.underline,
-
-  /// <i class='cupertino-icons md-36'>upload_circle</i> &#x2014; Cupertino icon named "upload_circle". Available on cupertino_icons package 1.0.0+ only.
-  'upload_circle': CupertinoIcons.upload_circle,
-
-  /// <i class='cupertino-icons md-36'>upload_circle_fill</i> &#x2014; Cupertino icon named "upload_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'upload_circle_fill': CupertinoIcons.upload_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>videocam</i> &#x2014; Cupertino icon named "videocam". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [video_camera] which is available in cupertino_icons 0.1.3.
-  'videocam': CupertinoIcons.videocam,
-
-  /// <i class='cupertino-icons md-36'>videocam_circle</i> &#x2014; Cupertino icon named "videocam_circle". Available on cupertino_icons package 1.0.0+ only.
-  'videocam_circle': CupertinoIcons.videocam_circle,
-
-  /// <i class='cupertino-icons md-36'>videocam_circle_fill</i> &#x2014; Cupertino icon named "videocam_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'videocam_circle_fill': CupertinoIcons.videocam_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>videocam_fill</i> &#x2014; Cupertino icon named "videocam_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [video_camera_solid] which is available in cupertino_icons 0.1.3.
-  'videocam_fill': CupertinoIcons.videocam_fill,
-
-  /// <i class='cupertino-icons md-36'>view_2d</i> &#x2014; Cupertino icon named "view_2d". Available on cupertino_icons package 1.0.0+ only.
-  'view_2d': CupertinoIcons.view_2d,
-
-  /// <i class='cupertino-icons md-36'>view_3d</i> &#x2014; Cupertino icon named "view_3d". Available on cupertino_icons package 1.0.0+ only.
-  'view_3d': CupertinoIcons.view_3d,
-
-  /// <i class='cupertino-icons md-36'>viewfinder</i> &#x2014; Cupertino icon named "viewfinder". Available on cupertino_icons package 1.0.0+ only.
-  'viewfinder': CupertinoIcons.viewfinder,
-
-  /// <i class='cupertino-icons md-36'>viewfinder_circle</i> &#x2014; Cupertino icon named "viewfinder_circle". Available on cupertino_icons package 1.0.0+ only.
-  'viewfinder_circle': CupertinoIcons.viewfinder_circle,
-
-  /// <i class='cupertino-icons md-36'>viewfinder_circle_fill</i> &#x2014; Cupertino icon named "viewfinder_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'viewfinder_circle_fill': CupertinoIcons.viewfinder_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>wand_rays</i> &#x2014; Cupertino icon named "wand_rays". Available on cupertino_icons package 1.0.0+ only.
-  'wand_rays': CupertinoIcons.wand_rays,
-
-  /// <i class='cupertino-icons md-36'>wand_rays_inverse</i> &#x2014; Cupertino icon named "wand_rays_inverse". Available on cupertino_icons package 1.0.0+ only.
-  'wand_rays_inverse': CupertinoIcons.wand_rays_inverse,
-
-  /// <i class='cupertino-icons md-36'>wand_stars</i> &#x2014; Cupertino icon named "wand_stars". Available on cupertino_icons package 1.0.0+ only.
-  'wand_stars': CupertinoIcons.wand_stars,
-
-  /// <i class='cupertino-icons md-36'>wand_stars_inverse</i> &#x2014; Cupertino icon named "wand_stars_inverse". Available on cupertino_icons package 1.0.0+ only.
-  'wand_stars_inverse': CupertinoIcons.wand_stars_inverse,
-
-  /// <i class='cupertino-icons md-36'>waveform</i> &#x2014; Cupertino icon named "waveform". Available on cupertino_icons package 1.0.0+ only.
-  'waveform': CupertinoIcons.waveform,
-
-  /// <i class='cupertino-icons md-36'>waveform_circle</i> &#x2014; Cupertino icon named "waveform_circle". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_circle': CupertinoIcons.waveform_circle,
-
-  /// <i class='cupertino-icons md-36'>waveform_circle_fill</i> &#x2014; Cupertino icon named "waveform_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_circle_fill': CupertinoIcons.waveform_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>waveform_path</i> &#x2014; Cupertino icon named "waveform_path". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_path': CupertinoIcons.waveform_path,
-
-  /// <i class='cupertino-icons md-36'>waveform_path_badge_minus</i> &#x2014; Cupertino icon named "waveform_path_badge_minus". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_path_badge_minus': CupertinoIcons.waveform_path_badge_minus,
-
-  /// <i class='cupertino-icons md-36'>waveform_path_badge_plus</i> &#x2014; Cupertino icon named "waveform_path_badge_plus". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_path_badge_plus': CupertinoIcons.waveform_path_badge_plus,
-
-  /// <i class='cupertino-icons md-36'>waveform_path_ecg</i> &#x2014; Cupertino icon named "waveform_path_ecg". Available on cupertino_icons package 1.0.0+ only.
-  'waveform_path_ecg': CupertinoIcons.waveform_path_ecg,
-
-  /// <i class='cupertino-icons md-36'>wifi</i> &#x2014; Cupertino icon named "wifi". Available on cupertino_icons package 1.0.0+ only.
-  'wifi': CupertinoIcons.wifi,
-
-  /// <i class='cupertino-icons md-36'>wifi_exclamationmark</i> &#x2014; Cupertino icon named "wifi_exclamationmark". Available on cupertino_icons package 1.0.0+ only.
-  'wifi_exclamationmark': CupertinoIcons.wifi_exclamationmark,
-
-  /// <i class='cupertino-icons md-36'>wifi_slash</i> &#x2014; Cupertino icon named "wifi_slash". Available on cupertino_icons package 1.0.0+ only.
-  'wifi_slash': CupertinoIcons.wifi_slash,
-
-  /// <i class='cupertino-icons md-36'>wind</i> &#x2014; Cupertino icon named "wind". Available on cupertino_icons package 1.0.0+ only.
-  'wind': CupertinoIcons.wind,
-
-  /// <i class='cupertino-icons md-36'>wind_snow</i> &#x2014; Cupertino icon named "wind_snow". Available on cupertino_icons package 1.0.0+ only.
-  'wind_snow': CupertinoIcons.wind_snow,
-
-  /// <i class='cupertino-icons md-36'>wrench</i> &#x2014; Cupertino icon named "wrench". Available on cupertino_icons package 1.0.0+ only.
-  'wrench': CupertinoIcons.wrench,
-
-  /// <i class='cupertino-icons md-36'>wrench_fill</i> &#x2014; Cupertino icon named "wrench_fill". Available on cupertino_icons package 1.0.0+ only.
-  'wrench_fill': CupertinoIcons.wrench_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark</i> &#x2014; Cupertino icon named "xmark". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [clear_thick] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [clear] which is available in cupertino_icons 0.1.3.
-  'xmark': CupertinoIcons.xmark,
-
-  /// <i class='cupertino-icons md-36'>xmark_circle</i> &#x2014; Cupertino icon named "xmark_circle". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [clear_circled] which is available in cupertino_icons 0.1.3.
-  'xmark_circle': CupertinoIcons.xmark_circle,
-
-  /// <i class='cupertino-icons md-36'>xmark_circle_fill</i> &#x2014; Cupertino icon named "xmark_circle_fill". Available on cupertino_icons package 1.0.0+ only.
-  /// This is the same icon as [clear_thick_circled] which is available in cupertino_icons 0.1.3.
-  /// This is the same icon as [clear_circled_solid] which is available in cupertino_icons 0.1.3.
-  'xmark_circle_fill': CupertinoIcons.xmark_circle_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark_octagon</i> &#x2014; Cupertino icon named "xmark_octagon". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_octagon': CupertinoIcons.xmark_octagon,
-
-  /// <i class='cupertino-icons md-36'>xmark_octagon_fill</i> &#x2014; Cupertino icon named "xmark_octagon_fill". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_octagon_fill': CupertinoIcons.xmark_octagon_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark_rectangle</i> &#x2014; Cupertino icon named "xmark_rectangle". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_rectangle': CupertinoIcons.xmark_rectangle,
-
-  /// <i class='cupertino-icons md-36'>xmark_rectangle_fill</i> &#x2014; Cupertino icon named "xmark_rectangle_fill". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_rectangle_fill': CupertinoIcons.xmark_rectangle_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark_seal</i> &#x2014; Cupertino icon named "xmark_seal". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_seal': CupertinoIcons.xmark_seal,
-
-  /// <i class='cupertino-icons md-36'>xmark_seal_fill</i> &#x2014; Cupertino icon named "xmark_seal_fill". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_seal_fill': CupertinoIcons.xmark_seal_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark_shield</i> &#x2014; Cupertino icon named "xmark_shield". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_shield': CupertinoIcons.xmark_shield,
-
-  /// <i class='cupertino-icons md-36'>xmark_shield_fill</i> &#x2014; Cupertino icon named "xmark_shield_fill". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_shield_fill': CupertinoIcons.xmark_shield_fill,
-
-  /// <i class='cupertino-icons md-36'>xmark_square</i> &#x2014; Cupertino icon named "xmark_square". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_square': CupertinoIcons.xmark_square,
-
-  /// <i class='cupertino-icons md-36'>xmark_square_fill</i> &#x2014; Cupertino icon named "xmark_square_fill". Available on cupertino_icons package 1.0.0+ only.
-  'xmark_square_fill': CupertinoIcons.xmark_square_fill,
-
-  /// <i class='cupertino-icons md-36'>zoom_in</i> &#x2014; Cupertino icon named "zoom_in". Available on cupertino_icons package 1.0.0+ only.
-  'zoom_in': CupertinoIcons.zoom_in,
-
-  /// <i class='cupertino-icons md-36'>zoom_out</i> &#x2014; Cupertino icon named "zoom_out". Available on cupertino_icons package 1.0.0+ only.
-  'zoom_out': CupertinoIcons.zoom_out,
-
-  /// <i class='cupertino-icons md-36'>zzz</i> &#x2014; Cupertino icon named "zzz". Available on cupertino_icons package 1.0.0+ only.
-  'zzz': CupertinoIcons.zzz,
+const Map<String, IconPickerIcon> cupertinoIcons = {
+  'left_chevron': IconPickerIcon(
+      name: 'left_chevron',
+      data: CupertinoIcons.left_chevron,
+      pack: IconPack.fontAwesomeIcons),
+  'right_chevron': IconPickerIcon(
+      name: 'right_chevron',
+      data: CupertinoIcons.right_chevron,
+      pack: IconPack.cupertino),
+  'share': IconPickerIcon(
+      name: 'share', data: CupertinoIcons.share, pack: IconPack.cupertino),
+  'share_solid': IconPickerIcon(
+      name: 'share_solid',
+      data: CupertinoIcons.share_solid,
+      pack: IconPack.cupertino),
+  'book': IconPickerIcon(
+      name: 'book', data: CupertinoIcons.book, pack: IconPack.cupertino),
+  'book_solid': IconPickerIcon(
+      name: 'book_solid',
+      data: CupertinoIcons.book_solid,
+      pack: IconPack.cupertino),
+  'bookmark': IconPickerIcon(
+      name: 'bookmark',
+      data: CupertinoIcons.bookmark,
+      pack: IconPack.cupertino),
+  'bookmark_solid': IconPickerIcon(
+      name: 'bookmark_solid',
+      data: CupertinoIcons.bookmark_solid,
+      pack: IconPack.cupertino),
+  'info': IconPickerIcon(
+      name: 'info', data: CupertinoIcons.info, pack: IconPack.cupertino),
+  'reply': IconPickerIcon(
+      name: 'reply', data: CupertinoIcons.reply, pack: IconPack.cupertino),
+  'conversation_bubble': IconPickerIcon(
+      name: 'conversation_bubble',
+      data: CupertinoIcons.conversation_bubble,
+      pack: IconPack.cupertino),
+  'profile_circled': IconPickerIcon(
+      name: 'profile_circled',
+      data: CupertinoIcons.profile_circled,
+      pack: IconPack.cupertino),
+  'plus_circled': IconPickerIcon(
+      name: 'plus_circled',
+      data: CupertinoIcons.plus_circled,
+      pack: IconPack.cupertino),
+  'minus_circled': IconPickerIcon(
+      name: 'minus_circled',
+      data: CupertinoIcons.minus_circled,
+      pack: IconPack.cupertino),
+  'flag': IconPickerIcon(
+      name: 'flag', data: CupertinoIcons.flag, pack: IconPack.cupertino),
+  'search': IconPickerIcon(
+      name: 'search', data: CupertinoIcons.search, pack: IconPack.cupertino),
+  'check_mark': IconPickerIcon(
+      name: 'check_mark',
+      data: CupertinoIcons.check_mark,
+      pack: IconPack.cupertino),
+  'check_mark_circled': IconPickerIcon(
+      name: 'check_mark_circled',
+      data: CupertinoIcons.check_mark_circled,
+      pack: IconPack.cupertino),
+  'check_mark_circled_solid': IconPickerIcon(
+      name: 'check_mark_circled_solid',
+      data: CupertinoIcons.check_mark_circled_solid,
+      pack: IconPack.cupertino),
+  'circle': IconPickerIcon(
+      name: 'circle', data: CupertinoIcons.circle, pack: IconPack.cupertino),
+  'circle_filled': IconPickerIcon(
+      name: 'circle_filled',
+      data: CupertinoIcons.circle_filled,
+      pack: IconPack.cupertino),
+  'back': IconPickerIcon(
+      name: 'back', data: CupertinoIcons.back, pack: IconPack.cupertino),
+  'forward': IconPickerIcon(
+      name: 'forward', data: CupertinoIcons.forward, pack: IconPack.cupertino),
+  'home': IconPickerIcon(
+      name: 'home', data: CupertinoIcons.home, pack: IconPack.cupertino),
+  'shopping_cart': IconPickerIcon(
+      name: 'shopping_cart',
+      data: CupertinoIcons.shopping_cart,
+      pack: IconPack.cupertino),
+  'ellipsis': IconPickerIcon(
+      name: 'ellipsis',
+      data: CupertinoIcons.ellipsis,
+      pack: IconPack.cupertino),
+  'phone': IconPickerIcon(
+      name: 'phone', data: CupertinoIcons.phone, pack: IconPack.cupertino),
+  'phone_solid': IconPickerIcon(
+      name: 'phone_solid',
+      data: CupertinoIcons.phone_solid,
+      pack: IconPack.cupertino),
+  'down_arrow': IconPickerIcon(
+      name: 'down_arrow',
+      data: CupertinoIcons.down_arrow,
+      pack: IconPack.cupertino),
+  'up_arrow': IconPickerIcon(
+      name: 'up_arrow',
+      data: CupertinoIcons.up_arrow,
+      pack: IconPack.cupertino),
+  'battery_charging': IconPickerIcon(
+      name: 'battery_charging',
+      data: CupertinoIcons.battery_charging,
+      pack: IconPack.cupertino),
+  'battery_empty': IconPickerIcon(
+      name: 'battery_empty',
+      data: CupertinoIcons.battery_empty,
+      pack: IconPack.cupertino),
+  'battery_full': IconPickerIcon(
+      name: 'battery_full',
+      data: CupertinoIcons.battery_full,
+      pack: IconPack.cupertino),
+  'battery_75_percent': IconPickerIcon(
+      name: 'battery_75_percent',
+      data: CupertinoIcons.battery_75_percent,
+      pack: IconPack.cupertino),
+  'battery_25_percent': IconPickerIcon(
+      name: 'battery_25_percent',
+      data: CupertinoIcons.battery_25_percent,
+      pack: IconPack.cupertino),
+  'bluetooth': IconPickerIcon(
+      name: 'bluetooth',
+      data: CupertinoIcons.bluetooth,
+      pack: IconPack.cupertino),
+  'restart': IconPickerIcon(
+      name: 'restart', data: CupertinoIcons.restart, pack: IconPack.cupertino),
+  'reply_all': IconPickerIcon(
+      name: 'reply_all',
+      data: CupertinoIcons.reply_all,
+      pack: IconPack.cupertino),
+  'reply_thick_solid': IconPickerIcon(
+      name: 'reply_thick_solid',
+      data: CupertinoIcons.reply_thick_solid,
+      pack: IconPack.cupertino),
+  'share_up': IconPickerIcon(
+      name: 'share_up',
+      data: CupertinoIcons.share_up,
+      pack: IconPack.cupertino),
+  'shuffle': IconPickerIcon(
+      name: 'shuffle', data: CupertinoIcons.shuffle, pack: IconPack.cupertino),
+  'shuffle_medium': IconPickerIcon(
+      name: 'shuffle_medium',
+      data: CupertinoIcons.shuffle_medium,
+      pack: IconPack.cupertino),
+  'shuffle_thick': IconPickerIcon(
+      name: 'shuffle_thick',
+      data: CupertinoIcons.shuffle_thick,
+      pack: IconPack.cupertino),
+  'photo_camera': IconPickerIcon(
+      name: 'photo_camera',
+      data: CupertinoIcons.photo_camera,
+      pack: IconPack.cupertino),
+  'photo_camera_solid': IconPickerIcon(
+      name: 'photo_camera_solid',
+      data: CupertinoIcons.photo_camera_solid,
+      pack: IconPack.cupertino),
+  'video_camera': IconPickerIcon(
+      name: 'video_camera',
+      data: CupertinoIcons.video_camera,
+      pack: IconPack.cupertino),
+  'video_camera_solid': IconPickerIcon(
+      name: 'video_camera_solid',
+      data: CupertinoIcons.video_camera_solid,
+      pack: IconPack.cupertino),
+  'switch_camera': IconPickerIcon(
+      name: 'switch_camera',
+      data: CupertinoIcons.switch_camera,
+      pack: IconPack.cupertino),
+  'switch_camera_solid': IconPickerIcon(
+      name: 'switch_camera_solid',
+      data: CupertinoIcons.switch_camera_solid,
+      pack: IconPack.cupertino),
+  'collections': IconPickerIcon(
+      name: 'collections',
+      data: CupertinoIcons.collections,
+      pack: IconPack.cupertino),
+  'collections_solid': IconPickerIcon(
+      name: 'collections_solid',
+      data: CupertinoIcons.collections_solid,
+      pack: IconPack.cupertino),
+  'folder': IconPickerIcon(
+      name: 'folder', data: CupertinoIcons.folder, pack: IconPack.cupertino),
+  'folder_solid': IconPickerIcon(
+      name: 'folder_solid',
+      data: CupertinoIcons.folder_solid,
+      pack: IconPack.cupertino),
+  'folder_open': IconPickerIcon(
+      name: 'folder_open',
+      data: CupertinoIcons.folder_open,
+      pack: IconPack.cupertino),
+  'delete': IconPickerIcon(
+      name: 'delete', data: CupertinoIcons.delete, pack: IconPack.cupertino),
+  'delete_solid': IconPickerIcon(
+      name: 'delete_solid',
+      data: CupertinoIcons.delete_solid,
+      pack: IconPack.cupertino),
+  'delete_simple': IconPickerIcon(
+      name: 'delete_simple',
+      data: CupertinoIcons.delete_simple,
+      pack: IconPack.cupertino),
+  'pen': IconPickerIcon(
+      name: 'pen', data: CupertinoIcons.pen, pack: IconPack.cupertino),
+  'pencil': IconPickerIcon(
+      name: 'pencil', data: CupertinoIcons.pencil, pack: IconPack.cupertino),
+  'create': IconPickerIcon(
+      name: 'create', data: CupertinoIcons.create, pack: IconPack.cupertino),
+  'create_solid': IconPickerIcon(
+      name: 'create_solid',
+      data: CupertinoIcons.create_solid,
+      pack: IconPack.cupertino),
+  'refresh': IconPickerIcon(
+      name: 'refresh', data: CupertinoIcons.refresh, pack: IconPack.cupertino),
+  'refresh_circled': IconPickerIcon(
+      name: 'refresh_circled',
+      data: CupertinoIcons.refresh_circled,
+      pack: IconPack.cupertino),
+  'refresh_circled_solid': IconPickerIcon(
+      name: 'refresh_circled_solid',
+      data: CupertinoIcons.refresh_circled_solid,
+      pack: IconPack.cupertino),
+  'refresh_thin': IconPickerIcon(
+      name: 'refresh_thin',
+      data: CupertinoIcons.refresh_thin,
+      pack: IconPack.cupertino),
+  'refresh_thick': IconPickerIcon(
+      name: 'refresh_thick',
+      data: CupertinoIcons.refresh_thick,
+      pack: IconPack.cupertino),
+  'refresh_bold': IconPickerIcon(
+      name: 'refresh_bold',
+      data: CupertinoIcons.refresh_bold,
+      pack: IconPack.cupertino),
+  'clear_thick': IconPickerIcon(
+      name: 'clear_thick',
+      data: CupertinoIcons.clear_thick,
+      pack: IconPack.cupertino),
+  'clear_thick_circled': IconPickerIcon(
+      name: 'clear_thick_circled',
+      data: CupertinoIcons.clear_thick_circled,
+      pack: IconPack.cupertino),
+  'clear': IconPickerIcon(
+      name: 'clear', data: CupertinoIcons.clear, pack: IconPack.cupertino),
+  'clear_circled': IconPickerIcon(
+      name: 'clear_circled',
+      data: CupertinoIcons.clear_circled,
+      pack: IconPack.cupertino),
+  'clear_circled_solid': IconPickerIcon(
+      name: 'clear_circled_solid',
+      data: CupertinoIcons.clear_circled_solid,
+      pack: IconPack.cupertino),
+  'add': IconPickerIcon(
+      name: 'add', data: CupertinoIcons.add, pack: IconPack.cupertino),
+  'add_circled': IconPickerIcon(
+      name: 'add_circled',
+      data: CupertinoIcons.add_circled,
+      pack: IconPack.cupertino),
+  'add_circled_solid': IconPickerIcon(
+      name: 'add_circled_solid',
+      data: CupertinoIcons.add_circled_solid,
+      pack: IconPack.cupertino),
+  'gear': IconPickerIcon(
+      name: 'gear', data: CupertinoIcons.gear, pack: IconPack.cupertino),
+  'gear_solid': IconPickerIcon(
+      name: 'gear_solid',
+      data: CupertinoIcons.gear_solid,
+      pack: IconPack.cupertino),
+  'gear_big': IconPickerIcon(
+      name: 'gear_big',
+      data: CupertinoIcons.gear_big,
+      pack: IconPack.cupertino),
+  'settings': IconPickerIcon(
+      name: 'settings',
+      data: CupertinoIcons.settings,
+      pack: IconPack.cupertino),
+  'settings_solid': IconPickerIcon(
+      name: 'settings_solid',
+      data: CupertinoIcons.settings_solid,
+      pack: IconPack.cupertino),
+  'music_note': IconPickerIcon(
+      name: 'music_note',
+      data: CupertinoIcons.music_note,
+      pack: IconPack.cupertino),
+  'double_music_note': IconPickerIcon(
+      name: 'double_music_note',
+      data: CupertinoIcons.double_music_note,
+      pack: IconPack.cupertino),
+  'play_arrow': IconPickerIcon(
+      name: 'play_arrow',
+      data: CupertinoIcons.play_arrow,
+      pack: IconPack.cupertino),
+  'play_arrow_solid': IconPickerIcon(
+      name: 'play_arrow_solid',
+      data: CupertinoIcons.play_arrow_solid,
+      pack: IconPack.cupertino),
+  'pause': IconPickerIcon(
+      name: 'pause', data: CupertinoIcons.pause, pack: IconPack.cupertino),
+  'pause_solid': IconPickerIcon(
+      name: 'pause_solid',
+      data: CupertinoIcons.pause_solid,
+      pack: IconPack.cupertino),
+  'loop': IconPickerIcon(
+      name: 'loop', data: CupertinoIcons.loop, pack: IconPack.cupertino),
+  'loop_thick': IconPickerIcon(
+      name: 'loop_thick',
+      data: CupertinoIcons.loop_thick,
+      pack: IconPack.cupertino),
+  'volume_down': IconPickerIcon(
+      name: 'volume_down',
+      data: CupertinoIcons.volume_down,
+      pack: IconPack.cupertino),
+  'volume_mute': IconPickerIcon(
+      name: 'volume_mute',
+      data: CupertinoIcons.volume_mute,
+      pack: IconPack.cupertino),
+  'volume_off': IconPickerIcon(
+      name: 'volume_off',
+      data: CupertinoIcons.volume_off,
+      pack: IconPack.cupertino),
+  'volume_up': IconPickerIcon(
+      name: 'volume_up',
+      data: CupertinoIcons.volume_up,
+      pack: IconPack.cupertino),
+  'fullscreen': IconPickerIcon(
+      name: 'fullscreen',
+      data: CupertinoIcons.fullscreen,
+      pack: IconPack.cupertino),
+  'fullscreen_exit': IconPickerIcon(
+      name: 'fullscreen_exit',
+      data: CupertinoIcons.fullscreen_exit,
+      pack: IconPack.cupertino),
+  'mic_off': IconPickerIcon(
+      name: 'mic_off', data: CupertinoIcons.mic_off, pack: IconPack.cupertino),
+  'mic': IconPickerIcon(
+      name: 'mic', data: CupertinoIcons.mic, pack: IconPack.cupertino),
+  'mic_solid': IconPickerIcon(
+      name: 'mic_solid',
+      data: CupertinoIcons.mic_solid,
+      pack: IconPack.cupertino),
+  'clock': IconPickerIcon(
+      name: 'clock', data: CupertinoIcons.clock, pack: IconPack.cupertino),
+  'clock_solid': IconPickerIcon(
+      name: 'clock_solid',
+      data: CupertinoIcons.clock_solid,
+      pack: IconPack.cupertino),
+  'time': IconPickerIcon(
+      name: 'time', data: CupertinoIcons.time, pack: IconPack.cupertino),
+  'time_solid': IconPickerIcon(
+      name: 'time_solid',
+      data: CupertinoIcons.time_solid,
+      pack: IconPack.cupertino),
+  'padlock': IconPickerIcon(
+      name: 'padlock', data: CupertinoIcons.padlock, pack: IconPack.cupertino),
+  'padlock_solid': IconPickerIcon(
+      name: 'padlock_solid',
+      data: CupertinoIcons.padlock_solid,
+      pack: IconPack.cupertino),
+  'eye': IconPickerIcon(
+      name: 'eye', data: CupertinoIcons.eye, pack: IconPack.cupertino),
+  'eye_solid': IconPickerIcon(
+      name: 'eye_solid',
+      data: CupertinoIcons.eye_solid,
+      pack: IconPack.cupertino),
+  'person': IconPickerIcon(
+      name: 'person', data: CupertinoIcons.person, pack: IconPack.cupertino),
+  'person_solid': IconPickerIcon(
+      name: 'person_solid',
+      data: CupertinoIcons.person_solid,
+      pack: IconPack.cupertino),
+  'person_add': IconPickerIcon(
+      name: 'person_add',
+      data: CupertinoIcons.person_add,
+      pack: IconPack.cupertino),
+  'person_add_solid': IconPickerIcon(
+      name: 'person_add_solid',
+      data: CupertinoIcons.person_add_solid,
+      pack: IconPack.cupertino),
+  'group': IconPickerIcon(
+      name: 'group', data: CupertinoIcons.group, pack: IconPack.cupertino),
+  'group_solid': IconPickerIcon(
+      name: 'group_solid',
+      data: CupertinoIcons.group_solid,
+      pack: IconPack.cupertino),
+  'mail': IconPickerIcon(
+      name: 'mail', data: CupertinoIcons.mail, pack: IconPack.cupertino),
+  'mail_solid': IconPickerIcon(
+      name: 'mail_solid',
+      data: CupertinoIcons.mail_solid,
+      pack: IconPack.cupertino),
+  'location': IconPickerIcon(
+      name: 'location',
+      data: CupertinoIcons.location,
+      pack: IconPack.cupertino),
+  'location_solid': IconPickerIcon(
+      name: 'location_solid',
+      data: CupertinoIcons.location_solid,
+      pack: IconPack.cupertino),
+  'tag': IconPickerIcon(
+      name: 'tag', data: CupertinoIcons.tag, pack: IconPack.cupertino),
+  'tag_solid': IconPickerIcon(
+      name: 'tag_solid',
+      data: CupertinoIcons.tag_solid,
+      pack: IconPack.cupertino),
+  'tags': IconPickerIcon(
+      name: 'tags', data: CupertinoIcons.tags, pack: IconPack.cupertino),
+  'tags_solid': IconPickerIcon(
+      name: 'tags_solid',
+      data: CupertinoIcons.tags_solid,
+      pack: IconPack.cupertino),
+  'bus': IconPickerIcon(
+      name: 'bus', data: CupertinoIcons.bus, pack: IconPack.cupertino),
+  'car': IconPickerIcon(
+      name: 'car', data: CupertinoIcons.car, pack: IconPack.cupertino),
+  'car_detailed': IconPickerIcon(
+      name: 'car_detailed',
+      data: CupertinoIcons.car_detailed,
+      pack: IconPack.cupertino),
+  'train_style_one': IconPickerIcon(
+      name: 'train_style_one',
+      data: CupertinoIcons.train_style_one,
+      pack: IconPack.cupertino),
+  'train_style_two': IconPickerIcon(
+      name: 'train_style_two',
+      data: CupertinoIcons.train_style_two,
+      pack: IconPack.cupertino),
+  'paw': IconPickerIcon(
+      name: 'paw', data: CupertinoIcons.paw, pack: IconPack.cupertino),
+  'paw_solid': IconPickerIcon(
+      name: 'paw_solid',
+      data: CupertinoIcons.paw_solid,
+      pack: IconPack.cupertino),
+  'game_controller': IconPickerIcon(
+      name: 'game_controller',
+      data: CupertinoIcons.game_controller,
+      pack: IconPack.cupertino),
+  'game_controller_solid': IconPickerIcon(
+      name: 'game_controller_solid',
+      data: CupertinoIcons.game_controller_solid,
+      pack: IconPack.cupertino),
+  'lab_flask': IconPickerIcon(
+      name: 'lab_flask',
+      data: CupertinoIcons.lab_flask,
+      pack: IconPack.cupertino),
+  'lab_flask_solid': IconPickerIcon(
+      name: 'lab_flask_solid',
+      data: CupertinoIcons.lab_flask_solid,
+      pack: IconPack.cupertino),
+  'heart': IconPickerIcon(
+      name: 'heart', data: CupertinoIcons.heart, pack: IconPack.cupertino),
+  'heart_solid': IconPickerIcon(
+      name: 'heart_solid',
+      data: CupertinoIcons.heart_solid,
+      pack: IconPack.cupertino),
+  'bell': IconPickerIcon(
+      name: 'bell', data: CupertinoIcons.bell, pack: IconPack.cupertino),
+  'bell_solid': IconPickerIcon(
+      name: 'bell_solid',
+      data: CupertinoIcons.bell_solid,
+      pack: IconPack.cupertino),
+  'news': IconPickerIcon(
+      name: 'news', data: CupertinoIcons.news, pack: IconPack.cupertino),
+  'news_solid': IconPickerIcon(
+      name: 'news_solid',
+      data: CupertinoIcons.news_solid,
+      pack: IconPack.cupertino),
+  'brightness': IconPickerIcon(
+      name: 'brightness',
+      data: CupertinoIcons.brightness,
+      pack: IconPack.cupertino),
+  'brightness_solid': IconPickerIcon(
+      name: 'brightness_solid',
+      data: CupertinoIcons.brightness_solid,
+      pack: IconPack.cupertino),
+  'airplane': IconPickerIcon(
+      name: 'airplane',
+      data: CupertinoIcons.airplane,
+      pack: IconPack.cupertino),
+  'alarm': IconPickerIcon(
+      name: 'alarm', data: CupertinoIcons.alarm, pack: IconPack.cupertino),
+  'alarm_fill': IconPickerIcon(
+      name: 'alarm_fill',
+      data: CupertinoIcons.alarm_fill,
+      pack: IconPack.cupertino),
+  'alt': IconPickerIcon(
+      name: 'alt', data: CupertinoIcons.alt, pack: IconPack.cupertino),
+  'ant': IconPickerIcon(
+      name: 'ant', data: CupertinoIcons.ant, pack: IconPack.cupertino),
+  'ant_circle': IconPickerIcon(
+      name: 'ant_circle',
+      data: CupertinoIcons.ant_circle,
+      pack: IconPack.cupertino),
+  'ant_circle_fill': IconPickerIcon(
+      name: 'ant_circle_fill',
+      data: CupertinoIcons.ant_circle_fill,
+      pack: IconPack.cupertino),
+  'ant_fill': IconPickerIcon(
+      name: 'ant_fill',
+      data: CupertinoIcons.ant_fill,
+      pack: IconPack.cupertino),
+  'antenna_radiowaves_left_right': IconPickerIcon(
+      name: 'antenna_radiowaves_left_right',
+      data: CupertinoIcons.antenna_radiowaves_left_right,
+      pack: IconPack.cupertino),
+  'app': IconPickerIcon(
+      name: 'app', data: CupertinoIcons.app, pack: IconPack.cupertino),
+  'app_badge': IconPickerIcon(
+      name: 'app_badge',
+      data: CupertinoIcons.app_badge,
+      pack: IconPack.cupertino),
+  'app_badge_fill': IconPickerIcon(
+      name: 'app_badge_fill',
+      data: CupertinoIcons.app_badge_fill,
+      pack: IconPack.cupertino),
+  'app_fill': IconPickerIcon(
+      name: 'app_fill',
+      data: CupertinoIcons.app_fill,
+      pack: IconPack.cupertino),
+  'archivebox': IconPickerIcon(
+      name: 'archivebox',
+      data: CupertinoIcons.archivebox,
+      pack: IconPack.cupertino),
+  'archivebox_fill': IconPickerIcon(
+      name: 'archivebox_fill',
+      data: CupertinoIcons.archivebox_fill,
+      pack: IconPack.cupertino),
+  'arrow_2_circlepath': IconPickerIcon(
+      name: 'arrow_2_circlepath',
+      data: CupertinoIcons.arrow_2_circlepath,
+      pack: IconPack.cupertino),
+  'arrow_2_circlepath_circle': IconPickerIcon(
+      name: 'arrow_2_circlepath_circle',
+      data: CupertinoIcons.arrow_2_circlepath_circle,
+      pack: IconPack.cupertino),
+  'arrow_2_circlepath_circle_fill': IconPickerIcon(
+      name: 'arrow_2_circlepath_circle_fill',
+      data: CupertinoIcons.arrow_2_circlepath_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_2_squarepath': IconPickerIcon(
+      name: 'arrow_2_squarepath',
+      data: CupertinoIcons.arrow_2_squarepath,
+      pack: IconPack.cupertino),
+  'arrow_3_trianglepath': IconPickerIcon(
+      name: 'arrow_3_trianglepath',
+      data: CupertinoIcons.arrow_3_trianglepath,
+      pack: IconPack.cupertino),
+  'arrow_branch': IconPickerIcon(
+      name: 'arrow_branch',
+      data: CupertinoIcons.arrow_branch,
+      pack: IconPack.cupertino),
+  'arrow_clockwise': IconPickerIcon(
+      name: 'arrow_clockwise',
+      data: CupertinoIcons.arrow_clockwise,
+      pack: IconPack.cupertino),
+  'arrow_clockwise_circle': IconPickerIcon(
+      name: 'arrow_clockwise_circle',
+      data: CupertinoIcons.arrow_clockwise_circle,
+      pack: IconPack.cupertino),
+  'arrow_clockwise_circle_fill': IconPickerIcon(
+      name: 'arrow_clockwise_circle_fill',
+      data: CupertinoIcons.arrow_clockwise_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_counterclockwise': IconPickerIcon(
+      name: 'arrow_counterclockwise',
+      data: CupertinoIcons.arrow_counterclockwise,
+      pack: IconPack.cupertino),
+  'arrow_counterclockwise_circle': IconPickerIcon(
+      name: 'arrow_counterclockwise_circle',
+      data: CupertinoIcons.arrow_counterclockwise_circle,
+      pack: IconPack.cupertino),
+  'arrow_counterclockwise_circle_fill': IconPickerIcon(
+      name: 'arrow_counterclockwise_circle_fill',
+      data: CupertinoIcons.arrow_counterclockwise_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_down': IconPickerIcon(
+      name: 'arrow_down',
+      data: CupertinoIcons.arrow_down,
+      pack: IconPack.cupertino),
+  'arrow_down_circle': IconPickerIcon(
+      name: 'arrow_down_circle',
+      data: CupertinoIcons.arrow_down_circle,
+      pack: IconPack.cupertino),
+  'arrow_down_circle_fill': IconPickerIcon(
+      name: 'arrow_down_circle_fill',
+      data: CupertinoIcons.arrow_down_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_doc': IconPickerIcon(
+      name: 'arrow_down_doc',
+      data: CupertinoIcons.arrow_down_doc,
+      pack: IconPack.cupertino),
+  'arrow_down_doc_fill': IconPickerIcon(
+      name: 'arrow_down_doc_fill',
+      data: CupertinoIcons.arrow_down_doc_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_left': IconPickerIcon(
+      name: 'arrow_down_left',
+      data: CupertinoIcons.arrow_down_left,
+      pack: IconPack.cupertino),
+  'arrow_down_left_circle': IconPickerIcon(
+      name: 'arrow_down_left_circle',
+      data: CupertinoIcons.arrow_down_left_circle,
+      pack: IconPack.cupertino),
+  'arrow_down_left_circle_fill': IconPickerIcon(
+      name: 'arrow_down_left_circle_fill',
+      data: CupertinoIcons.arrow_down_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_left_square': IconPickerIcon(
+      name: 'arrow_down_left_square',
+      data: CupertinoIcons.arrow_down_left_square,
+      pack: IconPack.cupertino),
+  'arrow_down_left_square_fill': IconPickerIcon(
+      name: 'arrow_down_left_square_fill',
+      data: CupertinoIcons.arrow_down_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_right': IconPickerIcon(
+      name: 'arrow_down_right',
+      data: CupertinoIcons.arrow_down_right,
+      pack: IconPack.cupertino),
+  'arrow_down_right_arrow_up_left': IconPickerIcon(
+      name: 'arrow_down_right_arrow_up_left',
+      data: CupertinoIcons.arrow_down_right_arrow_up_left,
+      pack: IconPack.cupertino),
+  'arrow_down_right_circle': IconPickerIcon(
+      name: 'arrow_down_right_circle',
+      data: CupertinoIcons.arrow_down_right_circle,
+      pack: IconPack.cupertino),
+  'arrow_down_right_circle_fill': IconPickerIcon(
+      name: 'arrow_down_right_circle_fill',
+      data: CupertinoIcons.arrow_down_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_right_square': IconPickerIcon(
+      name: 'arrow_down_right_square',
+      data: CupertinoIcons.arrow_down_right_square,
+      pack: IconPack.cupertino),
+  'arrow_down_right_square_fill': IconPickerIcon(
+      name: 'arrow_down_right_square_fill',
+      data: CupertinoIcons.arrow_down_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_square': IconPickerIcon(
+      name: 'arrow_down_square',
+      data: CupertinoIcons.arrow_down_square,
+      pack: IconPack.cupertino),
+  'arrow_down_square_fill': IconPickerIcon(
+      name: 'arrow_down_square_fill',
+      data: CupertinoIcons.arrow_down_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_down_to_line': IconPickerIcon(
+      name: 'arrow_down_to_line',
+      data: CupertinoIcons.arrow_down_to_line,
+      pack: IconPack.cupertino),
+  'arrow_down_to_line_alt': IconPickerIcon(
+      name: 'arrow_down_to_line_alt',
+      data: CupertinoIcons.arrow_down_to_line_alt,
+      pack: IconPack.cupertino),
+  'arrow_left': IconPickerIcon(
+      name: 'arrow_left',
+      data: CupertinoIcons.arrow_left,
+      pack: IconPack.cupertino),
+  'arrow_left_circle': IconPickerIcon(
+      name: 'arrow_left_circle',
+      data: CupertinoIcons.arrow_left_circle,
+      pack: IconPack.cupertino),
+  'arrow_left_circle_fill': IconPickerIcon(
+      name: 'arrow_left_circle_fill',
+      data: CupertinoIcons.arrow_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_left_right': IconPickerIcon(
+      name: 'arrow_left_right',
+      data: CupertinoIcons.arrow_left_right,
+      pack: IconPack.cupertino),
+  'arrow_left_right_circle': IconPickerIcon(
+      name: 'arrow_left_right_circle',
+      data: CupertinoIcons.arrow_left_right_circle,
+      pack: IconPack.cupertino),
+  'arrow_left_right_circle_fill': IconPickerIcon(
+      name: 'arrow_left_right_circle_fill',
+      data: CupertinoIcons.arrow_left_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_left_right_square': IconPickerIcon(
+      name: 'arrow_left_right_square',
+      data: CupertinoIcons.arrow_left_right_square,
+      pack: IconPack.cupertino),
+  'arrow_left_right_square_fill': IconPickerIcon(
+      name: 'arrow_left_right_square_fill',
+      data: CupertinoIcons.arrow_left_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_left_square': IconPickerIcon(
+      name: 'arrow_left_square',
+      data: CupertinoIcons.arrow_left_square,
+      pack: IconPack.cupertino),
+  'arrow_left_square_fill': IconPickerIcon(
+      name: 'arrow_left_square_fill',
+      data: CupertinoIcons.arrow_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_left_to_line': IconPickerIcon(
+      name: 'arrow_left_to_line',
+      data: CupertinoIcons.arrow_left_to_line,
+      pack: IconPack.cupertino),
+  'arrow_left_to_line_alt': IconPickerIcon(
+      name: 'arrow_left_to_line_alt',
+      data: CupertinoIcons.arrow_left_to_line_alt,
+      pack: IconPack.cupertino),
+  'arrow_merge': IconPickerIcon(
+      name: 'arrow_merge',
+      data: CupertinoIcons.arrow_merge,
+      pack: IconPack.cupertino),
+  'arrow_right': IconPickerIcon(
+      name: 'arrow_right',
+      data: CupertinoIcons.arrow_right,
+      pack: IconPack.cupertino),
+  'arrow_right_arrow_left': IconPickerIcon(
+      name: 'arrow_right_arrow_left',
+      data: CupertinoIcons.arrow_right_arrow_left,
+      pack: IconPack.cupertino),
+  'arrow_right_arrow_left_circle': IconPickerIcon(
+      name: 'arrow_right_arrow_left_circle',
+      data: CupertinoIcons.arrow_right_arrow_left_circle,
+      pack: IconPack.cupertino),
+  'arrow_right_arrow_left_circle_fill': IconPickerIcon(
+      name: 'arrow_right_arrow_left_circle_fill',
+      data: CupertinoIcons.arrow_right_arrow_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_right_arrow_left_square': IconPickerIcon(
+      name: 'arrow_right_arrow_left_square',
+      data: CupertinoIcons.arrow_right_arrow_left_square,
+      pack: IconPack.cupertino),
+  'arrow_right_arrow_left_square_fill': IconPickerIcon(
+      name: 'arrow_right_arrow_left_square_fill',
+      data: CupertinoIcons.arrow_right_arrow_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_right_circle': IconPickerIcon(
+      name: 'arrow_right_circle',
+      data: CupertinoIcons.arrow_right_circle,
+      pack: IconPack.cupertino),
+  'arrow_right_circle_fill': IconPickerIcon(
+      name: 'arrow_right_circle_fill',
+      data: CupertinoIcons.arrow_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_right_square': IconPickerIcon(
+      name: 'arrow_right_square',
+      data: CupertinoIcons.arrow_right_square,
+      pack: IconPack.cupertino),
+  'arrow_right_square_fill': IconPickerIcon(
+      name: 'arrow_right_square_fill',
+      data: CupertinoIcons.arrow_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_right_to_line': IconPickerIcon(
+      name: 'arrow_right_to_line',
+      data: CupertinoIcons.arrow_right_to_line,
+      pack: IconPack.cupertino),
+  'arrow_right_to_line_alt': IconPickerIcon(
+      name: 'arrow_right_to_line_alt',
+      data: CupertinoIcons.arrow_right_to_line_alt,
+      pack: IconPack.cupertino),
+  'arrow_swap': IconPickerIcon(
+      name: 'arrow_swap',
+      data: CupertinoIcons.arrow_swap,
+      pack: IconPack.cupertino),
+  'arrow_turn_down_left': IconPickerIcon(
+      name: 'arrow_turn_down_left',
+      data: CupertinoIcons.arrow_turn_down_left,
+      pack: IconPack.cupertino),
+  'arrow_turn_down_right': IconPickerIcon(
+      name: 'arrow_turn_down_right',
+      data: CupertinoIcons.arrow_turn_down_right,
+      pack: IconPack.cupertino),
+  'arrow_turn_left_down': IconPickerIcon(
+      name: 'arrow_turn_left_down',
+      data: CupertinoIcons.arrow_turn_left_down,
+      pack: IconPack.cupertino),
+  'arrow_turn_left_up': IconPickerIcon(
+      name: 'arrow_turn_left_up',
+      data: CupertinoIcons.arrow_turn_left_up,
+      pack: IconPack.cupertino),
+  'arrow_turn_right_down': IconPickerIcon(
+      name: 'arrow_turn_right_down',
+      data: CupertinoIcons.arrow_turn_right_down,
+      pack: IconPack.cupertino),
+  'arrow_turn_right_up': IconPickerIcon(
+      name: 'arrow_turn_right_up',
+      data: CupertinoIcons.arrow_turn_right_up,
+      pack: IconPack.cupertino),
+  'arrow_turn_up_left': IconPickerIcon(
+      name: 'arrow_turn_up_left',
+      data: CupertinoIcons.arrow_turn_up_left,
+      pack: IconPack.cupertino),
+  'arrow_turn_up_right': IconPickerIcon(
+      name: 'arrow_turn_up_right',
+      data: CupertinoIcons.arrow_turn_up_right,
+      pack: IconPack.cupertino),
+  'arrow_up': IconPickerIcon(
+      name: 'arrow_up',
+      data: CupertinoIcons.arrow_up,
+      pack: IconPack.cupertino),
+  'arrow_up_arrow_down': IconPickerIcon(
+      name: 'arrow_up_arrow_down',
+      data: CupertinoIcons.arrow_up_arrow_down,
+      pack: IconPack.cupertino),
+  'arrow_up_arrow_down_circle': IconPickerIcon(
+      name: 'arrow_up_arrow_down_circle',
+      data: CupertinoIcons.arrow_up_arrow_down_circle,
+      pack: IconPack.cupertino),
+  'arrow_up_arrow_down_circle_fill': IconPickerIcon(
+      name: 'arrow_up_arrow_down_circle_fill',
+      data: CupertinoIcons.arrow_up_arrow_down_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_arrow_down_square': IconPickerIcon(
+      name: 'arrow_up_arrow_down_square',
+      data: CupertinoIcons.arrow_up_arrow_down_square,
+      pack: IconPack.cupertino),
+  'arrow_up_arrow_down_square_fill': IconPickerIcon(
+      name: 'arrow_up_arrow_down_square_fill',
+      data: CupertinoIcons.arrow_up_arrow_down_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_bin': IconPickerIcon(
+      name: 'arrow_up_bin',
+      data: CupertinoIcons.arrow_up_bin,
+      pack: IconPack.cupertino),
+  'arrow_up_bin_fill': IconPickerIcon(
+      name: 'arrow_up_bin_fill',
+      data: CupertinoIcons.arrow_up_bin_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_circle': IconPickerIcon(
+      name: 'arrow_up_circle',
+      data: CupertinoIcons.arrow_up_circle,
+      pack: IconPack.cupertino),
+  'arrow_up_circle_fill': IconPickerIcon(
+      name: 'arrow_up_circle_fill',
+      data: CupertinoIcons.arrow_up_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_doc': IconPickerIcon(
+      name: 'arrow_up_doc',
+      data: CupertinoIcons.arrow_up_doc,
+      pack: IconPack.cupertino),
+  'arrow_up_doc_fill': IconPickerIcon(
+      name: 'arrow_up_doc_fill',
+      data: CupertinoIcons.arrow_up_doc_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_down': IconPickerIcon(
+      name: 'arrow_up_down',
+      data: CupertinoIcons.arrow_up_down,
+      pack: IconPack.cupertino),
+  'arrow_up_down_circle': IconPickerIcon(
+      name: 'arrow_up_down_circle',
+      data: CupertinoIcons.arrow_up_down_circle,
+      pack: IconPack.cupertino),
+  'arrow_up_down_circle_fill': IconPickerIcon(
+      name: 'arrow_up_down_circle_fill',
+      data: CupertinoIcons.arrow_up_down_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_down_square': IconPickerIcon(
+      name: 'arrow_up_down_square',
+      data: CupertinoIcons.arrow_up_down_square,
+      pack: IconPack.cupertino),
+  'arrow_up_down_square_fill': IconPickerIcon(
+      name: 'arrow_up_down_square_fill',
+      data: CupertinoIcons.arrow_up_down_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_left': IconPickerIcon(
+      name: 'arrow_up_left',
+      data: CupertinoIcons.arrow_up_left,
+      pack: IconPack.cupertino),
+  'arrow_up_left_arrow_down_right': IconPickerIcon(
+      name: 'arrow_up_left_arrow_down_right',
+      data: CupertinoIcons.arrow_up_left_arrow_down_right,
+      pack: IconPack.cupertino),
+  'arrow_up_left_circle': IconPickerIcon(
+      name: 'arrow_up_left_circle',
+      data: CupertinoIcons.arrow_up_left_circle,
+      pack: IconPack.cupertino),
+  'arrow_up_left_circle_fill': IconPickerIcon(
+      name: 'arrow_up_left_circle_fill',
+      data: CupertinoIcons.arrow_up_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_left_square': IconPickerIcon(
+      name: 'arrow_up_left_square',
+      data: CupertinoIcons.arrow_up_left_square,
+      pack: IconPack.cupertino),
+  'arrow_up_left_square_fill': IconPickerIcon(
+      name: 'arrow_up_left_square_fill',
+      data: CupertinoIcons.arrow_up_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_right': IconPickerIcon(
+      name: 'arrow_up_right',
+      data: CupertinoIcons.arrow_up_right,
+      pack: IconPack.cupertino),
+  'arrow_up_right_circle': IconPickerIcon(
+      name: 'arrow_up_right_circle',
+      data: CupertinoIcons.arrow_up_right_circle,
+      pack: IconPack.cupertino),
+  'arrow_up_right_circle_fill': IconPickerIcon(
+      name: 'arrow_up_right_circle_fill',
+      data: CupertinoIcons.arrow_up_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_right_diamond': IconPickerIcon(
+      name: 'arrow_up_right_diamond',
+      data: CupertinoIcons.arrow_up_right_diamond,
+      pack: IconPack.cupertino),
+  'arrow_up_right_diamond_fill': IconPickerIcon(
+      name: 'arrow_up_right_diamond_fill',
+      data: CupertinoIcons.arrow_up_right_diamond_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_right_square': IconPickerIcon(
+      name: 'arrow_up_right_square',
+      data: CupertinoIcons.arrow_up_right_square,
+      pack: IconPack.cupertino),
+  'arrow_up_right_square_fill': IconPickerIcon(
+      name: 'arrow_up_right_square_fill',
+      data: CupertinoIcons.arrow_up_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_square': IconPickerIcon(
+      name: 'arrow_up_square',
+      data: CupertinoIcons.arrow_up_square,
+      pack: IconPack.cupertino),
+  'arrow_up_square_fill': IconPickerIcon(
+      name: 'arrow_up_square_fill',
+      data: CupertinoIcons.arrow_up_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_up_to_line': IconPickerIcon(
+      name: 'arrow_up_to_line',
+      data: CupertinoIcons.arrow_up_to_line,
+      pack: IconPack.cupertino),
+  'arrow_up_to_line_alt': IconPickerIcon(
+      name: 'arrow_up_to_line_alt',
+      data: CupertinoIcons.arrow_up_to_line_alt,
+      pack: IconPack.cupertino),
+  'arrow_uturn_down': IconPickerIcon(
+      name: 'arrow_uturn_down',
+      data: CupertinoIcons.arrow_uturn_down,
+      pack: IconPack.cupertino),
+  'arrow_uturn_down_circle': IconPickerIcon(
+      name: 'arrow_uturn_down_circle',
+      data: CupertinoIcons.arrow_uturn_down_circle,
+      pack: IconPack.cupertino),
+  'arrow_uturn_down_circle_fill': IconPickerIcon(
+      name: 'arrow_uturn_down_circle_fill',
+      data: CupertinoIcons.arrow_uturn_down_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_down_square': IconPickerIcon(
+      name: 'arrow_uturn_down_square',
+      data: CupertinoIcons.arrow_uturn_down_square,
+      pack: IconPack.cupertino),
+  'arrow_uturn_down_square_fill': IconPickerIcon(
+      name: 'arrow_uturn_down_square_fill',
+      data: CupertinoIcons.arrow_uturn_down_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_left': IconPickerIcon(
+      name: 'arrow_uturn_left',
+      data: CupertinoIcons.arrow_uturn_left,
+      pack: IconPack.cupertino),
+  'arrow_uturn_left_circle': IconPickerIcon(
+      name: 'arrow_uturn_left_circle',
+      data: CupertinoIcons.arrow_uturn_left_circle,
+      pack: IconPack.cupertino),
+  'arrow_uturn_left_circle_fill': IconPickerIcon(
+      name: 'arrow_uturn_left_circle_fill',
+      data: CupertinoIcons.arrow_uturn_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_left_square': IconPickerIcon(
+      name: 'arrow_uturn_left_square',
+      data: CupertinoIcons.arrow_uturn_left_square,
+      pack: IconPack.cupertino),
+  'arrow_uturn_left_square_fill': IconPickerIcon(
+      name: 'arrow_uturn_left_square_fill',
+      data: CupertinoIcons.arrow_uturn_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_right': IconPickerIcon(
+      name: 'arrow_uturn_right',
+      data: CupertinoIcons.arrow_uturn_right,
+      pack: IconPack.cupertino),
+  'arrow_uturn_right_circle': IconPickerIcon(
+      name: 'arrow_uturn_right_circle',
+      data: CupertinoIcons.arrow_uturn_right_circle,
+      pack: IconPack.cupertino),
+  'arrow_uturn_right_circle_fill': IconPickerIcon(
+      name: 'arrow_uturn_right_circle_fill',
+      data: CupertinoIcons.arrow_uturn_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_right_square': IconPickerIcon(
+      name: 'arrow_uturn_right_square',
+      data: CupertinoIcons.arrow_uturn_right_square,
+      pack: IconPack.cupertino),
+  'arrow_uturn_right_square_fill': IconPickerIcon(
+      name: 'arrow_uturn_right_square_fill',
+      data: CupertinoIcons.arrow_uturn_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_up': IconPickerIcon(
+      name: 'arrow_uturn_up',
+      data: CupertinoIcons.arrow_uturn_up,
+      pack: IconPack.cupertino),
+  'arrow_uturn_up_circle': IconPickerIcon(
+      name: 'arrow_uturn_up_circle',
+      data: CupertinoIcons.arrow_uturn_up_circle,
+      pack: IconPack.cupertino),
+  'arrow_uturn_up_circle_fill': IconPickerIcon(
+      name: 'arrow_uturn_up_circle_fill',
+      data: CupertinoIcons.arrow_uturn_up_circle_fill,
+      pack: IconPack.cupertino),
+  'arrow_uturn_up_square': IconPickerIcon(
+      name: 'arrow_uturn_up_square',
+      data: CupertinoIcons.arrow_uturn_up_square,
+      pack: IconPack.cupertino),
+  'arrow_uturn_up_square_fill': IconPickerIcon(
+      name: 'arrow_uturn_up_square_fill',
+      data: CupertinoIcons.arrow_uturn_up_square_fill,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left': IconPickerIcon(
+      name: 'arrowshape_turn_up_left',
+      data: CupertinoIcons.arrowshape_turn_up_left,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left_2': IconPickerIcon(
+      name: 'arrowshape_turn_up_left_2',
+      data: CupertinoIcons.arrowshape_turn_up_left_2,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left_2_fill': IconPickerIcon(
+      name: 'arrowshape_turn_up_left_2_fill',
+      data: CupertinoIcons.arrowshape_turn_up_left_2_fill,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left_circle': IconPickerIcon(
+      name: 'arrowshape_turn_up_left_circle',
+      data: CupertinoIcons.arrowshape_turn_up_left_circle,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left_circle_fill': IconPickerIcon(
+      name: 'arrowshape_turn_up_left_circle_fill',
+      data: CupertinoIcons.arrowshape_turn_up_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_left_fill': IconPickerIcon(
+      name: 'arrowshape_turn_up_left_fill',
+      data: CupertinoIcons.arrowshape_turn_up_left_fill,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_right': IconPickerIcon(
+      name: 'arrowshape_turn_up_right',
+      data: CupertinoIcons.arrowshape_turn_up_right,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_right_circle': IconPickerIcon(
+      name: 'arrowshape_turn_up_right_circle',
+      data: CupertinoIcons.arrowshape_turn_up_right_circle,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_right_circle_fill': IconPickerIcon(
+      name: 'arrowshape_turn_up_right_circle_fill',
+      data: CupertinoIcons.arrowshape_turn_up_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowshape_turn_up_right_fill': IconPickerIcon(
+      name: 'arrowshape_turn_up_right_fill',
+      data: CupertinoIcons.arrowshape_turn_up_right_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down': IconPickerIcon(
+      name: 'arrowtriangle_down',
+      data: CupertinoIcons.arrowtriangle_down,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down_circle': IconPickerIcon(
+      name: 'arrowtriangle_down_circle',
+      data: CupertinoIcons.arrowtriangle_down_circle,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down_circle_fill': IconPickerIcon(
+      name: 'arrowtriangle_down_circle_fill',
+      data: CupertinoIcons.arrowtriangle_down_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down_fill': IconPickerIcon(
+      name: 'arrowtriangle_down_fill',
+      data: CupertinoIcons.arrowtriangle_down_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down_square': IconPickerIcon(
+      name: 'arrowtriangle_down_square',
+      data: CupertinoIcons.arrowtriangle_down_square,
+      pack: IconPack.cupertino),
+  'arrowtriangle_down_square_fill': IconPickerIcon(
+      name: 'arrowtriangle_down_square_fill',
+      data: CupertinoIcons.arrowtriangle_down_square_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left': IconPickerIcon(
+      name: 'arrowtriangle_left',
+      data: CupertinoIcons.arrowtriangle_left,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left_circle': IconPickerIcon(
+      name: 'arrowtriangle_left_circle',
+      data: CupertinoIcons.arrowtriangle_left_circle,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left_circle_fill': IconPickerIcon(
+      name: 'arrowtriangle_left_circle_fill',
+      data: CupertinoIcons.arrowtriangle_left_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left_fill': IconPickerIcon(
+      name: 'arrowtriangle_left_fill',
+      data: CupertinoIcons.arrowtriangle_left_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left_square': IconPickerIcon(
+      name: 'arrowtriangle_left_square',
+      data: CupertinoIcons.arrowtriangle_left_square,
+      pack: IconPack.cupertino),
+  'arrowtriangle_left_square_fill': IconPickerIcon(
+      name: 'arrowtriangle_left_square_fill',
+      data: CupertinoIcons.arrowtriangle_left_square_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right': IconPickerIcon(
+      name: 'arrowtriangle_right',
+      data: CupertinoIcons.arrowtriangle_right,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right_circle': IconPickerIcon(
+      name: 'arrowtriangle_right_circle',
+      data: CupertinoIcons.arrowtriangle_right_circle,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right_circle_fill': IconPickerIcon(
+      name: 'arrowtriangle_right_circle_fill',
+      data: CupertinoIcons.arrowtriangle_right_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right_fill': IconPickerIcon(
+      name: 'arrowtriangle_right_fill',
+      data: CupertinoIcons.arrowtriangle_right_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right_square': IconPickerIcon(
+      name: 'arrowtriangle_right_square',
+      data: CupertinoIcons.arrowtriangle_right_square,
+      pack: IconPack.cupertino),
+  'arrowtriangle_right_square_fill': IconPickerIcon(
+      name: 'arrowtriangle_right_square_fill',
+      data: CupertinoIcons.arrowtriangle_right_square_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up': IconPickerIcon(
+      name: 'arrowtriangle_up',
+      data: CupertinoIcons.arrowtriangle_up,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up_circle': IconPickerIcon(
+      name: 'arrowtriangle_up_circle',
+      data: CupertinoIcons.arrowtriangle_up_circle,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up_circle_fill': IconPickerIcon(
+      name: 'arrowtriangle_up_circle_fill',
+      data: CupertinoIcons.arrowtriangle_up_circle_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up_fill': IconPickerIcon(
+      name: 'arrowtriangle_up_fill',
+      data: CupertinoIcons.arrowtriangle_up_fill,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up_square': IconPickerIcon(
+      name: 'arrowtriangle_up_square',
+      data: CupertinoIcons.arrowtriangle_up_square,
+      pack: IconPack.cupertino),
+  'arrowtriangle_up_square_fill': IconPickerIcon(
+      name: 'arrowtriangle_up_square_fill',
+      data: CupertinoIcons.arrowtriangle_up_square_fill,
+      pack: IconPack.cupertino),
+  'asterisk_circle': IconPickerIcon(
+      name: 'asterisk_circle',
+      data: CupertinoIcons.asterisk_circle,
+      pack: IconPack.cupertino),
+  'asterisk_circle_fill': IconPickerIcon(
+      name: 'asterisk_circle_fill',
+      data: CupertinoIcons.asterisk_circle_fill,
+      pack: IconPack.cupertino),
+  'at': IconPickerIcon(
+      name: 'at', data: CupertinoIcons.at, pack: IconPack.cupertino),
+  'at_badge_minus': IconPickerIcon(
+      name: 'at_badge_minus',
+      data: CupertinoIcons.at_badge_minus,
+      pack: IconPack.cupertino),
+  'at_badge_plus': IconPickerIcon(
+      name: 'at_badge_plus',
+      data: CupertinoIcons.at_badge_plus,
+      pack: IconPack.cupertino),
+  'at_circle': IconPickerIcon(
+      name: 'at_circle',
+      data: CupertinoIcons.at_circle,
+      pack: IconPack.cupertino),
+  'at_circle_fill': IconPickerIcon(
+      name: 'at_circle_fill',
+      data: CupertinoIcons.at_circle_fill,
+      pack: IconPack.cupertino),
+  'backward': IconPickerIcon(
+      name: 'backward',
+      data: CupertinoIcons.backward,
+      pack: IconPack.cupertino),
+  'backward_end': IconPickerIcon(
+      name: 'backward_end',
+      data: CupertinoIcons.backward_end,
+      pack: IconPack.cupertino),
+  'backward_end_alt': IconPickerIcon(
+      name: 'backward_end_alt',
+      data: CupertinoIcons.backward_end_alt,
+      pack: IconPack.cupertino),
+  'backward_end_alt_fill': IconPickerIcon(
+      name: 'backward_end_alt_fill',
+      data: CupertinoIcons.backward_end_alt_fill,
+      pack: IconPack.cupertino),
+  'backward_end_fill': IconPickerIcon(
+      name: 'backward_end_fill',
+      data: CupertinoIcons.backward_end_fill,
+      pack: IconPack.cupertino),
+  'backward_fill': IconPickerIcon(
+      name: 'backward_fill',
+      data: CupertinoIcons.backward_fill,
+      pack: IconPack.cupertino),
+  'badge_plus_radiowaves_right': IconPickerIcon(
+      name: 'badge_plus_radiowaves_right',
+      data: CupertinoIcons.badge_plus_radiowaves_right,
+      pack: IconPack.cupertino),
+  'bag': IconPickerIcon(
+      name: 'bag', data: CupertinoIcons.bag, pack: IconPack.cupertino),
+  'bag_badge_minus': IconPickerIcon(
+      name: 'bag_badge_minus',
+      data: CupertinoIcons.bag_badge_minus,
+      pack: IconPack.cupertino),
+  'bag_badge_plus': IconPickerIcon(
+      name: 'bag_badge_plus',
+      data: CupertinoIcons.bag_badge_plus,
+      pack: IconPack.cupertino),
+  'bag_fill': IconPickerIcon(
+      name: 'bag_fill',
+      data: CupertinoIcons.bag_fill,
+      pack: IconPack.cupertino),
+  'bag_fill_badge_minus': IconPickerIcon(
+      name: 'bag_fill_badge_minus',
+      data: CupertinoIcons.bag_fill_badge_minus,
+      pack: IconPack.cupertino),
+  'bag_fill_badge_plus': IconPickerIcon(
+      name: 'bag_fill_badge_plus',
+      data: CupertinoIcons.bag_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'bandage': IconPickerIcon(
+      name: 'bandage', data: CupertinoIcons.bandage, pack: IconPack.cupertino),
+  'bandage_fill': IconPickerIcon(
+      name: 'bandage_fill',
+      data: CupertinoIcons.bandage_fill,
+      pack: IconPack.cupertino),
+  'barcode': IconPickerIcon(
+      name: 'barcode', data: CupertinoIcons.barcode, pack: IconPack.cupertino),
+  'barcode_viewfinder': IconPickerIcon(
+      name: 'barcode_viewfinder',
+      data: CupertinoIcons.barcode_viewfinder,
+      pack: IconPack.cupertino),
+  'bars': IconPickerIcon(
+      name: 'bars', data: CupertinoIcons.bars, pack: IconPack.cupertino),
+  'battery_0': IconPickerIcon(
+      name: 'battery_0',
+      data: CupertinoIcons.battery_0,
+      pack: IconPack.cupertino),
+  'battery_100': IconPickerIcon(
+      name: 'battery_100',
+      data: CupertinoIcons.battery_100,
+      pack: IconPack.cupertino),
+  'battery_25': IconPickerIcon(
+      name: 'battery_25',
+      data: CupertinoIcons.battery_25,
+      pack: IconPack.cupertino),
+  'bed_double': IconPickerIcon(
+      name: 'bed_double',
+      data: CupertinoIcons.bed_double,
+      pack: IconPack.cupertino),
+  'bed_double_fill': IconPickerIcon(
+      name: 'bed_double_fill',
+      data: CupertinoIcons.bed_double_fill,
+      pack: IconPack.cupertino),
+  'bell_circle': IconPickerIcon(
+      name: 'bell_circle',
+      data: CupertinoIcons.bell_circle,
+      pack: IconPack.cupertino),
+  'bell_circle_fill': IconPickerIcon(
+      name: 'bell_circle_fill',
+      data: CupertinoIcons.bell_circle_fill,
+      pack: IconPack.cupertino),
+  'bell_fill': IconPickerIcon(
+      name: 'bell_fill',
+      data: CupertinoIcons.bell_fill,
+      pack: IconPack.cupertino),
+  'bell_slash': IconPickerIcon(
+      name: 'bell_slash',
+      data: CupertinoIcons.bell_slash,
+      pack: IconPack.cupertino),
+  'bell_slash_fill': IconPickerIcon(
+      name: 'bell_slash_fill',
+      data: CupertinoIcons.bell_slash_fill,
+      pack: IconPack.cupertino),
+  'bin_xmark': IconPickerIcon(
+      name: 'bin_xmark',
+      data: CupertinoIcons.bin_xmark,
+      pack: IconPack.cupertino),
+  'bin_xmark_fill': IconPickerIcon(
+      name: 'bin_xmark_fill',
+      data: CupertinoIcons.bin_xmark_fill,
+      pack: IconPack.cupertino),
+  'bitcoin': IconPickerIcon(
+      name: 'bitcoin', data: CupertinoIcons.bitcoin, pack: IconPack.cupertino),
+  'bitcoin_circle': IconPickerIcon(
+      name: 'bitcoin_circle',
+      data: CupertinoIcons.bitcoin_circle,
+      pack: IconPack.cupertino),
+  'bitcoin_circle_fill': IconPickerIcon(
+      name: 'bitcoin_circle_fill',
+      data: CupertinoIcons.bitcoin_circle_fill,
+      pack: IconPack.cupertino),
+  'bold': IconPickerIcon(
+      name: 'bold', data: CupertinoIcons.bold, pack: IconPack.cupertino),
+  'bold_italic_underline': IconPickerIcon(
+      name: 'bold_italic_underline',
+      data: CupertinoIcons.bold_italic_underline,
+      pack: IconPack.cupertino),
+  'bold_underline': IconPickerIcon(
+      name: 'bold_underline',
+      data: CupertinoIcons.bold_underline,
+      pack: IconPack.cupertino),
+  'bolt': IconPickerIcon(
+      name: 'bolt', data: CupertinoIcons.bolt, pack: IconPack.cupertino),
+  'bolt_badge_a': IconPickerIcon(
+      name: 'bolt_badge_a',
+      data: CupertinoIcons.bolt_badge_a,
+      pack: IconPack.cupertino),
+  'bolt_badge_a_fill': IconPickerIcon(
+      name: 'bolt_badge_a_fill',
+      data: CupertinoIcons.bolt_badge_a_fill,
+      pack: IconPack.cupertino),
+  'bolt_circle': IconPickerIcon(
+      name: 'bolt_circle',
+      data: CupertinoIcons.bolt_circle,
+      pack: IconPack.cupertino),
+  'bolt_circle_fill': IconPickerIcon(
+      name: 'bolt_circle_fill',
+      data: CupertinoIcons.bolt_circle_fill,
+      pack: IconPack.cupertino),
+  'bolt_fill': IconPickerIcon(
+      name: 'bolt_fill',
+      data: CupertinoIcons.bolt_fill,
+      pack: IconPack.cupertino),
+  'bolt_horizontal': IconPickerIcon(
+      name: 'bolt_horizontal',
+      data: CupertinoIcons.bolt_horizontal,
+      pack: IconPack.cupertino),
+  'bolt_horizontal_circle': IconPickerIcon(
+      name: 'bolt_horizontal_circle',
+      data: CupertinoIcons.bolt_horizontal_circle,
+      pack: IconPack.cupertino),
+  'bolt_horizontal_circle_fill': IconPickerIcon(
+      name: 'bolt_horizontal_circle_fill',
+      data: CupertinoIcons.bolt_horizontal_circle_fill,
+      pack: IconPack.cupertino),
+  'bolt_horizontal_fill': IconPickerIcon(
+      name: 'bolt_horizontal_fill',
+      data: CupertinoIcons.bolt_horizontal_fill,
+      pack: IconPack.cupertino),
+  'bolt_slash': IconPickerIcon(
+      name: 'bolt_slash',
+      data: CupertinoIcons.bolt_slash,
+      pack: IconPack.cupertino),
+  'bolt_slash_fill': IconPickerIcon(
+      name: 'bolt_slash_fill',
+      data: CupertinoIcons.bolt_slash_fill,
+      pack: IconPack.cupertino),
+  'book_circle': IconPickerIcon(
+      name: 'book_circle',
+      data: CupertinoIcons.book_circle,
+      pack: IconPack.cupertino),
+  'book_circle_fill': IconPickerIcon(
+      name: 'book_circle_fill',
+      data: CupertinoIcons.book_circle_fill,
+      pack: IconPack.cupertino),
+  'book_fill': IconPickerIcon(
+      name: 'book_fill',
+      data: CupertinoIcons.book_fill,
+      pack: IconPack.cupertino),
+  'bookmark_fill': IconPickerIcon(
+      name: 'bookmark_fill',
+      data: CupertinoIcons.bookmark_fill,
+      pack: IconPack.cupertino),
+  'briefcase': IconPickerIcon(
+      name: 'briefcase',
+      data: CupertinoIcons.briefcase,
+      pack: IconPack.cupertino),
+  'briefcase_fill': IconPickerIcon(
+      name: 'briefcase_fill',
+      data: CupertinoIcons.briefcase_fill,
+      pack: IconPack.cupertino),
+  'bubble_left': IconPickerIcon(
+      name: 'bubble_left',
+      data: CupertinoIcons.bubble_left,
+      pack: IconPack.cupertino),
+  'bubble_left_bubble_right': IconPickerIcon(
+      name: 'bubble_left_bubble_right',
+      data: CupertinoIcons.bubble_left_bubble_right,
+      pack: IconPack.cupertino),
+  'bubble_left_bubble_right_fill': IconPickerIcon(
+      name: 'bubble_left_bubble_right_fill',
+      data: CupertinoIcons.bubble_left_bubble_right_fill,
+      pack: IconPack.cupertino),
+  'bubble_left_fill': IconPickerIcon(
+      name: 'bubble_left_fill',
+      data: CupertinoIcons.bubble_left_fill,
+      pack: IconPack.cupertino),
+  'bubble_middle_bottom': IconPickerIcon(
+      name: 'bubble_middle_bottom',
+      data: CupertinoIcons.bubble_middle_bottom,
+      pack: IconPack.cupertino),
+  'bubble_middle_bottom_fill': IconPickerIcon(
+      name: 'bubble_middle_bottom_fill',
+      data: CupertinoIcons.bubble_middle_bottom_fill,
+      pack: IconPack.cupertino),
+  'bubble_middle_top': IconPickerIcon(
+      name: 'bubble_middle_top',
+      data: CupertinoIcons.bubble_middle_top,
+      pack: IconPack.cupertino),
+  'bubble_middle_top_fill': IconPickerIcon(
+      name: 'bubble_middle_top_fill',
+      data: CupertinoIcons.bubble_middle_top_fill,
+      pack: IconPack.cupertino),
+  'bubble_right': IconPickerIcon(
+      name: 'bubble_right',
+      data: CupertinoIcons.bubble_right,
+      pack: IconPack.cupertino),
+  'bubble_right_fill': IconPickerIcon(
+      name: 'bubble_right_fill',
+      data: CupertinoIcons.bubble_right_fill,
+      pack: IconPack.cupertino),
+  'building_2_fill': IconPickerIcon(
+      name: 'building_2_fill',
+      data: CupertinoIcons.building_2_fill,
+      pack: IconPack.cupertino),
+  'burn': IconPickerIcon(
+      name: 'burn', data: CupertinoIcons.burn, pack: IconPack.cupertino),
+  'burst': IconPickerIcon(
+      name: 'burst', data: CupertinoIcons.burst, pack: IconPack.cupertino),
+  'burst_fill': IconPickerIcon(
+      name: 'burst_fill',
+      data: CupertinoIcons.burst_fill,
+      pack: IconPack.cupertino),
+  'calendar': IconPickerIcon(
+      name: 'calendar',
+      data: CupertinoIcons.calendar,
+      pack: IconPack.cupertino),
+  'calendar_badge_minus': IconPickerIcon(
+      name: 'calendar_badge_minus',
+      data: CupertinoIcons.calendar_badge_minus,
+      pack: IconPack.cupertino),
+  'calendar_badge_plus': IconPickerIcon(
+      name: 'calendar_badge_plus',
+      data: CupertinoIcons.calendar_badge_plus,
+      pack: IconPack.cupertino),
+  'calendar_circle': IconPickerIcon(
+      name: 'calendar_circle',
+      data: CupertinoIcons.calendar_circle,
+      pack: IconPack.cupertino),
+  'calendar_circle_fill': IconPickerIcon(
+      name: 'calendar_circle_fill',
+      data: CupertinoIcons.calendar_circle_fill,
+      pack: IconPack.cupertino),
+  'calendar_today': IconPickerIcon(
+      name: 'calendar_today',
+      data: CupertinoIcons.calendar_today,
+      pack: IconPack.cupertino),
+  'camera': IconPickerIcon(
+      name: 'camera', data: CupertinoIcons.camera, pack: IconPack.cupertino),
+  'camera_circle': IconPickerIcon(
+      name: 'camera_circle',
+      data: CupertinoIcons.camera_circle,
+      pack: IconPack.cupertino),
+  'camera_circle_fill': IconPickerIcon(
+      name: 'camera_circle_fill',
+      data: CupertinoIcons.camera_circle_fill,
+      pack: IconPack.cupertino),
+  'camera_fill': IconPickerIcon(
+      name: 'camera_fill',
+      data: CupertinoIcons.camera_fill,
+      pack: IconPack.cupertino),
+  'camera_on_rectangle': IconPickerIcon(
+      name: 'camera_on_rectangle',
+      data: CupertinoIcons.camera_on_rectangle,
+      pack: IconPack.cupertino),
+  'camera_on_rectangle_fill': IconPickerIcon(
+      name: 'camera_on_rectangle_fill',
+      data: CupertinoIcons.camera_on_rectangle_fill,
+      pack: IconPack.cupertino),
+  'camera_rotate': IconPickerIcon(
+      name: 'camera_rotate',
+      data: CupertinoIcons.camera_rotate,
+      pack: IconPack.cupertino),
+  'camera_rotate_fill': IconPickerIcon(
+      name: 'camera_rotate_fill',
+      data: CupertinoIcons.camera_rotate_fill,
+      pack: IconPack.cupertino),
+  'camera_viewfinder': IconPickerIcon(
+      name: 'camera_viewfinder',
+      data: CupertinoIcons.camera_viewfinder,
+      pack: IconPack.cupertino),
+  'capslock': IconPickerIcon(
+      name: 'capslock',
+      data: CupertinoIcons.capslock,
+      pack: IconPack.cupertino),
+  'capslock_fill': IconPickerIcon(
+      name: 'capslock_fill',
+      data: CupertinoIcons.capslock_fill,
+      pack: IconPack.cupertino),
+  'capsule': IconPickerIcon(
+      name: 'capsule', data: CupertinoIcons.capsule, pack: IconPack.cupertino),
+  'capsule_fill': IconPickerIcon(
+      name: 'capsule_fill',
+      data: CupertinoIcons.capsule_fill,
+      pack: IconPack.cupertino),
+  'captions_bubble': IconPickerIcon(
+      name: 'captions_bubble',
+      data: CupertinoIcons.captions_bubble,
+      pack: IconPack.cupertino),
+  'captions_bubble_fill': IconPickerIcon(
+      name: 'captions_bubble_fill',
+      data: CupertinoIcons.captions_bubble_fill,
+      pack: IconPack.cupertino),
+  'car_fill': IconPickerIcon(
+      name: 'car_fill',
+      data: CupertinoIcons.car_fill,
+      pack: IconPack.cupertino),
+  'cart': IconPickerIcon(
+      name: 'cart', data: CupertinoIcons.cart, pack: IconPack.cupertino),
+  'cart_badge_minus': IconPickerIcon(
+      name: 'cart_badge_minus',
+      data: CupertinoIcons.cart_badge_minus,
+      pack: IconPack.cupertino),
+  'cart_badge_plus': IconPickerIcon(
+      name: 'cart_badge_plus',
+      data: CupertinoIcons.cart_badge_plus,
+      pack: IconPack.cupertino),
+  'cart_fill': IconPickerIcon(
+      name: 'cart_fill',
+      data: CupertinoIcons.cart_fill,
+      pack: IconPack.cupertino),
+  'cart_fill_badge_minus': IconPickerIcon(
+      name: 'cart_fill_badge_minus',
+      data: CupertinoIcons.cart_fill_badge_minus,
+      pack: IconPack.cupertino),
+  'cart_fill_badge_plus': IconPickerIcon(
+      name: 'cart_fill_badge_plus',
+      data: CupertinoIcons.cart_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'chart_bar': IconPickerIcon(
+      name: 'chart_bar',
+      data: CupertinoIcons.chart_bar,
+      pack: IconPack.cupertino),
+  'chart_bar_alt_fill': IconPickerIcon(
+      name: 'chart_bar_alt_fill',
+      data: CupertinoIcons.chart_bar_alt_fill,
+      pack: IconPack.cupertino),
+  'chart_bar_circle': IconPickerIcon(
+      name: 'chart_bar_circle',
+      data: CupertinoIcons.chart_bar_circle,
+      pack: IconPack.cupertino),
+  'chart_bar_circle_fill': IconPickerIcon(
+      name: 'chart_bar_circle_fill',
+      data: CupertinoIcons.chart_bar_circle_fill,
+      pack: IconPack.cupertino),
+  'chart_bar_fill': IconPickerIcon(
+      name: 'chart_bar_fill',
+      data: CupertinoIcons.chart_bar_fill,
+      pack: IconPack.cupertino),
+  'chart_bar_square': IconPickerIcon(
+      name: 'chart_bar_square',
+      data: CupertinoIcons.chart_bar_square,
+      pack: IconPack.cupertino),
+  'chart_bar_square_fill': IconPickerIcon(
+      name: 'chart_bar_square_fill',
+      data: CupertinoIcons.chart_bar_square_fill,
+      pack: IconPack.cupertino),
+  'chart_pie': IconPickerIcon(
+      name: 'chart_pie',
+      data: CupertinoIcons.chart_pie,
+      pack: IconPack.cupertino),
+  'chart_pie_fill': IconPickerIcon(
+      name: 'chart_pie_fill',
+      data: CupertinoIcons.chart_pie_fill,
+      pack: IconPack.cupertino),
+  'chat_bubble': IconPickerIcon(
+      name: 'chat_bubble',
+      data: CupertinoIcons.chat_bubble,
+      pack: IconPack.cupertino),
+  'chat_bubble_2': IconPickerIcon(
+      name: 'chat_bubble_2',
+      data: CupertinoIcons.chat_bubble_2,
+      pack: IconPack.cupertino),
+  'chat_bubble_2_fill': IconPickerIcon(
+      name: 'chat_bubble_2_fill',
+      data: CupertinoIcons.chat_bubble_2_fill,
+      pack: IconPack.cupertino),
+  'chat_bubble_fill': IconPickerIcon(
+      name: 'chat_bubble_fill',
+      data: CupertinoIcons.chat_bubble_fill,
+      pack: IconPack.cupertino),
+  'chat_bubble_text': IconPickerIcon(
+      name: 'chat_bubble_text',
+      data: CupertinoIcons.chat_bubble_text,
+      pack: IconPack.cupertino),
+  'chat_bubble_text_fill': IconPickerIcon(
+      name: 'chat_bubble_text_fill',
+      data: CupertinoIcons.chat_bubble_text_fill,
+      pack: IconPack.cupertino),
+  'checkmark': IconPickerIcon(
+      name: 'checkmark',
+      data: CupertinoIcons.checkmark,
+      pack: IconPack.cupertino),
+  'checkmark_alt': IconPickerIcon(
+      name: 'checkmark_alt',
+      data: CupertinoIcons.checkmark_alt,
+      pack: IconPack.cupertino),
+  'checkmark_alt_circle': IconPickerIcon(
+      name: 'checkmark_alt_circle',
+      data: CupertinoIcons.checkmark_alt_circle,
+      pack: IconPack.cupertino),
+  'checkmark_alt_circle_fill': IconPickerIcon(
+      name: 'checkmark_alt_circle_fill',
+      data: CupertinoIcons.checkmark_alt_circle_fill,
+      pack: IconPack.cupertino),
+  'checkmark_circle': IconPickerIcon(
+      name: 'checkmark_circle',
+      data: CupertinoIcons.checkmark_circle,
+      pack: IconPack.cupertino),
+  'checkmark_circle_fill': IconPickerIcon(
+      name: 'checkmark_circle_fill',
+      data: CupertinoIcons.checkmark_circle_fill,
+      pack: IconPack.cupertino),
+  'checkmark_rectangle': IconPickerIcon(
+      name: 'checkmark_rectangle',
+      data: CupertinoIcons.checkmark_rectangle,
+      pack: IconPack.cupertino),
+  'checkmark_rectangle_fill': IconPickerIcon(
+      name: 'checkmark_rectangle_fill',
+      data: CupertinoIcons.checkmark_rectangle_fill,
+      pack: IconPack.cupertino),
+  'checkmark_seal': IconPickerIcon(
+      name: 'checkmark_seal',
+      data: CupertinoIcons.checkmark_seal,
+      pack: IconPack.cupertino),
+  'checkmark_seal_fill': IconPickerIcon(
+      name: 'checkmark_seal_fill',
+      data: CupertinoIcons.checkmark_seal_fill,
+      pack: IconPack.cupertino),
+  'checkmark_shield': IconPickerIcon(
+      name: 'checkmark_shield',
+      data: CupertinoIcons.checkmark_shield,
+      pack: IconPack.cupertino),
+  'checkmark_shield_fill': IconPickerIcon(
+      name: 'checkmark_shield_fill',
+      data: CupertinoIcons.checkmark_shield_fill,
+      pack: IconPack.cupertino),
+  'checkmark_square': IconPickerIcon(
+      name: 'checkmark_square',
+      data: CupertinoIcons.checkmark_square,
+      pack: IconPack.cupertino),
+  'checkmark_square_fill': IconPickerIcon(
+      name: 'checkmark_square_fill',
+      data: CupertinoIcons.checkmark_square_fill,
+      pack: IconPack.cupertino),
+  'chevron_back': IconPickerIcon(
+      name: 'chevron_back',
+      data: CupertinoIcons.chevron_back,
+      pack: IconPack.cupertino),
+  'chevron_compact_down': IconPickerIcon(
+      name: 'chevron_compact_down',
+      data: CupertinoIcons.chevron_compact_down,
+      pack: IconPack.cupertino),
+  'chevron_compact_left': IconPickerIcon(
+      name: 'chevron_compact_left',
+      data: CupertinoIcons.chevron_compact_left,
+      pack: IconPack.cupertino),
+  'chevron_compact_right': IconPickerIcon(
+      name: 'chevron_compact_right',
+      data: CupertinoIcons.chevron_compact_right,
+      pack: IconPack.cupertino),
+  'chevron_compact_up': IconPickerIcon(
+      name: 'chevron_compact_up',
+      data: CupertinoIcons.chevron_compact_up,
+      pack: IconPack.cupertino),
+  'chevron_down': IconPickerIcon(
+      name: 'chevron_down',
+      data: CupertinoIcons.chevron_down,
+      pack: IconPack.cupertino),
+  'chevron_down_circle': IconPickerIcon(
+      name: 'chevron_down_circle',
+      data: CupertinoIcons.chevron_down_circle,
+      pack: IconPack.cupertino),
+  'chevron_down_circle_fill': IconPickerIcon(
+      name: 'chevron_down_circle_fill',
+      data: CupertinoIcons.chevron_down_circle_fill,
+      pack: IconPack.cupertino),
+  'chevron_down_square': IconPickerIcon(
+      name: 'chevron_down_square',
+      data: CupertinoIcons.chevron_down_square,
+      pack: IconPack.cupertino),
+  'chevron_down_square_fill': IconPickerIcon(
+      name: 'chevron_down_square_fill',
+      data: CupertinoIcons.chevron_down_square_fill,
+      pack: IconPack.cupertino),
+  'chevron_forward': IconPickerIcon(
+      name: 'chevron_forward',
+      data: CupertinoIcons.chevron_forward,
+      pack: IconPack.cupertino),
+  'chevron_left': IconPickerIcon(
+      name: 'chevron_left',
+      data: CupertinoIcons.chevron_left,
+      pack: IconPack.cupertino),
+  'chevron_left_2': IconPickerIcon(
+      name: 'chevron_left_2',
+      data: CupertinoIcons.chevron_left_2,
+      pack: IconPack.cupertino),
+  'chevron_left_circle': IconPickerIcon(
+      name: 'chevron_left_circle',
+      data: CupertinoIcons.chevron_left_circle,
+      pack: IconPack.cupertino),
+  'chevron_left_circle_fill': IconPickerIcon(
+      name: 'chevron_left_circle_fill',
+      data: CupertinoIcons.chevron_left_circle_fill,
+      pack: IconPack.cupertino),
+  'chevron_left_slash_chevron_right': IconPickerIcon(
+      name: 'chevron_left_slash_chevron_right',
+      data: CupertinoIcons.chevron_left_slash_chevron_right,
+      pack: IconPack.cupertino),
+  'chevron_left_square': IconPickerIcon(
+      name: 'chevron_left_square',
+      data: CupertinoIcons.chevron_left_square,
+      pack: IconPack.cupertino),
+  'chevron_left_square_fill': IconPickerIcon(
+      name: 'chevron_left_square_fill',
+      data: CupertinoIcons.chevron_left_square_fill,
+      pack: IconPack.cupertino),
+  'chevron_right': IconPickerIcon(
+      name: 'chevron_right',
+      data: CupertinoIcons.chevron_right,
+      pack: IconPack.cupertino),
+  'chevron_right_2': IconPickerIcon(
+      name: 'chevron_right_2',
+      data: CupertinoIcons.chevron_right_2,
+      pack: IconPack.cupertino),
+  'chevron_right_circle': IconPickerIcon(
+      name: 'chevron_right_circle',
+      data: CupertinoIcons.chevron_right_circle,
+      pack: IconPack.cupertino),
+  'chevron_right_circle_fill': IconPickerIcon(
+      name: 'chevron_right_circle_fill',
+      data: CupertinoIcons.chevron_right_circle_fill,
+      pack: IconPack.cupertino),
+  'chevron_right_square': IconPickerIcon(
+      name: 'chevron_right_square',
+      data: CupertinoIcons.chevron_right_square,
+      pack: IconPack.cupertino),
+  'chevron_right_square_fill': IconPickerIcon(
+      name: 'chevron_right_square_fill',
+      data: CupertinoIcons.chevron_right_square_fill,
+      pack: IconPack.cupertino),
+  'chevron_up': IconPickerIcon(
+      name: 'chevron_up',
+      data: CupertinoIcons.chevron_up,
+      pack: IconPack.cupertino),
+  'chevron_up_chevron_down': IconPickerIcon(
+      name: 'chevron_up_chevron_down',
+      data: CupertinoIcons.chevron_up_chevron_down,
+      pack: IconPack.cupertino),
+  'chevron_up_circle': IconPickerIcon(
+      name: 'chevron_up_circle',
+      data: CupertinoIcons.chevron_up_circle,
+      pack: IconPack.cupertino),
+  'chevron_up_circle_fill': IconPickerIcon(
+      name: 'chevron_up_circle_fill',
+      data: CupertinoIcons.chevron_up_circle_fill,
+      pack: IconPack.cupertino),
+  'chevron_up_square': IconPickerIcon(
+      name: 'chevron_up_square',
+      data: CupertinoIcons.chevron_up_square,
+      pack: IconPack.cupertino),
+  'chevron_up_square_fill': IconPickerIcon(
+      name: 'chevron_up_square_fill',
+      data: CupertinoIcons.chevron_up_square_fill,
+      pack: IconPack.cupertino),
+  'circle_bottomthird_split': IconPickerIcon(
+      name: 'circle_bottomthird_split',
+      data: CupertinoIcons.circle_bottomthird_split,
+      pack: IconPack.cupertino),
+  'circle_fill': IconPickerIcon(
+      name: 'circle_fill',
+      data: CupertinoIcons.circle_fill,
+      pack: IconPack.cupertino),
+  'circle_grid_3x3': IconPickerIcon(
+      name: 'circle_grid_3x3',
+      data: CupertinoIcons.circle_grid_3x3,
+      pack: IconPack.cupertino),
+  'circle_grid_3x3_fill': IconPickerIcon(
+      name: 'circle_grid_3x3_fill',
+      data: CupertinoIcons.circle_grid_3x3_fill,
+      pack: IconPack.cupertino),
+  'circle_grid_hex': IconPickerIcon(
+      name: 'circle_grid_hex',
+      data: CupertinoIcons.circle_grid_hex,
+      pack: IconPack.cupertino),
+  'circle_grid_hex_fill': IconPickerIcon(
+      name: 'circle_grid_hex_fill',
+      data: CupertinoIcons.circle_grid_hex_fill,
+      pack: IconPack.cupertino),
+  'circle_lefthalf_fill': IconPickerIcon(
+      name: 'circle_lefthalf_fill',
+      data: CupertinoIcons.circle_lefthalf_fill,
+      pack: IconPack.cupertino),
+  'circle_righthalf_fill': IconPickerIcon(
+      name: 'circle_righthalf_fill',
+      data: CupertinoIcons.circle_righthalf_fill,
+      pack: IconPack.cupertino),
+  'clear_fill': IconPickerIcon(
+      name: 'clear_fill',
+      data: CupertinoIcons.clear_fill,
+      pack: IconPack.cupertino),
+  'clock_fill': IconPickerIcon(
+      name: 'clock_fill',
+      data: CupertinoIcons.clock_fill,
+      pack: IconPack.cupertino),
+  'cloud': IconPickerIcon(
+      name: 'cloud', data: CupertinoIcons.cloud, pack: IconPack.cupertino),
+  'cloud_bolt': IconPickerIcon(
+      name: 'cloud_bolt',
+      data: CupertinoIcons.cloud_bolt,
+      pack: IconPack.cupertino),
+  'cloud_bolt_fill': IconPickerIcon(
+      name: 'cloud_bolt_fill',
+      data: CupertinoIcons.cloud_bolt_fill,
+      pack: IconPack.cupertino),
+  'cloud_bolt_rain': IconPickerIcon(
+      name: 'cloud_bolt_rain',
+      data: CupertinoIcons.cloud_bolt_rain,
+      pack: IconPack.cupertino),
+  'cloud_bolt_rain_fill': IconPickerIcon(
+      name: 'cloud_bolt_rain_fill',
+      data: CupertinoIcons.cloud_bolt_rain_fill,
+      pack: IconPack.cupertino),
+  'cloud_download': IconPickerIcon(
+      name: 'cloud_download',
+      data: CupertinoIcons.cloud_download,
+      pack: IconPack.cupertino),
+  'cloud_download_fill': IconPickerIcon(
+      name: 'cloud_download_fill',
+      data: CupertinoIcons.cloud_download_fill,
+      pack: IconPack.cupertino),
+  'cloud_drizzle': IconPickerIcon(
+      name: 'cloud_drizzle',
+      data: CupertinoIcons.cloud_drizzle,
+      pack: IconPack.cupertino),
+  'cloud_drizzle_fill': IconPickerIcon(
+      name: 'cloud_drizzle_fill',
+      data: CupertinoIcons.cloud_drizzle_fill,
+      pack: IconPack.cupertino),
+  'cloud_fill': IconPickerIcon(
+      name: 'cloud_fill',
+      data: CupertinoIcons.cloud_fill,
+      pack: IconPack.cupertino),
+  'cloud_fog': IconPickerIcon(
+      name: 'cloud_fog',
+      data: CupertinoIcons.cloud_fog,
+      pack: IconPack.cupertino),
+  'cloud_fog_fill': IconPickerIcon(
+      name: 'cloud_fog_fill',
+      data: CupertinoIcons.cloud_fog_fill,
+      pack: IconPack.cupertino),
+  'cloud_hail': IconPickerIcon(
+      name: 'cloud_hail',
+      data: CupertinoIcons.cloud_hail,
+      pack: IconPack.cupertino),
+  'cloud_hail_fill': IconPickerIcon(
+      name: 'cloud_hail_fill',
+      data: CupertinoIcons.cloud_hail_fill,
+      pack: IconPack.cupertino),
+  'cloud_heavyrain': IconPickerIcon(
+      name: 'cloud_heavyrain',
+      data: CupertinoIcons.cloud_heavyrain,
+      pack: IconPack.cupertino),
+  'cloud_heavyrain_fill': IconPickerIcon(
+      name: 'cloud_heavyrain_fill',
+      data: CupertinoIcons.cloud_heavyrain_fill,
+      pack: IconPack.cupertino),
+  'cloud_moon': IconPickerIcon(
+      name: 'cloud_moon',
+      data: CupertinoIcons.cloud_moon,
+      pack: IconPack.cupertino),
+  'cloud_moon_bolt': IconPickerIcon(
+      name: 'cloud_moon_bolt',
+      data: CupertinoIcons.cloud_moon_bolt,
+      pack: IconPack.cupertino),
+  'cloud_moon_bolt_fill': IconPickerIcon(
+      name: 'cloud_moon_bolt_fill',
+      data: CupertinoIcons.cloud_moon_bolt_fill,
+      pack: IconPack.cupertino),
+  'cloud_moon_fill': IconPickerIcon(
+      name: 'cloud_moon_fill',
+      data: CupertinoIcons.cloud_moon_fill,
+      pack: IconPack.cupertino),
+  'cloud_moon_rain': IconPickerIcon(
+      name: 'cloud_moon_rain',
+      data: CupertinoIcons.cloud_moon_rain,
+      pack: IconPack.cupertino),
+  'cloud_moon_rain_fill': IconPickerIcon(
+      name: 'cloud_moon_rain_fill',
+      data: CupertinoIcons.cloud_moon_rain_fill,
+      pack: IconPack.cupertino),
+  'cloud_rain': IconPickerIcon(
+      name: 'cloud_rain',
+      data: CupertinoIcons.cloud_rain,
+      pack: IconPack.cupertino),
+  'cloud_rain_fill': IconPickerIcon(
+      name: 'cloud_rain_fill',
+      data: CupertinoIcons.cloud_rain_fill,
+      pack: IconPack.cupertino),
+  'cloud_sleet': IconPickerIcon(
+      name: 'cloud_sleet',
+      data: CupertinoIcons.cloud_sleet,
+      pack: IconPack.cupertino),
+  'cloud_sleet_fill': IconPickerIcon(
+      name: 'cloud_sleet_fill',
+      data: CupertinoIcons.cloud_sleet_fill,
+      pack: IconPack.cupertino),
+  'cloud_snow': IconPickerIcon(
+      name: 'cloud_snow',
+      data: CupertinoIcons.cloud_snow,
+      pack: IconPack.cupertino),
+  'cloud_snow_fill': IconPickerIcon(
+      name: 'cloud_snow_fill',
+      data: CupertinoIcons.cloud_snow_fill,
+      pack: IconPack.cupertino),
+  'cloud_sun': IconPickerIcon(
+      name: 'cloud_sun',
+      data: CupertinoIcons.cloud_sun,
+      pack: IconPack.cupertino),
+  'cloud_sun_bolt': IconPickerIcon(
+      name: 'cloud_sun_bolt',
+      data: CupertinoIcons.cloud_sun_bolt,
+      pack: IconPack.cupertino),
+  'cloud_sun_bolt_fill': IconPickerIcon(
+      name: 'cloud_sun_bolt_fill',
+      data: CupertinoIcons.cloud_sun_bolt_fill,
+      pack: IconPack.cupertino),
+  'cloud_sun_fill': IconPickerIcon(
+      name: 'cloud_sun_fill',
+      data: CupertinoIcons.cloud_sun_fill,
+      pack: IconPack.cupertino),
+  'cloud_sun_rain': IconPickerIcon(
+      name: 'cloud_sun_rain',
+      data: CupertinoIcons.cloud_sun_rain,
+      pack: IconPack.cupertino),
+  'cloud_sun_rain_fill': IconPickerIcon(
+      name: 'cloud_sun_rain_fill',
+      data: CupertinoIcons.cloud_sun_rain_fill,
+      pack: IconPack.cupertino),
+  'cloud_upload': IconPickerIcon(
+      name: 'cloud_upload',
+      data: CupertinoIcons.cloud_upload,
+      pack: IconPack.cupertino),
+  'cloud_upload_fill': IconPickerIcon(
+      name: 'cloud_upload_fill',
+      data: CupertinoIcons.cloud_upload_fill,
+      pack: IconPack.cupertino),
+  'color_filter': IconPickerIcon(
+      name: 'color_filter',
+      data: CupertinoIcons.color_filter,
+      pack: IconPack.cupertino),
+  'color_filter_fill': IconPickerIcon(
+      name: 'color_filter_fill',
+      data: CupertinoIcons.color_filter_fill,
+      pack: IconPack.cupertino),
+  'command': IconPickerIcon(
+      name: 'command', data: CupertinoIcons.command, pack: IconPack.cupertino),
+  'compass': IconPickerIcon(
+      name: 'compass', data: CupertinoIcons.compass, pack: IconPack.cupertino),
+  'compass_fill': IconPickerIcon(
+      name: 'compass_fill',
+      data: CupertinoIcons.compass_fill,
+      pack: IconPack.cupertino),
+  'control': IconPickerIcon(
+      name: 'control', data: CupertinoIcons.control, pack: IconPack.cupertino),
+  'creditcard': IconPickerIcon(
+      name: 'creditcard',
+      data: CupertinoIcons.creditcard,
+      pack: IconPack.cupertino),
+  'creditcard_fill': IconPickerIcon(
+      name: 'creditcard_fill',
+      data: CupertinoIcons.creditcard_fill,
+      pack: IconPack.cupertino),
+  'crop': IconPickerIcon(
+      name: 'crop', data: CupertinoIcons.crop, pack: IconPack.cupertino),
+  'crop_rotate': IconPickerIcon(
+      name: 'crop_rotate',
+      data: CupertinoIcons.crop_rotate,
+      pack: IconPack.cupertino),
+  'cube': IconPickerIcon(
+      name: 'cube', data: CupertinoIcons.cube, pack: IconPack.cupertino),
+  'cube_box': IconPickerIcon(
+      name: 'cube_box',
+      data: CupertinoIcons.cube_box,
+      pack: IconPack.cupertino),
+  'cube_box_fill': IconPickerIcon(
+      name: 'cube_box_fill',
+      data: CupertinoIcons.cube_box_fill,
+      pack: IconPack.cupertino),
+  'cube_fill': IconPickerIcon(
+      name: 'cube_fill',
+      data: CupertinoIcons.cube_fill,
+      pack: IconPack.cupertino),
+  'cursor_rays': IconPickerIcon(
+      name: 'cursor_rays',
+      data: CupertinoIcons.cursor_rays,
+      pack: IconPack.cupertino),
+  'decrease_indent': IconPickerIcon(
+      name: 'decrease_indent',
+      data: CupertinoIcons.decrease_indent,
+      pack: IconPack.cupertino),
+  'decrease_quotelevel': IconPickerIcon(
+      name: 'decrease_quotelevel',
+      data: CupertinoIcons.decrease_quotelevel,
+      pack: IconPack.cupertino),
+  'delete_left': IconPickerIcon(
+      name: 'delete_left',
+      data: CupertinoIcons.delete_left,
+      pack: IconPack.cupertino),
+  'delete_left_fill': IconPickerIcon(
+      name: 'delete_left_fill',
+      data: CupertinoIcons.delete_left_fill,
+      pack: IconPack.cupertino),
+  'delete_right': IconPickerIcon(
+      name: 'delete_right',
+      data: CupertinoIcons.delete_right,
+      pack: IconPack.cupertino),
+  'delete_right_fill': IconPickerIcon(
+      name: 'delete_right_fill',
+      data: CupertinoIcons.delete_right_fill,
+      pack: IconPack.cupertino),
+  'desktopcomputer': IconPickerIcon(
+      name: 'desktopcomputer',
+      data: CupertinoIcons.desktopcomputer,
+      pack: IconPack.cupertino),
+  'device_desktop': IconPickerIcon(
+      name: 'device_desktop',
+      data: CupertinoIcons.device_desktop,
+      pack: IconPack.cupertino),
+  'device_laptop': IconPickerIcon(
+      name: 'device_laptop',
+      data: CupertinoIcons.device_laptop,
+      pack: IconPack.cupertino),
+  'device_phone_landscape': IconPickerIcon(
+      name: 'device_phone_landscape',
+      data: CupertinoIcons.device_phone_landscape,
+      pack: IconPack.cupertino),
+  'device_phone_portrait': IconPickerIcon(
+      name: 'device_phone_portrait',
+      data: CupertinoIcons.device_phone_portrait,
+      pack: IconPack.cupertino),
+  'dial': IconPickerIcon(
+      name: 'dial', data: CupertinoIcons.dial, pack: IconPack.cupertino),
+  'dial_fill': IconPickerIcon(
+      name: 'dial_fill',
+      data: CupertinoIcons.dial_fill,
+      pack: IconPack.cupertino),
+  'divide': IconPickerIcon(
+      name: 'divide', data: CupertinoIcons.divide, pack: IconPack.cupertino),
+  'divide_circle': IconPickerIcon(
+      name: 'divide_circle',
+      data: CupertinoIcons.divide_circle,
+      pack: IconPack.cupertino),
+  'divide_circle_fill': IconPickerIcon(
+      name: 'divide_circle_fill',
+      data: CupertinoIcons.divide_circle_fill,
+      pack: IconPack.cupertino),
+  'divide_square': IconPickerIcon(
+      name: 'divide_square',
+      data: CupertinoIcons.divide_square,
+      pack: IconPack.cupertino),
+  'divide_square_fill': IconPickerIcon(
+      name: 'divide_square_fill',
+      data: CupertinoIcons.divide_square_fill,
+      pack: IconPack.cupertino),
+  'doc': IconPickerIcon(
+      name: 'doc', data: CupertinoIcons.doc, pack: IconPack.cupertino),
+  'doc_append': IconPickerIcon(
+      name: 'doc_append',
+      data: CupertinoIcons.doc_append,
+      pack: IconPack.cupertino),
+  'doc_chart': IconPickerIcon(
+      name: 'doc_chart',
+      data: CupertinoIcons.doc_chart,
+      pack: IconPack.cupertino),
+  'doc_chart_fill': IconPickerIcon(
+      name: 'doc_chart_fill',
+      data: CupertinoIcons.doc_chart_fill,
+      pack: IconPack.cupertino),
+  'doc_checkmark': IconPickerIcon(
+      name: 'doc_checkmark',
+      data: CupertinoIcons.doc_checkmark,
+      pack: IconPack.cupertino),
+  'doc_checkmark_fill': IconPickerIcon(
+      name: 'doc_checkmark_fill',
+      data: CupertinoIcons.doc_checkmark_fill,
+      pack: IconPack.cupertino),
+  'doc_circle': IconPickerIcon(
+      name: 'doc_circle',
+      data: CupertinoIcons.doc_circle,
+      pack: IconPack.cupertino),
+  'doc_circle_fill': IconPickerIcon(
+      name: 'doc_circle_fill',
+      data: CupertinoIcons.doc_circle_fill,
+      pack: IconPack.cupertino),
+  'doc_fill': IconPickerIcon(
+      name: 'doc_fill',
+      data: CupertinoIcons.doc_fill,
+      pack: IconPack.cupertino),
+  'doc_on_clipboard': IconPickerIcon(
+      name: 'doc_on_clipboard',
+      data: CupertinoIcons.doc_on_clipboard,
+      pack: IconPack.cupertino),
+  'doc_on_clipboard_fill': IconPickerIcon(
+      name: 'doc_on_clipboard_fill',
+      data: CupertinoIcons.doc_on_clipboard_fill,
+      pack: IconPack.cupertino),
+  'doc_on_doc': IconPickerIcon(
+      name: 'doc_on_doc',
+      data: CupertinoIcons.doc_on_doc,
+      pack: IconPack.cupertino),
+  'doc_on_doc_fill': IconPickerIcon(
+      name: 'doc_on_doc_fill',
+      data: CupertinoIcons.doc_on_doc_fill,
+      pack: IconPack.cupertino),
+  'doc_person': IconPickerIcon(
+      name: 'doc_person',
+      data: CupertinoIcons.doc_person,
+      pack: IconPack.cupertino),
+  'doc_person_fill': IconPickerIcon(
+      name: 'doc_person_fill',
+      data: CupertinoIcons.doc_person_fill,
+      pack: IconPack.cupertino),
+  'doc_plaintext': IconPickerIcon(
+      name: 'doc_plaintext',
+      data: CupertinoIcons.doc_plaintext,
+      pack: IconPack.cupertino),
+  'doc_richtext': IconPickerIcon(
+      name: 'doc_richtext',
+      data: CupertinoIcons.doc_richtext,
+      pack: IconPack.cupertino),
+  'doc_text': IconPickerIcon(
+      name: 'doc_text',
+      data: CupertinoIcons.doc_text,
+      pack: IconPack.cupertino),
+  'doc_text_fill': IconPickerIcon(
+      name: 'doc_text_fill',
+      data: CupertinoIcons.doc_text_fill,
+      pack: IconPack.cupertino),
+  'doc_text_search': IconPickerIcon(
+      name: 'doc_text_search',
+      data: CupertinoIcons.doc_text_search,
+      pack: IconPack.cupertino),
+  'doc_text_viewfinder': IconPickerIcon(
+      name: 'doc_text_viewfinder',
+      data: CupertinoIcons.doc_text_viewfinder,
+      pack: IconPack.cupertino),
+  'dot_radiowaves_left_right': IconPickerIcon(
+      name: 'dot_radiowaves_left_right',
+      data: CupertinoIcons.dot_radiowaves_left_right,
+      pack: IconPack.cupertino),
+  'dot_radiowaves_right': IconPickerIcon(
+      name: 'dot_radiowaves_right',
+      data: CupertinoIcons.dot_radiowaves_right,
+      pack: IconPack.cupertino),
+  'dot_square': IconPickerIcon(
+      name: 'dot_square',
+      data: CupertinoIcons.dot_square,
+      pack: IconPack.cupertino),
+  'dot_square_fill': IconPickerIcon(
+      name: 'dot_square_fill',
+      data: CupertinoIcons.dot_square_fill,
+      pack: IconPack.cupertino),
+  'download_circle': IconPickerIcon(
+      name: 'download_circle',
+      data: CupertinoIcons.download_circle,
+      pack: IconPack.cupertino),
+  'download_circle_fill': IconPickerIcon(
+      name: 'download_circle_fill',
+      data: CupertinoIcons.download_circle_fill,
+      pack: IconPack.cupertino),
+  'drop': IconPickerIcon(
+      name: 'drop', data: CupertinoIcons.drop, pack: IconPack.cupertino),
+  'drop_fill': IconPickerIcon(
+      name: 'drop_fill',
+      data: CupertinoIcons.drop_fill,
+      pack: IconPack.cupertino),
+  'drop_triangle': IconPickerIcon(
+      name: 'drop_triangle',
+      data: CupertinoIcons.drop_triangle,
+      pack: IconPack.cupertino),
+  'drop_triangle_fill': IconPickerIcon(
+      name: 'drop_triangle_fill',
+      data: CupertinoIcons.drop_triangle_fill,
+      pack: IconPack.cupertino),
+  'ear': IconPickerIcon(
+      name: 'ear', data: CupertinoIcons.ear, pack: IconPack.cupertino),
+  'eject': IconPickerIcon(
+      name: 'eject', data: CupertinoIcons.eject, pack: IconPack.cupertino),
+  'eject_fill': IconPickerIcon(
+      name: 'eject_fill',
+      data: CupertinoIcons.eject_fill,
+      pack: IconPack.cupertino),
+  'ellipses_bubble': IconPickerIcon(
+      name: 'ellipses_bubble',
+      data: CupertinoIcons.ellipses_bubble,
+      pack: IconPack.cupertino),
+  'ellipses_bubble_fill': IconPickerIcon(
+      name: 'ellipses_bubble_fill',
+      data: CupertinoIcons.ellipses_bubble_fill,
+      pack: IconPack.cupertino),
+  'ellipsis_circle': IconPickerIcon(
+      name: 'ellipsis_circle',
+      data: CupertinoIcons.ellipsis_circle,
+      pack: IconPack.cupertino),
+  'ellipsis_circle_fill': IconPickerIcon(
+      name: 'ellipsis_circle_fill',
+      data: CupertinoIcons.ellipsis_circle_fill,
+      pack: IconPack.cupertino),
+  'ellipsis_vertical': IconPickerIcon(
+      name: 'ellipsis_vertical',
+      data: CupertinoIcons.ellipsis_vertical,
+      pack: IconPack.cupertino),
+  'ellipsis_vertical_circle': IconPickerIcon(
+      name: 'ellipsis_vertical_circle',
+      data: CupertinoIcons.ellipsis_vertical_circle,
+      pack: IconPack.cupertino),
+  'ellipsis_vertical_circle_fill': IconPickerIcon(
+      name: 'ellipsis_vertical_circle_fill',
+      data: CupertinoIcons.ellipsis_vertical_circle_fill,
+      pack: IconPack.cupertino),
+  'envelope': IconPickerIcon(
+      name: 'envelope',
+      data: CupertinoIcons.envelope,
+      pack: IconPack.cupertino),
+  'envelope_badge': IconPickerIcon(
+      name: 'envelope_badge',
+      data: CupertinoIcons.envelope_badge,
+      pack: IconPack.cupertino),
+  'envelope_badge_fill': IconPickerIcon(
+      name: 'envelope_badge_fill',
+      data: CupertinoIcons.envelope_badge_fill,
+      pack: IconPack.cupertino),
+  'envelope_circle': IconPickerIcon(
+      name: 'envelope_circle',
+      data: CupertinoIcons.envelope_circle,
+      pack: IconPack.cupertino),
+  'envelope_circle_fill': IconPickerIcon(
+      name: 'envelope_circle_fill',
+      data: CupertinoIcons.envelope_circle_fill,
+      pack: IconPack.cupertino),
+  'envelope_fill': IconPickerIcon(
+      name: 'envelope_fill',
+      data: CupertinoIcons.envelope_fill,
+      pack: IconPack.cupertino),
+  'envelope_open': IconPickerIcon(
+      name: 'envelope_open',
+      data: CupertinoIcons.envelope_open,
+      pack: IconPack.cupertino),
+  'envelope_open_fill': IconPickerIcon(
+      name: 'envelope_open_fill',
+      data: CupertinoIcons.envelope_open_fill,
+      pack: IconPack.cupertino),
+  'equal': IconPickerIcon(
+      name: 'equal', data: CupertinoIcons.equal, pack: IconPack.cupertino),
+  'equal_circle': IconPickerIcon(
+      name: 'equal_circle',
+      data: CupertinoIcons.equal_circle,
+      pack: IconPack.cupertino),
+  'equal_circle_fill': IconPickerIcon(
+      name: 'equal_circle_fill',
+      data: CupertinoIcons.equal_circle_fill,
+      pack: IconPack.cupertino),
+  'equal_square': IconPickerIcon(
+      name: 'equal_square',
+      data: CupertinoIcons.equal_square,
+      pack: IconPack.cupertino),
+  'equal_square_fill': IconPickerIcon(
+      name: 'equal_square_fill',
+      data: CupertinoIcons.equal_square_fill,
+      pack: IconPack.cupertino),
+  'escape': IconPickerIcon(
+      name: 'escape', data: CupertinoIcons.escape, pack: IconPack.cupertino),
+  'exclamationmark': IconPickerIcon(
+      name: 'exclamationmark',
+      data: CupertinoIcons.exclamationmark,
+      pack: IconPack.cupertino),
+  'exclamationmark_bubble': IconPickerIcon(
+      name: 'exclamationmark_bubble',
+      data: CupertinoIcons.exclamationmark_bubble,
+      pack: IconPack.cupertino),
+  'exclamationmark_bubble_fill': IconPickerIcon(
+      name: 'exclamationmark_bubble_fill',
+      data: CupertinoIcons.exclamationmark_bubble_fill,
+      pack: IconPack.cupertino),
+  'exclamationmark_circle': IconPickerIcon(
+      name: 'exclamationmark_circle',
+      data: CupertinoIcons.exclamationmark_circle,
+      pack: IconPack.cupertino),
+  'exclamationmark_circle_fill': IconPickerIcon(
+      name: 'exclamationmark_circle_fill',
+      data: CupertinoIcons.exclamationmark_circle_fill,
+      pack: IconPack.cupertino),
+  'exclamationmark_octagon': IconPickerIcon(
+      name: 'exclamationmark_octagon',
+      data: CupertinoIcons.exclamationmark_octagon,
+      pack: IconPack.cupertino),
+  'exclamationmark_octagon_fill': IconPickerIcon(
+      name: 'exclamationmark_octagon_fill',
+      data: CupertinoIcons.exclamationmark_octagon_fill,
+      pack: IconPack.cupertino),
+  'exclamationmark_shield': IconPickerIcon(
+      name: 'exclamationmark_shield',
+      data: CupertinoIcons.exclamationmark_shield,
+      pack: IconPack.cupertino),
+  'exclamationmark_shield_fill': IconPickerIcon(
+      name: 'exclamationmark_shield_fill',
+      data: CupertinoIcons.exclamationmark_shield_fill,
+      pack: IconPack.cupertino),
+  'exclamationmark_square': IconPickerIcon(
+      name: 'exclamationmark_square',
+      data: CupertinoIcons.exclamationmark_square,
+      pack: IconPack.cupertino),
+  'exclamationmark_square_fill': IconPickerIcon(
+      name: 'exclamationmark_square_fill',
+      data: CupertinoIcons.exclamationmark_square_fill,
+      pack: IconPack.cupertino),
+  'exclamationmark_triangle': IconPickerIcon(
+      name: 'exclamationmark_triangle',
+      data: CupertinoIcons.exclamationmark_triangle,
+      pack: IconPack.cupertino),
+  'exclamationmark_triangle_fill': IconPickerIcon(
+      name: 'exclamationmark_triangle_fill',
+      data: CupertinoIcons.exclamationmark_triangle_fill,
+      pack: IconPack.cupertino),
+  'eye_fill': IconPickerIcon(
+      name: 'eye_fill',
+      data: CupertinoIcons.eye_fill,
+      pack: IconPack.cupertino),
+  'eye_slash': IconPickerIcon(
+      name: 'eye_slash',
+      data: CupertinoIcons.eye_slash,
+      pack: IconPack.cupertino),
+  'eye_slash_fill': IconPickerIcon(
+      name: 'eye_slash_fill',
+      data: CupertinoIcons.eye_slash_fill,
+      pack: IconPack.cupertino),
+  'eyedropper': IconPickerIcon(
+      name: 'eyedropper',
+      data: CupertinoIcons.eyedropper,
+      pack: IconPack.cupertino),
+  'eyedropper_full': IconPickerIcon(
+      name: 'eyedropper_full',
+      data: CupertinoIcons.eyedropper_full,
+      pack: IconPack.cupertino),
+  'eyedropper_halffull': IconPickerIcon(
+      name: 'eyedropper_halffull',
+      data: CupertinoIcons.eyedropper_halffull,
+      pack: IconPack.cupertino),
+  'eyeglasses': IconPickerIcon(
+      name: 'eyeglasses',
+      data: CupertinoIcons.eyeglasses,
+      pack: IconPack.cupertino),
+  'f_cursive': IconPickerIcon(
+      name: 'f_cursive',
+      data: CupertinoIcons.f_cursive,
+      pack: IconPack.cupertino),
+  'f_cursive_circle': IconPickerIcon(
+      name: 'f_cursive_circle',
+      data: CupertinoIcons.f_cursive_circle,
+      pack: IconPack.cupertino),
+  'f_cursive_circle_fill': IconPickerIcon(
+      name: 'f_cursive_circle_fill',
+      data: CupertinoIcons.f_cursive_circle_fill,
+      pack: IconPack.cupertino),
+  'film': IconPickerIcon(
+      name: 'film', data: CupertinoIcons.film, pack: IconPack.cupertino),
+  'film_fill': IconPickerIcon(
+      name: 'film_fill',
+      data: CupertinoIcons.film_fill,
+      pack: IconPack.cupertino),
+  'flag_circle': IconPickerIcon(
+      name: 'flag_circle',
+      data: CupertinoIcons.flag_circle,
+      pack: IconPack.cupertino),
+  'flag_circle_fill': IconPickerIcon(
+      name: 'flag_circle_fill',
+      data: CupertinoIcons.flag_circle_fill,
+      pack: IconPack.cupertino),
+  'flag_fill': IconPickerIcon(
+      name: 'flag_fill',
+      data: CupertinoIcons.flag_fill,
+      pack: IconPack.cupertino),
+  'flag_slash': IconPickerIcon(
+      name: 'flag_slash',
+      data: CupertinoIcons.flag_slash,
+      pack: IconPack.cupertino),
+  'flag_slash_fill': IconPickerIcon(
+      name: 'flag_slash_fill',
+      data: CupertinoIcons.flag_slash_fill,
+      pack: IconPack.cupertino),
+  'flame': IconPickerIcon(
+      name: 'flame', data: CupertinoIcons.flame, pack: IconPack.cupertino),
+  'flame_fill': IconPickerIcon(
+      name: 'flame_fill',
+      data: CupertinoIcons.flame_fill,
+      pack: IconPack.cupertino),
+  'floppy_disk': IconPickerIcon(
+      name: 'floppy_disk',
+      data: CupertinoIcons.floppy_disk,
+      pack: IconPack.cupertino),
+  'flowchart': IconPickerIcon(
+      name: 'flowchart',
+      data: CupertinoIcons.flowchart,
+      pack: IconPack.cupertino),
+  'flowchart_fill': IconPickerIcon(
+      name: 'flowchart_fill',
+      data: CupertinoIcons.flowchart_fill,
+      pack: IconPack.cupertino),
+  'folder_badge_minus': IconPickerIcon(
+      name: 'folder_badge_minus',
+      data: CupertinoIcons.folder_badge_minus,
+      pack: IconPack.cupertino),
+  'folder_badge_person_crop': IconPickerIcon(
+      name: 'folder_badge_person_crop',
+      data: CupertinoIcons.folder_badge_person_crop,
+      pack: IconPack.cupertino),
+  'folder_badge_plus': IconPickerIcon(
+      name: 'folder_badge_plus',
+      data: CupertinoIcons.folder_badge_plus,
+      pack: IconPack.cupertino),
+  'folder_circle': IconPickerIcon(
+      name: 'folder_circle',
+      data: CupertinoIcons.folder_circle,
+      pack: IconPack.cupertino),
+  'folder_circle_fill': IconPickerIcon(
+      name: 'folder_circle_fill',
+      data: CupertinoIcons.folder_circle_fill,
+      pack: IconPack.cupertino),
+  'folder_fill': IconPickerIcon(
+      name: 'folder_fill',
+      data: CupertinoIcons.folder_fill,
+      pack: IconPack.cupertino),
+  'folder_fill_badge_minus': IconPickerIcon(
+      name: 'folder_fill_badge_minus',
+      data: CupertinoIcons.folder_fill_badge_minus,
+      pack: IconPack.cupertino),
+  'folder_fill_badge_person_crop': IconPickerIcon(
+      name: 'folder_fill_badge_person_crop',
+      data: CupertinoIcons.folder_fill_badge_person_crop,
+      pack: IconPack.cupertino),
+  'folder_fill_badge_plus': IconPickerIcon(
+      name: 'folder_fill_badge_plus',
+      data: CupertinoIcons.folder_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'forward_end': IconPickerIcon(
+      name: 'forward_end',
+      data: CupertinoIcons.forward_end,
+      pack: IconPack.cupertino),
+  'forward_end_alt': IconPickerIcon(
+      name: 'forward_end_alt',
+      data: CupertinoIcons.forward_end_alt,
+      pack: IconPack.cupertino),
+  'forward_end_alt_fill': IconPickerIcon(
+      name: 'forward_end_alt_fill',
+      data: CupertinoIcons.forward_end_alt_fill,
+      pack: IconPack.cupertino),
+  'forward_end_fill': IconPickerIcon(
+      name: 'forward_end_fill',
+      data: CupertinoIcons.forward_end_fill,
+      pack: IconPack.cupertino),
+  'forward_fill': IconPickerIcon(
+      name: 'forward_fill',
+      data: CupertinoIcons.forward_fill,
+      pack: IconPack.cupertino),
+  'function': IconPickerIcon(
+      name: 'function',
+      data: CupertinoIcons.function,
+      pack: IconPack.cupertino),
+  'fx': IconPickerIcon(
+      name: 'fx', data: CupertinoIcons.fx, pack: IconPack.cupertino),
+  'gamecontroller': IconPickerIcon(
+      name: 'gamecontroller',
+      data: CupertinoIcons.gamecontroller,
+      pack: IconPack.cupertino),
+  'gamecontroller_alt_fill': IconPickerIcon(
+      name: 'gamecontroller_alt_fill',
+      data: CupertinoIcons.gamecontroller_alt_fill,
+      pack: IconPack.cupertino),
+  'gamecontroller_fill': IconPickerIcon(
+      name: 'gamecontroller_fill',
+      data: CupertinoIcons.gamecontroller_fill,
+      pack: IconPack.cupertino),
+  'gauge': IconPickerIcon(
+      name: 'gauge', data: CupertinoIcons.gauge, pack: IconPack.cupertino),
+  'gauge_badge_minus': IconPickerIcon(
+      name: 'gauge_badge_minus',
+      data: CupertinoIcons.gauge_badge_minus,
+      pack: IconPack.cupertino),
+  'gauge_badge_plus': IconPickerIcon(
+      name: 'gauge_badge_plus',
+      data: CupertinoIcons.gauge_badge_plus,
+      pack: IconPack.cupertino),
+  'gear_alt': IconPickerIcon(
+      name: 'gear_alt',
+      data: CupertinoIcons.gear_alt,
+      pack: IconPack.cupertino),
+  'gear_alt_fill': IconPickerIcon(
+      name: 'gear_alt_fill',
+      data: CupertinoIcons.gear_alt_fill,
+      pack: IconPack.cupertino),
+  'gift': IconPickerIcon(
+      name: 'gift', data: CupertinoIcons.gift, pack: IconPack.cupertino),
+  'gift_alt': IconPickerIcon(
+      name: 'gift_alt',
+      data: CupertinoIcons.gift_alt,
+      pack: IconPack.cupertino),
+  'gift_alt_fill': IconPickerIcon(
+      name: 'gift_alt_fill',
+      data: CupertinoIcons.gift_alt_fill,
+      pack: IconPack.cupertino),
+  'gift_fill': IconPickerIcon(
+      name: 'gift_fill',
+      data: CupertinoIcons.gift_fill,
+      pack: IconPack.cupertino),
+  'globe': IconPickerIcon(
+      name: 'globe', data: CupertinoIcons.globe, pack: IconPack.cupertino),
+  'gobackward': IconPickerIcon(
+      name: 'gobackward',
+      data: CupertinoIcons.gobackward,
+      pack: IconPack.cupertino),
+  'gobackward_10': IconPickerIcon(
+      name: 'gobackward_10',
+      data: CupertinoIcons.gobackward_10,
+      pack: IconPack.cupertino),
+  'gobackward_15': IconPickerIcon(
+      name: 'gobackward_15',
+      data: CupertinoIcons.gobackward_15,
+      pack: IconPack.cupertino),
+  'gobackward_30': IconPickerIcon(
+      name: 'gobackward_30',
+      data: CupertinoIcons.gobackward_30,
+      pack: IconPack.cupertino),
+  'gobackward_45': IconPickerIcon(
+      name: 'gobackward_45',
+      data: CupertinoIcons.gobackward_45,
+      pack: IconPack.cupertino),
+  'gobackward_60': IconPickerIcon(
+      name: 'gobackward_60',
+      data: CupertinoIcons.gobackward_60,
+      pack: IconPack.cupertino),
+  'gobackward_75': IconPickerIcon(
+      name: 'gobackward_75',
+      data: CupertinoIcons.gobackward_75,
+      pack: IconPack.cupertino),
+  'gobackward_90': IconPickerIcon(
+      name: 'gobackward_90',
+      data: CupertinoIcons.gobackward_90,
+      pack: IconPack.cupertino),
+  'gobackward_minus': IconPickerIcon(
+      name: 'gobackward_minus',
+      data: CupertinoIcons.gobackward_minus,
+      pack: IconPack.cupertino),
+  'goforward': IconPickerIcon(
+      name: 'goforward',
+      data: CupertinoIcons.goforward,
+      pack: IconPack.cupertino),
+  'goforward_10': IconPickerIcon(
+      name: 'goforward_10',
+      data: CupertinoIcons.goforward_10,
+      pack: IconPack.cupertino),
+  'goforward_15': IconPickerIcon(
+      name: 'goforward_15',
+      data: CupertinoIcons.goforward_15,
+      pack: IconPack.cupertino),
+  'goforward_30': IconPickerIcon(
+      name: 'goforward_30',
+      data: CupertinoIcons.goforward_30,
+      pack: IconPack.cupertino),
+  'goforward_45': IconPickerIcon(
+      name: 'goforward_45',
+      data: CupertinoIcons.goforward_45,
+      pack: IconPack.cupertino),
+  'goforward_60': IconPickerIcon(
+      name: 'goforward_60',
+      data: CupertinoIcons.goforward_60,
+      pack: IconPack.cupertino),
+  'goforward_75': IconPickerIcon(
+      name: 'goforward_75',
+      data: CupertinoIcons.goforward_75,
+      pack: IconPack.cupertino),
+  'goforward_90': IconPickerIcon(
+      name: 'goforward_90',
+      data: CupertinoIcons.goforward_90,
+      pack: IconPack.cupertino),
+  'goforward_plus': IconPickerIcon(
+      name: 'goforward_plus',
+      data: CupertinoIcons.goforward_plus,
+      pack: IconPack.cupertino),
+  'graph_circle': IconPickerIcon(
+      name: 'graph_circle',
+      data: CupertinoIcons.graph_circle,
+      pack: IconPack.cupertino),
+  'graph_circle_fill': IconPickerIcon(
+      name: 'graph_circle_fill',
+      data: CupertinoIcons.graph_circle_fill,
+      pack: IconPack.cupertino),
+  'graph_square': IconPickerIcon(
+      name: 'graph_square',
+      data: CupertinoIcons.graph_square,
+      pack: IconPack.cupertino),
+  'graph_square_fill': IconPickerIcon(
+      name: 'graph_square_fill',
+      data: CupertinoIcons.graph_square_fill,
+      pack: IconPack.cupertino),
+  'greaterthan': IconPickerIcon(
+      name: 'greaterthan',
+      data: CupertinoIcons.greaterthan,
+      pack: IconPack.cupertino),
+  'greaterthan_circle': IconPickerIcon(
+      name: 'greaterthan_circle',
+      data: CupertinoIcons.greaterthan_circle,
+      pack: IconPack.cupertino),
+  'greaterthan_circle_fill': IconPickerIcon(
+      name: 'greaterthan_circle_fill',
+      data: CupertinoIcons.greaterthan_circle_fill,
+      pack: IconPack.cupertino),
+  'greaterthan_square': IconPickerIcon(
+      name: 'greaterthan_square',
+      data: CupertinoIcons.greaterthan_square,
+      pack: IconPack.cupertino),
+  'greaterthan_square_fill': IconPickerIcon(
+      name: 'greaterthan_square_fill',
+      data: CupertinoIcons.greaterthan_square_fill,
+      pack: IconPack.cupertino),
+  'grid': IconPickerIcon(
+      name: 'grid', data: CupertinoIcons.grid, pack: IconPack.cupertino),
+  'grid_circle': IconPickerIcon(
+      name: 'grid_circle',
+      data: CupertinoIcons.grid_circle,
+      pack: IconPack.cupertino),
+  'grid_circle_fill': IconPickerIcon(
+      name: 'grid_circle_fill',
+      data: CupertinoIcons.grid_circle_fill,
+      pack: IconPack.cupertino),
+  'guitars': IconPickerIcon(
+      name: 'guitars', data: CupertinoIcons.guitars, pack: IconPack.cupertino),
+  'hammer': IconPickerIcon(
+      name: 'hammer', data: CupertinoIcons.hammer, pack: IconPack.cupertino),
+  'hammer_fill': IconPickerIcon(
+      name: 'hammer_fill',
+      data: CupertinoIcons.hammer_fill,
+      pack: IconPack.cupertino),
+  'hand_draw': IconPickerIcon(
+      name: 'hand_draw',
+      data: CupertinoIcons.hand_draw,
+      pack: IconPack.cupertino),
+  'hand_draw_fill': IconPickerIcon(
+      name: 'hand_draw_fill',
+      data: CupertinoIcons.hand_draw_fill,
+      pack: IconPack.cupertino),
+  'hand_point_left': IconPickerIcon(
+      name: 'hand_point_left',
+      data: CupertinoIcons.hand_point_left,
+      pack: IconPack.cupertino),
+  'hand_point_left_fill': IconPickerIcon(
+      name: 'hand_point_left_fill',
+      data: CupertinoIcons.hand_point_left_fill,
+      pack: IconPack.cupertino),
+  'hand_point_right': IconPickerIcon(
+      name: 'hand_point_right',
+      data: CupertinoIcons.hand_point_right,
+      pack: IconPack.cupertino),
+  'hand_point_right_fill': IconPickerIcon(
+      name: 'hand_point_right_fill',
+      data: CupertinoIcons.hand_point_right_fill,
+      pack: IconPack.cupertino),
+  'hand_raised': IconPickerIcon(
+      name: 'hand_raised',
+      data: CupertinoIcons.hand_raised,
+      pack: IconPack.cupertino),
+  'hand_raised_fill': IconPickerIcon(
+      name: 'hand_raised_fill',
+      data: CupertinoIcons.hand_raised_fill,
+      pack: IconPack.cupertino),
+  'hand_raised_slash': IconPickerIcon(
+      name: 'hand_raised_slash',
+      data: CupertinoIcons.hand_raised_slash,
+      pack: IconPack.cupertino),
+  'hand_raised_slash_fill': IconPickerIcon(
+      name: 'hand_raised_slash_fill',
+      data: CupertinoIcons.hand_raised_slash_fill,
+      pack: IconPack.cupertino),
+  'hand_thumbsdown': IconPickerIcon(
+      name: 'hand_thumbsdown',
+      data: CupertinoIcons.hand_thumbsdown,
+      pack: IconPack.cupertino),
+  'hand_thumbsdown_fill': IconPickerIcon(
+      name: 'hand_thumbsdown_fill',
+      data: CupertinoIcons.hand_thumbsdown_fill,
+      pack: IconPack.cupertino),
+  'hand_thumbsup': IconPickerIcon(
+      name: 'hand_thumbsup',
+      data: CupertinoIcons.hand_thumbsup,
+      pack: IconPack.cupertino),
+  'hand_thumbsup_fill': IconPickerIcon(
+      name: 'hand_thumbsup_fill',
+      data: CupertinoIcons.hand_thumbsup_fill,
+      pack: IconPack.cupertino),
+  'hare': IconPickerIcon(
+      name: 'hare', data: CupertinoIcons.hare, pack: IconPack.cupertino),
+  'hare_fill': IconPickerIcon(
+      name: 'hare_fill',
+      data: CupertinoIcons.hare_fill,
+      pack: IconPack.cupertino),
+  'headphones': IconPickerIcon(
+      name: 'headphones',
+      data: CupertinoIcons.headphones,
+      pack: IconPack.cupertino),
+  'heart_circle': IconPickerIcon(
+      name: 'heart_circle',
+      data: CupertinoIcons.heart_circle,
+      pack: IconPack.cupertino),
+  'heart_circle_fill': IconPickerIcon(
+      name: 'heart_circle_fill',
+      data: CupertinoIcons.heart_circle_fill,
+      pack: IconPack.cupertino),
+  'heart_fill': IconPickerIcon(
+      name: 'heart_fill',
+      data: CupertinoIcons.heart_fill,
+      pack: IconPack.cupertino),
+  'heart_slash': IconPickerIcon(
+      name: 'heart_slash',
+      data: CupertinoIcons.heart_slash,
+      pack: IconPack.cupertino),
+  'heart_slash_circle': IconPickerIcon(
+      name: 'heart_slash_circle',
+      data: CupertinoIcons.heart_slash_circle,
+      pack: IconPack.cupertino),
+  'heart_slash_circle_fill': IconPickerIcon(
+      name: 'heart_slash_circle_fill',
+      data: CupertinoIcons.heart_slash_circle_fill,
+      pack: IconPack.cupertino),
+  'heart_slash_fill': IconPickerIcon(
+      name: 'heart_slash_fill',
+      data: CupertinoIcons.heart_slash_fill,
+      pack: IconPack.cupertino),
+  'helm': IconPickerIcon(
+      name: 'helm', data: CupertinoIcons.helm, pack: IconPack.cupertino),
+  'hexagon': IconPickerIcon(
+      name: 'hexagon', data: CupertinoIcons.hexagon, pack: IconPack.cupertino),
+  'hexagon_fill': IconPickerIcon(
+      name: 'hexagon_fill',
+      data: CupertinoIcons.hexagon_fill,
+      pack: IconPack.cupertino),
+  'hifispeaker': IconPickerIcon(
+      name: 'hifispeaker',
+      data: CupertinoIcons.hifispeaker,
+      pack: IconPack.cupertino),
+  'hifispeaker_fill': IconPickerIcon(
+      name: 'hifispeaker_fill',
+      data: CupertinoIcons.hifispeaker_fill,
+      pack: IconPack.cupertino),
+  'hourglass': IconPickerIcon(
+      name: 'hourglass',
+      data: CupertinoIcons.hourglass,
+      pack: IconPack.cupertino),
+  'hourglass_bottomhalf_fill': IconPickerIcon(
+      name: 'hourglass_bottomhalf_fill',
+      data: CupertinoIcons.hourglass_bottomhalf_fill,
+      pack: IconPack.cupertino),
+  'hourglass_tophalf_fill': IconPickerIcon(
+      name: 'hourglass_tophalf_fill',
+      data: CupertinoIcons.hourglass_tophalf_fill,
+      pack: IconPack.cupertino),
+  'house': IconPickerIcon(
+      name: 'house', data: CupertinoIcons.house, pack: IconPack.cupertino),
+  'house_alt': IconPickerIcon(
+      name: 'house_alt',
+      data: CupertinoIcons.house_alt,
+      pack: IconPack.cupertino),
+  'house_alt_fill': IconPickerIcon(
+      name: 'house_alt_fill',
+      data: CupertinoIcons.house_alt_fill,
+      pack: IconPack.cupertino),
+  'house_fill': IconPickerIcon(
+      name: 'house_fill',
+      data: CupertinoIcons.house_fill,
+      pack: IconPack.cupertino),
+  'hurricane': IconPickerIcon(
+      name: 'hurricane',
+      data: CupertinoIcons.hurricane,
+      pack: IconPack.cupertino),
+  'increase_indent': IconPickerIcon(
+      name: 'increase_indent',
+      data: CupertinoIcons.increase_indent,
+      pack: IconPack.cupertino),
+  'increase_quotelevel': IconPickerIcon(
+      name: 'increase_quotelevel',
+      data: CupertinoIcons.increase_quotelevel,
+      pack: IconPack.cupertino),
+  'infinite': IconPickerIcon(
+      name: 'infinite',
+      data: CupertinoIcons.infinite,
+      pack: IconPack.cupertino),
+  'info_circle': IconPickerIcon(
+      name: 'info_circle',
+      data: CupertinoIcons.info_circle,
+      pack: IconPack.cupertino),
+  'info_circle_fill': IconPickerIcon(
+      name: 'info_circle_fill',
+      data: CupertinoIcons.info_circle_fill,
+      pack: IconPack.cupertino),
+  'italic': IconPickerIcon(
+      name: 'italic', data: CupertinoIcons.italic, pack: IconPack.cupertino),
+  'keyboard': IconPickerIcon(
+      name: 'keyboard',
+      data: CupertinoIcons.keyboard,
+      pack: IconPack.cupertino),
+  'keyboard_chevron_compact_down': IconPickerIcon(
+      name: 'keyboard_chevron_compact_down',
+      data: CupertinoIcons.keyboard_chevron_compact_down,
+      pack: IconPack.cupertino),
+  'largecircle_fill_circle': IconPickerIcon(
+      name: 'largecircle_fill_circle',
+      data: CupertinoIcons.largecircle_fill_circle,
+      pack: IconPack.cupertino),
+  'lasso': IconPickerIcon(
+      name: 'lasso', data: CupertinoIcons.lasso, pack: IconPack.cupertino),
+  'layers': IconPickerIcon(
+      name: 'layers', data: CupertinoIcons.layers, pack: IconPack.cupertino),
+  'layers_alt': IconPickerIcon(
+      name: 'layers_alt',
+      data: CupertinoIcons.layers_alt,
+      pack: IconPack.cupertino),
+  'layers_alt_fill': IconPickerIcon(
+      name: 'layers_alt_fill',
+      data: CupertinoIcons.layers_alt_fill,
+      pack: IconPack.cupertino),
+  'layers_fill': IconPickerIcon(
+      name: 'layers_fill',
+      data: CupertinoIcons.layers_fill,
+      pack: IconPack.cupertino),
+  'leaf_arrow_circlepath': IconPickerIcon(
+      name: 'leaf_arrow_circlepath',
+      data: CupertinoIcons.leaf_arrow_circlepath,
+      pack: IconPack.cupertino),
+  'lessthan': IconPickerIcon(
+      name: 'lessthan',
+      data: CupertinoIcons.lessthan,
+      pack: IconPack.cupertino),
+  'lessthan_circle': IconPickerIcon(
+      name: 'lessthan_circle',
+      data: CupertinoIcons.lessthan_circle,
+      pack: IconPack.cupertino),
+  'lessthan_circle_fill': IconPickerIcon(
+      name: 'lessthan_circle_fill',
+      data: CupertinoIcons.lessthan_circle_fill,
+      pack: IconPack.cupertino),
+  'lessthan_square': IconPickerIcon(
+      name: 'lessthan_square',
+      data: CupertinoIcons.lessthan_square,
+      pack: IconPack.cupertino),
+  'lessthan_square_fill': IconPickerIcon(
+      name: 'lessthan_square_fill',
+      data: CupertinoIcons.lessthan_square_fill,
+      pack: IconPack.cupertino),
+  'light_max': IconPickerIcon(
+      name: 'light_max',
+      data: CupertinoIcons.light_max,
+      pack: IconPack.cupertino),
+  'light_min': IconPickerIcon(
+      name: 'light_min',
+      data: CupertinoIcons.light_min,
+      pack: IconPack.cupertino),
+  'lightbulb': IconPickerIcon(
+      name: 'lightbulb',
+      data: CupertinoIcons.lightbulb,
+      pack: IconPack.cupertino),
+  'lightbulb_fill': IconPickerIcon(
+      name: 'lightbulb_fill',
+      data: CupertinoIcons.lightbulb_fill,
+      pack: IconPack.cupertino),
+  'lightbulb_slash': IconPickerIcon(
+      name: 'lightbulb_slash',
+      data: CupertinoIcons.lightbulb_slash,
+      pack: IconPack.cupertino),
+  'lightbulb_slash_fill': IconPickerIcon(
+      name: 'lightbulb_slash_fill',
+      data: CupertinoIcons.lightbulb_slash_fill,
+      pack: IconPack.cupertino),
+  'line_horizontal_3': IconPickerIcon(
+      name: 'line_horizontal_3',
+      data: CupertinoIcons.line_horizontal_3,
+      pack: IconPack.cupertino),
+  'line_horizontal_3_decrease': IconPickerIcon(
+      name: 'line_horizontal_3_decrease',
+      data: CupertinoIcons.line_horizontal_3_decrease,
+      pack: IconPack.cupertino),
+  'line_horizontal_3_decrease_circle': IconPickerIcon(
+      name: 'line_horizontal_3_decrease_circle',
+      data: CupertinoIcons.line_horizontal_3_decrease_circle,
+      pack: IconPack.cupertino),
+  'line_horizontal_3_decrease_circle_fill': IconPickerIcon(
+      name: 'line_horizontal_3_decrease_circle_fill',
+      data: CupertinoIcons.line_horizontal_3_decrease_circle_fill,
+      pack: IconPack.cupertino),
+  'link': IconPickerIcon(
+      name: 'link', data: CupertinoIcons.link, pack: IconPack.cupertino),
+  'link_circle': IconPickerIcon(
+      name: 'link_circle',
+      data: CupertinoIcons.link_circle,
+      pack: IconPack.cupertino),
+  'link_circle_fill': IconPickerIcon(
+      name: 'link_circle_fill',
+      data: CupertinoIcons.link_circle_fill,
+      pack: IconPack.cupertino),
+  'list_bullet': IconPickerIcon(
+      name: 'list_bullet',
+      data: CupertinoIcons.list_bullet,
+      pack: IconPack.cupertino),
+  'list_bullet_below_rectangle': IconPickerIcon(
+      name: 'list_bullet_below_rectangle',
+      data: CupertinoIcons.list_bullet_below_rectangle,
+      pack: IconPack.cupertino),
+  'list_bullet_indent': IconPickerIcon(
+      name: 'list_bullet_indent',
+      data: CupertinoIcons.list_bullet_indent,
+      pack: IconPack.cupertino),
+  'list_dash': IconPickerIcon(
+      name: 'list_dash',
+      data: CupertinoIcons.list_dash,
+      pack: IconPack.cupertino),
+  'list_number': IconPickerIcon(
+      name: 'list_number',
+      data: CupertinoIcons.list_number,
+      pack: IconPack.cupertino),
+  'list_number_rtl': IconPickerIcon(
+      name: 'list_number_rtl',
+      data: CupertinoIcons.list_number_rtl,
+      pack: IconPack.cupertino),
+  'location_circle': IconPickerIcon(
+      name: 'location_circle',
+      data: CupertinoIcons.location_circle,
+      pack: IconPack.cupertino),
+  'location_circle_fill': IconPickerIcon(
+      name: 'location_circle_fill',
+      data: CupertinoIcons.location_circle_fill,
+      pack: IconPack.cupertino),
+  'location_fill': IconPickerIcon(
+      name: 'location_fill',
+      data: CupertinoIcons.location_fill,
+      pack: IconPack.cupertino),
+  'location_north': IconPickerIcon(
+      name: 'location_north',
+      data: CupertinoIcons.location_north,
+      pack: IconPack.cupertino),
+  'location_north_fill': IconPickerIcon(
+      name: 'location_north_fill',
+      data: CupertinoIcons.location_north_fill,
+      pack: IconPack.cupertino),
+  'location_north_line': IconPickerIcon(
+      name: 'location_north_line',
+      data: CupertinoIcons.location_north_line,
+      pack: IconPack.cupertino),
+  'location_north_line_fill': IconPickerIcon(
+      name: 'location_north_line_fill',
+      data: CupertinoIcons.location_north_line_fill,
+      pack: IconPack.cupertino),
+  'location_slash': IconPickerIcon(
+      name: 'location_slash',
+      data: CupertinoIcons.location_slash,
+      pack: IconPack.cupertino),
+  'location_slash_fill': IconPickerIcon(
+      name: 'location_slash_fill',
+      data: CupertinoIcons.location_slash_fill,
+      pack: IconPack.cupertino),
+  'lock': IconPickerIcon(
+      name: 'lock', data: CupertinoIcons.lock, pack: IconPack.cupertino),
+  'lock_circle': IconPickerIcon(
+      name: 'lock_circle',
+      data: CupertinoIcons.lock_circle,
+      pack: IconPack.cupertino),
+  'lock_circle_fill': IconPickerIcon(
+      name: 'lock_circle_fill',
+      data: CupertinoIcons.lock_circle_fill,
+      pack: IconPack.cupertino),
+  'lock_fill': IconPickerIcon(
+      name: 'lock_fill',
+      data: CupertinoIcons.lock_fill,
+      pack: IconPack.cupertino),
+  'lock_open': IconPickerIcon(
+      name: 'lock_open',
+      data: CupertinoIcons.lock_open,
+      pack: IconPack.cupertino),
+  'lock_open_fill': IconPickerIcon(
+      name: 'lock_open_fill',
+      data: CupertinoIcons.lock_open_fill,
+      pack: IconPack.cupertino),
+  'lock_rotation': IconPickerIcon(
+      name: 'lock_rotation',
+      data: CupertinoIcons.lock_rotation,
+      pack: IconPack.cupertino),
+  'lock_rotation_open': IconPickerIcon(
+      name: 'lock_rotation_open',
+      data: CupertinoIcons.lock_rotation_open,
+      pack: IconPack.cupertino),
+  'lock_shield': IconPickerIcon(
+      name: 'lock_shield',
+      data: CupertinoIcons.lock_shield,
+      pack: IconPack.cupertino),
+  'lock_shield_fill': IconPickerIcon(
+      name: 'lock_shield_fill',
+      data: CupertinoIcons.lock_shield_fill,
+      pack: IconPack.cupertino),
+  'lock_slash': IconPickerIcon(
+      name: 'lock_slash',
+      data: CupertinoIcons.lock_slash,
+      pack: IconPack.cupertino),
+  'lock_slash_fill': IconPickerIcon(
+      name: 'lock_slash_fill',
+      data: CupertinoIcons.lock_slash_fill,
+      pack: IconPack.cupertino),
+  'macwindow': IconPickerIcon(
+      name: 'macwindow',
+      data: CupertinoIcons.macwindow,
+      pack: IconPack.cupertino),
+  'map': IconPickerIcon(
+      name: 'map', data: CupertinoIcons.map, pack: IconPack.cupertino),
+  'map_fill': IconPickerIcon(
+      name: 'map_fill',
+      data: CupertinoIcons.map_fill,
+      pack: IconPack.cupertino),
+  'map_pin': IconPickerIcon(
+      name: 'map_pin', data: CupertinoIcons.map_pin, pack: IconPack.cupertino),
+  'map_pin_ellipse': IconPickerIcon(
+      name: 'map_pin_ellipse',
+      data: CupertinoIcons.map_pin_ellipse,
+      pack: IconPack.cupertino),
+  'map_pin_slash': IconPickerIcon(
+      name: 'map_pin_slash',
+      data: CupertinoIcons.map_pin_slash,
+      pack: IconPack.cupertino),
+  'memories': IconPickerIcon(
+      name: 'memories',
+      data: CupertinoIcons.memories,
+      pack: IconPack.cupertino),
+  'memories_badge_minus': IconPickerIcon(
+      name: 'memories_badge_minus',
+      data: CupertinoIcons.memories_badge_minus,
+      pack: IconPack.cupertino),
+  'memories_badge_plus': IconPickerIcon(
+      name: 'memories_badge_plus',
+      data: CupertinoIcons.memories_badge_plus,
+      pack: IconPack.cupertino),
+  'metronome': IconPickerIcon(
+      name: 'metronome',
+      data: CupertinoIcons.metronome,
+      pack: IconPack.cupertino),
+  'mic_circle': IconPickerIcon(
+      name: 'mic_circle',
+      data: CupertinoIcons.mic_circle,
+      pack: IconPack.cupertino),
+  'mic_circle_fill': IconPickerIcon(
+      name: 'mic_circle_fill',
+      data: CupertinoIcons.mic_circle_fill,
+      pack: IconPack.cupertino),
+  'mic_fill': IconPickerIcon(
+      name: 'mic_fill',
+      data: CupertinoIcons.mic_fill,
+      pack: IconPack.cupertino),
+  'mic_slash': IconPickerIcon(
+      name: 'mic_slash',
+      data: CupertinoIcons.mic_slash,
+      pack: IconPack.cupertino),
+  'mic_slash_fill': IconPickerIcon(
+      name: 'mic_slash_fill',
+      data: CupertinoIcons.mic_slash_fill,
+      pack: IconPack.cupertino),
+  'minus': IconPickerIcon(
+      name: 'minus', data: CupertinoIcons.minus, pack: IconPack.cupertino),
+  'minus_circle': IconPickerIcon(
+      name: 'minus_circle',
+      data: CupertinoIcons.minus_circle,
+      pack: IconPack.cupertino),
+  'minus_circle_fill': IconPickerIcon(
+      name: 'minus_circle_fill',
+      data: CupertinoIcons.minus_circle_fill,
+      pack: IconPack.cupertino),
+  'minus_rectangle': IconPickerIcon(
+      name: 'minus_rectangle',
+      data: CupertinoIcons.minus_rectangle,
+      pack: IconPack.cupertino),
+  'minus_rectangle_fill': IconPickerIcon(
+      name: 'minus_rectangle_fill',
+      data: CupertinoIcons.minus_rectangle_fill,
+      pack: IconPack.cupertino),
+  'minus_slash_plus': IconPickerIcon(
+      name: 'minus_slash_plus',
+      data: CupertinoIcons.minus_slash_plus,
+      pack: IconPack.cupertino),
+  'minus_square': IconPickerIcon(
+      name: 'minus_square',
+      data: CupertinoIcons.minus_square,
+      pack: IconPack.cupertino),
+  'minus_square_fill': IconPickerIcon(
+      name: 'minus_square_fill',
+      data: CupertinoIcons.minus_square_fill,
+      pack: IconPack.cupertino),
+  'money_dollar': IconPickerIcon(
+      name: 'money_dollar',
+      data: CupertinoIcons.money_dollar,
+      pack: IconPack.cupertino),
+  'money_dollar_circle': IconPickerIcon(
+      name: 'money_dollar_circle',
+      data: CupertinoIcons.money_dollar_circle,
+      pack: IconPack.cupertino),
+  'money_dollar_circle_fill': IconPickerIcon(
+      name: 'money_dollar_circle_fill',
+      data: CupertinoIcons.money_dollar_circle_fill,
+      pack: IconPack.cupertino),
+  'money_euro': IconPickerIcon(
+      name: 'money_euro',
+      data: CupertinoIcons.money_euro,
+      pack: IconPack.cupertino),
+  'money_euro_circle': IconPickerIcon(
+      name: 'money_euro_circle',
+      data: CupertinoIcons.money_euro_circle,
+      pack: IconPack.cupertino),
+  'money_euro_circle_fill': IconPickerIcon(
+      name: 'money_euro_circle_fill',
+      data: CupertinoIcons.money_euro_circle_fill,
+      pack: IconPack.cupertino),
+  'money_pound': IconPickerIcon(
+      name: 'money_pound',
+      data: CupertinoIcons.money_pound,
+      pack: IconPack.cupertino),
+  'money_pound_circle': IconPickerIcon(
+      name: 'money_pound_circle',
+      data: CupertinoIcons.money_pound_circle,
+      pack: IconPack.cupertino),
+  'money_pound_circle_fill': IconPickerIcon(
+      name: 'money_pound_circle_fill',
+      data: CupertinoIcons.money_pound_circle_fill,
+      pack: IconPack.cupertino),
+  'money_rubl': IconPickerIcon(
+      name: 'money_rubl',
+      data: CupertinoIcons.money_rubl,
+      pack: IconPack.cupertino),
+  'money_rubl_circle': IconPickerIcon(
+      name: 'money_rubl_circle',
+      data: CupertinoIcons.money_rubl_circle,
+      pack: IconPack.cupertino),
+  'money_rubl_circle_fill': IconPickerIcon(
+      name: 'money_rubl_circle_fill',
+      data: CupertinoIcons.money_rubl_circle_fill,
+      pack: IconPack.cupertino),
+  'money_yen': IconPickerIcon(
+      name: 'money_yen',
+      data: CupertinoIcons.money_yen,
+      pack: IconPack.cupertino),
+  'money_yen_circle': IconPickerIcon(
+      name: 'money_yen_circle',
+      data: CupertinoIcons.money_yen_circle,
+      pack: IconPack.cupertino),
+  'money_yen_circle_fill': IconPickerIcon(
+      name: 'money_yen_circle_fill',
+      data: CupertinoIcons.money_yen_circle_fill,
+      pack: IconPack.cupertino),
+  'moon': IconPickerIcon(
+      name: 'moon', data: CupertinoIcons.moon, pack: IconPack.cupertino),
+  'moon_circle': IconPickerIcon(
+      name: 'moon_circle',
+      data: CupertinoIcons.moon_circle,
+      pack: IconPack.cupertino),
+  'moon_circle_fill': IconPickerIcon(
+      name: 'moon_circle_fill',
+      data: CupertinoIcons.moon_circle_fill,
+      pack: IconPack.cupertino),
+  'moon_fill': IconPickerIcon(
+      name: 'moon_fill',
+      data: CupertinoIcons.moon_fill,
+      pack: IconPack.cupertino),
+  'moon_stars': IconPickerIcon(
+      name: 'moon_stars',
+      data: CupertinoIcons.moon_stars,
+      pack: IconPack.cupertino),
+  'moon_stars_fill': IconPickerIcon(
+      name: 'moon_stars_fill',
+      data: CupertinoIcons.moon_stars_fill,
+      pack: IconPack.cupertino),
+  'moon_zzz': IconPickerIcon(
+      name: 'moon_zzz',
+      data: CupertinoIcons.moon_zzz,
+      pack: IconPack.cupertino),
+  'moon_zzz_fill': IconPickerIcon(
+      name: 'moon_zzz_fill',
+      data: CupertinoIcons.moon_zzz_fill,
+      pack: IconPack.cupertino),
+  'move': IconPickerIcon(
+      name: 'move', data: CupertinoIcons.move, pack: IconPack.cupertino),
+  'multiply': IconPickerIcon(
+      name: 'multiply',
+      data: CupertinoIcons.multiply,
+      pack: IconPack.cupertino),
+  'multiply_circle': IconPickerIcon(
+      name: 'multiply_circle',
+      data: CupertinoIcons.multiply_circle,
+      pack: IconPack.cupertino),
+  'multiply_circle_fill': IconPickerIcon(
+      name: 'multiply_circle_fill',
+      data: CupertinoIcons.multiply_circle_fill,
+      pack: IconPack.cupertino),
+  'multiply_square': IconPickerIcon(
+      name: 'multiply_square',
+      data: CupertinoIcons.multiply_square,
+      pack: IconPack.cupertino),
+  'multiply_square_fill': IconPickerIcon(
+      name: 'multiply_square_fill',
+      data: CupertinoIcons.multiply_square_fill,
+      pack: IconPack.cupertino),
+  'music_albums': IconPickerIcon(
+      name: 'music_albums',
+      data: CupertinoIcons.music_albums,
+      pack: IconPack.cupertino),
+  'music_albums_fill': IconPickerIcon(
+      name: 'music_albums_fill',
+      data: CupertinoIcons.music_albums_fill,
+      pack: IconPack.cupertino),
+  'music_house': IconPickerIcon(
+      name: 'music_house',
+      data: CupertinoIcons.music_house,
+      pack: IconPack.cupertino),
+  'music_house_fill': IconPickerIcon(
+      name: 'music_house_fill',
+      data: CupertinoIcons.music_house_fill,
+      pack: IconPack.cupertino),
+  'music_mic': IconPickerIcon(
+      name: 'music_mic',
+      data: CupertinoIcons.music_mic,
+      pack: IconPack.cupertino),
+  'music_note_2': IconPickerIcon(
+      name: 'music_note_2',
+      data: CupertinoIcons.music_note_2,
+      pack: IconPack.cupertino),
+  'music_note_list': IconPickerIcon(
+      name: 'music_note_list',
+      data: CupertinoIcons.music_note_list,
+      pack: IconPack.cupertino),
+  'nosign': IconPickerIcon(
+      name: 'nosign', data: CupertinoIcons.nosign, pack: IconPack.cupertino),
+  'number': IconPickerIcon(
+      name: 'number', data: CupertinoIcons.number, pack: IconPack.cupertino),
+  'number_circle': IconPickerIcon(
+      name: 'number_circle',
+      data: CupertinoIcons.number_circle,
+      pack: IconPack.cupertino),
+  'number_circle_fill': IconPickerIcon(
+      name: 'number_circle_fill',
+      data: CupertinoIcons.number_circle_fill,
+      pack: IconPack.cupertino),
+  'number_square': IconPickerIcon(
+      name: 'number_square',
+      data: CupertinoIcons.number_square,
+      pack: IconPack.cupertino),
+  'number_square_fill': IconPickerIcon(
+      name: 'number_square_fill',
+      data: CupertinoIcons.number_square_fill,
+      pack: IconPack.cupertino),
+  'option': IconPickerIcon(
+      name: 'option', data: CupertinoIcons.option, pack: IconPack.cupertino),
+  'paintbrush': IconPickerIcon(
+      name: 'paintbrush',
+      data: CupertinoIcons.paintbrush,
+      pack: IconPack.cupertino),
+  'paintbrush_fill': IconPickerIcon(
+      name: 'paintbrush_fill',
+      data: CupertinoIcons.paintbrush_fill,
+      pack: IconPack.cupertino),
+  'pano': IconPickerIcon(
+      name: 'pano', data: CupertinoIcons.pano, pack: IconPack.cupertino),
+  'pano_fill': IconPickerIcon(
+      name: 'pano_fill',
+      data: CupertinoIcons.pano_fill,
+      pack: IconPack.cupertino),
+  'paperclip': IconPickerIcon(
+      name: 'paperclip',
+      data: CupertinoIcons.paperclip,
+      pack: IconPack.cupertino),
+  'paperplane': IconPickerIcon(
+      name: 'paperplane',
+      data: CupertinoIcons.paperplane,
+      pack: IconPack.cupertino),
+  'paperplane_fill': IconPickerIcon(
+      name: 'paperplane_fill',
+      data: CupertinoIcons.paperplane_fill,
+      pack: IconPack.cupertino),
+  'paragraph': IconPickerIcon(
+      name: 'paragraph',
+      data: CupertinoIcons.paragraph,
+      pack: IconPack.cupertino),
+  'pause_circle': IconPickerIcon(
+      name: 'pause_circle',
+      data: CupertinoIcons.pause_circle,
+      pack: IconPack.cupertino),
+  'pause_circle_fill': IconPickerIcon(
+      name: 'pause_circle_fill',
+      data: CupertinoIcons.pause_circle_fill,
+      pack: IconPack.cupertino),
+  'pause_fill': IconPickerIcon(
+      name: 'pause_fill',
+      data: CupertinoIcons.pause_fill,
+      pack: IconPack.cupertino),
+  'pause_rectangle': IconPickerIcon(
+      name: 'pause_rectangle',
+      data: CupertinoIcons.pause_rectangle,
+      pack: IconPack.cupertino),
+  'pause_rectangle_fill': IconPickerIcon(
+      name: 'pause_rectangle_fill',
+      data: CupertinoIcons.pause_rectangle_fill,
+      pack: IconPack.cupertino),
+  'pencil_circle': IconPickerIcon(
+      name: 'pencil_circle',
+      data: CupertinoIcons.pencil_circle,
+      pack: IconPack.cupertino),
+  'pencil_circle_fill': IconPickerIcon(
+      name: 'pencil_circle_fill',
+      data: CupertinoIcons.pencil_circle_fill,
+      pack: IconPack.cupertino),
+  'pencil_ellipsis_rectangle': IconPickerIcon(
+      name: 'pencil_ellipsis_rectangle',
+      data: CupertinoIcons.pencil_ellipsis_rectangle,
+      pack: IconPack.cupertino),
+  'pencil_outline': IconPickerIcon(
+      name: 'pencil_outline',
+      data: CupertinoIcons.pencil_outline,
+      pack: IconPack.cupertino),
+  'pencil_slash': IconPickerIcon(
+      name: 'pencil_slash',
+      data: CupertinoIcons.pencil_slash,
+      pack: IconPack.cupertino),
+  'percent': IconPickerIcon(
+      name: 'percent', data: CupertinoIcons.percent, pack: IconPack.cupertino),
+  'person_2': IconPickerIcon(
+      name: 'person_2',
+      data: CupertinoIcons.person_2,
+      pack: IconPack.cupertino),
+  'person_2_alt': IconPickerIcon(
+      name: 'person_2_alt',
+      data: CupertinoIcons.person_2_alt,
+      pack: IconPack.cupertino),
+  'person_2_fill': IconPickerIcon(
+      name: 'person_2_fill',
+      data: CupertinoIcons.person_2_fill,
+      pack: IconPack.cupertino),
+  'person_2_square_stack': IconPickerIcon(
+      name: 'person_2_square_stack',
+      data: CupertinoIcons.person_2_square_stack,
+      pack: IconPack.cupertino),
+  'person_2_square_stack_fill': IconPickerIcon(
+      name: 'person_2_square_stack_fill',
+      data: CupertinoIcons.person_2_square_stack_fill,
+      pack: IconPack.cupertino),
+  'person_3': IconPickerIcon(
+      name: 'person_3',
+      data: CupertinoIcons.person_3,
+      pack: IconPack.cupertino),
+  'person_3_fill': IconPickerIcon(
+      name: 'person_3_fill',
+      data: CupertinoIcons.person_3_fill,
+      pack: IconPack.cupertino),
+  'person_alt': IconPickerIcon(
+      name: 'person_alt',
+      data: CupertinoIcons.person_alt,
+      pack: IconPack.cupertino),
+  'person_alt_circle': IconPickerIcon(
+      name: 'person_alt_circle',
+      data: CupertinoIcons.person_alt_circle,
+      pack: IconPack.cupertino),
+  'person_alt_circle_fill': IconPickerIcon(
+      name: 'person_alt_circle_fill',
+      data: CupertinoIcons.person_alt_circle_fill,
+      pack: IconPack.cupertino),
+  'person_badge_minus': IconPickerIcon(
+      name: 'person_badge_minus',
+      data: CupertinoIcons.person_badge_minus,
+      pack: IconPack.cupertino),
+  'person_badge_minus_fill': IconPickerIcon(
+      name: 'person_badge_minus_fill',
+      data: CupertinoIcons.person_badge_minus_fill,
+      pack: IconPack.cupertino),
+  'person_badge_plus': IconPickerIcon(
+      name: 'person_badge_plus',
+      data: CupertinoIcons.person_badge_plus,
+      pack: IconPack.cupertino),
+  'person_badge_plus_fill': IconPickerIcon(
+      name: 'person_badge_plus_fill',
+      data: CupertinoIcons.person_badge_plus_fill,
+      pack: IconPack.cupertino),
+  'person_circle': IconPickerIcon(
+      name: 'person_circle',
+      data: CupertinoIcons.person_circle,
+      pack: IconPack.cupertino),
+  'person_circle_fill': IconPickerIcon(
+      name: 'person_circle_fill',
+      data: CupertinoIcons.person_circle_fill,
+      pack: IconPack.cupertino),
+  'person_crop_circle': IconPickerIcon(
+      name: 'person_crop_circle',
+      data: CupertinoIcons.person_crop_circle,
+      pack: IconPack.cupertino),
+  'person_crop_circle_badge_checkmark': IconPickerIcon(
+      name: 'person_crop_circle_badge_checkmark',
+      data: CupertinoIcons.person_crop_circle_badge_checkmark,
+      pack: IconPack.cupertino),
+  'person_crop_circle_badge_exclam': IconPickerIcon(
+      name: 'person_crop_circle_badge_exclam',
+      data: CupertinoIcons.person_crop_circle_badge_exclam,
+      pack: IconPack.cupertino),
+  'person_crop_circle_badge_minus': IconPickerIcon(
+      name: 'person_crop_circle_badge_minus',
+      data: CupertinoIcons.person_crop_circle_badge_minus,
+      pack: IconPack.cupertino),
+  'person_crop_circle_badge_plus': IconPickerIcon(
+      name: 'person_crop_circle_badge_plus',
+      data: CupertinoIcons.person_crop_circle_badge_plus,
+      pack: IconPack.cupertino),
+  'person_crop_circle_badge_xmark': IconPickerIcon(
+      name: 'person_crop_circle_badge_xmark',
+      data: CupertinoIcons.person_crop_circle_badge_xmark,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill': IconPickerIcon(
+      name: 'person_crop_circle_fill',
+      data: CupertinoIcons.person_crop_circle_fill,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill_badge_checkmark': IconPickerIcon(
+      name: 'person_crop_circle_fill_badge_checkmark',
+      data: CupertinoIcons.person_crop_circle_fill_badge_checkmark,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill_badge_exclam': IconPickerIcon(
+      name: 'person_crop_circle_fill_badge_exclam',
+      data: CupertinoIcons.person_crop_circle_fill_badge_exclam,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill_badge_minus': IconPickerIcon(
+      name: 'person_crop_circle_fill_badge_minus',
+      data: CupertinoIcons.person_crop_circle_fill_badge_minus,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill_badge_plus': IconPickerIcon(
+      name: 'person_crop_circle_fill_badge_plus',
+      data: CupertinoIcons.person_crop_circle_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'person_crop_circle_fill_badge_xmark': IconPickerIcon(
+      name: 'person_crop_circle_fill_badge_xmark',
+      data: CupertinoIcons.person_crop_circle_fill_badge_xmark,
+      pack: IconPack.cupertino),
+  'person_crop_rectangle': IconPickerIcon(
+      name: 'person_crop_rectangle',
+      data: CupertinoIcons.person_crop_rectangle,
+      pack: IconPack.cupertino),
+  'person_crop_rectangle_fill': IconPickerIcon(
+      name: 'person_crop_rectangle_fill',
+      data: CupertinoIcons.person_crop_rectangle_fill,
+      pack: IconPack.cupertino),
+  'person_crop_square': IconPickerIcon(
+      name: 'person_crop_square',
+      data: CupertinoIcons.person_crop_square,
+      pack: IconPack.cupertino),
+  'person_crop_square_fill': IconPickerIcon(
+      name: 'person_crop_square_fill',
+      data: CupertinoIcons.person_crop_square_fill,
+      pack: IconPack.cupertino),
+  'person_fill': IconPickerIcon(
+      name: 'person_fill',
+      data: CupertinoIcons.person_fill,
+      pack: IconPack.cupertino),
+  'personalhotspot': IconPickerIcon(
+      name: 'personalhotspot',
+      data: CupertinoIcons.personalhotspot,
+      pack: IconPack.cupertino),
+  'perspective': IconPickerIcon(
+      name: 'perspective',
+      data: CupertinoIcons.perspective,
+      pack: IconPack.cupertino),
+  'phone_arrow_down_left': IconPickerIcon(
+      name: 'phone_arrow_down_left',
+      data: CupertinoIcons.phone_arrow_down_left,
+      pack: IconPack.cupertino),
+  'phone_arrow_right': IconPickerIcon(
+      name: 'phone_arrow_right',
+      data: CupertinoIcons.phone_arrow_right,
+      pack: IconPack.cupertino),
+  'phone_arrow_up_right': IconPickerIcon(
+      name: 'phone_arrow_up_right',
+      data: CupertinoIcons.phone_arrow_up_right,
+      pack: IconPack.cupertino),
+  'phone_badge_plus': IconPickerIcon(
+      name: 'phone_badge_plus',
+      data: CupertinoIcons.phone_badge_plus,
+      pack: IconPack.cupertino),
+  'phone_circle': IconPickerIcon(
+      name: 'phone_circle',
+      data: CupertinoIcons.phone_circle,
+      pack: IconPack.cupertino),
+  'phone_circle_fill': IconPickerIcon(
+      name: 'phone_circle_fill',
+      data: CupertinoIcons.phone_circle_fill,
+      pack: IconPack.cupertino),
+  'phone_down': IconPickerIcon(
+      name: 'phone_down',
+      data: CupertinoIcons.phone_down,
+      pack: IconPack.cupertino),
+  'phone_down_circle': IconPickerIcon(
+      name: 'phone_down_circle',
+      data: CupertinoIcons.phone_down_circle,
+      pack: IconPack.cupertino),
+  'phone_down_circle_fill': IconPickerIcon(
+      name: 'phone_down_circle_fill',
+      data: CupertinoIcons.phone_down_circle_fill,
+      pack: IconPack.cupertino),
+  'phone_down_fill': IconPickerIcon(
+      name: 'phone_down_fill',
+      data: CupertinoIcons.phone_down_fill,
+      pack: IconPack.cupertino),
+  'phone_fill': IconPickerIcon(
+      name: 'phone_fill',
+      data: CupertinoIcons.phone_fill,
+      pack: IconPack.cupertino),
+  'phone_fill_arrow_down_left': IconPickerIcon(
+      name: 'phone_fill_arrow_down_left',
+      data: CupertinoIcons.phone_fill_arrow_down_left,
+      pack: IconPack.cupertino),
+  'phone_fill_arrow_right': IconPickerIcon(
+      name: 'phone_fill_arrow_right',
+      data: CupertinoIcons.phone_fill_arrow_right,
+      pack: IconPack.cupertino),
+  'phone_fill_arrow_up_right': IconPickerIcon(
+      name: 'phone_fill_arrow_up_right',
+      data: CupertinoIcons.phone_fill_arrow_up_right,
+      pack: IconPack.cupertino),
+  'phone_fill_badge_plus': IconPickerIcon(
+      name: 'phone_fill_badge_plus',
+      data: CupertinoIcons.phone_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'photo': IconPickerIcon(
+      name: 'photo', data: CupertinoIcons.photo, pack: IconPack.cupertino),
+  'photo_fill': IconPickerIcon(
+      name: 'photo_fill',
+      data: CupertinoIcons.photo_fill,
+      pack: IconPack.cupertino),
+  'photo_fill_on_rectangle_fill': IconPickerIcon(
+      name: 'photo_fill_on_rectangle_fill',
+      data: CupertinoIcons.photo_fill_on_rectangle_fill,
+      pack: IconPack.cupertino),
+  'photo_on_rectangle': IconPickerIcon(
+      name: 'photo_on_rectangle',
+      data: CupertinoIcons.photo_on_rectangle,
+      pack: IconPack.cupertino),
+  'piano': IconPickerIcon(
+      name: 'piano', data: CupertinoIcons.piano, pack: IconPack.cupertino),
+  'pin': IconPickerIcon(
+      name: 'pin', data: CupertinoIcons.pin, pack: IconPack.cupertino),
+  'pin_fill': IconPickerIcon(
+      name: 'pin_fill',
+      data: CupertinoIcons.pin_fill,
+      pack: IconPack.cupertino),
+  'pin_slash': IconPickerIcon(
+      name: 'pin_slash',
+      data: CupertinoIcons.pin_slash,
+      pack: IconPack.cupertino),
+  'pin_slash_fill': IconPickerIcon(
+      name: 'pin_slash_fill',
+      data: CupertinoIcons.pin_slash_fill,
+      pack: IconPack.cupertino),
+  'placemark': IconPickerIcon(
+      name: 'placemark',
+      data: CupertinoIcons.placemark,
+      pack: IconPack.cupertino),
+  'placemark_fill': IconPickerIcon(
+      name: 'placemark_fill',
+      data: CupertinoIcons.placemark_fill,
+      pack: IconPack.cupertino),
+  'play': IconPickerIcon(
+      name: 'play', data: CupertinoIcons.play, pack: IconPack.cupertino),
+  'play_circle': IconPickerIcon(
+      name: 'play_circle',
+      data: CupertinoIcons.play_circle,
+      pack: IconPack.cupertino),
+  'play_circle_fill': IconPickerIcon(
+      name: 'play_circle_fill',
+      data: CupertinoIcons.play_circle_fill,
+      pack: IconPack.cupertino),
+  'play_fill': IconPickerIcon(
+      name: 'play_fill',
+      data: CupertinoIcons.play_fill,
+      pack: IconPack.cupertino),
+  'play_rectangle': IconPickerIcon(
+      name: 'play_rectangle',
+      data: CupertinoIcons.play_rectangle,
+      pack: IconPack.cupertino),
+  'play_rectangle_fill': IconPickerIcon(
+      name: 'play_rectangle_fill',
+      data: CupertinoIcons.play_rectangle_fill,
+      pack: IconPack.cupertino),
+  'playpause': IconPickerIcon(
+      name: 'playpause',
+      data: CupertinoIcons.playpause,
+      pack: IconPack.cupertino),
+  'playpause_fill': IconPickerIcon(
+      name: 'playpause_fill',
+      data: CupertinoIcons.playpause_fill,
+      pack: IconPack.cupertino),
+  'plus': IconPickerIcon(
+      name: 'plus', data: CupertinoIcons.plus, pack: IconPack.cupertino),
+  'plus_app': IconPickerIcon(
+      name: 'plus_app',
+      data: CupertinoIcons.plus_app,
+      pack: IconPack.cupertino),
+  'plus_app_fill': IconPickerIcon(
+      name: 'plus_app_fill',
+      data: CupertinoIcons.plus_app_fill,
+      pack: IconPack.cupertino),
+  'plus_bubble': IconPickerIcon(
+      name: 'plus_bubble',
+      data: CupertinoIcons.plus_bubble,
+      pack: IconPack.cupertino),
+  'plus_bubble_fill': IconPickerIcon(
+      name: 'plus_bubble_fill',
+      data: CupertinoIcons.plus_bubble_fill,
+      pack: IconPack.cupertino),
+  'plus_circle': IconPickerIcon(
+      name: 'plus_circle',
+      data: CupertinoIcons.plus_circle,
+      pack: IconPack.cupertino),
+  'plus_circle_fill': IconPickerIcon(
+      name: 'plus_circle_fill',
+      data: CupertinoIcons.plus_circle_fill,
+      pack: IconPack.cupertino),
+  'plus_rectangle': IconPickerIcon(
+      name: 'plus_rectangle',
+      data: CupertinoIcons.plus_rectangle,
+      pack: IconPack.cupertino),
+  'plus_rectangle_fill': IconPickerIcon(
+      name: 'plus_rectangle_fill',
+      data: CupertinoIcons.plus_rectangle_fill,
+      pack: IconPack.cupertino),
+  'plus_rectangle_fill_on_rectangle_fill': IconPickerIcon(
+      name: 'plus_rectangle_fill_on_rectangle_fill',
+      data: CupertinoIcons.plus_rectangle_fill_on_rectangle_fill,
+      pack: IconPack.cupertino),
+  'plus_rectangle_on_rectangle': IconPickerIcon(
+      name: 'plus_rectangle_on_rectangle',
+      data: CupertinoIcons.plus_rectangle_on_rectangle,
+      pack: IconPack.cupertino),
+  'plus_slash_minus': IconPickerIcon(
+      name: 'plus_slash_minus',
+      data: CupertinoIcons.plus_slash_minus,
+      pack: IconPack.cupertino),
+  'plus_square': IconPickerIcon(
+      name: 'plus_square',
+      data: CupertinoIcons.plus_square,
+      pack: IconPack.cupertino),
+  'plus_square_fill': IconPickerIcon(
+      name: 'plus_square_fill',
+      data: CupertinoIcons.plus_square_fill,
+      pack: IconPack.cupertino),
+  'plus_square_fill_on_square_fill': IconPickerIcon(
+      name: 'plus_square_fill_on_square_fill',
+      data: CupertinoIcons.plus_square_fill_on_square_fill,
+      pack: IconPack.cupertino),
+  'plus_square_on_square': IconPickerIcon(
+      name: 'plus_square_on_square',
+      data: CupertinoIcons.plus_square_on_square,
+      pack: IconPack.cupertino),
+  'plusminus': IconPickerIcon(
+      name: 'plusminus',
+      data: CupertinoIcons.plusminus,
+      pack: IconPack.cupertino),
+  'plusminus_circle': IconPickerIcon(
+      name: 'plusminus_circle',
+      data: CupertinoIcons.plusminus_circle,
+      pack: IconPack.cupertino),
+  'plusminus_circle_fill': IconPickerIcon(
+      name: 'plusminus_circle_fill',
+      data: CupertinoIcons.plusminus_circle_fill,
+      pack: IconPack.cupertino),
+  'power': IconPickerIcon(
+      name: 'power', data: CupertinoIcons.power, pack: IconPack.cupertino),
+  'printer': IconPickerIcon(
+      name: 'printer', data: CupertinoIcons.printer, pack: IconPack.cupertino),
+  'printer_fill': IconPickerIcon(
+      name: 'printer_fill',
+      data: CupertinoIcons.printer_fill,
+      pack: IconPack.cupertino),
+  'projective': IconPickerIcon(
+      name: 'projective',
+      data: CupertinoIcons.projective,
+      pack: IconPack.cupertino),
+  'purchased': IconPickerIcon(
+      name: 'purchased',
+      data: CupertinoIcons.purchased,
+      pack: IconPack.cupertino),
+  'purchased_circle': IconPickerIcon(
+      name: 'purchased_circle',
+      data: CupertinoIcons.purchased_circle,
+      pack: IconPack.cupertino),
+  'purchased_circle_fill': IconPickerIcon(
+      name: 'purchased_circle_fill',
+      data: CupertinoIcons.purchased_circle_fill,
+      pack: IconPack.cupertino),
+  'qrcode': IconPickerIcon(
+      name: 'qrcode', data: CupertinoIcons.qrcode, pack: IconPack.cupertino),
+  'qrcode_viewfinder': IconPickerIcon(
+      name: 'qrcode_viewfinder',
+      data: CupertinoIcons.qrcode_viewfinder,
+      pack: IconPack.cupertino),
+  'question': IconPickerIcon(
+      name: 'question',
+      data: CupertinoIcons.question,
+      pack: IconPack.cupertino),
+  'question_circle': IconPickerIcon(
+      name: 'question_circle',
+      data: CupertinoIcons.question_circle,
+      pack: IconPack.cupertino),
+  'question_circle_fill': IconPickerIcon(
+      name: 'question_circle_fill',
+      data: CupertinoIcons.question_circle_fill,
+      pack: IconPack.cupertino),
+  'question_diamond': IconPickerIcon(
+      name: 'question_diamond',
+      data: CupertinoIcons.question_diamond,
+      pack: IconPack.cupertino),
+  'question_diamond_fill': IconPickerIcon(
+      name: 'question_diamond_fill',
+      data: CupertinoIcons.question_diamond_fill,
+      pack: IconPack.cupertino),
+  'question_square': IconPickerIcon(
+      name: 'question_square',
+      data: CupertinoIcons.question_square,
+      pack: IconPack.cupertino),
+  'question_square_fill': IconPickerIcon(
+      name: 'question_square_fill',
+      data: CupertinoIcons.question_square_fill,
+      pack: IconPack.cupertino),
+  'quote_bubble': IconPickerIcon(
+      name: 'quote_bubble',
+      data: CupertinoIcons.quote_bubble,
+      pack: IconPack.cupertino),
+  'quote_bubble_fill': IconPickerIcon(
+      name: 'quote_bubble_fill',
+      data: CupertinoIcons.quote_bubble_fill,
+      pack: IconPack.cupertino),
+  'radiowaves_left': IconPickerIcon(
+      name: 'radiowaves_left',
+      data: CupertinoIcons.radiowaves_left,
+      pack: IconPack.cupertino),
+  'radiowaves_right': IconPickerIcon(
+      name: 'radiowaves_right',
+      data: CupertinoIcons.radiowaves_right,
+      pack: IconPack.cupertino),
+  'rays': IconPickerIcon(
+      name: 'rays', data: CupertinoIcons.rays, pack: IconPack.cupertino),
+  'recordingtape': IconPickerIcon(
+      name: 'recordingtape',
+      data: CupertinoIcons.recordingtape,
+      pack: IconPack.cupertino),
+  'rectangle': IconPickerIcon(
+      name: 'rectangle',
+      data: CupertinoIcons.rectangle,
+      pack: IconPack.cupertino),
+  'rectangle_3_offgrid': IconPickerIcon(
+      name: 'rectangle_3_offgrid',
+      data: CupertinoIcons.rectangle_3_offgrid,
+      pack: IconPack.cupertino),
+  'rectangle_3_offgrid_fill': IconPickerIcon(
+      name: 'rectangle_3_offgrid_fill',
+      data: CupertinoIcons.rectangle_3_offgrid_fill,
+      pack: IconPack.cupertino),
+  'rectangle_arrow_up_right_arrow_down_left': IconPickerIcon(
+      name: 'rectangle_arrow_up_right_arrow_down_left',
+      data: CupertinoIcons.rectangle_arrow_up_right_arrow_down_left,
+      pack: IconPack.cupertino),
+  'rectangle_arrow_up_right_arrow_down_left_slash': IconPickerIcon(
+      name: 'rectangle_arrow_up_right_arrow_down_left_slash',
+      data: CupertinoIcons.rectangle_arrow_up_right_arrow_down_left_slash,
+      pack: IconPack.cupertino),
+  'rectangle_badge_checkmark': IconPickerIcon(
+      name: 'rectangle_badge_checkmark',
+      data: CupertinoIcons.rectangle_badge_checkmark,
+      pack: IconPack.cupertino),
+  'rectangle_badge_xmark': IconPickerIcon(
+      name: 'rectangle_badge_xmark',
+      data: CupertinoIcons.rectangle_badge_xmark,
+      pack: IconPack.cupertino),
+  'rectangle_compress_vertical': IconPickerIcon(
+      name: 'rectangle_compress_vertical',
+      data: CupertinoIcons.rectangle_compress_vertical,
+      pack: IconPack.cupertino),
+  'rectangle_dock': IconPickerIcon(
+      name: 'rectangle_dock',
+      data: CupertinoIcons.rectangle_dock,
+      pack: IconPack.cupertino),
+  'rectangle_expand_vertical': IconPickerIcon(
+      name: 'rectangle_expand_vertical',
+      data: CupertinoIcons.rectangle_expand_vertical,
+      pack: IconPack.cupertino),
+  'rectangle_fill': IconPickerIcon(
+      name: 'rectangle_fill',
+      data: CupertinoIcons.rectangle_fill,
+      pack: IconPack.cupertino),
+  'rectangle_fill_badge_checkmark': IconPickerIcon(
+      name: 'rectangle_fill_badge_checkmark',
+      data: CupertinoIcons.rectangle_fill_badge_checkmark,
+      pack: IconPack.cupertino),
+  'rectangle_fill_badge_xmark': IconPickerIcon(
+      name: 'rectangle_fill_badge_xmark',
+      data: CupertinoIcons.rectangle_fill_badge_xmark,
+      pack: IconPack.cupertino),
+  'rectangle_fill_on_rectangle_angled_fill': IconPickerIcon(
+      name: 'rectangle_fill_on_rectangle_angled_fill',
+      data: CupertinoIcons.rectangle_fill_on_rectangle_angled_fill,
+      pack: IconPack.cupertino),
+  'rectangle_fill_on_rectangle_fill': IconPickerIcon(
+      name: 'rectangle_fill_on_rectangle_fill',
+      data: CupertinoIcons.rectangle_fill_on_rectangle_fill,
+      pack: IconPack.cupertino),
+  'rectangle_grid_1x2': IconPickerIcon(
+      name: 'rectangle_grid_1x2',
+      data: CupertinoIcons.rectangle_grid_1x2,
+      pack: IconPack.cupertino),
+  'rectangle_grid_1x2_fill': IconPickerIcon(
+      name: 'rectangle_grid_1x2_fill',
+      data: CupertinoIcons.rectangle_grid_1x2_fill,
+      pack: IconPack.cupertino),
+  'rectangle_grid_2x2': IconPickerIcon(
+      name: 'rectangle_grid_2x2',
+      data: CupertinoIcons.rectangle_grid_2x2,
+      pack: IconPack.cupertino),
+  'rectangle_grid_2x2_fill': IconPickerIcon(
+      name: 'rectangle_grid_2x2_fill',
+      data: CupertinoIcons.rectangle_grid_2x2_fill,
+      pack: IconPack.cupertino),
+  'rectangle_grid_3x2': IconPickerIcon(
+      name: 'rectangle_grid_3x2',
+      data: CupertinoIcons.rectangle_grid_3x2,
+      pack: IconPack.cupertino),
+  'rectangle_grid_3x2_fill': IconPickerIcon(
+      name: 'rectangle_grid_3x2_fill',
+      data: CupertinoIcons.rectangle_grid_3x2_fill,
+      pack: IconPack.cupertino),
+  'rectangle_on_rectangle': IconPickerIcon(
+      name: 'rectangle_on_rectangle',
+      data: CupertinoIcons.rectangle_on_rectangle,
+      pack: IconPack.cupertino),
+  'rectangle_on_rectangle_angled': IconPickerIcon(
+      name: 'rectangle_on_rectangle_angled',
+      data: CupertinoIcons.rectangle_on_rectangle_angled,
+      pack: IconPack.cupertino),
+  'rectangle_paperclip': IconPickerIcon(
+      name: 'rectangle_paperclip',
+      data: CupertinoIcons.rectangle_paperclip,
+      pack: IconPack.cupertino),
+  'rectangle_split_3x1': IconPickerIcon(
+      name: 'rectangle_split_3x1',
+      data: CupertinoIcons.rectangle_split_3x1,
+      pack: IconPack.cupertino),
+  'rectangle_split_3x1_fill': IconPickerIcon(
+      name: 'rectangle_split_3x1_fill',
+      data: CupertinoIcons.rectangle_split_3x1_fill,
+      pack: IconPack.cupertino),
+  'rectangle_split_3x3': IconPickerIcon(
+      name: 'rectangle_split_3x3',
+      data: CupertinoIcons.rectangle_split_3x3,
+      pack: IconPack.cupertino),
+  'rectangle_split_3x3_fill': IconPickerIcon(
+      name: 'rectangle_split_3x3_fill',
+      data: CupertinoIcons.rectangle_split_3x3_fill,
+      pack: IconPack.cupertino),
+  'rectangle_stack': IconPickerIcon(
+      name: 'rectangle_stack',
+      data: CupertinoIcons.rectangle_stack,
+      pack: IconPack.cupertino),
+  'rectangle_stack_badge_minus': IconPickerIcon(
+      name: 'rectangle_stack_badge_minus',
+      data: CupertinoIcons.rectangle_stack_badge_minus,
+      pack: IconPack.cupertino),
+  'rectangle_stack_badge_person_crop': IconPickerIcon(
+      name: 'rectangle_stack_badge_person_crop',
+      data: CupertinoIcons.rectangle_stack_badge_person_crop,
+      pack: IconPack.cupertino),
+  'rectangle_stack_badge_plus': IconPickerIcon(
+      name: 'rectangle_stack_badge_plus',
+      data: CupertinoIcons.rectangle_stack_badge_plus,
+      pack: IconPack.cupertino),
+  'rectangle_stack_fill': IconPickerIcon(
+      name: 'rectangle_stack_fill',
+      data: CupertinoIcons.rectangle_stack_fill,
+      pack: IconPack.cupertino),
+  'rectangle_stack_fill_badge_minus': IconPickerIcon(
+      name: 'rectangle_stack_fill_badge_minus',
+      data: CupertinoIcons.rectangle_stack_fill_badge_minus,
+      pack: IconPack.cupertino),
+  'rectangle_stack_fill_badge_person_crop': IconPickerIcon(
+      name: 'rectangle_stack_fill_badge_person_crop',
+      data: CupertinoIcons.rectangle_stack_fill_badge_person_crop,
+      pack: IconPack.cupertino),
+  'rectangle_stack_fill_badge_plus': IconPickerIcon(
+      name: 'rectangle_stack_fill_badge_plus',
+      data: CupertinoIcons.rectangle_stack_fill_badge_plus,
+      pack: IconPack.cupertino),
+  'rectangle_stack_person_crop': IconPickerIcon(
+      name: 'rectangle_stack_person_crop',
+      data: CupertinoIcons.rectangle_stack_person_crop,
+      pack: IconPack.cupertino),
+  'rectangle_stack_person_crop_fill': IconPickerIcon(
+      name: 'rectangle_stack_person_crop_fill',
+      data: CupertinoIcons.rectangle_stack_person_crop_fill,
+      pack: IconPack.cupertino),
+  'repeat': IconPickerIcon(
+      name: 'repeat', data: CupertinoIcons.repeat, pack: IconPack.cupertino),
+  'repeat_1': IconPickerIcon(
+      name: 'repeat_1',
+      data: CupertinoIcons.repeat_1,
+      pack: IconPack.cupertino),
+  'resize': IconPickerIcon(
+      name: 'resize', data: CupertinoIcons.resize, pack: IconPack.cupertino),
+  'resize_h': IconPickerIcon(
+      name: 'resize_h',
+      data: CupertinoIcons.resize_h,
+      pack: IconPack.cupertino),
+  'resize_v': IconPickerIcon(
+      name: 'resize_v',
+      data: CupertinoIcons.resize_v,
+      pack: IconPack.cupertino),
+  'return_icon': IconPickerIcon(
+      name: 'return_icon',
+      data: CupertinoIcons.return_icon,
+      pack: IconPack.cupertino),
+  'rhombus': IconPickerIcon(
+      name: 'rhombus', data: CupertinoIcons.rhombus, pack: IconPack.cupertino),
+  'rhombus_fill': IconPickerIcon(
+      name: 'rhombus_fill',
+      data: CupertinoIcons.rhombus_fill,
+      pack: IconPack.cupertino),
+  'rocket': IconPickerIcon(
+      name: 'rocket', data: CupertinoIcons.rocket, pack: IconPack.cupertino),
+  'rocket_fill': IconPickerIcon(
+      name: 'rocket_fill',
+      data: CupertinoIcons.rocket_fill,
+      pack: IconPack.cupertino),
+  'rosette': IconPickerIcon(
+      name: 'rosette', data: CupertinoIcons.rosette, pack: IconPack.cupertino),
+  'rotate_left': IconPickerIcon(
+      name: 'rotate_left',
+      data: CupertinoIcons.rotate_left,
+      pack: IconPack.cupertino),
+  'rotate_left_fill': IconPickerIcon(
+      name: 'rotate_left_fill',
+      data: CupertinoIcons.rotate_left_fill,
+      pack: IconPack.cupertino),
+  'rotate_right': IconPickerIcon(
+      name: 'rotate_right',
+      data: CupertinoIcons.rotate_right,
+      pack: IconPack.cupertino),
+  'rotate_right_fill': IconPickerIcon(
+      name: 'rotate_right_fill',
+      data: CupertinoIcons.rotate_right_fill,
+      pack: IconPack.cupertino),
+  'scissors': IconPickerIcon(
+      name: 'scissors',
+      data: CupertinoIcons.scissors,
+      pack: IconPack.cupertino),
+  'scissors_alt': IconPickerIcon(
+      name: 'scissors_alt',
+      data: CupertinoIcons.scissors_alt,
+      pack: IconPack.cupertino),
+  'scope': IconPickerIcon(
+      name: 'scope', data: CupertinoIcons.scope, pack: IconPack.cupertino),
+  'scribble': IconPickerIcon(
+      name: 'scribble',
+      data: CupertinoIcons.scribble,
+      pack: IconPack.cupertino),
+  'search_circle': IconPickerIcon(
+      name: 'search_circle',
+      data: CupertinoIcons.search_circle,
+      pack: IconPack.cupertino),
+  'search_circle_fill': IconPickerIcon(
+      name: 'search_circle_fill',
+      data: CupertinoIcons.search_circle_fill,
+      pack: IconPack.cupertino),
+  'selection_pin_in_out': IconPickerIcon(
+      name: 'selection_pin_in_out',
+      data: CupertinoIcons.selection_pin_in_out,
+      pack: IconPack.cupertino),
+  'shield': IconPickerIcon(
+      name: 'shield', data: CupertinoIcons.shield, pack: IconPack.cupertino),
+  'shield_fill': IconPickerIcon(
+      name: 'shield_fill',
+      data: CupertinoIcons.shield_fill,
+      pack: IconPack.cupertino),
+  'shield_lefthalf_fill': IconPickerIcon(
+      name: 'shield_lefthalf_fill',
+      data: CupertinoIcons.shield_lefthalf_fill,
+      pack: IconPack.cupertino),
+  'shield_slash': IconPickerIcon(
+      name: 'shield_slash',
+      data: CupertinoIcons.shield_slash,
+      pack: IconPack.cupertino),
+  'shield_slash_fill': IconPickerIcon(
+      name: 'shield_slash_fill',
+      data: CupertinoIcons.shield_slash_fill,
+      pack: IconPack.cupertino),
+  'shift': IconPickerIcon(
+      name: 'shift', data: CupertinoIcons.shift, pack: IconPack.cupertino),
+  'shift_fill': IconPickerIcon(
+      name: 'shift_fill',
+      data: CupertinoIcons.shift_fill,
+      pack: IconPack.cupertino),
+  'sidebar_left': IconPickerIcon(
+      name: 'sidebar_left',
+      data: CupertinoIcons.sidebar_left,
+      pack: IconPack.cupertino),
+  'sidebar_right': IconPickerIcon(
+      name: 'sidebar_right',
+      data: CupertinoIcons.sidebar_right,
+      pack: IconPack.cupertino),
+  'signature': IconPickerIcon(
+      name: 'signature',
+      data: CupertinoIcons.signature,
+      pack: IconPack.cupertino),
+  'skew': IconPickerIcon(
+      name: 'skew', data: CupertinoIcons.skew, pack: IconPack.cupertino),
+  'slash_circle': IconPickerIcon(
+      name: 'slash_circle',
+      data: CupertinoIcons.slash_circle,
+      pack: IconPack.cupertino),
+  'slash_circle_fill': IconPickerIcon(
+      name: 'slash_circle_fill',
+      data: CupertinoIcons.slash_circle_fill,
+      pack: IconPack.cupertino),
+  'slider_horizontal_3': IconPickerIcon(
+      name: 'slider_horizontal_3',
+      data: CupertinoIcons.slider_horizontal_3,
+      pack: IconPack.cupertino),
+  'slider_horizontal_below_rectangle': IconPickerIcon(
+      name: 'slider_horizontal_below_rectangle',
+      data: CupertinoIcons.slider_horizontal_below_rectangle,
+      pack: IconPack.cupertino),
+  'slowmo': IconPickerIcon(
+      name: 'slowmo', data: CupertinoIcons.slowmo, pack: IconPack.cupertino),
+  'smallcircle_circle': IconPickerIcon(
+      name: 'smallcircle_circle',
+      data: CupertinoIcons.smallcircle_circle,
+      pack: IconPack.cupertino),
+  'smallcircle_circle_fill': IconPickerIcon(
+      name: 'smallcircle_circle_fill',
+      data: CupertinoIcons.smallcircle_circle_fill,
+      pack: IconPack.cupertino),
+  'smallcircle_fill_circle': IconPickerIcon(
+      name: 'smallcircle_fill_circle',
+      data: CupertinoIcons.smallcircle_fill_circle,
+      pack: IconPack.cupertino),
+  'smallcircle_fill_circle_fill': IconPickerIcon(
+      name: 'smallcircle_fill_circle_fill',
+      data: CupertinoIcons.smallcircle_fill_circle_fill,
+      pack: IconPack.cupertino),
+  'smiley': IconPickerIcon(
+      name: 'smiley', data: CupertinoIcons.smiley, pack: IconPack.cupertino),
+  'smiley_fill': IconPickerIcon(
+      name: 'smiley_fill',
+      data: CupertinoIcons.smiley_fill,
+      pack: IconPack.cupertino),
+  'smoke': IconPickerIcon(
+      name: 'smoke', data: CupertinoIcons.smoke, pack: IconPack.cupertino),
+  'smoke_fill': IconPickerIcon(
+      name: 'smoke_fill',
+      data: CupertinoIcons.smoke_fill,
+      pack: IconPack.cupertino),
+  'snow': IconPickerIcon(
+      name: 'snow', data: CupertinoIcons.snow, pack: IconPack.cupertino),
+  'sort_down': IconPickerIcon(
+      name: 'sort_down',
+      data: CupertinoIcons.sort_down,
+      pack: IconPack.cupertino),
+  'sort_down_circle': IconPickerIcon(
+      name: 'sort_down_circle',
+      data: CupertinoIcons.sort_down_circle,
+      pack: IconPack.cupertino),
+  'sort_down_circle_fill': IconPickerIcon(
+      name: 'sort_down_circle_fill',
+      data: CupertinoIcons.sort_down_circle_fill,
+      pack: IconPack.cupertino),
+  'sort_up': IconPickerIcon(
+      name: 'sort_up', data: CupertinoIcons.sort_up, pack: IconPack.cupertino),
+  'sort_up_circle': IconPickerIcon(
+      name: 'sort_up_circle',
+      data: CupertinoIcons.sort_up_circle,
+      pack: IconPack.cupertino),
+  'sort_up_circle_fill': IconPickerIcon(
+      name: 'sort_up_circle_fill',
+      data: CupertinoIcons.sort_up_circle_fill,
+      pack: IconPack.cupertino),
+  'sparkles': IconPickerIcon(
+      name: 'sparkles',
+      data: CupertinoIcons.sparkles,
+      pack: IconPack.cupertino),
+  'speaker': IconPickerIcon(
+      name: 'speaker', data: CupertinoIcons.speaker, pack: IconPack.cupertino),
+  'speaker_1': IconPickerIcon(
+      name: 'speaker_1',
+      data: CupertinoIcons.speaker_1,
+      pack: IconPack.cupertino),
+  'speaker_1_fill': IconPickerIcon(
+      name: 'speaker_1_fill',
+      data: CupertinoIcons.speaker_1_fill,
+      pack: IconPack.cupertino),
+  'speaker_2': IconPickerIcon(
+      name: 'speaker_2',
+      data: CupertinoIcons.speaker_2,
+      pack: IconPack.cupertino),
+  'speaker_2_fill': IconPickerIcon(
+      name: 'speaker_2_fill',
+      data: CupertinoIcons.speaker_2_fill,
+      pack: IconPack.cupertino),
+  'speaker_3': IconPickerIcon(
+      name: 'speaker_3',
+      data: CupertinoIcons.speaker_3,
+      pack: IconPack.cupertino),
+  'speaker_3_fill': IconPickerIcon(
+      name: 'speaker_3_fill',
+      data: CupertinoIcons.speaker_3_fill,
+      pack: IconPack.cupertino),
+  'speaker_fill': IconPickerIcon(
+      name: 'speaker_fill',
+      data: CupertinoIcons.speaker_fill,
+      pack: IconPack.cupertino),
+  'speaker_slash': IconPickerIcon(
+      name: 'speaker_slash',
+      data: CupertinoIcons.speaker_slash,
+      pack: IconPack.cupertino),
+  'speaker_slash_fill': IconPickerIcon(
+      name: 'speaker_slash_fill',
+      data: CupertinoIcons.speaker_slash_fill,
+      pack: IconPack.cupertino),
+  'speaker_slash_fill_rtl': IconPickerIcon(
+      name: 'speaker_slash_fill_rtl',
+      data: CupertinoIcons.speaker_slash_fill_rtl,
+      pack: IconPack.cupertino),
+  'speaker_slash_rtl': IconPickerIcon(
+      name: 'speaker_slash_rtl',
+      data: CupertinoIcons.speaker_slash_rtl,
+      pack: IconPack.cupertino),
+  'speaker_zzz': IconPickerIcon(
+      name: 'speaker_zzz',
+      data: CupertinoIcons.speaker_zzz,
+      pack: IconPack.cupertino),
+  'speaker_zzz_fill': IconPickerIcon(
+      name: 'speaker_zzz_fill',
+      data: CupertinoIcons.speaker_zzz_fill,
+      pack: IconPack.cupertino),
+  'speaker_zzz_fill_rtl': IconPickerIcon(
+      name: 'speaker_zzz_fill_rtl',
+      data: CupertinoIcons.speaker_zzz_fill_rtl,
+      pack: IconPack.cupertino),
+  'speaker_zzz_rtl': IconPickerIcon(
+      name: 'speaker_zzz_rtl',
+      data: CupertinoIcons.speaker_zzz_rtl,
+      pack: IconPack.cupertino),
+  'speedometer': IconPickerIcon(
+      name: 'speedometer',
+      data: CupertinoIcons.speedometer,
+      pack: IconPack.cupertino),
+  'sportscourt': IconPickerIcon(
+      name: 'sportscourt',
+      data: CupertinoIcons.sportscourt,
+      pack: IconPack.cupertino),
+  'sportscourt_fill': IconPickerIcon(
+      name: 'sportscourt_fill',
+      data: CupertinoIcons.sportscourt_fill,
+      pack: IconPack.cupertino),
+  'square': IconPickerIcon(
+      name: 'square', data: CupertinoIcons.square, pack: IconPack.cupertino),
+  'square_arrow_down': IconPickerIcon(
+      name: 'square_arrow_down',
+      data: CupertinoIcons.square_arrow_down,
+      pack: IconPack.cupertino),
+  'square_arrow_down_fill': IconPickerIcon(
+      name: 'square_arrow_down_fill',
+      data: CupertinoIcons.square_arrow_down_fill,
+      pack: IconPack.cupertino),
+  'square_arrow_down_on_square': IconPickerIcon(
+      name: 'square_arrow_down_on_square',
+      data: CupertinoIcons.square_arrow_down_on_square,
+      pack: IconPack.cupertino),
+  'square_arrow_down_on_square_fill': IconPickerIcon(
+      name: 'square_arrow_down_on_square_fill',
+      data: CupertinoIcons.square_arrow_down_on_square_fill,
+      pack: IconPack.cupertino),
+  'square_arrow_left': IconPickerIcon(
+      name: 'square_arrow_left',
+      data: CupertinoIcons.square_arrow_left,
+      pack: IconPack.cupertino),
+  'square_arrow_left_fill': IconPickerIcon(
+      name: 'square_arrow_left_fill',
+      data: CupertinoIcons.square_arrow_left_fill,
+      pack: IconPack.cupertino),
+  'square_arrow_right': IconPickerIcon(
+      name: 'square_arrow_right',
+      data: CupertinoIcons.square_arrow_right,
+      pack: IconPack.cupertino),
+  'square_arrow_right_fill': IconPickerIcon(
+      name: 'square_arrow_right_fill',
+      data: CupertinoIcons.square_arrow_right_fill,
+      pack: IconPack.cupertino),
+  'square_arrow_up': IconPickerIcon(
+      name: 'square_arrow_up',
+      data: CupertinoIcons.square_arrow_up,
+      pack: IconPack.cupertino),
+  'square_arrow_up_fill': IconPickerIcon(
+      name: 'square_arrow_up_fill',
+      data: CupertinoIcons.square_arrow_up_fill,
+      pack: IconPack.cupertino),
+  'square_arrow_up_on_square': IconPickerIcon(
+      name: 'square_arrow_up_on_square',
+      data: CupertinoIcons.square_arrow_up_on_square,
+      pack: IconPack.cupertino),
+  'square_arrow_up_on_square_fill': IconPickerIcon(
+      name: 'square_arrow_up_on_square_fill',
+      data: CupertinoIcons.square_arrow_up_on_square_fill,
+      pack: IconPack.cupertino),
+  'square_favorites': IconPickerIcon(
+      name: 'square_favorites',
+      data: CupertinoIcons.square_favorites,
+      pack: IconPack.cupertino),
+  'square_favorites_alt': IconPickerIcon(
+      name: 'square_favorites_alt',
+      data: CupertinoIcons.square_favorites_alt,
+      pack: IconPack.cupertino),
+  'square_favorites_alt_fill': IconPickerIcon(
+      name: 'square_favorites_alt_fill',
+      data: CupertinoIcons.square_favorites_alt_fill,
+      pack: IconPack.cupertino),
+  'square_favorites_fill': IconPickerIcon(
+      name: 'square_favorites_fill',
+      data: CupertinoIcons.square_favorites_fill,
+      pack: IconPack.cupertino),
+  'square_fill': IconPickerIcon(
+      name: 'square_fill',
+      data: CupertinoIcons.square_fill,
+      pack: IconPack.cupertino),
+  'square_fill_line_vertical_square': IconPickerIcon(
+      name: 'square_fill_line_vertical_square',
+      data: CupertinoIcons.square_fill_line_vertical_square,
+      pack: IconPack.cupertino),
+  'square_fill_line_vertical_square_fill': IconPickerIcon(
+      name: 'square_fill_line_vertical_square_fill',
+      data: CupertinoIcons.square_fill_line_vertical_square_fill,
+      pack: IconPack.cupertino),
+  'square_fill_on_circle_fill': IconPickerIcon(
+      name: 'square_fill_on_circle_fill',
+      data: CupertinoIcons.square_fill_on_circle_fill,
+      pack: IconPack.cupertino),
+  'square_fill_on_square_fill': IconPickerIcon(
+      name: 'square_fill_on_square_fill',
+      data: CupertinoIcons.square_fill_on_square_fill,
+      pack: IconPack.cupertino),
+  'square_grid_2x2': IconPickerIcon(
+      name: 'square_grid_2x2',
+      data: CupertinoIcons.square_grid_2x2,
+      pack: IconPack.cupertino),
+  'square_grid_2x2_fill': IconPickerIcon(
+      name: 'square_grid_2x2_fill',
+      data: CupertinoIcons.square_grid_2x2_fill,
+      pack: IconPack.cupertino),
+  'square_grid_3x2': IconPickerIcon(
+      name: 'square_grid_3x2',
+      data: CupertinoIcons.square_grid_3x2,
+      pack: IconPack.cupertino),
+  'square_grid_3x2_fill': IconPickerIcon(
+      name: 'square_grid_3x2_fill',
+      data: CupertinoIcons.square_grid_3x2_fill,
+      pack: IconPack.cupertino),
+  'square_grid_4x3_fill': IconPickerIcon(
+      name: 'square_grid_4x3_fill',
+      data: CupertinoIcons.square_grid_4x3_fill,
+      pack: IconPack.cupertino),
+  'square_lefthalf_fill': IconPickerIcon(
+      name: 'square_lefthalf_fill',
+      data: CupertinoIcons.square_lefthalf_fill,
+      pack: IconPack.cupertino),
+  'square_line_vertical_square': IconPickerIcon(
+      name: 'square_line_vertical_square',
+      data: CupertinoIcons.square_line_vertical_square,
+      pack: IconPack.cupertino),
+  'square_line_vertical_square_fill': IconPickerIcon(
+      name: 'square_line_vertical_square_fill',
+      data: CupertinoIcons.square_line_vertical_square_fill,
+      pack: IconPack.cupertino),
+  'square_list': IconPickerIcon(
+      name: 'square_list',
+      data: CupertinoIcons.square_list,
+      pack: IconPack.cupertino),
+  'square_list_fill': IconPickerIcon(
+      name: 'square_list_fill',
+      data: CupertinoIcons.square_list_fill,
+      pack: IconPack.cupertino),
+  'square_on_circle': IconPickerIcon(
+      name: 'square_on_circle',
+      data: CupertinoIcons.square_on_circle,
+      pack: IconPack.cupertino),
+  'square_on_square': IconPickerIcon(
+      name: 'square_on_square',
+      data: CupertinoIcons.square_on_square,
+      pack: IconPack.cupertino),
+  'square_pencil': IconPickerIcon(
+      name: 'square_pencil',
+      data: CupertinoIcons.square_pencil,
+      pack: IconPack.cupertino),
+  'square_pencil_fill': IconPickerIcon(
+      name: 'square_pencil_fill',
+      data: CupertinoIcons.square_pencil_fill,
+      pack: IconPack.cupertino),
+  'square_righthalf_fill': IconPickerIcon(
+      name: 'square_righthalf_fill',
+      data: CupertinoIcons.square_righthalf_fill,
+      pack: IconPack.cupertino),
+  'square_split_1x2': IconPickerIcon(
+      name: 'square_split_1x2',
+      data: CupertinoIcons.square_split_1x2,
+      pack: IconPack.cupertino),
+  'square_split_1x2_fill': IconPickerIcon(
+      name: 'square_split_1x2_fill',
+      data: CupertinoIcons.square_split_1x2_fill,
+      pack: IconPack.cupertino),
+  'square_split_2x1': IconPickerIcon(
+      name: 'square_split_2x1',
+      data: CupertinoIcons.square_split_2x1,
+      pack: IconPack.cupertino),
+  'square_split_2x1_fill': IconPickerIcon(
+      name: 'square_split_2x1_fill',
+      data: CupertinoIcons.square_split_2x1_fill,
+      pack: IconPack.cupertino),
+  'square_split_2x2': IconPickerIcon(
+      name: 'square_split_2x2',
+      data: CupertinoIcons.square_split_2x2,
+      pack: IconPack.cupertino),
+  'square_split_2x2_fill': IconPickerIcon(
+      name: 'square_split_2x2_fill',
+      data: CupertinoIcons.square_split_2x2_fill,
+      pack: IconPack.cupertino),
+  'square_stack': IconPickerIcon(
+      name: 'square_stack',
+      data: CupertinoIcons.square_stack,
+      pack: IconPack.cupertino),
+  'square_stack_3d_down_dottedline': IconPickerIcon(
+      name: 'square_stack_3d_down_dottedline',
+      data: CupertinoIcons.square_stack_3d_down_dottedline,
+      pack: IconPack.cupertino),
+  'square_stack_3d_down_right': IconPickerIcon(
+      name: 'square_stack_3d_down_right',
+      data: CupertinoIcons.square_stack_3d_down_right,
+      pack: IconPack.cupertino),
+  'square_stack_3d_down_right_fill': IconPickerIcon(
+      name: 'square_stack_3d_down_right_fill',
+      data: CupertinoIcons.square_stack_3d_down_right_fill,
+      pack: IconPack.cupertino),
+  'square_stack_3d_up': IconPickerIcon(
+      name: 'square_stack_3d_up',
+      data: CupertinoIcons.square_stack_3d_up,
+      pack: IconPack.cupertino),
+  'square_stack_3d_up_fill': IconPickerIcon(
+      name: 'square_stack_3d_up_fill',
+      data: CupertinoIcons.square_stack_3d_up_fill,
+      pack: IconPack.cupertino),
+  'square_stack_3d_up_slash': IconPickerIcon(
+      name: 'square_stack_3d_up_slash',
+      data: CupertinoIcons.square_stack_3d_up_slash,
+      pack: IconPack.cupertino),
+  'square_stack_3d_up_slash_fill': IconPickerIcon(
+      name: 'square_stack_3d_up_slash_fill',
+      data: CupertinoIcons.square_stack_3d_up_slash_fill,
+      pack: IconPack.cupertino),
+  'square_stack_fill': IconPickerIcon(
+      name: 'square_stack_fill',
+      data: CupertinoIcons.square_stack_fill,
+      pack: IconPack.cupertino),
+  'squares_below_rectangle': IconPickerIcon(
+      name: 'squares_below_rectangle',
+      data: CupertinoIcons.squares_below_rectangle,
+      pack: IconPack.cupertino),
+  'star': IconPickerIcon(
+      name: 'star', data: CupertinoIcons.star, pack: IconPack.cupertino),
+  'star_circle': IconPickerIcon(
+      name: 'star_circle',
+      data: CupertinoIcons.star_circle,
+      pack: IconPack.cupertino),
+  'star_circle_fill': IconPickerIcon(
+      name: 'star_circle_fill',
+      data: CupertinoIcons.star_circle_fill,
+      pack: IconPack.cupertino),
+  'star_fill': IconPickerIcon(
+      name: 'star_fill',
+      data: CupertinoIcons.star_fill,
+      pack: IconPack.cupertino),
+  'star_lefthalf_fill': IconPickerIcon(
+      name: 'star_lefthalf_fill',
+      data: CupertinoIcons.star_lefthalf_fill,
+      pack: IconPack.cupertino),
+  'star_slash': IconPickerIcon(
+      name: 'star_slash',
+      data: CupertinoIcons.star_slash,
+      pack: IconPack.cupertino),
+  'star_slash_fill': IconPickerIcon(
+      name: 'star_slash_fill',
+      data: CupertinoIcons.star_slash_fill,
+      pack: IconPack.cupertino),
+  'staroflife': IconPickerIcon(
+      name: 'staroflife',
+      data: CupertinoIcons.staroflife,
+      pack: IconPack.cupertino),
+  'staroflife_fill': IconPickerIcon(
+      name: 'staroflife_fill',
+      data: CupertinoIcons.staroflife_fill,
+      pack: IconPack.cupertino),
+  'stop': IconPickerIcon(
+      name: 'stop', data: CupertinoIcons.stop, pack: IconPack.cupertino),
+  'stop_circle': IconPickerIcon(
+      name: 'stop_circle',
+      data: CupertinoIcons.stop_circle,
+      pack: IconPack.cupertino),
+  'stop_circle_fill': IconPickerIcon(
+      name: 'stop_circle_fill',
+      data: CupertinoIcons.stop_circle_fill,
+      pack: IconPack.cupertino),
+  'stop_fill': IconPickerIcon(
+      name: 'stop_fill',
+      data: CupertinoIcons.stop_fill,
+      pack: IconPack.cupertino),
+  'stopwatch': IconPickerIcon(
+      name: 'stopwatch',
+      data: CupertinoIcons.stopwatch,
+      pack: IconPack.cupertino),
+  'stopwatch_fill': IconPickerIcon(
+      name: 'stopwatch_fill',
+      data: CupertinoIcons.stopwatch_fill,
+      pack: IconPack.cupertino),
+  'strikethrough': IconPickerIcon(
+      name: 'strikethrough',
+      data: CupertinoIcons.strikethrough,
+      pack: IconPack.cupertino),
+  'suit_club': IconPickerIcon(
+      name: 'suit_club',
+      data: CupertinoIcons.suit_club,
+      pack: IconPack.cupertino),
+  'suit_club_fill': IconPickerIcon(
+      name: 'suit_club_fill',
+      data: CupertinoIcons.suit_club_fill,
+      pack: IconPack.cupertino),
+  'suit_diamond': IconPickerIcon(
+      name: 'suit_diamond',
+      data: CupertinoIcons.suit_diamond,
+      pack: IconPack.cupertino),
+  'suit_diamond_fill': IconPickerIcon(
+      name: 'suit_diamond_fill',
+      data: CupertinoIcons.suit_diamond_fill,
+      pack: IconPack.cupertino),
+  'suit_heart': IconPickerIcon(
+      name: 'suit_heart',
+      data: CupertinoIcons.suit_heart,
+      pack: IconPack.cupertino),
+  'suit_heart_fill': IconPickerIcon(
+      name: 'suit_heart_fill',
+      data: CupertinoIcons.suit_heart_fill,
+      pack: IconPack.cupertino),
+  'suit_spade': IconPickerIcon(
+      name: 'suit_spade',
+      data: CupertinoIcons.suit_spade,
+      pack: IconPack.cupertino),
+  'suit_spade_fill': IconPickerIcon(
+      name: 'suit_spade_fill',
+      data: CupertinoIcons.suit_spade_fill,
+      pack: IconPack.cupertino),
+  'sum': IconPickerIcon(
+      name: 'sum', data: CupertinoIcons.sum, pack: IconPack.cupertino),
+  'sun_dust': IconPickerIcon(
+      name: 'sun_dust',
+      data: CupertinoIcons.sun_dust,
+      pack: IconPack.cupertino),
+  'sun_dust_fill': IconPickerIcon(
+      name: 'sun_dust_fill',
+      data: CupertinoIcons.sun_dust_fill,
+      pack: IconPack.cupertino),
+  'sun_haze': IconPickerIcon(
+      name: 'sun_haze',
+      data: CupertinoIcons.sun_haze,
+      pack: IconPack.cupertino),
+  'sun_haze_fill': IconPickerIcon(
+      name: 'sun_haze_fill',
+      data: CupertinoIcons.sun_haze_fill,
+      pack: IconPack.cupertino),
+  'sun_max': IconPickerIcon(
+      name: 'sun_max', data: CupertinoIcons.sun_max, pack: IconPack.cupertino),
+  'sun_max_fill': IconPickerIcon(
+      name: 'sun_max_fill',
+      data: CupertinoIcons.sun_max_fill,
+      pack: IconPack.cupertino),
+  'sun_min': IconPickerIcon(
+      name: 'sun_min', data: CupertinoIcons.sun_min, pack: IconPack.cupertino),
+  'sun_min_fill': IconPickerIcon(
+      name: 'sun_min_fill',
+      data: CupertinoIcons.sun_min_fill,
+      pack: IconPack.cupertino),
+  'sunrise': IconPickerIcon(
+      name: 'sunrise', data: CupertinoIcons.sunrise, pack: IconPack.cupertino),
+  'sunrise_fill': IconPickerIcon(
+      name: 'sunrise_fill',
+      data: CupertinoIcons.sunrise_fill,
+      pack: IconPack.cupertino),
+  'sunset': IconPickerIcon(
+      name: 'sunset', data: CupertinoIcons.sunset, pack: IconPack.cupertino),
+  'sunset_fill': IconPickerIcon(
+      name: 'sunset_fill',
+      data: CupertinoIcons.sunset_fill,
+      pack: IconPack.cupertino),
+  't_bubble': IconPickerIcon(
+      name: 't_bubble',
+      data: CupertinoIcons.t_bubble,
+      pack: IconPack.cupertino),
+  't_bubble_fill': IconPickerIcon(
+      name: 't_bubble_fill',
+      data: CupertinoIcons.t_bubble_fill,
+      pack: IconPack.cupertino),
+  'table': IconPickerIcon(
+      name: 'table', data: CupertinoIcons.table, pack: IconPack.cupertino),
+  'table_badge_more': IconPickerIcon(
+      name: 'table_badge_more',
+      data: CupertinoIcons.table_badge_more,
+      pack: IconPack.cupertino),
+  'table_badge_more_fill': IconPickerIcon(
+      name: 'table_badge_more_fill',
+      data: CupertinoIcons.table_badge_more_fill,
+      pack: IconPack.cupertino),
+  'table_fill': IconPickerIcon(
+      name: 'table_fill',
+      data: CupertinoIcons.table_fill,
+      pack: IconPack.cupertino),
+  'tag_circle': IconPickerIcon(
+      name: 'tag_circle',
+      data: CupertinoIcons.tag_circle,
+      pack: IconPack.cupertino),
+  'tag_circle_fill': IconPickerIcon(
+      name: 'tag_circle_fill',
+      data: CupertinoIcons.tag_circle_fill,
+      pack: IconPack.cupertino),
+  'tag_fill': IconPickerIcon(
+      name: 'tag_fill',
+      data: CupertinoIcons.tag_fill,
+      pack: IconPack.cupertino),
+  'text_aligncenter': IconPickerIcon(
+      name: 'text_aligncenter',
+      data: CupertinoIcons.text_aligncenter,
+      pack: IconPack.cupertino),
+  'text_alignleft': IconPickerIcon(
+      name: 'text_alignleft',
+      data: CupertinoIcons.text_alignleft,
+      pack: IconPack.cupertino),
+  'text_alignright': IconPickerIcon(
+      name: 'text_alignright',
+      data: CupertinoIcons.text_alignright,
+      pack: IconPack.cupertino),
+  'text_append': IconPickerIcon(
+      name: 'text_append',
+      data: CupertinoIcons.text_append,
+      pack: IconPack.cupertino),
+  'text_badge_checkmark': IconPickerIcon(
+      name: 'text_badge_checkmark',
+      data: CupertinoIcons.text_badge_checkmark,
+      pack: IconPack.cupertino),
+  'text_badge_minus': IconPickerIcon(
+      name: 'text_badge_minus',
+      data: CupertinoIcons.text_badge_minus,
+      pack: IconPack.cupertino),
+  'text_badge_plus': IconPickerIcon(
+      name: 'text_badge_plus',
+      data: CupertinoIcons.text_badge_plus,
+      pack: IconPack.cupertino),
+  'text_badge_star': IconPickerIcon(
+      name: 'text_badge_star',
+      data: CupertinoIcons.text_badge_star,
+      pack: IconPack.cupertino),
+  'text_badge_xmark': IconPickerIcon(
+      name: 'text_badge_xmark',
+      data: CupertinoIcons.text_badge_xmark,
+      pack: IconPack.cupertino),
+  'text_bubble': IconPickerIcon(
+      name: 'text_bubble',
+      data: CupertinoIcons.text_bubble,
+      pack: IconPack.cupertino),
+  'text_bubble_fill': IconPickerIcon(
+      name: 'text_bubble_fill',
+      data: CupertinoIcons.text_bubble_fill,
+      pack: IconPack.cupertino),
+  'text_cursor': IconPickerIcon(
+      name: 'text_cursor',
+      data: CupertinoIcons.text_cursor,
+      pack: IconPack.cupertino),
+  'text_insert': IconPickerIcon(
+      name: 'text_insert',
+      data: CupertinoIcons.text_insert,
+      pack: IconPack.cupertino),
+  'text_justify': IconPickerIcon(
+      name: 'text_justify',
+      data: CupertinoIcons.text_justify,
+      pack: IconPack.cupertino),
+  'text_justifyleft': IconPickerIcon(
+      name: 'text_justifyleft',
+      data: CupertinoIcons.text_justifyleft,
+      pack: IconPack.cupertino),
+  'text_justifyright': IconPickerIcon(
+      name: 'text_justifyright',
+      data: CupertinoIcons.text_justifyright,
+      pack: IconPack.cupertino),
+  'text_quote': IconPickerIcon(
+      name: 'text_quote',
+      data: CupertinoIcons.text_quote,
+      pack: IconPack.cupertino),
+  'textbox': IconPickerIcon(
+      name: 'textbox', data: CupertinoIcons.textbox, pack: IconPack.cupertino),
+  'textformat': IconPickerIcon(
+      name: 'textformat',
+      data: CupertinoIcons.textformat,
+      pack: IconPack.cupertino),
+  'textformat_123': IconPickerIcon(
+      name: 'textformat_123',
+      data: CupertinoIcons.textformat_123,
+      pack: IconPack.cupertino),
+  'textformat_abc': IconPickerIcon(
+      name: 'textformat_abc',
+      data: CupertinoIcons.textformat_abc,
+      pack: IconPack.cupertino),
+  'textformat_abc_dottedunderline': IconPickerIcon(
+      name: 'textformat_abc_dottedunderline',
+      data: CupertinoIcons.textformat_abc_dottedunderline,
+      pack: IconPack.cupertino),
+  'textformat_alt': IconPickerIcon(
+      name: 'textformat_alt',
+      data: CupertinoIcons.textformat_alt,
+      pack: IconPack.cupertino),
+  'textformat_size': IconPickerIcon(
+      name: 'textformat_size',
+      data: CupertinoIcons.textformat_size,
+      pack: IconPack.cupertino),
+  'textformat_subscript': IconPickerIcon(
+      name: 'textformat_subscript',
+      data: CupertinoIcons.textformat_subscript,
+      pack: IconPack.cupertino),
+  'textformat_superscript': IconPickerIcon(
+      name: 'textformat_superscript',
+      data: CupertinoIcons.textformat_superscript,
+      pack: IconPack.cupertino),
+  'thermometer': IconPickerIcon(
+      name: 'thermometer',
+      data: CupertinoIcons.thermometer,
+      pack: IconPack.cupertino),
+  'thermometer_snowflake': IconPickerIcon(
+      name: 'thermometer_snowflake',
+      data: CupertinoIcons.thermometer_snowflake,
+      pack: IconPack.cupertino),
+  'thermometer_sun': IconPickerIcon(
+      name: 'thermometer_sun',
+      data: CupertinoIcons.thermometer_sun,
+      pack: IconPack.cupertino),
+  'ticket': IconPickerIcon(
+      name: 'ticket', data: CupertinoIcons.ticket, pack: IconPack.cupertino),
+  'ticket_fill': IconPickerIcon(
+      name: 'ticket_fill',
+      data: CupertinoIcons.ticket_fill,
+      pack: IconPack.cupertino),
+  'tickets': IconPickerIcon(
+      name: 'tickets', data: CupertinoIcons.tickets, pack: IconPack.cupertino),
+  'tickets_fill': IconPickerIcon(
+      name: 'tickets_fill',
+      data: CupertinoIcons.tickets_fill,
+      pack: IconPack.cupertino),
+  'timelapse': IconPickerIcon(
+      name: 'timelapse',
+      data: CupertinoIcons.timelapse,
+      pack: IconPack.cupertino),
+  'timer': IconPickerIcon(
+      name: 'timer', data: CupertinoIcons.timer, pack: IconPack.cupertino),
+  'timer_fill': IconPickerIcon(
+      name: 'timer_fill',
+      data: CupertinoIcons.timer_fill,
+      pack: IconPack.cupertino),
+  'today': IconPickerIcon(
+      name: 'today', data: CupertinoIcons.today, pack: IconPack.cupertino),
+  'today_fill': IconPickerIcon(
+      name: 'today_fill',
+      data: CupertinoIcons.today_fill,
+      pack: IconPack.cupertino),
+  'tornado': IconPickerIcon(
+      name: 'tornado', data: CupertinoIcons.tornado, pack: IconPack.cupertino),
+  'tortoise': IconPickerIcon(
+      name: 'tortoise',
+      data: CupertinoIcons.tortoise,
+      pack: IconPack.cupertino),
+  'tortoise_fill': IconPickerIcon(
+      name: 'tortoise_fill',
+      data: CupertinoIcons.tortoise_fill,
+      pack: IconPack.cupertino),
+  'tram_fill': IconPickerIcon(
+      name: 'tram_fill',
+      data: CupertinoIcons.tram_fill,
+      pack: IconPack.cupertino),
+  'trash': IconPickerIcon(
+      name: 'trash', data: CupertinoIcons.trash, pack: IconPack.cupertino),
+  'trash_circle': IconPickerIcon(
+      name: 'trash_circle',
+      data: CupertinoIcons.trash_circle,
+      pack: IconPack.cupertino),
+  'trash_circle_fill': IconPickerIcon(
+      name: 'trash_circle_fill',
+      data: CupertinoIcons.trash_circle_fill,
+      pack: IconPack.cupertino),
+  'trash_fill': IconPickerIcon(
+      name: 'trash_fill',
+      data: CupertinoIcons.trash_fill,
+      pack: IconPack.cupertino),
+  'trash_slash': IconPickerIcon(
+      name: 'trash_slash',
+      data: CupertinoIcons.trash_slash,
+      pack: IconPack.cupertino),
+  'trash_slash_fill': IconPickerIcon(
+      name: 'trash_slash_fill',
+      data: CupertinoIcons.trash_slash_fill,
+      pack: IconPack.cupertino),
+  'tray': IconPickerIcon(
+      name: 'tray', data: CupertinoIcons.tray, pack: IconPack.cupertino),
+  'tray_2': IconPickerIcon(
+      name: 'tray_2', data: CupertinoIcons.tray_2, pack: IconPack.cupertino),
+  'tray_2_fill': IconPickerIcon(
+      name: 'tray_2_fill',
+      data: CupertinoIcons.tray_2_fill,
+      pack: IconPack.cupertino),
+  'tray_arrow_down': IconPickerIcon(
+      name: 'tray_arrow_down',
+      data: CupertinoIcons.tray_arrow_down,
+      pack: IconPack.cupertino),
+  'tray_arrow_down_fill': IconPickerIcon(
+      name: 'tray_arrow_down_fill',
+      data: CupertinoIcons.tray_arrow_down_fill,
+      pack: IconPack.cupertino),
+  'tray_arrow_up': IconPickerIcon(
+      name: 'tray_arrow_up',
+      data: CupertinoIcons.tray_arrow_up,
+      pack: IconPack.cupertino),
+  'tray_arrow_up_fill': IconPickerIcon(
+      name: 'tray_arrow_up_fill',
+      data: CupertinoIcons.tray_arrow_up_fill,
+      pack: IconPack.cupertino),
+  'tray_fill': IconPickerIcon(
+      name: 'tray_fill',
+      data: CupertinoIcons.tray_fill,
+      pack: IconPack.cupertino),
+  'tray_full': IconPickerIcon(
+      name: 'tray_full',
+      data: CupertinoIcons.tray_full,
+      pack: IconPack.cupertino),
+  'tray_full_fill': IconPickerIcon(
+      name: 'tray_full_fill',
+      data: CupertinoIcons.tray_full_fill,
+      pack: IconPack.cupertino),
+  'tree': IconPickerIcon(
+      name: 'tree', data: CupertinoIcons.tree, pack: IconPack.cupertino),
+  'triangle': IconPickerIcon(
+      name: 'triangle',
+      data: CupertinoIcons.triangle,
+      pack: IconPack.cupertino),
+  'triangle_fill': IconPickerIcon(
+      name: 'triangle_fill',
+      data: CupertinoIcons.triangle_fill,
+      pack: IconPack.cupertino),
+  'triangle_lefthalf_fill': IconPickerIcon(
+      name: 'triangle_lefthalf_fill',
+      data: CupertinoIcons.triangle_lefthalf_fill,
+      pack: IconPack.cupertino),
+  'triangle_righthalf_fill': IconPickerIcon(
+      name: 'triangle_righthalf_fill',
+      data: CupertinoIcons.triangle_righthalf_fill,
+      pack: IconPack.cupertino),
+  'tropicalstorm': IconPickerIcon(
+      name: 'tropicalstorm',
+      data: CupertinoIcons.tropicalstorm,
+      pack: IconPack.cupertino),
+  'tuningfork': IconPickerIcon(
+      name: 'tuningfork',
+      data: CupertinoIcons.tuningfork,
+      pack: IconPack.cupertino),
+  'tv': IconPickerIcon(
+      name: 'tv', data: CupertinoIcons.tv, pack: IconPack.cupertino),
+  'tv_circle': IconPickerIcon(
+      name: 'tv_circle',
+      data: CupertinoIcons.tv_circle,
+      pack: IconPack.cupertino),
+  'tv_circle_fill': IconPickerIcon(
+      name: 'tv_circle_fill',
+      data: CupertinoIcons.tv_circle_fill,
+      pack: IconPack.cupertino),
+  'tv_fill': IconPickerIcon(
+      name: 'tv_fill', data: CupertinoIcons.tv_fill, pack: IconPack.cupertino),
+  'tv_music_note': IconPickerIcon(
+      name: 'tv_music_note',
+      data: CupertinoIcons.tv_music_note,
+      pack: IconPack.cupertino),
+  'tv_music_note_fill': IconPickerIcon(
+      name: 'tv_music_note_fill',
+      data: CupertinoIcons.tv_music_note_fill,
+      pack: IconPack.cupertino),
+  'uiwindow_split_2x1': IconPickerIcon(
+      name: 'uiwindow_split_2x1',
+      data: CupertinoIcons.uiwindow_split_2x1,
+      pack: IconPack.cupertino),
+  'umbrella': IconPickerIcon(
+      name: 'umbrella',
+      data: CupertinoIcons.umbrella,
+      pack: IconPack.cupertino),
+  'umbrella_fill': IconPickerIcon(
+      name: 'umbrella_fill',
+      data: CupertinoIcons.umbrella_fill,
+      pack: IconPack.cupertino),
+  'underline': IconPickerIcon(
+      name: 'underline',
+      data: CupertinoIcons.underline,
+      pack: IconPack.cupertino),
+  'upload_circle': IconPickerIcon(
+      name: 'upload_circle',
+      data: CupertinoIcons.upload_circle,
+      pack: IconPack.cupertino),
+  'upload_circle_fill': IconPickerIcon(
+      name: 'upload_circle_fill',
+      data: CupertinoIcons.upload_circle_fill,
+      pack: IconPack.cupertino),
+  'videocam': IconPickerIcon(
+      name: 'videocam',
+      data: CupertinoIcons.videocam,
+      pack: IconPack.cupertino),
+  'videocam_circle': IconPickerIcon(
+      name: 'videocam_circle',
+      data: CupertinoIcons.videocam_circle,
+      pack: IconPack.cupertino),
+  'videocam_circle_fill': IconPickerIcon(
+      name: 'videocam_circle_fill',
+      data: CupertinoIcons.videocam_circle_fill,
+      pack: IconPack.cupertino),
+  'videocam_fill': IconPickerIcon(
+      name: 'videocam_fill',
+      data: CupertinoIcons.videocam_fill,
+      pack: IconPack.cupertino),
+  'view_2d': IconPickerIcon(
+      name: 'view_2d', data: CupertinoIcons.view_2d, pack: IconPack.cupertino),
+  'view_3d': IconPickerIcon(
+      name: 'view_3d', data: CupertinoIcons.view_3d, pack: IconPack.cupertino),
+  'viewfinder': IconPickerIcon(
+      name: 'viewfinder',
+      data: CupertinoIcons.viewfinder,
+      pack: IconPack.cupertino),
+  'viewfinder_circle': IconPickerIcon(
+      name: 'viewfinder_circle',
+      data: CupertinoIcons.viewfinder_circle,
+      pack: IconPack.cupertino),
+  'viewfinder_circle_fill': IconPickerIcon(
+      name: 'viewfinder_circle_fill',
+      data: CupertinoIcons.viewfinder_circle_fill,
+      pack: IconPack.cupertino),
+  'wand_rays': IconPickerIcon(
+      name: 'wand_rays',
+      data: CupertinoIcons.wand_rays,
+      pack: IconPack.cupertino),
+  'wand_rays_inverse': IconPickerIcon(
+      name: 'wand_rays_inverse',
+      data: CupertinoIcons.wand_rays_inverse,
+      pack: IconPack.cupertino),
+  'wand_stars': IconPickerIcon(
+      name: 'wand_stars',
+      data: CupertinoIcons.wand_stars,
+      pack: IconPack.cupertino),
+  'wand_stars_inverse': IconPickerIcon(
+      name: 'wand_stars_inverse',
+      data: CupertinoIcons.wand_stars_inverse,
+      pack: IconPack.cupertino),
+  'waveform': IconPickerIcon(
+      name: 'waveform',
+      data: CupertinoIcons.waveform,
+      pack: IconPack.cupertino),
+  'waveform_circle': IconPickerIcon(
+      name: 'waveform_circle',
+      data: CupertinoIcons.waveform_circle,
+      pack: IconPack.cupertino),
+  'waveform_circle_fill': IconPickerIcon(
+      name: 'waveform_circle_fill',
+      data: CupertinoIcons.waveform_circle_fill,
+      pack: IconPack.cupertino),
+  'waveform_path': IconPickerIcon(
+      name: 'waveform_path',
+      data: CupertinoIcons.waveform_path,
+      pack: IconPack.cupertino),
+  'waveform_path_badge_minus': IconPickerIcon(
+      name: 'waveform_path_badge_minus',
+      data: CupertinoIcons.waveform_path_badge_minus,
+      pack: IconPack.cupertino),
+  'waveform_path_badge_plus': IconPickerIcon(
+      name: 'waveform_path_badge_plus',
+      data: CupertinoIcons.waveform_path_badge_plus,
+      pack: IconPack.cupertino),
+  'waveform_path_ecg': IconPickerIcon(
+      name: 'waveform_path_ecg',
+      data: CupertinoIcons.waveform_path_ecg,
+      pack: IconPack.cupertino),
+  'wifi': IconPickerIcon(
+      name: 'wifi', data: CupertinoIcons.wifi, pack: IconPack.cupertino),
+  'wifi_exclamationmark': IconPickerIcon(
+      name: 'wifi_exclamationmark',
+      data: CupertinoIcons.wifi_exclamationmark,
+      pack: IconPack.cupertino),
+  'wifi_slash': IconPickerIcon(
+      name: 'wifi_slash',
+      data: CupertinoIcons.wifi_slash,
+      pack: IconPack.cupertino),
+  'wind': IconPickerIcon(
+      name: 'wind', data: CupertinoIcons.wind, pack: IconPack.cupertino),
+  'wind_snow': IconPickerIcon(
+      name: 'wind_snow',
+      data: CupertinoIcons.wind_snow,
+      pack: IconPack.cupertino),
+  'wrench': IconPickerIcon(
+      name: 'wrench', data: CupertinoIcons.wrench, pack: IconPack.cupertino),
+  'wrench_fill': IconPickerIcon(
+      name: 'wrench_fill',
+      data: CupertinoIcons.wrench_fill,
+      pack: IconPack.cupertino),
+  'xmark': IconPickerIcon(
+      name: 'xmark', data: CupertinoIcons.xmark, pack: IconPack.cupertino),
+  'xmark_circle': IconPickerIcon(
+      name: 'xmark_circle',
+      data: CupertinoIcons.xmark_circle,
+      pack: IconPack.cupertino),
+  'xmark_circle_fill': IconPickerIcon(
+      name: 'xmark_circle_fill',
+      data: CupertinoIcons.xmark_circle_fill,
+      pack: IconPack.cupertino),
+  'xmark_octagon': IconPickerIcon(
+      name: 'xmark_octagon',
+      data: CupertinoIcons.xmark_octagon,
+      pack: IconPack.cupertino),
+  'xmark_octagon_fill': IconPickerIcon(
+      name: 'xmark_octagon_fill',
+      data: CupertinoIcons.xmark_octagon_fill,
+      pack: IconPack.cupertino),
+  'xmark_rectangle': IconPickerIcon(
+      name: 'xmark_rectangle',
+      data: CupertinoIcons.xmark_rectangle,
+      pack: IconPack.cupertino),
+  'xmark_rectangle_fill': IconPickerIcon(
+      name: 'xmark_rectangle_fill',
+      data: CupertinoIcons.xmark_rectangle_fill,
+      pack: IconPack.cupertino),
+  'xmark_seal': IconPickerIcon(
+      name: 'xmark_seal',
+      data: CupertinoIcons.xmark_seal,
+      pack: IconPack.cupertino),
+  'xmark_seal_fill': IconPickerIcon(
+      name: 'xmark_seal_fill',
+      data: CupertinoIcons.xmark_seal_fill,
+      pack: IconPack.cupertino),
+  'xmark_shield': IconPickerIcon(
+      name: 'xmark_shield',
+      data: CupertinoIcons.xmark_shield,
+      pack: IconPack.cupertino),
+  'xmark_shield_fill': IconPickerIcon(
+      name: 'xmark_shield_fill',
+      data: CupertinoIcons.xmark_shield_fill,
+      pack: IconPack.cupertino),
+  'xmark_square': IconPickerIcon(
+      name: 'xmark_square',
+      data: CupertinoIcons.xmark_square,
+      pack: IconPack.cupertino),
+  'xmark_square_fill': IconPickerIcon(
+      name: 'xmark_square_fill',
+      data: CupertinoIcons.xmark_square_fill,
+      pack: IconPack.cupertino),
+  'zoom_in': IconPickerIcon(
+      name: 'zoom_in', data: CupertinoIcons.zoom_in, pack: IconPack.cupertino),
+  'zoom_out': IconPickerIcon(
+      name: 'zoom_out',
+      data: CupertinoIcons.zoom_out,
+      pack: IconPack.cupertino),
+  'zzz': IconPickerIcon(
+      name: 'zzz', data: CupertinoIcons.zzz, pack: IconPack.cupertino),
 };

@@ -1,10082 +1,7899 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Map<String, IconData> fontAwesomeIcons = {
-  /// Solid 0 icon
-  ///
-  /// https://fontawesome.com/icons/0?style=solid
-  'zero': FontAwesomeIcons.zero,
-
-  /// Solid 1 icon
-  ///
-  /// https://fontawesome.com/icons/1?style=solid
-  'one': FontAwesomeIcons.one,
-
-  /// Solid 2 icon
-  ///
-  /// https://fontawesome.com/icons/2?style=solid
-  'two': FontAwesomeIcons.two,
-
-  /// Solid 3 icon
-  ///
-  /// https://fontawesome.com/icons/3?style=solid
-  'three': FontAwesomeIcons.three,
-
-  /// Solid 4 icon
-  ///
-  /// https://fontawesome.com/icons/4?style=solid
-  'four': FontAwesomeIcons.four,
-
-  /// Solid 5 icon
-  ///
-  /// https://fontawesome.com/icons/5?style=solid
-  'five': FontAwesomeIcons.five,
-
-  /// Solid 6 icon
-  ///
-  /// https://fontawesome.com/icons/6?style=solid
-  'six': FontAwesomeIcons.six,
-
-  /// Solid 7 icon
-  ///
-  /// https://fontawesome.com/icons/7?style=solid
-  'seven': FontAwesomeIcons.seven,
-
-  /// Solid 8 icon
-  ///
-  /// https://fontawesome.com/icons/8?style=solid
-  'eight': FontAwesomeIcons.eight,
-
-  /// Solid 9 icon
-  ///
-  /// https://fontawesome.com/icons/9?style=solid
-  'nine': FontAwesomeIcons.nine,
-
-  /// Brands 42.group icon
-  ///
-  /// https://fontawesome.com/icons/42-group?style=brands
-  'fortyTwoGroup': FontAwesomeIcons.fortyTwoGroup,
-
-  /// Brands 500px icon
-  ///
-  /// https://fontawesome.com/icons/500px?style=brands
-  'fiveHundredPx': FontAwesomeIcons.fiveHundredPx,
-
-  /// Solid A icon
-  ///
-  /// https://fontawesome.com/icons/a?style=solid
-  'a': FontAwesomeIcons.a,
-
-  /// Brands Accessible Icon icon
-  ///
-  /// https://fontawesome.com/icons/accessible-icon?style=brands
-  'accessibleIcon': FontAwesomeIcons.accessibleIcon,
-
-  /// Brands Accusoft icon
-  ///
-  /// https://fontawesome.com/icons/accusoft?style=brands
-  'accusoft': FontAwesomeIcons.accusoft,
-
-  /// Solid Address Book icon
-  ///
-  /// https://fontawesome.com/icons/address-book?style=solid
-  'solidAddressBook': FontAwesomeIcons.solidAddressBook,
-
-  /// Regular Address Book icon
-  ///
-  /// https://fontawesome.com/icons/address-book?style=regular
-  'addressBook': FontAwesomeIcons.addressBook,
-
-  /// Solid Address Card icon
-  ///
-  /// https://fontawesome.com/icons/address-card?style=solid
-  'solidAddressCard': FontAwesomeIcons.solidAddressCard,
-
-  /// Regular Address Card icon
-  ///
-  /// https://fontawesome.com/icons/address-card?style=regular
-  'addressCard': FontAwesomeIcons.addressCard,
-
-  /// Brands App.net icon
-  ///
-  /// https://fontawesome.com/icons/adn?style=brands
-  'adn': FontAwesomeIcons.adn,
-
-  /// Brands Adversal icon
-  ///
-  /// https://fontawesome.com/icons/adversal?style=brands
-  'adversal': FontAwesomeIcons.adversal,
-
-  /// Brands affiliatetheme icon
-  ///
-  /// https://fontawesome.com/icons/affiliatetheme?style=brands
-  'affiliatetheme': FontAwesomeIcons.affiliatetheme,
-
-  /// Brands Airbnb icon
-  ///
-  /// https://fontawesome.com/icons/airbnb?style=brands
-  'airbnb': FontAwesomeIcons.airbnb,
-
-  /// Brands Algolia icon
-  ///
-  /// https://fontawesome.com/icons/algolia?style=brands
-  'algolia': FontAwesomeIcons.algolia,
-
-  /// Solid align-center icon
-  ///
-  /// https://fontawesome.com/icons/align-center?style=solid
-  'alignCenter': FontAwesomeIcons.alignCenter,
-
-  /// Solid align-justify icon
-  ///
-  /// https://fontawesome.com/icons/align-justify?style=solid
-  'alignJustify': FontAwesomeIcons.alignJustify,
-
-  /// Solid align-left icon
-  ///
-  /// https://fontawesome.com/icons/align-left?style=solid
-  'alignLeft': FontAwesomeIcons.alignLeft,
-
-  /// Solid align-right icon
-  ///
-  /// https://fontawesome.com/icons/align-right?style=solid
-  'alignRight': FontAwesomeIcons.alignRight,
-
-  /// Brands Alipay icon
-  ///
-  /// https://fontawesome.com/icons/alipay?style=brands
-  'alipay': FontAwesomeIcons.alipay,
-
-  /// Brands Amazon icon
-  ///
-  /// https://fontawesome.com/icons/amazon?style=brands
-  'amazon': FontAwesomeIcons.amazon,
-
-  /// Brands Amazon Pay icon
-  ///
-  /// https://fontawesome.com/icons/amazon-pay?style=brands
-  'amazonPay': FontAwesomeIcons.amazonPay,
-
-  /// Brands Amilia icon
-  ///
-  /// https://fontawesome.com/icons/amilia?style=brands
-  'amilia': FontAwesomeIcons.amilia,
-
-  /// Solid Anchor icon
-  ///
-  /// https://fontawesome.com/icons/anchor?style=solid
-  'anchor': FontAwesomeIcons.anchor,
-
-  /// Solid Anchor Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/anchor-circle-check?style=solid
-  'anchorCircleCheck': FontAwesomeIcons.anchorCircleCheck,
-
-  /// Solid Anchor Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/anchor-circle-exclamation?style=solid
-  'anchorCircleExclamation': FontAwesomeIcons.anchorCircleExclamation,
-
-  /// Solid Anchor Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/anchor-circle-xmark?style=solid
-  'anchorCircleXmark': FontAwesomeIcons.anchorCircleXmark,
-
-  /// Solid Anchor Lock icon
-  ///
-  /// https://fontawesome.com/icons/anchor-lock?style=solid
-  'anchorLock': FontAwesomeIcons.anchorLock,
-
-  /// Brands Android icon
-  ///
-  /// https://fontawesome.com/icons/android?style=brands
-  'android': FontAwesomeIcons.android,
-
-  /// Brands AngelList icon
-  ///
-  /// https://fontawesome.com/icons/angellist?style=brands
-  'angellist': FontAwesomeIcons.angellist,
-
-  /// Solid angle-down icon
-  ///
-  /// https://fontawesome.com/icons/angle-down?style=solid
-  'angleDown': FontAwesomeIcons.angleDown,
-
-  /// Solid angle-left icon
-  ///
-  /// https://fontawesome.com/icons/angle-left?style=solid
-  'angleLeft': FontAwesomeIcons.angleLeft,
-
-  /// Solid angle-right icon
-  ///
-  /// https://fontawesome.com/icons/angle-right?style=solid
-  'angleRight': FontAwesomeIcons.angleRight,
-
-  /// Solid angle-up icon
-  ///
-  /// https://fontawesome.com/icons/angle-up?style=solid
-  'angleUp': FontAwesomeIcons.angleUp,
-
-  /// Solid Angles down icon
-  ///
-  /// https://fontawesome.com/icons/angles-down?style=solid
-  'anglesDown': FontAwesomeIcons.anglesDown,
-
-  /// Solid Angles left icon
-  ///
-  /// https://fontawesome.com/icons/angles-left?style=solid
-  'anglesLeft': FontAwesomeIcons.anglesLeft,
-
-  /// Solid Angles right icon
-  ///
-  /// https://fontawesome.com/icons/angles-right?style=solid
-  'anglesRight': FontAwesomeIcons.anglesRight,
-
-  /// Solid Angles up icon
-  ///
-  /// https://fontawesome.com/icons/angles-up?style=solid
-  'anglesUp': FontAwesomeIcons.anglesUp,
-
-  /// Brands Angry Creative icon
-  ///
-  /// https://fontawesome.com/icons/angrycreative?style=brands
-  'angrycreative': FontAwesomeIcons.angrycreative,
-
-  /// Brands Angular icon
-  ///
-  /// https://fontawesome.com/icons/angular?style=brands
-  'angular': FontAwesomeIcons.angular,
-
-  /// Solid Ankh icon
-  ///
-  /// https://fontawesome.com/icons/ankh?style=solid
-  'ankh': FontAwesomeIcons.ankh,
-
-  /// Brands App Store icon
-  ///
-  /// https://fontawesome.com/icons/app-store?style=brands
-  'appStore': FontAwesomeIcons.appStore,
-
-  /// Brands iOS App Store icon
-  ///
-  /// https://fontawesome.com/icons/app-store-ios?style=brands
-  'appStoreIos': FontAwesomeIcons.appStoreIos,
-
-  /// Brands Apper Systems AB icon
-  ///
-  /// https://fontawesome.com/icons/apper?style=brands
-  'apper': FontAwesomeIcons.apper,
-
-  /// Brands Apple icon
-  ///
-  /// https://fontawesome.com/icons/apple?style=brands
-  'apple': FontAwesomeIcons.apple,
-
-  /// Brands Apple Pay icon
-  ///
-  /// https://fontawesome.com/icons/apple-pay?style=brands
-  'applePay': FontAwesomeIcons.applePay,
-
-  /// Solid Apple whole icon
-  ///
-  /// https://fontawesome.com/icons/apple-whole?style=solid
-  'appleWhole': FontAwesomeIcons.appleWhole,
-
-  /// Solid Archway icon
-  ///
-  /// https://fontawesome.com/icons/archway?style=solid
-  'archway': FontAwesomeIcons.archway,
-
-  /// Solid Arrow down icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down?style=solid
-  'arrowDown': FontAwesomeIcons.arrowDown,
-
-  /// Solid Arrow down 1 9 icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-1-9?style=solid
-  'arrowDown19': FontAwesomeIcons.arrowDown19,
-
-  /// Solid Arrow down 9 1 icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-9-1?style=solid
-  'arrowDown91': FontAwesomeIcons.arrowDown91,
-
-  /// Solid Arrow down a z icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-a-z?style=solid
-  'arrowDownAZ': FontAwesomeIcons.arrowDownAZ,
-
-  /// Solid Arrow down long icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-long?style=solid
-  'arrowDownLong': FontAwesomeIcons.arrowDownLong,
-
-  /// Solid Arrow down short wide icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-short-wide?style=solid
-  'arrowDownShortWide': FontAwesomeIcons.arrowDownShortWide,
-
-  /// Solid Arrow Down-up-across-line icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-up-across-line?style=solid
-  'arrowDownUpAcrossLine': FontAwesomeIcons.arrowDownUpAcrossLine,
-
-  /// Solid Arrow Down-up-lock icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-up-lock?style=solid
-  'arrowDownUpLock': FontAwesomeIcons.arrowDownUpLock,
-
-  /// Solid Arrow down wide short icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-wide-short?style=solid
-  'arrowDownWideShort': FontAwesomeIcons.arrowDownWideShort,
-
-  /// Solid Arrow down z a icon
-  ///
-  /// https://fontawesome.com/icons/arrow-down-z-a?style=solid
-  'arrowDownZA': FontAwesomeIcons.arrowDownZA,
-
-  /// Solid arrow-left icon
-  ///
-  /// https://fontawesome.com/icons/arrow-left?style=solid
-  'arrowLeft': FontAwesomeIcons.arrowLeft,
-
-  /// Solid Arrow left long icon
-  ///
-  /// https://fontawesome.com/icons/arrow-left-long?style=solid
-  'arrowLeftLong': FontAwesomeIcons.arrowLeftLong,
-
-  /// Solid Arrow pointer icon
-  ///
-  /// https://fontawesome.com/icons/arrow-pointer?style=solid
-  'arrowPointer': FontAwesomeIcons.arrowPointer,
-
-  /// Solid arrow right icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right?style=solid
-  'arrowRight': FontAwesomeIcons.arrowRight,
-
-  /// Solid Arrow right arrow left icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right-arrow-left?style=solid
-  'arrowRightArrowLeft': FontAwesomeIcons.arrowRightArrowLeft,
-
-  /// Solid Arrow right from bracket icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right-from-bracket?style=solid
-  'arrowRightFromBracket': FontAwesomeIcons.arrowRightFromBracket,
-
-  /// Solid Arrow right long icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right-long?style=solid
-  'arrowRightLong': FontAwesomeIcons.arrowRightLong,
-
-  /// Solid Arrow right to bracket icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right-to-bracket?style=solid
-  'arrowRightToBracket': FontAwesomeIcons.arrowRightToBracket,
-
-  /// Solid Arrow Right-to-city icon
-  ///
-  /// https://fontawesome.com/icons/arrow-right-to-city?style=solid
-  'arrowRightToCity': FontAwesomeIcons.arrowRightToCity,
-
-  /// Solid Arrow Rotate Left icon
-  ///
-  /// https://fontawesome.com/icons/arrow-rotate-left?style=solid
-  'arrowRotateLeft': FontAwesomeIcons.arrowRotateLeft,
-
-  /// Solid Arrow Rotate Right icon
-  ///
-  /// https://fontawesome.com/icons/arrow-rotate-right?style=solid
-  'arrowRotateRight': FontAwesomeIcons.arrowRotateRight,
-
-  /// Solid Arrow trend down icon
-  ///
-  /// https://fontawesome.com/icons/arrow-trend-down?style=solid
-  'arrowTrendDown': FontAwesomeIcons.arrowTrendDown,
-
-  /// Solid Arrow trend up icon
-  ///
-  /// https://fontawesome.com/icons/arrow-trend-up?style=solid
-  'arrowTrendUp': FontAwesomeIcons.arrowTrendUp,
-
-  /// Solid Arrow turn down icon
-  ///
-  /// https://fontawesome.com/icons/arrow-turn-down?style=solid
-  'arrowTurnDown': FontAwesomeIcons.arrowTurnDown,
-
-  /// Solid Arrow turn up icon
-  ///
-  /// https://fontawesome.com/icons/arrow-turn-up?style=solid
-  'arrowTurnUp': FontAwesomeIcons.arrowTurnUp,
-
-  /// Solid Arrow up icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up?style=solid
-  'arrowUp': FontAwesomeIcons.arrowUp,
-
-  /// Solid Arrow up 1 9 icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-1-9?style=solid
-  'arrowUp19': FontAwesomeIcons.arrowUp19,
-
-  /// Solid Arrow up 9 1 icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-9-1?style=solid
-  'arrowUp91': FontAwesomeIcons.arrowUp91,
-
-  /// Solid Arrow up a z icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-a-z?style=solid
-  'arrowUpAZ': FontAwesomeIcons.arrowUpAZ,
-
-  /// Solid Arrow up from bracket icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-from-bracket?style=solid
-  'arrowUpFromBracket': FontAwesomeIcons.arrowUpFromBracket,
-
-  /// Solid Arrow Up-from-ground-water icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-from-ground-water?style=solid
-  'arrowUpFromGroundWater': FontAwesomeIcons.arrowUpFromGroundWater,
-
-  /// Solid Arrow Up-from-water-pump icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-from-water-pump?style=solid
-  'arrowUpFromWaterPump': FontAwesomeIcons.arrowUpFromWaterPump,
-
-  /// Solid Arrow up long icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-long?style=solid
-  'arrowUpLong': FontAwesomeIcons.arrowUpLong,
-
-  /// Solid Arrow Up-right-dots icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-right-dots?style=solid
-  'arrowUpRightDots': FontAwesomeIcons.arrowUpRightDots,
-
-  /// Solid Arrow up right from square icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-right-from-square?style=solid
-  'arrowUpRightFromSquare': FontAwesomeIcons.arrowUpRightFromSquare,
-
-  /// Solid Arrow up short wide icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-short-wide?style=solid
-  'arrowUpShortWide': FontAwesomeIcons.arrowUpShortWide,
-
-  /// Solid Arrow up wide short icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-wide-short?style=solid
-  'arrowUpWideShort': FontAwesomeIcons.arrowUpWideShort,
-
-  /// Solid Arrow up z a icon
-  ///
-  /// https://fontawesome.com/icons/arrow-up-z-a?style=solid
-  'arrowUpZA': FontAwesomeIcons.arrowUpZA,
-
-  /// Solid Arrows Down-to-line icon
-  ///
-  /// https://fontawesome.com/icons/arrows-down-to-line?style=solid
-  'arrowsDownToLine': FontAwesomeIcons.arrowsDownToLine,
-
-  /// Solid Arrows Down-to-people icon
-  ///
-  /// https://fontawesome.com/icons/arrows-down-to-people?style=solid
-  'arrowsDownToPeople': FontAwesomeIcons.arrowsDownToPeople,
-
-  /// Solid Arrows left right icon
-  ///
-  /// https://fontawesome.com/icons/arrows-left-right?style=solid
-  'arrowsLeftRight': FontAwesomeIcons.arrowsLeftRight,
-
-  /// Solid Arrows Left-right-to-line icon
-  ///
-  /// https://fontawesome.com/icons/arrows-left-right-to-line?style=solid
-  'arrowsLeftRightToLine': FontAwesomeIcons.arrowsLeftRightToLine,
-
-  /// Solid Arrows rotate icon
-  ///
-  /// https://fontawesome.com/icons/arrows-rotate?style=solid
-  'arrowsRotate': FontAwesomeIcons.arrowsRotate,
-
-  /// Solid Arrows Spin icon
-  ///
-  /// https://fontawesome.com/icons/arrows-spin?style=solid
-  'arrowsSpin': FontAwesomeIcons.arrowsSpin,
-
-  /// Solid Arrows Split-up-and-left icon
-  ///
-  /// https://fontawesome.com/icons/arrows-split-up-and-left?style=solid
-  'arrowsSplitUpAndLeft': FontAwesomeIcons.arrowsSplitUpAndLeft,
-
-  /// Solid Arrows To-circle icon
-  ///
-  /// https://fontawesome.com/icons/arrows-to-circle?style=solid
-  'arrowsToCircle': FontAwesomeIcons.arrowsToCircle,
-
-  /// Solid Arrows To-dot icon
-  ///
-  /// https://fontawesome.com/icons/arrows-to-dot?style=solid
-  'arrowsToDot': FontAwesomeIcons.arrowsToDot,
-
-  /// Solid Arrows To-eye icon
-  ///
-  /// https://fontawesome.com/icons/arrows-to-eye?style=solid
-  'arrowsToEye': FontAwesomeIcons.arrowsToEye,
-
-  /// Solid Arrows Turn-right icon
-  ///
-  /// https://fontawesome.com/icons/arrows-turn-right?style=solid
-  'arrowsTurnRight': FontAwesomeIcons.arrowsTurnRight,
-
-  /// Solid Arrows Turn-to-dots icon
-  ///
-  /// https://fontawesome.com/icons/arrows-turn-to-dots?style=solid
-  'arrowsTurnToDots': FontAwesomeIcons.arrowsTurnToDots,
-
-  /// Solid Arrows up down icon
-  ///
-  /// https://fontawesome.com/icons/arrows-up-down?style=solid
-  'arrowsUpDown': FontAwesomeIcons.arrowsUpDown,
-
-  /// Solid Arrows up down left right icon
-  ///
-  /// https://fontawesome.com/icons/arrows-up-down-left-right?style=solid
-  'arrowsUpDownLeftRight': FontAwesomeIcons.arrowsUpDownLeftRight,
-
-  /// Solid Arrows Up-to-line icon
-  ///
-  /// https://fontawesome.com/icons/arrows-up-to-line?style=solid
-  'arrowsUpToLine': FontAwesomeIcons.arrowsUpToLine,
-
-  /// Brands Artstation icon
-  ///
-  /// https://fontawesome.com/icons/artstation?style=brands
-  'artstation': FontAwesomeIcons.artstation,
-
-  /// Solid asterisk icon
-  ///
-  /// https://fontawesome.com/icons/asterisk?style=solid
-  'asterisk': FontAwesomeIcons.asterisk,
-
-  /// Brands Asymmetrik, Ltd. icon
-  ///
-  /// https://fontawesome.com/icons/asymmetrik?style=brands
-  'asymmetrik': FontAwesomeIcons.asymmetrik,
-
-  /// Solid At icon
-  ///
-  /// https://fontawesome.com/icons/at?style=solid
-  'at': FontAwesomeIcons.at,
-
-  /// Brands Atlassian icon
-  ///
-  /// https://fontawesome.com/icons/atlassian?style=brands
-  'atlassian': FontAwesomeIcons.atlassian,
-
-  /// Solid Atom icon
-  ///
-  /// https://fontawesome.com/icons/atom?style=solid
-  'atom': FontAwesomeIcons.atom,
-
-  /// Brands Audible icon
-  ///
-  /// https://fontawesome.com/icons/audible?style=brands
-  'audible': FontAwesomeIcons.audible,
-
-  /// Solid Rectangle audio description icon
-  ///
-  /// https://fontawesome.com/icons/audio-description?style=solid
-  'audioDescription': FontAwesomeIcons.audioDescription,
-
-  /// Solid Austral Sign icon
-  ///
-  /// https://fontawesome.com/icons/austral-sign?style=solid
-  'australSign': FontAwesomeIcons.australSign,
-
-  /// Brands Autoprefixer icon
-  ///
-  /// https://fontawesome.com/icons/autoprefixer?style=brands
-  'autoprefixer': FontAwesomeIcons.autoprefixer,
-
-  /// Brands avianex icon
-  ///
-  /// https://fontawesome.com/icons/avianex?style=brands
-  'avianex': FontAwesomeIcons.avianex,
-
-  /// Brands Aviato icon
-  ///
-  /// https://fontawesome.com/icons/aviato?style=brands
-  'aviato': FontAwesomeIcons.aviato,
-
-  /// Solid Award icon
-  ///
-  /// https://fontawesome.com/icons/award?style=solid
-  'award': FontAwesomeIcons.award,
-
-  /// Brands Amazon Web Services (AWS) icon
-  ///
-  /// https://fontawesome.com/icons/aws?style=brands
-  'aws': FontAwesomeIcons.aws,
-
-  /// Solid B icon
-  ///
-  /// https://fontawesome.com/icons/b?style=solid
-  'b': FontAwesomeIcons.b,
-
-  /// Solid Baby icon
-  ///
-  /// https://fontawesome.com/icons/baby?style=solid
-  'baby': FontAwesomeIcons.baby,
-
-  /// Solid Baby Carriage icon
-  ///
-  /// https://fontawesome.com/icons/baby-carriage?style=solid
-  'babyCarriage': FontAwesomeIcons.babyCarriage,
-
-  /// Solid backward icon
-  ///
-  /// https://fontawesome.com/icons/backward?style=solid
-  'backward': FontAwesomeIcons.backward,
-
-  /// Solid Backward fast icon
-  ///
-  /// https://fontawesome.com/icons/backward-fast?style=solid
-  'backwardFast': FontAwesomeIcons.backwardFast,
-
-  /// Solid Backward step icon
-  ///
-  /// https://fontawesome.com/icons/backward-step?style=solid
-  'backwardStep': FontAwesomeIcons.backwardStep,
-
-  /// Solid Bacon icon
-  ///
-  /// https://fontawesome.com/icons/bacon?style=solid
-  'bacon': FontAwesomeIcons.bacon,
-
-  /// Solid Bacteria icon
-  ///
-  /// https://fontawesome.com/icons/bacteria?style=solid
-  'bacteria': FontAwesomeIcons.bacteria,
-
-  /// Solid Bacterium icon
-  ///
-  /// https://fontawesome.com/icons/bacterium?style=solid
-  'bacterium': FontAwesomeIcons.bacterium,
-
-  /// Solid Bag shopping icon
-  ///
-  /// https://fontawesome.com/icons/bag-shopping?style=solid
-  'bagShopping': FontAwesomeIcons.bagShopping,
-
-  /// Solid Bahá'í icon
-  ///
-  /// https://fontawesome.com/icons/bahai?style=solid
-  'bahai': FontAwesomeIcons.bahai,
-
-  /// Solid Baht Sign icon
-  ///
-  /// https://fontawesome.com/icons/baht-sign?style=solid
-  'bahtSign': FontAwesomeIcons.bahtSign,
-
-  /// Solid ban icon
-  ///
-  /// https://fontawesome.com/icons/ban?style=solid
-  'ban': FontAwesomeIcons.ban,
-
-  /// Solid Ban smoking icon
-  ///
-  /// https://fontawesome.com/icons/ban-smoking?style=solid
-  'banSmoking': FontAwesomeIcons.banSmoking,
-
-  /// Solid Bandage icon
-  ///
-  /// https://fontawesome.com/icons/bandage?style=solid
-  'bandage': FontAwesomeIcons.bandage,
-
-  /// Brands Bandcamp icon
-  ///
-  /// https://fontawesome.com/icons/bandcamp?style=brands
-  'bandcamp': FontAwesomeIcons.bandcamp,
-
-  /// Solid barcode icon
-  ///
-  /// https://fontawesome.com/icons/barcode?style=solid
-  'barcode': FontAwesomeIcons.barcode,
-
-  /// Solid Bars icon
-  ///
-  /// https://fontawesome.com/icons/bars?style=solid
-  'bars': FontAwesomeIcons.bars,
-
-  /// Solid Bars progress icon
-  ///
-  /// https://fontawesome.com/icons/bars-progress?style=solid
-  'barsProgress': FontAwesomeIcons.barsProgress,
-
-  /// Solid Bars staggered icon
-  ///
-  /// https://fontawesome.com/icons/bars-staggered?style=solid
-  'barsStaggered': FontAwesomeIcons.barsStaggered,
-
-  /// Solid Baseball Ball icon
-  ///
-  /// https://fontawesome.com/icons/baseball?style=solid
-  'baseball': FontAwesomeIcons.baseball,
-
-  /// Solid Baseball bat ball icon
-  ///
-  /// https://fontawesome.com/icons/baseball-bat-ball?style=solid
-  'baseballBatBall': FontAwesomeIcons.baseballBatBall,
-
-  /// Solid Basket shopping icon
-  ///
-  /// https://fontawesome.com/icons/basket-shopping?style=solid
-  'basketShopping': FontAwesomeIcons.basketShopping,
-
-  /// Solid Basketball Ball icon
-  ///
-  /// https://fontawesome.com/icons/basketball?style=solid
-  'basketball': FontAwesomeIcons.basketball,
-
-  /// Solid Bath icon
-  ///
-  /// https://fontawesome.com/icons/bath?style=solid
-  'bath': FontAwesomeIcons.bath,
-
-  /// Solid Battery Empty icon
-  ///
-  /// https://fontawesome.com/icons/battery-empty?style=solid
-  'batteryEmpty': FontAwesomeIcons.batteryEmpty,
-
-  /// Solid Battery Full icon
-  ///
-  /// https://fontawesome.com/icons/battery-full?style=solid
-  'batteryFull': FontAwesomeIcons.batteryFull,
-
-  /// Solid Battery 1/2 Full icon
-  ///
-  /// https://fontawesome.com/icons/battery-half?style=solid
-  'batteryHalf': FontAwesomeIcons.batteryHalf,
-
-  /// Solid Battery 1/4 Full icon
-  ///
-  /// https://fontawesome.com/icons/battery-quarter?style=solid
-  'batteryQuarter': FontAwesomeIcons.batteryQuarter,
-
-  /// Solid Battery 3/4 Full icon
-  ///
-  /// https://fontawesome.com/icons/battery-three-quarters?style=solid
-  'batteryThreeQuarters': FontAwesomeIcons.batteryThreeQuarters,
-
-  /// Brands Battle.net icon
-  ///
-  /// https://fontawesome.com/icons/battle-net?style=brands
-  'battleNet': FontAwesomeIcons.battleNet,
-
-  /// Solid Bed icon
-  ///
-  /// https://fontawesome.com/icons/bed?style=solid
-  'bed': FontAwesomeIcons.bed,
-
-  /// Solid Bed pulse icon
-  ///
-  /// https://fontawesome.com/icons/bed-pulse?style=solid
-  'bedPulse': FontAwesomeIcons.bedPulse,
-
-  /// Solid Beer mug empty icon
-  ///
-  /// https://fontawesome.com/icons/beer-mug-empty?style=solid
-  'beerMugEmpty': FontAwesomeIcons.beerMugEmpty,
-
-  /// Brands Behance icon
-  ///
-  /// https://fontawesome.com/icons/behance?style=brands
-  'behance': FontAwesomeIcons.behance,
-
-  /// Solid bell icon
-  ///
-  /// https://fontawesome.com/icons/bell?style=solid
-  'solidBell': FontAwesomeIcons.solidBell,
-
-  /// Regular bell icon
-  ///
-  /// https://fontawesome.com/icons/bell?style=regular
-  'bell': FontAwesomeIcons.bell,
-
-  /// Solid Bell concierge icon
-  ///
-  /// https://fontawesome.com/icons/bell-concierge?style=solid
-  'bellConcierge': FontAwesomeIcons.bellConcierge,
-
-  /// Solid Bell Slash icon
-  ///
-  /// https://fontawesome.com/icons/bell-slash?style=solid
-  'solidBellSlash': FontAwesomeIcons.solidBellSlash,
-
-  /// Regular Bell Slash icon
-  ///
-  /// https://fontawesome.com/icons/bell-slash?style=regular
-  'bellSlash': FontAwesomeIcons.bellSlash,
-
-  /// Solid Bezier Curve icon
-  ///
-  /// https://fontawesome.com/icons/bezier-curve?style=solid
-  'bezierCurve': FontAwesomeIcons.bezierCurve,
-
-  /// Solid Bicycle icon
-  ///
-  /// https://fontawesome.com/icons/bicycle?style=solid
-  'bicycle': FontAwesomeIcons.bicycle,
-
-  /// Brands Bilibili icon
-  ///
-  /// https://fontawesome.com/icons/bilibili?style=brands
-  'bilibili': FontAwesomeIcons.bilibili,
-
-  /// Brands BIMobject icon
-  ///
-  /// https://fontawesome.com/icons/bimobject?style=brands
-  'bimobject': FontAwesomeIcons.bimobject,
-
-  /// Solid Binoculars icon
-  ///
-  /// https://fontawesome.com/icons/binoculars?style=solid
-  'binoculars': FontAwesomeIcons.binoculars,
-
-  /// Solid Biohazard icon
-  ///
-  /// https://fontawesome.com/icons/biohazard?style=solid
-  'biohazard': FontAwesomeIcons.biohazard,
-
-  /// Brands Bitbucket icon
-  ///
-  /// https://fontawesome.com/icons/bitbucket?style=brands
-  'bitbucket': FontAwesomeIcons.bitbucket,
-
-  /// Brands Bitcoin icon
-  ///
-  /// https://fontawesome.com/icons/bitcoin?style=brands
-  'bitcoin': FontAwesomeIcons.bitcoin,
-
-  /// Solid Bitcoin Sign icon
-  ///
-  /// https://fontawesome.com/icons/bitcoin-sign?style=solid
-  'bitcoinSign': FontAwesomeIcons.bitcoinSign,
-
-  /// Brands Bity icon
-  ///
-  /// https://fontawesome.com/icons/bity?style=brands
-  'bity': FontAwesomeIcons.bity,
-
-  /// Brands Font Awesome Black Tie icon
-  ///
-  /// https://fontawesome.com/icons/black-tie?style=brands
-  'blackTie': FontAwesomeIcons.blackTie,
-
-  /// Brands BlackBerry icon
-  ///
-  /// https://fontawesome.com/icons/blackberry?style=brands
-  'blackberry': FontAwesomeIcons.blackberry,
-
-  /// Solid Blender icon
-  ///
-  /// https://fontawesome.com/icons/blender?style=solid
-  'blender': FontAwesomeIcons.blender,
-
-  /// Solid Blender Phone icon
-  ///
-  /// https://fontawesome.com/icons/blender-phone?style=solid
-  'blenderPhone': FontAwesomeIcons.blenderPhone,
-
-  /// Solid Blog icon
-  ///
-  /// https://fontawesome.com/icons/blog?style=solid
-  'blog': FontAwesomeIcons.blog,
-
-  /// Brands Blogger icon
-  ///
-  /// https://fontawesome.com/icons/blogger?style=brands
-  'blogger': FontAwesomeIcons.blogger,
-
-  /// Brands Blogger B icon
-  ///
-  /// https://fontawesome.com/icons/blogger-b?style=brands
-  'bloggerB': FontAwesomeIcons.bloggerB,
-
-  /// Brands Bluetooth icon
-  ///
-  /// https://fontawesome.com/icons/bluetooth?style=brands
-  'bluetooth': FontAwesomeIcons.bluetooth,
-
-  /// Brands Bluetooth icon
-  ///
-  /// https://fontawesome.com/icons/bluetooth-b?style=brands
-  'bluetoothB': FontAwesomeIcons.bluetoothB,
-
-  /// Solid bold icon
-  ///
-  /// https://fontawesome.com/icons/bold?style=solid
-  'bold': FontAwesomeIcons.bold,
-
-  /// Solid Bolt icon
-  ///
-  /// https://fontawesome.com/icons/bolt?style=solid
-  'bolt': FontAwesomeIcons.bolt,
-
-  /// Solid Lightning Bolt icon
-  ///
-  /// https://fontawesome.com/icons/bolt-lightning?style=solid
-  'boltLightning': FontAwesomeIcons.boltLightning,
-
-  /// Solid Bomb icon
-  ///
-  /// https://fontawesome.com/icons/bomb?style=solid
-  'bomb': FontAwesomeIcons.bomb,
-
-  /// Solid Bone icon
-  ///
-  /// https://fontawesome.com/icons/bone?style=solid
-  'bone': FontAwesomeIcons.bone,
-
-  /// Solid Bong icon
-  ///
-  /// https://fontawesome.com/icons/bong?style=solid
-  'bong': FontAwesomeIcons.bong,
-
-  /// Solid book icon
-  ///
-  /// https://fontawesome.com/icons/book?style=solid
-  'book': FontAwesomeIcons.book,
-
-  /// Solid Book atlas icon
-  ///
-  /// https://fontawesome.com/icons/book-atlas?style=solid
-  'bookAtlas': FontAwesomeIcons.bookAtlas,
-
-  /// Solid Book bible icon
-  ///
-  /// https://fontawesome.com/icons/book-bible?style=solid
-  'bookBible': FontAwesomeIcons.bookBible,
-
-  /// Solid Book Bookmark icon
-  ///
-  /// https://fontawesome.com/icons/book-bookmark?style=solid
-  'bookBookmark': FontAwesomeIcons.bookBookmark,
-
-  /// Solid Book journal whills icon
-  ///
-  /// https://fontawesome.com/icons/book-journal-whills?style=solid
-  'bookJournalWhills': FontAwesomeIcons.bookJournalWhills,
-
-  /// Solid Medical Book icon
-  ///
-  /// https://fontawesome.com/icons/book-medical?style=solid
-  'bookMedical': FontAwesomeIcons.bookMedical,
-
-  /// Solid Book Open icon
-  ///
-  /// https://fontawesome.com/icons/book-open?style=solid
-  'bookOpen': FontAwesomeIcons.bookOpen,
-
-  /// Solid Book open reader icon
-  ///
-  /// https://fontawesome.com/icons/book-open-reader?style=solid
-  'bookOpenReader': FontAwesomeIcons.bookOpenReader,
-
-  /// Solid Book quran icon
-  ///
-  /// https://fontawesome.com/icons/book-quran?style=solid
-  'bookQuran': FontAwesomeIcons.bookQuran,
-
-  /// Solid Book skull icon
-  ///
-  /// https://fontawesome.com/icons/book-skull?style=solid
-  'bookSkull': FontAwesomeIcons.bookSkull,
-
-  /// Solid Book tanakh icon
-  ///
-  /// https://fontawesome.com/icons/book-tanakh?style=solid
-  'bookTanakh': FontAwesomeIcons.bookTanakh,
-
-  /// Solid bookmark icon
-  ///
-  /// https://fontawesome.com/icons/bookmark?style=solid
-  'solidBookmark': FontAwesomeIcons.solidBookmark,
-
-  /// Regular bookmark icon
-  ///
-  /// https://fontawesome.com/icons/bookmark?style=regular
-  'bookmark': FontAwesomeIcons.bookmark,
-
-  /// Brands Bootstrap icon
-  ///
-  /// https://fontawesome.com/icons/bootstrap?style=brands
-  'bootstrap': FontAwesomeIcons.bootstrap,
-
-  /// Solid Border All icon
-  ///
-  /// https://fontawesome.com/icons/border-all?style=solid
-  'borderAll': FontAwesomeIcons.borderAll,
-
-  /// Solid Border None icon
-  ///
-  /// https://fontawesome.com/icons/border-none?style=solid
-  'borderNone': FontAwesomeIcons.borderNone,
-
-  /// Solid Border top left icon
-  ///
-  /// https://fontawesome.com/icons/border-top-left?style=solid
-  'borderTopLeft': FontAwesomeIcons.borderTopLeft,
-
-  /// Solid Bore Hole icon
-  ///
-  /// https://fontawesome.com/icons/bore-hole?style=solid
-  'boreHole': FontAwesomeIcons.boreHole,
-
-  /// Brands Bots icon
-  ///
-  /// https://fontawesome.com/icons/bots?style=brands
-  'bots': FontAwesomeIcons.bots,
-
-  /// Solid Bottle Droplet icon
-  ///
-  /// https://fontawesome.com/icons/bottle-droplet?style=solid
-  'bottleDroplet': FontAwesomeIcons.bottleDroplet,
-
-  /// Solid Bottle Water icon
-  ///
-  /// https://fontawesome.com/icons/bottle-water?style=solid
-  'bottleWater': FontAwesomeIcons.bottleWater,
-
-  /// Solid Bowl Food icon
-  ///
-  /// https://fontawesome.com/icons/bowl-food?style=solid
-  'bowlFood': FontAwesomeIcons.bowlFood,
-
-  /// Solid Bowl Rice icon
-  ///
-  /// https://fontawesome.com/icons/bowl-rice?style=solid
-  'bowlRice': FontAwesomeIcons.bowlRice,
-
-  /// Solid Bowling Ball icon
-  ///
-  /// https://fontawesome.com/icons/bowling-ball?style=solid
-  'bowlingBall': FontAwesomeIcons.bowlingBall,
-
-  /// Solid Box icon
-  ///
-  /// https://fontawesome.com/icons/box?style=solid
-  'box': FontAwesomeIcons.box,
-
-  /// Solid Box archive icon
-  ///
-  /// https://fontawesome.com/icons/box-archive?style=solid
-  'boxArchive': FontAwesomeIcons.boxArchive,
-
-  /// Solid Box Open icon
-  ///
-  /// https://fontawesome.com/icons/box-open?style=solid
-  'boxOpen': FontAwesomeIcons.boxOpen,
-
-  /// Solid Tissue Box icon
-  ///
-  /// https://fontawesome.com/icons/box-tissue?style=solid
-  'boxTissue': FontAwesomeIcons.boxTissue,
-
-  /// Solid Boxes Packing icon
-  ///
-  /// https://fontawesome.com/icons/boxes-packing?style=solid
-  'boxesPacking': FontAwesomeIcons.boxesPacking,
-
-  /// Solid Boxes stacked icon
-  ///
-  /// https://fontawesome.com/icons/boxes-stacked?style=solid
-  'boxesStacked': FontAwesomeIcons.boxesStacked,
-
-  /// Solid Braille icon
-  ///
-  /// https://fontawesome.com/icons/braille?style=solid
-  'braille': FontAwesomeIcons.braille,
-
-  /// Solid Brain icon
-  ///
-  /// https://fontawesome.com/icons/brain?style=solid
-  'brain': FontAwesomeIcons.brain,
-
-  /// Solid Brazilian Real Sign icon
-  ///
-  /// https://fontawesome.com/icons/brazilian-real-sign?style=solid
-  'brazilianRealSign': FontAwesomeIcons.brazilianRealSign,
-
-  /// Solid Bread Slice icon
-  ///
-  /// https://fontawesome.com/icons/bread-slice?style=solid
-  'breadSlice': FontAwesomeIcons.breadSlice,
-
-  /// Solid Bridge icon
-  ///
-  /// https://fontawesome.com/icons/bridge?style=solid
-  'bridge': FontAwesomeIcons.bridge,
-
-  /// Solid Bridge Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/bridge-circle-check?style=solid
-  'bridgeCircleCheck': FontAwesomeIcons.bridgeCircleCheck,
-
-  /// Solid Bridge Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/bridge-circle-exclamation?style=solid
-  'bridgeCircleExclamation': FontAwesomeIcons.bridgeCircleExclamation,
-
-  /// Solid Bridge Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/bridge-circle-xmark?style=solid
-  'bridgeCircleXmark': FontAwesomeIcons.bridgeCircleXmark,
-
-  /// Solid Bridge Lock icon
-  ///
-  /// https://fontawesome.com/icons/bridge-lock?style=solid
-  'bridgeLock': FontAwesomeIcons.bridgeLock,
-
-  /// Solid Bridge Water icon
-  ///
-  /// https://fontawesome.com/icons/bridge-water?style=solid
-  'bridgeWater': FontAwesomeIcons.bridgeWater,
-
-  /// Solid Briefcase icon
-  ///
-  /// https://fontawesome.com/icons/briefcase?style=solid
-  'briefcase': FontAwesomeIcons.briefcase,
-
-  /// Solid Medical Briefcase icon
-  ///
-  /// https://fontawesome.com/icons/briefcase-medical?style=solid
-  'briefcaseMedical': FontAwesomeIcons.briefcaseMedical,
-
-  /// Solid Broom icon
-  ///
-  /// https://fontawesome.com/icons/broom?style=solid
-  'broom': FontAwesomeIcons.broom,
-
-  /// Solid Broom and Ball icon
-  ///
-  /// https://fontawesome.com/icons/broom-ball?style=solid
-  'broomBall': FontAwesomeIcons.broomBall,
-
-  /// Solid Brush icon
-  ///
-  /// https://fontawesome.com/icons/brush?style=solid
-  'brush': FontAwesomeIcons.brush,
-
-  /// Brands BTC icon
-  ///
-  /// https://fontawesome.com/icons/btc?style=brands
-  'btc': FontAwesomeIcons.btc,
-
-  /// Solid Bucket icon
-  ///
-  /// https://fontawesome.com/icons/bucket?style=solid
-  'bucket': FontAwesomeIcons.bucket,
-
-  /// Brands Buffer icon
-  ///
-  /// https://fontawesome.com/icons/buffer?style=brands
-  'buffer': FontAwesomeIcons.buffer,
-
-  /// Solid Bug icon
-  ///
-  /// https://fontawesome.com/icons/bug?style=solid
-  'bug': FontAwesomeIcons.bug,
-
-  /// Solid Bug Slash icon
-  ///
-  /// https://fontawesome.com/icons/bug-slash?style=solid
-  'bugSlash': FontAwesomeIcons.bugSlash,
-
-  /// Solid Bugs icon
-  ///
-  /// https://fontawesome.com/icons/bugs?style=solid
-  'bugs': FontAwesomeIcons.bugs,
-
-  /// Solid Building icon
-  ///
-  /// https://fontawesome.com/icons/building?style=solid
-  'solidBuilding': FontAwesomeIcons.solidBuilding,
-
-  /// Regular Building icon
-  ///
-  /// https://fontawesome.com/icons/building?style=regular
-  'building': FontAwesomeIcons.building,
-
-  /// Solid Building Circle-arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/building-circle-arrow-right?style=solid
-  'buildingCircleArrowRight': FontAwesomeIcons.buildingCircleArrowRight,
-
-  /// Solid Building Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/building-circle-check?style=solid
-  'buildingCircleCheck': FontAwesomeIcons.buildingCircleCheck,
-
-  /// Solid Building Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/building-circle-exclamation?style=solid
-  'buildingCircleExclamation': FontAwesomeIcons.buildingCircleExclamation,
-
-  /// Solid Building Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/building-circle-xmark?style=solid
-  'buildingCircleXmark': FontAwesomeIcons.buildingCircleXmark,
-
-  /// Solid Building with Columns icon
-  ///
-  /// https://fontawesome.com/icons/building-columns?style=solid
-  'buildingColumns': FontAwesomeIcons.buildingColumns,
-
-  /// Solid Building Flag icon
-  ///
-  /// https://fontawesome.com/icons/building-flag?style=solid
-  'buildingFlag': FontAwesomeIcons.buildingFlag,
-
-  /// Solid Building Lock icon
-  ///
-  /// https://fontawesome.com/icons/building-lock?style=solid
-  'buildingLock': FontAwesomeIcons.buildingLock,
-
-  /// Solid Building Ngo icon
-  ///
-  /// https://fontawesome.com/icons/building-ngo?style=solid
-  'buildingNgo': FontAwesomeIcons.buildingNgo,
-
-  /// Solid Building Shield icon
-  ///
-  /// https://fontawesome.com/icons/building-shield?style=solid
-  'buildingShield': FontAwesomeIcons.buildingShield,
-
-  /// Solid Building Un icon
-  ///
-  /// https://fontawesome.com/icons/building-un?style=solid
-  'buildingUn': FontAwesomeIcons.buildingUn,
-
-  /// Solid Building User icon
-  ///
-  /// https://fontawesome.com/icons/building-user?style=solid
-  'buildingUser': FontAwesomeIcons.buildingUser,
-
-  /// Solid Building Wheat icon
-  ///
-  /// https://fontawesome.com/icons/building-wheat?style=solid
-  'buildingWheat': FontAwesomeIcons.buildingWheat,
-
-  /// Solid bullhorn icon
-  ///
-  /// https://fontawesome.com/icons/bullhorn?style=solid
-  'bullhorn': FontAwesomeIcons.bullhorn,
-
-  /// Solid Bullseye icon
-  ///
-  /// https://fontawesome.com/icons/bullseye?style=solid
-  'bullseye': FontAwesomeIcons.bullseye,
-
-  /// Solid Burger icon
-  ///
-  /// https://fontawesome.com/icons/burger?style=solid
-  'burger': FontAwesomeIcons.burger,
-
-  /// Brands Büromöbel-Experte GmbH & Co. KG. icon
-  ///
-  /// https://fontawesome.com/icons/buromobelexperte?style=brands
-  'buromobelexperte': FontAwesomeIcons.buromobelexperte,
-
-  /// Solid Burst icon
-  ///
-  /// https://fontawesome.com/icons/burst?style=solid
-  'burst': FontAwesomeIcons.burst,
-
-  /// Solid Bus icon
-  ///
-  /// https://fontawesome.com/icons/bus?style=solid
-  'bus': FontAwesomeIcons.bus,
-
-  /// Solid Bus simple icon
-  ///
-  /// https://fontawesome.com/icons/bus-simple?style=solid
-  'busSimple': FontAwesomeIcons.busSimple,
-
-  /// Solid Briefcase clock icon
-  ///
-  /// https://fontawesome.com/icons/business-time?style=solid
-  'businessTime': FontAwesomeIcons.businessTime,
-
-  /// Brands Buy n Large icon
-  ///
-  /// https://fontawesome.com/icons/buy-n-large?style=brands
-  'buyNLarge': FontAwesomeIcons.buyNLarge,
-
-  /// Brands BuySellAds icon
-  ///
-  /// https://fontawesome.com/icons/buysellads?style=brands
-  'buysellads': FontAwesomeIcons.buysellads,
-
-  /// Solid C icon
-  ///
-  /// https://fontawesome.com/icons/c?style=solid
-  'c': FontAwesomeIcons.c,
-
-  /// Solid Cable Car icon
-  ///
-  /// https://fontawesome.com/icons/cable-car?style=solid
-  'cableCar': FontAwesomeIcons.cableCar,
-
-  /// Solid Cake candles icon
-  ///
-  /// https://fontawesome.com/icons/cake-candles?style=solid
-  'cakeCandles': FontAwesomeIcons.cakeCandles,
-
-  /// Solid Calculator icon
-  ///
-  /// https://fontawesome.com/icons/calculator?style=solid
-  'calculator': FontAwesomeIcons.calculator,
-
-  /// Solid Calendar icon
-  ///
-  /// https://fontawesome.com/icons/calendar?style=solid
-  'solidCalendar': FontAwesomeIcons.solidCalendar,
-
-  /// Regular Calendar icon
-  ///
-  /// https://fontawesome.com/icons/calendar?style=regular
-  'calendar': FontAwesomeIcons.calendar,
-
-  /// Solid Calendar Check icon
-  ///
-  /// https://fontawesome.com/icons/calendar-check?style=solid
-  'solidCalendarCheck': FontAwesomeIcons.solidCalendarCheck,
-
-  /// Regular Calendar Check icon
-  ///
-  /// https://fontawesome.com/icons/calendar-check?style=regular
-  'calendarCheck': FontAwesomeIcons.calendarCheck,
-
-  /// Solid Calendar with Day Focus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-day?style=solid
-  'calendarDay': FontAwesomeIcons.calendarDay,
-
-  /// Solid Calendar Days icon
-  ///
-  /// https://fontawesome.com/icons/calendar-days?style=solid
-  'solidCalendarDays': FontAwesomeIcons.solidCalendarDays,
-
-  /// Regular Calendar Days icon
-  ///
-  /// https://fontawesome.com/icons/calendar-days?style=regular
-  'calendarDays': FontAwesomeIcons.calendarDays,
-
-  /// Solid Calendar Minus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-minus?style=solid
-  'solidCalendarMinus': FontAwesomeIcons.solidCalendarMinus,
-
-  /// Regular Calendar Minus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-minus?style=regular
-  'calendarMinus': FontAwesomeIcons.calendarMinus,
-
-  /// Solid Calendar Plus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-plus?style=solid
-  'solidCalendarPlus': FontAwesomeIcons.solidCalendarPlus,
-
-  /// Regular Calendar Plus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-plus?style=regular
-  'calendarPlus': FontAwesomeIcons.calendarPlus,
-
-  /// Solid Calendar with Week Focus icon
-  ///
-  /// https://fontawesome.com/icons/calendar-week?style=solid
-  'calendarWeek': FontAwesomeIcons.calendarWeek,
-
-  /// Solid Calendar X Mark icon
-  ///
-  /// https://fontawesome.com/icons/calendar-xmark?style=solid
-  'solidCalendarXmark': FontAwesomeIcons.solidCalendarXmark,
-
-  /// Regular Calendar X Mark icon
-  ///
-  /// https://fontawesome.com/icons/calendar-xmark?style=regular
-  'calendarXmark': FontAwesomeIcons.calendarXmark,
-
-  /// Solid camera icon
-  ///
-  /// https://fontawesome.com/icons/camera?style=solid
-  'camera': FontAwesomeIcons.camera,
-
-  /// Solid Retro Camera icon
-  ///
-  /// https://fontawesome.com/icons/camera-retro?style=solid
-  'cameraRetro': FontAwesomeIcons.cameraRetro,
-
-  /// Solid Camera Rotate icon
-  ///
-  /// https://fontawesome.com/icons/camera-rotate?style=solid
-  'cameraRotate': FontAwesomeIcons.cameraRotate,
-
-  /// Solid Campground icon
-  ///
-  /// https://fontawesome.com/icons/campground?style=solid
-  'campground': FontAwesomeIcons.campground,
-
-  /// Brands Canadian Maple Leaf icon
-  ///
-  /// https://fontawesome.com/icons/canadian-maple-leaf?style=brands
-  'canadianMapleLeaf': FontAwesomeIcons.canadianMapleLeaf,
-
-  /// Solid Candy Cane icon
-  ///
-  /// https://fontawesome.com/icons/candy-cane?style=solid
-  'candyCane': FontAwesomeIcons.candyCane,
-
-  /// Solid Cannabis icon
-  ///
-  /// https://fontawesome.com/icons/cannabis?style=solid
-  'cannabis': FontAwesomeIcons.cannabis,
-
-  /// Solid Capsules icon
-  ///
-  /// https://fontawesome.com/icons/capsules?style=solid
-  'capsules': FontAwesomeIcons.capsules,
-
-  /// Solid Car icon
-  ///
-  /// https://fontawesome.com/icons/car?style=solid
-  'car': FontAwesomeIcons.car,
-
-  /// Solid Car Battery icon
-  ///
-  /// https://fontawesome.com/icons/car-battery?style=solid
-  'carBattery': FontAwesomeIcons.carBattery,
-
-  /// Solid Car Crash icon
-  ///
-  /// https://fontawesome.com/icons/car-burst?style=solid
-  'carBurst': FontAwesomeIcons.carBurst,
-
-  /// Solid Car On icon
-  ///
-  /// https://fontawesome.com/icons/car-on?style=solid
-  'carOn': FontAwesomeIcons.carOn,
-
-  /// Solid Car rear icon
-  ///
-  /// https://fontawesome.com/icons/car-rear?style=solid
-  'carRear': FontAwesomeIcons.carRear,
-
-  /// Solid Car Side icon
-  ///
-  /// https://fontawesome.com/icons/car-side?style=solid
-  'carSide': FontAwesomeIcons.carSide,
-
-  /// Solid Car Tunnel icon
-  ///
-  /// https://fontawesome.com/icons/car-tunnel?style=solid
-  'carTunnel': FontAwesomeIcons.carTunnel,
-
-  /// Solid Caravan icon
-  ///
-  /// https://fontawesome.com/icons/caravan?style=solid
-  'caravan': FontAwesomeIcons.caravan,
-
-  /// Solid Caret Down icon
-  ///
-  /// https://fontawesome.com/icons/caret-down?style=solid
-  'caretDown': FontAwesomeIcons.caretDown,
-
-  /// Solid Caret Left icon
-  ///
-  /// https://fontawesome.com/icons/caret-left?style=solid
-  'caretLeft': FontAwesomeIcons.caretLeft,
-
-  /// Solid Caret Right icon
-  ///
-  /// https://fontawesome.com/icons/caret-right?style=solid
-  'caretRight': FontAwesomeIcons.caretRight,
-
-  /// Solid Caret Up icon
-  ///
-  /// https://fontawesome.com/icons/caret-up?style=solid
-  'caretUp': FontAwesomeIcons.caretUp,
-
-  /// Solid Carrot icon
-  ///
-  /// https://fontawesome.com/icons/carrot?style=solid
-  'carrot': FontAwesomeIcons.carrot,
-
-  /// Solid Shopping Cart Arrow Down icon
-  ///
-  /// https://fontawesome.com/icons/cart-arrow-down?style=solid
-  'cartArrowDown': FontAwesomeIcons.cartArrowDown,
-
-  /// Solid Cart flatbed icon
-  ///
-  /// https://fontawesome.com/icons/cart-flatbed?style=solid
-  'cartFlatbed': FontAwesomeIcons.cartFlatbed,
-
-  /// Solid Cart flatbed suitcase icon
-  ///
-  /// https://fontawesome.com/icons/cart-flatbed-suitcase?style=solid
-  'cartFlatbedSuitcase': FontAwesomeIcons.cartFlatbedSuitcase,
-
-  /// Solid Add to Shopping Cart icon
-  ///
-  /// https://fontawesome.com/icons/cart-plus?style=solid
-  'cartPlus': FontAwesomeIcons.cartPlus,
-
-  /// Solid Cart shopping icon
-  ///
-  /// https://fontawesome.com/icons/cart-shopping?style=solid
-  'cartShopping': FontAwesomeIcons.cartShopping,
-
-  /// Solid Cash Register icon
-  ///
-  /// https://fontawesome.com/icons/cash-register?style=solid
-  'cashRegister': FontAwesomeIcons.cashRegister,
-
-  /// Solid Cat icon
-  ///
-  /// https://fontawesome.com/icons/cat?style=solid
-  'cat': FontAwesomeIcons.cat,
-
-  /// Brands Amazon Pay Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-amazon-pay?style=brands
-  'ccAmazonPay': FontAwesomeIcons.ccAmazonPay,
-
-  /// Brands American Express Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-amex?style=brands
-  'ccAmex': FontAwesomeIcons.ccAmex,
-
-  /// Brands Apple Pay Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-apple-pay?style=brands
-  'ccApplePay': FontAwesomeIcons.ccApplePay,
-
-  /// Brands Diner's Club Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-diners-club?style=brands
-  'ccDinersClub': FontAwesomeIcons.ccDinersClub,
-
-  /// Brands Discover Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-discover?style=brands
-  'ccDiscover': FontAwesomeIcons.ccDiscover,
-
-  /// Brands JCB Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-jcb?style=brands
-  'ccJcb': FontAwesomeIcons.ccJcb,
-
-  /// Brands MasterCard Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-mastercard?style=brands
-  'ccMastercard': FontAwesomeIcons.ccMastercard,
-
-  /// Brands Paypal Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-paypal?style=brands
-  'ccPaypal': FontAwesomeIcons.ccPaypal,
-
-  /// Brands Stripe Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-stripe?style=brands
-  'ccStripe': FontAwesomeIcons.ccStripe,
-
-  /// Brands Visa Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/cc-visa?style=brands
-  'ccVisa': FontAwesomeIcons.ccVisa,
-
-  /// Solid Cedi Sign icon
-  ///
-  /// https://fontawesome.com/icons/cedi-sign?style=solid
-  'cediSign': FontAwesomeIcons.cediSign,
-
-  /// Solid Cent Sign icon
-  ///
-  /// https://fontawesome.com/icons/cent-sign?style=solid
-  'centSign': FontAwesomeIcons.centSign,
-
-  /// Brands Centercode icon
-  ///
-  /// https://fontawesome.com/icons/centercode?style=brands
-  'centercode': FontAwesomeIcons.centercode,
-
-  /// Brands Centos icon
-  ///
-  /// https://fontawesome.com/icons/centos?style=brands
-  'centos': FontAwesomeIcons.centos,
-
-  /// Solid certificate icon
-  ///
-  /// https://fontawesome.com/icons/certificate?style=solid
-  'certificate': FontAwesomeIcons.certificate,
-
-  /// Solid Chair icon
-  ///
-  /// https://fontawesome.com/icons/chair?style=solid
-  'chair': FontAwesomeIcons.chair,
-
-  /// Solid Chalkboard icon
-  ///
-  /// https://fontawesome.com/icons/chalkboard?style=solid
-  'chalkboard': FontAwesomeIcons.chalkboard,
-
-  /// Solid Chalkboard user icon
-  ///
-  /// https://fontawesome.com/icons/chalkboard-user?style=solid
-  'chalkboardUser': FontAwesomeIcons.chalkboardUser,
-
-  /// Solid Champagne glasses icon
-  ///
-  /// https://fontawesome.com/icons/champagne-glasses?style=solid
-  'champagneGlasses': FontAwesomeIcons.champagneGlasses,
-
-  /// Solid Charging Station icon
-  ///
-  /// https://fontawesome.com/icons/charging-station?style=solid
-  'chargingStation': FontAwesomeIcons.chargingStation,
-
-  /// Solid Area Chart icon
-  ///
-  /// https://fontawesome.com/icons/chart-area?style=solid
-  'chartArea': FontAwesomeIcons.chartArea,
-
-  /// Solid Bar Chart icon
-  ///
-  /// https://fontawesome.com/icons/chart-bar?style=solid
-  'solidChartBar': FontAwesomeIcons.solidChartBar,
-
-  /// Regular Bar Chart icon
-  ///
-  /// https://fontawesome.com/icons/chart-bar?style=regular
-  'chartBar': FontAwesomeIcons.chartBar,
-
-  /// Solid Chart Column icon
-  ///
-  /// https://fontawesome.com/icons/chart-column?style=solid
-  'chartColumn': FontAwesomeIcons.chartColumn,
-
-  /// Solid Chart Gantt icon
-  ///
-  /// https://fontawesome.com/icons/chart-gantt?style=solid
-  'chartGantt': FontAwesomeIcons.chartGantt,
-
-  /// Solid Line Chart icon
-  ///
-  /// https://fontawesome.com/icons/chart-line?style=solid
-  'chartLine': FontAwesomeIcons.chartLine,
-
-  /// Solid Pie Chart icon
-  ///
-  /// https://fontawesome.com/icons/chart-pie?style=solid
-  'chartPie': FontAwesomeIcons.chartPie,
-
-  /// Solid Chart Simple icon
-  ///
-  /// https://fontawesome.com/icons/chart-simple?style=solid
-  'chartSimple': FontAwesomeIcons.chartSimple,
-
-  /// Solid Check icon
-  ///
-  /// https://fontawesome.com/icons/check?style=solid
-  'check': FontAwesomeIcons.check,
-
-  /// Solid Double Check icon
-  ///
-  /// https://fontawesome.com/icons/check-double?style=solid
-  'checkDouble': FontAwesomeIcons.checkDouble,
-
-  /// Solid Check to Slot icon
-  ///
-  /// https://fontawesome.com/icons/check-to-slot?style=solid
-  'checkToSlot': FontAwesomeIcons.checkToSlot,
-
-  /// Solid Cheese icon
-  ///
-  /// https://fontawesome.com/icons/cheese?style=solid
-  'cheese': FontAwesomeIcons.cheese,
-
-  /// Solid Chess icon
-  ///
-  /// https://fontawesome.com/icons/chess?style=solid
-  'chess': FontAwesomeIcons.chess,
-
-  /// Solid Chess Bishop icon
-  ///
-  /// https://fontawesome.com/icons/chess-bishop?style=solid
-  'solidChessBishop': FontAwesomeIcons.solidChessBishop,
-
-  /// Regular Chess Bishop icon
-  ///
-  /// https://fontawesome.com/icons/chess-bishop?style=regular
-  'chessBishop': FontAwesomeIcons.chessBishop,
-
-  /// Solid Chess Board icon
-  ///
-  /// https://fontawesome.com/icons/chess-board?style=solid
-  'chessBoard': FontAwesomeIcons.chessBoard,
-
-  /// Solid Chess King icon
-  ///
-  /// https://fontawesome.com/icons/chess-king?style=solid
-  'solidChessKing': FontAwesomeIcons.solidChessKing,
-
-  /// Regular Chess King icon
-  ///
-  /// https://fontawesome.com/icons/chess-king?style=regular
-  'chessKing': FontAwesomeIcons.chessKing,
-
-  /// Solid Chess Knight icon
-  ///
-  /// https://fontawesome.com/icons/chess-knight?style=solid
-  'solidChessKnight': FontAwesomeIcons.solidChessKnight,
-
-  /// Regular Chess Knight icon
-  ///
-  /// https://fontawesome.com/icons/chess-knight?style=regular
-  'chessKnight': FontAwesomeIcons.chessKnight,
-
-  /// Solid Chess Pawn icon
-  ///
-  /// https://fontawesome.com/icons/chess-pawn?style=solid
-  'solidChessPawn': FontAwesomeIcons.solidChessPawn,
-
-  /// Regular Chess Pawn icon
-  ///
-  /// https://fontawesome.com/icons/chess-pawn?style=regular
-  'chessPawn': FontAwesomeIcons.chessPawn,
-
-  /// Solid Chess Queen icon
-  ///
-  /// https://fontawesome.com/icons/chess-queen?style=solid
-  'solidChessQueen': FontAwesomeIcons.solidChessQueen,
-
-  /// Regular Chess Queen icon
-  ///
-  /// https://fontawesome.com/icons/chess-queen?style=regular
-  'chessQueen': FontAwesomeIcons.chessQueen,
-
-  /// Solid Chess Rook icon
-  ///
-  /// https://fontawesome.com/icons/chess-rook?style=solid
-  'solidChessRook': FontAwesomeIcons.solidChessRook,
-
-  /// Regular Chess Rook icon
-  ///
-  /// https://fontawesome.com/icons/chess-rook?style=regular
-  'chessRook': FontAwesomeIcons.chessRook,
-
-  /// Solid chevron-down icon
-  ///
-  /// https://fontawesome.com/icons/chevron-down?style=solid
-  'chevronDown': FontAwesomeIcons.chevronDown,
-
-  /// Solid chevron-left icon
-  ///
-  /// https://fontawesome.com/icons/chevron-left?style=solid
-  'chevronLeft': FontAwesomeIcons.chevronLeft,
-
-  /// Solid chevron-right icon
-  ///
-  /// https://fontawesome.com/icons/chevron-right?style=solid
-  'chevronRight': FontAwesomeIcons.chevronRight,
-
-  /// Solid chevron-up icon
-  ///
-  /// https://fontawesome.com/icons/chevron-up?style=solid
-  'chevronUp': FontAwesomeIcons.chevronUp,
-
-  /// Solid Child icon
-  ///
-  /// https://fontawesome.com/icons/child?style=solid
-  'child': FontAwesomeIcons.child,
-
-  /// Solid Child Dress icon
-  ///
-  /// https://fontawesome.com/icons/child-dress?style=solid
-  'childDress': FontAwesomeIcons.childDress,
-
-  /// Solid Child Reaching icon
-  ///
-  /// https://fontawesome.com/icons/child-reaching?style=solid
-  'childReaching': FontAwesomeIcons.childReaching,
-
-  /// Solid Children icon
-  ///
-  /// https://fontawesome.com/icons/children?style=solid
-  'children': FontAwesomeIcons.children,
-
-  /// Brands Chrome icon
-  ///
-  /// https://fontawesome.com/icons/chrome?style=brands
-  'chrome': FontAwesomeIcons.chrome,
-
-  /// Brands Chromecast icon
-  ///
-  /// https://fontawesome.com/icons/chromecast?style=brands
-  'chromecast': FontAwesomeIcons.chromecast,
-
-  /// Solid Church icon
-  ///
-  /// https://fontawesome.com/icons/church?style=solid
-  'church': FontAwesomeIcons.church,
-
-  /// Solid Circle icon
-  ///
-  /// https://fontawesome.com/icons/circle?style=solid
-  'solidCircle': FontAwesomeIcons.solidCircle,
-
-  /// Regular Circle icon
-  ///
-  /// https://fontawesome.com/icons/circle?style=regular
-  'circle': FontAwesomeIcons.circle,
-
-  /// Solid Circle arrow down icon
-  ///
-  /// https://fontawesome.com/icons/circle-arrow-down?style=solid
-  'circleArrowDown': FontAwesomeIcons.circleArrowDown,
-
-  /// Solid Circle arrow left icon
-  ///
-  /// https://fontawesome.com/icons/circle-arrow-left?style=solid
-  'circleArrowLeft': FontAwesomeIcons.circleArrowLeft,
-
-  /// Solid Circle arrow right icon
-  ///
-  /// https://fontawesome.com/icons/circle-arrow-right?style=solid
-  'circleArrowRight': FontAwesomeIcons.circleArrowRight,
-
-  /// Solid Circle arrow up icon
-  ///
-  /// https://fontawesome.com/icons/circle-arrow-up?style=solid
-  'circleArrowUp': FontAwesomeIcons.circleArrowUp,
-
-  /// Solid Circle check icon
-  ///
-  /// https://fontawesome.com/icons/circle-check?style=solid
-  'solidCircleCheck': FontAwesomeIcons.solidCircleCheck,
-
-  /// Regular Circle check icon
-  ///
-  /// https://fontawesome.com/icons/circle-check?style=regular
-  'circleCheck': FontAwesomeIcons.circleCheck,
-
-  /// Solid Circle chevron down icon
-  ///
-  /// https://fontawesome.com/icons/circle-chevron-down?style=solid
-  'circleChevronDown': FontAwesomeIcons.circleChevronDown,
-
-  /// Solid Circle chevron left icon
-  ///
-  /// https://fontawesome.com/icons/circle-chevron-left?style=solid
-  'circleChevronLeft': FontAwesomeIcons.circleChevronLeft,
-
-  /// Solid Circle chevron right icon
-  ///
-  /// https://fontawesome.com/icons/circle-chevron-right?style=solid
-  'circleChevronRight': FontAwesomeIcons.circleChevronRight,
-
-  /// Solid Circle chevron up icon
-  ///
-  /// https://fontawesome.com/icons/circle-chevron-up?style=solid
-  'circleChevronUp': FontAwesomeIcons.circleChevronUp,
-
-  /// Solid Circle dollar to slot icon
-  ///
-  /// https://fontawesome.com/icons/circle-dollar-to-slot?style=solid
-  'circleDollarToSlot': FontAwesomeIcons.circleDollarToSlot,
-
-  /// Solid Circle dot icon
-  ///
-  /// https://fontawesome.com/icons/circle-dot?style=solid
-  'solidCircleDot': FontAwesomeIcons.solidCircleDot,
-
-  /// Regular Circle dot icon
-  ///
-  /// https://fontawesome.com/icons/circle-dot?style=regular
-  'circleDot': FontAwesomeIcons.circleDot,
-
-  /// Solid Circle down icon
-  ///
-  /// https://fontawesome.com/icons/circle-down?style=solid
-  'solidCircleDown': FontAwesomeIcons.solidCircleDown,
-
-  /// Regular Circle down icon
-  ///
-  /// https://fontawesome.com/icons/circle-down?style=regular
-  'circleDown': FontAwesomeIcons.circleDown,
-
-  /// Solid Circle exclamation icon
-  ///
-  /// https://fontawesome.com/icons/circle-exclamation?style=solid
-  'circleExclamation': FontAwesomeIcons.circleExclamation,
-
-  /// Solid Circle h icon
-  ///
-  /// https://fontawesome.com/icons/circle-h?style=solid
-  'circleH': FontAwesomeIcons.circleH,
-
-  /// Solid Circle half stroke icon
-  ///
-  /// https://fontawesome.com/icons/circle-half-stroke?style=solid
-  'circleHalfStroke': FontAwesomeIcons.circleHalfStroke,
-
-  /// Solid Circle info icon
-  ///
-  /// https://fontawesome.com/icons/circle-info?style=solid
-  'circleInfo': FontAwesomeIcons.circleInfo,
-
-  /// Solid Circle left icon
-  ///
-  /// https://fontawesome.com/icons/circle-left?style=solid
-  'solidCircleLeft': FontAwesomeIcons.solidCircleLeft,
-
-  /// Regular Circle left icon
-  ///
-  /// https://fontawesome.com/icons/circle-left?style=regular
-  'circleLeft': FontAwesomeIcons.circleLeft,
-
-  /// Solid Circle minus icon
-  ///
-  /// https://fontawesome.com/icons/circle-minus?style=solid
-  'circleMinus': FontAwesomeIcons.circleMinus,
-
-  /// Solid Circle Nodes icon
-  ///
-  /// https://fontawesome.com/icons/circle-nodes?style=solid
-  'circleNodes': FontAwesomeIcons.circleNodes,
-
-  /// Solid Circle Notched icon
-  ///
-  /// https://fontawesome.com/icons/circle-notch?style=solid
-  'circleNotch': FontAwesomeIcons.circleNotch,
-
-  /// Solid Circle pause icon
-  ///
-  /// https://fontawesome.com/icons/circle-pause?style=solid
-  'solidCirclePause': FontAwesomeIcons.solidCirclePause,
-
-  /// Regular Circle pause icon
-  ///
-  /// https://fontawesome.com/icons/circle-pause?style=regular
-  'circlePause': FontAwesomeIcons.circlePause,
-
-  /// Solid Circle play icon
-  ///
-  /// https://fontawesome.com/icons/circle-play?style=solid
-  'solidCirclePlay': FontAwesomeIcons.solidCirclePlay,
-
-  /// Regular Circle play icon
-  ///
-  /// https://fontawesome.com/icons/circle-play?style=regular
-  'circlePlay': FontAwesomeIcons.circlePlay,
-
-  /// Solid Circle plus icon
-  ///
-  /// https://fontawesome.com/icons/circle-plus?style=solid
-  'circlePlus': FontAwesomeIcons.circlePlus,
-
-  /// Solid Circle question icon
-  ///
-  /// https://fontawesome.com/icons/circle-question?style=solid
-  'solidCircleQuestion': FontAwesomeIcons.solidCircleQuestion,
-
-  /// Regular Circle question icon
-  ///
-  /// https://fontawesome.com/icons/circle-question?style=regular
-  'circleQuestion': FontAwesomeIcons.circleQuestion,
-
-  /// Solid Circle radiation icon
-  ///
-  /// https://fontawesome.com/icons/circle-radiation?style=solid
-  'circleRadiation': FontAwesomeIcons.circleRadiation,
-
-  /// Solid Circle right icon
-  ///
-  /// https://fontawesome.com/icons/circle-right?style=solid
-  'solidCircleRight': FontAwesomeIcons.solidCircleRight,
-
-  /// Regular Circle right icon
-  ///
-  /// https://fontawesome.com/icons/circle-right?style=regular
-  'circleRight': FontAwesomeIcons.circleRight,
-
-  /// Solid Circle stop icon
-  ///
-  /// https://fontawesome.com/icons/circle-stop?style=solid
-  'solidCircleStop': FontAwesomeIcons.solidCircleStop,
-
-  /// Regular Circle stop icon
-  ///
-  /// https://fontawesome.com/icons/circle-stop?style=regular
-  'circleStop': FontAwesomeIcons.circleStop,
-
-  /// Solid Circle up icon
-  ///
-  /// https://fontawesome.com/icons/circle-up?style=solid
-  'solidCircleUp': FontAwesomeIcons.solidCircleUp,
-
-  /// Regular Circle up icon
-  ///
-  /// https://fontawesome.com/icons/circle-up?style=regular
-  'circleUp': FontAwesomeIcons.circleUp,
-
-  /// Solid Circle user icon
-  ///
-  /// https://fontawesome.com/icons/circle-user?style=solid
-  'solidCircleUser': FontAwesomeIcons.solidCircleUser,
-
-  /// Regular Circle user icon
-  ///
-  /// https://fontawesome.com/icons/circle-user?style=regular
-  'circleUser': FontAwesomeIcons.circleUser,
-
-  /// Solid Circle X Mark icon
-  ///
-  /// https://fontawesome.com/icons/circle-xmark?style=solid
-  'solidCircleXmark': FontAwesomeIcons.solidCircleXmark,
-
-  /// Regular Circle X Mark icon
-  ///
-  /// https://fontawesome.com/icons/circle-xmark?style=regular
-  'circleXmark': FontAwesomeIcons.circleXmark,
-
-  /// Solid City icon
-  ///
-  /// https://fontawesome.com/icons/city?style=solid
-  'city': FontAwesomeIcons.city,
-
-  /// Solid Clapperboard icon
-  ///
-  /// https://fontawesome.com/icons/clapperboard?style=solid
-  'clapperboard': FontAwesomeIcons.clapperboard,
-
-  /// Solid Clipboard icon
-  ///
-  /// https://fontawesome.com/icons/clipboard?style=solid
-  'solidClipboard': FontAwesomeIcons.solidClipboard,
-
-  /// Regular Clipboard icon
-  ///
-  /// https://fontawesome.com/icons/clipboard?style=regular
-  'clipboard': FontAwesomeIcons.clipboard,
-
-  /// Solid Clipboard with Check icon
-  ///
-  /// https://fontawesome.com/icons/clipboard-check?style=solid
-  'clipboardCheck': FontAwesomeIcons.clipboardCheck,
-
-  /// Solid Clipboard List icon
-  ///
-  /// https://fontawesome.com/icons/clipboard-list?style=solid
-  'clipboardList': FontAwesomeIcons.clipboardList,
-
-  /// Solid Clipboard Question icon
-  ///
-  /// https://fontawesome.com/icons/clipboard-question?style=solid
-  'clipboardQuestion': FontAwesomeIcons.clipboardQuestion,
-
-  /// Solid Clipboard with User icon
-  ///
-  /// https://fontawesome.com/icons/clipboard-user?style=solid
-  'clipboardUser': FontAwesomeIcons.clipboardUser,
-
-  /// Solid Clock icon
-  ///
-  /// https://fontawesome.com/icons/clock?style=solid
-  'solidClock': FontAwesomeIcons.solidClock,
-
-  /// Regular Clock icon
-  ///
-  /// https://fontawesome.com/icons/clock?style=regular
-  'clock': FontAwesomeIcons.clock,
-
-  /// Solid Clock Rotate Left icon
-  ///
-  /// https://fontawesome.com/icons/clock-rotate-left?style=solid
-  'clockRotateLeft': FontAwesomeIcons.clockRotateLeft,
-
-  /// Solid Clone icon
-  ///
-  /// https://fontawesome.com/icons/clone?style=solid
-  'solidClone': FontAwesomeIcons.solidClone,
-
-  /// Regular Clone icon
-  ///
-  /// https://fontawesome.com/icons/clone?style=regular
-  'clone': FontAwesomeIcons.clone,
-
-  /// Solid Closed Captioning icon
-  ///
-  /// https://fontawesome.com/icons/closed-captioning?style=solid
-  'solidClosedCaptioning': FontAwesomeIcons.solidClosedCaptioning,
-
-  /// Regular Closed Captioning icon
-  ///
-  /// https://fontawesome.com/icons/closed-captioning?style=regular
-  'closedCaptioning': FontAwesomeIcons.closedCaptioning,
-
-  /// Solid Cloud icon
-  ///
-  /// https://fontawesome.com/icons/cloud?style=solid
-  'cloud': FontAwesomeIcons.cloud,
-
-  /// Solid Cloud arrow down icon
-  ///
-  /// https://fontawesome.com/icons/cloud-arrow-down?style=solid
-  'cloudArrowDown': FontAwesomeIcons.cloudArrowDown,
-
-  /// Solid Cloud arrow up icon
-  ///
-  /// https://fontawesome.com/icons/cloud-arrow-up?style=solid
-  'cloudArrowUp': FontAwesomeIcons.cloudArrowUp,
-
-  /// Solid Cloud bolt icon
-  ///
-  /// https://fontawesome.com/icons/cloud-bolt?style=solid
-  'cloudBolt': FontAwesomeIcons.cloudBolt,
-
-  /// Solid Cloud with (a chance of) Meatball icon
-  ///
-  /// https://fontawesome.com/icons/cloud-meatball?style=solid
-  'cloudMeatball': FontAwesomeIcons.cloudMeatball,
-
-  /// Solid Cloud with Moon icon
-  ///
-  /// https://fontawesome.com/icons/cloud-moon?style=solid
-  'cloudMoon': FontAwesomeIcons.cloudMoon,
-
-  /// Solid Cloud with Moon and Rain icon
-  ///
-  /// https://fontawesome.com/icons/cloud-moon-rain?style=solid
-  'cloudMoonRain': FontAwesomeIcons.cloudMoonRain,
-
-  /// Solid Cloud with Rain icon
-  ///
-  /// https://fontawesome.com/icons/cloud-rain?style=solid
-  'cloudRain': FontAwesomeIcons.cloudRain,
-
-  /// Solid Cloud with Heavy Showers icon
-  ///
-  /// https://fontawesome.com/icons/cloud-showers-heavy?style=solid
-  'cloudShowersHeavy': FontAwesomeIcons.cloudShowersHeavy,
-
-  /// Solid Cloud Showers-water icon
-  ///
-  /// https://fontawesome.com/icons/cloud-showers-water?style=solid
-  'cloudShowersWater': FontAwesomeIcons.cloudShowersWater,
-
-  /// Solid Cloud with Sun icon
-  ///
-  /// https://fontawesome.com/icons/cloud-sun?style=solid
-  'cloudSun': FontAwesomeIcons.cloudSun,
-
-  /// Solid Cloud with Sun and Rain icon
-  ///
-  /// https://fontawesome.com/icons/cloud-sun-rain?style=solid
-  'cloudSunRain': FontAwesomeIcons.cloudSunRain,
-
-  /// Brands Cloudflare icon
-  ///
-  /// https://fontawesome.com/icons/cloudflare?style=brands
-  'cloudflare': FontAwesomeIcons.cloudflare,
-
-  /// Brands cloudscale.ch icon
-  ///
-  /// https://fontawesome.com/icons/cloudscale?style=brands
-  'cloudscale': FontAwesomeIcons.cloudscale,
-
-  /// Brands Cloudsmith icon
-  ///
-  /// https://fontawesome.com/icons/cloudsmith?style=brands
-  'cloudsmith': FontAwesomeIcons.cloudsmith,
-
-  /// Brands cloudversify icon
-  ///
-  /// https://fontawesome.com/icons/cloudversify?style=brands
-  'cloudversify': FontAwesomeIcons.cloudversify,
-
-  /// Solid Clover icon
-  ///
-  /// https://fontawesome.com/icons/clover?style=solid
-  'clover': FontAwesomeIcons.clover,
-
-  /// Brands Cmplid icon
-  ///
-  /// https://fontawesome.com/icons/cmplid?style=brands
-  'cmplid': FontAwesomeIcons.cmplid,
-
-  /// Solid Code icon
-  ///
-  /// https://fontawesome.com/icons/code?style=solid
-  'code': FontAwesomeIcons.code,
-
-  /// Solid Code Branch icon
-  ///
-  /// https://fontawesome.com/icons/code-branch?style=solid
-  'codeBranch': FontAwesomeIcons.codeBranch,
-
-  /// Solid Code Commit icon
-  ///
-  /// https://fontawesome.com/icons/code-commit?style=solid
-  'codeCommit': FontAwesomeIcons.codeCommit,
-
-  /// Solid Code Compare icon
-  ///
-  /// https://fontawesome.com/icons/code-compare?style=solid
-  'codeCompare': FontAwesomeIcons.codeCompare,
-
-  /// Solid Code Fork icon
-  ///
-  /// https://fontawesome.com/icons/code-fork?style=solid
-  'codeFork': FontAwesomeIcons.codeFork,
-
-  /// Solid Code Merge icon
-  ///
-  /// https://fontawesome.com/icons/code-merge?style=solid
-  'codeMerge': FontAwesomeIcons.codeMerge,
-
-  /// Solid Code Pull Request icon
-  ///
-  /// https://fontawesome.com/icons/code-pull-request?style=solid
-  'codePullRequest': FontAwesomeIcons.codePullRequest,
-
-  /// Brands Codepen icon
-  ///
-  /// https://fontawesome.com/icons/codepen?style=brands
-  'codepen': FontAwesomeIcons.codepen,
-
-  /// Brands Codie Pie icon
-  ///
-  /// https://fontawesome.com/icons/codiepie?style=brands
-  'codiepie': FontAwesomeIcons.codiepie,
-
-  /// Solid Coins icon
-  ///
-  /// https://fontawesome.com/icons/coins?style=solid
-  'coins': FontAwesomeIcons.coins,
-
-  /// Solid Colon Sign icon
-  ///
-  /// https://fontawesome.com/icons/colon-sign?style=solid
-  'colonSign': FontAwesomeIcons.colonSign,
-
-  /// Solid comment icon
-  ///
-  /// https://fontawesome.com/icons/comment?style=solid
-  'solidComment': FontAwesomeIcons.solidComment,
-
-  /// Regular comment icon
-  ///
-  /// https://fontawesome.com/icons/comment?style=regular
-  'comment': FontAwesomeIcons.comment,
-
-  /// Solid Comment Dollar icon
-  ///
-  /// https://fontawesome.com/icons/comment-dollar?style=solid
-  'commentDollar': FontAwesomeIcons.commentDollar,
-
-  /// Solid Comment Dots icon
-  ///
-  /// https://fontawesome.com/icons/comment-dots?style=solid
-  'solidCommentDots': FontAwesomeIcons.solidCommentDots,
-
-  /// Regular Comment Dots icon
-  ///
-  /// https://fontawesome.com/icons/comment-dots?style=regular
-  'commentDots': FontAwesomeIcons.commentDots,
-
-  /// Solid Alternate Medical Chat icon
-  ///
-  /// https://fontawesome.com/icons/comment-medical?style=solid
-  'commentMedical': FontAwesomeIcons.commentMedical,
-
-  /// Solid Comment Slash icon
-  ///
-  /// https://fontawesome.com/icons/comment-slash?style=solid
-  'commentSlash': FontAwesomeIcons.commentSlash,
-
-  /// Solid Comment sms icon
-  ///
-  /// https://fontawesome.com/icons/comment-sms?style=solid
-  'commentSms': FontAwesomeIcons.commentSms,
-
-  /// Solid comments icon
-  ///
-  /// https://fontawesome.com/icons/comments?style=solid
-  'solidComments': FontAwesomeIcons.solidComments,
-
-  /// Regular comments icon
-  ///
-  /// https://fontawesome.com/icons/comments?style=regular
-  'comments': FontAwesomeIcons.comments,
-
-  /// Solid Comments Dollar icon
-  ///
-  /// https://fontawesome.com/icons/comments-dollar?style=solid
-  'commentsDollar': FontAwesomeIcons.commentsDollar,
-
-  /// Solid Compact Disc icon
-  ///
-  /// https://fontawesome.com/icons/compact-disc?style=solid
-  'compactDisc': FontAwesomeIcons.compactDisc,
-
-  /// Solid Compass icon
-  ///
-  /// https://fontawesome.com/icons/compass?style=solid
-  'solidCompass': FontAwesomeIcons.solidCompass,
-
-  /// Regular Compass icon
-  ///
-  /// https://fontawesome.com/icons/compass?style=regular
-  'compass': FontAwesomeIcons.compass,
-
-  /// Solid Compass drafting icon
-  ///
-  /// https://fontawesome.com/icons/compass-drafting?style=solid
-  'compassDrafting': FontAwesomeIcons.compassDrafting,
-
-  /// Solid Compress icon
-  ///
-  /// https://fontawesome.com/icons/compress?style=solid
-  'compress': FontAwesomeIcons.compress,
-
-  /// Solid Computer icon
-  ///
-  /// https://fontawesome.com/icons/computer?style=solid
-  'computer': FontAwesomeIcons.computer,
-
-  /// Solid Computer mouse icon
-  ///
-  /// https://fontawesome.com/icons/computer-mouse?style=solid
-  'computerMouse': FontAwesomeIcons.computerMouse,
-
-  /// Brands Confluence icon
-  ///
-  /// https://fontawesome.com/icons/confluence?style=brands
-  'confluence': FontAwesomeIcons.confluence,
-
-  /// Brands Connect Develop icon
-  ///
-  /// https://fontawesome.com/icons/connectdevelop?style=brands
-  'connectdevelop': FontAwesomeIcons.connectdevelop,
-
-  /// Brands Contao icon
-  ///
-  /// https://fontawesome.com/icons/contao?style=brands
-  'contao': FontAwesomeIcons.contao,
-
-  /// Solid Cookie icon
-  ///
-  /// https://fontawesome.com/icons/cookie?style=solid
-  'cookie': FontAwesomeIcons.cookie,
-
-  /// Solid Cookie Bite icon
-  ///
-  /// https://fontawesome.com/icons/cookie-bite?style=solid
-  'cookieBite': FontAwesomeIcons.cookieBite,
-
-  /// Solid Copy icon
-  ///
-  /// https://fontawesome.com/icons/copy?style=solid
-  'solidCopy': FontAwesomeIcons.solidCopy,
-
-  /// Regular Copy icon
-  ///
-  /// https://fontawesome.com/icons/copy?style=regular
-  'copy': FontAwesomeIcons.copy,
-
-  /// Solid Copyright icon
-  ///
-  /// https://fontawesome.com/icons/copyright?style=solid
-  'solidCopyright': FontAwesomeIcons.solidCopyright,
-
-  /// Regular Copyright icon
-  ///
-  /// https://fontawesome.com/icons/copyright?style=regular
-  'copyright': FontAwesomeIcons.copyright,
-
-  /// Brands Cotton Bureau icon
-  ///
-  /// https://fontawesome.com/icons/cotton-bureau?style=brands
-  'cottonBureau': FontAwesomeIcons.cottonBureau,
-
-  /// Solid Couch icon
-  ///
-  /// https://fontawesome.com/icons/couch?style=solid
-  'couch': FontAwesomeIcons.couch,
-
-  /// Solid Cow icon
-  ///
-  /// https://fontawesome.com/icons/cow?style=solid
-  'cow': FontAwesomeIcons.cow,
-
-  /// Brands cPanel icon
-  ///
-  /// https://fontawesome.com/icons/cpanel?style=brands
-  'cpanel': FontAwesomeIcons.cpanel,
-
-  /// Brands Creative Commons icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons?style=brands
-  'creativeCommons': FontAwesomeIcons.creativeCommons,
-
-  /// Brands Creative Commons Attribution icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-by?style=brands
-  'creativeCommonsBy': FontAwesomeIcons.creativeCommonsBy,
-
-  /// Brands Creative Commons Noncommercial icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-nc?style=brands
-  'creativeCommonsNc': FontAwesomeIcons.creativeCommonsNc,
-
-  /// Brands Creative Commons Noncommercial (Euro Sign) icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-nc-eu?style=brands
-  'creativeCommonsNcEu': FontAwesomeIcons.creativeCommonsNcEu,
-
-  /// Brands Creative Commons Noncommercial (Yen Sign) icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-nc-jp?style=brands
-  'creativeCommonsNcJp': FontAwesomeIcons.creativeCommonsNcJp,
-
-  /// Brands Creative Commons No Derivative Works icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-nd?style=brands
-  'creativeCommonsNd': FontAwesomeIcons.creativeCommonsNd,
-
-  /// Brands Creative Commons Public Domain icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-pd?style=brands
-  'creativeCommonsPd': FontAwesomeIcons.creativeCommonsPd,
-
-  /// Brands Alternate Creative Commons Public Domain icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-pd-alt?style=brands
-  'creativeCommonsPdAlt': FontAwesomeIcons.creativeCommonsPdAlt,
-
-  /// Brands Creative Commons Remix icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-remix?style=brands
-  'creativeCommonsRemix': FontAwesomeIcons.creativeCommonsRemix,
-
-  /// Brands Creative Commons Share Alike icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-sa?style=brands
-  'creativeCommonsSa': FontAwesomeIcons.creativeCommonsSa,
-
-  /// Brands Creative Commons Sampling icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-sampling?style=brands
-  'creativeCommonsSampling': FontAwesomeIcons.creativeCommonsSampling,
-
-  /// Brands Creative Commons Sampling + icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-sampling-plus?style=brands
-  'creativeCommonsSamplingPlus': FontAwesomeIcons.creativeCommonsSamplingPlus,
-
-  /// Brands Creative Commons Share icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-share?style=brands
-  'creativeCommonsShare': FontAwesomeIcons.creativeCommonsShare,
-
-  /// Brands Creative Commons CC0 icon
-  ///
-  /// https://fontawesome.com/icons/creative-commons-zero?style=brands
-  'creativeCommonsZero': FontAwesomeIcons.creativeCommonsZero,
-
-  /// Solid Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/credit-card?style=solid
-  'solidCreditCard': FontAwesomeIcons.solidCreditCard,
-
-  /// Regular Credit Card icon
-  ///
-  /// https://fontawesome.com/icons/credit-card?style=regular
-  'creditCard': FontAwesomeIcons.creditCard,
-
-  /// Brands Critical Role icon
-  ///
-  /// https://fontawesome.com/icons/critical-role?style=brands
-  'criticalRole': FontAwesomeIcons.criticalRole,
-
-  /// Solid crop icon
-  ///
-  /// https://fontawesome.com/icons/crop?style=solid
-  'crop': FontAwesomeIcons.crop,
-
-  /// Solid Crop simple icon
-  ///
-  /// https://fontawesome.com/icons/crop-simple?style=solid
-  'cropSimple': FontAwesomeIcons.cropSimple,
-
-  /// Solid Cross icon
-  ///
-  /// https://fontawesome.com/icons/cross?style=solid
-  'cross': FontAwesomeIcons.cross,
-
-  /// Solid Crosshairs icon
-  ///
-  /// https://fontawesome.com/icons/crosshairs?style=solid
-  'crosshairs': FontAwesomeIcons.crosshairs,
-
-  /// Solid Crow icon
-  ///
-  /// https://fontawesome.com/icons/crow?style=solid
-  'crow': FontAwesomeIcons.crow,
-
-  /// Solid Crown icon
-  ///
-  /// https://fontawesome.com/icons/crown?style=solid
-  'crown': FontAwesomeIcons.crown,
-
-  /// Solid Crutch icon
-  ///
-  /// https://fontawesome.com/icons/crutch?style=solid
-  'crutch': FontAwesomeIcons.crutch,
-
-  /// Solid Cruzeiro Sign icon
-  ///
-  /// https://fontawesome.com/icons/cruzeiro-sign?style=solid
-  'cruzeiroSign': FontAwesomeIcons.cruzeiroSign,
-
-  /// Brands CSS 3 Logo icon
-  ///
-  /// https://fontawesome.com/icons/css3?style=brands
-  'css3': FontAwesomeIcons.css3,
-
-  /// Brands Alternate CSS3 Logo icon
-  ///
-  /// https://fontawesome.com/icons/css3-alt?style=brands
-  'css3Alt': FontAwesomeIcons.css3Alt,
-
-  /// Solid Cube icon
-  ///
-  /// https://fontawesome.com/icons/cube?style=solid
-  'cube': FontAwesomeIcons.cube,
-
-  /// Solid Cubes icon
-  ///
-  /// https://fontawesome.com/icons/cubes?style=solid
-  'cubes': FontAwesomeIcons.cubes,
-
-  /// Solid Cubes Stacked icon
-  ///
-  /// https://fontawesome.com/icons/cubes-stacked?style=solid
-  'cubesStacked': FontAwesomeIcons.cubesStacked,
-
-  /// Brands Cuttlefish icon
-  ///
-  /// https://fontawesome.com/icons/cuttlefish?style=brands
-  'cuttlefish': FontAwesomeIcons.cuttlefish,
-
-  /// Solid D icon
-  ///
-  /// https://fontawesome.com/icons/d?style=solid
-  'd': FontAwesomeIcons.d,
-
-  /// Brands Dungeons & Dragons icon
-  ///
-  /// https://fontawesome.com/icons/d-and-d?style=brands
-  'dAndD': FontAwesomeIcons.dAndD,
-
-  /// Brands D&D Beyond icon
-  ///
-  /// https://fontawesome.com/icons/d-and-d-beyond?style=brands
-  'dAndDBeyond': FontAwesomeIcons.dAndDBeyond,
-
-  /// Brands dailymotion icon
-  ///
-  /// https://fontawesome.com/icons/dailymotion?style=brands
-  'dailymotion': FontAwesomeIcons.dailymotion,
-
-  /// Brands DashCube icon
-  ///
-  /// https://fontawesome.com/icons/dashcube?style=brands
-  'dashcube': FontAwesomeIcons.dashcube,
-
-  /// Solid Database icon
-  ///
-  /// https://fontawesome.com/icons/database?style=solid
-  'database': FontAwesomeIcons.database,
-
-  /// Brands Deezer icon
-  ///
-  /// https://fontawesome.com/icons/deezer?style=brands
-  'deezer': FontAwesomeIcons.deezer,
-
-  /// Solid Delete left icon
-  ///
-  /// https://fontawesome.com/icons/delete-left?style=solid
-  'deleteLeft': FontAwesomeIcons.deleteLeft,
-
-  /// Brands Delicious icon
-  ///
-  /// https://fontawesome.com/icons/delicious?style=brands
-  'delicious': FontAwesomeIcons.delicious,
-
-  /// Solid Democrat icon
-  ///
-  /// https://fontawesome.com/icons/democrat?style=solid
-  'democrat': FontAwesomeIcons.democrat,
-
-  /// Brands deploy.dog icon
-  ///
-  /// https://fontawesome.com/icons/deploydog?style=brands
-  'deploydog': FontAwesomeIcons.deploydog,
-
-  /// Brands Deskpro icon
-  ///
-  /// https://fontawesome.com/icons/deskpro?style=brands
-  'deskpro': FontAwesomeIcons.deskpro,
-
-  /// Solid Desktop icon
-  ///
-  /// https://fontawesome.com/icons/desktop?style=solid
-  'desktop': FontAwesomeIcons.desktop,
-
-  /// Brands DEV icon
-  ///
-  /// https://fontawesome.com/icons/dev?style=brands
-  'dev': FontAwesomeIcons.dev,
-
-  /// Brands deviantART icon
-  ///
-  /// https://fontawesome.com/icons/deviantart?style=brands
-  'deviantart': FontAwesomeIcons.deviantart,
-
-  /// Solid Dharmachakra icon
-  ///
-  /// https://fontawesome.com/icons/dharmachakra?style=solid
-  'dharmachakra': FontAwesomeIcons.dharmachakra,
-
-  /// Brands DHL icon
-  ///
-  /// https://fontawesome.com/icons/dhl?style=brands
-  'dhl': FontAwesomeIcons.dhl,
-
-  /// Solid Diagram Next icon
-  ///
-  /// https://fontawesome.com/icons/diagram-next?style=solid
-  'diagramNext': FontAwesomeIcons.diagramNext,
-
-  /// Solid Diagram Predecessor icon
-  ///
-  /// https://fontawesome.com/icons/diagram-predecessor?style=solid
-  'diagramPredecessor': FontAwesomeIcons.diagramPredecessor,
-
-  /// Solid Project Diagram icon
-  ///
-  /// https://fontawesome.com/icons/diagram-project?style=solid
-  'diagramProject': FontAwesomeIcons.diagramProject,
-
-  /// Solid Diagram Successor icon
-  ///
-  /// https://fontawesome.com/icons/diagram-successor?style=solid
-  'diagramSuccessor': FontAwesomeIcons.diagramSuccessor,
-
-  /// Solid Diamond icon
-  ///
-  /// https://fontawesome.com/icons/diamond?style=solid
-  'diamond': FontAwesomeIcons.diamond,
-
-  /// Solid Diamond turn right icon
-  ///
-  /// https://fontawesome.com/icons/diamond-turn-right?style=solid
-  'diamondTurnRight': FontAwesomeIcons.diamondTurnRight,
-
-  /// Brands Diaspora icon
-  ///
-  /// https://fontawesome.com/icons/diaspora?style=brands
-  'diaspora': FontAwesomeIcons.diaspora,
-
-  /// Solid Dice icon
-  ///
-  /// https://fontawesome.com/icons/dice?style=solid
-  'dice': FontAwesomeIcons.dice,
-
-  /// Solid Dice D20 icon
-  ///
-  /// https://fontawesome.com/icons/dice-d20?style=solid
-  'diceD20': FontAwesomeIcons.diceD20,
-
-  /// Solid Dice D6 icon
-  ///
-  /// https://fontawesome.com/icons/dice-d6?style=solid
-  'diceD6': FontAwesomeIcons.diceD6,
-
-  /// Solid Dice Five icon
-  ///
-  /// https://fontawesome.com/icons/dice-five?style=solid
-  'diceFive': FontAwesomeIcons.diceFive,
-
-  /// Solid Dice Four icon
-  ///
-  /// https://fontawesome.com/icons/dice-four?style=solid
-  'diceFour': FontAwesomeIcons.diceFour,
-
-  /// Solid Dice One icon
-  ///
-  /// https://fontawesome.com/icons/dice-one?style=solid
-  'diceOne': FontAwesomeIcons.diceOne,
-
-  /// Solid Dice Six icon
-  ///
-  /// https://fontawesome.com/icons/dice-six?style=solid
-  'diceSix': FontAwesomeIcons.diceSix,
-
-  /// Solid Dice Three icon
-  ///
-  /// https://fontawesome.com/icons/dice-three?style=solid
-  'diceThree': FontAwesomeIcons.diceThree,
-
-  /// Solid Dice Two icon
-  ///
-  /// https://fontawesome.com/icons/dice-two?style=solid
-  'diceTwo': FontAwesomeIcons.diceTwo,
-
-  /// Brands Digg Logo icon
-  ///
-  /// https://fontawesome.com/icons/digg?style=brands
-  'digg': FontAwesomeIcons.digg,
-
-  /// Brands Digital Ocean icon
-  ///
-  /// https://fontawesome.com/icons/digital-ocean?style=brands
-  'digitalOcean': FontAwesomeIcons.digitalOcean,
-
-  /// Brands Discord icon
-  ///
-  /// https://fontawesome.com/icons/discord?style=brands
-  'discord': FontAwesomeIcons.discord,
-
-  /// Brands Discourse icon
-  ///
-  /// https://fontawesome.com/icons/discourse?style=brands
-  'discourse': FontAwesomeIcons.discourse,
-
-  /// Solid Disease icon
-  ///
-  /// https://fontawesome.com/icons/disease?style=solid
-  'disease': FontAwesomeIcons.disease,
-
-  /// Solid Display icon
-  ///
-  /// https://fontawesome.com/icons/display?style=solid
-  'display': FontAwesomeIcons.display,
-
-  /// Solid Divide icon
-  ///
-  /// https://fontawesome.com/icons/divide?style=solid
-  'divide': FontAwesomeIcons.divide,
-
-  /// Solid DNA icon
-  ///
-  /// https://fontawesome.com/icons/dna?style=solid
-  'dna': FontAwesomeIcons.dna,
-
-  /// Brands DocHub icon
-  ///
-  /// https://fontawesome.com/icons/dochub?style=brands
-  'dochub': FontAwesomeIcons.dochub,
-
-  /// Brands Docker icon
-  ///
-  /// https://fontawesome.com/icons/docker?style=brands
-  'docker': FontAwesomeIcons.docker,
-
-  /// Solid Dog icon
-  ///
-  /// https://fontawesome.com/icons/dog?style=solid
-  'dog': FontAwesomeIcons.dog,
-
-  /// Solid Dollar Sign icon
-  ///
-  /// https://fontawesome.com/icons/dollar-sign?style=solid
-  'dollarSign': FontAwesomeIcons.dollarSign,
-
-  /// Solid Dolly icon
-  ///
-  /// https://fontawesome.com/icons/dolly?style=solid
-  'dolly': FontAwesomeIcons.dolly,
-
-  /// Solid Dong Sign icon
-  ///
-  /// https://fontawesome.com/icons/dong-sign?style=solid
-  'dongSign': FontAwesomeIcons.dongSign,
-
-  /// Solid Door Closed icon
-  ///
-  /// https://fontawesome.com/icons/door-closed?style=solid
-  'doorClosed': FontAwesomeIcons.doorClosed,
-
-  /// Solid Door Open icon
-  ///
-  /// https://fontawesome.com/icons/door-open?style=solid
-  'doorOpen': FontAwesomeIcons.doorOpen,
-
-  /// Solid Dove icon
-  ///
-  /// https://fontawesome.com/icons/dove?style=solid
-  'dove': FontAwesomeIcons.dove,
-
-  /// Solid Down left and up right to center icon
-  ///
-  /// https://fontawesome.com/icons/down-left-and-up-right-to-center?style=solid
-  'downLeftAndUpRightToCenter': FontAwesomeIcons.downLeftAndUpRightToCenter,
-
-  /// Solid Down long icon
-  ///
-  /// https://fontawesome.com/icons/down-long?style=solid
-  'downLong': FontAwesomeIcons.downLong,
-
-  /// Solid Download icon
-  ///
-  /// https://fontawesome.com/icons/download?style=solid
-  'download': FontAwesomeIcons.download,
-
-  /// Brands Draft2digital icon
-  ///
-  /// https://fontawesome.com/icons/draft2digital?style=brands
-  'draft2digital': FontAwesomeIcons.draft2digital,
-
-  /// Solid Dragon icon
-  ///
-  /// https://fontawesome.com/icons/dragon?style=solid
-  'dragon': FontAwesomeIcons.dragon,
-
-  /// Solid Draw Polygon icon
-  ///
-  /// https://fontawesome.com/icons/draw-polygon?style=solid
-  'drawPolygon': FontAwesomeIcons.drawPolygon,
-
-  /// Brands Dribbble icon
-  ///
-  /// https://fontawesome.com/icons/dribbble?style=brands
-  'dribbble': FontAwesomeIcons.dribbble,
-
-  /// Brands Dropbox icon
-  ///
-  /// https://fontawesome.com/icons/dropbox?style=brands
-  'dropbox': FontAwesomeIcons.dropbox,
-
-  /// Solid Droplet icon
-  ///
-  /// https://fontawesome.com/icons/droplet?style=solid
-  'droplet': FontAwesomeIcons.droplet,
-
-  /// Solid Droplet slash icon
-  ///
-  /// https://fontawesome.com/icons/droplet-slash?style=solid
-  'dropletSlash': FontAwesomeIcons.dropletSlash,
-
-  /// Solid Drum icon
-  ///
-  /// https://fontawesome.com/icons/drum?style=solid
-  'drum': FontAwesomeIcons.drum,
-
-  /// Solid Drum Steelpan icon
-  ///
-  /// https://fontawesome.com/icons/drum-steelpan?style=solid
-  'drumSteelpan': FontAwesomeIcons.drumSteelpan,
-
-  /// Solid Drumstick with Bite Taken Out icon
-  ///
-  /// https://fontawesome.com/icons/drumstick-bite?style=solid
-  'drumstickBite': FontAwesomeIcons.drumstickBite,
-
-  /// Brands Drupal Logo icon
-  ///
-  /// https://fontawesome.com/icons/drupal?style=brands
-  'drupal': FontAwesomeIcons.drupal,
-
-  /// Solid Dumbbell icon
-  ///
-  /// https://fontawesome.com/icons/dumbbell?style=solid
-  'dumbbell': FontAwesomeIcons.dumbbell,
-
-  /// Solid Dumpster icon
-  ///
-  /// https://fontawesome.com/icons/dumpster?style=solid
-  'dumpster': FontAwesomeIcons.dumpster,
-
-  /// Solid Dumpster Fire icon
-  ///
-  /// https://fontawesome.com/icons/dumpster-fire?style=solid
-  'dumpsterFire': FontAwesomeIcons.dumpsterFire,
-
-  /// Solid Dungeon icon
-  ///
-  /// https://fontawesome.com/icons/dungeon?style=solid
-  'dungeon': FontAwesomeIcons.dungeon,
-
-  /// Brands Dyalog icon
-  ///
-  /// https://fontawesome.com/icons/dyalog?style=brands
-  'dyalog': FontAwesomeIcons.dyalog,
-
-  /// Solid E icon
-  ///
-  /// https://fontawesome.com/icons/e?style=solid
-  'e': FontAwesomeIcons.e,
-
-  /// Solid Ear deaf icon
-  ///
-  /// https://fontawesome.com/icons/ear-deaf?style=solid
-  'earDeaf': FontAwesomeIcons.earDeaf,
-
-  /// Solid Ear listen icon
-  ///
-  /// https://fontawesome.com/icons/ear-listen?style=solid
-  'earListen': FontAwesomeIcons.earListen,
-
-  /// Brands Earlybirds icon
-  ///
-  /// https://fontawesome.com/icons/earlybirds?style=brands
-  'earlybirds': FontAwesomeIcons.earlybirds,
-
-  /// Solid Earth Africa icon
-  ///
-  /// https://fontawesome.com/icons/earth-africa?style=solid
-  'earthAfrica': FontAwesomeIcons.earthAfrica,
-
-  /// Solid Earth americas icon
-  ///
-  /// https://fontawesome.com/icons/earth-americas?style=solid
-  'earthAmericas': FontAwesomeIcons.earthAmericas,
-
-  /// Solid Earth Asia icon
-  ///
-  /// https://fontawesome.com/icons/earth-asia?style=solid
-  'earthAsia': FontAwesomeIcons.earthAsia,
-
-  /// Solid Earth Europe icon
-  ///
-  /// https://fontawesome.com/icons/earth-europe?style=solid
-  'earthEurope': FontAwesomeIcons.earthEurope,
-
-  /// Solid Earth Oceania icon
-  ///
-  /// https://fontawesome.com/icons/earth-oceania?style=solid
-  'earthOceania': FontAwesomeIcons.earthOceania,
-
-  /// Brands eBay icon
-  ///
-  /// https://fontawesome.com/icons/ebay?style=brands
-  'ebay': FontAwesomeIcons.ebay,
-
-  /// Brands Edge Browser icon
-  ///
-  /// https://fontawesome.com/icons/edge?style=brands
-  'edge': FontAwesomeIcons.edge,
-
-  /// Brands Edge Legacy Browser icon
-  ///
-  /// https://fontawesome.com/icons/edge-legacy?style=brands
-  'edgeLegacy': FontAwesomeIcons.edgeLegacy,
-
-  /// Solid Egg icon
-  ///
-  /// https://fontawesome.com/icons/egg?style=solid
-  'egg': FontAwesomeIcons.egg,
-
-  /// Solid eject icon
-  ///
-  /// https://fontawesome.com/icons/eject?style=solid
-  'eject': FontAwesomeIcons.eject,
-
-  /// Brands Elementor icon
-  ///
-  /// https://fontawesome.com/icons/elementor?style=brands
-  'elementor': FontAwesomeIcons.elementor,
-
-  /// Solid Elevator icon
-  ///
-  /// https://fontawesome.com/icons/elevator?style=solid
-  'elevator': FontAwesomeIcons.elevator,
-
-  /// Solid Ellipsis icon
-  ///
-  /// https://fontawesome.com/icons/ellipsis?style=solid
-  'ellipsis': FontAwesomeIcons.ellipsis,
-
-  /// Solid Ellipsis vertical icon
-  ///
-  /// https://fontawesome.com/icons/ellipsis-vertical?style=solid
-  'ellipsisVertical': FontAwesomeIcons.ellipsisVertical,
-
-  /// Brands Ello icon
-  ///
-  /// https://fontawesome.com/icons/ello?style=brands
-  'ello': FontAwesomeIcons.ello,
-
-  /// Brands Ember icon
-  ///
-  /// https://fontawesome.com/icons/ember?style=brands
-  'ember': FontAwesomeIcons.ember,
-
-  /// Brands Galactic Empire icon
-  ///
-  /// https://fontawesome.com/icons/empire?style=brands
-  'empire': FontAwesomeIcons.empire,
-
-  /// Solid Envelope icon
-  ///
-  /// https://fontawesome.com/icons/envelope?style=solid
-  'solidEnvelope': FontAwesomeIcons.solidEnvelope,
-
-  /// Regular Envelope icon
-  ///
-  /// https://fontawesome.com/icons/envelope?style=regular
-  'envelope': FontAwesomeIcons.envelope,
-
-  /// Solid Envelope Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/envelope-circle-check?style=solid
-  'envelopeCircleCheck': FontAwesomeIcons.envelopeCircleCheck,
-
-  /// Solid Envelope Open icon
-  ///
-  /// https://fontawesome.com/icons/envelope-open?style=solid
-  'solidEnvelopeOpen': FontAwesomeIcons.solidEnvelopeOpen,
-
-  /// Regular Envelope Open icon
-  ///
-  /// https://fontawesome.com/icons/envelope-open?style=regular
-  'envelopeOpen': FontAwesomeIcons.envelopeOpen,
-
-  /// Solid Envelope Open-text icon
-  ///
-  /// https://fontawesome.com/icons/envelope-open-text?style=solid
-  'envelopeOpenText': FontAwesomeIcons.envelopeOpenText,
-
-  /// Solid Envelopes bulk icon
-  ///
-  /// https://fontawesome.com/icons/envelopes-bulk?style=solid
-  'envelopesBulk': FontAwesomeIcons.envelopesBulk,
-
-  /// Brands Envira Gallery icon
-  ///
-  /// https://fontawesome.com/icons/envira?style=brands
-  'envira': FontAwesomeIcons.envira,
-
-  /// Solid Equals icon
-  ///
-  /// https://fontawesome.com/icons/equals?style=solid
-  'equals': FontAwesomeIcons.equals,
-
-  /// Solid eraser icon
-  ///
-  /// https://fontawesome.com/icons/eraser?style=solid
-  'eraser': FontAwesomeIcons.eraser,
-
-  /// Brands Erlang icon
-  ///
-  /// https://fontawesome.com/icons/erlang?style=brands
-  'erlang': FontAwesomeIcons.erlang,
-
-  /// Brands Ethereum icon
-  ///
-  /// https://fontawesome.com/icons/ethereum?style=brands
-  'ethereum': FontAwesomeIcons.ethereum,
-
-  /// Solid Ethernet icon
-  ///
-  /// https://fontawesome.com/icons/ethernet?style=solid
-  'ethernet': FontAwesomeIcons.ethernet,
-
-  /// Brands Etsy icon
-  ///
-  /// https://fontawesome.com/icons/etsy?style=brands
-  'etsy': FontAwesomeIcons.etsy,
-
-  /// Solid Euro Sign icon
-  ///
-  /// https://fontawesome.com/icons/euro-sign?style=solid
-  'euroSign': FontAwesomeIcons.euroSign,
-
-  /// Brands Evernote icon
-  ///
-  /// https://fontawesome.com/icons/evernote?style=brands
-  'evernote': FontAwesomeIcons.evernote,
-
-  /// Solid exclamation icon
-  ///
-  /// https://fontawesome.com/icons/exclamation?style=solid
-  'exclamation': FontAwesomeIcons.exclamation,
-
-  /// Solid Expand icon
-  ///
-  /// https://fontawesome.com/icons/expand?style=solid
-  'expand': FontAwesomeIcons.expand,
-
-  /// Brands ExpeditedSSL icon
-  ///
-  /// https://fontawesome.com/icons/expeditedssl?style=brands
-  'expeditedssl': FontAwesomeIcons.expeditedssl,
-
-  /// Solid Explosion icon
-  ///
-  /// https://fontawesome.com/icons/explosion?style=solid
-  'explosion': FontAwesomeIcons.explosion,
-
-  /// Solid Eye icon
-  ///
-  /// https://fontawesome.com/icons/eye?style=solid
-  'solidEye': FontAwesomeIcons.solidEye,
-
-  /// Regular Eye icon
-  ///
-  /// https://fontawesome.com/icons/eye?style=regular
-  'eye': FontAwesomeIcons.eye,
-
-  /// Solid Eye Dropper icon
-  ///
-  /// https://fontawesome.com/icons/eye-dropper?style=solid
-  'eyeDropper': FontAwesomeIcons.eyeDropper,
-
-  /// Solid Eye low vision icon
-  ///
-  /// https://fontawesome.com/icons/eye-low-vision?style=solid
-  'eyeLowVision': FontAwesomeIcons.eyeLowVision,
-
-  /// Solid Eye Slash icon
-  ///
-  /// https://fontawesome.com/icons/eye-slash?style=solid
-  'solidEyeSlash': FontAwesomeIcons.solidEyeSlash,
-
-  /// Regular Eye Slash icon
-  ///
-  /// https://fontawesome.com/icons/eye-slash?style=regular
-  'eyeSlash': FontAwesomeIcons.eyeSlash,
-
-  /// Solid F icon
-  ///
-  /// https://fontawesome.com/icons/f?style=solid
-  'f': FontAwesomeIcons.f,
-
-  /// Solid Face angry icon
-  ///
-  /// https://fontawesome.com/icons/face-angry?style=solid
-  'solidFaceAngry': FontAwesomeIcons.solidFaceAngry,
-
-  /// Regular Face angry icon
-  ///
-  /// https://fontawesome.com/icons/face-angry?style=regular
-  'faceAngry': FontAwesomeIcons.faceAngry,
-
-  /// Solid Face dizzy icon
-  ///
-  /// https://fontawesome.com/icons/face-dizzy?style=solid
-  'solidFaceDizzy': FontAwesomeIcons.solidFaceDizzy,
-
-  /// Regular Face dizzy icon
-  ///
-  /// https://fontawesome.com/icons/face-dizzy?style=regular
-  'faceDizzy': FontAwesomeIcons.faceDizzy,
-
-  /// Solid Face flushed icon
-  ///
-  /// https://fontawesome.com/icons/face-flushed?style=solid
-  'solidFaceFlushed': FontAwesomeIcons.solidFaceFlushed,
-
-  /// Regular Face flushed icon
-  ///
-  /// https://fontawesome.com/icons/face-flushed?style=regular
-  'faceFlushed': FontAwesomeIcons.faceFlushed,
-
-  /// Solid Face frown icon
-  ///
-  /// https://fontawesome.com/icons/face-frown?style=solid
-  'solidFaceFrown': FontAwesomeIcons.solidFaceFrown,
-
-  /// Regular Face frown icon
-  ///
-  /// https://fontawesome.com/icons/face-frown?style=regular
-  'faceFrown': FontAwesomeIcons.faceFrown,
-
-  /// Solid Face frown open icon
-  ///
-  /// https://fontawesome.com/icons/face-frown-open?style=solid
-  'solidFaceFrownOpen': FontAwesomeIcons.solidFaceFrownOpen,
-
-  /// Regular Face frown open icon
-  ///
-  /// https://fontawesome.com/icons/face-frown-open?style=regular
-  'faceFrownOpen': FontAwesomeIcons.faceFrownOpen,
-
-  /// Solid Face grimace icon
-  ///
-  /// https://fontawesome.com/icons/face-grimace?style=solid
-  'solidFaceGrimace': FontAwesomeIcons.solidFaceGrimace,
-
-  /// Regular Face grimace icon
-  ///
-  /// https://fontawesome.com/icons/face-grimace?style=regular
-  'faceGrimace': FontAwesomeIcons.faceGrimace,
-
-  /// Solid Face grin icon
-  ///
-  /// https://fontawesome.com/icons/face-grin?style=solid
-  'solidFaceGrin': FontAwesomeIcons.solidFaceGrin,
-
-  /// Regular Face grin icon
-  ///
-  /// https://fontawesome.com/icons/face-grin?style=regular
-  'faceGrin': FontAwesomeIcons.faceGrin,
-
-  /// Solid Face grin beam icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-beam?style=solid
-  'solidFaceGrinBeam': FontAwesomeIcons.solidFaceGrinBeam,
-
-  /// Regular Face grin beam icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-beam?style=regular
-  'faceGrinBeam': FontAwesomeIcons.faceGrinBeam,
-
-  /// Solid Face grin beam sweat icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-beam-sweat?style=solid
-  'solidFaceGrinBeamSweat': FontAwesomeIcons.solidFaceGrinBeamSweat,
-
-  /// Regular Face grin beam sweat icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-beam-sweat?style=regular
-  'faceGrinBeamSweat': FontAwesomeIcons.faceGrinBeamSweat,
-
-  /// Solid Face grin hearts icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-hearts?style=solid
-  'solidFaceGrinHearts': FontAwesomeIcons.solidFaceGrinHearts,
-
-  /// Regular Face grin hearts icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-hearts?style=regular
-  'faceGrinHearts': FontAwesomeIcons.faceGrinHearts,
-
-  /// Solid Face grin squint icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-squint?style=solid
-  'solidFaceGrinSquint': FontAwesomeIcons.solidFaceGrinSquint,
-
-  /// Regular Face grin squint icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-squint?style=regular
-  'faceGrinSquint': FontAwesomeIcons.faceGrinSquint,
-
-  /// Solid Face grin squint tears icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-squint-tears?style=solid
-  'solidFaceGrinSquintTears': FontAwesomeIcons.solidFaceGrinSquintTears,
-
-  /// Regular Face grin squint tears icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-squint-tears?style=regular
-  'faceGrinSquintTears': FontAwesomeIcons.faceGrinSquintTears,
-
-  /// Solid Face grin stars icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-stars?style=solid
-  'solidFaceGrinStars': FontAwesomeIcons.solidFaceGrinStars,
-
-  /// Regular Face grin stars icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-stars?style=regular
-  'faceGrinStars': FontAwesomeIcons.faceGrinStars,
-
-  /// Solid Face grin tears icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tears?style=solid
-  'solidFaceGrinTears': FontAwesomeIcons.solidFaceGrinTears,
-
-  /// Regular Face grin tears icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tears?style=regular
-  'faceGrinTears': FontAwesomeIcons.faceGrinTears,
-
-  /// Solid Face grin tongue icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue?style=solid
-  'solidFaceGrinTongue': FontAwesomeIcons.solidFaceGrinTongue,
-
-  /// Regular Face grin tongue icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue?style=regular
-  'faceGrinTongue': FontAwesomeIcons.faceGrinTongue,
-
-  /// Solid Face grin tongue squint icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue-squint?style=solid
-  'solidFaceGrinTongueSquint': FontAwesomeIcons.solidFaceGrinTongueSquint,
-
-  /// Regular Face grin tongue squint icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue-squint?style=regular
-  'faceGrinTongueSquint': FontAwesomeIcons.faceGrinTongueSquint,
-
-  /// Solid Face grin tongue wink icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue-wink?style=solid
-  'solidFaceGrinTongueWink': FontAwesomeIcons.solidFaceGrinTongueWink,
-
-  /// Regular Face grin tongue wink icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-tongue-wink?style=regular
-  'faceGrinTongueWink': FontAwesomeIcons.faceGrinTongueWink,
-
-  /// Solid Face grin wide icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-wide?style=solid
-  'solidFaceGrinWide': FontAwesomeIcons.solidFaceGrinWide,
-
-  /// Regular Face grin wide icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-wide?style=regular
-  'faceGrinWide': FontAwesomeIcons.faceGrinWide,
-
-  /// Solid Face grin wink icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-wink?style=solid
-  'solidFaceGrinWink': FontAwesomeIcons.solidFaceGrinWink,
-
-  /// Regular Face grin wink icon
-  ///
-  /// https://fontawesome.com/icons/face-grin-wink?style=regular
-  'faceGrinWink': FontAwesomeIcons.faceGrinWink,
-
-  /// Solid Face kiss icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss?style=solid
-  'solidFaceKiss': FontAwesomeIcons.solidFaceKiss,
-
-  /// Regular Face kiss icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss?style=regular
-  'faceKiss': FontAwesomeIcons.faceKiss,
-
-  /// Solid Face Kiss Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss-beam?style=solid
-  'solidFaceKissBeam': FontAwesomeIcons.solidFaceKissBeam,
-
-  /// Regular Face Kiss Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss-beam?style=regular
-  'faceKissBeam': FontAwesomeIcons.faceKissBeam,
-
-  /// Solid Face Kiss Wink Heart icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss-wink-heart?style=solid
-  'solidFaceKissWinkHeart': FontAwesomeIcons.solidFaceKissWinkHeart,
-
-  /// Regular Face Kiss Wink Heart icon
-  ///
-  /// https://fontawesome.com/icons/face-kiss-wink-heart?style=regular
-  'faceKissWinkHeart': FontAwesomeIcons.faceKissWinkHeart,
-
-  /// Solid Face Laugh icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh?style=solid
-  'solidFaceLaugh': FontAwesomeIcons.solidFaceLaugh,
-
-  /// Regular Face Laugh icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh?style=regular
-  'faceLaugh': FontAwesomeIcons.faceLaugh,
-
-  /// Solid Face Laugh Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-beam?style=solid
-  'solidFaceLaughBeam': FontAwesomeIcons.solidFaceLaughBeam,
-
-  /// Regular Face Laugh Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-beam?style=regular
-  'faceLaughBeam': FontAwesomeIcons.faceLaughBeam,
-
-  /// Solid Face Laugh Squint icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-squint?style=solid
-  'solidFaceLaughSquint': FontAwesomeIcons.solidFaceLaughSquint,
-
-  /// Regular Face Laugh Squint icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-squint?style=regular
-  'faceLaughSquint': FontAwesomeIcons.faceLaughSquint,
-
-  /// Solid Face Laugh Wink icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-wink?style=solid
-  'solidFaceLaughWink': FontAwesomeIcons.solidFaceLaughWink,
-
-  /// Regular Face Laugh Wink icon
-  ///
-  /// https://fontawesome.com/icons/face-laugh-wink?style=regular
-  'faceLaughWink': FontAwesomeIcons.faceLaughWink,
-
-  /// Solid Face meh icon
-  ///
-  /// https://fontawesome.com/icons/face-meh?style=solid
-  'solidFaceMeh': FontAwesomeIcons.solidFaceMeh,
-
-  /// Regular Face meh icon
-  ///
-  /// https://fontawesome.com/icons/face-meh?style=regular
-  'faceMeh': FontAwesomeIcons.faceMeh,
-
-  /// Solid Face Meh Blank icon
-  ///
-  /// https://fontawesome.com/icons/face-meh-blank?style=solid
-  'solidFaceMehBlank': FontAwesomeIcons.solidFaceMehBlank,
-
-  /// Regular Face Meh Blank icon
-  ///
-  /// https://fontawesome.com/icons/face-meh-blank?style=regular
-  'faceMehBlank': FontAwesomeIcons.faceMehBlank,
-
-  /// Solid Face Rolling Eyes icon
-  ///
-  /// https://fontawesome.com/icons/face-rolling-eyes?style=solid
-  'solidFaceRollingEyes': FontAwesomeIcons.solidFaceRollingEyes,
-
-  /// Regular Face Rolling Eyes icon
-  ///
-  /// https://fontawesome.com/icons/face-rolling-eyes?style=regular
-  'faceRollingEyes': FontAwesomeIcons.faceRollingEyes,
-
-  /// Solid Face Sad Cry icon
-  ///
-  /// https://fontawesome.com/icons/face-sad-cry?style=solid
-  'solidFaceSadCry': FontAwesomeIcons.solidFaceSadCry,
-
-  /// Regular Face Sad Cry icon
-  ///
-  /// https://fontawesome.com/icons/face-sad-cry?style=regular
-  'faceSadCry': FontAwesomeIcons.faceSadCry,
-
-  /// Solid Face Sad Tear icon
-  ///
-  /// https://fontawesome.com/icons/face-sad-tear?style=solid
-  'solidFaceSadTear': FontAwesomeIcons.solidFaceSadTear,
-
-  /// Regular Face Sad Tear icon
-  ///
-  /// https://fontawesome.com/icons/face-sad-tear?style=regular
-  'faceSadTear': FontAwesomeIcons.faceSadTear,
-
-  /// Solid Face Smile icon
-  ///
-  /// https://fontawesome.com/icons/face-smile?style=solid
-  'solidFaceSmile': FontAwesomeIcons.solidFaceSmile,
-
-  /// Regular Face Smile icon
-  ///
-  /// https://fontawesome.com/icons/face-smile?style=regular
-  'faceSmile': FontAwesomeIcons.faceSmile,
-
-  /// Solid Face Smile Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-smile-beam?style=solid
-  'solidFaceSmileBeam': FontAwesomeIcons.solidFaceSmileBeam,
-
-  /// Regular Face Smile Beam icon
-  ///
-  /// https://fontawesome.com/icons/face-smile-beam?style=regular
-  'faceSmileBeam': FontAwesomeIcons.faceSmileBeam,
-
-  /// Solid Face Smile Wink icon
-  ///
-  /// https://fontawesome.com/icons/face-smile-wink?style=solid
-  'solidFaceSmileWink': FontAwesomeIcons.solidFaceSmileWink,
-
-  /// Regular Face Smile Wink icon
-  ///
-  /// https://fontawesome.com/icons/face-smile-wink?style=regular
-  'faceSmileWink': FontAwesomeIcons.faceSmileWink,
-
-  /// Solid Face Surprise icon
-  ///
-  /// https://fontawesome.com/icons/face-surprise?style=solid
-  'solidFaceSurprise': FontAwesomeIcons.solidFaceSurprise,
-
-  /// Regular Face Surprise icon
-  ///
-  /// https://fontawesome.com/icons/face-surprise?style=regular
-  'faceSurprise': FontAwesomeIcons.faceSurprise,
-
-  /// Solid Face Tired icon
-  ///
-  /// https://fontawesome.com/icons/face-tired?style=solid
-  'solidFaceTired': FontAwesomeIcons.solidFaceTired,
-
-  /// Regular Face Tired icon
-  ///
-  /// https://fontawesome.com/icons/face-tired?style=regular
-  'faceTired': FontAwesomeIcons.faceTired,
-
-  /// Brands Facebook icon
-  ///
-  /// https://fontawesome.com/icons/facebook?style=brands
-  'facebook': FontAwesomeIcons.facebook,
-
-  /// Brands Facebook F icon
-  ///
-  /// https://fontawesome.com/icons/facebook-f?style=brands
-  'facebookF': FontAwesomeIcons.facebookF,
-
-  /// Brands Facebook Messenger icon
-  ///
-  /// https://fontawesome.com/icons/facebook-messenger?style=brands
-  'facebookMessenger': FontAwesomeIcons.facebookMessenger,
-
-  /// Solid Fan icon
-  ///
-  /// https://fontawesome.com/icons/fan?style=solid
-  'fan': FontAwesomeIcons.fan,
-
-  /// Brands Fantasy Flight-games icon
-  ///
-  /// https://fontawesome.com/icons/fantasy-flight-games?style=brands
-  'fantasyFlightGames': FontAwesomeIcons.fantasyFlightGames,
-
-  /// Solid Faucet icon
-  ///
-  /// https://fontawesome.com/icons/faucet?style=solid
-  'faucet': FontAwesomeIcons.faucet,
-
-  /// Solid Faucet Drip icon
-  ///
-  /// https://fontawesome.com/icons/faucet-drip?style=solid
-  'faucetDrip': FontAwesomeIcons.faucetDrip,
-
-  /// Solid Fax icon
-  ///
-  /// https://fontawesome.com/icons/fax?style=solid
-  'fax': FontAwesomeIcons.fax,
-
-  /// Solid Feather icon
-  ///
-  /// https://fontawesome.com/icons/feather?style=solid
-  'feather': FontAwesomeIcons.feather,
-
-  /// Solid Feather pointed icon
-  ///
-  /// https://fontawesome.com/icons/feather-pointed?style=solid
-  'featherPointed': FontAwesomeIcons.featherPointed,
-
-  /// Brands FedEx icon
-  ///
-  /// https://fontawesome.com/icons/fedex?style=brands
-  'fedex': FontAwesomeIcons.fedex,
-
-  /// Brands Fedora icon
-  ///
-  /// https://fontawesome.com/icons/fedora?style=brands
-  'fedora': FontAwesomeIcons.fedora,
-
-  /// Solid Ferry icon
-  ///
-  /// https://fontawesome.com/icons/ferry?style=solid
-  'ferry': FontAwesomeIcons.ferry,
-
-  /// Brands Figma icon
-  ///
-  /// https://fontawesome.com/icons/figma?style=brands
-  'figma': FontAwesomeIcons.figma,
-
-  /// Solid File icon
-  ///
-  /// https://fontawesome.com/icons/file?style=solid
-  'solidFile': FontAwesomeIcons.solidFile,
-
-  /// Regular File icon
-  ///
-  /// https://fontawesome.com/icons/file?style=regular
-  'file': FontAwesomeIcons.file,
-
-  /// Solid File arrow down icon
-  ///
-  /// https://fontawesome.com/icons/file-arrow-down?style=solid
-  'fileArrowDown': FontAwesomeIcons.fileArrowDown,
-
-  /// Solid File arrow up icon
-  ///
-  /// https://fontawesome.com/icons/file-arrow-up?style=solid
-  'fileArrowUp': FontAwesomeIcons.fileArrowUp,
-
-  /// Solid Audio File icon
-  ///
-  /// https://fontawesome.com/icons/file-audio?style=solid
-  'solidFileAudio': FontAwesomeIcons.solidFileAudio,
-
-  /// Regular Audio File icon
-  ///
-  /// https://fontawesome.com/icons/file-audio?style=regular
-  'fileAudio': FontAwesomeIcons.fileAudio,
-
-  /// Solid File Circle-Check icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-check?style=solid
-  'fileCircleCheck': FontAwesomeIcons.fileCircleCheck,
-
-  /// Solid File Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-exclamation?style=solid
-  'fileCircleExclamation': FontAwesomeIcons.fileCircleExclamation,
-
-  /// Solid File Circle-minus icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-minus?style=solid
-  'fileCircleMinus': FontAwesomeIcons.fileCircleMinus,
-
-  /// Solid File Circle-plus icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-plus?style=solid
-  'fileCirclePlus': FontAwesomeIcons.fileCirclePlus,
-
-  /// Solid File Circle-question icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-question?style=solid
-  'fileCircleQuestion': FontAwesomeIcons.fileCircleQuestion,
-
-  /// Solid File Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/file-circle-xmark?style=solid
-  'fileCircleXmark': FontAwesomeIcons.fileCircleXmark,
-
-  /// Solid Code File icon
-  ///
-  /// https://fontawesome.com/icons/file-code?style=solid
-  'solidFileCode': FontAwesomeIcons.solidFileCode,
-
-  /// Regular Code File icon
-  ///
-  /// https://fontawesome.com/icons/file-code?style=regular
-  'fileCode': FontAwesomeIcons.fileCode,
-
-  /// Solid File Contract icon
-  ///
-  /// https://fontawesome.com/icons/file-contract?style=solid
-  'fileContract': FontAwesomeIcons.fileContract,
-
-  /// Solid File CSV icon
-  ///
-  /// https://fontawesome.com/icons/file-csv?style=solid
-  'fileCsv': FontAwesomeIcons.fileCsv,
-
-  /// Solid Excel File icon
-  ///
-  /// https://fontawesome.com/icons/file-excel?style=solid
-  'solidFileExcel': FontAwesomeIcons.solidFileExcel,
-
-  /// Regular Excel File icon
-  ///
-  /// https://fontawesome.com/icons/file-excel?style=regular
-  'fileExcel': FontAwesomeIcons.fileExcel,
-
-  /// Solid File Export icon
-  ///
-  /// https://fontawesome.com/icons/file-export?style=solid
-  'fileExport': FontAwesomeIcons.fileExport,
-
-  /// Solid Image File icon
-  ///
-  /// https://fontawesome.com/icons/file-image?style=solid
-  'solidFileImage': FontAwesomeIcons.solidFileImage,
-
-  /// Regular Image File icon
-  ///
-  /// https://fontawesome.com/icons/file-image?style=regular
-  'fileImage': FontAwesomeIcons.fileImage,
-
-  /// Solid File Import icon
-  ///
-  /// https://fontawesome.com/icons/file-import?style=solid
-  'fileImport': FontAwesomeIcons.fileImport,
-
-  /// Solid File Invoice icon
-  ///
-  /// https://fontawesome.com/icons/file-invoice?style=solid
-  'fileInvoice': FontAwesomeIcons.fileInvoice,
-
-  /// Solid File Invoice with US Dollar icon
-  ///
-  /// https://fontawesome.com/icons/file-invoice-dollar?style=solid
-  'fileInvoiceDollar': FontAwesomeIcons.fileInvoiceDollar,
-
-  /// Solid File lines icon
-  ///
-  /// https://fontawesome.com/icons/file-lines?style=solid
-  'solidFileLines': FontAwesomeIcons.solidFileLines,
-
-  /// Regular File lines icon
-  ///
-  /// https://fontawesome.com/icons/file-lines?style=regular
-  'fileLines': FontAwesomeIcons.fileLines,
-
-  /// Solid Medical File icon
-  ///
-  /// https://fontawesome.com/icons/file-medical?style=solid
-  'fileMedical': FontAwesomeIcons.fileMedical,
-
-  /// Solid PDF File icon
-  ///
-  /// https://fontawesome.com/icons/file-pdf?style=solid
-  'solidFilePdf': FontAwesomeIcons.solidFilePdf,
-
-  /// Regular PDF File icon
-  ///
-  /// https://fontawesome.com/icons/file-pdf?style=regular
-  'filePdf': FontAwesomeIcons.filePdf,
-
-  /// Solid File pen icon
-  ///
-  /// https://fontawesome.com/icons/file-pen?style=solid
-  'filePen': FontAwesomeIcons.filePen,
-
-  /// Solid Powerpoint File icon
-  ///
-  /// https://fontawesome.com/icons/file-powerpoint?style=solid
-  'solidFilePowerpoint': FontAwesomeIcons.solidFilePowerpoint,
-
-  /// Regular Powerpoint File icon
-  ///
-  /// https://fontawesome.com/icons/file-powerpoint?style=regular
-  'filePowerpoint': FontAwesomeIcons.filePowerpoint,
-
-  /// Solid File Prescription icon
-  ///
-  /// https://fontawesome.com/icons/file-prescription?style=solid
-  'filePrescription': FontAwesomeIcons.filePrescription,
-
-  /// Solid File Shield icon
-  ///
-  /// https://fontawesome.com/icons/file-shield?style=solid
-  'fileShield': FontAwesomeIcons.fileShield,
-
-  /// Solid File Signature icon
-  ///
-  /// https://fontawesome.com/icons/file-signature?style=solid
-  'fileSignature': FontAwesomeIcons.fileSignature,
-
-  /// Solid Video File icon
-  ///
-  /// https://fontawesome.com/icons/file-video?style=solid
-  'solidFileVideo': FontAwesomeIcons.solidFileVideo,
-
-  /// Regular Video File icon
-  ///
-  /// https://fontawesome.com/icons/file-video?style=regular
-  'fileVideo': FontAwesomeIcons.fileVideo,
-
-  /// Solid File waveform icon
-  ///
-  /// https://fontawesome.com/icons/file-waveform?style=solid
-  'fileWaveform': FontAwesomeIcons.fileWaveform,
-
-  /// Solid Word File icon
-  ///
-  /// https://fontawesome.com/icons/file-word?style=solid
-  'solidFileWord': FontAwesomeIcons.solidFileWord,
-
-  /// Regular Word File icon
-  ///
-  /// https://fontawesome.com/icons/file-word?style=regular
-  'fileWord': FontAwesomeIcons.fileWord,
-
-  /// Solid File zipper icon
-  ///
-  /// https://fontawesome.com/icons/file-zipper?style=solid
-  'solidFileZipper': FontAwesomeIcons.solidFileZipper,
-
-  /// Regular File zipper icon
-  ///
-  /// https://fontawesome.com/icons/file-zipper?style=regular
-  'fileZipper': FontAwesomeIcons.fileZipper,
-
-  /// Solid Fill icon
-  ///
-  /// https://fontawesome.com/icons/fill?style=solid
-  'fill': FontAwesomeIcons.fill,
-
-  /// Solid Fill Drip icon
-  ///
-  /// https://fontawesome.com/icons/fill-drip?style=solid
-  'fillDrip': FontAwesomeIcons.fillDrip,
-
-  /// Solid Film icon
-  ///
-  /// https://fontawesome.com/icons/film?style=solid
-  'film': FontAwesomeIcons.film,
-
-  /// Solid Filter icon
-  ///
-  /// https://fontawesome.com/icons/filter?style=solid
-  'filter': FontAwesomeIcons.filter,
-
-  /// Solid Filter Circle Dollar icon
-  ///
-  /// https://fontawesome.com/icons/filter-circle-dollar?style=solid
-  'filterCircleDollar': FontAwesomeIcons.filterCircleDollar,
-
-  /// Solid Filter Circle X Mark icon
-  ///
-  /// https://fontawesome.com/icons/filter-circle-xmark?style=solid
-  'filterCircleXmark': FontAwesomeIcons.filterCircleXmark,
-
-  /// Solid Fingerprint icon
-  ///
-  /// https://fontawesome.com/icons/fingerprint?style=solid
-  'fingerprint': FontAwesomeIcons.fingerprint,
-
-  /// Solid fire icon
-  ///
-  /// https://fontawesome.com/icons/fire?style=solid
-  'fire': FontAwesomeIcons.fire,
-
-  /// Solid Fire Burner icon
-  ///
-  /// https://fontawesome.com/icons/fire-burner?style=solid
-  'fireBurner': FontAwesomeIcons.fireBurner,
-
-  /// Solid fire-extinguisher icon
-  ///
-  /// https://fontawesome.com/icons/fire-extinguisher?style=solid
-  'fireExtinguisher': FontAwesomeIcons.fireExtinguisher,
-
-  /// Solid Fire flame curved icon
-  ///
-  /// https://fontawesome.com/icons/fire-flame-curved?style=solid
-  'fireFlameCurved': FontAwesomeIcons.fireFlameCurved,
-
-  /// Solid Fire flame simple icon
-  ///
-  /// https://fontawesome.com/icons/fire-flame-simple?style=solid
-  'fireFlameSimple': FontAwesomeIcons.fireFlameSimple,
-
-  /// Brands Firefox icon
-  ///
-  /// https://fontawesome.com/icons/firefox?style=brands
-  'firefox': FontAwesomeIcons.firefox,
-
-  /// Brands Firefox Browser icon
-  ///
-  /// https://fontawesome.com/icons/firefox-browser?style=brands
-  'firefoxBrowser': FontAwesomeIcons.firefoxBrowser,
-
-  /// Brands First Order icon
-  ///
-  /// https://fontawesome.com/icons/first-order?style=brands
-  'firstOrder': FontAwesomeIcons.firstOrder,
-
-  /// Brands Alternate First Order icon
-  ///
-  /// https://fontawesome.com/icons/first-order-alt?style=brands
-  'firstOrderAlt': FontAwesomeIcons.firstOrderAlt,
-
-  /// Brands firstdraft icon
-  ///
-  /// https://fontawesome.com/icons/firstdraft?style=brands
-  'firstdraft': FontAwesomeIcons.firstdraft,
-
-  /// Solid Fish icon
-  ///
-  /// https://fontawesome.com/icons/fish?style=solid
-  'fish': FontAwesomeIcons.fish,
-
-  /// Solid Fish Fins icon
-  ///
-  /// https://fontawesome.com/icons/fish-fins?style=solid
-  'fishFins': FontAwesomeIcons.fishFins,
-
-  /// Solid flag icon
-  ///
-  /// https://fontawesome.com/icons/flag?style=solid
-  'solidFlag': FontAwesomeIcons.solidFlag,
-
-  /// Regular flag icon
-  ///
-  /// https://fontawesome.com/icons/flag?style=regular
-  'flag': FontAwesomeIcons.flag,
-
-  /// Solid flag-checkered icon
-  ///
-  /// https://fontawesome.com/icons/flag-checkered?style=solid
-  'flagCheckered': FontAwesomeIcons.flagCheckered,
-
-  /// Solid United States of America Flag icon
-  ///
-  /// https://fontawesome.com/icons/flag-usa?style=solid
-  'flagUsa': FontAwesomeIcons.flagUsa,
-
-  /// Solid Flask icon
-  ///
-  /// https://fontawesome.com/icons/flask?style=solid
-  'flask': FontAwesomeIcons.flask,
-
-  /// Solid Flask and Vial icon
-  ///
-  /// https://fontawesome.com/icons/flask-vial?style=solid
-  'flaskVial': FontAwesomeIcons.flaskVial,
-
-  /// Brands Flickr icon
-  ///
-  /// https://fontawesome.com/icons/flickr?style=brands
-  'flickr': FontAwesomeIcons.flickr,
-
-  /// Brands Flipboard icon
-  ///
-  /// https://fontawesome.com/icons/flipboard?style=brands
-  'flipboard': FontAwesomeIcons.flipboard,
-
-  /// Solid Floppy Disk icon
-  ///
-  /// https://fontawesome.com/icons/floppy-disk?style=solid
-  'solidFloppyDisk': FontAwesomeIcons.solidFloppyDisk,
-
-  /// Regular Floppy Disk icon
-  ///
-  /// https://fontawesome.com/icons/floppy-disk?style=regular
-  'floppyDisk': FontAwesomeIcons.floppyDisk,
-
-  /// Solid Florin Sign icon
-  ///
-  /// https://fontawesome.com/icons/florin-sign?style=solid
-  'florinSign': FontAwesomeIcons.florinSign,
-
-  /// Brands Fly icon
-  ///
-  /// https://fontawesome.com/icons/fly?style=brands
-  'fly': FontAwesomeIcons.fly,
-
-  /// Solid Folder icon
-  ///
-  /// https://fontawesome.com/icons/folder?style=solid
-  'solidFolder': FontAwesomeIcons.solidFolder,
-
-  /// Regular Folder icon
-  ///
-  /// https://fontawesome.com/icons/folder?style=regular
-  'folder': FontAwesomeIcons.folder,
-
-  /// Solid Folder Closed icon
-  ///
-  /// https://fontawesome.com/icons/folder-closed?style=solid
-  'solidFolderClosed': FontAwesomeIcons.solidFolderClosed,
-
-  /// Regular Folder Closed icon
-  ///
-  /// https://fontawesome.com/icons/folder-closed?style=regular
-  'folderClosed': FontAwesomeIcons.folderClosed,
-
-  /// Solid Folder Minus icon
-  ///
-  /// https://fontawesome.com/icons/folder-minus?style=solid
-  'folderMinus': FontAwesomeIcons.folderMinus,
-
-  /// Solid Folder Open icon
-  ///
-  /// https://fontawesome.com/icons/folder-open?style=solid
-  'solidFolderOpen': FontAwesomeIcons.solidFolderOpen,
-
-  /// Regular Folder Open icon
-  ///
-  /// https://fontawesome.com/icons/folder-open?style=regular
-  'folderOpen': FontAwesomeIcons.folderOpen,
-
-  /// Solid Folder Plus icon
-  ///
-  /// https://fontawesome.com/icons/folder-plus?style=solid
-  'folderPlus': FontAwesomeIcons.folderPlus,
-
-  /// Solid Folder Tree icon
-  ///
-  /// https://fontawesome.com/icons/folder-tree?style=solid
-  'folderTree': FontAwesomeIcons.folderTree,
-
-  /// Solid font icon
-  ///
-  /// https://fontawesome.com/icons/font?style=solid
-  'font': FontAwesomeIcons.font,
-
-  /// Solid Font Awesome icon
-  ///
-  /// https://fontawesome.com/icons/font-awesome?style=solid
-  'solidFontAwesome': FontAwesomeIcons.solidFontAwesome,
-
-  /// Regular Font Awesome icon
-  ///
-  /// https://fontawesome.com/icons/font-awesome?style=regular
-  'fontAwesome': FontAwesomeIcons.fontAwesome,
-
-  /// Brands Font Awesome icon
-  ///
-  /// https://fontawesome.com/icons/font-awesome?style=brands
-  'brandsFontAwesome': FontAwesomeIcons.brandsFontAwesome,
-
-  /// Brands Fonticons icon
-  ///
-  /// https://fontawesome.com/icons/fonticons?style=brands
-  'fonticons': FontAwesomeIcons.fonticons,
-
-  /// Brands Fonticons Fi icon
-  ///
-  /// https://fontawesome.com/icons/fonticons-fi?style=brands
-  'fonticonsFi': FontAwesomeIcons.fonticonsFi,
-
-  /// Solid Football Ball icon
-  ///
-  /// https://fontawesome.com/icons/football?style=solid
-  'football': FontAwesomeIcons.football,
-
-  /// Brands Fort Awesome icon
-  ///
-  /// https://fontawesome.com/icons/fort-awesome?style=brands
-  'fortAwesome': FontAwesomeIcons.fortAwesome,
-
-  /// Brands Alternate Fort Awesome icon
-  ///
-  /// https://fontawesome.com/icons/fort-awesome-alt?style=brands
-  'fortAwesomeAlt': FontAwesomeIcons.fortAwesomeAlt,
-
-  /// Brands Forumbee icon
-  ///
-  /// https://fontawesome.com/icons/forumbee?style=brands
-  'forumbee': FontAwesomeIcons.forumbee,
-
-  /// Solid forward icon
-  ///
-  /// https://fontawesome.com/icons/forward?style=solid
-  'forward': FontAwesomeIcons.forward,
-
-  /// Solid Forward fast icon
-  ///
-  /// https://fontawesome.com/icons/forward-fast?style=solid
-  'forwardFast': FontAwesomeIcons.forwardFast,
-
-  /// Solid Forward step icon
-  ///
-  /// https://fontawesome.com/icons/forward-step?style=solid
-  'forwardStep': FontAwesomeIcons.forwardStep,
-
-  /// Brands Foursquare icon
-  ///
-  /// https://fontawesome.com/icons/foursquare?style=brands
-  'foursquare': FontAwesomeIcons.foursquare,
-
-  /// Solid Franc Sign icon
-  ///
-  /// https://fontawesome.com/icons/franc-sign?style=solid
-  'francSign': FontAwesomeIcons.francSign,
-
-  /// Brands freeCodeCamp icon
-  ///
-  /// https://fontawesome.com/icons/free-code-camp?style=brands
-  'freeCodeCamp': FontAwesomeIcons.freeCodeCamp,
-
-  /// Brands FreeBSD icon
-  ///
-  /// https://fontawesome.com/icons/freebsd?style=brands
-  'freebsd': FontAwesomeIcons.freebsd,
-
-  /// Solid Frog icon
-  ///
-  /// https://fontawesome.com/icons/frog?style=solid
-  'frog': FontAwesomeIcons.frog,
-
-  /// Brands Fulcrum icon
-  ///
-  /// https://fontawesome.com/icons/fulcrum?style=brands
-  'fulcrum': FontAwesomeIcons.fulcrum,
-
-  /// Solid Futbol ball icon
-  ///
-  /// https://fontawesome.com/icons/futbol?style=solid
-  'solidFutbol': FontAwesomeIcons.solidFutbol,
-
-  /// Regular Futbol ball icon
-  ///
-  /// https://fontawesome.com/icons/futbol?style=regular
-  'futbol': FontAwesomeIcons.futbol,
-
-  /// Solid G icon
-  ///
-  /// https://fontawesome.com/icons/g?style=solid
-  'g': FontAwesomeIcons.g,
-
-  /// Brands Galactic Republic icon
-  ///
-  /// https://fontawesome.com/icons/galactic-republic?style=brands
-  'galacticRepublic': FontAwesomeIcons.galacticRepublic,
-
-  /// Brands Galactic Senate icon
-  ///
-  /// https://fontawesome.com/icons/galactic-senate?style=brands
-  'galacticSenate': FontAwesomeIcons.galacticSenate,
-
-  /// Solid Gamepad icon
-  ///
-  /// https://fontawesome.com/icons/gamepad?style=solid
-  'gamepad': FontAwesomeIcons.gamepad,
-
-  /// Solid Gas Pump icon
-  ///
-  /// https://fontawesome.com/icons/gas-pump?style=solid
-  'gasPump': FontAwesomeIcons.gasPump,
-
-  /// Solid Gauge med icon
-  ///
-  /// https://fontawesome.com/icons/gauge?style=solid
-  'gauge': FontAwesomeIcons.gauge,
-
-  /// Solid Gauge icon
-  ///
-  /// https://fontawesome.com/icons/gauge-high?style=solid
-  'gaugeHigh': FontAwesomeIcons.gaugeHigh,
-
-  /// Solid Gauge simple med icon
-  ///
-  /// https://fontawesome.com/icons/gauge-simple?style=solid
-  'gaugeSimple': FontAwesomeIcons.gaugeSimple,
-
-  /// Solid Gauge simple icon
-  ///
-  /// https://fontawesome.com/icons/gauge-simple-high?style=solid
-  'gaugeSimpleHigh': FontAwesomeIcons.gaugeSimpleHigh,
-
-  /// Solid Gavel icon
-  ///
-  /// https://fontawesome.com/icons/gavel?style=solid
-  'gavel': FontAwesomeIcons.gavel,
-
-  /// Solid Gear icon
-  ///
-  /// https://fontawesome.com/icons/gear?style=solid
-  'gear': FontAwesomeIcons.gear,
-
-  /// Solid Gears icon
-  ///
-  /// https://fontawesome.com/icons/gears?style=solid
-  'gears': FontAwesomeIcons.gears,
-
-  /// Solid Gem icon
-  ///
-  /// https://fontawesome.com/icons/gem?style=solid
-  'solidGem': FontAwesomeIcons.solidGem,
-
-  /// Regular Gem icon
-  ///
-  /// https://fontawesome.com/icons/gem?style=regular
-  'gem': FontAwesomeIcons.gem,
-
-  /// Solid Genderless icon
-  ///
-  /// https://fontawesome.com/icons/genderless?style=solid
-  'genderless': FontAwesomeIcons.genderless,
-
-  /// Brands Get Pocket icon
-  ///
-  /// https://fontawesome.com/icons/get-pocket?style=brands
-  'getPocket': FontAwesomeIcons.getPocket,
-
-  /// Brands GG Currency icon
-  ///
-  /// https://fontawesome.com/icons/gg?style=brands
-  'gg': FontAwesomeIcons.gg,
-
-  /// Brands GG Currency Circle icon
-  ///
-  /// https://fontawesome.com/icons/gg-circle?style=brands
-  'ggCircle': FontAwesomeIcons.ggCircle,
-
-  /// Solid Ghost icon
-  ///
-  /// https://fontawesome.com/icons/ghost?style=solid
-  'ghost': FontAwesomeIcons.ghost,
-
-  /// Solid gift icon
-  ///
-  /// https://fontawesome.com/icons/gift?style=solid
-  'gift': FontAwesomeIcons.gift,
-
-  /// Solid Gifts icon
-  ///
-  /// https://fontawesome.com/icons/gifts?style=solid
-  'gifts': FontAwesomeIcons.gifts,
-
-  /// Brands Git icon
-  ///
-  /// https://fontawesome.com/icons/git?style=brands
-  'git': FontAwesomeIcons.git,
-
-  /// Brands Git Alt icon
-  ///
-  /// https://fontawesome.com/icons/git-alt?style=brands
-  'gitAlt': FontAwesomeIcons.gitAlt,
-
-  /// Brands GitHub icon
-  ///
-  /// https://fontawesome.com/icons/github?style=brands
-  'github': FontAwesomeIcons.github,
-
-  /// Brands Alternate GitHub icon
-  ///
-  /// https://fontawesome.com/icons/github-alt?style=brands
-  'githubAlt': FontAwesomeIcons.githubAlt,
-
-  /// Brands GitKraken icon
-  ///
-  /// https://fontawesome.com/icons/gitkraken?style=brands
-  'gitkraken': FontAwesomeIcons.gitkraken,
-
-  /// Brands GitLab icon
-  ///
-  /// https://fontawesome.com/icons/gitlab?style=brands
-  'gitlab': FontAwesomeIcons.gitlab,
-
-  /// Brands Gitter icon
-  ///
-  /// https://fontawesome.com/icons/gitter?style=brands
-  'gitter': FontAwesomeIcons.gitter,
-
-  /// Solid Glass Water icon
-  ///
-  /// https://fontawesome.com/icons/glass-water?style=solid
-  'glassWater': FontAwesomeIcons.glassWater,
-
-  /// Solid Glass Water-droplet icon
-  ///
-  /// https://fontawesome.com/icons/glass-water-droplet?style=solid
-  'glassWaterDroplet': FontAwesomeIcons.glassWaterDroplet,
-
-  /// Solid Glasses icon
-  ///
-  /// https://fontawesome.com/icons/glasses?style=solid
-  'glasses': FontAwesomeIcons.glasses,
-
-  /// Brands Glide icon
-  ///
-  /// https://fontawesome.com/icons/glide?style=brands
-  'glide': FontAwesomeIcons.glide,
-
-  /// Brands Glide G icon
-  ///
-  /// https://fontawesome.com/icons/glide-g?style=brands
-  'glideG': FontAwesomeIcons.glideG,
-
-  /// Solid Globe icon
-  ///
-  /// https://fontawesome.com/icons/globe?style=solid
-  'globe': FontAwesomeIcons.globe,
-
-  /// Brands Gofore icon
-  ///
-  /// https://fontawesome.com/icons/gofore?style=brands
-  'gofore': FontAwesomeIcons.gofore,
-
-  /// Brands Go icon
-  ///
-  /// https://fontawesome.com/icons/golang?style=brands
-  'golang': FontAwesomeIcons.golang,
-
-  /// Solid Golf ball tee icon
-  ///
-  /// https://fontawesome.com/icons/golf-ball-tee?style=solid
-  'golfBallTee': FontAwesomeIcons.golfBallTee,
-
-  /// Brands Goodreads icon
-  ///
-  /// https://fontawesome.com/icons/goodreads?style=brands
-  'goodreads': FontAwesomeIcons.goodreads,
-
-  /// Brands Goodreads G icon
-  ///
-  /// https://fontawesome.com/icons/goodreads-g?style=brands
-  'goodreadsG': FontAwesomeIcons.goodreadsG,
-
-  /// Brands Google Logo icon
-  ///
-  /// https://fontawesome.com/icons/google?style=brands
-  'google': FontAwesomeIcons.google,
-
-  /// Brands Google Drive icon
-  ///
-  /// https://fontawesome.com/icons/google-drive?style=brands
-  'googleDrive': FontAwesomeIcons.googleDrive,
-
-  /// Brands Google Pay icon
-  ///
-  /// https://fontawesome.com/icons/google-pay?style=brands
-  'googlePay': FontAwesomeIcons.googlePay,
-
-  /// Brands Google Play icon
-  ///
-  /// https://fontawesome.com/icons/google-play?style=brands
-  'googlePlay': FontAwesomeIcons.googlePlay,
-
-  /// Brands Google Plus icon
-  ///
-  /// https://fontawesome.com/icons/google-plus?style=brands
-  'googlePlus': FontAwesomeIcons.googlePlus,
-
-  /// Brands Google Plus G icon
-  ///
-  /// https://fontawesome.com/icons/google-plus-g?style=brands
-  'googlePlusG': FontAwesomeIcons.googlePlusG,
-
-  /// Brands Google Wallet icon
-  ///
-  /// https://fontawesome.com/icons/google-wallet?style=brands
-  'googleWallet': FontAwesomeIcons.googleWallet,
-
-  /// Solid Gopuram icon
-  ///
-  /// https://fontawesome.com/icons/gopuram?style=solid
-  'gopuram': FontAwesomeIcons.gopuram,
-
-  /// Solid Graduation Cap icon
-  ///
-  /// https://fontawesome.com/icons/graduation-cap?style=solid
-  'graduationCap': FontAwesomeIcons.graduationCap,
-
-  /// Brands Gratipay (Gittip) icon
-  ///
-  /// https://fontawesome.com/icons/gratipay?style=brands
-  'gratipay': FontAwesomeIcons.gratipay,
-
-  /// Brands Grav icon
-  ///
-  /// https://fontawesome.com/icons/grav?style=brands
-  'grav': FontAwesomeIcons.grav,
-
-  /// Solid Greater Than icon
-  ///
-  /// https://fontawesome.com/icons/greater-than?style=solid
-  'greaterThan': FontAwesomeIcons.greaterThan,
-
-  /// Solid Greater Than Equal To icon
-  ///
-  /// https://fontawesome.com/icons/greater-than-equal?style=solid
-  'greaterThanEqual': FontAwesomeIcons.greaterThanEqual,
-
-  /// Solid Grip icon
-  ///
-  /// https://fontawesome.com/icons/grip?style=solid
-  'grip': FontAwesomeIcons.grip,
-
-  /// Solid Grip Lines icon
-  ///
-  /// https://fontawesome.com/icons/grip-lines?style=solid
-  'gripLines': FontAwesomeIcons.gripLines,
-
-  /// Solid Grip Lines Vertical icon
-  ///
-  /// https://fontawesome.com/icons/grip-lines-vertical?style=solid
-  'gripLinesVertical': FontAwesomeIcons.gripLinesVertical,
-
-  /// Solid Grip Vertical icon
-  ///
-  /// https://fontawesome.com/icons/grip-vertical?style=solid
-  'gripVertical': FontAwesomeIcons.gripVertical,
-
-  /// Brands Gripfire, Inc. icon
-  ///
-  /// https://fontawesome.com/icons/gripfire?style=brands
-  'gripfire': FontAwesomeIcons.gripfire,
-
-  /// Solid Group Arrows-rotate icon
-  ///
-  /// https://fontawesome.com/icons/group-arrows-rotate?style=solid
-  'groupArrowsRotate': FontAwesomeIcons.groupArrowsRotate,
-
-  /// Brands Grunt icon
-  ///
-  /// https://fontawesome.com/icons/grunt?style=brands
-  'grunt': FontAwesomeIcons.grunt,
-
-  /// Solid Guarani Sign icon
-  ///
-  /// https://fontawesome.com/icons/guarani-sign?style=solid
-  'guaraniSign': FontAwesomeIcons.guaraniSign,
-
-  /// Brands Guilded icon
-  ///
-  /// https://fontawesome.com/icons/guilded?style=brands
-  'guilded': FontAwesomeIcons.guilded,
-
-  /// Solid Guitar icon
-  ///
-  /// https://fontawesome.com/icons/guitar?style=solid
-  'guitar': FontAwesomeIcons.guitar,
-
-  /// Brands Gulp icon
-  ///
-  /// https://fontawesome.com/icons/gulp?style=brands
-  'gulp': FontAwesomeIcons.gulp,
-
-  /// Solid Gun icon
-  ///
-  /// https://fontawesome.com/icons/gun?style=solid
-  'gun': FontAwesomeIcons.gun,
-
-  /// Solid H icon
-  ///
-  /// https://fontawesome.com/icons/h?style=solid
-  'h': FontAwesomeIcons.h,
-
-  /// Brands Hacker News icon
-  ///
-  /// https://fontawesome.com/icons/hacker-news?style=brands
-  'hackerNews': FontAwesomeIcons.hackerNews,
-
-  /// Brands Hackerrank icon
-  ///
-  /// https://fontawesome.com/icons/hackerrank?style=brands
-  'hackerrank': FontAwesomeIcons.hackerrank,
-
-  /// Solid Hammer icon
-  ///
-  /// https://fontawesome.com/icons/hammer?style=solid
-  'hammer': FontAwesomeIcons.hammer,
-
-  /// Solid Hamsa icon
-  ///
-  /// https://fontawesome.com/icons/hamsa?style=solid
-  'hamsa': FontAwesomeIcons.hamsa,
-
-  /// Solid Paper (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand?style=solid
-  'solidHand': FontAwesomeIcons.solidHand,
-
-  /// Regular Paper (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand?style=regular
-  'hand': FontAwesomeIcons.hand,
-
-  /// Solid Rock (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-back-fist?style=solid
-  'solidHandBackFist': FontAwesomeIcons.solidHandBackFist,
-
-  /// Regular Rock (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-back-fist?style=regular
-  'handBackFist': FontAwesomeIcons.handBackFist,
-
-  /// Solid Hand dots icon
-  ///
-  /// https://fontawesome.com/icons/hand-dots?style=solid
-  'handDots': FontAwesomeIcons.handDots,
-
-  /// Solid Raised Fist icon
-  ///
-  /// https://fontawesome.com/icons/hand-fist?style=solid
-  'handFist': FontAwesomeIcons.handFist,
-
-  /// Solid Hand Holding icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding?style=solid
-  'handHolding': FontAwesomeIcons.handHolding,
-
-  /// Solid Hand holding dollar icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding-dollar?style=solid
-  'handHoldingDollar': FontAwesomeIcons.handHoldingDollar,
-
-  /// Solid Hand holding droplet icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding-droplet?style=solid
-  'handHoldingDroplet': FontAwesomeIcons.handHoldingDroplet,
-
-  /// Solid Hand Holding-hand icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding-hand?style=solid
-  'handHoldingHand': FontAwesomeIcons.handHoldingHand,
-
-  /// Solid Hand Holding Heart icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding-heart?style=solid
-  'handHoldingHeart': FontAwesomeIcons.handHoldingHeart,
-
-  /// Solid Hand Holding Medical Cross icon
-  ///
-  /// https://fontawesome.com/icons/hand-holding-medical?style=solid
-  'handHoldingMedical': FontAwesomeIcons.handHoldingMedical,
-
-  /// Solid Lizard (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-lizard?style=solid
-  'solidHandLizard': FontAwesomeIcons.solidHandLizard,
-
-  /// Regular Lizard (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-lizard?style=regular
-  'handLizard': FontAwesomeIcons.handLizard,
-
-  /// Solid Hand with Middle Finger Raised icon
-  ///
-  /// https://fontawesome.com/icons/hand-middle-finger?style=solid
-  'handMiddleFinger': FontAwesomeIcons.handMiddleFinger,
-
-  /// Solid Peace (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-peace?style=solid
-  'solidHandPeace': FontAwesomeIcons.solidHandPeace,
-
-  /// Regular Peace (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-peace?style=regular
-  'handPeace': FontAwesomeIcons.handPeace,
-
-  /// Solid Hand Pointing Down icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-down?style=solid
-  'solidHandPointDown': FontAwesomeIcons.solidHandPointDown,
-
-  /// Regular Hand Pointing Down icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-down?style=regular
-  'handPointDown': FontAwesomeIcons.handPointDown,
-
-  /// Solid Hand Pointing Left icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-left?style=solid
-  'solidHandPointLeft': FontAwesomeIcons.solidHandPointLeft,
-
-  /// Regular Hand Pointing Left icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-left?style=regular
-  'handPointLeft': FontAwesomeIcons.handPointLeft,
-
-  /// Solid Hand Pointing Right icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-right?style=solid
-  'solidHandPointRight': FontAwesomeIcons.solidHandPointRight,
-
-  /// Regular Hand Pointing Right icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-right?style=regular
-  'handPointRight': FontAwesomeIcons.handPointRight,
-
-  /// Solid Hand Pointing Up icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-up?style=solid
-  'solidHandPointUp': FontAwesomeIcons.solidHandPointUp,
-
-  /// Regular Hand Pointing Up icon
-  ///
-  /// https://fontawesome.com/icons/hand-point-up?style=regular
-  'handPointUp': FontAwesomeIcons.handPointUp,
-
-  /// Solid Pointer (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-pointer?style=solid
-  'solidHandPointer': FontAwesomeIcons.solidHandPointer,
-
-  /// Regular Pointer (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-pointer?style=regular
-  'handPointer': FontAwesomeIcons.handPointer,
-
-  /// Solid Scissors (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-scissors?style=solid
-  'solidHandScissors': FontAwesomeIcons.solidHandScissors,
-
-  /// Regular Scissors (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-scissors?style=regular
-  'handScissors': FontAwesomeIcons.handScissors,
-
-  /// Solid Hand Sparkles icon
-  ///
-  /// https://fontawesome.com/icons/hand-sparkles?style=solid
-  'handSparkles': FontAwesomeIcons.handSparkles,
-
-  /// Solid Spock (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-spock?style=solid
-  'solidHandSpock': FontAwesomeIcons.solidHandSpock,
-
-  /// Regular Spock (Hand) icon
-  ///
-  /// https://fontawesome.com/icons/hand-spock?style=regular
-  'handSpock': FontAwesomeIcons.handSpock,
-
-  /// Solid Handcuffs icon
-  ///
-  /// https://fontawesome.com/icons/handcuffs?style=solid
-  'handcuffs': FontAwesomeIcons.handcuffs,
-
-  /// Solid Hands icon
-  ///
-  /// https://fontawesome.com/icons/hands?style=solid
-  'hands': FontAwesomeIcons.hands,
-
-  /// Solid Hands american sign language interpreting icon
-  ///
-  /// https://fontawesome.com/icons/hands-asl-interpreting?style=solid
-  'handsAslInterpreting': FontAwesomeIcons.handsAslInterpreting,
-
-  /// Solid Hands Bound icon
-  ///
-  /// https://fontawesome.com/icons/hands-bound?style=solid
-  'handsBound': FontAwesomeIcons.handsBound,
-
-  /// Solid Hands bubbles icon
-  ///
-  /// https://fontawesome.com/icons/hands-bubbles?style=solid
-  'handsBubbles': FontAwesomeIcons.handsBubbles,
-
-  /// Solid Hands Clapping icon
-  ///
-  /// https://fontawesome.com/icons/hands-clapping?style=solid
-  'handsClapping': FontAwesomeIcons.handsClapping,
-
-  /// Solid Hands holding icon
-  ///
-  /// https://fontawesome.com/icons/hands-holding?style=solid
-  'handsHolding': FontAwesomeIcons.handsHolding,
-
-  /// Solid Hands Holding-child icon
-  ///
-  /// https://fontawesome.com/icons/hands-holding-child?style=solid
-  'handsHoldingChild': FontAwesomeIcons.handsHoldingChild,
-
-  /// Solid Hands Holding-circle icon
-  ///
-  /// https://fontawesome.com/icons/hands-holding-circle?style=solid
-  'handsHoldingCircle': FontAwesomeIcons.handsHoldingCircle,
-
-  /// Solid Hands praying icon
-  ///
-  /// https://fontawesome.com/icons/hands-praying?style=solid
-  'handsPraying': FontAwesomeIcons.handsPraying,
-
-  /// Solid Handshake icon
-  ///
-  /// https://fontawesome.com/icons/handshake?style=solid
-  'solidHandshake': FontAwesomeIcons.solidHandshake,
-
-  /// Regular Handshake icon
-  ///
-  /// https://fontawesome.com/icons/handshake?style=regular
-  'handshake': FontAwesomeIcons.handshake,
-
-  /// Solid Handshake angle icon
-  ///
-  /// https://fontawesome.com/icons/handshake-angle?style=solid
-  'handshakeAngle': FontAwesomeIcons.handshakeAngle,
-
-  /// Solid Handshake simple icon
-  ///
-  /// https://fontawesome.com/icons/handshake-simple?style=solid
-  'handshakeSimple': FontAwesomeIcons.handshakeSimple,
-
-  /// Solid Handshake simple slash icon
-  ///
-  /// https://fontawesome.com/icons/handshake-simple-slash?style=solid
-  'handshakeSimpleSlash': FontAwesomeIcons.handshakeSimpleSlash,
-
-  /// Solid Handshake Slash icon
-  ///
-  /// https://fontawesome.com/icons/handshake-slash?style=solid
-  'handshakeSlash': FontAwesomeIcons.handshakeSlash,
-
-  /// Solid Hanukiah icon
-  ///
-  /// https://fontawesome.com/icons/hanukiah?style=solid
-  'hanukiah': FontAwesomeIcons.hanukiah,
-
-  /// Solid Hard drive icon
-  ///
-  /// https://fontawesome.com/icons/hard-drive?style=solid
-  'solidHardDrive': FontAwesomeIcons.solidHardDrive,
-
-  /// Regular Hard drive icon
-  ///
-  /// https://fontawesome.com/icons/hard-drive?style=regular
-  'hardDrive': FontAwesomeIcons.hardDrive,
-
-  /// Brands Hashnode icon
-  ///
-  /// https://fontawesome.com/icons/hashnode?style=brands
-  'hashnode': FontAwesomeIcons.hashnode,
-
-  /// Solid Hashtag icon
-  ///
-  /// https://fontawesome.com/icons/hashtag?style=solid
-  'hashtag': FontAwesomeIcons.hashtag,
-
-  /// Solid Cowboy Hat icon
-  ///
-  /// https://fontawesome.com/icons/hat-cowboy?style=solid
-  'hatCowboy': FontAwesomeIcons.hatCowboy,
-
-  /// Solid Cowboy Hat Side icon
-  ///
-  /// https://fontawesome.com/icons/hat-cowboy-side?style=solid
-  'hatCowboySide': FontAwesomeIcons.hatCowboySide,
-
-  /// Solid Wizard's Hat icon
-  ///
-  /// https://fontawesome.com/icons/hat-wizard?style=solid
-  'hatWizard': FontAwesomeIcons.hatWizard,
-
-  /// Solid Head Side Cough icon
-  ///
-  /// https://fontawesome.com/icons/head-side-cough?style=solid
-  'headSideCough': FontAwesomeIcons.headSideCough,
-
-  /// Solid Head Side-cough-slash icon
-  ///
-  /// https://fontawesome.com/icons/head-side-cough-slash?style=solid
-  'headSideCoughSlash': FontAwesomeIcons.headSideCoughSlash,
-
-  /// Solid Head Side Mask icon
-  ///
-  /// https://fontawesome.com/icons/head-side-mask?style=solid
-  'headSideMask': FontAwesomeIcons.headSideMask,
-
-  /// Solid Head Side Virus icon
-  ///
-  /// https://fontawesome.com/icons/head-side-virus?style=solid
-  'headSideVirus': FontAwesomeIcons.headSideVirus,
-
-  /// Solid heading icon
-  ///
-  /// https://fontawesome.com/icons/heading?style=solid
-  'heading': FontAwesomeIcons.heading,
-
-  /// Solid headphones icon
-  ///
-  /// https://fontawesome.com/icons/headphones?style=solid
-  'headphones': FontAwesomeIcons.headphones,
-
-  /// Solid Headphones simple icon
-  ///
-  /// https://fontawesome.com/icons/headphones-simple?style=solid
-  'headphonesSimple': FontAwesomeIcons.headphonesSimple,
-
-  /// Solid Headset icon
-  ///
-  /// https://fontawesome.com/icons/headset?style=solid
-  'headset': FontAwesomeIcons.headset,
-
-  /// Solid Heart icon
-  ///
-  /// https://fontawesome.com/icons/heart?style=solid
-  'solidHeart': FontAwesomeIcons.solidHeart,
-
-  /// Regular Heart icon
-  ///
-  /// https://fontawesome.com/icons/heart?style=regular
-  'heart': FontAwesomeIcons.heart,
-
-  /// Solid Heart Circle-bolt icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-bolt?style=solid
-  'heartCircleBolt': FontAwesomeIcons.heartCircleBolt,
-
-  /// Solid Heart Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-check?style=solid
-  'heartCircleCheck': FontAwesomeIcons.heartCircleCheck,
-
-  /// Solid Heart Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-exclamation?style=solid
-  'heartCircleExclamation': FontAwesomeIcons.heartCircleExclamation,
-
-  /// Solid Heart Circle-minus icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-minus?style=solid
-  'heartCircleMinus': FontAwesomeIcons.heartCircleMinus,
-
-  /// Solid Heart Circle-plus icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-plus?style=solid
-  'heartCirclePlus': FontAwesomeIcons.heartCirclePlus,
-
-  /// Solid Heart Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/heart-circle-xmark?style=solid
-  'heartCircleXmark': FontAwesomeIcons.heartCircleXmark,
-
-  /// Solid Heart crack icon
-  ///
-  /// https://fontawesome.com/icons/heart-crack?style=solid
-  'heartCrack': FontAwesomeIcons.heartCrack,
-
-  /// Solid Heart pulse icon
-  ///
-  /// https://fontawesome.com/icons/heart-pulse?style=solid
-  'heartPulse': FontAwesomeIcons.heartPulse,
-
-  /// Solid Helicopter icon
-  ///
-  /// https://fontawesome.com/icons/helicopter?style=solid
-  'helicopter': FontAwesomeIcons.helicopter,
-
-  /// Solid Helicopter Symbol icon
-  ///
-  /// https://fontawesome.com/icons/helicopter-symbol?style=solid
-  'helicopterSymbol': FontAwesomeIcons.helicopterSymbol,
-
-  /// Solid Helmet safety icon
-  ///
-  /// https://fontawesome.com/icons/helmet-safety?style=solid
-  'helmetSafety': FontAwesomeIcons.helmetSafety,
-
-  /// Solid Helmet Un icon
-  ///
-  /// https://fontawesome.com/icons/helmet-un?style=solid
-  'helmetUn': FontAwesomeIcons.helmetUn,
-
-  /// Solid Highlighter icon
-  ///
-  /// https://fontawesome.com/icons/highlighter?style=solid
-  'highlighter': FontAwesomeIcons.highlighter,
-
-  /// Solid Hill Avalanche icon
-  ///
-  /// https://fontawesome.com/icons/hill-avalanche?style=solid
-  'hillAvalanche': FontAwesomeIcons.hillAvalanche,
-
-  /// Solid Hill Rockslide icon
-  ///
-  /// https://fontawesome.com/icons/hill-rockslide?style=solid
-  'hillRockslide': FontAwesomeIcons.hillRockslide,
-
-  /// Solid Hippo icon
-  ///
-  /// https://fontawesome.com/icons/hippo?style=solid
-  'hippo': FontAwesomeIcons.hippo,
-
-  /// Brands Hips icon
-  ///
-  /// https://fontawesome.com/icons/hips?style=brands
-  'hips': FontAwesomeIcons.hips,
-
-  /// Brands HireAHelper icon
-  ///
-  /// https://fontawesome.com/icons/hire-a-helper?style=brands
-  'hireAHelper': FontAwesomeIcons.hireAHelper,
-
-  /// Brands Hive Blockchain Network icon
-  ///
-  /// https://fontawesome.com/icons/hive?style=brands
-  'hive': FontAwesomeIcons.hive,
-
-  /// Solid Hockey Puck icon
-  ///
-  /// https://fontawesome.com/icons/hockey-puck?style=solid
-  'hockeyPuck': FontAwesomeIcons.hockeyPuck,
-
-  /// Solid Holly Berry icon
-  ///
-  /// https://fontawesome.com/icons/holly-berry?style=solid
-  'hollyBerry': FontAwesomeIcons.hollyBerry,
-
-  /// Brands Hooli icon
-  ///
-  /// https://fontawesome.com/icons/hooli?style=brands
-  'hooli': FontAwesomeIcons.hooli,
-
-  /// Brands Hornbill icon
-  ///
-  /// https://fontawesome.com/icons/hornbill?style=brands
-  'hornbill': FontAwesomeIcons.hornbill,
-
-  /// Solid Horse icon
-  ///
-  /// https://fontawesome.com/icons/horse?style=solid
-  'horse': FontAwesomeIcons.horse,
-
-  /// Solid Horse Head icon
-  ///
-  /// https://fontawesome.com/icons/horse-head?style=solid
-  'horseHead': FontAwesomeIcons.horseHead,
-
-  /// Solid hospital icon
-  ///
-  /// https://fontawesome.com/icons/hospital?style=solid
-  'solidHospital': FontAwesomeIcons.solidHospital,
-
-  /// Regular hospital icon
-  ///
-  /// https://fontawesome.com/icons/hospital?style=regular
-  'hospital': FontAwesomeIcons.hospital,
-
-  /// Solid Hospital with User icon
-  ///
-  /// https://fontawesome.com/icons/hospital-user?style=solid
-  'hospitalUser': FontAwesomeIcons.hospitalUser,
-
-  /// Solid Hot tub person icon
-  ///
-  /// https://fontawesome.com/icons/hot-tub-person?style=solid
-  'hotTubPerson': FontAwesomeIcons.hotTubPerson,
-
-  /// Solid Hot Dog icon
-  ///
-  /// https://fontawesome.com/icons/hotdog?style=solid
-  'hotdog': FontAwesomeIcons.hotdog,
-
-  /// Solid Hotel icon
-  ///
-  /// https://fontawesome.com/icons/hotel?style=solid
-  'hotel': FontAwesomeIcons.hotel,
-
-  /// Brands Hotjar icon
-  ///
-  /// https://fontawesome.com/icons/hotjar?style=brands
-  'hotjar': FontAwesomeIcons.hotjar,
-
-  /// Solid Hourglass icon
-  ///
-  /// https://fontawesome.com/icons/hourglass?style=solid
-  'solidHourglass': FontAwesomeIcons.solidHourglass,
-
-  /// Regular Hourglass icon
-  ///
-  /// https://fontawesome.com/icons/hourglass?style=regular
-  'hourglass': FontAwesomeIcons.hourglass,
-
-  /// Solid Hourglass End icon
-  ///
-  /// https://fontawesome.com/icons/hourglass-end?style=solid
-  'hourglassEnd': FontAwesomeIcons.hourglassEnd,
-
-  /// Solid Hourglass Half icon
-  ///
-  /// https://fontawesome.com/icons/hourglass-half?style=solid
-  'solidHourglassHalf': FontAwesomeIcons.solidHourglassHalf,
-
-  /// Regular Hourglass Half icon
-  ///
-  /// https://fontawesome.com/icons/hourglass-half?style=regular
-  'hourglassHalf': FontAwesomeIcons.hourglassHalf,
-
-  /// Solid Hourglass Start icon
-  ///
-  /// https://fontawesome.com/icons/hourglass-start?style=solid
-  'hourglassStart': FontAwesomeIcons.hourglassStart,
-
-  /// Solid House icon
-  ///
-  /// https://fontawesome.com/icons/house?style=solid
-  'house': FontAwesomeIcons.house,
-
-  /// Solid House Chimney icon
-  ///
-  /// https://fontawesome.com/icons/house-chimney?style=solid
-  'houseChimney': FontAwesomeIcons.houseChimney,
-
-  /// Solid House crack icon
-  ///
-  /// https://fontawesome.com/icons/house-chimney-crack?style=solid
-  'houseChimneyCrack': FontAwesomeIcons.houseChimneyCrack,
-
-  /// Solid House medical icon
-  ///
-  /// https://fontawesome.com/icons/house-chimney-medical?style=solid
-  'houseChimneyMedical': FontAwesomeIcons.houseChimneyMedical,
-
-  /// Solid House User icon
-  ///
-  /// https://fontawesome.com/icons/house-chimney-user?style=solid
-  'houseChimneyUser': FontAwesomeIcons.houseChimneyUser,
-
-  /// Solid House with Window + Chimney icon
-  ///
-  /// https://fontawesome.com/icons/house-chimney-window?style=solid
-  'houseChimneyWindow': FontAwesomeIcons.houseChimneyWindow,
-
-  /// Solid House Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/house-circle-check?style=solid
-  'houseCircleCheck': FontAwesomeIcons.houseCircleCheck,
-
-  /// Solid House Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/house-circle-exclamation?style=solid
-  'houseCircleExclamation': FontAwesomeIcons.houseCircleExclamation,
-
-  /// Solid House Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/house-circle-xmark?style=solid
-  'houseCircleXmark': FontAwesomeIcons.houseCircleXmark,
-
-  /// Solid House Simple Crack icon
-  ///
-  /// https://fontawesome.com/icons/house-crack?style=solid
-  'houseCrack': FontAwesomeIcons.houseCrack,
-
-  /// Solid House Fire icon
-  ///
-  /// https://fontawesome.com/icons/house-fire?style=solid
-  'houseFire': FontAwesomeIcons.houseFire,
-
-  /// Solid House Flag icon
-  ///
-  /// https://fontawesome.com/icons/house-flag?style=solid
-  'houseFlag': FontAwesomeIcons.houseFlag,
-
-  /// Solid House Flood icon
-  ///
-  /// https://fontawesome.com/icons/house-flood-water?style=solid
-  'houseFloodWater': FontAwesomeIcons.houseFloodWater,
-
-  /// Solid House Flood-circle-arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/house-flood-water-circle-arrow-right?style=solid
-  'houseFloodWaterCircleArrowRight':
-      FontAwesomeIcons.houseFloodWaterCircleArrowRight,
-
-  /// Solid House laptop icon
-  ///
-  /// https://fontawesome.com/icons/house-laptop?style=solid
-  'houseLaptop': FontAwesomeIcons.houseLaptop,
-
-  /// Solid House Lock icon
-  ///
-  /// https://fontawesome.com/icons/house-lock?style=solid
-  'houseLock': FontAwesomeIcons.houseLock,
-
-  /// Solid House Simple Medical icon
-  ///
-  /// https://fontawesome.com/icons/house-medical?style=solid
-  'houseMedical': FontAwesomeIcons.houseMedical,
-
-  /// Solid House Medical-circle-check icon
-  ///
-  /// https://fontawesome.com/icons/house-medical-circle-check?style=solid
-  'houseMedicalCircleCheck': FontAwesomeIcons.houseMedicalCircleCheck,
-
-  /// Solid House Medical-circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/house-medical-circle-exclamation?style=solid
-  'houseMedicalCircleExclamation':
-      FontAwesomeIcons.houseMedicalCircleExclamation,
-
-  /// Solid House Medical-circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/house-medical-circle-xmark?style=solid
-  'houseMedicalCircleXmark': FontAwesomeIcons.houseMedicalCircleXmark,
-
-  /// Solid House Medical-flag icon
-  ///
-  /// https://fontawesome.com/icons/house-medical-flag?style=solid
-  'houseMedicalFlag': FontAwesomeIcons.houseMedicalFlag,
-
-  /// Solid House Signal icon
-  ///
-  /// https://fontawesome.com/icons/house-signal?style=solid
-  'houseSignal': FontAwesomeIcons.houseSignal,
-
-  /// Solid House Tsunami icon
-  ///
-  /// https://fontawesome.com/icons/house-tsunami?style=solid
-  'houseTsunami': FontAwesomeIcons.houseTsunami,
-
-  /// Solid Home User icon
-  ///
-  /// https://fontawesome.com/icons/house-user?style=solid
-  'houseUser': FontAwesomeIcons.houseUser,
-
-  /// Brands Houzz icon
-  ///
-  /// https://fontawesome.com/icons/houzz?style=brands
-  'houzz': FontAwesomeIcons.houzz,
-
-  /// Solid Hryvnia sign icon
-  ///
-  /// https://fontawesome.com/icons/hryvnia-sign?style=solid
-  'hryvniaSign': FontAwesomeIcons.hryvniaSign,
-
-  /// Brands HTML 5 Logo icon
-  ///
-  /// https://fontawesome.com/icons/html5?style=brands
-  'html5': FontAwesomeIcons.html5,
-
-  /// Brands HubSpot icon
-  ///
-  /// https://fontawesome.com/icons/hubspot?style=brands
-  'hubspot': FontAwesomeIcons.hubspot,
-
-  /// Solid Hurricane icon
-  ///
-  /// https://fontawesome.com/icons/hurricane?style=solid
-  'hurricane': FontAwesomeIcons.hurricane,
-
-  /// Solid I icon
-  ///
-  /// https://fontawesome.com/icons/i?style=solid
-  'i': FontAwesomeIcons.i,
-
-  /// Solid I Beam Cursor icon
-  ///
-  /// https://fontawesome.com/icons/i-cursor?style=solid
-  'iCursor': FontAwesomeIcons.iCursor,
-
-  /// Solid Ice Cream icon
-  ///
-  /// https://fontawesome.com/icons/ice-cream?style=solid
-  'iceCream': FontAwesomeIcons.iceCream,
-
-  /// Solid Icicles icon
-  ///
-  /// https://fontawesome.com/icons/icicles?style=solid
-  'icicles': FontAwesomeIcons.icicles,
-
-  /// Solid Icons icon
-  ///
-  /// https://fontawesome.com/icons/icons?style=solid
-  'icons': FontAwesomeIcons.icons,
-
-  /// Solid Identification Badge icon
-  ///
-  /// https://fontawesome.com/icons/id-badge?style=solid
-  'solidIdBadge': FontAwesomeIcons.solidIdBadge,
-
-  /// Regular Identification Badge icon
-  ///
-  /// https://fontawesome.com/icons/id-badge?style=regular
-  'idBadge': FontAwesomeIcons.idBadge,
-
-  /// Solid Identification Card icon
-  ///
-  /// https://fontawesome.com/icons/id-card?style=solid
-  'solidIdCard': FontAwesomeIcons.solidIdCard,
-
-  /// Regular Identification Card icon
-  ///
-  /// https://fontawesome.com/icons/id-card?style=regular
-  'idCard': FontAwesomeIcons.idCard,
-
-  /// Solid Id card clip icon
-  ///
-  /// https://fontawesome.com/icons/id-card-clip?style=solid
-  'idCardClip': FontAwesomeIcons.idCardClip,
-
-  /// Brands iDeal icon
-  ///
-  /// https://fontawesome.com/icons/ideal?style=brands
-  'ideal': FontAwesomeIcons.ideal,
-
-  /// Solid Igloo icon
-  ///
-  /// https://fontawesome.com/icons/igloo?style=solid
-  'igloo': FontAwesomeIcons.igloo,
-
-  /// Solid Image icon
-  ///
-  /// https://fontawesome.com/icons/image?style=solid
-  'solidImage': FontAwesomeIcons.solidImage,
-
-  /// Regular Image icon
-  ///
-  /// https://fontawesome.com/icons/image?style=regular
-  'image': FontAwesomeIcons.image,
-
-  /// Solid Image portrait icon
-  ///
-  /// https://fontawesome.com/icons/image-portrait?style=solid
-  'imagePortrait': FontAwesomeIcons.imagePortrait,
-
-  /// Solid Images icon
-  ///
-  /// https://fontawesome.com/icons/images?style=solid
-  'solidImages': FontAwesomeIcons.solidImages,
-
-  /// Regular Images icon
-  ///
-  /// https://fontawesome.com/icons/images?style=regular
-  'images': FontAwesomeIcons.images,
-
-  /// Brands IMDB icon
-  ///
-  /// https://fontawesome.com/icons/imdb?style=brands
-  'imdb': FontAwesomeIcons.imdb,
-
-  /// Solid inbox icon
-  ///
-  /// https://fontawesome.com/icons/inbox?style=solid
-  'inbox': FontAwesomeIcons.inbox,
-
-  /// Solid Indent icon
-  ///
-  /// https://fontawesome.com/icons/indent?style=solid
-  'indent': FontAwesomeIcons.indent,
-
-  /// Solid Indian Rupee-sign icon
-  ///
-  /// https://fontawesome.com/icons/indian-rupee-sign?style=solid
-  'indianRupeeSign': FontAwesomeIcons.indianRupeeSign,
-
-  /// Solid Industry icon
-  ///
-  /// https://fontawesome.com/icons/industry?style=solid
-  'industry': FontAwesomeIcons.industry,
-
-  /// Solid Infinity icon
-  ///
-  /// https://fontawesome.com/icons/infinity?style=solid
-  'infinity': FontAwesomeIcons.infinity,
-
-  /// Solid Info icon
-  ///
-  /// https://fontawesome.com/icons/info?style=solid
-  'info': FontAwesomeIcons.info,
-
-  /// Brands Instagram icon
-  ///
-  /// https://fontawesome.com/icons/instagram?style=brands
-  'instagram': FontAwesomeIcons.instagram,
-
-  /// Brands InstaLOD icon
-  ///
-  /// https://fontawesome.com/icons/instalod?style=brands
-  'instalod': FontAwesomeIcons.instalod,
-
-  /// Brands Intercom icon
-  ///
-  /// https://fontawesome.com/icons/intercom?style=brands
-  'intercom': FontAwesomeIcons.intercom,
-
-  /// Brands Internet-explorer icon
-  ///
-  /// https://fontawesome.com/icons/internet-explorer?style=brands
-  'internetExplorer': FontAwesomeIcons.internetExplorer,
-
-  /// Brands InVision icon
-  ///
-  /// https://fontawesome.com/icons/invision?style=brands
-  'invision': FontAwesomeIcons.invision,
-
-  /// Brands ioxhost icon
-  ///
-  /// https://fontawesome.com/icons/ioxhost?style=brands
-  'ioxhost': FontAwesomeIcons.ioxhost,
-
-  /// Solid italic icon
-  ///
-  /// https://fontawesome.com/icons/italic?style=solid
-  'italic': FontAwesomeIcons.italic,
-
-  /// Brands itch.io icon
-  ///
-  /// https://fontawesome.com/icons/itch-io?style=brands
-  'itchIo': FontAwesomeIcons.itchIo,
-
-  /// Brands iTunes icon
-  ///
-  /// https://fontawesome.com/icons/itunes?style=brands
-  'itunes': FontAwesomeIcons.itunes,
-
-  /// Brands Itunes Note icon
-  ///
-  /// https://fontawesome.com/icons/itunes-note?style=brands
-  'itunesNote': FontAwesomeIcons.itunesNote,
-
-  /// Solid J icon
-  ///
-  /// https://fontawesome.com/icons/j?style=solid
-  'j': FontAwesomeIcons.j,
-
-  /// Solid Jar icon
-  ///
-  /// https://fontawesome.com/icons/jar?style=solid
-  'jar': FontAwesomeIcons.jar,
-
-  /// Solid Jar Wheat icon
-  ///
-  /// https://fontawesome.com/icons/jar-wheat?style=solid
-  'jarWheat': FontAwesomeIcons.jarWheat,
-
-  /// Brands Java icon
-  ///
-  /// https://fontawesome.com/icons/java?style=brands
-  'java': FontAwesomeIcons.java,
-
-  /// Solid Jedi icon
-  ///
-  /// https://fontawesome.com/icons/jedi?style=solid
-  'jedi': FontAwesomeIcons.jedi,
-
-  /// Brands Jedi Order icon
-  ///
-  /// https://fontawesome.com/icons/jedi-order?style=brands
-  'jediOrder': FontAwesomeIcons.jediOrder,
-
-  /// Brands Jenkis icon
-  ///
-  /// https://fontawesome.com/icons/jenkins?style=brands
-  'jenkins': FontAwesomeIcons.jenkins,
-
-  /// Solid Jet fighter icon
-  ///
-  /// https://fontawesome.com/icons/jet-fighter?style=solid
-  'jetFighter': FontAwesomeIcons.jetFighter,
-
-  /// Solid Jet Fighter Up icon
-  ///
-  /// https://fontawesome.com/icons/jet-fighter-up?style=solid
-  'jetFighterUp': FontAwesomeIcons.jetFighterUp,
-
-  /// Brands Jira icon
-  ///
-  /// https://fontawesome.com/icons/jira?style=brands
-  'jira': FontAwesomeIcons.jira,
-
-  /// Brands Joget icon
-  ///
-  /// https://fontawesome.com/icons/joget?style=brands
-  'joget': FontAwesomeIcons.joget,
-
-  /// Solid Joint icon
-  ///
-  /// https://fontawesome.com/icons/joint?style=solid
-  'joint': FontAwesomeIcons.joint,
-
-  /// Brands Joomla Logo icon
-  ///
-  /// https://fontawesome.com/icons/joomla?style=brands
-  'joomla': FontAwesomeIcons.joomla,
-
-  /// Brands JavaScript (JS) icon
-  ///
-  /// https://fontawesome.com/icons/js?style=brands
-  'js': FontAwesomeIcons.js,
-
-  /// Brands jsFiddle icon
-  ///
-  /// https://fontawesome.com/icons/jsfiddle?style=brands
-  'jsfiddle': FontAwesomeIcons.jsfiddle,
-
-  /// Solid Jug Detergent icon
-  ///
-  /// https://fontawesome.com/icons/jug-detergent?style=solid
-  'jugDetergent': FontAwesomeIcons.jugDetergent,
-
-  /// Solid K icon
-  ///
-  /// https://fontawesome.com/icons/k?style=solid
-  'k': FontAwesomeIcons.k,
-
-  /// Solid Kaaba icon
-  ///
-  /// https://fontawesome.com/icons/kaaba?style=solid
-  'kaaba': FontAwesomeIcons.kaaba,
-
-  /// Brands Kaggle icon
-  ///
-  /// https://fontawesome.com/icons/kaggle?style=brands
-  'kaggle': FontAwesomeIcons.kaggle,
-
-  /// Solid key icon
-  ///
-  /// https://fontawesome.com/icons/key?style=solid
-  'key': FontAwesomeIcons.key,
-
-  /// Brands Keybase icon
-  ///
-  /// https://fontawesome.com/icons/keybase?style=brands
-  'keybase': FontAwesomeIcons.keybase,
-
-  /// Solid Keyboard icon
-  ///
-  /// https://fontawesome.com/icons/keyboard?style=solid
-  'solidKeyboard': FontAwesomeIcons.solidKeyboard,
-
-  /// Regular Keyboard icon
-  ///
-  /// https://fontawesome.com/icons/keyboard?style=regular
-  'keyboard': FontAwesomeIcons.keyboard,
-
-  /// Brands KeyCDN icon
-  ///
-  /// https://fontawesome.com/icons/keycdn?style=brands
-  'keycdn': FontAwesomeIcons.keycdn,
-
-  /// Solid Khanda icon
-  ///
-  /// https://fontawesome.com/icons/khanda?style=solid
-  'khanda': FontAwesomeIcons.khanda,
-
-  /// Brands Kickstarter icon
-  ///
-  /// https://fontawesome.com/icons/kickstarter?style=brands
-  'kickstarter': FontAwesomeIcons.kickstarter,
-
-  /// Brands Kickstarter K icon
-  ///
-  /// https://fontawesome.com/icons/kickstarter-k?style=brands
-  'kickstarterK': FontAwesomeIcons.kickstarterK,
-
-  /// Solid Kip Sign icon
-  ///
-  /// https://fontawesome.com/icons/kip-sign?style=solid
-  'kipSign': FontAwesomeIcons.kipSign,
-
-  /// Solid Kit medical icon
-  ///
-  /// https://fontawesome.com/icons/kit-medical?style=solid
-  'kitMedical': FontAwesomeIcons.kitMedical,
-
-  /// Solid Kitchen Set icon
-  ///
-  /// https://fontawesome.com/icons/kitchen-set?style=solid
-  'kitchenSet': FontAwesomeIcons.kitchenSet,
-
-  /// Solid Kiwi Bird icon
-  ///
-  /// https://fontawesome.com/icons/kiwi-bird?style=solid
-  'kiwiBird': FontAwesomeIcons.kiwiBird,
-
-  /// Brands KORVUE icon
-  ///
-  /// https://fontawesome.com/icons/korvue?style=brands
-  'korvue': FontAwesomeIcons.korvue,
-
-  /// Solid L icon
-  ///
-  /// https://fontawesome.com/icons/l?style=solid
-  'l': FontAwesomeIcons.l,
-
-  /// Solid Land Mine-on icon
-  ///
-  /// https://fontawesome.com/icons/land-mine-on?style=solid
-  'landMineOn': FontAwesomeIcons.landMineOn,
-
-  /// Solid Landmark icon
-  ///
-  /// https://fontawesome.com/icons/landmark?style=solid
-  'landmark': FontAwesomeIcons.landmark,
-
-  /// Solid Landmark dome icon
-  ///
-  /// https://fontawesome.com/icons/landmark-dome?style=solid
-  'landmarkDome': FontAwesomeIcons.landmarkDome,
-
-  /// Solid Landmark Flag icon
-  ///
-  /// https://fontawesome.com/icons/landmark-flag?style=solid
-  'landmarkFlag': FontAwesomeIcons.landmarkFlag,
-
-  /// Solid Language icon
-  ///
-  /// https://fontawesome.com/icons/language?style=solid
-  'language': FontAwesomeIcons.language,
-
-  /// Solid Laptop icon
-  ///
-  /// https://fontawesome.com/icons/laptop?style=solid
-  'laptop': FontAwesomeIcons.laptop,
-
-  /// Solid Laptop Code icon
-  ///
-  /// https://fontawesome.com/icons/laptop-code?style=solid
-  'laptopCode': FontAwesomeIcons.laptopCode,
-
-  /// Solid Laptop File icon
-  ///
-  /// https://fontawesome.com/icons/laptop-file?style=solid
-  'laptopFile': FontAwesomeIcons.laptopFile,
-
-  /// Solid Laptop Medical icon
-  ///
-  /// https://fontawesome.com/icons/laptop-medical?style=solid
-  'laptopMedical': FontAwesomeIcons.laptopMedical,
-
-  /// Brands Laravel icon
-  ///
-  /// https://fontawesome.com/icons/laravel?style=brands
-  'laravel': FontAwesomeIcons.laravel,
-
-  /// Solid Lari Sign icon
-  ///
-  /// https://fontawesome.com/icons/lari-sign?style=solid
-  'lariSign': FontAwesomeIcons.lariSign,
-
-  /// Brands last.fm icon
-  ///
-  /// https://fontawesome.com/icons/lastfm?style=brands
-  'lastfm': FontAwesomeIcons.lastfm,
-
-  /// Solid Layer Group icon
-  ///
-  /// https://fontawesome.com/icons/layer-group?style=solid
-  'layerGroup': FontAwesomeIcons.layerGroup,
-
-  /// Solid leaf icon
-  ///
-  /// https://fontawesome.com/icons/leaf?style=solid
-  'leaf': FontAwesomeIcons.leaf,
-
-  /// Brands Leanpub icon
-  ///
-  /// https://fontawesome.com/icons/leanpub?style=brands
-  'leanpub': FontAwesomeIcons.leanpub,
-
-  /// Solid Left long icon
-  ///
-  /// https://fontawesome.com/icons/left-long?style=solid
-  'leftLong': FontAwesomeIcons.leftLong,
-
-  /// Solid Left right icon
-  ///
-  /// https://fontawesome.com/icons/left-right?style=solid
-  'leftRight': FontAwesomeIcons.leftRight,
-
-  /// Solid Lemon icon
-  ///
-  /// https://fontawesome.com/icons/lemon?style=solid
-  'solidLemon': FontAwesomeIcons.solidLemon,
-
-  /// Regular Lemon icon
-  ///
-  /// https://fontawesome.com/icons/lemon?style=regular
-  'lemon': FontAwesomeIcons.lemon,
-
-  /// Brands Less icon
-  ///
-  /// https://fontawesome.com/icons/less?style=brands
-  'less': FontAwesomeIcons.less,
-
-  /// Solid Less Than icon
-  ///
-  /// https://fontawesome.com/icons/less-than?style=solid
-  'lessThan': FontAwesomeIcons.lessThan,
-
-  /// Solid Less Than Equal To icon
-  ///
-  /// https://fontawesome.com/icons/less-than-equal?style=solid
-  'lessThanEqual': FontAwesomeIcons.lessThanEqual,
-
-  /// Solid Life Ring icon
-  ///
-  /// https://fontawesome.com/icons/life-ring?style=solid
-  'solidLifeRing': FontAwesomeIcons.solidLifeRing,
-
-  /// Regular Life Ring icon
-  ///
-  /// https://fontawesome.com/icons/life-ring?style=regular
-  'lifeRing': FontAwesomeIcons.lifeRing,
-
-  /// Solid Lightbulb icon
-  ///
-  /// https://fontawesome.com/icons/lightbulb?style=solid
-  'solidLightbulb': FontAwesomeIcons.solidLightbulb,
-
-  /// Regular Lightbulb icon
-  ///
-  /// https://fontawesome.com/icons/lightbulb?style=regular
-  'lightbulb': FontAwesomeIcons.lightbulb,
-
-  /// Brands Line icon
-  ///
-  /// https://fontawesome.com/icons/line?style=brands
-  'line': FontAwesomeIcons.line,
-
-  /// Solid Lines Leaning icon
-  ///
-  /// https://fontawesome.com/icons/lines-leaning?style=solid
-  'linesLeaning': FontAwesomeIcons.linesLeaning,
-
-  /// Solid Link icon
-  ///
-  /// https://fontawesome.com/icons/link?style=solid
-  'link': FontAwesomeIcons.link,
-
-  /// Solid Link Slash icon
-  ///
-  /// https://fontawesome.com/icons/link-slash?style=solid
-  'linkSlash': FontAwesomeIcons.linkSlash,
-
-  /// Brands LinkedIn icon
-  ///
-  /// https://fontawesome.com/icons/linkedin?style=brands
-  'linkedin': FontAwesomeIcons.linkedin,
-
-  /// Brands LinkedIn In icon
-  ///
-  /// https://fontawesome.com/icons/linkedin-in?style=brands
-  'linkedinIn': FontAwesomeIcons.linkedinIn,
-
-  /// Brands Linode icon
-  ///
-  /// https://fontawesome.com/icons/linode?style=brands
-  'linode': FontAwesomeIcons.linode,
-
-  /// Brands Linux icon
-  ///
-  /// https://fontawesome.com/icons/linux?style=brands
-  'linux': FontAwesomeIcons.linux,
-
-  /// Solid Turkish Lira Sign icon
-  ///
-  /// https://fontawesome.com/icons/lira-sign?style=solid
-  'liraSign': FontAwesomeIcons.liraSign,
-
-  /// Solid List icon
-  ///
-  /// https://fontawesome.com/icons/list?style=solid
-  'list': FontAwesomeIcons.list,
-
-  /// Solid List check icon
-  ///
-  /// https://fontawesome.com/icons/list-check?style=solid
-  'listCheck': FontAwesomeIcons.listCheck,
-
-  /// Solid list-ol icon
-  ///
-  /// https://fontawesome.com/icons/list-ol?style=solid
-  'listOl': FontAwesomeIcons.listOl,
-
-  /// Solid list-ul icon
-  ///
-  /// https://fontawesome.com/icons/list-ul?style=solid
-  'listUl': FontAwesomeIcons.listUl,
-
-  /// Solid Litecoin Sign icon
-  ///
-  /// https://fontawesome.com/icons/litecoin-sign?style=solid
-  'litecoinSign': FontAwesomeIcons.litecoinSign,
-
-  /// Solid location-arrow icon
-  ///
-  /// https://fontawesome.com/icons/location-arrow?style=solid
-  'locationArrow': FontAwesomeIcons.locationArrow,
-
-  /// Solid Location Crosshairs icon
-  ///
-  /// https://fontawesome.com/icons/location-crosshairs?style=solid
-  'locationCrosshairs': FontAwesomeIcons.locationCrosshairs,
-
-  /// Solid Location dot icon
-  ///
-  /// https://fontawesome.com/icons/location-dot?style=solid
-  'locationDot': FontAwesomeIcons.locationDot,
-
-  /// Solid Location icon
-  ///
-  /// https://fontawesome.com/icons/location-pin?style=solid
-  'locationPin': FontAwesomeIcons.locationPin,
-
-  /// Solid Location Pin-lock icon
-  ///
-  /// https://fontawesome.com/icons/location-pin-lock?style=solid
-  'locationPinLock': FontAwesomeIcons.locationPinLock,
-
-  /// Solid lock icon
-  ///
-  /// https://fontawesome.com/icons/lock?style=solid
-  'lock': FontAwesomeIcons.lock,
-
-  /// Solid Lock Open icon
-  ///
-  /// https://fontawesome.com/icons/lock-open?style=solid
-  'lockOpen': FontAwesomeIcons.lockOpen,
-
-  /// Solid Locust icon
-  ///
-  /// https://fontawesome.com/icons/locust?style=solid
-  'locust': FontAwesomeIcons.locust,
-
-  /// Solid Lungs icon
-  ///
-  /// https://fontawesome.com/icons/lungs?style=solid
-  'lungs': FontAwesomeIcons.lungs,
-
-  /// Solid Lungs Virus icon
-  ///
-  /// https://fontawesome.com/icons/lungs-virus?style=solid
-  'lungsVirus': FontAwesomeIcons.lungsVirus,
-
-  /// Brands lyft icon
-  ///
-  /// https://fontawesome.com/icons/lyft?style=brands
-  'lyft': FontAwesomeIcons.lyft,
-
-  /// Solid M icon
-  ///
-  /// https://fontawesome.com/icons/m?style=solid
-  'm': FontAwesomeIcons.m,
-
-  /// Brands Magento icon
-  ///
-  /// https://fontawesome.com/icons/magento?style=brands
-  'magento': FontAwesomeIcons.magento,
-
-  /// Solid magnet icon
-  ///
-  /// https://fontawesome.com/icons/magnet?style=solid
-  'magnet': FontAwesomeIcons.magnet,
-
-  /// Solid Magnifying glass icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass?style=solid
-  'magnifyingGlass': FontAwesomeIcons.magnifyingGlass,
-
-  /// Solid Magnifying Glass-arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-arrow-right?style=solid
-  'magnifyingGlassArrowRight': FontAwesomeIcons.magnifyingGlassArrowRight,
-
-  /// Solid Magnifying Glass-chart icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-chart?style=solid
-  'magnifyingGlassChart': FontAwesomeIcons.magnifyingGlassChart,
-
-  /// Solid Magnifying glass dollar icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-dollar?style=solid
-  'magnifyingGlassDollar': FontAwesomeIcons.magnifyingGlassDollar,
-
-  /// Solid Magnifying glass location icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-location?style=solid
-  'magnifyingGlassLocation': FontAwesomeIcons.magnifyingGlassLocation,
-
-  /// Solid Magnifying glass minus icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-minus?style=solid
-  'magnifyingGlassMinus': FontAwesomeIcons.magnifyingGlassMinus,
-
-  /// Solid Magnifying glass plus icon
-  ///
-  /// https://fontawesome.com/icons/magnifying-glass-plus?style=solid
-  'magnifyingGlassPlus': FontAwesomeIcons.magnifyingGlassPlus,
-
-  /// Brands Mailchimp icon
-  ///
-  /// https://fontawesome.com/icons/mailchimp?style=brands
-  'mailchimp': FontAwesomeIcons.mailchimp,
-
-  /// Solid Manat Sign icon
-  ///
-  /// https://fontawesome.com/icons/manat-sign?style=solid
-  'manatSign': FontAwesomeIcons.manatSign,
-
-  /// Brands Mandalorian icon
-  ///
-  /// https://fontawesome.com/icons/mandalorian?style=brands
-  'mandalorian': FontAwesomeIcons.mandalorian,
-
-  /// Solid Map icon
-  ///
-  /// https://fontawesome.com/icons/map?style=solid
-  'solidMap': FontAwesomeIcons.solidMap,
-
-  /// Regular Map icon
-  ///
-  /// https://fontawesome.com/icons/map?style=regular
-  'map': FontAwesomeIcons.map,
-
-  /// Solid Map location icon
-  ///
-  /// https://fontawesome.com/icons/map-location?style=solid
-  'mapLocation': FontAwesomeIcons.mapLocation,
-
-  /// Solid Map location dot icon
-  ///
-  /// https://fontawesome.com/icons/map-location-dot?style=solid
-  'mapLocationDot': FontAwesomeIcons.mapLocationDot,
-
-  /// Solid Map Pin icon
-  ///
-  /// https://fontawesome.com/icons/map-pin?style=solid
-  'mapPin': FontAwesomeIcons.mapPin,
-
-  /// Brands Markdown icon
-  ///
-  /// https://fontawesome.com/icons/markdown?style=brands
-  'markdown': FontAwesomeIcons.markdown,
-
-  /// Solid Marker icon
-  ///
-  /// https://fontawesome.com/icons/marker?style=solid
-  'marker': FontAwesomeIcons.marker,
-
-  /// Solid Mars icon
-  ///
-  /// https://fontawesome.com/icons/mars?style=solid
-  'mars': FontAwesomeIcons.mars,
-
-  /// Solid Mars and Venus icon
-  ///
-  /// https://fontawesome.com/icons/mars-and-venus?style=solid
-  'marsAndVenus': FontAwesomeIcons.marsAndVenus,
-
-  /// Solid Mars and Venus Burst icon
-  ///
-  /// https://fontawesome.com/icons/mars-and-venus-burst?style=solid
-  'marsAndVenusBurst': FontAwesomeIcons.marsAndVenusBurst,
-
-  /// Solid Mars Double icon
-  ///
-  /// https://fontawesome.com/icons/mars-double?style=solid
-  'marsDouble': FontAwesomeIcons.marsDouble,
-
-  /// Solid Mars Stroke icon
-  ///
-  /// https://fontawesome.com/icons/mars-stroke?style=solid
-  'marsStroke': FontAwesomeIcons.marsStroke,
-
-  /// Solid Mars stroke right icon
-  ///
-  /// https://fontawesome.com/icons/mars-stroke-right?style=solid
-  'marsStrokeRight': FontAwesomeIcons.marsStrokeRight,
-
-  /// Solid Mars stroke up icon
-  ///
-  /// https://fontawesome.com/icons/mars-stroke-up?style=solid
-  'marsStrokeUp': FontAwesomeIcons.marsStrokeUp,
-
-  /// Solid Martini glass icon
-  ///
-  /// https://fontawesome.com/icons/martini-glass?style=solid
-  'martiniGlass': FontAwesomeIcons.martiniGlass,
-
-  /// Solid Martini glass citrus icon
-  ///
-  /// https://fontawesome.com/icons/martini-glass-citrus?style=solid
-  'martiniGlassCitrus': FontAwesomeIcons.martiniGlassCitrus,
-
-  /// Solid Martini glass empty icon
-  ///
-  /// https://fontawesome.com/icons/martini-glass-empty?style=solid
-  'martiniGlassEmpty': FontAwesomeIcons.martiniGlassEmpty,
-
-  /// Solid Mask icon
-  ///
-  /// https://fontawesome.com/icons/mask?style=solid
-  'mask': FontAwesomeIcons.mask,
-
-  /// Solid Face Mask icon
-  ///
-  /// https://fontawesome.com/icons/mask-face?style=solid
-  'maskFace': FontAwesomeIcons.maskFace,
-
-  /// Solid Mask Ventilator icon
-  ///
-  /// https://fontawesome.com/icons/mask-ventilator?style=solid
-  'maskVentilator': FontAwesomeIcons.maskVentilator,
-
-  /// Solid Masks theater icon
-  ///
-  /// https://fontawesome.com/icons/masks-theater?style=solid
-  'masksTheater': FontAwesomeIcons.masksTheater,
-
-  /// Brands Mastodon icon
-  ///
-  /// https://fontawesome.com/icons/mastodon?style=brands
-  'mastodon': FontAwesomeIcons.mastodon,
-
-  /// Solid Mattress Pillow icon
-  ///
-  /// https://fontawesome.com/icons/mattress-pillow?style=solid
-  'mattressPillow': FontAwesomeIcons.mattressPillow,
-
-  /// Brands MaxCDN icon
-  ///
-  /// https://fontawesome.com/icons/maxcdn?style=brands
-  'maxcdn': FontAwesomeIcons.maxcdn,
-
-  /// Solid Maximize icon
-  ///
-  /// https://fontawesome.com/icons/maximize?style=solid
-  'maximize': FontAwesomeIcons.maximize,
-
-  /// Brands Material Design for Bootstrap icon
-  ///
-  /// https://fontawesome.com/icons/mdb?style=brands
-  'mdb': FontAwesomeIcons.mdb,
-
-  /// Solid Medal icon
-  ///
-  /// https://fontawesome.com/icons/medal?style=solid
-  'medal': FontAwesomeIcons.medal,
-
-  /// Brands MedApps icon
-  ///
-  /// https://fontawesome.com/icons/medapps?style=brands
-  'medapps': FontAwesomeIcons.medapps,
-
-  /// Brands Medium icon
-  ///
-  /// https://fontawesome.com/icons/medium?style=brands
-  'medium': FontAwesomeIcons.medium,
-
-  /// Brands MRT icon
-  ///
-  /// https://fontawesome.com/icons/medrt?style=brands
-  'medrt': FontAwesomeIcons.medrt,
-
-  /// Brands Meetup icon
-  ///
-  /// https://fontawesome.com/icons/meetup?style=brands
-  'meetup': FontAwesomeIcons.meetup,
-
-  /// Brands Megaport icon
-  ///
-  /// https://fontawesome.com/icons/megaport?style=brands
-  'megaport': FontAwesomeIcons.megaport,
-
-  /// Solid Memory icon
-  ///
-  /// https://fontawesome.com/icons/memory?style=solid
-  'memory': FontAwesomeIcons.memory,
-
-  /// Brands Mendeley icon
-  ///
-  /// https://fontawesome.com/icons/mendeley?style=brands
-  'mendeley': FontAwesomeIcons.mendeley,
-
-  /// Solid Menorah icon
-  ///
-  /// https://fontawesome.com/icons/menorah?style=solid
-  'menorah': FontAwesomeIcons.menorah,
-
-  /// Solid Mercury icon
-  ///
-  /// https://fontawesome.com/icons/mercury?style=solid
-  'mercury': FontAwesomeIcons.mercury,
-
-  /// Solid Message icon
-  ///
-  /// https://fontawesome.com/icons/message?style=solid
-  'solidMessage': FontAwesomeIcons.solidMessage,
-
-  /// Regular Message icon
-  ///
-  /// https://fontawesome.com/icons/message?style=regular
-  'message': FontAwesomeIcons.message,
-
-  /// Brands Meta icon
-  ///
-  /// https://fontawesome.com/icons/meta?style=brands
-  'meta': FontAwesomeIcons.meta,
-
-  /// Solid Meteor icon
-  ///
-  /// https://fontawesome.com/icons/meteor?style=solid
-  'meteor': FontAwesomeIcons.meteor,
-
-  /// Brands Micro.blog icon
-  ///
-  /// https://fontawesome.com/icons/microblog?style=brands
-  'microblog': FontAwesomeIcons.microblog,
-
-  /// Solid Microchip icon
-  ///
-  /// https://fontawesome.com/icons/microchip?style=solid
-  'microchip': FontAwesomeIcons.microchip,
-
-  /// Solid microphone icon
-  ///
-  /// https://fontawesome.com/icons/microphone?style=solid
-  'microphone': FontAwesomeIcons.microphone,
-
-  /// Solid Microphone lines icon
-  ///
-  /// https://fontawesome.com/icons/microphone-lines?style=solid
-  'microphoneLines': FontAwesomeIcons.microphoneLines,
-
-  /// Solid Microphone lines slash icon
-  ///
-  /// https://fontawesome.com/icons/microphone-lines-slash?style=solid
-  'microphoneLinesSlash': FontAwesomeIcons.microphoneLinesSlash,
-
-  /// Solid Microphone Slash icon
-  ///
-  /// https://fontawesome.com/icons/microphone-slash?style=solid
-  'microphoneSlash': FontAwesomeIcons.microphoneSlash,
-
-  /// Solid Microscope icon
-  ///
-  /// https://fontawesome.com/icons/microscope?style=solid
-  'microscope': FontAwesomeIcons.microscope,
-
-  /// Brands Microsoft icon
-  ///
-  /// https://fontawesome.com/icons/microsoft?style=brands
-  'microsoft': FontAwesomeIcons.microsoft,
-
-  /// Solid Mill Sign icon
-  ///
-  /// https://fontawesome.com/icons/mill-sign?style=solid
-  'millSign': FontAwesomeIcons.millSign,
-
-  /// Solid Minimize icon
-  ///
-  /// https://fontawesome.com/icons/minimize?style=solid
-  'minimize': FontAwesomeIcons.minimize,
-
-  /// Solid minus icon
-  ///
-  /// https://fontawesome.com/icons/minus?style=solid
-  'minus': FontAwesomeIcons.minus,
-
-  /// Solid Mitten icon
-  ///
-  /// https://fontawesome.com/icons/mitten?style=solid
-  'mitten': FontAwesomeIcons.mitten,
-
-  /// Brands Mix icon
-  ///
-  /// https://fontawesome.com/icons/mix?style=brands
-  'mix': FontAwesomeIcons.mix,
-
-  /// Brands Mixcloud icon
-  ///
-  /// https://fontawesome.com/icons/mixcloud?style=brands
-  'mixcloud': FontAwesomeIcons.mixcloud,
-
-  /// Brands Mixer icon
-  ///
-  /// https://fontawesome.com/icons/mixer?style=brands
-  'mixer': FontAwesomeIcons.mixer,
-
-  /// Brands Mizuni icon
-  ///
-  /// https://fontawesome.com/icons/mizuni?style=brands
-  'mizuni': FontAwesomeIcons.mizuni,
-
-  /// Solid Mobile icon
-  ///
-  /// https://fontawesome.com/icons/mobile?style=solid
-  'mobile': FontAwesomeIcons.mobile,
-
-  /// Solid Mobile button icon
-  ///
-  /// https://fontawesome.com/icons/mobile-button?style=solid
-  'mobileButton': FontAwesomeIcons.mobileButton,
-
-  /// Solid Mobile Retro icon
-  ///
-  /// https://fontawesome.com/icons/mobile-retro?style=solid
-  'mobileRetro': FontAwesomeIcons.mobileRetro,
-
-  /// Solid Mobile screen icon
-  ///
-  /// https://fontawesome.com/icons/mobile-screen?style=solid
-  'mobileScreen': FontAwesomeIcons.mobileScreen,
-
-  /// Solid Mobile screen button icon
-  ///
-  /// https://fontawesome.com/icons/mobile-screen-button?style=solid
-  'mobileScreenButton': FontAwesomeIcons.mobileScreenButton,
-
-  /// Brands MODX icon
-  ///
-  /// https://fontawesome.com/icons/modx?style=brands
-  'modx': FontAwesomeIcons.modx,
-
-  /// Brands Monero icon
-  ///
-  /// https://fontawesome.com/icons/monero?style=brands
-  'monero': FontAwesomeIcons.monero,
-
-  /// Solid Money Bill icon
-  ///
-  /// https://fontawesome.com/icons/money-bill?style=solid
-  'moneyBill': FontAwesomeIcons.moneyBill,
-
-  /// Solid Money bill 1 icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-1?style=solid
-  'solidMoneyBill1': FontAwesomeIcons.solidMoneyBill1,
-
-  /// Regular Money bill 1 icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-1?style=regular
-  'moneyBill1': FontAwesomeIcons.moneyBill1,
-
-  /// Solid Money bill 1 wave icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-1-wave?style=solid
-  'moneyBill1Wave': FontAwesomeIcons.moneyBill1Wave,
-
-  /// Solid Money Bill-transfer icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-transfer?style=solid
-  'moneyBillTransfer': FontAwesomeIcons.moneyBillTransfer,
-
-  /// Solid Money Bill-trend-up icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-trend-up?style=solid
-  'moneyBillTrendUp': FontAwesomeIcons.moneyBillTrendUp,
-
-  /// Solid Wavy Money Bill icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-wave?style=solid
-  'moneyBillWave': FontAwesomeIcons.moneyBillWave,
-
-  /// Solid Money Bill-wheat icon
-  ///
-  /// https://fontawesome.com/icons/money-bill-wheat?style=solid
-  'moneyBillWheat': FontAwesomeIcons.moneyBillWheat,
-
-  /// Solid Money Bills icon
-  ///
-  /// https://fontawesome.com/icons/money-bills?style=solid
-  'moneyBills': FontAwesomeIcons.moneyBills,
-
-  /// Solid Money Check icon
-  ///
-  /// https://fontawesome.com/icons/money-check?style=solid
-  'moneyCheck': FontAwesomeIcons.moneyCheck,
-
-  /// Solid Money check dollar icon
-  ///
-  /// https://fontawesome.com/icons/money-check-dollar?style=solid
-  'moneyCheckDollar': FontAwesomeIcons.moneyCheckDollar,
-
-  /// Solid Monument icon
-  ///
-  /// https://fontawesome.com/icons/monument?style=solid
-  'monument': FontAwesomeIcons.monument,
-
-  /// Solid Moon icon
-  ///
-  /// https://fontawesome.com/icons/moon?style=solid
-  'solidMoon': FontAwesomeIcons.solidMoon,
-
-  /// Regular Moon icon
-  ///
-  /// https://fontawesome.com/icons/moon?style=regular
-  'moon': FontAwesomeIcons.moon,
-
-  /// Solid Mortar Pestle icon
-  ///
-  /// https://fontawesome.com/icons/mortar-pestle?style=solid
-  'mortarPestle': FontAwesomeIcons.mortarPestle,
-
-  /// Solid Mosque icon
-  ///
-  /// https://fontawesome.com/icons/mosque?style=solid
-  'mosque': FontAwesomeIcons.mosque,
-
-  /// Solid Mosquito icon
-  ///
-  /// https://fontawesome.com/icons/mosquito?style=solid
-  'mosquito': FontAwesomeIcons.mosquito,
-
-  /// Solid Mosquito Net icon
-  ///
-  /// https://fontawesome.com/icons/mosquito-net?style=solid
-  'mosquitoNet': FontAwesomeIcons.mosquitoNet,
-
-  /// Solid Motorcycle icon
-  ///
-  /// https://fontawesome.com/icons/motorcycle?style=solid
-  'motorcycle': FontAwesomeIcons.motorcycle,
-
-  /// Solid Mound icon
-  ///
-  /// https://fontawesome.com/icons/mound?style=solid
-  'mound': FontAwesomeIcons.mound,
-
-  /// Solid Mountain icon
-  ///
-  /// https://fontawesome.com/icons/mountain?style=solid
-  'mountain': FontAwesomeIcons.mountain,
-
-  /// Solid Mountain City icon
-  ///
-  /// https://fontawesome.com/icons/mountain-city?style=solid
-  'mountainCity': FontAwesomeIcons.mountainCity,
-
-  /// Solid Mountain Sun icon
-  ///
-  /// https://fontawesome.com/icons/mountain-sun?style=solid
-  'mountainSun': FontAwesomeIcons.mountainSun,
-
-  /// Solid Mug Hot icon
-  ///
-  /// https://fontawesome.com/icons/mug-hot?style=solid
-  'mugHot': FontAwesomeIcons.mugHot,
-
-  /// Solid Mug saucer icon
-  ///
-  /// https://fontawesome.com/icons/mug-saucer?style=solid
-  'mugSaucer': FontAwesomeIcons.mugSaucer,
-
-  /// Solid Music icon
-  ///
-  /// https://fontawesome.com/icons/music?style=solid
-  'music': FontAwesomeIcons.music,
-
-  /// Solid N icon
-  ///
-  /// https://fontawesome.com/icons/n?style=solid
-  'n': FontAwesomeIcons.n,
-
-  /// Solid Naira Sign icon
-  ///
-  /// https://fontawesome.com/icons/naira-sign?style=solid
-  'nairaSign': FontAwesomeIcons.nairaSign,
-
-  /// Brands Napster icon
-  ///
-  /// https://fontawesome.com/icons/napster?style=brands
-  'napster': FontAwesomeIcons.napster,
-
-  /// Brands Neos icon
-  ///
-  /// https://fontawesome.com/icons/neos?style=brands
-  'neos': FontAwesomeIcons.neos,
-
-  /// Solid Wired Network icon
-  ///
-  /// https://fontawesome.com/icons/network-wired?style=solid
-  'networkWired': FontAwesomeIcons.networkWired,
-
-  /// Solid Neuter icon
-  ///
-  /// https://fontawesome.com/icons/neuter?style=solid
-  'neuter': FontAwesomeIcons.neuter,
-
-  /// Solid Newspaper icon
-  ///
-  /// https://fontawesome.com/icons/newspaper?style=solid
-  'solidNewspaper': FontAwesomeIcons.solidNewspaper,
-
-  /// Regular Newspaper icon
-  ///
-  /// https://fontawesome.com/icons/newspaper?style=regular
-  'newspaper': FontAwesomeIcons.newspaper,
-
-  /// Brands NFC Directional icon
-  ///
-  /// https://fontawesome.com/icons/nfc-directional?style=brands
-  'nfcDirectional': FontAwesomeIcons.nfcDirectional,
-
-  /// Brands NFC Simplified icon
-  ///
-  /// https://fontawesome.com/icons/nfc-symbol?style=brands
-  'nfcSymbol': FontAwesomeIcons.nfcSymbol,
-
-  /// Brands Nimblr icon
-  ///
-  /// https://fontawesome.com/icons/nimblr?style=brands
-  'nimblr': FontAwesomeIcons.nimblr,
-
-  /// Brands Node.js icon
-  ///
-  /// https://fontawesome.com/icons/node?style=brands
-  'node': FontAwesomeIcons.node,
-
-  /// Brands Node.js JS icon
-  ///
-  /// https://fontawesome.com/icons/node-js?style=brands
-  'nodeJs': FontAwesomeIcons.nodeJs,
-
-  /// Solid Not Equal icon
-  ///
-  /// https://fontawesome.com/icons/not-equal?style=solid
-  'notEqual': FontAwesomeIcons.notEqual,
-
-  /// Solid Note sticky icon
-  ///
-  /// https://fontawesome.com/icons/note-sticky?style=solid
-  'solidNoteSticky': FontAwesomeIcons.solidNoteSticky,
-
-  /// Regular Note sticky icon
-  ///
-  /// https://fontawesome.com/icons/note-sticky?style=regular
-  'noteSticky': FontAwesomeIcons.noteSticky,
-
-  /// Solid Medical Notes icon
-  ///
-  /// https://fontawesome.com/icons/notes-medical?style=solid
-  'notesMedical': FontAwesomeIcons.notesMedical,
-
-  /// Brands npm icon
-  ///
-  /// https://fontawesome.com/icons/npm?style=brands
-  'npm': FontAwesomeIcons.npm,
-
-  /// Brands NS8 icon
-  ///
-  /// https://fontawesome.com/icons/ns8?style=brands
-  'ns8': FontAwesomeIcons.ns8,
-
-  /// Brands Nutritionix icon
-  ///
-  /// https://fontawesome.com/icons/nutritionix?style=brands
-  'nutritionix': FontAwesomeIcons.nutritionix,
-
-  /// Solid O icon
-  ///
-  /// https://fontawesome.com/icons/o?style=solid
-  'o': FontAwesomeIcons.o,
-
-  /// Solid Object Group icon
-  ///
-  /// https://fontawesome.com/icons/object-group?style=solid
-  'solidObjectGroup': FontAwesomeIcons.solidObjectGroup,
-
-  /// Regular Object Group icon
-  ///
-  /// https://fontawesome.com/icons/object-group?style=regular
-  'objectGroup': FontAwesomeIcons.objectGroup,
-
-  /// Solid Object Ungroup icon
-  ///
-  /// https://fontawesome.com/icons/object-ungroup?style=solid
-  'solidObjectUngroup': FontAwesomeIcons.solidObjectUngroup,
-
-  /// Regular Object Ungroup icon
-  ///
-  /// https://fontawesome.com/icons/object-ungroup?style=regular
-  'objectUngroup': FontAwesomeIcons.objectUngroup,
-
-  /// Brands Octopus Deploy icon
-  ///
-  /// https://fontawesome.com/icons/octopus-deploy?style=brands
-  'octopusDeploy': FontAwesomeIcons.octopusDeploy,
-
-  /// Brands Odnoklassniki icon
-  ///
-  /// https://fontawesome.com/icons/odnoklassniki?style=brands
-  'odnoklassniki': FontAwesomeIcons.odnoklassniki,
-
-  /// Solid Oil Can icon
-  ///
-  /// https://fontawesome.com/icons/oil-can?style=solid
-  'oilCan': FontAwesomeIcons.oilCan,
-
-  /// Solid Oil Well icon
-  ///
-  /// https://fontawesome.com/icons/oil-well?style=solid
-  'oilWell': FontAwesomeIcons.oilWell,
-
-  /// Brands Old Republic icon
-  ///
-  /// https://fontawesome.com/icons/old-republic?style=brands
-  'oldRepublic': FontAwesomeIcons.oldRepublic,
-
-  /// Solid Om icon
-  ///
-  /// https://fontawesome.com/icons/om?style=solid
-  'om': FontAwesomeIcons.om,
-
-  /// Brands OpenCart icon
-  ///
-  /// https://fontawesome.com/icons/opencart?style=brands
-  'opencart': FontAwesomeIcons.opencart,
-
-  /// Brands OpenID icon
-  ///
-  /// https://fontawesome.com/icons/openid?style=brands
-  'openid': FontAwesomeIcons.openid,
-
-  /// Brands Opera icon
-  ///
-  /// https://fontawesome.com/icons/opera?style=brands
-  'opera': FontAwesomeIcons.opera,
-
-  /// Brands Optin Monster icon
-  ///
-  /// https://fontawesome.com/icons/optin-monster?style=brands
-  'optinMonster': FontAwesomeIcons.optinMonster,
-
-  /// Brands ORCID icon
-  ///
-  /// https://fontawesome.com/icons/orcid?style=brands
-  'orcid': FontAwesomeIcons.orcid,
-
-  /// Brands Open Source Initiative icon
-  ///
-  /// https://fontawesome.com/icons/osi?style=brands
-  'osi': FontAwesomeIcons.osi,
-
-  /// Solid Otter icon
-  ///
-  /// https://fontawesome.com/icons/otter?style=solid
-  'otter': FontAwesomeIcons.otter,
-
-  /// Solid Outdent icon
-  ///
-  /// https://fontawesome.com/icons/outdent?style=solid
-  'outdent': FontAwesomeIcons.outdent,
-
-  /// Solid P icon
-  ///
-  /// https://fontawesome.com/icons/p?style=solid
-  'p': FontAwesomeIcons.p,
-
-  /// Brands Padlet icon
-  ///
-  /// https://fontawesome.com/icons/padlet?style=brands
-  'padlet': FontAwesomeIcons.padlet,
-
-  /// Brands page4 Corporation icon
-  ///
-  /// https://fontawesome.com/icons/page4?style=brands
-  'page4': FontAwesomeIcons.page4,
-
-  /// Brands Pagelines icon
-  ///
-  /// https://fontawesome.com/icons/pagelines?style=brands
-  'pagelines': FontAwesomeIcons.pagelines,
-
-  /// Solid Pager icon
-  ///
-  /// https://fontawesome.com/icons/pager?style=solid
-  'pager': FontAwesomeIcons.pager,
-
-  /// Solid Paint Roller icon
-  ///
-  /// https://fontawesome.com/icons/paint-roller?style=solid
-  'paintRoller': FontAwesomeIcons.paintRoller,
-
-  /// Solid Paint Brush icon
-  ///
-  /// https://fontawesome.com/icons/paintbrush?style=solid
-  'paintbrush': FontAwesomeIcons.paintbrush,
-
-  /// Solid Palette icon
-  ///
-  /// https://fontawesome.com/icons/palette?style=solid
-  'palette': FontAwesomeIcons.palette,
-
-  /// Brands Palfed icon
-  ///
-  /// https://fontawesome.com/icons/palfed?style=brands
-  'palfed': FontAwesomeIcons.palfed,
-
-  /// Solid Pallet icon
-  ///
-  /// https://fontawesome.com/icons/pallet?style=solid
-  'pallet': FontAwesomeIcons.pallet,
-
-  /// Solid Panorama icon
-  ///
-  /// https://fontawesome.com/icons/panorama?style=solid
-  'panorama': FontAwesomeIcons.panorama,
-
-  /// Solid Paper Plane icon
-  ///
-  /// https://fontawesome.com/icons/paper-plane?style=solid
-  'solidPaperPlane': FontAwesomeIcons.solidPaperPlane,
-
-  /// Regular Paper Plane icon
-  ///
-  /// https://fontawesome.com/icons/paper-plane?style=regular
-  'paperPlane': FontAwesomeIcons.paperPlane,
-
-  /// Solid Paperclip icon
-  ///
-  /// https://fontawesome.com/icons/paperclip?style=solid
-  'paperclip': FontAwesomeIcons.paperclip,
-
-  /// Solid Parachute Box icon
-  ///
-  /// https://fontawesome.com/icons/parachute-box?style=solid
-  'parachuteBox': FontAwesomeIcons.parachuteBox,
-
-  /// Solid paragraph icon
-  ///
-  /// https://fontawesome.com/icons/paragraph?style=solid
-  'paragraph': FontAwesomeIcons.paragraph,
-
-  /// Solid Passport icon
-  ///
-  /// https://fontawesome.com/icons/passport?style=solid
-  'passport': FontAwesomeIcons.passport,
-
-  /// Solid Paste icon
-  ///
-  /// https://fontawesome.com/icons/paste?style=solid
-  'solidPaste': FontAwesomeIcons.solidPaste,
-
-  /// Regular Paste icon
-  ///
-  /// https://fontawesome.com/icons/paste?style=regular
-  'paste': FontAwesomeIcons.paste,
-
-  /// Brands Patreon icon
-  ///
-  /// https://fontawesome.com/icons/patreon?style=brands
-  'patreon': FontAwesomeIcons.patreon,
-
-  /// Solid pause icon
-  ///
-  /// https://fontawesome.com/icons/pause?style=solid
-  'pause': FontAwesomeIcons.pause,
-
-  /// Solid Paw icon
-  ///
-  /// https://fontawesome.com/icons/paw?style=solid
-  'paw': FontAwesomeIcons.paw,
-
-  /// Brands Paypal icon
-  ///
-  /// https://fontawesome.com/icons/paypal?style=brands
-  'paypal': FontAwesomeIcons.paypal,
-
-  /// Solid Peace icon
-  ///
-  /// https://fontawesome.com/icons/peace?style=solid
-  'peace': FontAwesomeIcons.peace,
-
-  /// Solid Pen icon
-  ///
-  /// https://fontawesome.com/icons/pen?style=solid
-  'pen': FontAwesomeIcons.pen,
-
-  /// Solid Pen clip icon
-  ///
-  /// https://fontawesome.com/icons/pen-clip?style=solid
-  'penClip': FontAwesomeIcons.penClip,
-
-  /// Solid Pen Fancy icon
-  ///
-  /// https://fontawesome.com/icons/pen-fancy?style=solid
-  'penFancy': FontAwesomeIcons.penFancy,
-
-  /// Solid Pen Nib icon
-  ///
-  /// https://fontawesome.com/icons/pen-nib?style=solid
-  'penNib': FontAwesomeIcons.penNib,
-
-  /// Solid Pen ruler icon
-  ///
-  /// https://fontawesome.com/icons/pen-ruler?style=solid
-  'penRuler': FontAwesomeIcons.penRuler,
-
-  /// Solid Pen to square icon
-  ///
-  /// https://fontawesome.com/icons/pen-to-square?style=solid
-  'solidPenToSquare': FontAwesomeIcons.solidPenToSquare,
-
-  /// Regular Pen to square icon
-  ///
-  /// https://fontawesome.com/icons/pen-to-square?style=regular
-  'penToSquare': FontAwesomeIcons.penToSquare,
-
-  /// Solid pencil icon
-  ///
-  /// https://fontawesome.com/icons/pencil?style=solid
-  'pencil': FontAwesomeIcons.pencil,
-
-  /// Solid People arrows left right icon
-  ///
-  /// https://fontawesome.com/icons/people-arrows?style=solid
-  'peopleArrows': FontAwesomeIcons.peopleArrows,
-
-  /// Solid People carry box icon
-  ///
-  /// https://fontawesome.com/icons/people-carry-box?style=solid
-  'peopleCarryBox': FontAwesomeIcons.peopleCarryBox,
-
-  /// Solid People Group icon
-  ///
-  /// https://fontawesome.com/icons/people-group?style=solid
-  'peopleGroup': FontAwesomeIcons.peopleGroup,
-
-  /// Solid People Line icon
-  ///
-  /// https://fontawesome.com/icons/people-line?style=solid
-  'peopleLine': FontAwesomeIcons.peopleLine,
-
-  /// Solid People Pulling icon
-  ///
-  /// https://fontawesome.com/icons/people-pulling?style=solid
-  'peoplePulling': FontAwesomeIcons.peoplePulling,
-
-  /// Solid People Robbery icon
-  ///
-  /// https://fontawesome.com/icons/people-robbery?style=solid
-  'peopleRobbery': FontAwesomeIcons.peopleRobbery,
-
-  /// Solid People Roof icon
-  ///
-  /// https://fontawesome.com/icons/people-roof?style=solid
-  'peopleRoof': FontAwesomeIcons.peopleRoof,
-
-  /// Solid Hot Pepper icon
-  ///
-  /// https://fontawesome.com/icons/pepper-hot?style=solid
-  'pepperHot': FontAwesomeIcons.pepperHot,
-
-  /// Brands PerByte icon
-  ///
-  /// https://fontawesome.com/icons/perbyte?style=brands
-  'perbyte': FontAwesomeIcons.perbyte,
-
-  /// Solid Percent icon
-  ///
-  /// https://fontawesome.com/icons/percent?style=solid
-  'percent': FontAwesomeIcons.percent,
-
-  /// Brands Periscope icon
-  ///
-  /// https://fontawesome.com/icons/periscope?style=brands
-  'periscope': FontAwesomeIcons.periscope,
-
-  /// Solid Person icon
-  ///
-  /// https://fontawesome.com/icons/person?style=solid
-  'person': FontAwesomeIcons.person,
-
-  /// Solid Person Arrow-down-to-line icon
-  ///
-  /// https://fontawesome.com/icons/person-arrow-down-to-line?style=solid
-  'personArrowDownToLine': FontAwesomeIcons.personArrowDownToLine,
-
-  /// Solid Person Arrow-up-from-line icon
-  ///
-  /// https://fontawesome.com/icons/person-arrow-up-from-line?style=solid
-  'personArrowUpFromLine': FontAwesomeIcons.personArrowUpFromLine,
-
-  /// Solid Person biking icon
-  ///
-  /// https://fontawesome.com/icons/person-biking?style=solid
-  'personBiking': FontAwesomeIcons.personBiking,
-
-  /// Solid Person Entering Booth icon
-  ///
-  /// https://fontawesome.com/icons/person-booth?style=solid
-  'personBooth': FontAwesomeIcons.personBooth,
-
-  /// Solid Person Breastfeeding icon
-  ///
-  /// https://fontawesome.com/icons/person-breastfeeding?style=solid
-  'personBreastfeeding': FontAwesomeIcons.personBreastfeeding,
-
-  /// Solid Person Burst icon
-  ///
-  /// https://fontawesome.com/icons/person-burst?style=solid
-  'personBurst': FontAwesomeIcons.personBurst,
-
-  /// Solid Person Cane icon
-  ///
-  /// https://fontawesome.com/icons/person-cane?style=solid
-  'personCane': FontAwesomeIcons.personCane,
-
-  /// Solid Person Chalkboard icon
-  ///
-  /// https://fontawesome.com/icons/person-chalkboard?style=solid
-  'personChalkboard': FontAwesomeIcons.personChalkboard,
-
-  /// Solid Person Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-check?style=solid
-  'personCircleCheck': FontAwesomeIcons.personCircleCheck,
-
-  /// Solid Person Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-exclamation?style=solid
-  'personCircleExclamation': FontAwesomeIcons.personCircleExclamation,
-
-  /// Solid Person Circle-minus icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-minus?style=solid
-  'personCircleMinus': FontAwesomeIcons.personCircleMinus,
-
-  /// Solid Person Circle-plus icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-plus?style=solid
-  'personCirclePlus': FontAwesomeIcons.personCirclePlus,
-
-  /// Solid Person Circle-question icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-question?style=solid
-  'personCircleQuestion': FontAwesomeIcons.personCircleQuestion,
-
-  /// Solid Person Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/person-circle-xmark?style=solid
-  'personCircleXmark': FontAwesomeIcons.personCircleXmark,
-
-  /// Solid Person digging icon
-  ///
-  /// https://fontawesome.com/icons/person-digging?style=solid
-  'personDigging': FontAwesomeIcons.personDigging,
-
-  /// Solid Person dots from line icon
-  ///
-  /// https://fontawesome.com/icons/person-dots-from-line?style=solid
-  'personDotsFromLine': FontAwesomeIcons.personDotsFromLine,
-
-  /// Solid Person dress icon
-  ///
-  /// https://fontawesome.com/icons/person-dress?style=solid
-  'personDress': FontAwesomeIcons.personDress,
-
-  /// Solid Person Dress BUrst icon
-  ///
-  /// https://fontawesome.com/icons/person-dress-burst?style=solid
-  'personDressBurst': FontAwesomeIcons.personDressBurst,
-
-  /// Solid Person Drowning icon
-  ///
-  /// https://fontawesome.com/icons/person-drowning?style=solid
-  'personDrowning': FontAwesomeIcons.personDrowning,
-
-  /// Solid Person Falling icon
-  ///
-  /// https://fontawesome.com/icons/person-falling?style=solid
-  'personFalling': FontAwesomeIcons.personFalling,
-
-  /// Solid Person Falling Burst icon
-  ///
-  /// https://fontawesome.com/icons/person-falling-burst?style=solid
-  'personFallingBurst': FontAwesomeIcons.personFallingBurst,
-
-  /// Solid Person Half-dress icon
-  ///
-  /// https://fontawesome.com/icons/person-half-dress?style=solid
-  'personHalfDress': FontAwesomeIcons.personHalfDress,
-
-  /// Solid Person Harassing icon
-  ///
-  /// https://fontawesome.com/icons/person-harassing?style=solid
-  'personHarassing': FontAwesomeIcons.personHarassing,
-
-  /// Solid Person hiking icon
-  ///
-  /// https://fontawesome.com/icons/person-hiking?style=solid
-  'personHiking': FontAwesomeIcons.personHiking,
-
-  /// Solid Person Military-pointing icon
-  ///
-  /// https://fontawesome.com/icons/person-military-pointing?style=solid
-  'personMilitaryPointing': FontAwesomeIcons.personMilitaryPointing,
-
-  /// Solid Person Military-rifle icon
-  ///
-  /// https://fontawesome.com/icons/person-military-rifle?style=solid
-  'personMilitaryRifle': FontAwesomeIcons.personMilitaryRifle,
-
-  /// Solid Person Military-to-person icon
-  ///
-  /// https://fontawesome.com/icons/person-military-to-person?style=solid
-  'personMilitaryToPerson': FontAwesomeIcons.personMilitaryToPerson,
-
-  /// Solid Person praying icon
-  ///
-  /// https://fontawesome.com/icons/person-praying?style=solid
-  'personPraying': FontAwesomeIcons.personPraying,
-
-  /// Solid Person Pregnant icon
-  ///
-  /// https://fontawesome.com/icons/person-pregnant?style=solid
-  'personPregnant': FontAwesomeIcons.personPregnant,
-
-  /// Solid Person Rays icon
-  ///
-  /// https://fontawesome.com/icons/person-rays?style=solid
-  'personRays': FontAwesomeIcons.personRays,
-
-  /// Solid Person Rifle icon
-  ///
-  /// https://fontawesome.com/icons/person-rifle?style=solid
-  'personRifle': FontAwesomeIcons.personRifle,
-
-  /// Solid Person running icon
-  ///
-  /// https://fontawesome.com/icons/person-running?style=solid
-  'personRunning': FontAwesomeIcons.personRunning,
-
-  /// Solid Person Shelter icon
-  ///
-  /// https://fontawesome.com/icons/person-shelter?style=solid
-  'personShelter': FontAwesomeIcons.personShelter,
-
-  /// Solid Person skating icon
-  ///
-  /// https://fontawesome.com/icons/person-skating?style=solid
-  'personSkating': FontAwesomeIcons.personSkating,
-
-  /// Solid Person skiing icon
-  ///
-  /// https://fontawesome.com/icons/person-skiing?style=solid
-  'personSkiing': FontAwesomeIcons.personSkiing,
-
-  /// Solid Person skiing nordic icon
-  ///
-  /// https://fontawesome.com/icons/person-skiing-nordic?style=solid
-  'personSkiingNordic': FontAwesomeIcons.personSkiingNordic,
-
-  /// Solid Person snowboarding icon
-  ///
-  /// https://fontawesome.com/icons/person-snowboarding?style=solid
-  'personSnowboarding': FontAwesomeIcons.personSnowboarding,
-
-  /// Solid Person swimming icon
-  ///
-  /// https://fontawesome.com/icons/person-swimming?style=solid
-  'personSwimming': FontAwesomeIcons.personSwimming,
-
-  /// Solid Person Through-window icon
-  ///
-  /// https://fontawesome.com/icons/person-through-window?style=solid
-  'personThroughWindow': FontAwesomeIcons.personThroughWindow,
-
-  /// Solid Person walking icon
-  ///
-  /// https://fontawesome.com/icons/person-walking?style=solid
-  'personWalking': FontAwesomeIcons.personWalking,
-
-  /// Solid Person Walking-arrow-loop-left icon
-  ///
-  /// https://fontawesome.com/icons/person-walking-arrow-loop-left?style=solid
-  'personWalkingArrowLoopLeft': FontAwesomeIcons.personWalkingArrowLoopLeft,
-
-  /// Solid Person Walking-arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/person-walking-arrow-right?style=solid
-  'personWalkingArrowRight': FontAwesomeIcons.personWalkingArrowRight,
-
-  /// Solid Person Walking-dashed-line-arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/person-walking-dashed-line-arrow-right?style=solid
-  'personWalkingDashedLineArrowRight':
-      FontAwesomeIcons.personWalkingDashedLineArrowRight,
-
-  /// Solid Person Walking-luggage icon
-  ///
-  /// https://fontawesome.com/icons/person-walking-luggage?style=solid
-  'personWalkingLuggage': FontAwesomeIcons.personWalkingLuggage,
-
-  /// Solid Person walking with cane icon
-  ///
-  /// https://fontawesome.com/icons/person-walking-with-cane?style=solid
-  'personWalkingWithCane': FontAwesomeIcons.personWalkingWithCane,
-
-  /// Solid Peseta Sign icon
-  ///
-  /// https://fontawesome.com/icons/peseta-sign?style=solid
-  'pesetaSign': FontAwesomeIcons.pesetaSign,
-
-  /// Solid Peso Sign icon
-  ///
-  /// https://fontawesome.com/icons/peso-sign?style=solid
-  'pesoSign': FontAwesomeIcons.pesoSign,
-
-  /// Brands Phabricator icon
-  ///
-  /// https://fontawesome.com/icons/phabricator?style=brands
-  'phabricator': FontAwesomeIcons.phabricator,
-
-  /// Brands Phoenix Framework icon
-  ///
-  /// https://fontawesome.com/icons/phoenix-framework?style=brands
-  'phoenixFramework': FontAwesomeIcons.phoenixFramework,
-
-  /// Brands Phoenix Squadron icon
-  ///
-  /// https://fontawesome.com/icons/phoenix-squadron?style=brands
-  'phoenixSquadron': FontAwesomeIcons.phoenixSquadron,
-
-  /// Solid Phone icon
-  ///
-  /// https://fontawesome.com/icons/phone?style=solid
-  'phone': FontAwesomeIcons.phone,
-
-  /// Solid Phone flip icon
-  ///
-  /// https://fontawesome.com/icons/phone-flip?style=solid
-  'phoneFlip': FontAwesomeIcons.phoneFlip,
-
-  /// Solid Phone Slash icon
-  ///
-  /// https://fontawesome.com/icons/phone-slash?style=solid
-  'phoneSlash': FontAwesomeIcons.phoneSlash,
-
-  /// Solid Phone Volume icon
-  ///
-  /// https://fontawesome.com/icons/phone-volume?style=solid
-  'phoneVolume': FontAwesomeIcons.phoneVolume,
-
-  /// Solid Photo film icon
-  ///
-  /// https://fontawesome.com/icons/photo-film?style=solid
-  'photoFilm': FontAwesomeIcons.photoFilm,
-
-  /// Brands PHP icon
-  ///
-  /// https://fontawesome.com/icons/php?style=brands
-  'php': FontAwesomeIcons.php,
-
-  /// Brands Pied Piper Logo icon
-  ///
-  /// https://fontawesome.com/icons/pied-piper?style=brands
-  'piedPiper': FontAwesomeIcons.piedPiper,
-
-  /// Brands Alternate Pied Piper Logo (Old) icon
-  ///
-  /// https://fontawesome.com/icons/pied-piper-alt?style=brands
-  'piedPiperAlt': FontAwesomeIcons.piedPiperAlt,
-
-  /// Brands Pied Piper Hat (Old) icon
-  ///
-  /// https://fontawesome.com/icons/pied-piper-hat?style=brands
-  'piedPiperHat': FontAwesomeIcons.piedPiperHat,
-
-  /// Brands Pied Piper PP Logo (Old) icon
-  ///
-  /// https://fontawesome.com/icons/pied-piper-pp?style=brands
-  'piedPiperPp': FontAwesomeIcons.piedPiperPp,
-
-  /// Solid Piggy Bank icon
-  ///
-  /// https://fontawesome.com/icons/piggy-bank?style=solid
-  'piggyBank': FontAwesomeIcons.piggyBank,
-
-  /// Solid Pills icon
-  ///
-  /// https://fontawesome.com/icons/pills?style=solid
-  'pills': FontAwesomeIcons.pills,
-
-  /// Brands Pinterest icon
-  ///
-  /// https://fontawesome.com/icons/pinterest?style=brands
-  'pinterest': FontAwesomeIcons.pinterest,
-
-  /// Brands Pinterest P icon
-  ///
-  /// https://fontawesome.com/icons/pinterest-p?style=brands
-  'pinterestP': FontAwesomeIcons.pinterestP,
-
-  /// Brands Pix icon
-  ///
-  /// https://fontawesome.com/icons/pix?style=brands
-  'pix': FontAwesomeIcons.pix,
-
-  /// Solid Pizza Slice icon
-  ///
-  /// https://fontawesome.com/icons/pizza-slice?style=solid
-  'pizzaSlice': FontAwesomeIcons.pizzaSlice,
-
-  /// Solid Place of Worship icon
-  ///
-  /// https://fontawesome.com/icons/place-of-worship?style=solid
-  'placeOfWorship': FontAwesomeIcons.placeOfWorship,
-
-  /// Solid plane icon
-  ///
-  /// https://fontawesome.com/icons/plane?style=solid
-  'plane': FontAwesomeIcons.plane,
-
-  /// Solid Plane Arrival icon
-  ///
-  /// https://fontawesome.com/icons/plane-arrival?style=solid
-  'planeArrival': FontAwesomeIcons.planeArrival,
-
-  /// Solid Plane Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/plane-circle-check?style=solid
-  'planeCircleCheck': FontAwesomeIcons.planeCircleCheck,
-
-  /// Solid Plane Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/plane-circle-exclamation?style=solid
-  'planeCircleExclamation': FontAwesomeIcons.planeCircleExclamation,
-
-  /// Solid Plane Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/plane-circle-xmark?style=solid
-  'planeCircleXmark': FontAwesomeIcons.planeCircleXmark,
-
-  /// Solid Plane Departure icon
-  ///
-  /// https://fontawesome.com/icons/plane-departure?style=solid
-  'planeDeparture': FontAwesomeIcons.planeDeparture,
-
-  /// Solid Plane Lock icon
-  ///
-  /// https://fontawesome.com/icons/plane-lock?style=solid
-  'planeLock': FontAwesomeIcons.planeLock,
-
-  /// Solid Plane Slash icon
-  ///
-  /// https://fontawesome.com/icons/plane-slash?style=solid
-  'planeSlash': FontAwesomeIcons.planeSlash,
-
-  /// Solid Plane Up icon
-  ///
-  /// https://fontawesome.com/icons/plane-up?style=solid
-  'planeUp': FontAwesomeIcons.planeUp,
-
-  /// Solid Plant Wilt icon
-  ///
-  /// https://fontawesome.com/icons/plant-wilt?style=solid
-  'plantWilt': FontAwesomeIcons.plantWilt,
-
-  /// Solid Plate Wheat icon
-  ///
-  /// https://fontawesome.com/icons/plate-wheat?style=solid
-  'plateWheat': FontAwesomeIcons.plateWheat,
-
-  /// Solid play icon
-  ///
-  /// https://fontawesome.com/icons/play?style=solid
-  'play': FontAwesomeIcons.play,
-
-  /// Brands PlayStation icon
-  ///
-  /// https://fontawesome.com/icons/playstation?style=brands
-  'playstation': FontAwesomeIcons.playstation,
-
-  /// Solid Plug icon
-  ///
-  /// https://fontawesome.com/icons/plug?style=solid
-  'plug': FontAwesomeIcons.plug,
-
-  /// Solid Plug Circle-bolt icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-bolt?style=solid
-  'plugCircleBolt': FontAwesomeIcons.plugCircleBolt,
-
-  /// Solid Plug Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-check?style=solid
-  'plugCircleCheck': FontAwesomeIcons.plugCircleCheck,
-
-  /// Solid Plug Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-exclamation?style=solid
-  'plugCircleExclamation': FontAwesomeIcons.plugCircleExclamation,
-
-  /// Solid Plug Circle-minus icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-minus?style=solid
-  'plugCircleMinus': FontAwesomeIcons.plugCircleMinus,
-
-  /// Solid Plug Circle-plus icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-plus?style=solid
-  'plugCirclePlus': FontAwesomeIcons.plugCirclePlus,
-
-  /// Solid Plug Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/plug-circle-xmark?style=solid
-  'plugCircleXmark': FontAwesomeIcons.plugCircleXmark,
-
-  /// Solid plus icon
-  ///
-  /// https://fontawesome.com/icons/plus?style=solid
-  'plus': FontAwesomeIcons.plus,
-
-  /// Solid Plus Minus icon
-  ///
-  /// https://fontawesome.com/icons/plus-minus?style=solid
-  'plusMinus': FontAwesomeIcons.plusMinus,
-
-  /// Solid Podcast icon
-  ///
-  /// https://fontawesome.com/icons/podcast?style=solid
-  'podcast': FontAwesomeIcons.podcast,
-
-  /// Solid Poo icon
-  ///
-  /// https://fontawesome.com/icons/poo?style=solid
-  'poo': FontAwesomeIcons.poo,
-
-  /// Solid Poo bolt icon
-  ///
-  /// https://fontawesome.com/icons/poo-storm?style=solid
-  'pooStorm': FontAwesomeIcons.pooStorm,
-
-  /// Solid Poop icon
-  ///
-  /// https://fontawesome.com/icons/poop?style=solid
-  'poop': FontAwesomeIcons.poop,
-
-  /// Solid Power Off icon
-  ///
-  /// https://fontawesome.com/icons/power-off?style=solid
-  'powerOff': FontAwesomeIcons.powerOff,
-
-  /// Solid Prescription icon
-  ///
-  /// https://fontawesome.com/icons/prescription?style=solid
-  'prescription': FontAwesomeIcons.prescription,
-
-  /// Solid Prescription Bottle icon
-  ///
-  /// https://fontawesome.com/icons/prescription-bottle?style=solid
-  'prescriptionBottle': FontAwesomeIcons.prescriptionBottle,
-
-  /// Solid Prescription bottle medical icon
-  ///
-  /// https://fontawesome.com/icons/prescription-bottle-medical?style=solid
-  'prescriptionBottleMedical': FontAwesomeIcons.prescriptionBottleMedical,
-
-  /// Solid print icon
-  ///
-  /// https://fontawesome.com/icons/print?style=solid
-  'print': FontAwesomeIcons.print,
-
-  /// Brands Product Hunt icon
-  ///
-  /// https://fontawesome.com/icons/product-hunt?style=brands
-  'productHunt': FontAwesomeIcons.productHunt,
-
-  /// Solid Pump Medical icon
-  ///
-  /// https://fontawesome.com/icons/pump-medical?style=solid
-  'pumpMedical': FontAwesomeIcons.pumpMedical,
-
-  /// Solid Pump Soap icon
-  ///
-  /// https://fontawesome.com/icons/pump-soap?style=solid
-  'pumpSoap': FontAwesomeIcons.pumpSoap,
-
-  /// Brands Pushed icon
-  ///
-  /// https://fontawesome.com/icons/pushed?style=brands
-  'pushed': FontAwesomeIcons.pushed,
-
-  /// Solid Puzzle Piece icon
-  ///
-  /// https://fontawesome.com/icons/puzzle-piece?style=solid
-  'puzzlePiece': FontAwesomeIcons.puzzlePiece,
-
-  /// Brands Python icon
-  ///
-  /// https://fontawesome.com/icons/python?style=brands
-  'python': FontAwesomeIcons.python,
-
-  /// Solid Q icon
-  ///
-  /// https://fontawesome.com/icons/q?style=solid
-  'q': FontAwesomeIcons.q,
-
-  /// Brands QQ icon
-  ///
-  /// https://fontawesome.com/icons/qq?style=brands
-  'qq': FontAwesomeIcons.qq,
-
-  /// Solid qrcode icon
-  ///
-  /// https://fontawesome.com/icons/qrcode?style=solid
-  'qrcode': FontAwesomeIcons.qrcode,
-
-  /// Solid Question icon
-  ///
-  /// https://fontawesome.com/icons/question?style=solid
-  'question': FontAwesomeIcons.question,
-
-  /// Brands QuinScape icon
-  ///
-  /// https://fontawesome.com/icons/quinscape?style=brands
-  'quinscape': FontAwesomeIcons.quinscape,
-
-  /// Brands Quora icon
-  ///
-  /// https://fontawesome.com/icons/quora?style=brands
-  'quora': FontAwesomeIcons.quora,
-
-  /// Solid quote-left icon
-  ///
-  /// https://fontawesome.com/icons/quote-left?style=solid
-  'quoteLeft': FontAwesomeIcons.quoteLeft,
-
-  /// Solid quote-right icon
-  ///
-  /// https://fontawesome.com/icons/quote-right?style=solid
-  'quoteRight': FontAwesomeIcons.quoteRight,
-
-  /// Solid R icon
-  ///
-  /// https://fontawesome.com/icons/r?style=solid
-  'r': FontAwesomeIcons.r,
-
-  /// Brands R Project icon
-  ///
-  /// https://fontawesome.com/icons/r-project?style=brands
-  'rProject': FontAwesomeIcons.rProject,
-
-  /// Solid Radiation icon
-  ///
-  /// https://fontawesome.com/icons/radiation?style=solid
-  'radiation': FontAwesomeIcons.radiation,
-
-  /// Solid Radio icon
-  ///
-  /// https://fontawesome.com/icons/radio?style=solid
-  'radio': FontAwesomeIcons.radio,
-
-  /// Solid Rainbow icon
-  ///
-  /// https://fontawesome.com/icons/rainbow?style=solid
-  'rainbow': FontAwesomeIcons.rainbow,
-
-  /// Solid Ranking Star icon
-  ///
-  /// https://fontawesome.com/icons/ranking-star?style=solid
-  'rankingStar': FontAwesomeIcons.rankingStar,
-
-  /// Brands Raspberry Pi icon
-  ///
-  /// https://fontawesome.com/icons/raspberry-pi?style=brands
-  'raspberryPi': FontAwesomeIcons.raspberryPi,
-
-  /// Brands Ravelry icon
-  ///
-  /// https://fontawesome.com/icons/ravelry?style=brands
-  'ravelry': FontAwesomeIcons.ravelry,
-
-  /// Brands React icon
-  ///
-  /// https://fontawesome.com/icons/react?style=brands
-  'react': FontAwesomeIcons.react,
-
-  /// Brands ReactEurope icon
-  ///
-  /// https://fontawesome.com/icons/reacteurope?style=brands
-  'reacteurope': FontAwesomeIcons.reacteurope,
-
-  /// Brands ReadMe icon
-  ///
-  /// https://fontawesome.com/icons/readme?style=brands
-  'readme': FontAwesomeIcons.readme,
-
-  /// Brands Rebel Alliance icon
-  ///
-  /// https://fontawesome.com/icons/rebel?style=brands
-  'rebel': FontAwesomeIcons.rebel,
-
-  /// Solid Receipt icon
-  ///
-  /// https://fontawesome.com/icons/receipt?style=solid
-  'receipt': FontAwesomeIcons.receipt,
-
-  /// Solid Record Vinyl icon
-  ///
-  /// https://fontawesome.com/icons/record-vinyl?style=solid
-  'recordVinyl': FontAwesomeIcons.recordVinyl,
-
-  /// Solid Rectangle ad icon
-  ///
-  /// https://fontawesome.com/icons/rectangle-ad?style=solid
-  'rectangleAd': FontAwesomeIcons.rectangleAd,
-
-  /// Solid Rectangle list icon
-  ///
-  /// https://fontawesome.com/icons/rectangle-list?style=solid
-  'solidRectangleList': FontAwesomeIcons.solidRectangleList,
-
-  /// Regular Rectangle list icon
-  ///
-  /// https://fontawesome.com/icons/rectangle-list?style=regular
-  'rectangleList': FontAwesomeIcons.rectangleList,
-
-  /// Solid Rectangle X Mark icon
-  ///
-  /// https://fontawesome.com/icons/rectangle-xmark?style=solid
-  'solidRectangleXmark': FontAwesomeIcons.solidRectangleXmark,
-
-  /// Regular Rectangle X Mark icon
-  ///
-  /// https://fontawesome.com/icons/rectangle-xmark?style=regular
-  'rectangleXmark': FontAwesomeIcons.rectangleXmark,
-
-  /// Solid Recycle icon
-  ///
-  /// https://fontawesome.com/icons/recycle?style=solid
-  'recycle': FontAwesomeIcons.recycle,
-
-  /// Brands red river icon
-  ///
-  /// https://fontawesome.com/icons/red-river?style=brands
-  'redRiver': FontAwesomeIcons.redRiver,
-
-  /// Brands reddit Logo icon
-  ///
-  /// https://fontawesome.com/icons/reddit?style=brands
-  'reddit': FontAwesomeIcons.reddit,
-
-  /// Brands reddit Alien icon
-  ///
-  /// https://fontawesome.com/icons/reddit-alien?style=brands
-  'redditAlien': FontAwesomeIcons.redditAlien,
-
-  /// Brands Redhat icon
-  ///
-  /// https://fontawesome.com/icons/redhat?style=brands
-  'redhat': FontAwesomeIcons.redhat,
-
-  /// Solid Registered Trademark icon
-  ///
-  /// https://fontawesome.com/icons/registered?style=solid
-  'solidRegistered': FontAwesomeIcons.solidRegistered,
-
-  /// Regular Registered Trademark icon
-  ///
-  /// https://fontawesome.com/icons/registered?style=regular
-  'registered': FontAwesomeIcons.registered,
-
-  /// Brands Renren icon
-  ///
-  /// https://fontawesome.com/icons/renren?style=brands
-  'renren': FontAwesomeIcons.renren,
-
-  /// Solid Repeat icon
-  ///
-  /// https://fontawesome.com/icons/repeat?style=solid
-  'repeat': FontAwesomeIcons.repeat,
-
-  /// Solid Reply icon
-  ///
-  /// https://fontawesome.com/icons/reply?style=solid
-  'reply': FontAwesomeIcons.reply,
-
-  /// Solid reply-all icon
-  ///
-  /// https://fontawesome.com/icons/reply-all?style=solid
-  'replyAll': FontAwesomeIcons.replyAll,
-
-  /// Brands replyd icon
-  ///
-  /// https://fontawesome.com/icons/replyd?style=brands
-  'replyd': FontAwesomeIcons.replyd,
-
-  /// Solid Republican icon
-  ///
-  /// https://fontawesome.com/icons/republican?style=solid
-  'republican': FontAwesomeIcons.republican,
-
-  /// Brands Researchgate icon
-  ///
-  /// https://fontawesome.com/icons/researchgate?style=brands
-  'researchgate': FontAwesomeIcons.researchgate,
-
-  /// Brands Resolving icon
-  ///
-  /// https://fontawesome.com/icons/resolving?style=brands
-  'resolving': FontAwesomeIcons.resolving,
-
-  /// Solid Restroom icon
-  ///
-  /// https://fontawesome.com/icons/restroom?style=solid
-  'restroom': FontAwesomeIcons.restroom,
-
-  /// Solid Retweet icon
-  ///
-  /// https://fontawesome.com/icons/retweet?style=solid
-  'retweet': FontAwesomeIcons.retweet,
-
-  /// Brands Rev.io icon
-  ///
-  /// https://fontawesome.com/icons/rev?style=brands
-  'rev': FontAwesomeIcons.rev,
-
-  /// Solid Ribbon icon
-  ///
-  /// https://fontawesome.com/icons/ribbon?style=solid
-  'ribbon': FontAwesomeIcons.ribbon,
-
-  /// Solid Right from bracket icon
-  ///
-  /// https://fontawesome.com/icons/right-from-bracket?style=solid
-  'rightFromBracket': FontAwesomeIcons.rightFromBracket,
-
-  /// Solid Right left icon
-  ///
-  /// https://fontawesome.com/icons/right-left?style=solid
-  'rightLeft': FontAwesomeIcons.rightLeft,
-
-  /// Solid Right long icon
-  ///
-  /// https://fontawesome.com/icons/right-long?style=solid
-  'rightLong': FontAwesomeIcons.rightLong,
-
-  /// Solid Right to bracket icon
-  ///
-  /// https://fontawesome.com/icons/right-to-bracket?style=solid
-  'rightToBracket': FontAwesomeIcons.rightToBracket,
-
-  /// Solid Ring icon
-  ///
-  /// https://fontawesome.com/icons/ring?style=solid
-  'ring': FontAwesomeIcons.ring,
-
-  /// Solid road icon
-  ///
-  /// https://fontawesome.com/icons/road?style=solid
-  'road': FontAwesomeIcons.road,
-
-  /// Solid Road Barrier icon
-  ///
-  /// https://fontawesome.com/icons/road-barrier?style=solid
-  'roadBarrier': FontAwesomeIcons.roadBarrier,
-
-  /// Solid Road Bridge icon
-  ///
-  /// https://fontawesome.com/icons/road-bridge?style=solid
-  'roadBridge': FontAwesomeIcons.roadBridge,
-
-  /// Solid Road Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/road-circle-check?style=solid
-  'roadCircleCheck': FontAwesomeIcons.roadCircleCheck,
-
-  /// Solid Road Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/road-circle-exclamation?style=solid
-  'roadCircleExclamation': FontAwesomeIcons.roadCircleExclamation,
-
-  /// Solid Road Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/road-circle-xmark?style=solid
-  'roadCircleXmark': FontAwesomeIcons.roadCircleXmark,
-
-  /// Solid Road Lock icon
-  ///
-  /// https://fontawesome.com/icons/road-lock?style=solid
-  'roadLock': FontAwesomeIcons.roadLock,
-
-  /// Solid Road Spikes icon
-  ///
-  /// https://fontawesome.com/icons/road-spikes?style=solid
-  'roadSpikes': FontAwesomeIcons.roadSpikes,
-
-  /// Solid Robot icon
-  ///
-  /// https://fontawesome.com/icons/robot?style=solid
-  'robot': FontAwesomeIcons.robot,
-
-  /// Solid rocket icon
-  ///
-  /// https://fontawesome.com/icons/rocket?style=solid
-  'rocket': FontAwesomeIcons.rocket,
-
-  /// Brands Rocket.Chat icon
-  ///
-  /// https://fontawesome.com/icons/rocketchat?style=brands
-  'rocketchat': FontAwesomeIcons.rocketchat,
-
-  /// Brands Rockrms icon
-  ///
-  /// https://fontawesome.com/icons/rockrms?style=brands
-  'rockrms': FontAwesomeIcons.rockrms,
-
-  /// Solid Rotate icon
-  ///
-  /// https://fontawesome.com/icons/rotate?style=solid
-  'rotate': FontAwesomeIcons.rotate,
-
-  /// Solid Rotate Left icon
-  ///
-  /// https://fontawesome.com/icons/rotate-left?style=solid
-  'rotateLeft': FontAwesomeIcons.rotateLeft,
-
-  /// Solid Rotate Right icon
-  ///
-  /// https://fontawesome.com/icons/rotate-right?style=solid
-  'rotateRight': FontAwesomeIcons.rotateRight,
-
-  /// Solid Route icon
-  ///
-  /// https://fontawesome.com/icons/route?style=solid
-  'route': FontAwesomeIcons.route,
-
-  /// Solid rss icon
-  ///
-  /// https://fontawesome.com/icons/rss?style=solid
-  'rss': FontAwesomeIcons.rss,
-
-  /// Solid Ruble Sign icon
-  ///
-  /// https://fontawesome.com/icons/ruble-sign?style=solid
-  'rubleSign': FontAwesomeIcons.rubleSign,
-
-  /// Solid Rug icon
-  ///
-  /// https://fontawesome.com/icons/rug?style=solid
-  'rug': FontAwesomeIcons.rug,
-
-  /// Solid Ruler icon
-  ///
-  /// https://fontawesome.com/icons/ruler?style=solid
-  'ruler': FontAwesomeIcons.ruler,
-
-  /// Solid Ruler Combined icon
-  ///
-  /// https://fontawesome.com/icons/ruler-combined?style=solid
-  'rulerCombined': FontAwesomeIcons.rulerCombined,
-
-  /// Solid Ruler Horizontal icon
-  ///
-  /// https://fontawesome.com/icons/ruler-horizontal?style=solid
-  'rulerHorizontal': FontAwesomeIcons.rulerHorizontal,
-
-  /// Solid Ruler Vertical icon
-  ///
-  /// https://fontawesome.com/icons/ruler-vertical?style=solid
-  'rulerVertical': FontAwesomeIcons.rulerVertical,
-
-  /// Solid Indian Rupee Sign icon
-  ///
-  /// https://fontawesome.com/icons/rupee-sign?style=solid
-  'rupeeSign': FontAwesomeIcons.rupeeSign,
-
-  /// Solid Rupiah Sign icon
-  ///
-  /// https://fontawesome.com/icons/rupiah-sign?style=solid
-  'rupiahSign': FontAwesomeIcons.rupiahSign,
-
-  /// Brands Rust icon
-  ///
-  /// https://fontawesome.com/icons/rust?style=brands
-  'rust': FontAwesomeIcons.rust,
-
-  /// Solid S icon
-  ///
-  /// https://fontawesome.com/icons/s?style=solid
-  's': FontAwesomeIcons.s,
-
-  /// Solid Sack of Money icon
-  ///
-  /// https://fontawesome.com/icons/sack-dollar?style=solid
-  'sackDollar': FontAwesomeIcons.sackDollar,
-
-  /// Solid Sack Xmark icon
-  ///
-  /// https://fontawesome.com/icons/sack-xmark?style=solid
-  'sackXmark': FontAwesomeIcons.sackXmark,
-
-  /// Brands Safari icon
-  ///
-  /// https://fontawesome.com/icons/safari?style=brands
-  'safari': FontAwesomeIcons.safari,
-
-  /// Solid Sailboat icon
-  ///
-  /// https://fontawesome.com/icons/sailboat?style=solid
-  'sailboat': FontAwesomeIcons.sailboat,
-
-  /// Brands Salesforce icon
-  ///
-  /// https://fontawesome.com/icons/salesforce?style=brands
-  'salesforce': FontAwesomeIcons.salesforce,
-
-  /// Brands Sass icon
-  ///
-  /// https://fontawesome.com/icons/sass?style=brands
-  'sass': FontAwesomeIcons.sass,
-
-  /// Solid Satellite icon
-  ///
-  /// https://fontawesome.com/icons/satellite?style=solid
-  'satellite': FontAwesomeIcons.satellite,
-
-  /// Solid Satellite Dish icon
-  ///
-  /// https://fontawesome.com/icons/satellite-dish?style=solid
-  'satelliteDish': FontAwesomeIcons.satelliteDish,
-
-  /// Solid Scale balanced icon
-  ///
-  /// https://fontawesome.com/icons/scale-balanced?style=solid
-  'scaleBalanced': FontAwesomeIcons.scaleBalanced,
-
-  /// Solid Scale unbalanced icon
-  ///
-  /// https://fontawesome.com/icons/scale-unbalanced?style=solid
-  'scaleUnbalanced': FontAwesomeIcons.scaleUnbalanced,
-
-  /// Solid Scale unbalanced flip icon
-  ///
-  /// https://fontawesome.com/icons/scale-unbalanced-flip?style=solid
-  'scaleUnbalancedFlip': FontAwesomeIcons.scaleUnbalancedFlip,
-
-  /// Brands SCHLIX icon
-  ///
-  /// https://fontawesome.com/icons/schlix?style=brands
-  'schlix': FontAwesomeIcons.schlix,
-
-  /// Solid School icon
-  ///
-  /// https://fontawesome.com/icons/school?style=solid
-  'school': FontAwesomeIcons.school,
-
-  /// Solid School Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/school-circle-check?style=solid
-  'schoolCircleCheck': FontAwesomeIcons.schoolCircleCheck,
-
-  /// Solid School Circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/school-circle-exclamation?style=solid
-  'schoolCircleExclamation': FontAwesomeIcons.schoolCircleExclamation,
-
-  /// Solid School Circle-xmark icon
-  ///
-  /// https://fontawesome.com/icons/school-circle-xmark?style=solid
-  'schoolCircleXmark': FontAwesomeIcons.schoolCircleXmark,
-
-  /// Solid School Flag icon
-  ///
-  /// https://fontawesome.com/icons/school-flag?style=solid
-  'schoolFlag': FontAwesomeIcons.schoolFlag,
-
-  /// Solid School Lock icon
-  ///
-  /// https://fontawesome.com/icons/school-lock?style=solid
-  'schoolLock': FontAwesomeIcons.schoolLock,
-
-  /// Solid Scissors icon
-  ///
-  /// https://fontawesome.com/icons/scissors?style=solid
-  'scissors': FontAwesomeIcons.scissors,
-
-  /// Brands Screenpal icon
-  ///
-  /// https://fontawesome.com/icons/screenpal?style=brands
-  'screenpal': FontAwesomeIcons.screenpal,
-
-  /// Solid Screwdriver icon
-  ///
-  /// https://fontawesome.com/icons/screwdriver?style=solid
-  'screwdriver': FontAwesomeIcons.screwdriver,
-
-  /// Solid Screwdriver wrench icon
-  ///
-  /// https://fontawesome.com/icons/screwdriver-wrench?style=solid
-  'screwdriverWrench': FontAwesomeIcons.screwdriverWrench,
-
-  /// Brands Scribd icon
-  ///
-  /// https://fontawesome.com/icons/scribd?style=brands
-  'scribd': FontAwesomeIcons.scribd,
-
-  /// Solid Scroll icon
-  ///
-  /// https://fontawesome.com/icons/scroll?style=solid
-  'scroll': FontAwesomeIcons.scroll,
-
-  /// Solid Scroll torah icon
-  ///
-  /// https://fontawesome.com/icons/scroll-torah?style=solid
-  'scrollTorah': FontAwesomeIcons.scrollTorah,
-
-  /// Solid Sd Card icon
-  ///
-  /// https://fontawesome.com/icons/sd-card?style=solid
-  'sdCard': FontAwesomeIcons.sdCard,
-
-  /// Brands Searchengin icon
-  ///
-  /// https://fontawesome.com/icons/searchengin?style=brands
-  'searchengin': FontAwesomeIcons.searchengin,
-
-  /// Solid Section icon
-  ///
-  /// https://fontawesome.com/icons/section?style=solid
-  'section': FontAwesomeIcons.section,
-
-  /// Solid Seedling icon
-  ///
-  /// https://fontawesome.com/icons/seedling?style=solid
-  'seedling': FontAwesomeIcons.seedling,
-
-  /// Brands Sellcast icon
-  ///
-  /// https://fontawesome.com/icons/sellcast?style=brands
-  'sellcast': FontAwesomeIcons.sellcast,
-
-  /// Brands Sellsy icon
-  ///
-  /// https://fontawesome.com/icons/sellsy?style=brands
-  'sellsy': FontAwesomeIcons.sellsy,
-
-  /// Solid Server icon
-  ///
-  /// https://fontawesome.com/icons/server?style=solid
-  'server': FontAwesomeIcons.server,
-
-  /// Brands Servicestack icon
-  ///
-  /// https://fontawesome.com/icons/servicestack?style=brands
-  'servicestack': FontAwesomeIcons.servicestack,
-
-  /// Solid Shapes icon
-  ///
-  /// https://fontawesome.com/icons/shapes?style=solid
-  'shapes': FontAwesomeIcons.shapes,
-
-  /// Solid Share icon
-  ///
-  /// https://fontawesome.com/icons/share?style=solid
-  'share': FontAwesomeIcons.share,
-
-  /// Solid Share from square icon
-  ///
-  /// https://fontawesome.com/icons/share-from-square?style=solid
-  'solidShareFromSquare': FontAwesomeIcons.solidShareFromSquare,
-
-  /// Regular Share from square icon
-  ///
-  /// https://fontawesome.com/icons/share-from-square?style=regular
-  'shareFromSquare': FontAwesomeIcons.shareFromSquare,
-
-  /// Solid Share nodes icon
-  ///
-  /// https://fontawesome.com/icons/share-nodes?style=solid
-  'shareNodes': FontAwesomeIcons.shareNodes,
-
-  /// Solid Sheet Plastic icon
-  ///
-  /// https://fontawesome.com/icons/sheet-plastic?style=solid
-  'sheetPlastic': FontAwesomeIcons.sheetPlastic,
-
-  /// Solid Shekel Sign icon
-  ///
-  /// https://fontawesome.com/icons/shekel-sign?style=solid
-  'shekelSign': FontAwesomeIcons.shekelSign,
-
-  /// Solid shield icon
-  ///
-  /// https://fontawesome.com/icons/shield?style=solid
-  'shield': FontAwesomeIcons.shield,
-
-  /// Solid Shield Cat icon
-  ///
-  /// https://fontawesome.com/icons/shield-cat?style=solid
-  'shieldCat': FontAwesomeIcons.shieldCat,
-
-  /// Solid Shield Dog icon
-  ///
-  /// https://fontawesome.com/icons/shield-dog?style=solid
-  'shieldDog': FontAwesomeIcons.shieldDog,
-
-  /// Solid Shield Halved icon
-  ///
-  /// https://fontawesome.com/icons/shield-halved?style=solid
-  'shieldHalved': FontAwesomeIcons.shieldHalved,
-
-  /// Solid Shield Heart icon
-  ///
-  /// https://fontawesome.com/icons/shield-heart?style=solid
-  'shieldHeart': FontAwesomeIcons.shieldHeart,
-
-  /// Solid Shield Virus icon
-  ///
-  /// https://fontawesome.com/icons/shield-virus?style=solid
-  'shieldVirus': FontAwesomeIcons.shieldVirus,
-
-  /// Solid Ship icon
-  ///
-  /// https://fontawesome.com/icons/ship?style=solid
-  'ship': FontAwesomeIcons.ship,
-
-  /// Solid T-Shirt icon
-  ///
-  /// https://fontawesome.com/icons/shirt?style=solid
-  'shirt': FontAwesomeIcons.shirt,
-
-  /// Brands Shirts in Bulk icon
-  ///
-  /// https://fontawesome.com/icons/shirtsinbulk?style=brands
-  'shirtsinbulk': FontAwesomeIcons.shirtsinbulk,
-
-  /// Solid Shoe Prints icon
-  ///
-  /// https://fontawesome.com/icons/shoe-prints?style=solid
-  'shoePrints': FontAwesomeIcons.shoePrints,
-
-  /// Solid Shop icon
-  ///
-  /// https://fontawesome.com/icons/shop?style=solid
-  'shop': FontAwesomeIcons.shop,
-
-  /// Solid Shop Lock icon
-  ///
-  /// https://fontawesome.com/icons/shop-lock?style=solid
-  'shopLock': FontAwesomeIcons.shopLock,
-
-  /// Solid Shop slash icon
-  ///
-  /// https://fontawesome.com/icons/shop-slash?style=solid
-  'shopSlash': FontAwesomeIcons.shopSlash,
-
-  /// Brands Shopify icon
-  ///
-  /// https://fontawesome.com/icons/shopify?style=brands
-  'shopify': FontAwesomeIcons.shopify,
-
-  /// Brands Shopware icon
-  ///
-  /// https://fontawesome.com/icons/shopware?style=brands
-  'shopware': FontAwesomeIcons.shopware,
-
-  /// Solid Shower icon
-  ///
-  /// https://fontawesome.com/icons/shower?style=solid
-  'shower': FontAwesomeIcons.shower,
-
-  /// Solid Shrimp icon
-  ///
-  /// https://fontawesome.com/icons/shrimp?style=solid
-  'shrimp': FontAwesomeIcons.shrimp,
-
-  /// Solid Shuffle icon
-  ///
-  /// https://fontawesome.com/icons/shuffle?style=solid
-  'shuffle': FontAwesomeIcons.shuffle,
-
-  /// Solid Shuttle space icon
-  ///
-  /// https://fontawesome.com/icons/shuttle-space?style=solid
-  'shuttleSpace': FontAwesomeIcons.shuttleSpace,
-
-  /// Solid Sign hanging icon
-  ///
-  /// https://fontawesome.com/icons/sign-hanging?style=solid
-  'signHanging': FontAwesomeIcons.signHanging,
-
-  /// Solid signal icon
-  ///
-  /// https://fontawesome.com/icons/signal?style=solid
-  'signal': FontAwesomeIcons.signal,
-
-  /// Solid Signature icon
-  ///
-  /// https://fontawesome.com/icons/signature?style=solid
-  'signature': FontAwesomeIcons.signature,
-
-  /// Solid Signs post icon
-  ///
-  /// https://fontawesome.com/icons/signs-post?style=solid
-  'signsPost': FontAwesomeIcons.signsPost,
-
-  /// Solid SIM Card icon
-  ///
-  /// https://fontawesome.com/icons/sim-card?style=solid
-  'simCard': FontAwesomeIcons.simCard,
-
-  /// Brands SimplyBuilt icon
-  ///
-  /// https://fontawesome.com/icons/simplybuilt?style=brands
-  'simplybuilt': FontAwesomeIcons.simplybuilt,
-
-  /// Solid Sink icon
-  ///
-  /// https://fontawesome.com/icons/sink?style=solid
-  'sink': FontAwesomeIcons.sink,
-
-  /// Brands SISTRIX icon
-  ///
-  /// https://fontawesome.com/icons/sistrix?style=brands
-  'sistrix': FontAwesomeIcons.sistrix,
-
-  /// Solid Sitemap icon
-  ///
-  /// https://fontawesome.com/icons/sitemap?style=solid
-  'sitemap': FontAwesomeIcons.sitemap,
-
-  /// Brands Sith icon
-  ///
-  /// https://fontawesome.com/icons/sith?style=brands
-  'sith': FontAwesomeIcons.sith,
-
-  /// Brands Sitrox icon
-  ///
-  /// https://fontawesome.com/icons/sitrox?style=brands
-  'sitrox': FontAwesomeIcons.sitrox,
-
-  /// Brands Sketch icon
-  ///
-  /// https://fontawesome.com/icons/sketch?style=brands
-  'sketch': FontAwesomeIcons.sketch,
-
-  /// Solid Skull icon
-  ///
-  /// https://fontawesome.com/icons/skull?style=solid
-  'skull': FontAwesomeIcons.skull,
-
-  /// Solid Skull & Crossbones icon
-  ///
-  /// https://fontawesome.com/icons/skull-crossbones?style=solid
-  'skullCrossbones': FontAwesomeIcons.skullCrossbones,
-
-  /// Brands skyatlas icon
-  ///
-  /// https://fontawesome.com/icons/skyatlas?style=brands
-  'skyatlas': FontAwesomeIcons.skyatlas,
-
-  /// Brands Skype icon
-  ///
-  /// https://fontawesome.com/icons/skype?style=brands
-  'skype': FontAwesomeIcons.skype,
-
-  /// Brands Slack Logo icon
-  ///
-  /// https://fontawesome.com/icons/slack?style=brands
-  'slack': FontAwesomeIcons.slack,
-
-  /// Solid Slash icon
-  ///
-  /// https://fontawesome.com/icons/slash?style=solid
-  'slash': FontAwesomeIcons.slash,
-
-  /// Solid Sleigh icon
-  ///
-  /// https://fontawesome.com/icons/sleigh?style=solid
-  'sleigh': FontAwesomeIcons.sleigh,
-
-  /// Solid Sliders icon
-  ///
-  /// https://fontawesome.com/icons/sliders?style=solid
-  'sliders': FontAwesomeIcons.sliders,
-
-  /// Brands Slideshare icon
-  ///
-  /// https://fontawesome.com/icons/slideshare?style=brands
-  'slideshare': FontAwesomeIcons.slideshare,
-
-  /// Solid Smog icon
-  ///
-  /// https://fontawesome.com/icons/smog?style=solid
-  'smog': FontAwesomeIcons.smog,
-
-  /// Solid Smoking icon
-  ///
-  /// https://fontawesome.com/icons/smoking?style=solid
-  'smoking': FontAwesomeIcons.smoking,
-
-  /// Brands Snapchat icon
-  ///
-  /// https://fontawesome.com/icons/snapchat?style=brands
-  'snapchat': FontAwesomeIcons.snapchat,
-
-  /// Solid Snowflake icon
-  ///
-  /// https://fontawesome.com/icons/snowflake?style=solid
-  'solidSnowflake': FontAwesomeIcons.solidSnowflake,
-
-  /// Regular Snowflake icon
-  ///
-  /// https://fontawesome.com/icons/snowflake?style=regular
-  'snowflake': FontAwesomeIcons.snowflake,
-
-  /// Solid Snowman icon
-  ///
-  /// https://fontawesome.com/icons/snowman?style=solid
-  'snowman': FontAwesomeIcons.snowman,
-
-  /// Solid Snowplow icon
-  ///
-  /// https://fontawesome.com/icons/snowplow?style=solid
-  'snowplow': FontAwesomeIcons.snowplow,
-
-  /// Solid Soap icon
-  ///
-  /// https://fontawesome.com/icons/soap?style=solid
-  'soap': FontAwesomeIcons.soap,
-
-  /// Solid Socks icon
-  ///
-  /// https://fontawesome.com/icons/socks?style=solid
-  'socks': FontAwesomeIcons.socks,
-
-  /// Solid Solar Panel icon
-  ///
-  /// https://fontawesome.com/icons/solar-panel?style=solid
-  'solarPanel': FontAwesomeIcons.solarPanel,
-
-  /// Solid Sort icon
-  ///
-  /// https://fontawesome.com/icons/sort?style=solid
-  'sort': FontAwesomeIcons.sort,
-
-  /// Solid Sort Down (Descending) icon
-  ///
-  /// https://fontawesome.com/icons/sort-down?style=solid
-  'sortDown': FontAwesomeIcons.sortDown,
-
-  /// Solid Sort Up (Ascending) icon
-  ///
-  /// https://fontawesome.com/icons/sort-up?style=solid
-  'sortUp': FontAwesomeIcons.sortUp,
-
-  /// Brands SoundCloud icon
-  ///
-  /// https://fontawesome.com/icons/soundcloud?style=brands
-  'soundcloud': FontAwesomeIcons.soundcloud,
-
-  /// Brands Sourcetree icon
-  ///
-  /// https://fontawesome.com/icons/sourcetree?style=brands
-  'sourcetree': FontAwesomeIcons.sourcetree,
-
-  /// Solid Spa icon
-  ///
-  /// https://fontawesome.com/icons/spa?style=solid
-  'spa': FontAwesomeIcons.spa,
-
-  /// Brands Space Awesome icon
-  ///
-  /// https://fontawesome.com/icons/space-awesome?style=brands
-  'spaceAwesome': FontAwesomeIcons.spaceAwesome,
-
-  /// Solid Spaghetti monster flying icon
-  ///
-  /// https://fontawesome.com/icons/spaghetti-monster-flying?style=solid
-  'spaghettiMonsterFlying': FontAwesomeIcons.spaghettiMonsterFlying,
-
-  /// Brands Speakap icon
-  ///
-  /// https://fontawesome.com/icons/speakap?style=brands
-  'speakap': FontAwesomeIcons.speakap,
-
-  /// Brands Speaker Deck icon
-  ///
-  /// https://fontawesome.com/icons/speaker-deck?style=brands
-  'speakerDeck': FontAwesomeIcons.speakerDeck,
-
-  /// Solid Spell Check icon
-  ///
-  /// https://fontawesome.com/icons/spell-check?style=solid
-  'spellCheck': FontAwesomeIcons.spellCheck,
-
-  /// Solid Spider icon
-  ///
-  /// https://fontawesome.com/icons/spider?style=solid
-  'spider': FontAwesomeIcons.spider,
-
-  /// Solid Spinner icon
-  ///
-  /// https://fontawesome.com/icons/spinner?style=solid
-  'spinner': FontAwesomeIcons.spinner,
-
-  /// Solid Splotch icon
-  ///
-  /// https://fontawesome.com/icons/splotch?style=solid
-  'splotch': FontAwesomeIcons.splotch,
-
-  /// Solid Spoon icon
-  ///
-  /// https://fontawesome.com/icons/spoon?style=solid
-  'spoon': FontAwesomeIcons.spoon,
-
-  /// Brands Spotify icon
-  ///
-  /// https://fontawesome.com/icons/spotify?style=brands
-  'spotify': FontAwesomeIcons.spotify,
-
-  /// Solid Spray Can icon
-  ///
-  /// https://fontawesome.com/icons/spray-can?style=solid
-  'sprayCan': FontAwesomeIcons.sprayCan,
-
-  /// Solid Spray Can Sparkles icon
-  ///
-  /// https://fontawesome.com/icons/spray-can-sparkles?style=solid
-  'sprayCanSparkles': FontAwesomeIcons.sprayCanSparkles,
-
-  /// Solid Square icon
-  ///
-  /// https://fontawesome.com/icons/square?style=solid
-  'solidSquare': FontAwesomeIcons.solidSquare,
-
-  /// Regular Square icon
-  ///
-  /// https://fontawesome.com/icons/square?style=regular
-  'square': FontAwesomeIcons.square,
-
-  /// Solid Square arrow up right icon
-  ///
-  /// https://fontawesome.com/icons/square-arrow-up-right?style=solid
-  'squareArrowUpRight': FontAwesomeIcons.squareArrowUpRight,
-
-  /// Brands Behance Square icon
-  ///
-  /// https://fontawesome.com/icons/square-behance?style=brands
-  'squareBehance': FontAwesomeIcons.squareBehance,
-
-  /// Solid Square caret down icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-down?style=solid
-  'solidSquareCaretDown': FontAwesomeIcons.solidSquareCaretDown,
-
-  /// Regular Square caret down icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-down?style=regular
-  'squareCaretDown': FontAwesomeIcons.squareCaretDown,
-
-  /// Solid Square caret left icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-left?style=solid
-  'solidSquareCaretLeft': FontAwesomeIcons.solidSquareCaretLeft,
-
-  /// Regular Square caret left icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-left?style=regular
-  'squareCaretLeft': FontAwesomeIcons.squareCaretLeft,
-
-  /// Solid Square caret right icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-right?style=solid
-  'solidSquareCaretRight': FontAwesomeIcons.solidSquareCaretRight,
-
-  /// Regular Square caret right icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-right?style=regular
-  'squareCaretRight': FontAwesomeIcons.squareCaretRight,
-
-  /// Solid Square caret up icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-up?style=solid
-  'solidSquareCaretUp': FontAwesomeIcons.solidSquareCaretUp,
-
-  /// Regular Square caret up icon
-  ///
-  /// https://fontawesome.com/icons/square-caret-up?style=regular
-  'squareCaretUp': FontAwesomeIcons.squareCaretUp,
-
-  /// Solid Square check icon
-  ///
-  /// https://fontawesome.com/icons/square-check?style=solid
-  'solidSquareCheck': FontAwesomeIcons.solidSquareCheck,
-
-  /// Regular Square check icon
-  ///
-  /// https://fontawesome.com/icons/square-check?style=regular
-  'squareCheck': FontAwesomeIcons.squareCheck,
-
-  /// Brands Dribbble Square icon
-  ///
-  /// https://fontawesome.com/icons/square-dribbble?style=brands
-  'squareDribbble': FontAwesomeIcons.squareDribbble,
-
-  /// Solid Square envelope icon
-  ///
-  /// https://fontawesome.com/icons/square-envelope?style=solid
-  'squareEnvelope': FontAwesomeIcons.squareEnvelope,
-
-  /// Brands Facebook Square icon
-  ///
-  /// https://fontawesome.com/icons/square-facebook?style=brands
-  'squareFacebook': FontAwesomeIcons.squareFacebook,
-
-  /// Brands Font Awesome in Square icon
-  ///
-  /// https://fontawesome.com/icons/square-font-awesome?style=brands
-  'squareFontAwesome': FontAwesomeIcons.squareFontAwesome,
-
-  /// Brands Font Awesome in Square with Stroke Outline icon
-  ///
-  /// https://fontawesome.com/icons/square-font-awesome-stroke?style=brands
-  'squareFontAwesomeStroke': FontAwesomeIcons.squareFontAwesomeStroke,
-
-  /// Solid Square Full icon
-  ///
-  /// https://fontawesome.com/icons/square-full?style=solid
-  'solidSquareFull': FontAwesomeIcons.solidSquareFull,
-
-  /// Regular Square Full icon
-  ///
-  /// https://fontawesome.com/icons/square-full?style=regular
-  'squareFull': FontAwesomeIcons.squareFull,
-
-  /// Brands Git Square icon
-  ///
-  /// https://fontawesome.com/icons/square-git?style=brands
-  'squareGit': FontAwesomeIcons.squareGit,
-
-  /// Brands GitHub Square icon
-  ///
-  /// https://fontawesome.com/icons/square-github?style=brands
-  'squareGithub': FontAwesomeIcons.squareGithub,
-
-  /// Brands Square Gitlab icon
-  ///
-  /// https://fontawesome.com/icons/square-gitlab?style=brands
-  'squareGitlab': FontAwesomeIcons.squareGitlab,
-
-  /// Brands Google Plus Square icon
-  ///
-  /// https://fontawesome.com/icons/square-google-plus?style=brands
-  'squareGooglePlus': FontAwesomeIcons.squareGooglePlus,
-
-  /// Solid Square h icon
-  ///
-  /// https://fontawesome.com/icons/square-h?style=solid
-  'squareH': FontAwesomeIcons.squareH,
-
-  /// Brands Hacker News Square icon
-  ///
-  /// https://fontawesome.com/icons/square-hacker-news?style=brands
-  'squareHackerNews': FontAwesomeIcons.squareHackerNews,
-
-  /// Brands Instagram Square icon
-  ///
-  /// https://fontawesome.com/icons/square-instagram?style=brands
-  'squareInstagram': FontAwesomeIcons.squareInstagram,
-
-  /// Brands JavaScript (JS) Square icon
-  ///
-  /// https://fontawesome.com/icons/square-js?style=brands
-  'squareJs': FontAwesomeIcons.squareJs,
-
-  /// Brands last.fm Square icon
-  ///
-  /// https://fontawesome.com/icons/square-lastfm?style=brands
-  'squareLastfm': FontAwesomeIcons.squareLastfm,
-
-  /// Solid Square minus icon
-  ///
-  /// https://fontawesome.com/icons/square-minus?style=solid
-  'solidSquareMinus': FontAwesomeIcons.solidSquareMinus,
-
-  /// Regular Square minus icon
-  ///
-  /// https://fontawesome.com/icons/square-minus?style=regular
-  'squareMinus': FontAwesomeIcons.squareMinus,
-
-  /// Solid Square Nfi icon
-  ///
-  /// https://fontawesome.com/icons/square-nfi?style=solid
-  'squareNfi': FontAwesomeIcons.squareNfi,
-
-  /// Brands Odnoklassniki Square icon
-  ///
-  /// https://fontawesome.com/icons/square-odnoklassniki?style=brands
-  'squareOdnoklassniki': FontAwesomeIcons.squareOdnoklassniki,
-
-  /// Solid Square parking icon
-  ///
-  /// https://fontawesome.com/icons/square-parking?style=solid
-  'squareParking': FontAwesomeIcons.squareParking,
-
-  /// Solid Square pen icon
-  ///
-  /// https://fontawesome.com/icons/square-pen?style=solid
-  'squarePen': FontAwesomeIcons.squarePen,
-
-  /// Solid Square Person-confined icon
-  ///
-  /// https://fontawesome.com/icons/square-person-confined?style=solid
-  'squarePersonConfined': FontAwesomeIcons.squarePersonConfined,
-
-  /// Solid Square phone icon
-  ///
-  /// https://fontawesome.com/icons/square-phone?style=solid
-  'squarePhone': FontAwesomeIcons.squarePhone,
-
-  /// Solid Square phone flip icon
-  ///
-  /// https://fontawesome.com/icons/square-phone-flip?style=solid
-  'squarePhoneFlip': FontAwesomeIcons.squarePhoneFlip,
-
-  /// Brands Pied Piper Square Logo (Old) icon
-  ///
-  /// https://fontawesome.com/icons/square-pied-piper?style=brands
-  'squarePiedPiper': FontAwesomeIcons.squarePiedPiper,
-
-  /// Brands Pinterest Square icon
-  ///
-  /// https://fontawesome.com/icons/square-pinterest?style=brands
-  'squarePinterest': FontAwesomeIcons.squarePinterest,
-
-  /// Solid Square plus icon
-  ///
-  /// https://fontawesome.com/icons/square-plus?style=solid
-  'solidSquarePlus': FontAwesomeIcons.solidSquarePlus,
-
-  /// Regular Square plus icon
-  ///
-  /// https://fontawesome.com/icons/square-plus?style=regular
-  'squarePlus': FontAwesomeIcons.squarePlus,
-
-  /// Solid Square poll horizontal icon
-  ///
-  /// https://fontawesome.com/icons/square-poll-horizontal?style=solid
-  'squarePollHorizontal': FontAwesomeIcons.squarePollHorizontal,
-
-  /// Solid Square poll vertical icon
-  ///
-  /// https://fontawesome.com/icons/square-poll-vertical?style=solid
-  'squarePollVertical': FontAwesomeIcons.squarePollVertical,
-
-  /// Brands reddit Square icon
-  ///
-  /// https://fontawesome.com/icons/square-reddit?style=brands
-  'squareReddit': FontAwesomeIcons.squareReddit,
-
-  /// Solid Square root variable icon
-  ///
-  /// https://fontawesome.com/icons/square-root-variable?style=solid
-  'squareRootVariable': FontAwesomeIcons.squareRootVariable,
-
-  /// Solid Square rss icon
-  ///
-  /// https://fontawesome.com/icons/square-rss?style=solid
-  'squareRss': FontAwesomeIcons.squareRss,
-
-  /// Solid Square share nodes icon
-  ///
-  /// https://fontawesome.com/icons/square-share-nodes?style=solid
-  'squareShareNodes': FontAwesomeIcons.squareShareNodes,
-
-  /// Brands Snapchat Square icon
-  ///
-  /// https://fontawesome.com/icons/square-snapchat?style=brands
-  'squareSnapchat': FontAwesomeIcons.squareSnapchat,
-
-  /// Brands Steam Square icon
-  ///
-  /// https://fontawesome.com/icons/square-steam?style=brands
-  'squareSteam': FontAwesomeIcons.squareSteam,
-
-  /// Brands Tumblr Square icon
-  ///
-  /// https://fontawesome.com/icons/square-tumblr?style=brands
-  'squareTumblr': FontAwesomeIcons.squareTumblr,
-
-  /// Brands Twitter Square icon
-  ///
-  /// https://fontawesome.com/icons/square-twitter?style=brands
-  'squareTwitter': FontAwesomeIcons.squareTwitter,
-
-  /// Solid Square up right icon
-  ///
-  /// https://fontawesome.com/icons/square-up-right?style=solid
-  'squareUpRight': FontAwesomeIcons.squareUpRight,
-
-  /// Brands Viadeo Square icon
-  ///
-  /// https://fontawesome.com/icons/square-viadeo?style=brands
-  'squareViadeo': FontAwesomeIcons.squareViadeo,
-
-  /// Brands Vimeo Square icon
-  ///
-  /// https://fontawesome.com/icons/square-vimeo?style=brands
-  'squareVimeo': FontAwesomeIcons.squareVimeo,
-
-  /// Solid Square Virus icon
-  ///
-  /// https://fontawesome.com/icons/square-virus?style=solid
-  'squareVirus': FontAwesomeIcons.squareVirus,
-
-  /// Brands What's App Square icon
-  ///
-  /// https://fontawesome.com/icons/square-whatsapp?style=brands
-  'squareWhatsapp': FontAwesomeIcons.squareWhatsapp,
-
-  /// Brands Xing Square icon
-  ///
-  /// https://fontawesome.com/icons/square-xing?style=brands
-  'squareXing': FontAwesomeIcons.squareXing,
-
-  /// Solid Square X Mark icon
-  ///
-  /// https://fontawesome.com/icons/square-xmark?style=solid
-  'squareXmark': FontAwesomeIcons.squareXmark,
-
-  /// Brands YouTube Square icon
-  ///
-  /// https://fontawesome.com/icons/square-youtube?style=brands
-  'squareYoutube': FontAwesomeIcons.squareYoutube,
-
-  /// Brands Squarespace icon
-  ///
-  /// https://fontawesome.com/icons/squarespace?style=brands
-  'squarespace': FontAwesomeIcons.squarespace,
-
-  /// Brands Stack Exchange icon
-  ///
-  /// https://fontawesome.com/icons/stack-exchange?style=brands
-  'stackExchange': FontAwesomeIcons.stackExchange,
-
-  /// Brands Stack Overflow icon
-  ///
-  /// https://fontawesome.com/icons/stack-overflow?style=brands
-  'stackOverflow': FontAwesomeIcons.stackOverflow,
-
-  /// Brands Stackpath icon
-  ///
-  /// https://fontawesome.com/icons/stackpath?style=brands
-  'stackpath': FontAwesomeIcons.stackpath,
-
-  /// Solid Staff Aesculapius icon
-  ///
-  /// https://fontawesome.com/icons/staff-snake?style=solid
-  'staffSnake': FontAwesomeIcons.staffSnake,
-
-  /// Solid Stairs icon
-  ///
-  /// https://fontawesome.com/icons/stairs?style=solid
-  'stairs': FontAwesomeIcons.stairs,
-
-  /// Solid Stamp icon
-  ///
-  /// https://fontawesome.com/icons/stamp?style=solid
-  'stamp': FontAwesomeIcons.stamp,
-
-  /// Solid Stapler icon
-  ///
-  /// https://fontawesome.com/icons/stapler?style=solid
-  'stapler': FontAwesomeIcons.stapler,
-
-  /// Solid Star icon
-  ///
-  /// https://fontawesome.com/icons/star?style=solid
-  'solidStar': FontAwesomeIcons.solidStar,
-
-  /// Regular Star icon
-  ///
-  /// https://fontawesome.com/icons/star?style=regular
-  'star': FontAwesomeIcons.star,
-
-  /// Solid Star and Crescent icon
-  ///
-  /// https://fontawesome.com/icons/star-and-crescent?style=solid
-  'starAndCrescent': FontAwesomeIcons.starAndCrescent,
-
-  /// Solid star-half icon
-  ///
-  /// https://fontawesome.com/icons/star-half?style=solid
-  'solidStarHalf': FontAwesomeIcons.solidStarHalf,
-
-  /// Regular star-half icon
-  ///
-  /// https://fontawesome.com/icons/star-half?style=regular
-  'starHalf': FontAwesomeIcons.starHalf,
-
-  /// Solid Star half stroke icon
-  ///
-  /// https://fontawesome.com/icons/star-half-stroke?style=solid
-  'solidStarHalfStroke': FontAwesomeIcons.solidStarHalfStroke,
-
-  /// Regular Star half stroke icon
-  ///
-  /// https://fontawesome.com/icons/star-half-stroke?style=regular
-  'starHalfStroke': FontAwesomeIcons.starHalfStroke,
-
-  /// Solid Star of David icon
-  ///
-  /// https://fontawesome.com/icons/star-of-david?style=solid
-  'starOfDavid': FontAwesomeIcons.starOfDavid,
-
-  /// Solid Star of Life icon
-  ///
-  /// https://fontawesome.com/icons/star-of-life?style=solid
-  'starOfLife': FontAwesomeIcons.starOfLife,
-
-  /// Brands StayLinked icon
-  ///
-  /// https://fontawesome.com/icons/staylinked?style=brands
-  'staylinked': FontAwesomeIcons.staylinked,
-
-  /// Brands Steam icon
-  ///
-  /// https://fontawesome.com/icons/steam?style=brands
-  'steam': FontAwesomeIcons.steam,
-
-  /// Brands Steam Symbol icon
-  ///
-  /// https://fontawesome.com/icons/steam-symbol?style=brands
-  'steamSymbol': FontAwesomeIcons.steamSymbol,
-
-  /// Solid Sterling sign icon
-  ///
-  /// https://fontawesome.com/icons/sterling-sign?style=solid
-  'sterlingSign': FontAwesomeIcons.sterlingSign,
-
-  /// Solid Stethoscope icon
-  ///
-  /// https://fontawesome.com/icons/stethoscope?style=solid
-  'stethoscope': FontAwesomeIcons.stethoscope,
-
-  /// Brands Sticker Mule icon
-  ///
-  /// https://fontawesome.com/icons/sticker-mule?style=brands
-  'stickerMule': FontAwesomeIcons.stickerMule,
-
-  /// Solid stop icon
-  ///
-  /// https://fontawesome.com/icons/stop?style=solid
-  'stop': FontAwesomeIcons.stop,
-
-  /// Solid Stopwatch icon
-  ///
-  /// https://fontawesome.com/icons/stopwatch?style=solid
-  'stopwatch': FontAwesomeIcons.stopwatch,
-
-  /// Solid Stopwatch 20 icon
-  ///
-  /// https://fontawesome.com/icons/stopwatch-20?style=solid
-  'stopwatch20': FontAwesomeIcons.stopwatch20,
-
-  /// Solid Store icon
-  ///
-  /// https://fontawesome.com/icons/store?style=solid
-  'store': FontAwesomeIcons.store,
-
-  /// Solid Store Slash icon
-  ///
-  /// https://fontawesome.com/icons/store-slash?style=solid
-  'storeSlash': FontAwesomeIcons.storeSlash,
-
-  /// Brands Strava icon
-  ///
-  /// https://fontawesome.com/icons/strava?style=brands
-  'strava': FontAwesomeIcons.strava,
-
-  /// Solid Street View icon
-  ///
-  /// https://fontawesome.com/icons/street-view?style=solid
-  'streetView': FontAwesomeIcons.streetView,
-
-  /// Solid Strikethrough icon
-  ///
-  /// https://fontawesome.com/icons/strikethrough?style=solid
-  'strikethrough': FontAwesomeIcons.strikethrough,
-
-  /// Brands Stripe icon
-  ///
-  /// https://fontawesome.com/icons/stripe?style=brands
-  'stripe': FontAwesomeIcons.stripe,
-
-  /// Brands Stripe S icon
-  ///
-  /// https://fontawesome.com/icons/stripe-s?style=brands
-  'stripeS': FontAwesomeIcons.stripeS,
-
-  /// Solid Stroopwafel icon
-  ///
-  /// https://fontawesome.com/icons/stroopwafel?style=solid
-  'stroopwafel': FontAwesomeIcons.stroopwafel,
-
-  /// Brands Studio Vinari icon
-  ///
-  /// https://fontawesome.com/icons/studiovinari?style=brands
-  'studiovinari': FontAwesomeIcons.studiovinari,
-
-  /// Brands StumbleUpon Logo icon
-  ///
-  /// https://fontawesome.com/icons/stumbleupon?style=brands
-  'stumbleupon': FontAwesomeIcons.stumbleupon,
-
-  /// Brands StumbleUpon Circle icon
-  ///
-  /// https://fontawesome.com/icons/stumbleupon-circle?style=brands
-  'stumbleuponCircle': FontAwesomeIcons.stumbleuponCircle,
-
-  /// Solid subscript icon
-  ///
-  /// https://fontawesome.com/icons/subscript?style=solid
-  'subscript': FontAwesomeIcons.subscript,
-
-  /// Solid Suitcase icon
-  ///
-  /// https://fontawesome.com/icons/suitcase?style=solid
-  'suitcase': FontAwesomeIcons.suitcase,
-
-  /// Solid Suitcase medical icon
-  ///
-  /// https://fontawesome.com/icons/suitcase-medical?style=solid
-  'suitcaseMedical': FontAwesomeIcons.suitcaseMedical,
-
-  /// Solid Suitcase Rolling icon
-  ///
-  /// https://fontawesome.com/icons/suitcase-rolling?style=solid
-  'suitcaseRolling': FontAwesomeIcons.suitcaseRolling,
-
-  /// Solid Sun icon
-  ///
-  /// https://fontawesome.com/icons/sun?style=solid
-  'solidSun': FontAwesomeIcons.solidSun,
-
-  /// Regular Sun icon
-  ///
-  /// https://fontawesome.com/icons/sun?style=regular
-  'sun': FontAwesomeIcons.sun,
-
-  /// Solid Sun Plant-wilt icon
-  ///
-  /// https://fontawesome.com/icons/sun-plant-wilt?style=solid
-  'sunPlantWilt': FontAwesomeIcons.sunPlantWilt,
-
-  /// Brands Superpowers icon
-  ///
-  /// https://fontawesome.com/icons/superpowers?style=brands
-  'superpowers': FontAwesomeIcons.superpowers,
-
-  /// Solid superscript icon
-  ///
-  /// https://fontawesome.com/icons/superscript?style=solid
-  'superscript': FontAwesomeIcons.superscript,
-
-  /// Brands Supple icon
-  ///
-  /// https://fontawesome.com/icons/supple?style=brands
-  'supple': FontAwesomeIcons.supple,
-
-  /// Brands Suse icon
-  ///
-  /// https://fontawesome.com/icons/suse?style=brands
-  'suse': FontAwesomeIcons.suse,
-
-  /// Solid Swatchbook icon
-  ///
-  /// https://fontawesome.com/icons/swatchbook?style=solid
-  'swatchbook': FontAwesomeIcons.swatchbook,
-
-  /// Brands Swift icon
-  ///
-  /// https://fontawesome.com/icons/swift?style=brands
-  'swift': FontAwesomeIcons.swift,
-
-  /// Brands Symfony icon
-  ///
-  /// https://fontawesome.com/icons/symfony?style=brands
-  'symfony': FontAwesomeIcons.symfony,
-
-  /// Solid Synagogue icon
-  ///
-  /// https://fontawesome.com/icons/synagogue?style=solid
-  'synagogue': FontAwesomeIcons.synagogue,
-
-  /// Solid Syringe icon
-  ///
-  /// https://fontawesome.com/icons/syringe?style=solid
-  'syringe': FontAwesomeIcons.syringe,
-
-  /// Solid T icon
-  ///
-  /// https://fontawesome.com/icons/t?style=solid
-  't': FontAwesomeIcons.t,
-
-  /// Solid table icon
-  ///
-  /// https://fontawesome.com/icons/table?style=solid
-  'table': FontAwesomeIcons.table,
-
-  /// Solid Table cells icon
-  ///
-  /// https://fontawesome.com/icons/table-cells?style=solid
-  'tableCells': FontAwesomeIcons.tableCells,
-
-  /// Solid Table cells large icon
-  ///
-  /// https://fontawesome.com/icons/table-cells-large?style=solid
-  'tableCellsLarge': FontAwesomeIcons.tableCellsLarge,
-
-  /// Solid Table columns icon
-  ///
-  /// https://fontawesome.com/icons/table-columns?style=solid
-  'tableColumns': FontAwesomeIcons.tableColumns,
-
-  /// Solid Table list icon
-  ///
-  /// https://fontawesome.com/icons/table-list?style=solid
-  'tableList': FontAwesomeIcons.tableList,
-
-  /// Solid Table tennis paddle ball icon
-  ///
-  /// https://fontawesome.com/icons/table-tennis-paddle-ball?style=solid
-  'tableTennisPaddleBall': FontAwesomeIcons.tableTennisPaddleBall,
-
-  /// Solid Tablet icon
-  ///
-  /// https://fontawesome.com/icons/tablet?style=solid
-  'tablet': FontAwesomeIcons.tablet,
-
-  /// Solid Tablet button icon
-  ///
-  /// https://fontawesome.com/icons/tablet-button?style=solid
-  'tabletButton': FontAwesomeIcons.tabletButton,
-
-  /// Solid Tablet screen button icon
-  ///
-  /// https://fontawesome.com/icons/tablet-screen-button?style=solid
-  'tabletScreenButton': FontAwesomeIcons.tabletScreenButton,
-
-  /// Solid Tablets icon
-  ///
-  /// https://fontawesome.com/icons/tablets?style=solid
-  'tablets': FontAwesomeIcons.tablets,
-
-  /// Solid Tachograph digital icon
-  ///
-  /// https://fontawesome.com/icons/tachograph-digital?style=solid
-  'tachographDigital': FontAwesomeIcons.tachographDigital,
-
-  /// Solid tag icon
-  ///
-  /// https://fontawesome.com/icons/tag?style=solid
-  'tag': FontAwesomeIcons.tag,
-
-  /// Solid tags icon
-  ///
-  /// https://fontawesome.com/icons/tags?style=solid
-  'tags': FontAwesomeIcons.tags,
-
-  /// Solid Tape icon
-  ///
-  /// https://fontawesome.com/icons/tape?style=solid
-  'tape': FontAwesomeIcons.tape,
-
-  /// Solid Tarp icon
-  ///
-  /// https://fontawesome.com/icons/tarp?style=solid
-  'tarp': FontAwesomeIcons.tarp,
-
-  /// Solid Tarp Droplet icon
-  ///
-  /// https://fontawesome.com/icons/tarp-droplet?style=solid
-  'tarpDroplet': FontAwesomeIcons.tarpDroplet,
-
-  /// Solid Taxi icon
-  ///
-  /// https://fontawesome.com/icons/taxi?style=solid
-  'taxi': FontAwesomeIcons.taxi,
-
-  /// Brands TeamSpeak icon
-  ///
-  /// https://fontawesome.com/icons/teamspeak?style=brands
-  'teamspeak': FontAwesomeIcons.teamspeak,
-
-  /// Solid Teeth icon
-  ///
-  /// https://fontawesome.com/icons/teeth?style=solid
-  'teeth': FontAwesomeIcons.teeth,
-
-  /// Solid Teeth Open icon
-  ///
-  /// https://fontawesome.com/icons/teeth-open?style=solid
-  'teethOpen': FontAwesomeIcons.teethOpen,
-
-  /// Brands Telegram icon
-  ///
-  /// https://fontawesome.com/icons/telegram?style=brands
-  'telegram': FontAwesomeIcons.telegram,
-
-  /// Solid Temperature arrow down icon
-  ///
-  /// https://fontawesome.com/icons/temperature-arrow-down?style=solid
-  'temperatureArrowDown': FontAwesomeIcons.temperatureArrowDown,
-
-  /// Solid Temperature arrow up icon
-  ///
-  /// https://fontawesome.com/icons/temperature-arrow-up?style=solid
-  'temperatureArrowUp': FontAwesomeIcons.temperatureArrowUp,
-
-  /// Solid Temperature empty icon
-  ///
-  /// https://fontawesome.com/icons/temperature-empty?style=solid
-  'temperatureEmpty': FontAwesomeIcons.temperatureEmpty,
-
-  /// Solid Temperature full icon
-  ///
-  /// https://fontawesome.com/icons/temperature-full?style=solid
-  'temperatureFull': FontAwesomeIcons.temperatureFull,
-
-  /// Solid Temperature half icon
-  ///
-  /// https://fontawesome.com/icons/temperature-half?style=solid
-  'temperatureHalf': FontAwesomeIcons.temperatureHalf,
-
-  /// Solid High Temperature icon
-  ///
-  /// https://fontawesome.com/icons/temperature-high?style=solid
-  'temperatureHigh': FontAwesomeIcons.temperatureHigh,
-
-  /// Solid Low Temperature icon
-  ///
-  /// https://fontawesome.com/icons/temperature-low?style=solid
-  'temperatureLow': FontAwesomeIcons.temperatureLow,
-
-  /// Solid Temperature quarter icon
-  ///
-  /// https://fontawesome.com/icons/temperature-quarter?style=solid
-  'temperatureQuarter': FontAwesomeIcons.temperatureQuarter,
-
-  /// Solid Temperature three quarters icon
-  ///
-  /// https://fontawesome.com/icons/temperature-three-quarters?style=solid
-  'temperatureThreeQuarters': FontAwesomeIcons.temperatureThreeQuarters,
-
-  /// Brands Tencent Weibo icon
-  ///
-  /// https://fontawesome.com/icons/tencent-weibo?style=brands
-  'tencentWeibo': FontAwesomeIcons.tencentWeibo,
-
-  /// Solid Tenge sign icon
-  ///
-  /// https://fontawesome.com/icons/tenge-sign?style=solid
-  'tengeSign': FontAwesomeIcons.tengeSign,
-
-  /// Solid Tent icon
-  ///
-  /// https://fontawesome.com/icons/tent?style=solid
-  'tent': FontAwesomeIcons.tent,
-
-  /// Solid Tent Arrow-down-to-line icon
-  ///
-  /// https://fontawesome.com/icons/tent-arrow-down-to-line?style=solid
-  'tentArrowDownToLine': FontAwesomeIcons.tentArrowDownToLine,
-
-  /// Solid Tent Arrow-left-right icon
-  ///
-  /// https://fontawesome.com/icons/tent-arrow-left-right?style=solid
-  'tentArrowLeftRight': FontAwesomeIcons.tentArrowLeftRight,
-
-  /// Solid Tent Arrow-turn-left icon
-  ///
-  /// https://fontawesome.com/icons/tent-arrow-turn-left?style=solid
-  'tentArrowTurnLeft': FontAwesomeIcons.tentArrowTurnLeft,
-
-  /// Solid Tent Arrows-down icon
-  ///
-  /// https://fontawesome.com/icons/tent-arrows-down?style=solid
-  'tentArrowsDown': FontAwesomeIcons.tentArrowsDown,
-
-  /// Solid Tents icon
-  ///
-  /// https://fontawesome.com/icons/tents?style=solid
-  'tents': FontAwesomeIcons.tents,
-
-  /// Solid Terminal icon
-  ///
-  /// https://fontawesome.com/icons/terminal?style=solid
-  'terminal': FontAwesomeIcons.terminal,
-
-  /// Solid text-height icon
-  ///
-  /// https://fontawesome.com/icons/text-height?style=solid
-  'textHeight': FontAwesomeIcons.textHeight,
-
-  /// Solid Text slash icon
-  ///
-  /// https://fontawesome.com/icons/text-slash?style=solid
-  'textSlash': FontAwesomeIcons.textSlash,
-
-  /// Solid Text Width icon
-  ///
-  /// https://fontawesome.com/icons/text-width?style=solid
-  'textWidth': FontAwesomeIcons.textWidth,
-
-  /// Brands The Red Yeti icon
-  ///
-  /// https://fontawesome.com/icons/the-red-yeti?style=brands
-  'theRedYeti': FontAwesomeIcons.theRedYeti,
-
-  /// Brands Themeco icon
-  ///
-  /// https://fontawesome.com/icons/themeco?style=brands
-  'themeco': FontAwesomeIcons.themeco,
-
-  /// Brands ThemeIsle icon
-  ///
-  /// https://fontawesome.com/icons/themeisle?style=brands
-  'themeisle': FontAwesomeIcons.themeisle,
-
-  /// Solid Thermometer icon
-  ///
-  /// https://fontawesome.com/icons/thermometer?style=solid
-  'thermometer': FontAwesomeIcons.thermometer,
-
-  /// Brands Think Peaks icon
-  ///
-  /// https://fontawesome.com/icons/think-peaks?style=brands
-  'thinkPeaks': FontAwesomeIcons.thinkPeaks,
-
-  /// Solid thumbs-down icon
-  ///
-  /// https://fontawesome.com/icons/thumbs-down?style=solid
-  'solidThumbsDown': FontAwesomeIcons.solidThumbsDown,
-
-  /// Regular thumbs-down icon
-  ///
-  /// https://fontawesome.com/icons/thumbs-down?style=regular
-  'thumbsDown': FontAwesomeIcons.thumbsDown,
-
-  /// Solid thumbs-up icon
-  ///
-  /// https://fontawesome.com/icons/thumbs-up?style=solid
-  'solidThumbsUp': FontAwesomeIcons.solidThumbsUp,
-
-  /// Regular thumbs-up icon
-  ///
-  /// https://fontawesome.com/icons/thumbs-up?style=regular
-  'thumbsUp': FontAwesomeIcons.thumbsUp,
-
-  /// Solid Thumbtack icon
-  ///
-  /// https://fontawesome.com/icons/thumbtack?style=solid
-  'thumbtack': FontAwesomeIcons.thumbtack,
-
-  /// Solid Ticket icon
-  ///
-  /// https://fontawesome.com/icons/ticket?style=solid
-  'ticket': FontAwesomeIcons.ticket,
-
-  /// Solid Ticket simple icon
-  ///
-  /// https://fontawesome.com/icons/ticket-simple?style=solid
-  'ticketSimple': FontAwesomeIcons.ticketSimple,
-
-  /// Brands TikTok icon
-  ///
-  /// https://fontawesome.com/icons/tiktok?style=brands
-  'tiktok': FontAwesomeIcons.tiktok,
-
-  /// Solid Timeline icon
-  ///
-  /// https://fontawesome.com/icons/timeline?style=solid
-  'timeline': FontAwesomeIcons.timeline,
-
-  /// Solid Toggle Off icon
-  ///
-  /// https://fontawesome.com/icons/toggle-off?style=solid
-  'toggleOff': FontAwesomeIcons.toggleOff,
-
-  /// Solid Toggle On icon
-  ///
-  /// https://fontawesome.com/icons/toggle-on?style=solid
-  'toggleOn': FontAwesomeIcons.toggleOn,
-
-  /// Solid Toilet icon
-  ///
-  /// https://fontawesome.com/icons/toilet?style=solid
-  'toilet': FontAwesomeIcons.toilet,
-
-  /// Solid Toilet Paper icon
-  ///
-  /// https://fontawesome.com/icons/toilet-paper?style=solid
-  'toiletPaper': FontAwesomeIcons.toiletPaper,
-
-  /// Solid Toilet Paper Slash icon
-  ///
-  /// https://fontawesome.com/icons/toilet-paper-slash?style=solid
-  'toiletPaperSlash': FontAwesomeIcons.toiletPaperSlash,
-
-  /// Solid Toilet Portable icon
-  ///
-  /// https://fontawesome.com/icons/toilet-portable?style=solid
-  'toiletPortable': FontAwesomeIcons.toiletPortable,
-
-  /// Solid Toilets Portable icon
-  ///
-  /// https://fontawesome.com/icons/toilets-portable?style=solid
-  'toiletsPortable': FontAwesomeIcons.toiletsPortable,
-
-  /// Solid Toolbox icon
-  ///
-  /// https://fontawesome.com/icons/toolbox?style=solid
-  'toolbox': FontAwesomeIcons.toolbox,
-
-  /// Solid Tooth icon
-  ///
-  /// https://fontawesome.com/icons/tooth?style=solid
-  'tooth': FontAwesomeIcons.tooth,
-
-  /// Solid Torii Gate icon
-  ///
-  /// https://fontawesome.com/icons/torii-gate?style=solid
-  'toriiGate': FontAwesomeIcons.toriiGate,
-
-  /// Solid Tornado icon
-  ///
-  /// https://fontawesome.com/icons/tornado?style=solid
-  'tornado': FontAwesomeIcons.tornado,
-
-  /// Solid Tower broadcast icon
-  ///
-  /// https://fontawesome.com/icons/tower-broadcast?style=solid
-  'towerBroadcast': FontAwesomeIcons.towerBroadcast,
-
-  /// Solid Tower Cell icon
-  ///
-  /// https://fontawesome.com/icons/tower-cell?style=solid
-  'towerCell': FontAwesomeIcons.towerCell,
-
-  /// Solid Tower Observation icon
-  ///
-  /// https://fontawesome.com/icons/tower-observation?style=solid
-  'towerObservation': FontAwesomeIcons.towerObservation,
-
-  /// Solid Tractor icon
-  ///
-  /// https://fontawesome.com/icons/tractor?style=solid
-  'tractor': FontAwesomeIcons.tractor,
-
-  /// Brands Trade Federation icon
-  ///
-  /// https://fontawesome.com/icons/trade-federation?style=brands
-  'tradeFederation': FontAwesomeIcons.tradeFederation,
-
-  /// Solid Trademark icon
-  ///
-  /// https://fontawesome.com/icons/trademark?style=solid
-  'trademark': FontAwesomeIcons.trademark,
-
-  /// Solid Traffic Light icon
-  ///
-  /// https://fontawesome.com/icons/traffic-light?style=solid
-  'trafficLight': FontAwesomeIcons.trafficLight,
-
-  /// Solid Trailer icon
-  ///
-  /// https://fontawesome.com/icons/trailer?style=solid
-  'trailer': FontAwesomeIcons.trailer,
-
-  /// Solid Train icon
-  ///
-  /// https://fontawesome.com/icons/train?style=solid
-  'train': FontAwesomeIcons.train,
-
-  /// Solid Train subway icon
-  ///
-  /// https://fontawesome.com/icons/train-subway?style=solid
-  'trainSubway': FontAwesomeIcons.trainSubway,
-
-  /// Solid Train tram icon
-  ///
-  /// https://fontawesome.com/icons/train-tram?style=solid
-  'trainTram': FontAwesomeIcons.trainTram,
-
-  /// Solid Transgender icon
-  ///
-  /// https://fontawesome.com/icons/transgender?style=solid
-  'transgender': FontAwesomeIcons.transgender,
-
-  /// Solid Trash icon
-  ///
-  /// https://fontawesome.com/icons/trash?style=solid
-  'trash': FontAwesomeIcons.trash,
-
-  /// Solid Trash arrow up icon
-  ///
-  /// https://fontawesome.com/icons/trash-arrow-up?style=solid
-  'trashArrowUp': FontAwesomeIcons.trashArrowUp,
-
-  /// Solid Trash can icon
-  ///
-  /// https://fontawesome.com/icons/trash-can?style=solid
-  'solidTrashCan': FontAwesomeIcons.solidTrashCan,
-
-  /// Regular Trash can icon
-  ///
-  /// https://fontawesome.com/icons/trash-can?style=regular
-  'trashCan': FontAwesomeIcons.trashCan,
-
-  /// Solid Trash can arrow up icon
-  ///
-  /// https://fontawesome.com/icons/trash-can-arrow-up?style=solid
-  'trashCanArrowUp': FontAwesomeIcons.trashCanArrowUp,
-
-  /// Solid Tree icon
-  ///
-  /// https://fontawesome.com/icons/tree?style=solid
-  'tree': FontAwesomeIcons.tree,
-
-  /// Solid Tree City icon
-  ///
-  /// https://fontawesome.com/icons/tree-city?style=solid
-  'treeCity': FontAwesomeIcons.treeCity,
-
-  /// Brands Trello icon
-  ///
-  /// https://fontawesome.com/icons/trello?style=brands
-  'trello': FontAwesomeIcons.trello,
-
-  /// Solid Triangle exclamation icon
-  ///
-  /// https://fontawesome.com/icons/triangle-exclamation?style=solid
-  'triangleExclamation': FontAwesomeIcons.triangleExclamation,
-
-  /// Solid trophy icon
-  ///
-  /// https://fontawesome.com/icons/trophy?style=solid
-  'trophy': FontAwesomeIcons.trophy,
-
-  /// Solid Trowel icon
-  ///
-  /// https://fontawesome.com/icons/trowel?style=solid
-  'trowel': FontAwesomeIcons.trowel,
-
-  /// Solid Trowel Bricks icon
-  ///
-  /// https://fontawesome.com/icons/trowel-bricks?style=solid
-  'trowelBricks': FontAwesomeIcons.trowelBricks,
-
-  /// Solid truck icon
-  ///
-  /// https://fontawesome.com/icons/truck?style=solid
-  'truck': FontAwesomeIcons.truck,
-
-  /// Solid Truck Arrow-right icon
-  ///
-  /// https://fontawesome.com/icons/truck-arrow-right?style=solid
-  'truckArrowRight': FontAwesomeIcons.truckArrowRight,
-
-  /// Solid Truck Droplet icon
-  ///
-  /// https://fontawesome.com/icons/truck-droplet?style=solid
-  'truckDroplet': FontAwesomeIcons.truckDroplet,
-
-  /// Solid Truck fast icon
-  ///
-  /// https://fontawesome.com/icons/truck-fast?style=solid
-  'truckFast': FontAwesomeIcons.truckFast,
-
-  /// Solid Truck Field icon
-  ///
-  /// https://fontawesome.com/icons/truck-field?style=solid
-  'truckField': FontAwesomeIcons.truckField,
-
-  /// Solid Truck Field-un icon
-  ///
-  /// https://fontawesome.com/icons/truck-field-un?style=solid
-  'truckFieldUn': FontAwesomeIcons.truckFieldUn,
-
-  /// Solid Truck Front icon
-  ///
-  /// https://fontawesome.com/icons/truck-front?style=solid
-  'truckFront': FontAwesomeIcons.truckFront,
-
-  /// Solid Truck medical icon
-  ///
-  /// https://fontawesome.com/icons/truck-medical?style=solid
-  'truckMedical': FontAwesomeIcons.truckMedical,
-
-  /// Solid Truck Monster icon
-  ///
-  /// https://fontawesome.com/icons/truck-monster?style=solid
-  'truckMonster': FontAwesomeIcons.truckMonster,
-
-  /// Solid Truck Moving icon
-  ///
-  /// https://fontawesome.com/icons/truck-moving?style=solid
-  'truckMoving': FontAwesomeIcons.truckMoving,
-
-  /// Solid Truck Side icon
-  ///
-  /// https://fontawesome.com/icons/truck-pickup?style=solid
-  'truckPickup': FontAwesomeIcons.truckPickup,
-
-  /// Solid Truck Plane icon
-  ///
-  /// https://fontawesome.com/icons/truck-plane?style=solid
-  'truckPlane': FontAwesomeIcons.truckPlane,
-
-  /// Solid Truck ramp box icon
-  ///
-  /// https://fontawesome.com/icons/truck-ramp-box?style=solid
-  'truckRampBox': FontAwesomeIcons.truckRampBox,
-
-  /// Solid TTY icon
-  ///
-  /// https://fontawesome.com/icons/tty?style=solid
-  'tty': FontAwesomeIcons.tty,
-
-  /// Brands Tumblr icon
-  ///
-  /// https://fontawesome.com/icons/tumblr?style=brands
-  'tumblr': FontAwesomeIcons.tumblr,
-
-  /// Solid Turkish Lira-sign icon
-  ///
-  /// https://fontawesome.com/icons/turkish-lira-sign?style=solid
-  'turkishLiraSign': FontAwesomeIcons.turkishLiraSign,
-
-  /// Solid Turn down icon
-  ///
-  /// https://fontawesome.com/icons/turn-down?style=solid
-  'turnDown': FontAwesomeIcons.turnDown,
-
-  /// Solid Turn up icon
-  ///
-  /// https://fontawesome.com/icons/turn-up?style=solid
-  'turnUp': FontAwesomeIcons.turnUp,
-
-  /// Solid Television icon
-  ///
-  /// https://fontawesome.com/icons/tv?style=solid
-  'tv': FontAwesomeIcons.tv,
-
-  /// Brands Twitch icon
-  ///
-  /// https://fontawesome.com/icons/twitch?style=brands
-  'twitch': FontAwesomeIcons.twitch,
-
-  /// Brands Twitter icon
-  ///
-  /// https://fontawesome.com/icons/twitter?style=brands
-  'twitter': FontAwesomeIcons.twitter,
-
-  /// Brands Typo3 icon
-  ///
-  /// https://fontawesome.com/icons/typo3?style=brands
-  'typo3': FontAwesomeIcons.typo3,
-
-  /// Solid U icon
-  ///
-  /// https://fontawesome.com/icons/u?style=solid
-  'u': FontAwesomeIcons.u,
-
-  /// Brands Uber icon
-  ///
-  /// https://fontawesome.com/icons/uber?style=brands
-  'uber': FontAwesomeIcons.uber,
-
-  /// Brands Ubuntu icon
-  ///
-  /// https://fontawesome.com/icons/ubuntu?style=brands
-  'ubuntu': FontAwesomeIcons.ubuntu,
-
-  /// Brands UIkit icon
-  ///
-  /// https://fontawesome.com/icons/uikit?style=brands
-  'uikit': FontAwesomeIcons.uikit,
-
-  /// Brands Umbraco icon
-  ///
-  /// https://fontawesome.com/icons/umbraco?style=brands
-  'umbraco': FontAwesomeIcons.umbraco,
-
-  /// Solid Umbrella icon
-  ///
-  /// https://fontawesome.com/icons/umbrella?style=solid
-  'umbrella': FontAwesomeIcons.umbrella,
-
-  /// Solid Umbrella Beach icon
-  ///
-  /// https://fontawesome.com/icons/umbrella-beach?style=solid
-  'umbrellaBeach': FontAwesomeIcons.umbrellaBeach,
-
-  /// Brands Uncharted Software icon
-  ///
-  /// https://fontawesome.com/icons/uncharted?style=brands
-  'uncharted': FontAwesomeIcons.uncharted,
-
-  /// Solid Underline icon
-  ///
-  /// https://fontawesome.com/icons/underline?style=solid
-  'underline': FontAwesomeIcons.underline,
-
-  /// Brands Uniregistry icon
-  ///
-  /// https://fontawesome.com/icons/uniregistry?style=brands
-  'uniregistry': FontAwesomeIcons.uniregistry,
-
-  /// Brands Unity 3D icon
-  ///
-  /// https://fontawesome.com/icons/unity?style=brands
-  'unity': FontAwesomeIcons.unity,
-
-  /// Solid Universal Access icon
-  ///
-  /// https://fontawesome.com/icons/universal-access?style=solid
-  'universalAccess': FontAwesomeIcons.universalAccess,
-
-  /// Solid unlock icon
-  ///
-  /// https://fontawesome.com/icons/unlock?style=solid
-  'unlock': FontAwesomeIcons.unlock,
-
-  /// Solid Unlock keyhole icon
-  ///
-  /// https://fontawesome.com/icons/unlock-keyhole?style=solid
-  'unlockKeyhole': FontAwesomeIcons.unlockKeyhole,
-
-  /// Brands Unsplash icon
-  ///
-  /// https://fontawesome.com/icons/unsplash?style=brands
-  'unsplash': FontAwesomeIcons.unsplash,
-
-  /// Brands Untappd icon
-  ///
-  /// https://fontawesome.com/icons/untappd?style=brands
-  'untappd': FontAwesomeIcons.untappd,
-
-  /// Solid Up down icon
-  ///
-  /// https://fontawesome.com/icons/up-down?style=solid
-  'upDown': FontAwesomeIcons.upDown,
-
-  /// Solid Up down left right icon
-  ///
-  /// https://fontawesome.com/icons/up-down-left-right?style=solid
-  'upDownLeftRight': FontAwesomeIcons.upDownLeftRight,
-
-  /// Solid Up long icon
-  ///
-  /// https://fontawesome.com/icons/up-long?style=solid
-  'upLong': FontAwesomeIcons.upLong,
-
-  /// Solid Up right and down left from center icon
-  ///
-  /// https://fontawesome.com/icons/up-right-and-down-left-from-center?style=solid
-  'upRightAndDownLeftFromCenter': FontAwesomeIcons.upRightAndDownLeftFromCenter,
-
-  /// Solid Up right from square icon
-  ///
-  /// https://fontawesome.com/icons/up-right-from-square?style=solid
-  'upRightFromSquare': FontAwesomeIcons.upRightFromSquare,
-
-  /// Solid Upload icon
-  ///
-  /// https://fontawesome.com/icons/upload?style=solid
-  'upload': FontAwesomeIcons.upload,
-
-  /// Brands UPS icon
-  ///
-  /// https://fontawesome.com/icons/ups?style=brands
-  'ups': FontAwesomeIcons.ups,
-
-  /// Brands USB icon
-  ///
-  /// https://fontawesome.com/icons/usb?style=brands
-  'usb': FontAwesomeIcons.usb,
-
-  /// Solid User icon
-  ///
-  /// https://fontawesome.com/icons/user?style=solid
-  'solidUser': FontAwesomeIcons.solidUser,
-
-  /// Regular User icon
-  ///
-  /// https://fontawesome.com/icons/user?style=regular
-  'user': FontAwesomeIcons.user,
-
-  /// Solid User Astronaut icon
-  ///
-  /// https://fontawesome.com/icons/user-astronaut?style=solid
-  'userAstronaut': FontAwesomeIcons.userAstronaut,
-
-  /// Solid User Check icon
-  ///
-  /// https://fontawesome.com/icons/user-check?style=solid
-  'userCheck': FontAwesomeIcons.userCheck,
-
-  /// Solid User Clock icon
-  ///
-  /// https://fontawesome.com/icons/user-clock?style=solid
-  'userClock': FontAwesomeIcons.userClock,
-
-  /// Solid User doctor icon
-  ///
-  /// https://fontawesome.com/icons/user-doctor?style=solid
-  'userDoctor': FontAwesomeIcons.userDoctor,
-
-  /// Solid User gear icon
-  ///
-  /// https://fontawesome.com/icons/user-gear?style=solid
-  'userGear': FontAwesomeIcons.userGear,
-
-  /// Solid User Graduate icon
-  ///
-  /// https://fontawesome.com/icons/user-graduate?style=solid
-  'userGraduate': FontAwesomeIcons.userGraduate,
-
-  /// Solid User group icon
-  ///
-  /// https://fontawesome.com/icons/user-group?style=solid
-  'userGroup': FontAwesomeIcons.userGroup,
-
-  /// Solid User Injured icon
-  ///
-  /// https://fontawesome.com/icons/user-injured?style=solid
-  'userInjured': FontAwesomeIcons.userInjured,
-
-  /// Solid User large icon
-  ///
-  /// https://fontawesome.com/icons/user-large?style=solid
-  'userLarge': FontAwesomeIcons.userLarge,
-
-  /// Solid User large slash icon
-  ///
-  /// https://fontawesome.com/icons/user-large-slash?style=solid
-  'userLargeSlash': FontAwesomeIcons.userLargeSlash,
-
-  /// Solid User Lock icon
-  ///
-  /// https://fontawesome.com/icons/user-lock?style=solid
-  'userLock': FontAwesomeIcons.userLock,
-
-  /// Solid User Minus icon
-  ///
-  /// https://fontawesome.com/icons/user-minus?style=solid
-  'userMinus': FontAwesomeIcons.userMinus,
-
-  /// Solid User Ninja icon
-  ///
-  /// https://fontawesome.com/icons/user-ninja?style=solid
-  'userNinja': FontAwesomeIcons.userNinja,
-
-  /// Solid Nurse icon
-  ///
-  /// https://fontawesome.com/icons/user-nurse?style=solid
-  'userNurse': FontAwesomeIcons.userNurse,
-
-  /// Solid User pen icon
-  ///
-  /// https://fontawesome.com/icons/user-pen?style=solid
-  'userPen': FontAwesomeIcons.userPen,
-
-  /// Solid User Plus icon
-  ///
-  /// https://fontawesome.com/icons/user-plus?style=solid
-  'userPlus': FontAwesomeIcons.userPlus,
-
-  /// Solid User Secret icon
-  ///
-  /// https://fontawesome.com/icons/user-secret?style=solid
-  'userSecret': FontAwesomeIcons.userSecret,
-
-  /// Solid User Shield icon
-  ///
-  /// https://fontawesome.com/icons/user-shield?style=solid
-  'userShield': FontAwesomeIcons.userShield,
-
-  /// Solid User Slash icon
-  ///
-  /// https://fontawesome.com/icons/user-slash?style=solid
-  'userSlash': FontAwesomeIcons.userSlash,
-
-  /// Solid User Tag icon
-  ///
-  /// https://fontawesome.com/icons/user-tag?style=solid
-  'userTag': FontAwesomeIcons.userTag,
-
-  /// Solid User Tie icon
-  ///
-  /// https://fontawesome.com/icons/user-tie?style=solid
-  'userTie': FontAwesomeIcons.userTie,
-
-  /// Solid User X Mark icon
-  ///
-  /// https://fontawesome.com/icons/user-xmark?style=solid
-  'userXmark': FontAwesomeIcons.userXmark,
-
-  /// Solid Users icon
-  ///
-  /// https://fontawesome.com/icons/users?style=solid
-  'users': FontAwesomeIcons.users,
-
-  /// Solid Users Between-lines icon
-  ///
-  /// https://fontawesome.com/icons/users-between-lines?style=solid
-  'usersBetweenLines': FontAwesomeIcons.usersBetweenLines,
-
-  /// Solid Users gear icon
-  ///
-  /// https://fontawesome.com/icons/users-gear?style=solid
-  'usersGear': FontAwesomeIcons.usersGear,
-
-  /// Solid Users Line icon
-  ///
-  /// https://fontawesome.com/icons/users-line?style=solid
-  'usersLine': FontAwesomeIcons.usersLine,
-
-  /// Solid Users Rays icon
-  ///
-  /// https://fontawesome.com/icons/users-rays?style=solid
-  'usersRays': FontAwesomeIcons.usersRays,
-
-  /// Solid Users Rectangle icon
-  ///
-  /// https://fontawesome.com/icons/users-rectangle?style=solid
-  'usersRectangle': FontAwesomeIcons.usersRectangle,
-
-  /// Solid Users Slash icon
-  ///
-  /// https://fontawesome.com/icons/users-slash?style=solid
-  'usersSlash': FontAwesomeIcons.usersSlash,
-
-  /// Solid Users Viewfinder icon
-  ///
-  /// https://fontawesome.com/icons/users-viewfinder?style=solid
-  'usersViewfinder': FontAwesomeIcons.usersViewfinder,
-
-  /// Brands United States Postal Service icon
-  ///
-  /// https://fontawesome.com/icons/usps?style=brands
-  'usps': FontAwesomeIcons.usps,
-
-  /// Brands us-Sunnah Foundation icon
-  ///
-  /// https://fontawesome.com/icons/ussunnah?style=brands
-  'ussunnah': FontAwesomeIcons.ussunnah,
-
-  /// Solid Utensils icon
-  ///
-  /// https://fontawesome.com/icons/utensils?style=solid
-  'utensils': FontAwesomeIcons.utensils,
-
-  /// Solid V icon
-  ///
-  /// https://fontawesome.com/icons/v?style=solid
-  'v': FontAwesomeIcons.v,
-
-  /// Brands Vaadin icon
-  ///
-  /// https://fontawesome.com/icons/vaadin?style=brands
-  'vaadin': FontAwesomeIcons.vaadin,
-
-  /// Solid Van shuttle icon
-  ///
-  /// https://fontawesome.com/icons/van-shuttle?style=solid
-  'vanShuttle': FontAwesomeIcons.vanShuttle,
-
-  /// Solid Vault icon
-  ///
-  /// https://fontawesome.com/icons/vault?style=solid
-  'vault': FontAwesomeIcons.vault,
-
-  /// Solid Vector Square icon
-  ///
-  /// https://fontawesome.com/icons/vector-square?style=solid
-  'vectorSquare': FontAwesomeIcons.vectorSquare,
-
-  /// Solid Venus icon
-  ///
-  /// https://fontawesome.com/icons/venus?style=solid
-  'venus': FontAwesomeIcons.venus,
-
-  /// Solid Venus Double icon
-  ///
-  /// https://fontawesome.com/icons/venus-double?style=solid
-  'venusDouble': FontAwesomeIcons.venusDouble,
-
-  /// Solid Venus Mars icon
-  ///
-  /// https://fontawesome.com/icons/venus-mars?style=solid
-  'venusMars': FontAwesomeIcons.venusMars,
-
-  /// Solid vest icon
-  ///
-  /// https://fontawesome.com/icons/vest?style=solid
-  'vest': FontAwesomeIcons.vest,
-
-  /// Solid vest-patches icon
-  ///
-  /// https://fontawesome.com/icons/vest-patches?style=solid
-  'vestPatches': FontAwesomeIcons.vestPatches,
-
-  /// Brands Viacoin icon
-  ///
-  /// https://fontawesome.com/icons/viacoin?style=brands
-  'viacoin': FontAwesomeIcons.viacoin,
-
-  /// Brands Viadeo icon
-  ///
-  /// https://fontawesome.com/icons/viadeo?style=brands
-  'viadeo': FontAwesomeIcons.viadeo,
-
-  /// Solid Vial icon
-  ///
-  /// https://fontawesome.com/icons/vial?style=solid
-  'vial': FontAwesomeIcons.vial,
-
-  /// Solid Vial Circle-check icon
-  ///
-  /// https://fontawesome.com/icons/vial-circle-check?style=solid
-  'vialCircleCheck': FontAwesomeIcons.vialCircleCheck,
-
-  /// Solid Vial Virus icon
-  ///
-  /// https://fontawesome.com/icons/vial-virus?style=solid
-  'vialVirus': FontAwesomeIcons.vialVirus,
-
-  /// Solid Vials icon
-  ///
-  /// https://fontawesome.com/icons/vials?style=solid
-  'vials': FontAwesomeIcons.vials,
-
-  /// Brands Viber icon
-  ///
-  /// https://fontawesome.com/icons/viber?style=brands
-  'viber': FontAwesomeIcons.viber,
-
-  /// Solid Video icon
-  ///
-  /// https://fontawesome.com/icons/video?style=solid
-  'video': FontAwesomeIcons.video,
-
-  /// Solid Video Slash icon
-  ///
-  /// https://fontawesome.com/icons/video-slash?style=solid
-  'videoSlash': FontAwesomeIcons.videoSlash,
-
-  /// Solid Vihara icon
-  ///
-  /// https://fontawesome.com/icons/vihara?style=solid
-  'vihara': FontAwesomeIcons.vihara,
-
-  /// Brands Vimeo icon
-  ///
-  /// https://fontawesome.com/icons/vimeo?style=brands
-  'vimeo': FontAwesomeIcons.vimeo,
-
-  /// Brands Vimeo icon
-  ///
-  /// https://fontawesome.com/icons/vimeo-v?style=brands
-  'vimeoV': FontAwesomeIcons.vimeoV,
-
-  /// Brands Vine icon
-  ///
-  /// https://fontawesome.com/icons/vine?style=brands
-  'vine': FontAwesomeIcons.vine,
-
-  /// Solid Virus icon
-  ///
-  /// https://fontawesome.com/icons/virus?style=solid
-  'virus': FontAwesomeIcons.virus,
-
-  /// Solid Virus Covid icon
-  ///
-  /// https://fontawesome.com/icons/virus-covid?style=solid
-  'virusCovid': FontAwesomeIcons.virusCovid,
-
-  /// Solid Virus Covid-slash icon
-  ///
-  /// https://fontawesome.com/icons/virus-covid-slash?style=solid
-  'virusCovidSlash': FontAwesomeIcons.virusCovidSlash,
-
-  /// Solid Virus Slash icon
-  ///
-  /// https://fontawesome.com/icons/virus-slash?style=solid
-  'virusSlash': FontAwesomeIcons.virusSlash,
-
-  /// Solid Viruses icon
-  ///
-  /// https://fontawesome.com/icons/viruses?style=solid
-  'viruses': FontAwesomeIcons.viruses,
-
-  /// Brands VK icon
-  ///
-  /// https://fontawesome.com/icons/vk?style=brands
-  'vk': FontAwesomeIcons.vk,
-
-  /// Brands VNV icon
-  ///
-  /// https://fontawesome.com/icons/vnv?style=brands
-  'vnv': FontAwesomeIcons.vnv,
-
-  /// Solid Voicemail icon
-  ///
-  /// https://fontawesome.com/icons/voicemail?style=solid
-  'voicemail': FontAwesomeIcons.voicemail,
-
-  /// Solid Volcano icon
-  ///
-  /// https://fontawesome.com/icons/volcano?style=solid
-  'volcano': FontAwesomeIcons.volcano,
-
-  /// Solid Volleyball Ball icon
-  ///
-  /// https://fontawesome.com/icons/volleyball?style=solid
-  'volleyball': FontAwesomeIcons.volleyball,
-
-  /// Solid Volume high icon
-  ///
-  /// https://fontawesome.com/icons/volume-high?style=solid
-  'volumeHigh': FontAwesomeIcons.volumeHigh,
-
-  /// Solid Volume low icon
-  ///
-  /// https://fontawesome.com/icons/volume-low?style=solid
-  'volumeLow': FontAwesomeIcons.volumeLow,
-
-  /// Solid Volume Off icon
-  ///
-  /// https://fontawesome.com/icons/volume-off?style=solid
-  'volumeOff': FontAwesomeIcons.volumeOff,
-
-  /// Solid Volume X Mark icon
-  ///
-  /// https://fontawesome.com/icons/volume-xmark?style=solid
-  'volumeXmark': FontAwesomeIcons.volumeXmark,
-
-  /// Solid Cardboard VR icon
-  ///
-  /// https://fontawesome.com/icons/vr-cardboard?style=solid
-  'vrCardboard': FontAwesomeIcons.vrCardboard,
-
-  /// Brands Vue.js icon
-  ///
-  /// https://fontawesome.com/icons/vuejs?style=brands
-  'vuejs': FontAwesomeIcons.vuejs,
-
-  /// Solid W icon
-  ///
-  /// https://fontawesome.com/icons/w?style=solid
-  'w': FontAwesomeIcons.w,
-
-  /// Solid Walkie Talkie icon
-  ///
-  /// https://fontawesome.com/icons/walkie-talkie?style=solid
-  'walkieTalkie': FontAwesomeIcons.walkieTalkie,
-
-  /// Solid Wallet icon
-  ///
-  /// https://fontawesome.com/icons/wallet?style=solid
-  'wallet': FontAwesomeIcons.wallet,
-
-  /// Solid Wand magic icon
-  ///
-  /// https://fontawesome.com/icons/wand-magic?style=solid
-  'wandMagic': FontAwesomeIcons.wandMagic,
-
-  /// Solid Wand magic sparkles icon
-  ///
-  /// https://fontawesome.com/icons/wand-magic-sparkles?style=solid
-  'wandMagicSparkles': FontAwesomeIcons.wandMagicSparkles,
-
-  /// Solid Wand sparkles icon
-  ///
-  /// https://fontawesome.com/icons/wand-sparkles?style=solid
-  'wandSparkles': FontAwesomeIcons.wandSparkles,
-
-  /// Solid Warehouse icon
-  ///
-  /// https://fontawesome.com/icons/warehouse?style=solid
-  'warehouse': FontAwesomeIcons.warehouse,
-
-  /// Brands Watchman Monitoring icon
-  ///
-  /// https://fontawesome.com/icons/watchman-monitoring?style=brands
-  'watchmanMonitoring': FontAwesomeIcons.watchmanMonitoring,
-
-  /// Solid Water icon
-  ///
-  /// https://fontawesome.com/icons/water?style=solid
-  'water': FontAwesomeIcons.water,
-
-  /// Solid Water ladder icon
-  ///
-  /// https://fontawesome.com/icons/water-ladder?style=solid
-  'waterLadder': FontAwesomeIcons.waterLadder,
-
-  /// Solid Square Wave icon
-  ///
-  /// https://fontawesome.com/icons/wave-square?style=solid
-  'waveSquare': FontAwesomeIcons.waveSquare,
-
-  /// Brands Waze icon
-  ///
-  /// https://fontawesome.com/icons/waze?style=brands
-  'waze': FontAwesomeIcons.waze,
-
-  /// Brands Weebly icon
-  ///
-  /// https://fontawesome.com/icons/weebly?style=brands
-  'weebly': FontAwesomeIcons.weebly,
-
-  /// Brands Weibo icon
-  ///
-  /// https://fontawesome.com/icons/weibo?style=brands
-  'weibo': FontAwesomeIcons.weibo,
-
-  /// Solid Hanging Weight icon
-  ///
-  /// https://fontawesome.com/icons/weight-hanging?style=solid
-  'weightHanging': FontAwesomeIcons.weightHanging,
-
-  /// Solid Weight scale icon
-  ///
-  /// https://fontawesome.com/icons/weight-scale?style=solid
-  'weightScale': FontAwesomeIcons.weightScale,
-
-  /// Brands Weixin (WeChat) icon
-  ///
-  /// https://fontawesome.com/icons/weixin?style=brands
-  'weixin': FontAwesomeIcons.weixin,
-
-  /// Brands What's App icon
-  ///
-  /// https://fontawesome.com/icons/whatsapp?style=brands
-  'whatsapp': FontAwesomeIcons.whatsapp,
-
-  /// Solid Wheat awn icon
-  ///
-  /// https://fontawesome.com/icons/wheat-awn?style=solid
-  'wheatAwn': FontAwesomeIcons.wheatAwn,
-
-  /// Solid Wheat Awn-circle-exclamation icon
-  ///
-  /// https://fontawesome.com/icons/wheat-awn-circle-exclamation?style=solid
-  'wheatAwnCircleExclamation': FontAwesomeIcons.wheatAwnCircleExclamation,
-
-  /// Solid Wheelchair icon
-  ///
-  /// https://fontawesome.com/icons/wheelchair?style=solid
-  'wheelchair': FontAwesomeIcons.wheelchair,
-
-  /// Solid Wheelchair Move icon
-  ///
-  /// https://fontawesome.com/icons/wheelchair-move?style=solid
-  'wheelchairMove': FontAwesomeIcons.wheelchairMove,
-
-  /// Solid Whiskey glass icon
-  ///
-  /// https://fontawesome.com/icons/whiskey-glass?style=solid
-  'whiskeyGlass': FontAwesomeIcons.whiskeyGlass,
-
-  /// Brands WHMCS icon
-  ///
-  /// https://fontawesome.com/icons/whmcs?style=brands
-  'whmcs': FontAwesomeIcons.whmcs,
-
-  /// Solid WiFi icon
-  ///
-  /// https://fontawesome.com/icons/wifi?style=solid
-  'wifi': FontAwesomeIcons.wifi,
-
-  /// Brands Wikipedia W icon
-  ///
-  /// https://fontawesome.com/icons/wikipedia-w?style=brands
-  'wikipediaW': FontAwesomeIcons.wikipediaW,
-
-  /// Solid Wind icon
-  ///
-  /// https://fontawesome.com/icons/wind?style=solid
-  'wind': FontAwesomeIcons.wind,
-
-  /// Solid Window Maximize icon
-  ///
-  /// https://fontawesome.com/icons/window-maximize?style=solid
-  'solidWindowMaximize': FontAwesomeIcons.solidWindowMaximize,
-
-  /// Regular Window Maximize icon
-  ///
-  /// https://fontawesome.com/icons/window-maximize?style=regular
-  'windowMaximize': FontAwesomeIcons.windowMaximize,
-
-  /// Solid Window Minimize icon
-  ///
-  /// https://fontawesome.com/icons/window-minimize?style=solid
-  'solidWindowMinimize': FontAwesomeIcons.solidWindowMinimize,
-
-  /// Regular Window Minimize icon
-  ///
-  /// https://fontawesome.com/icons/window-minimize?style=regular
-  'windowMinimize': FontAwesomeIcons.windowMinimize,
-
-  /// Solid Window Restore icon
-  ///
-  /// https://fontawesome.com/icons/window-restore?style=solid
-  'solidWindowRestore': FontAwesomeIcons.solidWindowRestore,
-
-  /// Regular Window Restore icon
-  ///
-  /// https://fontawesome.com/icons/window-restore?style=regular
-  'windowRestore': FontAwesomeIcons.windowRestore,
-
-  /// Brands Windows icon
-  ///
-  /// https://fontawesome.com/icons/windows?style=brands
-  'windows': FontAwesomeIcons.windows,
-
-  /// Solid Wine Bottle icon
-  ///
-  /// https://fontawesome.com/icons/wine-bottle?style=solid
-  'wineBottle': FontAwesomeIcons.wineBottle,
-
-  /// Solid Wine Glass icon
-  ///
-  /// https://fontawesome.com/icons/wine-glass?style=solid
-  'wineGlass': FontAwesomeIcons.wineGlass,
-
-  /// Solid Wine glass empty icon
-  ///
-  /// https://fontawesome.com/icons/wine-glass-empty?style=solid
-  'wineGlassEmpty': FontAwesomeIcons.wineGlassEmpty,
-
-  /// Brands wirsindhandwerk icon
-  ///
-  /// https://fontawesome.com/icons/wirsindhandwerk?style=brands
-  'wirsindhandwerk': FontAwesomeIcons.wirsindhandwerk,
-
-  /// Brands Wix icon
-  ///
-  /// https://fontawesome.com/icons/wix?style=brands
-  'wix': FontAwesomeIcons.wix,
-
-  /// Brands Wizards of the Coast icon
-  ///
-  /// https://fontawesome.com/icons/wizards-of-the-coast?style=brands
-  'wizardsOfTheCoast': FontAwesomeIcons.wizardsOfTheCoast,
-
-  /// Brands Wodu icon
-  ///
-  /// https://fontawesome.com/icons/wodu?style=brands
-  'wodu': FontAwesomeIcons.wodu,
-
-  /// Brands Wolf Pack Battalion icon
-  ///
-  /// https://fontawesome.com/icons/wolf-pack-battalion?style=brands
-  'wolfPackBattalion': FontAwesomeIcons.wolfPackBattalion,
-
-  /// Solid Won Sign icon
-  ///
-  /// https://fontawesome.com/icons/won-sign?style=solid
-  'wonSign': FontAwesomeIcons.wonSign,
-
-  /// Brands WordPress Logo icon
-  ///
-  /// https://fontawesome.com/icons/wordpress?style=brands
-  'wordpress': FontAwesomeIcons.wordpress,
-
-  /// Brands Wordpress Simple icon
-  ///
-  /// https://fontawesome.com/icons/wordpress-simple?style=brands
-  'wordpressSimple': FontAwesomeIcons.wordpressSimple,
-
-  /// Solid Worm icon
-  ///
-  /// https://fontawesome.com/icons/worm?style=solid
-  'worm': FontAwesomeIcons.worm,
-
-  /// Brands WPBeginner icon
-  ///
-  /// https://fontawesome.com/icons/wpbeginner?style=brands
-  'wpbeginner': FontAwesomeIcons.wpbeginner,
-
-  /// Brands WPExplorer icon
-  ///
-  /// https://fontawesome.com/icons/wpexplorer?style=brands
-  'wpexplorer': FontAwesomeIcons.wpexplorer,
-
-  /// Brands WPForms icon
-  ///
-  /// https://fontawesome.com/icons/wpforms?style=brands
-  'wpforms': FontAwesomeIcons.wpforms,
-
-  /// Brands wpressr icon
-  ///
-  /// https://fontawesome.com/icons/wpressr?style=brands
-  'wpressr': FontAwesomeIcons.wpressr,
-
-  /// Solid Wrench icon
-  ///
-  /// https://fontawesome.com/icons/wrench?style=solid
-  'wrench': FontAwesomeIcons.wrench,
-
-  /// Solid X icon
-  ///
-  /// https://fontawesome.com/icons/x?style=solid
-  'x': FontAwesomeIcons.x,
-
-  /// Solid X-Ray icon
-  ///
-  /// https://fontawesome.com/icons/x-ray?style=solid
-  'xRay': FontAwesomeIcons.xRay,
-
-  /// Brands Xbox icon
-  ///
-  /// https://fontawesome.com/icons/xbox?style=brands
-  'xbox': FontAwesomeIcons.xbox,
-
-  /// Brands Xing icon
-  ///
-  /// https://fontawesome.com/icons/xing?style=brands
-  'xing': FontAwesomeIcons.xing,
-
-  /// Solid X Mark icon
-  ///
-  /// https://fontawesome.com/icons/xmark?style=solid
-  'xmark': FontAwesomeIcons.xmark,
-
-  /// Solid Xmarks Lines icon
-  ///
-  /// https://fontawesome.com/icons/xmarks-lines?style=solid
-  'xmarksLines': FontAwesomeIcons.xmarksLines,
-
-  /// Solid Y icon
-  ///
-  /// https://fontawesome.com/icons/y?style=solid
-  'y': FontAwesomeIcons.y,
-
-  /// Brands Y Combinator icon
-  ///
-  /// https://fontawesome.com/icons/y-combinator?style=brands
-  'yCombinator': FontAwesomeIcons.yCombinator,
-
-  /// Brands Yahoo Logo icon
-  ///
-  /// https://fontawesome.com/icons/yahoo?style=brands
-  'yahoo': FontAwesomeIcons.yahoo,
-
-  /// Brands Yammer icon
-  ///
-  /// https://fontawesome.com/icons/yammer?style=brands
-  'yammer': FontAwesomeIcons.yammer,
-
-  /// Brands Yandex icon
-  ///
-  /// https://fontawesome.com/icons/yandex?style=brands
-  'yandex': FontAwesomeIcons.yandex,
-
-  /// Brands Yandex International icon
-  ///
-  /// https://fontawesome.com/icons/yandex-international?style=brands
-  'yandexInternational': FontAwesomeIcons.yandexInternational,
-
-  /// Brands Yarn icon
-  ///
-  /// https://fontawesome.com/icons/yarn?style=brands
-  'yarn': FontAwesomeIcons.yarn,
-
-  /// Brands Yelp icon
-  ///
-  /// https://fontawesome.com/icons/yelp?style=brands
-  'yelp': FontAwesomeIcons.yelp,
-
-  /// Solid Yen Sign icon
-  ///
-  /// https://fontawesome.com/icons/yen-sign?style=solid
-  'yenSign': FontAwesomeIcons.yenSign,
-
-  /// Solid Yin Yang icon
-  ///
-  /// https://fontawesome.com/icons/yin-yang?style=solid
-  'yinYang': FontAwesomeIcons.yinYang,
-
-  /// Brands Yoast icon
-  ///
-  /// https://fontawesome.com/icons/yoast?style=brands
-  'yoast': FontAwesomeIcons.yoast,
-
-  /// Brands YouTube icon
-  ///
-  /// https://fontawesome.com/icons/youtube?style=brands
-  'youtube': FontAwesomeIcons.youtube,
-
-  /// Solid Z icon
-  ///
-  /// https://fontawesome.com/icons/z?style=solid
-  'z': FontAwesomeIcons.z,
-
-  /// Brands Zhihu icon
-  ///
-  /// https://fontawesome.com/icons/zhihu?style=brands
-  'zhihu': FontAwesomeIcons.zhihu,
+Map<String, IconPickerIcon> fontAwesomeIcons = {
+  'zero': IconPickerIcon(
+      name: 'zero',
+      data: FontAwesomeIcons.zero,
+      pack: IconPack.fontAwesomeIcons),
+  'one': IconPickerIcon(
+      name: 'one', data: FontAwesomeIcons.one, pack: IconPack.fontAwesomeIcons),
+  'two': IconPickerIcon(
+      name: 'two', data: FontAwesomeIcons.two, pack: IconPack.fontAwesomeIcons),
+  'three': IconPickerIcon(
+      name: 'three',
+      data: FontAwesomeIcons.three,
+      pack: IconPack.fontAwesomeIcons),
+  'four': IconPickerIcon(
+      name: 'four',
+      data: FontAwesomeIcons.four,
+      pack: IconPack.fontAwesomeIcons),
+  'five': IconPickerIcon(
+      name: 'five',
+      data: FontAwesomeIcons.five,
+      pack: IconPack.fontAwesomeIcons),
+  'six': IconPickerIcon(
+      name: 'six', data: FontAwesomeIcons.six, pack: IconPack.fontAwesomeIcons),
+  'seven': IconPickerIcon(
+      name: 'seven',
+      data: FontAwesomeIcons.seven,
+      pack: IconPack.fontAwesomeIcons),
+  'eight': IconPickerIcon(
+      name: 'eight',
+      data: FontAwesomeIcons.eight,
+      pack: IconPack.fontAwesomeIcons),
+  'nine': IconPickerIcon(
+      name: 'nine',
+      data: FontAwesomeIcons.nine,
+      pack: IconPack.fontAwesomeIcons),
+  'fortyTwoGroup': IconPickerIcon(
+      name: 'fortyTwoGroup',
+      data: FontAwesomeIcons.fortyTwoGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'fiveHundredPx': IconPickerIcon(
+      name: 'fiveHundredPx',
+      data: FontAwesomeIcons.fiveHundredPx,
+      pack: IconPack.fontAwesomeIcons),
+  'a': IconPickerIcon(
+      name: 'a', data: FontAwesomeIcons.a, pack: IconPack.fontAwesomeIcons),
+  'accessibleIcon': IconPickerIcon(
+      name: 'accessibleIcon',
+      data: FontAwesomeIcons.accessibleIcon,
+      pack: IconPack.fontAwesomeIcons),
+  'accusoft': IconPickerIcon(
+      name: 'accusoft',
+      data: FontAwesomeIcons.accusoft,
+      pack: IconPack.fontAwesomeIcons),
+  'solidAddressBook': IconPickerIcon(
+      name: 'solidAddressBook',
+      data: FontAwesomeIcons.solidAddressBook,
+      pack: IconPack.fontAwesomeIcons),
+  'addressBook': IconPickerIcon(
+      name: 'addressBook',
+      data: FontAwesomeIcons.addressBook,
+      pack: IconPack.fontAwesomeIcons),
+  'solidAddressCard': IconPickerIcon(
+      name: 'solidAddressCard',
+      data: FontAwesomeIcons.solidAddressCard,
+      pack: IconPack.fontAwesomeIcons),
+  'addressCard': IconPickerIcon(
+      name: 'addressCard',
+      data: FontAwesomeIcons.addressCard,
+      pack: IconPack.fontAwesomeIcons),
+  'adn': IconPickerIcon(
+      name: 'adn', data: FontAwesomeIcons.adn, pack: IconPack.fontAwesomeIcons),
+  'adversal': IconPickerIcon(
+      name: 'adversal',
+      data: FontAwesomeIcons.adversal,
+      pack: IconPack.fontAwesomeIcons),
+  'affiliatetheme': IconPickerIcon(
+      name: 'affiliatetheme',
+      data: FontAwesomeIcons.affiliatetheme,
+      pack: IconPack.fontAwesomeIcons),
+  'airbnb': IconPickerIcon(
+      name: 'airbnb',
+      data: FontAwesomeIcons.airbnb,
+      pack: IconPack.fontAwesomeIcons),
+  'algolia': IconPickerIcon(
+      name: 'algolia',
+      data: FontAwesomeIcons.algolia,
+      pack: IconPack.fontAwesomeIcons),
+  'alignCenter': IconPickerIcon(
+      name: 'alignCenter',
+      data: FontAwesomeIcons.alignCenter,
+      pack: IconPack.fontAwesomeIcons),
+  'alignJustify': IconPickerIcon(
+      name: 'alignJustify',
+      data: FontAwesomeIcons.alignJustify,
+      pack: IconPack.fontAwesomeIcons),
+  'alignLeft': IconPickerIcon(
+      name: 'alignLeft',
+      data: FontAwesomeIcons.alignLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'alignRight': IconPickerIcon(
+      name: 'alignRight',
+      data: FontAwesomeIcons.alignRight,
+      pack: IconPack.fontAwesomeIcons),
+  'alipay': IconPickerIcon(
+      name: 'alipay',
+      data: FontAwesomeIcons.alipay,
+      pack: IconPack.fontAwesomeIcons),
+  'amazon': IconPickerIcon(
+      name: 'amazon',
+      data: FontAwesomeIcons.amazon,
+      pack: IconPack.fontAwesomeIcons),
+  'amazonPay': IconPickerIcon(
+      name: 'amazonPay',
+      data: FontAwesomeIcons.amazonPay,
+      pack: IconPack.fontAwesomeIcons),
+  'amilia': IconPickerIcon(
+      name: 'amilia',
+      data: FontAwesomeIcons.amilia,
+      pack: IconPack.fontAwesomeIcons),
+  'anchor': IconPickerIcon(
+      name: 'anchor',
+      data: FontAwesomeIcons.anchor,
+      pack: IconPack.fontAwesomeIcons),
+  'anchorCircleCheck': IconPickerIcon(
+      name: 'anchorCircleCheck',
+      data: FontAwesomeIcons.anchorCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'anchorCircleExclamation': IconPickerIcon(
+      name: 'anchorCircleExclamation',
+      data: FontAwesomeIcons.anchorCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'anchorCircleXmark': IconPickerIcon(
+      name: 'anchorCircleXmark',
+      data: FontAwesomeIcons.anchorCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'anchorLock': IconPickerIcon(
+      name: 'anchorLock',
+      data: FontAwesomeIcons.anchorLock,
+      pack: IconPack.fontAwesomeIcons),
+  'android': IconPickerIcon(
+      name: 'android',
+      data: FontAwesomeIcons.android,
+      pack: IconPack.fontAwesomeIcons),
+  'angellist': IconPickerIcon(
+      name: 'angellist',
+      data: FontAwesomeIcons.angellist,
+      pack: IconPack.fontAwesomeIcons),
+  'angleDown': IconPickerIcon(
+      name: 'angleDown',
+      data: FontAwesomeIcons.angleDown,
+      pack: IconPack.fontAwesomeIcons),
+  'angleLeft': IconPickerIcon(
+      name: 'angleLeft',
+      data: FontAwesomeIcons.angleLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'angleRight': IconPickerIcon(
+      name: 'angleRight',
+      data: FontAwesomeIcons.angleRight,
+      pack: IconPack.fontAwesomeIcons),
+  'angleUp': IconPickerIcon(
+      name: 'angleUp',
+      data: FontAwesomeIcons.angleUp,
+      pack: IconPack.fontAwesomeIcons),
+  'anglesDown': IconPickerIcon(
+      name: 'anglesDown',
+      data: FontAwesomeIcons.anglesDown,
+      pack: IconPack.fontAwesomeIcons),
+  'anglesLeft': IconPickerIcon(
+      name: 'anglesLeft',
+      data: FontAwesomeIcons.anglesLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'anglesRight': IconPickerIcon(
+      name: 'anglesRight',
+      data: FontAwesomeIcons.anglesRight,
+      pack: IconPack.fontAwesomeIcons),
+  'anglesUp': IconPickerIcon(
+      name: 'anglesUp',
+      data: FontAwesomeIcons.anglesUp,
+      pack: IconPack.fontAwesomeIcons),
+  'angrycreative': IconPickerIcon(
+      name: 'angrycreative',
+      data: FontAwesomeIcons.angrycreative,
+      pack: IconPack.fontAwesomeIcons),
+  'angular': IconPickerIcon(
+      name: 'angular',
+      data: FontAwesomeIcons.angular,
+      pack: IconPack.fontAwesomeIcons),
+  'ankh': IconPickerIcon(
+      name: 'ankh',
+      data: FontAwesomeIcons.ankh,
+      pack: IconPack.fontAwesomeIcons),
+  'appStore': IconPickerIcon(
+      name: 'appStore',
+      data: FontAwesomeIcons.appStore,
+      pack: IconPack.fontAwesomeIcons),
+  'appStoreIos': IconPickerIcon(
+      name: 'appStoreIos',
+      data: FontAwesomeIcons.appStoreIos,
+      pack: IconPack.fontAwesomeIcons),
+  'apper': IconPickerIcon(
+      name: 'apper',
+      data: FontAwesomeIcons.apper,
+      pack: IconPack.fontAwesomeIcons),
+  'apple': IconPickerIcon(
+      name: 'apple',
+      data: FontAwesomeIcons.apple,
+      pack: IconPack.fontAwesomeIcons),
+  'applePay': IconPickerIcon(
+      name: 'applePay',
+      data: FontAwesomeIcons.applePay,
+      pack: IconPack.fontAwesomeIcons),
+  'appleWhole': IconPickerIcon(
+      name: 'appleWhole',
+      data: FontAwesomeIcons.appleWhole,
+      pack: IconPack.fontAwesomeIcons),
+  'archway': IconPickerIcon(
+      name: 'archway',
+      data: FontAwesomeIcons.archway,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDown': IconPickerIcon(
+      name: 'arrowDown',
+      data: FontAwesomeIcons.arrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDown19': IconPickerIcon(
+      name: 'arrowDown19',
+      data: FontAwesomeIcons.arrowDown19,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDown91': IconPickerIcon(
+      name: 'arrowDown91',
+      data: FontAwesomeIcons.arrowDown91,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownAZ': IconPickerIcon(
+      name: 'arrowDownAZ',
+      data: FontAwesomeIcons.arrowDownAZ,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownLong': IconPickerIcon(
+      name: 'arrowDownLong',
+      data: FontAwesomeIcons.arrowDownLong,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownShortWide': IconPickerIcon(
+      name: 'arrowDownShortWide',
+      data: FontAwesomeIcons.arrowDownShortWide,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownUpAcrossLine': IconPickerIcon(
+      name: 'arrowDownUpAcrossLine',
+      data: FontAwesomeIcons.arrowDownUpAcrossLine,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownUpLock': IconPickerIcon(
+      name: 'arrowDownUpLock',
+      data: FontAwesomeIcons.arrowDownUpLock,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownWideShort': IconPickerIcon(
+      name: 'arrowDownWideShort',
+      data: FontAwesomeIcons.arrowDownWideShort,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowDownZA': IconPickerIcon(
+      name: 'arrowDownZA',
+      data: FontAwesomeIcons.arrowDownZA,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowLeft': IconPickerIcon(
+      name: 'arrowLeft',
+      data: FontAwesomeIcons.arrowLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowLeftLong': IconPickerIcon(
+      name: 'arrowLeftLong',
+      data: FontAwesomeIcons.arrowLeftLong,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowPointer': IconPickerIcon(
+      name: 'arrowPointer',
+      data: FontAwesomeIcons.arrowPointer,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRight': IconPickerIcon(
+      name: 'arrowRight',
+      data: FontAwesomeIcons.arrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRightArrowLeft': IconPickerIcon(
+      name: 'arrowRightArrowLeft',
+      data: FontAwesomeIcons.arrowRightArrowLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRightFromBracket': IconPickerIcon(
+      name: 'arrowRightFromBracket',
+      data: FontAwesomeIcons.arrowRightFromBracket,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRightLong': IconPickerIcon(
+      name: 'arrowRightLong',
+      data: FontAwesomeIcons.arrowRightLong,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRightToBracket': IconPickerIcon(
+      name: 'arrowRightToBracket',
+      data: FontAwesomeIcons.arrowRightToBracket,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRightToCity': IconPickerIcon(
+      name: 'arrowRightToCity',
+      data: FontAwesomeIcons.arrowRightToCity,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRotateLeft': IconPickerIcon(
+      name: 'arrowRotateLeft',
+      data: FontAwesomeIcons.arrowRotateLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowRotateRight': IconPickerIcon(
+      name: 'arrowRotateRight',
+      data: FontAwesomeIcons.arrowRotateRight,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowTrendDown': IconPickerIcon(
+      name: 'arrowTrendDown',
+      data: FontAwesomeIcons.arrowTrendDown,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowTrendUp': IconPickerIcon(
+      name: 'arrowTrendUp',
+      data: FontAwesomeIcons.arrowTrendUp,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowTurnDown': IconPickerIcon(
+      name: 'arrowTurnDown',
+      data: FontAwesomeIcons.arrowTurnDown,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowTurnUp': IconPickerIcon(
+      name: 'arrowTurnUp',
+      data: FontAwesomeIcons.arrowTurnUp,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUp': IconPickerIcon(
+      name: 'arrowUp',
+      data: FontAwesomeIcons.arrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUp19': IconPickerIcon(
+      name: 'arrowUp19',
+      data: FontAwesomeIcons.arrowUp19,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUp91': IconPickerIcon(
+      name: 'arrowUp91',
+      data: FontAwesomeIcons.arrowUp91,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpAZ': IconPickerIcon(
+      name: 'arrowUpAZ',
+      data: FontAwesomeIcons.arrowUpAZ,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpFromBracket': IconPickerIcon(
+      name: 'arrowUpFromBracket',
+      data: FontAwesomeIcons.arrowUpFromBracket,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpFromGroundWater': IconPickerIcon(
+      name: 'arrowUpFromGroundWater',
+      data: FontAwesomeIcons.arrowUpFromGroundWater,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpFromWaterPump': IconPickerIcon(
+      name: 'arrowUpFromWaterPump',
+      data: FontAwesomeIcons.arrowUpFromWaterPump,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpLong': IconPickerIcon(
+      name: 'arrowUpLong',
+      data: FontAwesomeIcons.arrowUpLong,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpRightDots': IconPickerIcon(
+      name: 'arrowUpRightDots',
+      data: FontAwesomeIcons.arrowUpRightDots,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpRightFromSquare': IconPickerIcon(
+      name: 'arrowUpRightFromSquare',
+      data: FontAwesomeIcons.arrowUpRightFromSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpShortWide': IconPickerIcon(
+      name: 'arrowUpShortWide',
+      data: FontAwesomeIcons.arrowUpShortWide,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpWideShort': IconPickerIcon(
+      name: 'arrowUpWideShort',
+      data: FontAwesomeIcons.arrowUpWideShort,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowUpZA': IconPickerIcon(
+      name: 'arrowUpZA',
+      data: FontAwesomeIcons.arrowUpZA,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsDownToLine': IconPickerIcon(
+      name: 'arrowsDownToLine',
+      data: FontAwesomeIcons.arrowsDownToLine,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsDownToPeople': IconPickerIcon(
+      name: 'arrowsDownToPeople',
+      data: FontAwesomeIcons.arrowsDownToPeople,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsLeftRight': IconPickerIcon(
+      name: 'arrowsLeftRight',
+      data: FontAwesomeIcons.arrowsLeftRight,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsLeftRightToLine': IconPickerIcon(
+      name: 'arrowsLeftRightToLine',
+      data: FontAwesomeIcons.arrowsLeftRightToLine,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsRotate': IconPickerIcon(
+      name: 'arrowsRotate',
+      data: FontAwesomeIcons.arrowsRotate,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsSpin': IconPickerIcon(
+      name: 'arrowsSpin',
+      data: FontAwesomeIcons.arrowsSpin,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsSplitUpAndLeft': IconPickerIcon(
+      name: 'arrowsSplitUpAndLeft',
+      data: FontAwesomeIcons.arrowsSplitUpAndLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsToCircle': IconPickerIcon(
+      name: 'arrowsToCircle',
+      data: FontAwesomeIcons.arrowsToCircle,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsToDot': IconPickerIcon(
+      name: 'arrowsToDot',
+      data: FontAwesomeIcons.arrowsToDot,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsToEye': IconPickerIcon(
+      name: 'arrowsToEye',
+      data: FontAwesomeIcons.arrowsToEye,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsTurnRight': IconPickerIcon(
+      name: 'arrowsTurnRight',
+      data: FontAwesomeIcons.arrowsTurnRight,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsTurnToDots': IconPickerIcon(
+      name: 'arrowsTurnToDots',
+      data: FontAwesomeIcons.arrowsTurnToDots,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsUpDown': IconPickerIcon(
+      name: 'arrowsUpDown',
+      data: FontAwesomeIcons.arrowsUpDown,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsUpDownLeftRight': IconPickerIcon(
+      name: 'arrowsUpDownLeftRight',
+      data: FontAwesomeIcons.arrowsUpDownLeftRight,
+      pack: IconPack.fontAwesomeIcons),
+  'arrowsUpToLine': IconPickerIcon(
+      name: 'arrowsUpToLine',
+      data: FontAwesomeIcons.arrowsUpToLine,
+      pack: IconPack.fontAwesomeIcons),
+  'artstation': IconPickerIcon(
+      name: 'artstation',
+      data: FontAwesomeIcons.artstation,
+      pack: IconPack.fontAwesomeIcons),
+  'asterisk': IconPickerIcon(
+      name: 'asterisk',
+      data: FontAwesomeIcons.asterisk,
+      pack: IconPack.fontAwesomeIcons),
+  'asymmetrik': IconPickerIcon(
+      name: 'asymmetrik',
+      data: FontAwesomeIcons.asymmetrik,
+      pack: IconPack.fontAwesomeIcons),
+  'at': IconPickerIcon(
+      name: 'at', data: FontAwesomeIcons.at, pack: IconPack.fontAwesomeIcons),
+  'atlassian': IconPickerIcon(
+      name: 'atlassian',
+      data: FontAwesomeIcons.atlassian,
+      pack: IconPack.fontAwesomeIcons),
+  'atom': IconPickerIcon(
+      name: 'atom',
+      data: FontAwesomeIcons.atom,
+      pack: IconPack.fontAwesomeIcons),
+  'audible': IconPickerIcon(
+      name: 'audible',
+      data: FontAwesomeIcons.audible,
+      pack: IconPack.fontAwesomeIcons),
+  'audioDescription': IconPickerIcon(
+      name: 'audioDescription',
+      data: FontAwesomeIcons.audioDescription,
+      pack: IconPack.fontAwesomeIcons),
+  'australSign': IconPickerIcon(
+      name: 'australSign',
+      data: FontAwesomeIcons.australSign,
+      pack: IconPack.fontAwesomeIcons),
+  'autoprefixer': IconPickerIcon(
+      name: 'autoprefixer',
+      data: FontAwesomeIcons.autoprefixer,
+      pack: IconPack.fontAwesomeIcons),
+  'avianex': IconPickerIcon(
+      name: 'avianex',
+      data: FontAwesomeIcons.avianex,
+      pack: IconPack.fontAwesomeIcons),
+  'aviato': IconPickerIcon(
+      name: 'aviato',
+      data: FontAwesomeIcons.aviato,
+      pack: IconPack.fontAwesomeIcons),
+  'award': IconPickerIcon(
+      name: 'award',
+      data: FontAwesomeIcons.award,
+      pack: IconPack.fontAwesomeIcons),
+  'aws': IconPickerIcon(
+      name: 'aws', data: FontAwesomeIcons.aws, pack: IconPack.fontAwesomeIcons),
+  'b': IconPickerIcon(
+      name: 'b', data: FontAwesomeIcons.b, pack: IconPack.fontAwesomeIcons),
+  'baby': IconPickerIcon(
+      name: 'baby',
+      data: FontAwesomeIcons.baby,
+      pack: IconPack.fontAwesomeIcons),
+  'babyCarriage': IconPickerIcon(
+      name: 'babyCarriage',
+      data: FontAwesomeIcons.babyCarriage,
+      pack: IconPack.fontAwesomeIcons),
+  'backward': IconPickerIcon(
+      name: 'backward',
+      data: FontAwesomeIcons.backward,
+      pack: IconPack.fontAwesomeIcons),
+  'backwardFast': IconPickerIcon(
+      name: 'backwardFast',
+      data: FontAwesomeIcons.backwardFast,
+      pack: IconPack.fontAwesomeIcons),
+  'backwardStep': IconPickerIcon(
+      name: 'backwardStep',
+      data: FontAwesomeIcons.backwardStep,
+      pack: IconPack.fontAwesomeIcons),
+  'bacon': IconPickerIcon(
+      name: 'bacon',
+      data: FontAwesomeIcons.bacon,
+      pack: IconPack.fontAwesomeIcons),
+  'bacteria': IconPickerIcon(
+      name: 'bacteria',
+      data: FontAwesomeIcons.bacteria,
+      pack: IconPack.fontAwesomeIcons),
+  'bacterium': IconPickerIcon(
+      name: 'bacterium',
+      data: FontAwesomeIcons.bacterium,
+      pack: IconPack.fontAwesomeIcons),
+  'bagShopping': IconPickerIcon(
+      name: 'bagShopping',
+      data: FontAwesomeIcons.bagShopping,
+      pack: IconPack.fontAwesomeIcons),
+  'bahai': IconPickerIcon(
+      name: 'bahai',
+      data: FontAwesomeIcons.bahai,
+      pack: IconPack.fontAwesomeIcons),
+  'bahtSign': IconPickerIcon(
+      name: 'bahtSign',
+      data: FontAwesomeIcons.bahtSign,
+      pack: IconPack.fontAwesomeIcons),
+  'ban': IconPickerIcon(
+      name: 'ban', data: FontAwesomeIcons.ban, pack: IconPack.fontAwesomeIcons),
+  'banSmoking': IconPickerIcon(
+      name: 'banSmoking',
+      data: FontAwesomeIcons.banSmoking,
+      pack: IconPack.fontAwesomeIcons),
+  'bandage': IconPickerIcon(
+      name: 'bandage',
+      data: FontAwesomeIcons.bandage,
+      pack: IconPack.fontAwesomeIcons),
+  'bandcamp': IconPickerIcon(
+      name: 'bandcamp',
+      data: FontAwesomeIcons.bandcamp,
+      pack: IconPack.fontAwesomeIcons),
+  'barcode': IconPickerIcon(
+      name: 'barcode',
+      data: FontAwesomeIcons.barcode,
+      pack: IconPack.fontAwesomeIcons),
+  'bars': IconPickerIcon(
+      name: 'bars',
+      data: FontAwesomeIcons.bars,
+      pack: IconPack.fontAwesomeIcons),
+  'barsProgress': IconPickerIcon(
+      name: 'barsProgress',
+      data: FontAwesomeIcons.barsProgress,
+      pack: IconPack.fontAwesomeIcons),
+  'barsStaggered': IconPickerIcon(
+      name: 'barsStaggered',
+      data: FontAwesomeIcons.barsStaggered,
+      pack: IconPack.fontAwesomeIcons),
+  'baseball': IconPickerIcon(
+      name: 'baseball',
+      data: FontAwesomeIcons.baseball,
+      pack: IconPack.fontAwesomeIcons),
+  'baseballBatBall': IconPickerIcon(
+      name: 'baseballBatBall',
+      data: FontAwesomeIcons.baseballBatBall,
+      pack: IconPack.fontAwesomeIcons),
+  'basketShopping': IconPickerIcon(
+      name: 'basketShopping',
+      data: FontAwesomeIcons.basketShopping,
+      pack: IconPack.fontAwesomeIcons),
+  'basketball': IconPickerIcon(
+      name: 'basketball',
+      data: FontAwesomeIcons.basketball,
+      pack: IconPack.fontAwesomeIcons),
+  'bath': IconPickerIcon(
+      name: 'bath',
+      data: FontAwesomeIcons.bath,
+      pack: IconPack.fontAwesomeIcons),
+  'batteryEmpty': IconPickerIcon(
+      name: 'batteryEmpty',
+      data: FontAwesomeIcons.batteryEmpty,
+      pack: IconPack.fontAwesomeIcons),
+  'batteryFull': IconPickerIcon(
+      name: 'batteryFull',
+      data: FontAwesomeIcons.batteryFull,
+      pack: IconPack.fontAwesomeIcons),
+  'batteryHalf': IconPickerIcon(
+      name: 'batteryHalf',
+      data: FontAwesomeIcons.batteryHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'batteryQuarter': IconPickerIcon(
+      name: 'batteryQuarter',
+      data: FontAwesomeIcons.batteryQuarter,
+      pack: IconPack.fontAwesomeIcons),
+  'batteryThreeQuarters': IconPickerIcon(
+      name: 'batteryThreeQuarters',
+      data: FontAwesomeIcons.batteryThreeQuarters,
+      pack: IconPack.fontAwesomeIcons),
+  'battleNet': IconPickerIcon(
+      name: 'battleNet',
+      data: FontAwesomeIcons.battleNet,
+      pack: IconPack.fontAwesomeIcons),
+  'bed': IconPickerIcon(
+      name: 'bed', data: FontAwesomeIcons.bed, pack: IconPack.fontAwesomeIcons),
+  'bedPulse': IconPickerIcon(
+      name: 'bedPulse',
+      data: FontAwesomeIcons.bedPulse,
+      pack: IconPack.fontAwesomeIcons),
+  'beerMugEmpty': IconPickerIcon(
+      name: 'beerMugEmpty',
+      data: FontAwesomeIcons.beerMugEmpty,
+      pack: IconPack.fontAwesomeIcons),
+  'behance': IconPickerIcon(
+      name: 'behance',
+      data: FontAwesomeIcons.behance,
+      pack: IconPack.fontAwesomeIcons),
+  'solidBell': IconPickerIcon(
+      name: 'solidBell',
+      data: FontAwesomeIcons.solidBell,
+      pack: IconPack.fontAwesomeIcons),
+  'bell': IconPickerIcon(
+      name: 'bell',
+      data: FontAwesomeIcons.bell,
+      pack: IconPack.fontAwesomeIcons),
+  'bellConcierge': IconPickerIcon(
+      name: 'bellConcierge',
+      data: FontAwesomeIcons.bellConcierge,
+      pack: IconPack.fontAwesomeIcons),
+  'solidBellSlash': IconPickerIcon(
+      name: 'solidBellSlash',
+      data: FontAwesomeIcons.solidBellSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'bellSlash': IconPickerIcon(
+      name: 'bellSlash',
+      data: FontAwesomeIcons.bellSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'bezierCurve': IconPickerIcon(
+      name: 'bezierCurve',
+      data: FontAwesomeIcons.bezierCurve,
+      pack: IconPack.fontAwesomeIcons),
+  'bicycle': IconPickerIcon(
+      name: 'bicycle',
+      data: FontAwesomeIcons.bicycle,
+      pack: IconPack.fontAwesomeIcons),
+  'bilibili': IconPickerIcon(
+      name: 'bilibili',
+      data: FontAwesomeIcons.bilibili,
+      pack: IconPack.fontAwesomeIcons),
+  'bimobject': IconPickerIcon(
+      name: 'bimobject',
+      data: FontAwesomeIcons.bimobject,
+      pack: IconPack.fontAwesomeIcons),
+  'binoculars': IconPickerIcon(
+      name: 'binoculars',
+      data: FontAwesomeIcons.binoculars,
+      pack: IconPack.fontAwesomeIcons),
+  'biohazard': IconPickerIcon(
+      name: 'biohazard',
+      data: FontAwesomeIcons.biohazard,
+      pack: IconPack.fontAwesomeIcons),
+  'bitbucket': IconPickerIcon(
+      name: 'bitbucket',
+      data: FontAwesomeIcons.bitbucket,
+      pack: IconPack.fontAwesomeIcons),
+  'bitcoin': IconPickerIcon(
+      name: 'bitcoin',
+      data: FontAwesomeIcons.bitcoin,
+      pack: IconPack.fontAwesomeIcons),
+  'bitcoinSign': IconPickerIcon(
+      name: 'bitcoinSign',
+      data: FontAwesomeIcons.bitcoinSign,
+      pack: IconPack.fontAwesomeIcons),
+  'bity': IconPickerIcon(
+      name: 'bity',
+      data: FontAwesomeIcons.bity,
+      pack: IconPack.fontAwesomeIcons),
+  'blackTie': IconPickerIcon(
+      name: 'blackTie',
+      data: FontAwesomeIcons.blackTie,
+      pack: IconPack.fontAwesomeIcons),
+  'blackberry': IconPickerIcon(
+      name: 'blackberry',
+      data: FontAwesomeIcons.blackberry,
+      pack: IconPack.fontAwesomeIcons),
+  'blender': IconPickerIcon(
+      name: 'blender',
+      data: FontAwesomeIcons.blender,
+      pack: IconPack.fontAwesomeIcons),
+  'blenderPhone': IconPickerIcon(
+      name: 'blenderPhone',
+      data: FontAwesomeIcons.blenderPhone,
+      pack: IconPack.fontAwesomeIcons),
+  'blog': IconPickerIcon(
+      name: 'blog',
+      data: FontAwesomeIcons.blog,
+      pack: IconPack.fontAwesomeIcons),
+  'blogger': IconPickerIcon(
+      name: 'blogger',
+      data: FontAwesomeIcons.blogger,
+      pack: IconPack.fontAwesomeIcons),
+  'bloggerB': IconPickerIcon(
+      name: 'bloggerB',
+      data: FontAwesomeIcons.bloggerB,
+      pack: IconPack.fontAwesomeIcons),
+  'bluetooth': IconPickerIcon(
+      name: 'bluetooth',
+      data: FontAwesomeIcons.bluetooth,
+      pack: IconPack.fontAwesomeIcons),
+  'bluetoothB': IconPickerIcon(
+      name: 'bluetoothB',
+      data: FontAwesomeIcons.bluetoothB,
+      pack: IconPack.fontAwesomeIcons),
+  'bold': IconPickerIcon(
+      name: 'bold',
+      data: FontAwesomeIcons.bold,
+      pack: IconPack.fontAwesomeIcons),
+  'bolt': IconPickerIcon(
+      name: 'bolt',
+      data: FontAwesomeIcons.bolt,
+      pack: IconPack.fontAwesomeIcons),
+  'boltLightning': IconPickerIcon(
+      name: 'boltLightning',
+      data: FontAwesomeIcons.boltLightning,
+      pack: IconPack.fontAwesomeIcons),
+  'bomb': IconPickerIcon(
+      name: 'bomb',
+      data: FontAwesomeIcons.bomb,
+      pack: IconPack.fontAwesomeIcons),
+  'bone': IconPickerIcon(
+      name: 'bone',
+      data: FontAwesomeIcons.bone,
+      pack: IconPack.fontAwesomeIcons),
+  'bong': IconPickerIcon(
+      name: 'bong',
+      data: FontAwesomeIcons.bong,
+      pack: IconPack.fontAwesomeIcons),
+  'book': IconPickerIcon(
+      name: 'book',
+      data: FontAwesomeIcons.book,
+      pack: IconPack.fontAwesomeIcons),
+  'bookAtlas': IconPickerIcon(
+      name: 'bookAtlas',
+      data: FontAwesomeIcons.bookAtlas,
+      pack: IconPack.fontAwesomeIcons),
+  'bookBible': IconPickerIcon(
+      name: 'bookBible',
+      data: FontAwesomeIcons.bookBible,
+      pack: IconPack.fontAwesomeIcons),
+  'bookBookmark': IconPickerIcon(
+      name: 'bookBookmark',
+      data: FontAwesomeIcons.bookBookmark,
+      pack: IconPack.fontAwesomeIcons),
+  'bookJournalWhills': IconPickerIcon(
+      name: 'bookJournalWhills',
+      data: FontAwesomeIcons.bookJournalWhills,
+      pack: IconPack.fontAwesomeIcons),
+  'bookMedical': IconPickerIcon(
+      name: 'bookMedical',
+      data: FontAwesomeIcons.bookMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'bookOpen': IconPickerIcon(
+      name: 'bookOpen',
+      data: FontAwesomeIcons.bookOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'bookOpenReader': IconPickerIcon(
+      name: 'bookOpenReader',
+      data: FontAwesomeIcons.bookOpenReader,
+      pack: IconPack.fontAwesomeIcons),
+  'bookQuran': IconPickerIcon(
+      name: 'bookQuran',
+      data: FontAwesomeIcons.bookQuran,
+      pack: IconPack.fontAwesomeIcons),
+  'bookSkull': IconPickerIcon(
+      name: 'bookSkull',
+      data: FontAwesomeIcons.bookSkull,
+      pack: IconPack.fontAwesomeIcons),
+  'bookTanakh': IconPickerIcon(
+      name: 'bookTanakh',
+      data: FontAwesomeIcons.bookTanakh,
+      pack: IconPack.fontAwesomeIcons),
+  'solidBookmark': IconPickerIcon(
+      name: 'solidBookmark',
+      data: FontAwesomeIcons.solidBookmark,
+      pack: IconPack.fontAwesomeIcons),
+  'bookmark': IconPickerIcon(
+      name: 'bookmark',
+      data: FontAwesomeIcons.bookmark,
+      pack: IconPack.fontAwesomeIcons),
+  'bootstrap': IconPickerIcon(
+      name: 'bootstrap',
+      data: FontAwesomeIcons.bootstrap,
+      pack: IconPack.fontAwesomeIcons),
+  'borderAll': IconPickerIcon(
+      name: 'borderAll',
+      data: FontAwesomeIcons.borderAll,
+      pack: IconPack.fontAwesomeIcons),
+  'borderNone': IconPickerIcon(
+      name: 'borderNone',
+      data: FontAwesomeIcons.borderNone,
+      pack: IconPack.fontAwesomeIcons),
+  'borderTopLeft': IconPickerIcon(
+      name: 'borderTopLeft',
+      data: FontAwesomeIcons.borderTopLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'boreHole': IconPickerIcon(
+      name: 'boreHole',
+      data: FontAwesomeIcons.boreHole,
+      pack: IconPack.fontAwesomeIcons),
+  'bots': IconPickerIcon(
+      name: 'bots',
+      data: FontAwesomeIcons.bots,
+      pack: IconPack.fontAwesomeIcons),
+  'bottleDroplet': IconPickerIcon(
+      name: 'bottleDroplet',
+      data: FontAwesomeIcons.bottleDroplet,
+      pack: IconPack.fontAwesomeIcons),
+  'bottleWater': IconPickerIcon(
+      name: 'bottleWater',
+      data: FontAwesomeIcons.bottleWater,
+      pack: IconPack.fontAwesomeIcons),
+  'bowlFood': IconPickerIcon(
+      name: 'bowlFood',
+      data: FontAwesomeIcons.bowlFood,
+      pack: IconPack.fontAwesomeIcons),
+  'bowlRice': IconPickerIcon(
+      name: 'bowlRice',
+      data: FontAwesomeIcons.bowlRice,
+      pack: IconPack.fontAwesomeIcons),
+  'bowlingBall': IconPickerIcon(
+      name: 'bowlingBall',
+      data: FontAwesomeIcons.bowlingBall,
+      pack: IconPack.fontAwesomeIcons),
+  'box': IconPickerIcon(
+      name: 'box', data: FontAwesomeIcons.box, pack: IconPack.fontAwesomeIcons),
+  'boxArchive': IconPickerIcon(
+      name: 'boxArchive',
+      data: FontAwesomeIcons.boxArchive,
+      pack: IconPack.fontAwesomeIcons),
+  'boxOpen': IconPickerIcon(
+      name: 'boxOpen',
+      data: FontAwesomeIcons.boxOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'boxTissue': IconPickerIcon(
+      name: 'boxTissue',
+      data: FontAwesomeIcons.boxTissue,
+      pack: IconPack.fontAwesomeIcons),
+  'boxesPacking': IconPickerIcon(
+      name: 'boxesPacking',
+      data: FontAwesomeIcons.boxesPacking,
+      pack: IconPack.fontAwesomeIcons),
+  'boxesStacked': IconPickerIcon(
+      name: 'boxesStacked',
+      data: FontAwesomeIcons.boxesStacked,
+      pack: IconPack.fontAwesomeIcons),
+  'braille': IconPickerIcon(
+      name: 'braille',
+      data: FontAwesomeIcons.braille,
+      pack: IconPack.fontAwesomeIcons),
+  'brain': IconPickerIcon(
+      name: 'brain',
+      data: FontAwesomeIcons.brain,
+      pack: IconPack.fontAwesomeIcons),
+  'brazilianRealSign': IconPickerIcon(
+      name: 'brazilianRealSign',
+      data: FontAwesomeIcons.brazilianRealSign,
+      pack: IconPack.fontAwesomeIcons),
+  'breadSlice': IconPickerIcon(
+      name: 'breadSlice',
+      data: FontAwesomeIcons.breadSlice,
+      pack: IconPack.fontAwesomeIcons),
+  'bridge': IconPickerIcon(
+      name: 'bridge',
+      data: FontAwesomeIcons.bridge,
+      pack: IconPack.fontAwesomeIcons),
+  'bridgeCircleCheck': IconPickerIcon(
+      name: 'bridgeCircleCheck',
+      data: FontAwesomeIcons.bridgeCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'bridgeCircleExclamation': IconPickerIcon(
+      name: 'bridgeCircleExclamation',
+      data: FontAwesomeIcons.bridgeCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'bridgeCircleXmark': IconPickerIcon(
+      name: 'bridgeCircleXmark',
+      data: FontAwesomeIcons.bridgeCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'bridgeLock': IconPickerIcon(
+      name: 'bridgeLock',
+      data: FontAwesomeIcons.bridgeLock,
+      pack: IconPack.fontAwesomeIcons),
+  'bridgeWater': IconPickerIcon(
+      name: 'bridgeWater',
+      data: FontAwesomeIcons.bridgeWater,
+      pack: IconPack.fontAwesomeIcons),
+  'briefcase': IconPickerIcon(
+      name: 'briefcase',
+      data: FontAwesomeIcons.briefcase,
+      pack: IconPack.fontAwesomeIcons),
+  'briefcaseMedical': IconPickerIcon(
+      name: 'briefcaseMedical',
+      data: FontAwesomeIcons.briefcaseMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'broom': IconPickerIcon(
+      name: 'broom',
+      data: FontAwesomeIcons.broom,
+      pack: IconPack.fontAwesomeIcons),
+  'broomBall': IconPickerIcon(
+      name: 'broomBall',
+      data: FontAwesomeIcons.broomBall,
+      pack: IconPack.fontAwesomeIcons),
+  'brush': IconPickerIcon(
+      name: 'brush',
+      data: FontAwesomeIcons.brush,
+      pack: IconPack.fontAwesomeIcons),
+  'btc': IconPickerIcon(
+      name: 'btc', data: FontAwesomeIcons.btc, pack: IconPack.fontAwesomeIcons),
+  'bucket': IconPickerIcon(
+      name: 'bucket',
+      data: FontAwesomeIcons.bucket,
+      pack: IconPack.fontAwesomeIcons),
+  'buffer': IconPickerIcon(
+      name: 'buffer',
+      data: FontAwesomeIcons.buffer,
+      pack: IconPack.fontAwesomeIcons),
+  'bug': IconPickerIcon(
+      name: 'bug', data: FontAwesomeIcons.bug, pack: IconPack.fontAwesomeIcons),
+  'bugSlash': IconPickerIcon(
+      name: 'bugSlash',
+      data: FontAwesomeIcons.bugSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'bugs': IconPickerIcon(
+      name: 'bugs',
+      data: FontAwesomeIcons.bugs,
+      pack: IconPack.fontAwesomeIcons),
+  'solidBuilding': IconPickerIcon(
+      name: 'solidBuilding',
+      data: FontAwesomeIcons.solidBuilding,
+      pack: IconPack.fontAwesomeIcons),
+  'building': IconPickerIcon(
+      name: 'building',
+      data: FontAwesomeIcons.building,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingCircleArrowRight': IconPickerIcon(
+      name: 'buildingCircleArrowRight',
+      data: FontAwesomeIcons.buildingCircleArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingCircleCheck': IconPickerIcon(
+      name: 'buildingCircleCheck',
+      data: FontAwesomeIcons.buildingCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingCircleExclamation': IconPickerIcon(
+      name: 'buildingCircleExclamation',
+      data: FontAwesomeIcons.buildingCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingCircleXmark': IconPickerIcon(
+      name: 'buildingCircleXmark',
+      data: FontAwesomeIcons.buildingCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingColumns': IconPickerIcon(
+      name: 'buildingColumns',
+      data: FontAwesomeIcons.buildingColumns,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingFlag': IconPickerIcon(
+      name: 'buildingFlag',
+      data: FontAwesomeIcons.buildingFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingLock': IconPickerIcon(
+      name: 'buildingLock',
+      data: FontAwesomeIcons.buildingLock,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingNgo': IconPickerIcon(
+      name: 'buildingNgo',
+      data: FontAwesomeIcons.buildingNgo,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingShield': IconPickerIcon(
+      name: 'buildingShield',
+      data: FontAwesomeIcons.buildingShield,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingUn': IconPickerIcon(
+      name: 'buildingUn',
+      data: FontAwesomeIcons.buildingUn,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingUser': IconPickerIcon(
+      name: 'buildingUser',
+      data: FontAwesomeIcons.buildingUser,
+      pack: IconPack.fontAwesomeIcons),
+  'buildingWheat': IconPickerIcon(
+      name: 'buildingWheat',
+      data: FontAwesomeIcons.buildingWheat,
+      pack: IconPack.fontAwesomeIcons),
+  'bullhorn': IconPickerIcon(
+      name: 'bullhorn',
+      data: FontAwesomeIcons.bullhorn,
+      pack: IconPack.fontAwesomeIcons),
+  'bullseye': IconPickerIcon(
+      name: 'bullseye',
+      data: FontAwesomeIcons.bullseye,
+      pack: IconPack.fontAwesomeIcons),
+  'burger': IconPickerIcon(
+      name: 'burger',
+      data: FontAwesomeIcons.burger,
+      pack: IconPack.fontAwesomeIcons),
+  'buromobelexperte': IconPickerIcon(
+      name: 'buromobelexperte',
+      data: FontAwesomeIcons.buromobelexperte,
+      pack: IconPack.fontAwesomeIcons),
+  'burst': IconPickerIcon(
+      name: 'burst',
+      data: FontAwesomeIcons.burst,
+      pack: IconPack.fontAwesomeIcons),
+  'bus': IconPickerIcon(
+      name: 'bus', data: FontAwesomeIcons.bus, pack: IconPack.fontAwesomeIcons),
+  'busSimple': IconPickerIcon(
+      name: 'busSimple',
+      data: FontAwesomeIcons.busSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'businessTime': IconPickerIcon(
+      name: 'businessTime',
+      data: FontAwesomeIcons.businessTime,
+      pack: IconPack.fontAwesomeIcons),
+  'buyNLarge': IconPickerIcon(
+      name: 'buyNLarge',
+      data: FontAwesomeIcons.buyNLarge,
+      pack: IconPack.fontAwesomeIcons),
+  'buysellads': IconPickerIcon(
+      name: 'buysellads',
+      data: FontAwesomeIcons.buysellads,
+      pack: IconPack.fontAwesomeIcons),
+  'c': IconPickerIcon(
+      name: 'c', data: FontAwesomeIcons.c, pack: IconPack.fontAwesomeIcons),
+  'cableCar': IconPickerIcon(
+      name: 'cableCar',
+      data: FontAwesomeIcons.cableCar,
+      pack: IconPack.fontAwesomeIcons),
+  'cakeCandles': IconPickerIcon(
+      name: 'cakeCandles',
+      data: FontAwesomeIcons.cakeCandles,
+      pack: IconPack.fontAwesomeIcons),
+  'calculator': IconPickerIcon(
+      name: 'calculator',
+      data: FontAwesomeIcons.calculator,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendar': IconPickerIcon(
+      name: 'solidCalendar',
+      data: FontAwesomeIcons.solidCalendar,
+      pack: IconPack.fontAwesomeIcons),
+  'calendar': IconPickerIcon(
+      name: 'calendar',
+      data: FontAwesomeIcons.calendar,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendarCheck': IconPickerIcon(
+      name: 'solidCalendarCheck',
+      data: FontAwesomeIcons.solidCalendarCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarCheck': IconPickerIcon(
+      name: 'calendarCheck',
+      data: FontAwesomeIcons.calendarCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarDay': IconPickerIcon(
+      name: 'calendarDay',
+      data: FontAwesomeIcons.calendarDay,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendarDays': IconPickerIcon(
+      name: 'solidCalendarDays',
+      data: FontAwesomeIcons.solidCalendarDays,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarDays': IconPickerIcon(
+      name: 'calendarDays',
+      data: FontAwesomeIcons.calendarDays,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendarMinus': IconPickerIcon(
+      name: 'solidCalendarMinus',
+      data: FontAwesomeIcons.solidCalendarMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarMinus': IconPickerIcon(
+      name: 'calendarMinus',
+      data: FontAwesomeIcons.calendarMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendarPlus': IconPickerIcon(
+      name: 'solidCalendarPlus',
+      data: FontAwesomeIcons.solidCalendarPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarPlus': IconPickerIcon(
+      name: 'calendarPlus',
+      data: FontAwesomeIcons.calendarPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarWeek': IconPickerIcon(
+      name: 'calendarWeek',
+      data: FontAwesomeIcons.calendarWeek,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCalendarXmark': IconPickerIcon(
+      name: 'solidCalendarXmark',
+      data: FontAwesomeIcons.solidCalendarXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'calendarXmark': IconPickerIcon(
+      name: 'calendarXmark',
+      data: FontAwesomeIcons.calendarXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'camera': IconPickerIcon(
+      name: 'camera',
+      data: FontAwesomeIcons.camera,
+      pack: IconPack.fontAwesomeIcons),
+  'cameraRetro': IconPickerIcon(
+      name: 'cameraRetro',
+      data: FontAwesomeIcons.cameraRetro,
+      pack: IconPack.fontAwesomeIcons),
+  'cameraRotate': IconPickerIcon(
+      name: 'cameraRotate',
+      data: FontAwesomeIcons.cameraRotate,
+      pack: IconPack.fontAwesomeIcons),
+  'campground': IconPickerIcon(
+      name: 'campground',
+      data: FontAwesomeIcons.campground,
+      pack: IconPack.fontAwesomeIcons),
+  'canadianMapleLeaf': IconPickerIcon(
+      name: 'canadianMapleLeaf',
+      data: FontAwesomeIcons.canadianMapleLeaf,
+      pack: IconPack.fontAwesomeIcons),
+  'candyCane': IconPickerIcon(
+      name: 'candyCane',
+      data: FontAwesomeIcons.candyCane,
+      pack: IconPack.fontAwesomeIcons),
+  'cannabis': IconPickerIcon(
+      name: 'cannabis',
+      data: FontAwesomeIcons.cannabis,
+      pack: IconPack.fontAwesomeIcons),
+  'capsules': IconPickerIcon(
+      name: 'capsules',
+      data: FontAwesomeIcons.capsules,
+      pack: IconPack.fontAwesomeIcons),
+  'car': IconPickerIcon(
+      name: 'car', data: FontAwesomeIcons.car, pack: IconPack.fontAwesomeIcons),
+  'carBattery': IconPickerIcon(
+      name: 'carBattery',
+      data: FontAwesomeIcons.carBattery,
+      pack: IconPack.fontAwesomeIcons),
+  'carBurst': IconPickerIcon(
+      name: 'carBurst',
+      data: FontAwesomeIcons.carBurst,
+      pack: IconPack.fontAwesomeIcons),
+  'carOn': IconPickerIcon(
+      name: 'carOn',
+      data: FontAwesomeIcons.carOn,
+      pack: IconPack.fontAwesomeIcons),
+  'carRear': IconPickerIcon(
+      name: 'carRear',
+      data: FontAwesomeIcons.carRear,
+      pack: IconPack.fontAwesomeIcons),
+  'carSide': IconPickerIcon(
+      name: 'carSide',
+      data: FontAwesomeIcons.carSide,
+      pack: IconPack.fontAwesomeIcons),
+  'carTunnel': IconPickerIcon(
+      name: 'carTunnel',
+      data: FontAwesomeIcons.carTunnel,
+      pack: IconPack.fontAwesomeIcons),
+  'caravan': IconPickerIcon(
+      name: 'caravan',
+      data: FontAwesomeIcons.caravan,
+      pack: IconPack.fontAwesomeIcons),
+  'caretDown': IconPickerIcon(
+      name: 'caretDown',
+      data: FontAwesomeIcons.caretDown,
+      pack: IconPack.fontAwesomeIcons),
+  'caretLeft': IconPickerIcon(
+      name: 'caretLeft',
+      data: FontAwesomeIcons.caretLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'caretRight': IconPickerIcon(
+      name: 'caretRight',
+      data: FontAwesomeIcons.caretRight,
+      pack: IconPack.fontAwesomeIcons),
+  'caretUp': IconPickerIcon(
+      name: 'caretUp',
+      data: FontAwesomeIcons.caretUp,
+      pack: IconPack.fontAwesomeIcons),
+  'carrot': IconPickerIcon(
+      name: 'carrot',
+      data: FontAwesomeIcons.carrot,
+      pack: IconPack.fontAwesomeIcons),
+  'cartArrowDown': IconPickerIcon(
+      name: 'cartArrowDown',
+      data: FontAwesomeIcons.cartArrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'cartFlatbed': IconPickerIcon(
+      name: 'cartFlatbed',
+      data: FontAwesomeIcons.cartFlatbed,
+      pack: IconPack.fontAwesomeIcons),
+  'cartFlatbedSuitcase': IconPickerIcon(
+      name: 'cartFlatbedSuitcase',
+      data: FontAwesomeIcons.cartFlatbedSuitcase,
+      pack: IconPack.fontAwesomeIcons),
+  'cartPlus': IconPickerIcon(
+      name: 'cartPlus',
+      data: FontAwesomeIcons.cartPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'cartShopping': IconPickerIcon(
+      name: 'cartShopping',
+      data: FontAwesomeIcons.cartShopping,
+      pack: IconPack.fontAwesomeIcons),
+  'cashRegister': IconPickerIcon(
+      name: 'cashRegister',
+      data: FontAwesomeIcons.cashRegister,
+      pack: IconPack.fontAwesomeIcons),
+  'cat': IconPickerIcon(
+      name: 'cat', data: FontAwesomeIcons.cat, pack: IconPack.fontAwesomeIcons),
+  'ccAmazonPay': IconPickerIcon(
+      name: 'ccAmazonPay',
+      data: FontAwesomeIcons.ccAmazonPay,
+      pack: IconPack.fontAwesomeIcons),
+  'ccAmex': IconPickerIcon(
+      name: 'ccAmex',
+      data: FontAwesomeIcons.ccAmex,
+      pack: IconPack.fontAwesomeIcons),
+  'ccApplePay': IconPickerIcon(
+      name: 'ccApplePay',
+      data: FontAwesomeIcons.ccApplePay,
+      pack: IconPack.fontAwesomeIcons),
+  'ccDinersClub': IconPickerIcon(
+      name: 'ccDinersClub',
+      data: FontAwesomeIcons.ccDinersClub,
+      pack: IconPack.fontAwesomeIcons),
+  'ccDiscover': IconPickerIcon(
+      name: 'ccDiscover',
+      data: FontAwesomeIcons.ccDiscover,
+      pack: IconPack.fontAwesomeIcons),
+  'ccJcb': IconPickerIcon(
+      name: 'ccJcb',
+      data: FontAwesomeIcons.ccJcb,
+      pack: IconPack.fontAwesomeIcons),
+  'ccMastercard': IconPickerIcon(
+      name: 'ccMastercard',
+      data: FontAwesomeIcons.ccMastercard,
+      pack: IconPack.fontAwesomeIcons),
+  'ccPaypal': IconPickerIcon(
+      name: 'ccPaypal',
+      data: FontAwesomeIcons.ccPaypal,
+      pack: IconPack.fontAwesomeIcons),
+  'ccStripe': IconPickerIcon(
+      name: 'ccStripe',
+      data: FontAwesomeIcons.ccStripe,
+      pack: IconPack.fontAwesomeIcons),
+  'ccVisa': IconPickerIcon(
+      name: 'ccVisa',
+      data: FontAwesomeIcons.ccVisa,
+      pack: IconPack.fontAwesomeIcons),
+  'cediSign': IconPickerIcon(
+      name: 'cediSign',
+      data: FontAwesomeIcons.cediSign,
+      pack: IconPack.fontAwesomeIcons),
+  'centSign': IconPickerIcon(
+      name: 'centSign',
+      data: FontAwesomeIcons.centSign,
+      pack: IconPack.fontAwesomeIcons),
+  'centercode': IconPickerIcon(
+      name: 'centercode',
+      data: FontAwesomeIcons.centercode,
+      pack: IconPack.fontAwesomeIcons),
+  'centos': IconPickerIcon(
+      name: 'centos',
+      data: FontAwesomeIcons.centos,
+      pack: IconPack.fontAwesomeIcons),
+  'certificate': IconPickerIcon(
+      name: 'certificate',
+      data: FontAwesomeIcons.certificate,
+      pack: IconPack.fontAwesomeIcons),
+  'chair': IconPickerIcon(
+      name: 'chair',
+      data: FontAwesomeIcons.chair,
+      pack: IconPack.fontAwesomeIcons),
+  'chalkboard': IconPickerIcon(
+      name: 'chalkboard',
+      data: FontAwesomeIcons.chalkboard,
+      pack: IconPack.fontAwesomeIcons),
+  'chalkboardUser': IconPickerIcon(
+      name: 'chalkboardUser',
+      data: FontAwesomeIcons.chalkboardUser,
+      pack: IconPack.fontAwesomeIcons),
+  'champagneGlasses': IconPickerIcon(
+      name: 'champagneGlasses',
+      data: FontAwesomeIcons.champagneGlasses,
+      pack: IconPack.fontAwesomeIcons),
+  'chargingStation': IconPickerIcon(
+      name: 'chargingStation',
+      data: FontAwesomeIcons.chargingStation,
+      pack: IconPack.fontAwesomeIcons),
+  'chartArea': IconPickerIcon(
+      name: 'chartArea',
+      data: FontAwesomeIcons.chartArea,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChartBar': IconPickerIcon(
+      name: 'solidChartBar',
+      data: FontAwesomeIcons.solidChartBar,
+      pack: IconPack.fontAwesomeIcons),
+  'chartBar': IconPickerIcon(
+      name: 'chartBar',
+      data: FontAwesomeIcons.chartBar,
+      pack: IconPack.fontAwesomeIcons),
+  'chartColumn': IconPickerIcon(
+      name: 'chartColumn',
+      data: FontAwesomeIcons.chartColumn,
+      pack: IconPack.fontAwesomeIcons),
+  'chartGantt': IconPickerIcon(
+      name: 'chartGantt',
+      data: FontAwesomeIcons.chartGantt,
+      pack: IconPack.fontAwesomeIcons),
+  'chartLine': IconPickerIcon(
+      name: 'chartLine',
+      data: FontAwesomeIcons.chartLine,
+      pack: IconPack.fontAwesomeIcons),
+  'chartPie': IconPickerIcon(
+      name: 'chartPie',
+      data: FontAwesomeIcons.chartPie,
+      pack: IconPack.fontAwesomeIcons),
+  'chartSimple': IconPickerIcon(
+      name: 'chartSimple',
+      data: FontAwesomeIcons.chartSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'check': IconPickerIcon(
+      name: 'check',
+      data: FontAwesomeIcons.check,
+      pack: IconPack.fontAwesomeIcons),
+  'checkDouble': IconPickerIcon(
+      name: 'checkDouble',
+      data: FontAwesomeIcons.checkDouble,
+      pack: IconPack.fontAwesomeIcons),
+  'checkToSlot': IconPickerIcon(
+      name: 'checkToSlot',
+      data: FontAwesomeIcons.checkToSlot,
+      pack: IconPack.fontAwesomeIcons),
+  'cheese': IconPickerIcon(
+      name: 'cheese',
+      data: FontAwesomeIcons.cheese,
+      pack: IconPack.fontAwesomeIcons),
+  'chess': IconPickerIcon(
+      name: 'chess',
+      data: FontAwesomeIcons.chess,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessBishop': IconPickerIcon(
+      name: 'solidChessBishop',
+      data: FontAwesomeIcons.solidChessBishop,
+      pack: IconPack.fontAwesomeIcons),
+  'chessBishop': IconPickerIcon(
+      name: 'chessBishop',
+      data: FontAwesomeIcons.chessBishop,
+      pack: IconPack.fontAwesomeIcons),
+  'chessBoard': IconPickerIcon(
+      name: 'chessBoard',
+      data: FontAwesomeIcons.chessBoard,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessKing': IconPickerIcon(
+      name: 'solidChessKing',
+      data: FontAwesomeIcons.solidChessKing,
+      pack: IconPack.fontAwesomeIcons),
+  'chessKing': IconPickerIcon(
+      name: 'chessKing',
+      data: FontAwesomeIcons.chessKing,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessKnight': IconPickerIcon(
+      name: 'solidChessKnight',
+      data: FontAwesomeIcons.solidChessKnight,
+      pack: IconPack.fontAwesomeIcons),
+  'chessKnight': IconPickerIcon(
+      name: 'chessKnight',
+      data: FontAwesomeIcons.chessKnight,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessPawn': IconPickerIcon(
+      name: 'solidChessPawn',
+      data: FontAwesomeIcons.solidChessPawn,
+      pack: IconPack.fontAwesomeIcons),
+  'chessPawn': IconPickerIcon(
+      name: 'chessPawn',
+      data: FontAwesomeIcons.chessPawn,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessQueen': IconPickerIcon(
+      name: 'solidChessQueen',
+      data: FontAwesomeIcons.solidChessQueen,
+      pack: IconPack.fontAwesomeIcons),
+  'chessQueen': IconPickerIcon(
+      name: 'chessQueen',
+      data: FontAwesomeIcons.chessQueen,
+      pack: IconPack.fontAwesomeIcons),
+  'solidChessRook': IconPickerIcon(
+      name: 'solidChessRook',
+      data: FontAwesomeIcons.solidChessRook,
+      pack: IconPack.fontAwesomeIcons),
+  'chessRook': IconPickerIcon(
+      name: 'chessRook',
+      data: FontAwesomeIcons.chessRook,
+      pack: IconPack.fontAwesomeIcons),
+  'chevronDown': IconPickerIcon(
+      name: 'chevronDown',
+      data: FontAwesomeIcons.chevronDown,
+      pack: IconPack.fontAwesomeIcons),
+  'chevronLeft': IconPickerIcon(
+      name: 'chevronLeft',
+      data: FontAwesomeIcons.chevronLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'chevronRight': IconPickerIcon(
+      name: 'chevronRight',
+      data: FontAwesomeIcons.chevronRight,
+      pack: IconPack.fontAwesomeIcons),
+  'chevronUp': IconPickerIcon(
+      name: 'chevronUp',
+      data: FontAwesomeIcons.chevronUp,
+      pack: IconPack.fontAwesomeIcons),
+  'child': IconPickerIcon(
+      name: 'child',
+      data: FontAwesomeIcons.child,
+      pack: IconPack.fontAwesomeIcons),
+  'childDress': IconPickerIcon(
+      name: 'childDress',
+      data: FontAwesomeIcons.childDress,
+      pack: IconPack.fontAwesomeIcons),
+  'childReaching': IconPickerIcon(
+      name: 'childReaching',
+      data: FontAwesomeIcons.childReaching,
+      pack: IconPack.fontAwesomeIcons),
+  'children': IconPickerIcon(
+      name: 'children',
+      data: FontAwesomeIcons.children,
+      pack: IconPack.fontAwesomeIcons),
+  'chrome': IconPickerIcon(
+      name: 'chrome',
+      data: FontAwesomeIcons.chrome,
+      pack: IconPack.fontAwesomeIcons),
+  'chromecast': IconPickerIcon(
+      name: 'chromecast',
+      data: FontAwesomeIcons.chromecast,
+      pack: IconPack.fontAwesomeIcons),
+  'church': IconPickerIcon(
+      name: 'church',
+      data: FontAwesomeIcons.church,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircle': IconPickerIcon(
+      name: 'solidCircle',
+      data: FontAwesomeIcons.solidCircle,
+      pack: IconPack.fontAwesomeIcons),
+  'circle': IconPickerIcon(
+      name: 'circle',
+      data: FontAwesomeIcons.circle,
+      pack: IconPack.fontAwesomeIcons),
+  'circleArrowDown': IconPickerIcon(
+      name: 'circleArrowDown',
+      data: FontAwesomeIcons.circleArrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'circleArrowLeft': IconPickerIcon(
+      name: 'circleArrowLeft',
+      data: FontAwesomeIcons.circleArrowLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'circleArrowRight': IconPickerIcon(
+      name: 'circleArrowRight',
+      data: FontAwesomeIcons.circleArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'circleArrowUp': IconPickerIcon(
+      name: 'circleArrowUp',
+      data: FontAwesomeIcons.circleArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleCheck': IconPickerIcon(
+      name: 'solidCircleCheck',
+      data: FontAwesomeIcons.solidCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'circleCheck': IconPickerIcon(
+      name: 'circleCheck',
+      data: FontAwesomeIcons.circleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'circleChevronDown': IconPickerIcon(
+      name: 'circleChevronDown',
+      data: FontAwesomeIcons.circleChevronDown,
+      pack: IconPack.fontAwesomeIcons),
+  'circleChevronLeft': IconPickerIcon(
+      name: 'circleChevronLeft',
+      data: FontAwesomeIcons.circleChevronLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'circleChevronRight': IconPickerIcon(
+      name: 'circleChevronRight',
+      data: FontAwesomeIcons.circleChevronRight,
+      pack: IconPack.fontAwesomeIcons),
+  'circleChevronUp': IconPickerIcon(
+      name: 'circleChevronUp',
+      data: FontAwesomeIcons.circleChevronUp,
+      pack: IconPack.fontAwesomeIcons),
+  'circleDollarToSlot': IconPickerIcon(
+      name: 'circleDollarToSlot',
+      data: FontAwesomeIcons.circleDollarToSlot,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleDot': IconPickerIcon(
+      name: 'solidCircleDot',
+      data: FontAwesomeIcons.solidCircleDot,
+      pack: IconPack.fontAwesomeIcons),
+  'circleDot': IconPickerIcon(
+      name: 'circleDot',
+      data: FontAwesomeIcons.circleDot,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleDown': IconPickerIcon(
+      name: 'solidCircleDown',
+      data: FontAwesomeIcons.solidCircleDown,
+      pack: IconPack.fontAwesomeIcons),
+  'circleDown': IconPickerIcon(
+      name: 'circleDown',
+      data: FontAwesomeIcons.circleDown,
+      pack: IconPack.fontAwesomeIcons),
+  'circleExclamation': IconPickerIcon(
+      name: 'circleExclamation',
+      data: FontAwesomeIcons.circleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'circleH': IconPickerIcon(
+      name: 'circleH',
+      data: FontAwesomeIcons.circleH,
+      pack: IconPack.fontAwesomeIcons),
+  'circleHalfStroke': IconPickerIcon(
+      name: 'circleHalfStroke',
+      data: FontAwesomeIcons.circleHalfStroke,
+      pack: IconPack.fontAwesomeIcons),
+  'circleInfo': IconPickerIcon(
+      name: 'circleInfo',
+      data: FontAwesomeIcons.circleInfo,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleLeft': IconPickerIcon(
+      name: 'solidCircleLeft',
+      data: FontAwesomeIcons.solidCircleLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'circleLeft': IconPickerIcon(
+      name: 'circleLeft',
+      data: FontAwesomeIcons.circleLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'circleMinus': IconPickerIcon(
+      name: 'circleMinus',
+      data: FontAwesomeIcons.circleMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'circleNodes': IconPickerIcon(
+      name: 'circleNodes',
+      data: FontAwesomeIcons.circleNodes,
+      pack: IconPack.fontAwesomeIcons),
+  'circleNotch': IconPickerIcon(
+      name: 'circleNotch',
+      data: FontAwesomeIcons.circleNotch,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCirclePause': IconPickerIcon(
+      name: 'solidCirclePause',
+      data: FontAwesomeIcons.solidCirclePause,
+      pack: IconPack.fontAwesomeIcons),
+  'circlePause': IconPickerIcon(
+      name: 'circlePause',
+      data: FontAwesomeIcons.circlePause,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCirclePlay': IconPickerIcon(
+      name: 'solidCirclePlay',
+      data: FontAwesomeIcons.solidCirclePlay,
+      pack: IconPack.fontAwesomeIcons),
+  'circlePlay': IconPickerIcon(
+      name: 'circlePlay',
+      data: FontAwesomeIcons.circlePlay,
+      pack: IconPack.fontAwesomeIcons),
+  'circlePlus': IconPickerIcon(
+      name: 'circlePlus',
+      data: FontAwesomeIcons.circlePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleQuestion': IconPickerIcon(
+      name: 'solidCircleQuestion',
+      data: FontAwesomeIcons.solidCircleQuestion,
+      pack: IconPack.fontAwesomeIcons),
+  'circleQuestion': IconPickerIcon(
+      name: 'circleQuestion',
+      data: FontAwesomeIcons.circleQuestion,
+      pack: IconPack.fontAwesomeIcons),
+  'circleRadiation': IconPickerIcon(
+      name: 'circleRadiation',
+      data: FontAwesomeIcons.circleRadiation,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleRight': IconPickerIcon(
+      name: 'solidCircleRight',
+      data: FontAwesomeIcons.solidCircleRight,
+      pack: IconPack.fontAwesomeIcons),
+  'circleRight': IconPickerIcon(
+      name: 'circleRight',
+      data: FontAwesomeIcons.circleRight,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleStop': IconPickerIcon(
+      name: 'solidCircleStop',
+      data: FontAwesomeIcons.solidCircleStop,
+      pack: IconPack.fontAwesomeIcons),
+  'circleStop': IconPickerIcon(
+      name: 'circleStop',
+      data: FontAwesomeIcons.circleStop,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleUp': IconPickerIcon(
+      name: 'solidCircleUp',
+      data: FontAwesomeIcons.solidCircleUp,
+      pack: IconPack.fontAwesomeIcons),
+  'circleUp': IconPickerIcon(
+      name: 'circleUp',
+      data: FontAwesomeIcons.circleUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleUser': IconPickerIcon(
+      name: 'solidCircleUser',
+      data: FontAwesomeIcons.solidCircleUser,
+      pack: IconPack.fontAwesomeIcons),
+  'circleUser': IconPickerIcon(
+      name: 'circleUser',
+      data: FontAwesomeIcons.circleUser,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCircleXmark': IconPickerIcon(
+      name: 'solidCircleXmark',
+      data: FontAwesomeIcons.solidCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'circleXmark': IconPickerIcon(
+      name: 'circleXmark',
+      data: FontAwesomeIcons.circleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'city': IconPickerIcon(
+      name: 'city',
+      data: FontAwesomeIcons.city,
+      pack: IconPack.fontAwesomeIcons),
+  'clapperboard': IconPickerIcon(
+      name: 'clapperboard',
+      data: FontAwesomeIcons.clapperboard,
+      pack: IconPack.fontAwesomeIcons),
+  'solidClipboard': IconPickerIcon(
+      name: 'solidClipboard',
+      data: FontAwesomeIcons.solidClipboard,
+      pack: IconPack.fontAwesomeIcons),
+  'clipboard': IconPickerIcon(
+      name: 'clipboard',
+      data: FontAwesomeIcons.clipboard,
+      pack: IconPack.fontAwesomeIcons),
+  'clipboardCheck': IconPickerIcon(
+      name: 'clipboardCheck',
+      data: FontAwesomeIcons.clipboardCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'clipboardList': IconPickerIcon(
+      name: 'clipboardList',
+      data: FontAwesomeIcons.clipboardList,
+      pack: IconPack.fontAwesomeIcons),
+  'clipboardQuestion': IconPickerIcon(
+      name: 'clipboardQuestion',
+      data: FontAwesomeIcons.clipboardQuestion,
+      pack: IconPack.fontAwesomeIcons),
+  'clipboardUser': IconPickerIcon(
+      name: 'clipboardUser',
+      data: FontAwesomeIcons.clipboardUser,
+      pack: IconPack.fontAwesomeIcons),
+  'solidClock': IconPickerIcon(
+      name: 'solidClock',
+      data: FontAwesomeIcons.solidClock,
+      pack: IconPack.fontAwesomeIcons),
+  'clock': IconPickerIcon(
+      name: 'clock',
+      data: FontAwesomeIcons.clock,
+      pack: IconPack.fontAwesomeIcons),
+  'clockRotateLeft': IconPickerIcon(
+      name: 'clockRotateLeft',
+      data: FontAwesomeIcons.clockRotateLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'solidClone': IconPickerIcon(
+      name: 'solidClone',
+      data: FontAwesomeIcons.solidClone,
+      pack: IconPack.fontAwesomeIcons),
+  'clone': IconPickerIcon(
+      name: 'clone',
+      data: FontAwesomeIcons.clone,
+      pack: IconPack.fontAwesomeIcons),
+  'solidClosedCaptioning': IconPickerIcon(
+      name: 'solidClosedCaptioning',
+      data: FontAwesomeIcons.solidClosedCaptioning,
+      pack: IconPack.fontAwesomeIcons),
+  'closedCaptioning': IconPickerIcon(
+      name: 'closedCaptioning',
+      data: FontAwesomeIcons.closedCaptioning,
+      pack: IconPack.fontAwesomeIcons),
+  'cloud': IconPickerIcon(
+      name: 'cloud',
+      data: FontAwesomeIcons.cloud,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudArrowDown': IconPickerIcon(
+      name: 'cloudArrowDown',
+      data: FontAwesomeIcons.cloudArrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudArrowUp': IconPickerIcon(
+      name: 'cloudArrowUp',
+      data: FontAwesomeIcons.cloudArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudBolt': IconPickerIcon(
+      name: 'cloudBolt',
+      data: FontAwesomeIcons.cloudBolt,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudMeatball': IconPickerIcon(
+      name: 'cloudMeatball',
+      data: FontAwesomeIcons.cloudMeatball,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudMoon': IconPickerIcon(
+      name: 'cloudMoon',
+      data: FontAwesomeIcons.cloudMoon,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudMoonRain': IconPickerIcon(
+      name: 'cloudMoonRain',
+      data: FontAwesomeIcons.cloudMoonRain,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudRain': IconPickerIcon(
+      name: 'cloudRain',
+      data: FontAwesomeIcons.cloudRain,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudShowersHeavy': IconPickerIcon(
+      name: 'cloudShowersHeavy',
+      data: FontAwesomeIcons.cloudShowersHeavy,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudShowersWater': IconPickerIcon(
+      name: 'cloudShowersWater',
+      data: FontAwesomeIcons.cloudShowersWater,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudSun': IconPickerIcon(
+      name: 'cloudSun',
+      data: FontAwesomeIcons.cloudSun,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudSunRain': IconPickerIcon(
+      name: 'cloudSunRain',
+      data: FontAwesomeIcons.cloudSunRain,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudflare': IconPickerIcon(
+      name: 'cloudflare',
+      data: FontAwesomeIcons.cloudflare,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudscale': IconPickerIcon(
+      name: 'cloudscale',
+      data: FontAwesomeIcons.cloudscale,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudsmith': IconPickerIcon(
+      name: 'cloudsmith',
+      data: FontAwesomeIcons.cloudsmith,
+      pack: IconPack.fontAwesomeIcons),
+  'cloudversify': IconPickerIcon(
+      name: 'cloudversify',
+      data: FontAwesomeIcons.cloudversify,
+      pack: IconPack.fontAwesomeIcons),
+  'clover': IconPickerIcon(
+      name: 'clover',
+      data: FontAwesomeIcons.clover,
+      pack: IconPack.fontAwesomeIcons),
+  'cmplid': IconPickerIcon(
+      name: 'cmplid',
+      data: FontAwesomeIcons.cmplid,
+      pack: IconPack.fontAwesomeIcons),
+  'code': IconPickerIcon(
+      name: 'code',
+      data: FontAwesomeIcons.code,
+      pack: IconPack.fontAwesomeIcons),
+  'codeBranch': IconPickerIcon(
+      name: 'codeBranch',
+      data: FontAwesomeIcons.codeBranch,
+      pack: IconPack.fontAwesomeIcons),
+  'codeCommit': IconPickerIcon(
+      name: 'codeCommit',
+      data: FontAwesomeIcons.codeCommit,
+      pack: IconPack.fontAwesomeIcons),
+  'codeCompare': IconPickerIcon(
+      name: 'codeCompare',
+      data: FontAwesomeIcons.codeCompare,
+      pack: IconPack.fontAwesomeIcons),
+  'codeFork': IconPickerIcon(
+      name: 'codeFork',
+      data: FontAwesomeIcons.codeFork,
+      pack: IconPack.fontAwesomeIcons),
+  'codeMerge': IconPickerIcon(
+      name: 'codeMerge',
+      data: FontAwesomeIcons.codeMerge,
+      pack: IconPack.fontAwesomeIcons),
+  'codePullRequest': IconPickerIcon(
+      name: 'codePullRequest',
+      data: FontAwesomeIcons.codePullRequest,
+      pack: IconPack.fontAwesomeIcons),
+  'codepen': IconPickerIcon(
+      name: 'codepen',
+      data: FontAwesomeIcons.codepen,
+      pack: IconPack.fontAwesomeIcons),
+  'codiepie': IconPickerIcon(
+      name: 'codiepie',
+      data: FontAwesomeIcons.codiepie,
+      pack: IconPack.fontAwesomeIcons),
+  'coins': IconPickerIcon(
+      name: 'coins',
+      data: FontAwesomeIcons.coins,
+      pack: IconPack.fontAwesomeIcons),
+  'colonSign': IconPickerIcon(
+      name: 'colonSign',
+      data: FontAwesomeIcons.colonSign,
+      pack: IconPack.fontAwesomeIcons),
+  'solidComment': IconPickerIcon(
+      name: 'solidComment',
+      data: FontAwesomeIcons.solidComment,
+      pack: IconPack.fontAwesomeIcons),
+  'comment': IconPickerIcon(
+      name: 'comment',
+      data: FontAwesomeIcons.comment,
+      pack: IconPack.fontAwesomeIcons),
+  'commentDollar': IconPickerIcon(
+      name: 'commentDollar',
+      data: FontAwesomeIcons.commentDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCommentDots': IconPickerIcon(
+      name: 'solidCommentDots',
+      data: FontAwesomeIcons.solidCommentDots,
+      pack: IconPack.fontAwesomeIcons),
+  'commentDots': IconPickerIcon(
+      name: 'commentDots',
+      data: FontAwesomeIcons.commentDots,
+      pack: IconPack.fontAwesomeIcons),
+  'commentMedical': IconPickerIcon(
+      name: 'commentMedical',
+      data: FontAwesomeIcons.commentMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'commentSlash': IconPickerIcon(
+      name: 'commentSlash',
+      data: FontAwesomeIcons.commentSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'commentSms': IconPickerIcon(
+      name: 'commentSms',
+      data: FontAwesomeIcons.commentSms,
+      pack: IconPack.fontAwesomeIcons),
+  'solidComments': IconPickerIcon(
+      name: 'solidComments',
+      data: FontAwesomeIcons.solidComments,
+      pack: IconPack.fontAwesomeIcons),
+  'comments': IconPickerIcon(
+      name: 'comments',
+      data: FontAwesomeIcons.comments,
+      pack: IconPack.fontAwesomeIcons),
+  'commentsDollar': IconPickerIcon(
+      name: 'commentsDollar',
+      data: FontAwesomeIcons.commentsDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'compactDisc': IconPickerIcon(
+      name: 'compactDisc',
+      data: FontAwesomeIcons.compactDisc,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCompass': IconPickerIcon(
+      name: 'solidCompass',
+      data: FontAwesomeIcons.solidCompass,
+      pack: IconPack.fontAwesomeIcons),
+  'compass': IconPickerIcon(
+      name: 'compass',
+      data: FontAwesomeIcons.compass,
+      pack: IconPack.fontAwesomeIcons),
+  'compassDrafting': IconPickerIcon(
+      name: 'compassDrafting',
+      data: FontAwesomeIcons.compassDrafting,
+      pack: IconPack.fontAwesomeIcons),
+  'compress': IconPickerIcon(
+      name: 'compress',
+      data: FontAwesomeIcons.compress,
+      pack: IconPack.fontAwesomeIcons),
+  'computer': IconPickerIcon(
+      name: 'computer',
+      data: FontAwesomeIcons.computer,
+      pack: IconPack.fontAwesomeIcons),
+  'computerMouse': IconPickerIcon(
+      name: 'computerMouse',
+      data: FontAwesomeIcons.computerMouse,
+      pack: IconPack.fontAwesomeIcons),
+  'confluence': IconPickerIcon(
+      name: 'confluence',
+      data: FontAwesomeIcons.confluence,
+      pack: IconPack.fontAwesomeIcons),
+  'connectdevelop': IconPickerIcon(
+      name: 'connectdevelop',
+      data: FontAwesomeIcons.connectdevelop,
+      pack: IconPack.fontAwesomeIcons),
+  'contao': IconPickerIcon(
+      name: 'contao',
+      data: FontAwesomeIcons.contao,
+      pack: IconPack.fontAwesomeIcons),
+  'cookie': IconPickerIcon(
+      name: 'cookie',
+      data: FontAwesomeIcons.cookie,
+      pack: IconPack.fontAwesomeIcons),
+  'cookieBite': IconPickerIcon(
+      name: 'cookieBite',
+      data: FontAwesomeIcons.cookieBite,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCopy': IconPickerIcon(
+      name: 'solidCopy',
+      data: FontAwesomeIcons.solidCopy,
+      pack: IconPack.fontAwesomeIcons),
+  'copy': IconPickerIcon(
+      name: 'copy',
+      data: FontAwesomeIcons.copy,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCopyright': IconPickerIcon(
+      name: 'solidCopyright',
+      data: FontAwesomeIcons.solidCopyright,
+      pack: IconPack.fontAwesomeIcons),
+  'copyright': IconPickerIcon(
+      name: 'copyright',
+      data: FontAwesomeIcons.copyright,
+      pack: IconPack.fontAwesomeIcons),
+  'cottonBureau': IconPickerIcon(
+      name: 'cottonBureau',
+      data: FontAwesomeIcons.cottonBureau,
+      pack: IconPack.fontAwesomeIcons),
+  'couch': IconPickerIcon(
+      name: 'couch',
+      data: FontAwesomeIcons.couch,
+      pack: IconPack.fontAwesomeIcons),
+  'cow': IconPickerIcon(
+      name: 'cow', data: FontAwesomeIcons.cow, pack: IconPack.fontAwesomeIcons),
+  'cpanel': IconPickerIcon(
+      name: 'cpanel',
+      data: FontAwesomeIcons.cpanel,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommons': IconPickerIcon(
+      name: 'creativeCommons',
+      data: FontAwesomeIcons.creativeCommons,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsBy': IconPickerIcon(
+      name: 'creativeCommonsBy',
+      data: FontAwesomeIcons.creativeCommonsBy,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsNc': IconPickerIcon(
+      name: 'creativeCommonsNc',
+      data: FontAwesomeIcons.creativeCommonsNc,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsNcEu': IconPickerIcon(
+      name: 'creativeCommonsNcEu',
+      data: FontAwesomeIcons.creativeCommonsNcEu,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsNcJp': IconPickerIcon(
+      name: 'creativeCommonsNcJp',
+      data: FontAwesomeIcons.creativeCommonsNcJp,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsNd': IconPickerIcon(
+      name: 'creativeCommonsNd',
+      data: FontAwesomeIcons.creativeCommonsNd,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsPd': IconPickerIcon(
+      name: 'creativeCommonsPd',
+      data: FontAwesomeIcons.creativeCommonsPd,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsPdAlt': IconPickerIcon(
+      name: 'creativeCommonsPdAlt',
+      data: FontAwesomeIcons.creativeCommonsPdAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsRemix': IconPickerIcon(
+      name: 'creativeCommonsRemix',
+      data: FontAwesomeIcons.creativeCommonsRemix,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsSa': IconPickerIcon(
+      name: 'creativeCommonsSa',
+      data: FontAwesomeIcons.creativeCommonsSa,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsSampling': IconPickerIcon(
+      name: 'creativeCommonsSampling',
+      data: FontAwesomeIcons.creativeCommonsSampling,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsSamplingPlus': IconPickerIcon(
+      name: 'creativeCommonsSamplingPlus',
+      data: FontAwesomeIcons.creativeCommonsSamplingPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsShare': IconPickerIcon(
+      name: 'creativeCommonsShare',
+      data: FontAwesomeIcons.creativeCommonsShare,
+      pack: IconPack.fontAwesomeIcons),
+  'creativeCommonsZero': IconPickerIcon(
+      name: 'creativeCommonsZero',
+      data: FontAwesomeIcons.creativeCommonsZero,
+      pack: IconPack.fontAwesomeIcons),
+  'solidCreditCard': IconPickerIcon(
+      name: 'solidCreditCard',
+      data: FontAwesomeIcons.solidCreditCard,
+      pack: IconPack.fontAwesomeIcons),
+  'creditCard': IconPickerIcon(
+      name: 'creditCard',
+      data: FontAwesomeIcons.creditCard,
+      pack: IconPack.fontAwesomeIcons),
+  'criticalRole': IconPickerIcon(
+      name: 'criticalRole',
+      data: FontAwesomeIcons.criticalRole,
+      pack: IconPack.fontAwesomeIcons),
+  'crop': IconPickerIcon(
+      name: 'crop',
+      data: FontAwesomeIcons.crop,
+      pack: IconPack.fontAwesomeIcons),
+  'cropSimple': IconPickerIcon(
+      name: 'cropSimple',
+      data: FontAwesomeIcons.cropSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'cross': IconPickerIcon(
+      name: 'cross',
+      data: FontAwesomeIcons.cross,
+      pack: IconPack.fontAwesomeIcons),
+  'crosshairs': IconPickerIcon(
+      name: 'crosshairs',
+      data: FontAwesomeIcons.crosshairs,
+      pack: IconPack.fontAwesomeIcons),
+  'crow': IconPickerIcon(
+      name: 'crow',
+      data: FontAwesomeIcons.crow,
+      pack: IconPack.fontAwesomeIcons),
+  'crown': IconPickerIcon(
+      name: 'crown',
+      data: FontAwesomeIcons.crown,
+      pack: IconPack.fontAwesomeIcons),
+  'crutch': IconPickerIcon(
+      name: 'crutch',
+      data: FontAwesomeIcons.crutch,
+      pack: IconPack.fontAwesomeIcons),
+  'cruzeiroSign': IconPickerIcon(
+      name: 'cruzeiroSign',
+      data: FontAwesomeIcons.cruzeiroSign,
+      pack: IconPack.fontAwesomeIcons),
+  'css3': IconPickerIcon(
+      name: 'css3',
+      data: FontAwesomeIcons.css3,
+      pack: IconPack.fontAwesomeIcons),
+  'css3Alt': IconPickerIcon(
+      name: 'css3Alt',
+      data: FontAwesomeIcons.css3Alt,
+      pack: IconPack.fontAwesomeIcons),
+  'cube': IconPickerIcon(
+      name: 'cube',
+      data: FontAwesomeIcons.cube,
+      pack: IconPack.fontAwesomeIcons),
+  'cubes': IconPickerIcon(
+      name: 'cubes',
+      data: FontAwesomeIcons.cubes,
+      pack: IconPack.fontAwesomeIcons),
+  'cubesStacked': IconPickerIcon(
+      name: 'cubesStacked',
+      data: FontAwesomeIcons.cubesStacked,
+      pack: IconPack.fontAwesomeIcons),
+  'cuttlefish': IconPickerIcon(
+      name: 'cuttlefish',
+      data: FontAwesomeIcons.cuttlefish,
+      pack: IconPack.fontAwesomeIcons),
+  'd': IconPickerIcon(
+      name: 'd', data: FontAwesomeIcons.d, pack: IconPack.fontAwesomeIcons),
+  'dAndD': IconPickerIcon(
+      name: 'dAndD',
+      data: FontAwesomeIcons.dAndD,
+      pack: IconPack.fontAwesomeIcons),
+  'dAndDBeyond': IconPickerIcon(
+      name: 'dAndDBeyond',
+      data: FontAwesomeIcons.dAndDBeyond,
+      pack: IconPack.fontAwesomeIcons),
+  'dailymotion': IconPickerIcon(
+      name: 'dailymotion',
+      data: FontAwesomeIcons.dailymotion,
+      pack: IconPack.fontAwesomeIcons),
+  'dashcube': IconPickerIcon(
+      name: 'dashcube',
+      data: FontAwesomeIcons.dashcube,
+      pack: IconPack.fontAwesomeIcons),
+  'database': IconPickerIcon(
+      name: 'database',
+      data: FontAwesomeIcons.database,
+      pack: IconPack.fontAwesomeIcons),
+  'deezer': IconPickerIcon(
+      name: 'deezer',
+      data: FontAwesomeIcons.deezer,
+      pack: IconPack.fontAwesomeIcons),
+  'deleteLeft': IconPickerIcon(
+      name: 'deleteLeft',
+      data: FontAwesomeIcons.deleteLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'delicious': IconPickerIcon(
+      name: 'delicious',
+      data: FontAwesomeIcons.delicious,
+      pack: IconPack.fontAwesomeIcons),
+  'democrat': IconPickerIcon(
+      name: 'democrat',
+      data: FontAwesomeIcons.democrat,
+      pack: IconPack.fontAwesomeIcons),
+  'deploydog': IconPickerIcon(
+      name: 'deploydog',
+      data: FontAwesomeIcons.deploydog,
+      pack: IconPack.fontAwesomeIcons),
+  'deskpro': IconPickerIcon(
+      name: 'deskpro',
+      data: FontAwesomeIcons.deskpro,
+      pack: IconPack.fontAwesomeIcons),
+  'desktop': IconPickerIcon(
+      name: 'desktop',
+      data: FontAwesomeIcons.desktop,
+      pack: IconPack.fontAwesomeIcons),
+  'dev': IconPickerIcon(
+      name: 'dev', data: FontAwesomeIcons.dev, pack: IconPack.fontAwesomeIcons),
+  'deviantart': IconPickerIcon(
+      name: 'deviantart',
+      data: FontAwesomeIcons.deviantart,
+      pack: IconPack.fontAwesomeIcons),
+  'dharmachakra': IconPickerIcon(
+      name: 'dharmachakra',
+      data: FontAwesomeIcons.dharmachakra,
+      pack: IconPack.fontAwesomeIcons),
+  'dhl': IconPickerIcon(
+      name: 'dhl', data: FontAwesomeIcons.dhl, pack: IconPack.fontAwesomeIcons),
+  'diagramNext': IconPickerIcon(
+      name: 'diagramNext',
+      data: FontAwesomeIcons.diagramNext,
+      pack: IconPack.fontAwesomeIcons),
+  'diagramPredecessor': IconPickerIcon(
+      name: 'diagramPredecessor',
+      data: FontAwesomeIcons.diagramPredecessor,
+      pack: IconPack.fontAwesomeIcons),
+  'diagramProject': IconPickerIcon(
+      name: 'diagramProject',
+      data: FontAwesomeIcons.diagramProject,
+      pack: IconPack.fontAwesomeIcons),
+  'diagramSuccessor': IconPickerIcon(
+      name: 'diagramSuccessor',
+      data: FontAwesomeIcons.diagramSuccessor,
+      pack: IconPack.fontAwesomeIcons),
+  'diamond': IconPickerIcon(
+      name: 'diamond',
+      data: FontAwesomeIcons.diamond,
+      pack: IconPack.fontAwesomeIcons),
+  'diamondTurnRight': IconPickerIcon(
+      name: 'diamondTurnRight',
+      data: FontAwesomeIcons.diamondTurnRight,
+      pack: IconPack.fontAwesomeIcons),
+  'diaspora': IconPickerIcon(
+      name: 'diaspora',
+      data: FontAwesomeIcons.diaspora,
+      pack: IconPack.fontAwesomeIcons),
+  'dice': IconPickerIcon(
+      name: 'dice',
+      data: FontAwesomeIcons.dice,
+      pack: IconPack.fontAwesomeIcons),
+  'diceD20': IconPickerIcon(
+      name: 'diceD20',
+      data: FontAwesomeIcons.diceD20,
+      pack: IconPack.fontAwesomeIcons),
+  'diceD6': IconPickerIcon(
+      name: 'diceD6',
+      data: FontAwesomeIcons.diceD6,
+      pack: IconPack.fontAwesomeIcons),
+  'diceFive': IconPickerIcon(
+      name: 'diceFive',
+      data: FontAwesomeIcons.diceFive,
+      pack: IconPack.fontAwesomeIcons),
+  'diceFour': IconPickerIcon(
+      name: 'diceFour',
+      data: FontAwesomeIcons.diceFour,
+      pack: IconPack.fontAwesomeIcons),
+  'diceOne': IconPickerIcon(
+      name: 'diceOne',
+      data: FontAwesomeIcons.diceOne,
+      pack: IconPack.fontAwesomeIcons),
+  'diceSix': IconPickerIcon(
+      name: 'diceSix',
+      data: FontAwesomeIcons.diceSix,
+      pack: IconPack.fontAwesomeIcons),
+  'diceThree': IconPickerIcon(
+      name: 'diceThree',
+      data: FontAwesomeIcons.diceThree,
+      pack: IconPack.fontAwesomeIcons),
+  'diceTwo': IconPickerIcon(
+      name: 'diceTwo',
+      data: FontAwesomeIcons.diceTwo,
+      pack: IconPack.fontAwesomeIcons),
+  'digg': IconPickerIcon(
+      name: 'digg',
+      data: FontAwesomeIcons.digg,
+      pack: IconPack.fontAwesomeIcons),
+  'digitalOcean': IconPickerIcon(
+      name: 'digitalOcean',
+      data: FontAwesomeIcons.digitalOcean,
+      pack: IconPack.fontAwesomeIcons),
+  'discord': IconPickerIcon(
+      name: 'discord',
+      data: FontAwesomeIcons.discord,
+      pack: IconPack.fontAwesomeIcons),
+  'discourse': IconPickerIcon(
+      name: 'discourse',
+      data: FontAwesomeIcons.discourse,
+      pack: IconPack.fontAwesomeIcons),
+  'disease': IconPickerIcon(
+      name: 'disease',
+      data: FontAwesomeIcons.disease,
+      pack: IconPack.fontAwesomeIcons),
+  'display': IconPickerIcon(
+      name: 'display',
+      data: FontAwesomeIcons.display,
+      pack: IconPack.fontAwesomeIcons),
+  'divide': IconPickerIcon(
+      name: 'divide',
+      data: FontAwesomeIcons.divide,
+      pack: IconPack.fontAwesomeIcons),
+  'dna': IconPickerIcon(
+      name: 'dna', data: FontAwesomeIcons.dna, pack: IconPack.fontAwesomeIcons),
+  'dochub': IconPickerIcon(
+      name: 'dochub',
+      data: FontAwesomeIcons.dochub,
+      pack: IconPack.fontAwesomeIcons),
+  'docker': IconPickerIcon(
+      name: 'docker',
+      data: FontAwesomeIcons.docker,
+      pack: IconPack.fontAwesomeIcons),
+  'dog': IconPickerIcon(
+      name: 'dog', data: FontAwesomeIcons.dog, pack: IconPack.fontAwesomeIcons),
+  'dollarSign': IconPickerIcon(
+      name: 'dollarSign',
+      data: FontAwesomeIcons.dollarSign,
+      pack: IconPack.fontAwesomeIcons),
+  'dolly': IconPickerIcon(
+      name: 'dolly',
+      data: FontAwesomeIcons.dolly,
+      pack: IconPack.fontAwesomeIcons),
+  'dongSign': IconPickerIcon(
+      name: 'dongSign',
+      data: FontAwesomeIcons.dongSign,
+      pack: IconPack.fontAwesomeIcons),
+  'doorClosed': IconPickerIcon(
+      name: 'doorClosed',
+      data: FontAwesomeIcons.doorClosed,
+      pack: IconPack.fontAwesomeIcons),
+  'doorOpen': IconPickerIcon(
+      name: 'doorOpen',
+      data: FontAwesomeIcons.doorOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'dove': IconPickerIcon(
+      name: 'dove',
+      data: FontAwesomeIcons.dove,
+      pack: IconPack.fontAwesomeIcons),
+  'downLeftAndUpRightToCenter': IconPickerIcon(
+      name: 'downLeftAndUpRightToCenter',
+      data: FontAwesomeIcons.downLeftAndUpRightToCenter,
+      pack: IconPack.fontAwesomeIcons),
+  'downLong': IconPickerIcon(
+      name: 'downLong',
+      data: FontAwesomeIcons.downLong,
+      pack: IconPack.fontAwesomeIcons),
+  'download': IconPickerIcon(
+      name: 'download',
+      data: FontAwesomeIcons.download,
+      pack: IconPack.fontAwesomeIcons),
+  'draft2digital': IconPickerIcon(
+      name: 'draft2digital',
+      data: FontAwesomeIcons.draft2digital,
+      pack: IconPack.fontAwesomeIcons),
+  'dragon': IconPickerIcon(
+      name: 'dragon',
+      data: FontAwesomeIcons.dragon,
+      pack: IconPack.fontAwesomeIcons),
+  'drawPolygon': IconPickerIcon(
+      name: 'drawPolygon',
+      data: FontAwesomeIcons.drawPolygon,
+      pack: IconPack.fontAwesomeIcons),
+  'dribbble': IconPickerIcon(
+      name: 'dribbble',
+      data: FontAwesomeIcons.dribbble,
+      pack: IconPack.fontAwesomeIcons),
+  'dropbox': IconPickerIcon(
+      name: 'dropbox',
+      data: FontAwesomeIcons.dropbox,
+      pack: IconPack.fontAwesomeIcons),
+  'droplet': IconPickerIcon(
+      name: 'droplet',
+      data: FontAwesomeIcons.droplet,
+      pack: IconPack.fontAwesomeIcons),
+  'dropletSlash': IconPickerIcon(
+      name: 'dropletSlash',
+      data: FontAwesomeIcons.dropletSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'drum': IconPickerIcon(
+      name: 'drum',
+      data: FontAwesomeIcons.drum,
+      pack: IconPack.fontAwesomeIcons),
+  'drumSteelpan': IconPickerIcon(
+      name: 'drumSteelpan',
+      data: FontAwesomeIcons.drumSteelpan,
+      pack: IconPack.fontAwesomeIcons),
+  'drumstickBite': IconPickerIcon(
+      name: 'drumstickBite',
+      data: FontAwesomeIcons.drumstickBite,
+      pack: IconPack.fontAwesomeIcons),
+  'drupal': IconPickerIcon(
+      name: 'drupal',
+      data: FontAwesomeIcons.drupal,
+      pack: IconPack.fontAwesomeIcons),
+  'dumbbell': IconPickerIcon(
+      name: 'dumbbell',
+      data: FontAwesomeIcons.dumbbell,
+      pack: IconPack.fontAwesomeIcons),
+  'dumpster': IconPickerIcon(
+      name: 'dumpster',
+      data: FontAwesomeIcons.dumpster,
+      pack: IconPack.fontAwesomeIcons),
+  'dumpsterFire': IconPickerIcon(
+      name: 'dumpsterFire',
+      data: FontAwesomeIcons.dumpsterFire,
+      pack: IconPack.fontAwesomeIcons),
+  'dungeon': IconPickerIcon(
+      name: 'dungeon',
+      data: FontAwesomeIcons.dungeon,
+      pack: IconPack.fontAwesomeIcons),
+  'dyalog': IconPickerIcon(
+      name: 'dyalog',
+      data: FontAwesomeIcons.dyalog,
+      pack: IconPack.fontAwesomeIcons),
+  'e': IconPickerIcon(
+      name: 'e', data: FontAwesomeIcons.e, pack: IconPack.fontAwesomeIcons),
+  'earDeaf': IconPickerIcon(
+      name: 'earDeaf',
+      data: FontAwesomeIcons.earDeaf,
+      pack: IconPack.fontAwesomeIcons),
+  'earListen': IconPickerIcon(
+      name: 'earListen',
+      data: FontAwesomeIcons.earListen,
+      pack: IconPack.fontAwesomeIcons),
+  'earlybirds': IconPickerIcon(
+      name: 'earlybirds',
+      data: FontAwesomeIcons.earlybirds,
+      pack: IconPack.fontAwesomeIcons),
+  'earthAfrica': IconPickerIcon(
+      name: 'earthAfrica',
+      data: FontAwesomeIcons.earthAfrica,
+      pack: IconPack.fontAwesomeIcons),
+  'earthAmericas': IconPickerIcon(
+      name: 'earthAmericas',
+      data: FontAwesomeIcons.earthAmericas,
+      pack: IconPack.fontAwesomeIcons),
+  'earthAsia': IconPickerIcon(
+      name: 'earthAsia',
+      data: FontAwesomeIcons.earthAsia,
+      pack: IconPack.fontAwesomeIcons),
+  'earthEurope': IconPickerIcon(
+      name: 'earthEurope',
+      data: FontAwesomeIcons.earthEurope,
+      pack: IconPack.fontAwesomeIcons),
+  'earthOceania': IconPickerIcon(
+      name: 'earthOceania',
+      data: FontAwesomeIcons.earthOceania,
+      pack: IconPack.fontAwesomeIcons),
+  'ebay': IconPickerIcon(
+      name: 'ebay',
+      data: FontAwesomeIcons.ebay,
+      pack: IconPack.fontAwesomeIcons),
+  'edge': IconPickerIcon(
+      name: 'edge',
+      data: FontAwesomeIcons.edge,
+      pack: IconPack.fontAwesomeIcons),
+  'edgeLegacy': IconPickerIcon(
+      name: 'edgeLegacy',
+      data: FontAwesomeIcons.edgeLegacy,
+      pack: IconPack.fontAwesomeIcons),
+  'egg': IconPickerIcon(
+      name: 'egg', data: FontAwesomeIcons.egg, pack: IconPack.fontAwesomeIcons),
+  'eject': IconPickerIcon(
+      name: 'eject',
+      data: FontAwesomeIcons.eject,
+      pack: IconPack.fontAwesomeIcons),
+  'elementor': IconPickerIcon(
+      name: 'elementor',
+      data: FontAwesomeIcons.elementor,
+      pack: IconPack.fontAwesomeIcons),
+  'elevator': IconPickerIcon(
+      name: 'elevator',
+      data: FontAwesomeIcons.elevator,
+      pack: IconPack.fontAwesomeIcons),
+  'ellipsis': IconPickerIcon(
+      name: 'ellipsis',
+      data: FontAwesomeIcons.ellipsis,
+      pack: IconPack.fontAwesomeIcons),
+  'ellipsisVertical': IconPickerIcon(
+      name: 'ellipsisVertical',
+      data: FontAwesomeIcons.ellipsisVertical,
+      pack: IconPack.fontAwesomeIcons),
+  'ello': IconPickerIcon(
+      name: 'ello',
+      data: FontAwesomeIcons.ello,
+      pack: IconPack.fontAwesomeIcons),
+  'ember': IconPickerIcon(
+      name: 'ember',
+      data: FontAwesomeIcons.ember,
+      pack: IconPack.fontAwesomeIcons),
+  'empire': IconPickerIcon(
+      name: 'empire',
+      data: FontAwesomeIcons.empire,
+      pack: IconPack.fontAwesomeIcons),
+  'solidEnvelope': IconPickerIcon(
+      name: 'solidEnvelope',
+      data: FontAwesomeIcons.solidEnvelope,
+      pack: IconPack.fontAwesomeIcons),
+  'envelope': IconPickerIcon(
+      name: 'envelope',
+      data: FontAwesomeIcons.envelope,
+      pack: IconPack.fontAwesomeIcons),
+  'envelopeCircleCheck': IconPickerIcon(
+      name: 'envelopeCircleCheck',
+      data: FontAwesomeIcons.envelopeCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'solidEnvelopeOpen': IconPickerIcon(
+      name: 'solidEnvelopeOpen',
+      data: FontAwesomeIcons.solidEnvelopeOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'envelopeOpen': IconPickerIcon(
+      name: 'envelopeOpen',
+      data: FontAwesomeIcons.envelopeOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'envelopeOpenText': IconPickerIcon(
+      name: 'envelopeOpenText',
+      data: FontAwesomeIcons.envelopeOpenText,
+      pack: IconPack.fontAwesomeIcons),
+  'envelopesBulk': IconPickerIcon(
+      name: 'envelopesBulk',
+      data: FontAwesomeIcons.envelopesBulk,
+      pack: IconPack.fontAwesomeIcons),
+  'envira': IconPickerIcon(
+      name: 'envira',
+      data: FontAwesomeIcons.envira,
+      pack: IconPack.fontAwesomeIcons),
+  'equals': IconPickerIcon(
+      name: 'equals',
+      data: FontAwesomeIcons.equals,
+      pack: IconPack.fontAwesomeIcons),
+  'eraser': IconPickerIcon(
+      name: 'eraser',
+      data: FontAwesomeIcons.eraser,
+      pack: IconPack.fontAwesomeIcons),
+  'erlang': IconPickerIcon(
+      name: 'erlang',
+      data: FontAwesomeIcons.erlang,
+      pack: IconPack.fontAwesomeIcons),
+  'ethereum': IconPickerIcon(
+      name: 'ethereum',
+      data: FontAwesomeIcons.ethereum,
+      pack: IconPack.fontAwesomeIcons),
+  'ethernet': IconPickerIcon(
+      name: 'ethernet',
+      data: FontAwesomeIcons.ethernet,
+      pack: IconPack.fontAwesomeIcons),
+  'etsy': IconPickerIcon(
+      name: 'etsy',
+      data: FontAwesomeIcons.etsy,
+      pack: IconPack.fontAwesomeIcons),
+  'euroSign': IconPickerIcon(
+      name: 'euroSign',
+      data: FontAwesomeIcons.euroSign,
+      pack: IconPack.fontAwesomeIcons),
+  'evernote': IconPickerIcon(
+      name: 'evernote',
+      data: FontAwesomeIcons.evernote,
+      pack: IconPack.fontAwesomeIcons),
+  'exclamation': IconPickerIcon(
+      name: 'exclamation',
+      data: FontAwesomeIcons.exclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'expand': IconPickerIcon(
+      name: 'expand',
+      data: FontAwesomeIcons.expand,
+      pack: IconPack.fontAwesomeIcons),
+  'expeditedssl': IconPickerIcon(
+      name: 'expeditedssl',
+      data: FontAwesomeIcons.expeditedssl,
+      pack: IconPack.fontAwesomeIcons),
+  'explosion': IconPickerIcon(
+      name: 'explosion',
+      data: FontAwesomeIcons.explosion,
+      pack: IconPack.fontAwesomeIcons),
+  'solidEye': IconPickerIcon(
+      name: 'solidEye',
+      data: FontAwesomeIcons.solidEye,
+      pack: IconPack.fontAwesomeIcons),
+  'eye': IconPickerIcon(
+      name: 'eye', data: FontAwesomeIcons.eye, pack: IconPack.fontAwesomeIcons),
+  'eyeDropper': IconPickerIcon(
+      name: 'eyeDropper',
+      data: FontAwesomeIcons.eyeDropper,
+      pack: IconPack.fontAwesomeIcons),
+  'eyeLowVision': IconPickerIcon(
+      name: 'eyeLowVision',
+      data: FontAwesomeIcons.eyeLowVision,
+      pack: IconPack.fontAwesomeIcons),
+  'solidEyeSlash': IconPickerIcon(
+      name: 'solidEyeSlash',
+      data: FontAwesomeIcons.solidEyeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'eyeSlash': IconPickerIcon(
+      name: 'eyeSlash',
+      data: FontAwesomeIcons.eyeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'f': IconPickerIcon(
+      name: 'f', data: FontAwesomeIcons.f, pack: IconPack.fontAwesomeIcons),
+  'solidFaceAngry': IconPickerIcon(
+      name: 'solidFaceAngry',
+      data: FontAwesomeIcons.solidFaceAngry,
+      pack: IconPack.fontAwesomeIcons),
+  'faceAngry': IconPickerIcon(
+      name: 'faceAngry',
+      data: FontAwesomeIcons.faceAngry,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceDizzy': IconPickerIcon(
+      name: 'solidFaceDizzy',
+      data: FontAwesomeIcons.solidFaceDizzy,
+      pack: IconPack.fontAwesomeIcons),
+  'faceDizzy': IconPickerIcon(
+      name: 'faceDizzy',
+      data: FontAwesomeIcons.faceDizzy,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceFlushed': IconPickerIcon(
+      name: 'solidFaceFlushed',
+      data: FontAwesomeIcons.solidFaceFlushed,
+      pack: IconPack.fontAwesomeIcons),
+  'faceFlushed': IconPickerIcon(
+      name: 'faceFlushed',
+      data: FontAwesomeIcons.faceFlushed,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceFrown': IconPickerIcon(
+      name: 'solidFaceFrown',
+      data: FontAwesomeIcons.solidFaceFrown,
+      pack: IconPack.fontAwesomeIcons),
+  'faceFrown': IconPickerIcon(
+      name: 'faceFrown',
+      data: FontAwesomeIcons.faceFrown,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceFrownOpen': IconPickerIcon(
+      name: 'solidFaceFrownOpen',
+      data: FontAwesomeIcons.solidFaceFrownOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'faceFrownOpen': IconPickerIcon(
+      name: 'faceFrownOpen',
+      data: FontAwesomeIcons.faceFrownOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrimace': IconPickerIcon(
+      name: 'solidFaceGrimace',
+      data: FontAwesomeIcons.solidFaceGrimace,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrimace': IconPickerIcon(
+      name: 'faceGrimace',
+      data: FontAwesomeIcons.faceGrimace,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrin': IconPickerIcon(
+      name: 'solidFaceGrin',
+      data: FontAwesomeIcons.solidFaceGrin,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrin': IconPickerIcon(
+      name: 'faceGrin',
+      data: FontAwesomeIcons.faceGrin,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinBeam': IconPickerIcon(
+      name: 'solidFaceGrinBeam',
+      data: FontAwesomeIcons.solidFaceGrinBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinBeam': IconPickerIcon(
+      name: 'faceGrinBeam',
+      data: FontAwesomeIcons.faceGrinBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinBeamSweat': IconPickerIcon(
+      name: 'solidFaceGrinBeamSweat',
+      data: FontAwesomeIcons.solidFaceGrinBeamSweat,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinBeamSweat': IconPickerIcon(
+      name: 'faceGrinBeamSweat',
+      data: FontAwesomeIcons.faceGrinBeamSweat,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinHearts': IconPickerIcon(
+      name: 'solidFaceGrinHearts',
+      data: FontAwesomeIcons.solidFaceGrinHearts,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinHearts': IconPickerIcon(
+      name: 'faceGrinHearts',
+      data: FontAwesomeIcons.faceGrinHearts,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinSquint': IconPickerIcon(
+      name: 'solidFaceGrinSquint',
+      data: FontAwesomeIcons.solidFaceGrinSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinSquint': IconPickerIcon(
+      name: 'faceGrinSquint',
+      data: FontAwesomeIcons.faceGrinSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinSquintTears': IconPickerIcon(
+      name: 'solidFaceGrinSquintTears',
+      data: FontAwesomeIcons.solidFaceGrinSquintTears,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinSquintTears': IconPickerIcon(
+      name: 'faceGrinSquintTears',
+      data: FontAwesomeIcons.faceGrinSquintTears,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinStars': IconPickerIcon(
+      name: 'solidFaceGrinStars',
+      data: FontAwesomeIcons.solidFaceGrinStars,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinStars': IconPickerIcon(
+      name: 'faceGrinStars',
+      data: FontAwesomeIcons.faceGrinStars,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinTears': IconPickerIcon(
+      name: 'solidFaceGrinTears',
+      data: FontAwesomeIcons.solidFaceGrinTears,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinTears': IconPickerIcon(
+      name: 'faceGrinTears',
+      data: FontAwesomeIcons.faceGrinTears,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinTongue': IconPickerIcon(
+      name: 'solidFaceGrinTongue',
+      data: FontAwesomeIcons.solidFaceGrinTongue,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinTongue': IconPickerIcon(
+      name: 'faceGrinTongue',
+      data: FontAwesomeIcons.faceGrinTongue,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinTongueSquint': IconPickerIcon(
+      name: 'solidFaceGrinTongueSquint',
+      data: FontAwesomeIcons.solidFaceGrinTongueSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinTongueSquint': IconPickerIcon(
+      name: 'faceGrinTongueSquint',
+      data: FontAwesomeIcons.faceGrinTongueSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinTongueWink': IconPickerIcon(
+      name: 'solidFaceGrinTongueWink',
+      data: FontAwesomeIcons.solidFaceGrinTongueWink,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinTongueWink': IconPickerIcon(
+      name: 'faceGrinTongueWink',
+      data: FontAwesomeIcons.faceGrinTongueWink,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinWide': IconPickerIcon(
+      name: 'solidFaceGrinWide',
+      data: FontAwesomeIcons.solidFaceGrinWide,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinWide': IconPickerIcon(
+      name: 'faceGrinWide',
+      data: FontAwesomeIcons.faceGrinWide,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceGrinWink': IconPickerIcon(
+      name: 'solidFaceGrinWink',
+      data: FontAwesomeIcons.solidFaceGrinWink,
+      pack: IconPack.fontAwesomeIcons),
+  'faceGrinWink': IconPickerIcon(
+      name: 'faceGrinWink',
+      data: FontAwesomeIcons.faceGrinWink,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceKiss': IconPickerIcon(
+      name: 'solidFaceKiss',
+      data: FontAwesomeIcons.solidFaceKiss,
+      pack: IconPack.fontAwesomeIcons),
+  'faceKiss': IconPickerIcon(
+      name: 'faceKiss',
+      data: FontAwesomeIcons.faceKiss,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceKissBeam': IconPickerIcon(
+      name: 'solidFaceKissBeam',
+      data: FontAwesomeIcons.solidFaceKissBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'faceKissBeam': IconPickerIcon(
+      name: 'faceKissBeam',
+      data: FontAwesomeIcons.faceKissBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceKissWinkHeart': IconPickerIcon(
+      name: 'solidFaceKissWinkHeart',
+      data: FontAwesomeIcons.solidFaceKissWinkHeart,
+      pack: IconPack.fontAwesomeIcons),
+  'faceKissWinkHeart': IconPickerIcon(
+      name: 'faceKissWinkHeart',
+      data: FontAwesomeIcons.faceKissWinkHeart,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceLaugh': IconPickerIcon(
+      name: 'solidFaceLaugh',
+      data: FontAwesomeIcons.solidFaceLaugh,
+      pack: IconPack.fontAwesomeIcons),
+  'faceLaugh': IconPickerIcon(
+      name: 'faceLaugh',
+      data: FontAwesomeIcons.faceLaugh,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceLaughBeam': IconPickerIcon(
+      name: 'solidFaceLaughBeam',
+      data: FontAwesomeIcons.solidFaceLaughBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'faceLaughBeam': IconPickerIcon(
+      name: 'faceLaughBeam',
+      data: FontAwesomeIcons.faceLaughBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceLaughSquint': IconPickerIcon(
+      name: 'solidFaceLaughSquint',
+      data: FontAwesomeIcons.solidFaceLaughSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'faceLaughSquint': IconPickerIcon(
+      name: 'faceLaughSquint',
+      data: FontAwesomeIcons.faceLaughSquint,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceLaughWink': IconPickerIcon(
+      name: 'solidFaceLaughWink',
+      data: FontAwesomeIcons.solidFaceLaughWink,
+      pack: IconPack.fontAwesomeIcons),
+  'faceLaughWink': IconPickerIcon(
+      name: 'faceLaughWink',
+      data: FontAwesomeIcons.faceLaughWink,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceMeh': IconPickerIcon(
+      name: 'solidFaceMeh',
+      data: FontAwesomeIcons.solidFaceMeh,
+      pack: IconPack.fontAwesomeIcons),
+  'faceMeh': IconPickerIcon(
+      name: 'faceMeh',
+      data: FontAwesomeIcons.faceMeh,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceMehBlank': IconPickerIcon(
+      name: 'solidFaceMehBlank',
+      data: FontAwesomeIcons.solidFaceMehBlank,
+      pack: IconPack.fontAwesomeIcons),
+  'faceMehBlank': IconPickerIcon(
+      name: 'faceMehBlank',
+      data: FontAwesomeIcons.faceMehBlank,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceRollingEyes': IconPickerIcon(
+      name: 'solidFaceRollingEyes',
+      data: FontAwesomeIcons.solidFaceRollingEyes,
+      pack: IconPack.fontAwesomeIcons),
+  'faceRollingEyes': IconPickerIcon(
+      name: 'faceRollingEyes',
+      data: FontAwesomeIcons.faceRollingEyes,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSadCry': IconPickerIcon(
+      name: 'solidFaceSadCry',
+      data: FontAwesomeIcons.solidFaceSadCry,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSadCry': IconPickerIcon(
+      name: 'faceSadCry',
+      data: FontAwesomeIcons.faceSadCry,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSadTear': IconPickerIcon(
+      name: 'solidFaceSadTear',
+      data: FontAwesomeIcons.solidFaceSadTear,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSadTear': IconPickerIcon(
+      name: 'faceSadTear',
+      data: FontAwesomeIcons.faceSadTear,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSmile': IconPickerIcon(
+      name: 'solidFaceSmile',
+      data: FontAwesomeIcons.solidFaceSmile,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSmile': IconPickerIcon(
+      name: 'faceSmile',
+      data: FontAwesomeIcons.faceSmile,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSmileBeam': IconPickerIcon(
+      name: 'solidFaceSmileBeam',
+      data: FontAwesomeIcons.solidFaceSmileBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSmileBeam': IconPickerIcon(
+      name: 'faceSmileBeam',
+      data: FontAwesomeIcons.faceSmileBeam,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSmileWink': IconPickerIcon(
+      name: 'solidFaceSmileWink',
+      data: FontAwesomeIcons.solidFaceSmileWink,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSmileWink': IconPickerIcon(
+      name: 'faceSmileWink',
+      data: FontAwesomeIcons.faceSmileWink,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceSurprise': IconPickerIcon(
+      name: 'solidFaceSurprise',
+      data: FontAwesomeIcons.solidFaceSurprise,
+      pack: IconPack.fontAwesomeIcons),
+  'faceSurprise': IconPickerIcon(
+      name: 'faceSurprise',
+      data: FontAwesomeIcons.faceSurprise,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFaceTired': IconPickerIcon(
+      name: 'solidFaceTired',
+      data: FontAwesomeIcons.solidFaceTired,
+      pack: IconPack.fontAwesomeIcons),
+  'faceTired': IconPickerIcon(
+      name: 'faceTired',
+      data: FontAwesomeIcons.faceTired,
+      pack: IconPack.fontAwesomeIcons),
+  'facebook': IconPickerIcon(
+      name: 'facebook',
+      data: FontAwesomeIcons.facebook,
+      pack: IconPack.fontAwesomeIcons),
+  'facebookF': IconPickerIcon(
+      name: 'facebookF',
+      data: FontAwesomeIcons.facebookF,
+      pack: IconPack.fontAwesomeIcons),
+  'facebookMessenger': IconPickerIcon(
+      name: 'facebookMessenger',
+      data: FontAwesomeIcons.facebookMessenger,
+      pack: IconPack.fontAwesomeIcons),
+  'fan': IconPickerIcon(
+      name: 'fan', data: FontAwesomeIcons.fan, pack: IconPack.fontAwesomeIcons),
+  'fantasyFlightGames': IconPickerIcon(
+      name: 'fantasyFlightGames',
+      data: FontAwesomeIcons.fantasyFlightGames,
+      pack: IconPack.fontAwesomeIcons),
+  'faucet': IconPickerIcon(
+      name: 'faucet',
+      data: FontAwesomeIcons.faucet,
+      pack: IconPack.fontAwesomeIcons),
+  'faucetDrip': IconPickerIcon(
+      name: 'faucetDrip',
+      data: FontAwesomeIcons.faucetDrip,
+      pack: IconPack.fontAwesomeIcons),
+  'fax': IconPickerIcon(
+      name: 'fax', data: FontAwesomeIcons.fax, pack: IconPack.fontAwesomeIcons),
+  'feather': IconPickerIcon(
+      name: 'feather',
+      data: FontAwesomeIcons.feather,
+      pack: IconPack.fontAwesomeIcons),
+  'featherPointed': IconPickerIcon(
+      name: 'featherPointed',
+      data: FontAwesomeIcons.featherPointed,
+      pack: IconPack.fontAwesomeIcons),
+  'fedex': IconPickerIcon(
+      name: 'fedex',
+      data: FontAwesomeIcons.fedex,
+      pack: IconPack.fontAwesomeIcons),
+  'fedora': IconPickerIcon(
+      name: 'fedora',
+      data: FontAwesomeIcons.fedora,
+      pack: IconPack.fontAwesomeIcons),
+  'ferry': IconPickerIcon(
+      name: 'ferry',
+      data: FontAwesomeIcons.ferry,
+      pack: IconPack.fontAwesomeIcons),
+  'figma': IconPickerIcon(
+      name: 'figma',
+      data: FontAwesomeIcons.figma,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFile': IconPickerIcon(
+      name: 'solidFile',
+      data: FontAwesomeIcons.solidFile,
+      pack: IconPack.fontAwesomeIcons),
+  'file': IconPickerIcon(
+      name: 'file',
+      data: FontAwesomeIcons.file,
+      pack: IconPack.fontAwesomeIcons),
+  'fileArrowDown': IconPickerIcon(
+      name: 'fileArrowDown',
+      data: FontAwesomeIcons.fileArrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'fileArrowUp': IconPickerIcon(
+      name: 'fileArrowUp',
+      data: FontAwesomeIcons.fileArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileAudio': IconPickerIcon(
+      name: 'solidFileAudio',
+      data: FontAwesomeIcons.solidFileAudio,
+      pack: IconPack.fontAwesomeIcons),
+  'fileAudio': IconPickerIcon(
+      name: 'fileAudio',
+      data: FontAwesomeIcons.fileAudio,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCircleCheck': IconPickerIcon(
+      name: 'fileCircleCheck',
+      data: FontAwesomeIcons.fileCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCircleExclamation': IconPickerIcon(
+      name: 'fileCircleExclamation',
+      data: FontAwesomeIcons.fileCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCircleMinus': IconPickerIcon(
+      name: 'fileCircleMinus',
+      data: FontAwesomeIcons.fileCircleMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCirclePlus': IconPickerIcon(
+      name: 'fileCirclePlus',
+      data: FontAwesomeIcons.fileCirclePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCircleQuestion': IconPickerIcon(
+      name: 'fileCircleQuestion',
+      data: FontAwesomeIcons.fileCircleQuestion,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCircleXmark': IconPickerIcon(
+      name: 'fileCircleXmark',
+      data: FontAwesomeIcons.fileCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileCode': IconPickerIcon(
+      name: 'solidFileCode',
+      data: FontAwesomeIcons.solidFileCode,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCode': IconPickerIcon(
+      name: 'fileCode',
+      data: FontAwesomeIcons.fileCode,
+      pack: IconPack.fontAwesomeIcons),
+  'fileContract': IconPickerIcon(
+      name: 'fileContract',
+      data: FontAwesomeIcons.fileContract,
+      pack: IconPack.fontAwesomeIcons),
+  'fileCsv': IconPickerIcon(
+      name: 'fileCsv',
+      data: FontAwesomeIcons.fileCsv,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileExcel': IconPickerIcon(
+      name: 'solidFileExcel',
+      data: FontAwesomeIcons.solidFileExcel,
+      pack: IconPack.fontAwesomeIcons),
+  'fileExcel': IconPickerIcon(
+      name: 'fileExcel',
+      data: FontAwesomeIcons.fileExcel,
+      pack: IconPack.fontAwesomeIcons),
+  'fileExport': IconPickerIcon(
+      name: 'fileExport',
+      data: FontAwesomeIcons.fileExport,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileImage': IconPickerIcon(
+      name: 'solidFileImage',
+      data: FontAwesomeIcons.solidFileImage,
+      pack: IconPack.fontAwesomeIcons),
+  'fileImage': IconPickerIcon(
+      name: 'fileImage',
+      data: FontAwesomeIcons.fileImage,
+      pack: IconPack.fontAwesomeIcons),
+  'fileImport': IconPickerIcon(
+      name: 'fileImport',
+      data: FontAwesomeIcons.fileImport,
+      pack: IconPack.fontAwesomeIcons),
+  'fileInvoice': IconPickerIcon(
+      name: 'fileInvoice',
+      data: FontAwesomeIcons.fileInvoice,
+      pack: IconPack.fontAwesomeIcons),
+  'fileInvoiceDollar': IconPickerIcon(
+      name: 'fileInvoiceDollar',
+      data: FontAwesomeIcons.fileInvoiceDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileLines': IconPickerIcon(
+      name: 'solidFileLines',
+      data: FontAwesomeIcons.solidFileLines,
+      pack: IconPack.fontAwesomeIcons),
+  'fileLines': IconPickerIcon(
+      name: 'fileLines',
+      data: FontAwesomeIcons.fileLines,
+      pack: IconPack.fontAwesomeIcons),
+  'fileMedical': IconPickerIcon(
+      name: 'fileMedical',
+      data: FontAwesomeIcons.fileMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFilePdf': IconPickerIcon(
+      name: 'solidFilePdf',
+      data: FontAwesomeIcons.solidFilePdf,
+      pack: IconPack.fontAwesomeIcons),
+  'filePdf': IconPickerIcon(
+      name: 'filePdf',
+      data: FontAwesomeIcons.filePdf,
+      pack: IconPack.fontAwesomeIcons),
+  'filePen': IconPickerIcon(
+      name: 'filePen',
+      data: FontAwesomeIcons.filePen,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFilePowerpoint': IconPickerIcon(
+      name: 'solidFilePowerpoint',
+      data: FontAwesomeIcons.solidFilePowerpoint,
+      pack: IconPack.fontAwesomeIcons),
+  'filePowerpoint': IconPickerIcon(
+      name: 'filePowerpoint',
+      data: FontAwesomeIcons.filePowerpoint,
+      pack: IconPack.fontAwesomeIcons),
+  'filePrescription': IconPickerIcon(
+      name: 'filePrescription',
+      data: FontAwesomeIcons.filePrescription,
+      pack: IconPack.fontAwesomeIcons),
+  'fileShield': IconPickerIcon(
+      name: 'fileShield',
+      data: FontAwesomeIcons.fileShield,
+      pack: IconPack.fontAwesomeIcons),
+  'fileSignature': IconPickerIcon(
+      name: 'fileSignature',
+      data: FontAwesomeIcons.fileSignature,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileVideo': IconPickerIcon(
+      name: 'solidFileVideo',
+      data: FontAwesomeIcons.solidFileVideo,
+      pack: IconPack.fontAwesomeIcons),
+  'fileVideo': IconPickerIcon(
+      name: 'fileVideo',
+      data: FontAwesomeIcons.fileVideo,
+      pack: IconPack.fontAwesomeIcons),
+  'fileWaveform': IconPickerIcon(
+      name: 'fileWaveform',
+      data: FontAwesomeIcons.fileWaveform,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileWord': IconPickerIcon(
+      name: 'solidFileWord',
+      data: FontAwesomeIcons.solidFileWord,
+      pack: IconPack.fontAwesomeIcons),
+  'fileWord': IconPickerIcon(
+      name: 'fileWord',
+      data: FontAwesomeIcons.fileWord,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFileZipper': IconPickerIcon(
+      name: 'solidFileZipper',
+      data: FontAwesomeIcons.solidFileZipper,
+      pack: IconPack.fontAwesomeIcons),
+  'fileZipper': IconPickerIcon(
+      name: 'fileZipper',
+      data: FontAwesomeIcons.fileZipper,
+      pack: IconPack.fontAwesomeIcons),
+  'fill': IconPickerIcon(
+      name: 'fill',
+      data: FontAwesomeIcons.fill,
+      pack: IconPack.fontAwesomeIcons),
+  'fillDrip': IconPickerIcon(
+      name: 'fillDrip',
+      data: FontAwesomeIcons.fillDrip,
+      pack: IconPack.fontAwesomeIcons),
+  'film': IconPickerIcon(
+      name: 'film',
+      data: FontAwesomeIcons.film,
+      pack: IconPack.fontAwesomeIcons),
+  'filter': IconPickerIcon(
+      name: 'filter',
+      data: FontAwesomeIcons.filter,
+      pack: IconPack.fontAwesomeIcons),
+  'filterCircleDollar': IconPickerIcon(
+      name: 'filterCircleDollar',
+      data: FontAwesomeIcons.filterCircleDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'filterCircleXmark': IconPickerIcon(
+      name: 'filterCircleXmark',
+      data: FontAwesomeIcons.filterCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'fingerprint': IconPickerIcon(
+      name: 'fingerprint',
+      data: FontAwesomeIcons.fingerprint,
+      pack: IconPack.fontAwesomeIcons),
+  'fire': IconPickerIcon(
+      name: 'fire',
+      data: FontAwesomeIcons.fire,
+      pack: IconPack.fontAwesomeIcons),
+  'fireBurner': IconPickerIcon(
+      name: 'fireBurner',
+      data: FontAwesomeIcons.fireBurner,
+      pack: IconPack.fontAwesomeIcons),
+  'fireExtinguisher': IconPickerIcon(
+      name: 'fireExtinguisher',
+      data: FontAwesomeIcons.fireExtinguisher,
+      pack: IconPack.fontAwesomeIcons),
+  'fireFlameCurved': IconPickerIcon(
+      name: 'fireFlameCurved',
+      data: FontAwesomeIcons.fireFlameCurved,
+      pack: IconPack.fontAwesomeIcons),
+  'fireFlameSimple': IconPickerIcon(
+      name: 'fireFlameSimple',
+      data: FontAwesomeIcons.fireFlameSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'firefox': IconPickerIcon(
+      name: 'firefox',
+      data: FontAwesomeIcons.firefox,
+      pack: IconPack.fontAwesomeIcons),
+  'firefoxBrowser': IconPickerIcon(
+      name: 'firefoxBrowser',
+      data: FontAwesomeIcons.firefoxBrowser,
+      pack: IconPack.fontAwesomeIcons),
+  'firstOrder': IconPickerIcon(
+      name: 'firstOrder',
+      data: FontAwesomeIcons.firstOrder,
+      pack: IconPack.fontAwesomeIcons),
+  'firstOrderAlt': IconPickerIcon(
+      name: 'firstOrderAlt',
+      data: FontAwesomeIcons.firstOrderAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'firstdraft': IconPickerIcon(
+      name: 'firstdraft',
+      data: FontAwesomeIcons.firstdraft,
+      pack: IconPack.fontAwesomeIcons),
+  'fish': IconPickerIcon(
+      name: 'fish',
+      data: FontAwesomeIcons.fish,
+      pack: IconPack.fontAwesomeIcons),
+  'fishFins': IconPickerIcon(
+      name: 'fishFins',
+      data: FontAwesomeIcons.fishFins,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFlag': IconPickerIcon(
+      name: 'solidFlag',
+      data: FontAwesomeIcons.solidFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'flag': IconPickerIcon(
+      name: 'flag',
+      data: FontAwesomeIcons.flag,
+      pack: IconPack.fontAwesomeIcons),
+  'flagCheckered': IconPickerIcon(
+      name: 'flagCheckered',
+      data: FontAwesomeIcons.flagCheckered,
+      pack: IconPack.fontAwesomeIcons),
+  'flagUsa': IconPickerIcon(
+      name: 'flagUsa',
+      data: FontAwesomeIcons.flagUsa,
+      pack: IconPack.fontAwesomeIcons),
+  'flask': IconPickerIcon(
+      name: 'flask',
+      data: FontAwesomeIcons.flask,
+      pack: IconPack.fontAwesomeIcons),
+  'flaskVial': IconPickerIcon(
+      name: 'flaskVial',
+      data: FontAwesomeIcons.flaskVial,
+      pack: IconPack.fontAwesomeIcons),
+  'flickr': IconPickerIcon(
+      name: 'flickr',
+      data: FontAwesomeIcons.flickr,
+      pack: IconPack.fontAwesomeIcons),
+  'flipboard': IconPickerIcon(
+      name: 'flipboard',
+      data: FontAwesomeIcons.flipboard,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFloppyDisk': IconPickerIcon(
+      name: 'solidFloppyDisk',
+      data: FontAwesomeIcons.solidFloppyDisk,
+      pack: IconPack.fontAwesomeIcons),
+  'floppyDisk': IconPickerIcon(
+      name: 'floppyDisk',
+      data: FontAwesomeIcons.floppyDisk,
+      pack: IconPack.fontAwesomeIcons),
+  'florinSign': IconPickerIcon(
+      name: 'florinSign',
+      data: FontAwesomeIcons.florinSign,
+      pack: IconPack.fontAwesomeIcons),
+  'fly': IconPickerIcon(
+      name: 'fly', data: FontAwesomeIcons.fly, pack: IconPack.fontAwesomeIcons),
+  'solidFolder': IconPickerIcon(
+      name: 'solidFolder',
+      data: FontAwesomeIcons.solidFolder,
+      pack: IconPack.fontAwesomeIcons),
+  'folder': IconPickerIcon(
+      name: 'folder',
+      data: FontAwesomeIcons.folder,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFolderClosed': IconPickerIcon(
+      name: 'solidFolderClosed',
+      data: FontAwesomeIcons.solidFolderClosed,
+      pack: IconPack.fontAwesomeIcons),
+  'folderClosed': IconPickerIcon(
+      name: 'folderClosed',
+      data: FontAwesomeIcons.folderClosed,
+      pack: IconPack.fontAwesomeIcons),
+  'folderMinus': IconPickerIcon(
+      name: 'folderMinus',
+      data: FontAwesomeIcons.folderMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFolderOpen': IconPickerIcon(
+      name: 'solidFolderOpen',
+      data: FontAwesomeIcons.solidFolderOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'folderOpen': IconPickerIcon(
+      name: 'folderOpen',
+      data: FontAwesomeIcons.folderOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'folderPlus': IconPickerIcon(
+      name: 'folderPlus',
+      data: FontAwesomeIcons.folderPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'folderTree': IconPickerIcon(
+      name: 'folderTree',
+      data: FontAwesomeIcons.folderTree,
+      pack: IconPack.fontAwesomeIcons),
+  'font': IconPickerIcon(
+      name: 'font',
+      data: FontAwesomeIcons.font,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFontAwesome': IconPickerIcon(
+      name: 'solidFontAwesome',
+      data: FontAwesomeIcons.solidFontAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'fontAwesome': IconPickerIcon(
+      name: 'fontAwesome',
+      data: FontAwesomeIcons.fontAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'brandsFontAwesome': IconPickerIcon(
+      name: 'brandsFontAwesome',
+      data: FontAwesomeIcons.brandsFontAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'fonticons': IconPickerIcon(
+      name: 'fonticons',
+      data: FontAwesomeIcons.fonticons,
+      pack: IconPack.fontAwesomeIcons),
+  'fonticonsFi': IconPickerIcon(
+      name: 'fonticonsFi',
+      data: FontAwesomeIcons.fonticonsFi,
+      pack: IconPack.fontAwesomeIcons),
+  'football': IconPickerIcon(
+      name: 'football',
+      data: FontAwesomeIcons.football,
+      pack: IconPack.fontAwesomeIcons),
+  'fortAwesome': IconPickerIcon(
+      name: 'fortAwesome',
+      data: FontAwesomeIcons.fortAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'fortAwesomeAlt': IconPickerIcon(
+      name: 'fortAwesomeAlt',
+      data: FontAwesomeIcons.fortAwesomeAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'forumbee': IconPickerIcon(
+      name: 'forumbee',
+      data: FontAwesomeIcons.forumbee,
+      pack: IconPack.fontAwesomeIcons),
+  'forward': IconPickerIcon(
+      name: 'forward',
+      data: FontAwesomeIcons.forward,
+      pack: IconPack.fontAwesomeIcons),
+  'forwardFast': IconPickerIcon(
+      name: 'forwardFast',
+      data: FontAwesomeIcons.forwardFast,
+      pack: IconPack.fontAwesomeIcons),
+  'forwardStep': IconPickerIcon(
+      name: 'forwardStep',
+      data: FontAwesomeIcons.forwardStep,
+      pack: IconPack.fontAwesomeIcons),
+  'foursquare': IconPickerIcon(
+      name: 'foursquare',
+      data: FontAwesomeIcons.foursquare,
+      pack: IconPack.fontAwesomeIcons),
+  'francSign': IconPickerIcon(
+      name: 'francSign',
+      data: FontAwesomeIcons.francSign,
+      pack: IconPack.fontAwesomeIcons),
+  'freeCodeCamp': IconPickerIcon(
+      name: 'freeCodeCamp',
+      data: FontAwesomeIcons.freeCodeCamp,
+      pack: IconPack.fontAwesomeIcons),
+  'freebsd': IconPickerIcon(
+      name: 'freebsd',
+      data: FontAwesomeIcons.freebsd,
+      pack: IconPack.fontAwesomeIcons),
+  'frog': IconPickerIcon(
+      name: 'frog',
+      data: FontAwesomeIcons.frog,
+      pack: IconPack.fontAwesomeIcons),
+  'fulcrum': IconPickerIcon(
+      name: 'fulcrum',
+      data: FontAwesomeIcons.fulcrum,
+      pack: IconPack.fontAwesomeIcons),
+  'solidFutbol': IconPickerIcon(
+      name: 'solidFutbol',
+      data: FontAwesomeIcons.solidFutbol,
+      pack: IconPack.fontAwesomeIcons),
+  'futbol': IconPickerIcon(
+      name: 'futbol',
+      data: FontAwesomeIcons.futbol,
+      pack: IconPack.fontAwesomeIcons),
+  'g': IconPickerIcon(
+      name: 'g', data: FontAwesomeIcons.g, pack: IconPack.fontAwesomeIcons),
+  'galacticRepublic': IconPickerIcon(
+      name: 'galacticRepublic',
+      data: FontAwesomeIcons.galacticRepublic,
+      pack: IconPack.fontAwesomeIcons),
+  'galacticSenate': IconPickerIcon(
+      name: 'galacticSenate',
+      data: FontAwesomeIcons.galacticSenate,
+      pack: IconPack.fontAwesomeIcons),
+  'gamepad': IconPickerIcon(
+      name: 'gamepad',
+      data: FontAwesomeIcons.gamepad,
+      pack: IconPack.fontAwesomeIcons),
+  'gasPump': IconPickerIcon(
+      name: 'gasPump',
+      data: FontAwesomeIcons.gasPump,
+      pack: IconPack.fontAwesomeIcons),
+  'gauge': IconPickerIcon(
+      name: 'gauge',
+      data: FontAwesomeIcons.gauge,
+      pack: IconPack.fontAwesomeIcons),
+  'gaugeHigh': IconPickerIcon(
+      name: 'gaugeHigh',
+      data: FontAwesomeIcons.gaugeHigh,
+      pack: IconPack.fontAwesomeIcons),
+  'gaugeSimple': IconPickerIcon(
+      name: 'gaugeSimple',
+      data: FontAwesomeIcons.gaugeSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'gaugeSimpleHigh': IconPickerIcon(
+      name: 'gaugeSimpleHigh',
+      data: FontAwesomeIcons.gaugeSimpleHigh,
+      pack: IconPack.fontAwesomeIcons),
+  'gavel': IconPickerIcon(
+      name: 'gavel',
+      data: FontAwesomeIcons.gavel,
+      pack: IconPack.fontAwesomeIcons),
+  'gear': IconPickerIcon(
+      name: 'gear',
+      data: FontAwesomeIcons.gear,
+      pack: IconPack.fontAwesomeIcons),
+  'gears': IconPickerIcon(
+      name: 'gears',
+      data: FontAwesomeIcons.gears,
+      pack: IconPack.fontAwesomeIcons),
+  'solidGem': IconPickerIcon(
+      name: 'solidGem',
+      data: FontAwesomeIcons.solidGem,
+      pack: IconPack.fontAwesomeIcons),
+  'gem': IconPickerIcon(
+      name: 'gem', data: FontAwesomeIcons.gem, pack: IconPack.fontAwesomeIcons),
+  'genderless': IconPickerIcon(
+      name: 'genderless',
+      data: FontAwesomeIcons.genderless,
+      pack: IconPack.fontAwesomeIcons),
+  'getPocket': IconPickerIcon(
+      name: 'getPocket',
+      data: FontAwesomeIcons.getPocket,
+      pack: IconPack.fontAwesomeIcons),
+  'gg': IconPickerIcon(
+      name: 'gg', data: FontAwesomeIcons.gg, pack: IconPack.fontAwesomeIcons),
+  'ggCircle': IconPickerIcon(
+      name: 'ggCircle',
+      data: FontAwesomeIcons.ggCircle,
+      pack: IconPack.fontAwesomeIcons),
+  'ghost': IconPickerIcon(
+      name: 'ghost',
+      data: FontAwesomeIcons.ghost,
+      pack: IconPack.fontAwesomeIcons),
+  'gift': IconPickerIcon(
+      name: 'gift',
+      data: FontAwesomeIcons.gift,
+      pack: IconPack.fontAwesomeIcons),
+  'gifts': IconPickerIcon(
+      name: 'gifts',
+      data: FontAwesomeIcons.gifts,
+      pack: IconPack.fontAwesomeIcons),
+  'git': IconPickerIcon(
+      name: 'git', data: FontAwesomeIcons.git, pack: IconPack.fontAwesomeIcons),
+  'gitAlt': IconPickerIcon(
+      name: 'gitAlt',
+      data: FontAwesomeIcons.gitAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'github': IconPickerIcon(
+      name: 'github',
+      data: FontAwesomeIcons.github,
+      pack: IconPack.fontAwesomeIcons),
+  'githubAlt': IconPickerIcon(
+      name: 'githubAlt',
+      data: FontAwesomeIcons.githubAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'gitkraken': IconPickerIcon(
+      name: 'gitkraken',
+      data: FontAwesomeIcons.gitkraken,
+      pack: IconPack.fontAwesomeIcons),
+  'gitlab': IconPickerIcon(
+      name: 'gitlab',
+      data: FontAwesomeIcons.gitlab,
+      pack: IconPack.fontAwesomeIcons),
+  'gitter': IconPickerIcon(
+      name: 'gitter',
+      data: FontAwesomeIcons.gitter,
+      pack: IconPack.fontAwesomeIcons),
+  'glassWater': IconPickerIcon(
+      name: 'glassWater',
+      data: FontAwesomeIcons.glassWater,
+      pack: IconPack.fontAwesomeIcons),
+  'glassWaterDroplet': IconPickerIcon(
+      name: 'glassWaterDroplet',
+      data: FontAwesomeIcons.glassWaterDroplet,
+      pack: IconPack.fontAwesomeIcons),
+  'glasses': IconPickerIcon(
+      name: 'glasses',
+      data: FontAwesomeIcons.glasses,
+      pack: IconPack.fontAwesomeIcons),
+  'glide': IconPickerIcon(
+      name: 'glide',
+      data: FontAwesomeIcons.glide,
+      pack: IconPack.fontAwesomeIcons),
+  'glideG': IconPickerIcon(
+      name: 'glideG',
+      data: FontAwesomeIcons.glideG,
+      pack: IconPack.fontAwesomeIcons),
+  'globe': IconPickerIcon(
+      name: 'globe',
+      data: FontAwesomeIcons.globe,
+      pack: IconPack.fontAwesomeIcons),
+  'gofore': IconPickerIcon(
+      name: 'gofore',
+      data: FontAwesomeIcons.gofore,
+      pack: IconPack.fontAwesomeIcons),
+  'golang': IconPickerIcon(
+      name: 'golang',
+      data: FontAwesomeIcons.golang,
+      pack: IconPack.fontAwesomeIcons),
+  'golfBallTee': IconPickerIcon(
+      name: 'golfBallTee',
+      data: FontAwesomeIcons.golfBallTee,
+      pack: IconPack.fontAwesomeIcons),
+  'goodreads': IconPickerIcon(
+      name: 'goodreads',
+      data: FontAwesomeIcons.goodreads,
+      pack: IconPack.fontAwesomeIcons),
+  'goodreadsG': IconPickerIcon(
+      name: 'goodreadsG',
+      data: FontAwesomeIcons.goodreadsG,
+      pack: IconPack.fontAwesomeIcons),
+  'google': IconPickerIcon(
+      name: 'google',
+      data: FontAwesomeIcons.google,
+      pack: IconPack.fontAwesomeIcons),
+  'googleDrive': IconPickerIcon(
+      name: 'googleDrive',
+      data: FontAwesomeIcons.googleDrive,
+      pack: IconPack.fontAwesomeIcons),
+  'googlePay': IconPickerIcon(
+      name: 'googlePay',
+      data: FontAwesomeIcons.googlePay,
+      pack: IconPack.fontAwesomeIcons),
+  'googlePlay': IconPickerIcon(
+      name: 'googlePlay',
+      data: FontAwesomeIcons.googlePlay,
+      pack: IconPack.fontAwesomeIcons),
+  'googlePlus': IconPickerIcon(
+      name: 'googlePlus',
+      data: FontAwesomeIcons.googlePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'googlePlusG': IconPickerIcon(
+      name: 'googlePlusG',
+      data: FontAwesomeIcons.googlePlusG,
+      pack: IconPack.fontAwesomeIcons),
+  'googleWallet': IconPickerIcon(
+      name: 'googleWallet',
+      data: FontAwesomeIcons.googleWallet,
+      pack: IconPack.fontAwesomeIcons),
+  'gopuram': IconPickerIcon(
+      name: 'gopuram',
+      data: FontAwesomeIcons.gopuram,
+      pack: IconPack.fontAwesomeIcons),
+  'graduationCap': IconPickerIcon(
+      name: 'graduationCap',
+      data: FontAwesomeIcons.graduationCap,
+      pack: IconPack.fontAwesomeIcons),
+  'gratipay': IconPickerIcon(
+      name: 'gratipay',
+      data: FontAwesomeIcons.gratipay,
+      pack: IconPack.fontAwesomeIcons),
+  'grav': IconPickerIcon(
+      name: 'grav',
+      data: FontAwesomeIcons.grav,
+      pack: IconPack.fontAwesomeIcons),
+  'greaterThan': IconPickerIcon(
+      name: 'greaterThan',
+      data: FontAwesomeIcons.greaterThan,
+      pack: IconPack.fontAwesomeIcons),
+  'greaterThanEqual': IconPickerIcon(
+      name: 'greaterThanEqual',
+      data: FontAwesomeIcons.greaterThanEqual,
+      pack: IconPack.fontAwesomeIcons),
+  'grip': IconPickerIcon(
+      name: 'grip',
+      data: FontAwesomeIcons.grip,
+      pack: IconPack.fontAwesomeIcons),
+  'gripLines': IconPickerIcon(
+      name: 'gripLines',
+      data: FontAwesomeIcons.gripLines,
+      pack: IconPack.fontAwesomeIcons),
+  'gripLinesVertical': IconPickerIcon(
+      name: 'gripLinesVertical',
+      data: FontAwesomeIcons.gripLinesVertical,
+      pack: IconPack.fontAwesomeIcons),
+  'gripVertical': IconPickerIcon(
+      name: 'gripVertical',
+      data: FontAwesomeIcons.gripVertical,
+      pack: IconPack.fontAwesomeIcons),
+  'gripfire': IconPickerIcon(
+      name: 'gripfire',
+      data: FontAwesomeIcons.gripfire,
+      pack: IconPack.fontAwesomeIcons),
+  'groupArrowsRotate': IconPickerIcon(
+      name: 'groupArrowsRotate',
+      data: FontAwesomeIcons.groupArrowsRotate,
+      pack: IconPack.fontAwesomeIcons),
+  'grunt': IconPickerIcon(
+      name: 'grunt',
+      data: FontAwesomeIcons.grunt,
+      pack: IconPack.fontAwesomeIcons),
+  'guaraniSign': IconPickerIcon(
+      name: 'guaraniSign',
+      data: FontAwesomeIcons.guaraniSign,
+      pack: IconPack.fontAwesomeIcons),
+  'guilded': IconPickerIcon(
+      name: 'guilded',
+      data: FontAwesomeIcons.guilded,
+      pack: IconPack.fontAwesomeIcons),
+  'guitar': IconPickerIcon(
+      name: 'guitar',
+      data: FontAwesomeIcons.guitar,
+      pack: IconPack.fontAwesomeIcons),
+  'gulp': IconPickerIcon(
+      name: 'gulp',
+      data: FontAwesomeIcons.gulp,
+      pack: IconPack.fontAwesomeIcons),
+  'gun': IconPickerIcon(
+      name: 'gun', data: FontAwesomeIcons.gun, pack: IconPack.fontAwesomeIcons),
+  'h': IconPickerIcon(
+      name: 'h', data: FontAwesomeIcons.h, pack: IconPack.fontAwesomeIcons),
+  'hackerNews': IconPickerIcon(
+      name: 'hackerNews',
+      data: FontAwesomeIcons.hackerNews,
+      pack: IconPack.fontAwesomeIcons),
+  'hackerrank': IconPickerIcon(
+      name: 'hackerrank',
+      data: FontAwesomeIcons.hackerrank,
+      pack: IconPack.fontAwesomeIcons),
+  'hammer': IconPickerIcon(
+      name: 'hammer',
+      data: FontAwesomeIcons.hammer,
+      pack: IconPack.fontAwesomeIcons),
+  'hamsa': IconPickerIcon(
+      name: 'hamsa',
+      data: FontAwesomeIcons.hamsa,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHand': IconPickerIcon(
+      name: 'solidHand',
+      data: FontAwesomeIcons.solidHand,
+      pack: IconPack.fontAwesomeIcons),
+  'hand': IconPickerIcon(
+      name: 'hand',
+      data: FontAwesomeIcons.hand,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandBackFist': IconPickerIcon(
+      name: 'solidHandBackFist',
+      data: FontAwesomeIcons.solidHandBackFist,
+      pack: IconPack.fontAwesomeIcons),
+  'handBackFist': IconPickerIcon(
+      name: 'handBackFist',
+      data: FontAwesomeIcons.handBackFist,
+      pack: IconPack.fontAwesomeIcons),
+  'handDots': IconPickerIcon(
+      name: 'handDots',
+      data: FontAwesomeIcons.handDots,
+      pack: IconPack.fontAwesomeIcons),
+  'handFist': IconPickerIcon(
+      name: 'handFist',
+      data: FontAwesomeIcons.handFist,
+      pack: IconPack.fontAwesomeIcons),
+  'handHolding': IconPickerIcon(
+      name: 'handHolding',
+      data: FontAwesomeIcons.handHolding,
+      pack: IconPack.fontAwesomeIcons),
+  'handHoldingDollar': IconPickerIcon(
+      name: 'handHoldingDollar',
+      data: FontAwesomeIcons.handHoldingDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'handHoldingDroplet': IconPickerIcon(
+      name: 'handHoldingDroplet',
+      data: FontAwesomeIcons.handHoldingDroplet,
+      pack: IconPack.fontAwesomeIcons),
+  'handHoldingHand': IconPickerIcon(
+      name: 'handHoldingHand',
+      data: FontAwesomeIcons.handHoldingHand,
+      pack: IconPack.fontAwesomeIcons),
+  'handHoldingHeart': IconPickerIcon(
+      name: 'handHoldingHeart',
+      data: FontAwesomeIcons.handHoldingHeart,
+      pack: IconPack.fontAwesomeIcons),
+  'handHoldingMedical': IconPickerIcon(
+      name: 'handHoldingMedical',
+      data: FontAwesomeIcons.handHoldingMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandLizard': IconPickerIcon(
+      name: 'solidHandLizard',
+      data: FontAwesomeIcons.solidHandLizard,
+      pack: IconPack.fontAwesomeIcons),
+  'handLizard': IconPickerIcon(
+      name: 'handLizard',
+      data: FontAwesomeIcons.handLizard,
+      pack: IconPack.fontAwesomeIcons),
+  'handMiddleFinger': IconPickerIcon(
+      name: 'handMiddleFinger',
+      data: FontAwesomeIcons.handMiddleFinger,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPeace': IconPickerIcon(
+      name: 'solidHandPeace',
+      data: FontAwesomeIcons.solidHandPeace,
+      pack: IconPack.fontAwesomeIcons),
+  'handPeace': IconPickerIcon(
+      name: 'handPeace',
+      data: FontAwesomeIcons.handPeace,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPointDown': IconPickerIcon(
+      name: 'solidHandPointDown',
+      data: FontAwesomeIcons.solidHandPointDown,
+      pack: IconPack.fontAwesomeIcons),
+  'handPointDown': IconPickerIcon(
+      name: 'handPointDown',
+      data: FontAwesomeIcons.handPointDown,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPointLeft': IconPickerIcon(
+      name: 'solidHandPointLeft',
+      data: FontAwesomeIcons.solidHandPointLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'handPointLeft': IconPickerIcon(
+      name: 'handPointLeft',
+      data: FontAwesomeIcons.handPointLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPointRight': IconPickerIcon(
+      name: 'solidHandPointRight',
+      data: FontAwesomeIcons.solidHandPointRight,
+      pack: IconPack.fontAwesomeIcons),
+  'handPointRight': IconPickerIcon(
+      name: 'handPointRight',
+      data: FontAwesomeIcons.handPointRight,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPointUp': IconPickerIcon(
+      name: 'solidHandPointUp',
+      data: FontAwesomeIcons.solidHandPointUp,
+      pack: IconPack.fontAwesomeIcons),
+  'handPointUp': IconPickerIcon(
+      name: 'handPointUp',
+      data: FontAwesomeIcons.handPointUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandPointer': IconPickerIcon(
+      name: 'solidHandPointer',
+      data: FontAwesomeIcons.solidHandPointer,
+      pack: IconPack.fontAwesomeIcons),
+  'handPointer': IconPickerIcon(
+      name: 'handPointer',
+      data: FontAwesomeIcons.handPointer,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandScissors': IconPickerIcon(
+      name: 'solidHandScissors',
+      data: FontAwesomeIcons.solidHandScissors,
+      pack: IconPack.fontAwesomeIcons),
+  'handScissors': IconPickerIcon(
+      name: 'handScissors',
+      data: FontAwesomeIcons.handScissors,
+      pack: IconPack.fontAwesomeIcons),
+  'handSparkles': IconPickerIcon(
+      name: 'handSparkles',
+      data: FontAwesomeIcons.handSparkles,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandSpock': IconPickerIcon(
+      name: 'solidHandSpock',
+      data: FontAwesomeIcons.solidHandSpock,
+      pack: IconPack.fontAwesomeIcons),
+  'handSpock': IconPickerIcon(
+      name: 'handSpock',
+      data: FontAwesomeIcons.handSpock,
+      pack: IconPack.fontAwesomeIcons),
+  'handcuffs': IconPickerIcon(
+      name: 'handcuffs',
+      data: FontAwesomeIcons.handcuffs,
+      pack: IconPack.fontAwesomeIcons),
+  'hands': IconPickerIcon(
+      name: 'hands',
+      data: FontAwesomeIcons.hands,
+      pack: IconPack.fontAwesomeIcons),
+  'handsAslInterpreting': IconPickerIcon(
+      name: 'handsAslInterpreting',
+      data: FontAwesomeIcons.handsAslInterpreting,
+      pack: IconPack.fontAwesomeIcons),
+  'handsBound': IconPickerIcon(
+      name: 'handsBound',
+      data: FontAwesomeIcons.handsBound,
+      pack: IconPack.fontAwesomeIcons),
+  'handsBubbles': IconPickerIcon(
+      name: 'handsBubbles',
+      data: FontAwesomeIcons.handsBubbles,
+      pack: IconPack.fontAwesomeIcons),
+  'handsClapping': IconPickerIcon(
+      name: 'handsClapping',
+      data: FontAwesomeIcons.handsClapping,
+      pack: IconPack.fontAwesomeIcons),
+  'handsHolding': IconPickerIcon(
+      name: 'handsHolding',
+      data: FontAwesomeIcons.handsHolding,
+      pack: IconPack.fontAwesomeIcons),
+  'handsHoldingChild': IconPickerIcon(
+      name: 'handsHoldingChild',
+      data: FontAwesomeIcons.handsHoldingChild,
+      pack: IconPack.fontAwesomeIcons),
+  'handsHoldingCircle': IconPickerIcon(
+      name: 'handsHoldingCircle',
+      data: FontAwesomeIcons.handsHoldingCircle,
+      pack: IconPack.fontAwesomeIcons),
+  'handsPraying': IconPickerIcon(
+      name: 'handsPraying',
+      data: FontAwesomeIcons.handsPraying,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHandshake': IconPickerIcon(
+      name: 'solidHandshake',
+      data: FontAwesomeIcons.solidHandshake,
+      pack: IconPack.fontAwesomeIcons),
+  'handshake': IconPickerIcon(
+      name: 'handshake',
+      data: FontAwesomeIcons.handshake,
+      pack: IconPack.fontAwesomeIcons),
+  'handshakeAngle': IconPickerIcon(
+      name: 'handshakeAngle',
+      data: FontAwesomeIcons.handshakeAngle,
+      pack: IconPack.fontAwesomeIcons),
+  'handshakeSimple': IconPickerIcon(
+      name: 'handshakeSimple',
+      data: FontAwesomeIcons.handshakeSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'handshakeSimpleSlash': IconPickerIcon(
+      name: 'handshakeSimpleSlash',
+      data: FontAwesomeIcons.handshakeSimpleSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'handshakeSlash': IconPickerIcon(
+      name: 'handshakeSlash',
+      data: FontAwesomeIcons.handshakeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'hanukiah': IconPickerIcon(
+      name: 'hanukiah',
+      data: FontAwesomeIcons.hanukiah,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHardDrive': IconPickerIcon(
+      name: 'solidHardDrive',
+      data: FontAwesomeIcons.solidHardDrive,
+      pack: IconPack.fontAwesomeIcons),
+  'hardDrive': IconPickerIcon(
+      name: 'hardDrive',
+      data: FontAwesomeIcons.hardDrive,
+      pack: IconPack.fontAwesomeIcons),
+  'hashnode': IconPickerIcon(
+      name: 'hashnode',
+      data: FontAwesomeIcons.hashnode,
+      pack: IconPack.fontAwesomeIcons),
+  'hashtag': IconPickerIcon(
+      name: 'hashtag',
+      data: FontAwesomeIcons.hashtag,
+      pack: IconPack.fontAwesomeIcons),
+  'hatCowboy': IconPickerIcon(
+      name: 'hatCowboy',
+      data: FontAwesomeIcons.hatCowboy,
+      pack: IconPack.fontAwesomeIcons),
+  'hatCowboySide': IconPickerIcon(
+      name: 'hatCowboySide',
+      data: FontAwesomeIcons.hatCowboySide,
+      pack: IconPack.fontAwesomeIcons),
+  'hatWizard': IconPickerIcon(
+      name: 'hatWizard',
+      data: FontAwesomeIcons.hatWizard,
+      pack: IconPack.fontAwesomeIcons),
+  'headSideCough': IconPickerIcon(
+      name: 'headSideCough',
+      data: FontAwesomeIcons.headSideCough,
+      pack: IconPack.fontAwesomeIcons),
+  'headSideCoughSlash': IconPickerIcon(
+      name: 'headSideCoughSlash',
+      data: FontAwesomeIcons.headSideCoughSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'headSideMask': IconPickerIcon(
+      name: 'headSideMask',
+      data: FontAwesomeIcons.headSideMask,
+      pack: IconPack.fontAwesomeIcons),
+  'headSideVirus': IconPickerIcon(
+      name: 'headSideVirus',
+      data: FontAwesomeIcons.headSideVirus,
+      pack: IconPack.fontAwesomeIcons),
+  'heading': IconPickerIcon(
+      name: 'heading',
+      data: FontAwesomeIcons.heading,
+      pack: IconPack.fontAwesomeIcons),
+  'headphones': IconPickerIcon(
+      name: 'headphones',
+      data: FontAwesomeIcons.headphones,
+      pack: IconPack.fontAwesomeIcons),
+  'headphonesSimple': IconPickerIcon(
+      name: 'headphonesSimple',
+      data: FontAwesomeIcons.headphonesSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'headset': IconPickerIcon(
+      name: 'headset',
+      data: FontAwesomeIcons.headset,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHeart': IconPickerIcon(
+      name: 'solidHeart',
+      data: FontAwesomeIcons.solidHeart,
+      pack: IconPack.fontAwesomeIcons),
+  'heart': IconPickerIcon(
+      name: 'heart',
+      data: FontAwesomeIcons.heart,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCircleBolt': IconPickerIcon(
+      name: 'heartCircleBolt',
+      data: FontAwesomeIcons.heartCircleBolt,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCircleCheck': IconPickerIcon(
+      name: 'heartCircleCheck',
+      data: FontAwesomeIcons.heartCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCircleExclamation': IconPickerIcon(
+      name: 'heartCircleExclamation',
+      data: FontAwesomeIcons.heartCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCircleMinus': IconPickerIcon(
+      name: 'heartCircleMinus',
+      data: FontAwesomeIcons.heartCircleMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCirclePlus': IconPickerIcon(
+      name: 'heartCirclePlus',
+      data: FontAwesomeIcons.heartCirclePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCircleXmark': IconPickerIcon(
+      name: 'heartCircleXmark',
+      data: FontAwesomeIcons.heartCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'heartCrack': IconPickerIcon(
+      name: 'heartCrack',
+      data: FontAwesomeIcons.heartCrack,
+      pack: IconPack.fontAwesomeIcons),
+  'heartPulse': IconPickerIcon(
+      name: 'heartPulse',
+      data: FontAwesomeIcons.heartPulse,
+      pack: IconPack.fontAwesomeIcons),
+  'helicopter': IconPickerIcon(
+      name: 'helicopter',
+      data: FontAwesomeIcons.helicopter,
+      pack: IconPack.fontAwesomeIcons),
+  'helicopterSymbol': IconPickerIcon(
+      name: 'helicopterSymbol',
+      data: FontAwesomeIcons.helicopterSymbol,
+      pack: IconPack.fontAwesomeIcons),
+  'helmetSafety': IconPickerIcon(
+      name: 'helmetSafety',
+      data: FontAwesomeIcons.helmetSafety,
+      pack: IconPack.fontAwesomeIcons),
+  'helmetUn': IconPickerIcon(
+      name: 'helmetUn',
+      data: FontAwesomeIcons.helmetUn,
+      pack: IconPack.fontAwesomeIcons),
+  'highlighter': IconPickerIcon(
+      name: 'highlighter',
+      data: FontAwesomeIcons.highlighter,
+      pack: IconPack.fontAwesomeIcons),
+  'hillAvalanche': IconPickerIcon(
+      name: 'hillAvalanche',
+      data: FontAwesomeIcons.hillAvalanche,
+      pack: IconPack.fontAwesomeIcons),
+  'hillRockslide': IconPickerIcon(
+      name: 'hillRockslide',
+      data: FontAwesomeIcons.hillRockslide,
+      pack: IconPack.fontAwesomeIcons),
+  'hippo': IconPickerIcon(
+      name: 'hippo',
+      data: FontAwesomeIcons.hippo,
+      pack: IconPack.fontAwesomeIcons),
+  'hips': IconPickerIcon(
+      name: 'hips',
+      data: FontAwesomeIcons.hips,
+      pack: IconPack.fontAwesomeIcons),
+  'hireAHelper': IconPickerIcon(
+      name: 'hireAHelper',
+      data: FontAwesomeIcons.hireAHelper,
+      pack: IconPack.fontAwesomeIcons),
+  'hive': IconPickerIcon(
+      name: 'hive',
+      data: FontAwesomeIcons.hive,
+      pack: IconPack.fontAwesomeIcons),
+  'hockeyPuck': IconPickerIcon(
+      name: 'hockeyPuck',
+      data: FontAwesomeIcons.hockeyPuck,
+      pack: IconPack.fontAwesomeIcons),
+  'hollyBerry': IconPickerIcon(
+      name: 'hollyBerry',
+      data: FontAwesomeIcons.hollyBerry,
+      pack: IconPack.fontAwesomeIcons),
+  'hooli': IconPickerIcon(
+      name: 'hooli',
+      data: FontAwesomeIcons.hooli,
+      pack: IconPack.fontAwesomeIcons),
+  'hornbill': IconPickerIcon(
+      name: 'hornbill',
+      data: FontAwesomeIcons.hornbill,
+      pack: IconPack.fontAwesomeIcons),
+  'horse': IconPickerIcon(
+      name: 'horse',
+      data: FontAwesomeIcons.horse,
+      pack: IconPack.fontAwesomeIcons),
+  'horseHead': IconPickerIcon(
+      name: 'horseHead',
+      data: FontAwesomeIcons.horseHead,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHospital': IconPickerIcon(
+      name: 'solidHospital',
+      data: FontAwesomeIcons.solidHospital,
+      pack: IconPack.fontAwesomeIcons),
+  'hospital': IconPickerIcon(
+      name: 'hospital',
+      data: FontAwesomeIcons.hospital,
+      pack: IconPack.fontAwesomeIcons),
+  'hospitalUser': IconPickerIcon(
+      name: 'hospitalUser',
+      data: FontAwesomeIcons.hospitalUser,
+      pack: IconPack.fontAwesomeIcons),
+  'hotTubPerson': IconPickerIcon(
+      name: 'hotTubPerson',
+      data: FontAwesomeIcons.hotTubPerson,
+      pack: IconPack.fontAwesomeIcons),
+  'hotdog': IconPickerIcon(
+      name: 'hotdog',
+      data: FontAwesomeIcons.hotdog,
+      pack: IconPack.fontAwesomeIcons),
+  'hotel': IconPickerIcon(
+      name: 'hotel',
+      data: FontAwesomeIcons.hotel,
+      pack: IconPack.fontAwesomeIcons),
+  'hotjar': IconPickerIcon(
+      name: 'hotjar',
+      data: FontAwesomeIcons.hotjar,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHourglass': IconPickerIcon(
+      name: 'solidHourglass',
+      data: FontAwesomeIcons.solidHourglass,
+      pack: IconPack.fontAwesomeIcons),
+  'hourglass': IconPickerIcon(
+      name: 'hourglass',
+      data: FontAwesomeIcons.hourglass,
+      pack: IconPack.fontAwesomeIcons),
+  'hourglassEnd': IconPickerIcon(
+      name: 'hourglassEnd',
+      data: FontAwesomeIcons.hourglassEnd,
+      pack: IconPack.fontAwesomeIcons),
+  'solidHourglassHalf': IconPickerIcon(
+      name: 'solidHourglassHalf',
+      data: FontAwesomeIcons.solidHourglassHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'hourglassHalf': IconPickerIcon(
+      name: 'hourglassHalf',
+      data: FontAwesomeIcons.hourglassHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'hourglassStart': IconPickerIcon(
+      name: 'hourglassStart',
+      data: FontAwesomeIcons.hourglassStart,
+      pack: IconPack.fontAwesomeIcons),
+  'house': IconPickerIcon(
+      name: 'house',
+      data: FontAwesomeIcons.house,
+      pack: IconPack.fontAwesomeIcons),
+  'houseChimney': IconPickerIcon(
+      name: 'houseChimney',
+      data: FontAwesomeIcons.houseChimney,
+      pack: IconPack.fontAwesomeIcons),
+  'houseChimneyCrack': IconPickerIcon(
+      name: 'houseChimneyCrack',
+      data: FontAwesomeIcons.houseChimneyCrack,
+      pack: IconPack.fontAwesomeIcons),
+  'houseChimneyMedical': IconPickerIcon(
+      name: 'houseChimneyMedical',
+      data: FontAwesomeIcons.houseChimneyMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'houseChimneyUser': IconPickerIcon(
+      name: 'houseChimneyUser',
+      data: FontAwesomeIcons.houseChimneyUser,
+      pack: IconPack.fontAwesomeIcons),
+  'houseChimneyWindow': IconPickerIcon(
+      name: 'houseChimneyWindow',
+      data: FontAwesomeIcons.houseChimneyWindow,
+      pack: IconPack.fontAwesomeIcons),
+  'houseCircleCheck': IconPickerIcon(
+      name: 'houseCircleCheck',
+      data: FontAwesomeIcons.houseCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'houseCircleExclamation': IconPickerIcon(
+      name: 'houseCircleExclamation',
+      data: FontAwesomeIcons.houseCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'houseCircleXmark': IconPickerIcon(
+      name: 'houseCircleXmark',
+      data: FontAwesomeIcons.houseCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'houseCrack': IconPickerIcon(
+      name: 'houseCrack',
+      data: FontAwesomeIcons.houseCrack,
+      pack: IconPack.fontAwesomeIcons),
+  'houseFire': IconPickerIcon(
+      name: 'houseFire',
+      data: FontAwesomeIcons.houseFire,
+      pack: IconPack.fontAwesomeIcons),
+  'houseFlag': IconPickerIcon(
+      name: 'houseFlag',
+      data: FontAwesomeIcons.houseFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'houseFloodWater': IconPickerIcon(
+      name: 'houseFloodWater',
+      data: FontAwesomeIcons.houseFloodWater,
+      pack: IconPack.fontAwesomeIcons),
+  'houseFloodWaterCircleArrowRight': IconPickerIcon(
+      name: 'houseFloodWaterCircleArrowRight',
+      data: FontAwesomeIcons.houseFloodWaterCircleArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'houseLaptop': IconPickerIcon(
+      name: 'houseLaptop',
+      data: FontAwesomeIcons.houseLaptop,
+      pack: IconPack.fontAwesomeIcons),
+  'houseLock': IconPickerIcon(
+      name: 'houseLock',
+      data: FontAwesomeIcons.houseLock,
+      pack: IconPack.fontAwesomeIcons),
+  'houseMedical': IconPickerIcon(
+      name: 'houseMedical',
+      data: FontAwesomeIcons.houseMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'houseMedicalCircleCheck': IconPickerIcon(
+      name: 'houseMedicalCircleCheck',
+      data: FontAwesomeIcons.houseMedicalCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'houseMedicalCircleExclamation': IconPickerIcon(
+      name: 'houseMedicalCircleExclamation',
+      data: FontAwesomeIcons.houseMedicalCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'houseMedicalCircleXmark': IconPickerIcon(
+      name: 'houseMedicalCircleXmark',
+      data: FontAwesomeIcons.houseMedicalCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'houseMedicalFlag': IconPickerIcon(
+      name: 'houseMedicalFlag',
+      data: FontAwesomeIcons.houseMedicalFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'houseSignal': IconPickerIcon(
+      name: 'houseSignal',
+      data: FontAwesomeIcons.houseSignal,
+      pack: IconPack.fontAwesomeIcons),
+  'houseTsunami': IconPickerIcon(
+      name: 'houseTsunami',
+      data: FontAwesomeIcons.houseTsunami,
+      pack: IconPack.fontAwesomeIcons),
+  'houseUser': IconPickerIcon(
+      name: 'houseUser',
+      data: FontAwesomeIcons.houseUser,
+      pack: IconPack.fontAwesomeIcons),
+  'houzz': IconPickerIcon(
+      name: 'houzz',
+      data: FontAwesomeIcons.houzz,
+      pack: IconPack.fontAwesomeIcons),
+  'hryvniaSign': IconPickerIcon(
+      name: 'hryvniaSign',
+      data: FontAwesomeIcons.hryvniaSign,
+      pack: IconPack.fontAwesomeIcons),
+  'html5': IconPickerIcon(
+      name: 'html5',
+      data: FontAwesomeIcons.html5,
+      pack: IconPack.fontAwesomeIcons),
+  'hubspot': IconPickerIcon(
+      name: 'hubspot',
+      data: FontAwesomeIcons.hubspot,
+      pack: IconPack.fontAwesomeIcons),
+  'hurricane': IconPickerIcon(
+      name: 'hurricane',
+      data: FontAwesomeIcons.hurricane,
+      pack: IconPack.fontAwesomeIcons),
+  'i': IconPickerIcon(
+      name: 'i', data: FontAwesomeIcons.i, pack: IconPack.fontAwesomeIcons),
+  'iCursor': IconPickerIcon(
+      name: 'iCursor',
+      data: FontAwesomeIcons.iCursor,
+      pack: IconPack.fontAwesomeIcons),
+  'iceCream': IconPickerIcon(
+      name: 'iceCream',
+      data: FontAwesomeIcons.iceCream,
+      pack: IconPack.fontAwesomeIcons),
+  'icicles': IconPickerIcon(
+      name: 'icicles',
+      data: FontAwesomeIcons.icicles,
+      pack: IconPack.fontAwesomeIcons),
+  'icons': IconPickerIcon(
+      name: 'icons',
+      data: FontAwesomeIcons.icons,
+      pack: IconPack.fontAwesomeIcons),
+  'solidIdBadge': IconPickerIcon(
+      name: 'solidIdBadge',
+      data: FontAwesomeIcons.solidIdBadge,
+      pack: IconPack.fontAwesomeIcons),
+  'idBadge': IconPickerIcon(
+      name: 'idBadge',
+      data: FontAwesomeIcons.idBadge,
+      pack: IconPack.fontAwesomeIcons),
+  'solidIdCard': IconPickerIcon(
+      name: 'solidIdCard',
+      data: FontAwesomeIcons.solidIdCard,
+      pack: IconPack.fontAwesomeIcons),
+  'idCard': IconPickerIcon(
+      name: 'idCard',
+      data: FontAwesomeIcons.idCard,
+      pack: IconPack.fontAwesomeIcons),
+  'idCardClip': IconPickerIcon(
+      name: 'idCardClip',
+      data: FontAwesomeIcons.idCardClip,
+      pack: IconPack.fontAwesomeIcons),
+  'ideal': IconPickerIcon(
+      name: 'ideal',
+      data: FontAwesomeIcons.ideal,
+      pack: IconPack.fontAwesomeIcons),
+  'igloo': IconPickerIcon(
+      name: 'igloo',
+      data: FontAwesomeIcons.igloo,
+      pack: IconPack.fontAwesomeIcons),
+  'solidImage': IconPickerIcon(
+      name: 'solidImage',
+      data: FontAwesomeIcons.solidImage,
+      pack: IconPack.fontAwesomeIcons),
+  'image': IconPickerIcon(
+      name: 'image',
+      data: FontAwesomeIcons.image,
+      pack: IconPack.fontAwesomeIcons),
+  'imagePortrait': IconPickerIcon(
+      name: 'imagePortrait',
+      data: FontAwesomeIcons.imagePortrait,
+      pack: IconPack.fontAwesomeIcons),
+  'solidImages': IconPickerIcon(
+      name: 'solidImages',
+      data: FontAwesomeIcons.solidImages,
+      pack: IconPack.fontAwesomeIcons),
+  'images': IconPickerIcon(
+      name: 'images',
+      data: FontAwesomeIcons.images,
+      pack: IconPack.fontAwesomeIcons),
+  'imdb': IconPickerIcon(
+      name: 'imdb',
+      data: FontAwesomeIcons.imdb,
+      pack: IconPack.fontAwesomeIcons),
+  'inbox': IconPickerIcon(
+      name: 'inbox',
+      data: FontAwesomeIcons.inbox,
+      pack: IconPack.fontAwesomeIcons),
+  'indent': IconPickerIcon(
+      name: 'indent',
+      data: FontAwesomeIcons.indent,
+      pack: IconPack.fontAwesomeIcons),
+  'indianRupeeSign': IconPickerIcon(
+      name: 'indianRupeeSign',
+      data: FontAwesomeIcons.indianRupeeSign,
+      pack: IconPack.fontAwesomeIcons),
+  'industry': IconPickerIcon(
+      name: 'industry',
+      data: FontAwesomeIcons.industry,
+      pack: IconPack.fontAwesomeIcons),
+  'infinity': IconPickerIcon(
+      name: 'infinity',
+      data: FontAwesomeIcons.infinity,
+      pack: IconPack.fontAwesomeIcons),
+  'info': IconPickerIcon(
+      name: 'info',
+      data: FontAwesomeIcons.info,
+      pack: IconPack.fontAwesomeIcons),
+  'instagram': IconPickerIcon(
+      name: 'instagram',
+      data: FontAwesomeIcons.instagram,
+      pack: IconPack.fontAwesomeIcons),
+  'instalod': IconPickerIcon(
+      name: 'instalod',
+      data: FontAwesomeIcons.instalod,
+      pack: IconPack.fontAwesomeIcons),
+  'intercom': IconPickerIcon(
+      name: 'intercom',
+      data: FontAwesomeIcons.intercom,
+      pack: IconPack.fontAwesomeIcons),
+  'internetExplorer': IconPickerIcon(
+      name: 'internetExplorer',
+      data: FontAwesomeIcons.internetExplorer,
+      pack: IconPack.fontAwesomeIcons),
+  'invision': IconPickerIcon(
+      name: 'invision',
+      data: FontAwesomeIcons.invision,
+      pack: IconPack.fontAwesomeIcons),
+  'ioxhost': IconPickerIcon(
+      name: 'ioxhost',
+      data: FontAwesomeIcons.ioxhost,
+      pack: IconPack.fontAwesomeIcons),
+  'italic': IconPickerIcon(
+      name: 'italic',
+      data: FontAwesomeIcons.italic,
+      pack: IconPack.fontAwesomeIcons),
+  'itchIo': IconPickerIcon(
+      name: 'itchIo',
+      data: FontAwesomeIcons.itchIo,
+      pack: IconPack.fontAwesomeIcons),
+  'itunes': IconPickerIcon(
+      name: 'itunes',
+      data: FontAwesomeIcons.itunes,
+      pack: IconPack.fontAwesomeIcons),
+  'itunesNote': IconPickerIcon(
+      name: 'itunesNote',
+      data: FontAwesomeIcons.itunesNote,
+      pack: IconPack.fontAwesomeIcons),
+  'j': IconPickerIcon(
+      name: 'j', data: FontAwesomeIcons.j, pack: IconPack.fontAwesomeIcons),
+  'jar': IconPickerIcon(
+      name: 'jar', data: FontAwesomeIcons.jar, pack: IconPack.fontAwesomeIcons),
+  'jarWheat': IconPickerIcon(
+      name: 'jarWheat',
+      data: FontAwesomeIcons.jarWheat,
+      pack: IconPack.fontAwesomeIcons),
+  'java': IconPickerIcon(
+      name: 'java',
+      data: FontAwesomeIcons.java,
+      pack: IconPack.fontAwesomeIcons),
+  'jedi': IconPickerIcon(
+      name: 'jedi',
+      data: FontAwesomeIcons.jedi,
+      pack: IconPack.fontAwesomeIcons),
+  'jediOrder': IconPickerIcon(
+      name: 'jediOrder',
+      data: FontAwesomeIcons.jediOrder,
+      pack: IconPack.fontAwesomeIcons),
+  'jenkins': IconPickerIcon(
+      name: 'jenkins',
+      data: FontAwesomeIcons.jenkins,
+      pack: IconPack.fontAwesomeIcons),
+  'jetFighter': IconPickerIcon(
+      name: 'jetFighter',
+      data: FontAwesomeIcons.jetFighter,
+      pack: IconPack.fontAwesomeIcons),
+  'jetFighterUp': IconPickerIcon(
+      name: 'jetFighterUp',
+      data: FontAwesomeIcons.jetFighterUp,
+      pack: IconPack.fontAwesomeIcons),
+  'jira': IconPickerIcon(
+      name: 'jira',
+      data: FontAwesomeIcons.jira,
+      pack: IconPack.fontAwesomeIcons),
+  'joget': IconPickerIcon(
+      name: 'joget',
+      data: FontAwesomeIcons.joget,
+      pack: IconPack.fontAwesomeIcons),
+  'joint': IconPickerIcon(
+      name: 'joint',
+      data: FontAwesomeIcons.joint,
+      pack: IconPack.fontAwesomeIcons),
+  'joomla': IconPickerIcon(
+      name: 'joomla',
+      data: FontAwesomeIcons.joomla,
+      pack: IconPack.fontAwesomeIcons),
+  'js': IconPickerIcon(
+      name: 'js', data: FontAwesomeIcons.js, pack: IconPack.fontAwesomeIcons),
+  'jsfiddle': IconPickerIcon(
+      name: 'jsfiddle',
+      data: FontAwesomeIcons.jsfiddle,
+      pack: IconPack.fontAwesomeIcons),
+  'jugDetergent': IconPickerIcon(
+      name: 'jugDetergent',
+      data: FontAwesomeIcons.jugDetergent,
+      pack: IconPack.fontAwesomeIcons),
+  'k': IconPickerIcon(
+      name: 'k', data: FontAwesomeIcons.k, pack: IconPack.fontAwesomeIcons),
+  'kaaba': IconPickerIcon(
+      name: 'kaaba',
+      data: FontAwesomeIcons.kaaba,
+      pack: IconPack.fontAwesomeIcons),
+  'kaggle': IconPickerIcon(
+      name: 'kaggle',
+      data: FontAwesomeIcons.kaggle,
+      pack: IconPack.fontAwesomeIcons),
+  'key': IconPickerIcon(
+      name: 'key', data: FontAwesomeIcons.key, pack: IconPack.fontAwesomeIcons),
+  'keybase': IconPickerIcon(
+      name: 'keybase',
+      data: FontAwesomeIcons.keybase,
+      pack: IconPack.fontAwesomeIcons),
+  'solidKeyboard': IconPickerIcon(
+      name: 'solidKeyboard',
+      data: FontAwesomeIcons.solidKeyboard,
+      pack: IconPack.fontAwesomeIcons),
+  'keyboard': IconPickerIcon(
+      name: 'keyboard',
+      data: FontAwesomeIcons.keyboard,
+      pack: IconPack.fontAwesomeIcons),
+  'keycdn': IconPickerIcon(
+      name: 'keycdn',
+      data: FontAwesomeIcons.keycdn,
+      pack: IconPack.fontAwesomeIcons),
+  'khanda': IconPickerIcon(
+      name: 'khanda',
+      data: FontAwesomeIcons.khanda,
+      pack: IconPack.fontAwesomeIcons),
+  'kickstarter': IconPickerIcon(
+      name: 'kickstarter',
+      data: FontAwesomeIcons.kickstarter,
+      pack: IconPack.fontAwesomeIcons),
+  'kickstarterK': IconPickerIcon(
+      name: 'kickstarterK',
+      data: FontAwesomeIcons.kickstarterK,
+      pack: IconPack.fontAwesomeIcons),
+  'kipSign': IconPickerIcon(
+      name: 'kipSign',
+      data: FontAwesomeIcons.kipSign,
+      pack: IconPack.fontAwesomeIcons),
+  'kitMedical': IconPickerIcon(
+      name: 'kitMedical',
+      data: FontAwesomeIcons.kitMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'kitchenSet': IconPickerIcon(
+      name: 'kitchenSet',
+      data: FontAwesomeIcons.kitchenSet,
+      pack: IconPack.fontAwesomeIcons),
+  'kiwiBird': IconPickerIcon(
+      name: 'kiwiBird',
+      data: FontAwesomeIcons.kiwiBird,
+      pack: IconPack.fontAwesomeIcons),
+  'korvue': IconPickerIcon(
+      name: 'korvue',
+      data: FontAwesomeIcons.korvue,
+      pack: IconPack.fontAwesomeIcons),
+  'l': IconPickerIcon(
+      name: 'l', data: FontAwesomeIcons.l, pack: IconPack.fontAwesomeIcons),
+  'landMineOn': IconPickerIcon(
+      name: 'landMineOn',
+      data: FontAwesomeIcons.landMineOn,
+      pack: IconPack.fontAwesomeIcons),
+  'landmark': IconPickerIcon(
+      name: 'landmark',
+      data: FontAwesomeIcons.landmark,
+      pack: IconPack.fontAwesomeIcons),
+  'landmarkDome': IconPickerIcon(
+      name: 'landmarkDome',
+      data: FontAwesomeIcons.landmarkDome,
+      pack: IconPack.fontAwesomeIcons),
+  'landmarkFlag': IconPickerIcon(
+      name: 'landmarkFlag',
+      data: FontAwesomeIcons.landmarkFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'language': IconPickerIcon(
+      name: 'language',
+      data: FontAwesomeIcons.language,
+      pack: IconPack.fontAwesomeIcons),
+  'laptop': IconPickerIcon(
+      name: 'laptop',
+      data: FontAwesomeIcons.laptop,
+      pack: IconPack.fontAwesomeIcons),
+  'laptopCode': IconPickerIcon(
+      name: 'laptopCode',
+      data: FontAwesomeIcons.laptopCode,
+      pack: IconPack.fontAwesomeIcons),
+  'laptopFile': IconPickerIcon(
+      name: 'laptopFile',
+      data: FontAwesomeIcons.laptopFile,
+      pack: IconPack.fontAwesomeIcons),
+  'laptopMedical': IconPickerIcon(
+      name: 'laptopMedical',
+      data: FontAwesomeIcons.laptopMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'laravel': IconPickerIcon(
+      name: 'laravel',
+      data: FontAwesomeIcons.laravel,
+      pack: IconPack.fontAwesomeIcons),
+  'lariSign': IconPickerIcon(
+      name: 'lariSign',
+      data: FontAwesomeIcons.lariSign,
+      pack: IconPack.fontAwesomeIcons),
+  'lastfm': IconPickerIcon(
+      name: 'lastfm',
+      data: FontAwesomeIcons.lastfm,
+      pack: IconPack.fontAwesomeIcons),
+  'layerGroup': IconPickerIcon(
+      name: 'layerGroup',
+      data: FontAwesomeIcons.layerGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'leaf': IconPickerIcon(
+      name: 'leaf',
+      data: FontAwesomeIcons.leaf,
+      pack: IconPack.fontAwesomeIcons),
+  'leanpub': IconPickerIcon(
+      name: 'leanpub',
+      data: FontAwesomeIcons.leanpub,
+      pack: IconPack.fontAwesomeIcons),
+  'leftLong': IconPickerIcon(
+      name: 'leftLong',
+      data: FontAwesomeIcons.leftLong,
+      pack: IconPack.fontAwesomeIcons),
+  'leftRight': IconPickerIcon(
+      name: 'leftRight',
+      data: FontAwesomeIcons.leftRight,
+      pack: IconPack.fontAwesomeIcons),
+  'solidLemon': IconPickerIcon(
+      name: 'solidLemon',
+      data: FontAwesomeIcons.solidLemon,
+      pack: IconPack.fontAwesomeIcons),
+  'lemon': IconPickerIcon(
+      name: 'lemon',
+      data: FontAwesomeIcons.lemon,
+      pack: IconPack.fontAwesomeIcons),
+  'less': IconPickerIcon(
+      name: 'less',
+      data: FontAwesomeIcons.less,
+      pack: IconPack.fontAwesomeIcons),
+  'lessThan': IconPickerIcon(
+      name: 'lessThan',
+      data: FontAwesomeIcons.lessThan,
+      pack: IconPack.fontAwesomeIcons),
+  'lessThanEqual': IconPickerIcon(
+      name: 'lessThanEqual',
+      data: FontAwesomeIcons.lessThanEqual,
+      pack: IconPack.fontAwesomeIcons),
+  'solidLifeRing': IconPickerIcon(
+      name: 'solidLifeRing',
+      data: FontAwesomeIcons.solidLifeRing,
+      pack: IconPack.fontAwesomeIcons),
+  'lifeRing': IconPickerIcon(
+      name: 'lifeRing',
+      data: FontAwesomeIcons.lifeRing,
+      pack: IconPack.fontAwesomeIcons),
+  'solidLightbulb': IconPickerIcon(
+      name: 'solidLightbulb',
+      data: FontAwesomeIcons.solidLightbulb,
+      pack: IconPack.fontAwesomeIcons),
+  'lightbulb': IconPickerIcon(
+      name: 'lightbulb',
+      data: FontAwesomeIcons.lightbulb,
+      pack: IconPack.fontAwesomeIcons),
+  'line': IconPickerIcon(
+      name: 'line',
+      data: FontAwesomeIcons.line,
+      pack: IconPack.fontAwesomeIcons),
+  'linesLeaning': IconPickerIcon(
+      name: 'linesLeaning',
+      data: FontAwesomeIcons.linesLeaning,
+      pack: IconPack.fontAwesomeIcons),
+  'link': IconPickerIcon(
+      name: 'link',
+      data: FontAwesomeIcons.link,
+      pack: IconPack.fontAwesomeIcons),
+  'linkSlash': IconPickerIcon(
+      name: 'linkSlash',
+      data: FontAwesomeIcons.linkSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'linkedin': IconPickerIcon(
+      name: 'linkedin',
+      data: FontAwesomeIcons.linkedin,
+      pack: IconPack.fontAwesomeIcons),
+  'linkedinIn': IconPickerIcon(
+      name: 'linkedinIn',
+      data: FontAwesomeIcons.linkedinIn,
+      pack: IconPack.fontAwesomeIcons),
+  'linode': IconPickerIcon(
+      name: 'linode',
+      data: FontAwesomeIcons.linode,
+      pack: IconPack.fontAwesomeIcons),
+  'linux': IconPickerIcon(
+      name: 'linux',
+      data: FontAwesomeIcons.linux,
+      pack: IconPack.fontAwesomeIcons),
+  'liraSign': IconPickerIcon(
+      name: 'liraSign',
+      data: FontAwesomeIcons.liraSign,
+      pack: IconPack.fontAwesomeIcons),
+  'list': IconPickerIcon(
+      name: 'list',
+      data: FontAwesomeIcons.list,
+      pack: IconPack.fontAwesomeIcons),
+  'listCheck': IconPickerIcon(
+      name: 'listCheck',
+      data: FontAwesomeIcons.listCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'listOl': IconPickerIcon(
+      name: 'listOl',
+      data: FontAwesomeIcons.listOl,
+      pack: IconPack.fontAwesomeIcons),
+  'listUl': IconPickerIcon(
+      name: 'listUl',
+      data: FontAwesomeIcons.listUl,
+      pack: IconPack.fontAwesomeIcons),
+  'litecoinSign': IconPickerIcon(
+      name: 'litecoinSign',
+      data: FontAwesomeIcons.litecoinSign,
+      pack: IconPack.fontAwesomeIcons),
+  'locationArrow': IconPickerIcon(
+      name: 'locationArrow',
+      data: FontAwesomeIcons.locationArrow,
+      pack: IconPack.fontAwesomeIcons),
+  'locationCrosshairs': IconPickerIcon(
+      name: 'locationCrosshairs',
+      data: FontAwesomeIcons.locationCrosshairs,
+      pack: IconPack.fontAwesomeIcons),
+  'locationDot': IconPickerIcon(
+      name: 'locationDot',
+      data: FontAwesomeIcons.locationDot,
+      pack: IconPack.fontAwesomeIcons),
+  'locationPin': IconPickerIcon(
+      name: 'locationPin',
+      data: FontAwesomeIcons.locationPin,
+      pack: IconPack.fontAwesomeIcons),
+  'locationPinLock': IconPickerIcon(
+      name: 'locationPinLock',
+      data: FontAwesomeIcons.locationPinLock,
+      pack: IconPack.fontAwesomeIcons),
+  'lock': IconPickerIcon(
+      name: 'lock',
+      data: FontAwesomeIcons.lock,
+      pack: IconPack.fontAwesomeIcons),
+  'lockOpen': IconPickerIcon(
+      name: 'lockOpen',
+      data: FontAwesomeIcons.lockOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'locust': IconPickerIcon(
+      name: 'locust',
+      data: FontAwesomeIcons.locust,
+      pack: IconPack.fontAwesomeIcons),
+  'lungs': IconPickerIcon(
+      name: 'lungs',
+      data: FontAwesomeIcons.lungs,
+      pack: IconPack.fontAwesomeIcons),
+  'lungsVirus': IconPickerIcon(
+      name: 'lungsVirus',
+      data: FontAwesomeIcons.lungsVirus,
+      pack: IconPack.fontAwesomeIcons),
+  'lyft': IconPickerIcon(
+      name: 'lyft',
+      data: FontAwesomeIcons.lyft,
+      pack: IconPack.fontAwesomeIcons),
+  'm': IconPickerIcon(
+      name: 'm', data: FontAwesomeIcons.m, pack: IconPack.fontAwesomeIcons),
+  'magento': IconPickerIcon(
+      name: 'magento',
+      data: FontAwesomeIcons.magento,
+      pack: IconPack.fontAwesomeIcons),
+  'magnet': IconPickerIcon(
+      name: 'magnet',
+      data: FontAwesomeIcons.magnet,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlass': IconPickerIcon(
+      name: 'magnifyingGlass',
+      data: FontAwesomeIcons.magnifyingGlass,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassArrowRight': IconPickerIcon(
+      name: 'magnifyingGlassArrowRight',
+      data: FontAwesomeIcons.magnifyingGlassArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassChart': IconPickerIcon(
+      name: 'magnifyingGlassChart',
+      data: FontAwesomeIcons.magnifyingGlassChart,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassDollar': IconPickerIcon(
+      name: 'magnifyingGlassDollar',
+      data: FontAwesomeIcons.magnifyingGlassDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassLocation': IconPickerIcon(
+      name: 'magnifyingGlassLocation',
+      data: FontAwesomeIcons.magnifyingGlassLocation,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassMinus': IconPickerIcon(
+      name: 'magnifyingGlassMinus',
+      data: FontAwesomeIcons.magnifyingGlassMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'magnifyingGlassPlus': IconPickerIcon(
+      name: 'magnifyingGlassPlus',
+      data: FontAwesomeIcons.magnifyingGlassPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'mailchimp': IconPickerIcon(
+      name: 'mailchimp',
+      data: FontAwesomeIcons.mailchimp,
+      pack: IconPack.fontAwesomeIcons),
+  'manatSign': IconPickerIcon(
+      name: 'manatSign',
+      data: FontAwesomeIcons.manatSign,
+      pack: IconPack.fontAwesomeIcons),
+  'mandalorian': IconPickerIcon(
+      name: 'mandalorian',
+      data: FontAwesomeIcons.mandalorian,
+      pack: IconPack.fontAwesomeIcons),
+  'solidMap': IconPickerIcon(
+      name: 'solidMap',
+      data: FontAwesomeIcons.solidMap,
+      pack: IconPack.fontAwesomeIcons),
+  'map': IconPickerIcon(
+      name: 'map', data: FontAwesomeIcons.map, pack: IconPack.fontAwesomeIcons),
+  'mapLocation': IconPickerIcon(
+      name: 'mapLocation',
+      data: FontAwesomeIcons.mapLocation,
+      pack: IconPack.fontAwesomeIcons),
+  'mapLocationDot': IconPickerIcon(
+      name: 'mapLocationDot',
+      data: FontAwesomeIcons.mapLocationDot,
+      pack: IconPack.fontAwesomeIcons),
+  'mapPin': IconPickerIcon(
+      name: 'mapPin',
+      data: FontAwesomeIcons.mapPin,
+      pack: IconPack.fontAwesomeIcons),
+  'markdown': IconPickerIcon(
+      name: 'markdown',
+      data: FontAwesomeIcons.markdown,
+      pack: IconPack.fontAwesomeIcons),
+  'marker': IconPickerIcon(
+      name: 'marker',
+      data: FontAwesomeIcons.marker,
+      pack: IconPack.fontAwesomeIcons),
+  'mars': IconPickerIcon(
+      name: 'mars',
+      data: FontAwesomeIcons.mars,
+      pack: IconPack.fontAwesomeIcons),
+  'marsAndVenus': IconPickerIcon(
+      name: 'marsAndVenus',
+      data: FontAwesomeIcons.marsAndVenus,
+      pack: IconPack.fontAwesomeIcons),
+  'marsAndVenusBurst': IconPickerIcon(
+      name: 'marsAndVenusBurst',
+      data: FontAwesomeIcons.marsAndVenusBurst,
+      pack: IconPack.fontAwesomeIcons),
+  'marsDouble': IconPickerIcon(
+      name: 'marsDouble',
+      data: FontAwesomeIcons.marsDouble,
+      pack: IconPack.fontAwesomeIcons),
+  'marsStroke': IconPickerIcon(
+      name: 'marsStroke',
+      data: FontAwesomeIcons.marsStroke,
+      pack: IconPack.fontAwesomeIcons),
+  'marsStrokeRight': IconPickerIcon(
+      name: 'marsStrokeRight',
+      data: FontAwesomeIcons.marsStrokeRight,
+      pack: IconPack.fontAwesomeIcons),
+  'marsStrokeUp': IconPickerIcon(
+      name: 'marsStrokeUp',
+      data: FontAwesomeIcons.marsStrokeUp,
+      pack: IconPack.fontAwesomeIcons),
+  'martiniGlass': IconPickerIcon(
+      name: 'martiniGlass',
+      data: FontAwesomeIcons.martiniGlass,
+      pack: IconPack.fontAwesomeIcons),
+  'martiniGlassCitrus': IconPickerIcon(
+      name: 'martiniGlassCitrus',
+      data: FontAwesomeIcons.martiniGlassCitrus,
+      pack: IconPack.fontAwesomeIcons),
+  'martiniGlassEmpty': IconPickerIcon(
+      name: 'martiniGlassEmpty',
+      data: FontAwesomeIcons.martiniGlassEmpty,
+      pack: IconPack.fontAwesomeIcons),
+  'mask': IconPickerIcon(
+      name: 'mask',
+      data: FontAwesomeIcons.mask,
+      pack: IconPack.fontAwesomeIcons),
+  'maskFace': IconPickerIcon(
+      name: 'maskFace',
+      data: FontAwesomeIcons.maskFace,
+      pack: IconPack.fontAwesomeIcons),
+  'maskVentilator': IconPickerIcon(
+      name: 'maskVentilator',
+      data: FontAwesomeIcons.maskVentilator,
+      pack: IconPack.fontAwesomeIcons),
+  'masksTheater': IconPickerIcon(
+      name: 'masksTheater',
+      data: FontAwesomeIcons.masksTheater,
+      pack: IconPack.fontAwesomeIcons),
+  'mastodon': IconPickerIcon(
+      name: 'mastodon',
+      data: FontAwesomeIcons.mastodon,
+      pack: IconPack.fontAwesomeIcons),
+  'mattressPillow': IconPickerIcon(
+      name: 'mattressPillow',
+      data: FontAwesomeIcons.mattressPillow,
+      pack: IconPack.fontAwesomeIcons),
+  'maxcdn': IconPickerIcon(
+      name: 'maxcdn',
+      data: FontAwesomeIcons.maxcdn,
+      pack: IconPack.fontAwesomeIcons),
+  'maximize': IconPickerIcon(
+      name: 'maximize',
+      data: FontAwesomeIcons.maximize,
+      pack: IconPack.fontAwesomeIcons),
+  'mdb': IconPickerIcon(
+      name: 'mdb', data: FontAwesomeIcons.mdb, pack: IconPack.fontAwesomeIcons),
+  'medal': IconPickerIcon(
+      name: 'medal',
+      data: FontAwesomeIcons.medal,
+      pack: IconPack.fontAwesomeIcons),
+  'medapps': IconPickerIcon(
+      name: 'medapps',
+      data: FontAwesomeIcons.medapps,
+      pack: IconPack.fontAwesomeIcons),
+  'medium': IconPickerIcon(
+      name: 'medium',
+      data: FontAwesomeIcons.medium,
+      pack: IconPack.fontAwesomeIcons),
+  'medrt': IconPickerIcon(
+      name: 'medrt',
+      data: FontAwesomeIcons.medrt,
+      pack: IconPack.fontAwesomeIcons),
+  'meetup': IconPickerIcon(
+      name: 'meetup',
+      data: FontAwesomeIcons.meetup,
+      pack: IconPack.fontAwesomeIcons),
+  'megaport': IconPickerIcon(
+      name: 'megaport',
+      data: FontAwesomeIcons.megaport,
+      pack: IconPack.fontAwesomeIcons),
+  'memory': IconPickerIcon(
+      name: 'memory',
+      data: FontAwesomeIcons.memory,
+      pack: IconPack.fontAwesomeIcons),
+  'mendeley': IconPickerIcon(
+      name: 'mendeley',
+      data: FontAwesomeIcons.mendeley,
+      pack: IconPack.fontAwesomeIcons),
+  'menorah': IconPickerIcon(
+      name: 'menorah',
+      data: FontAwesomeIcons.menorah,
+      pack: IconPack.fontAwesomeIcons),
+  'mercury': IconPickerIcon(
+      name: 'mercury',
+      data: FontAwesomeIcons.mercury,
+      pack: IconPack.fontAwesomeIcons),
+  'solidMessage': IconPickerIcon(
+      name: 'solidMessage',
+      data: FontAwesomeIcons.solidMessage,
+      pack: IconPack.fontAwesomeIcons),
+  'message': IconPickerIcon(
+      name: 'message',
+      data: FontAwesomeIcons.message,
+      pack: IconPack.fontAwesomeIcons),
+  'meta': IconPickerIcon(
+      name: 'meta',
+      data: FontAwesomeIcons.meta,
+      pack: IconPack.fontAwesomeIcons),
+  'meteor': IconPickerIcon(
+      name: 'meteor',
+      data: FontAwesomeIcons.meteor,
+      pack: IconPack.fontAwesomeIcons),
+  'microblog': IconPickerIcon(
+      name: 'microblog',
+      data: FontAwesomeIcons.microblog,
+      pack: IconPack.fontAwesomeIcons),
+  'microchip': IconPickerIcon(
+      name: 'microchip',
+      data: FontAwesomeIcons.microchip,
+      pack: IconPack.fontAwesomeIcons),
+  'microphone': IconPickerIcon(
+      name: 'microphone',
+      data: FontAwesomeIcons.microphone,
+      pack: IconPack.fontAwesomeIcons),
+  'microphoneLines': IconPickerIcon(
+      name: 'microphoneLines',
+      data: FontAwesomeIcons.microphoneLines,
+      pack: IconPack.fontAwesomeIcons),
+  'microphoneLinesSlash': IconPickerIcon(
+      name: 'microphoneLinesSlash',
+      data: FontAwesomeIcons.microphoneLinesSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'microphoneSlash': IconPickerIcon(
+      name: 'microphoneSlash',
+      data: FontAwesomeIcons.microphoneSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'microscope': IconPickerIcon(
+      name: 'microscope',
+      data: FontAwesomeIcons.microscope,
+      pack: IconPack.fontAwesomeIcons),
+  'microsoft': IconPickerIcon(
+      name: 'microsoft',
+      data: FontAwesomeIcons.microsoft,
+      pack: IconPack.fontAwesomeIcons),
+  'millSign': IconPickerIcon(
+      name: 'millSign',
+      data: FontAwesomeIcons.millSign,
+      pack: IconPack.fontAwesomeIcons),
+  'minimize': IconPickerIcon(
+      name: 'minimize',
+      data: FontAwesomeIcons.minimize,
+      pack: IconPack.fontAwesomeIcons),
+  'minus': IconPickerIcon(
+      name: 'minus',
+      data: FontAwesomeIcons.minus,
+      pack: IconPack.fontAwesomeIcons),
+  'mitten': IconPickerIcon(
+      name: 'mitten',
+      data: FontAwesomeIcons.mitten,
+      pack: IconPack.fontAwesomeIcons),
+  'mix': IconPickerIcon(
+      name: 'mix', data: FontAwesomeIcons.mix, pack: IconPack.fontAwesomeIcons),
+  'mixcloud': IconPickerIcon(
+      name: 'mixcloud',
+      data: FontAwesomeIcons.mixcloud,
+      pack: IconPack.fontAwesomeIcons),
+  'mixer': IconPickerIcon(
+      name: 'mixer',
+      data: FontAwesomeIcons.mixer,
+      pack: IconPack.fontAwesomeIcons),
+  'mizuni': IconPickerIcon(
+      name: 'mizuni',
+      data: FontAwesomeIcons.mizuni,
+      pack: IconPack.fontAwesomeIcons),
+  'mobile': IconPickerIcon(
+      name: 'mobile',
+      data: FontAwesomeIcons.mobile,
+      pack: IconPack.fontAwesomeIcons),
+  'mobileButton': IconPickerIcon(
+      name: 'mobileButton',
+      data: FontAwesomeIcons.mobileButton,
+      pack: IconPack.fontAwesomeIcons),
+  'mobileRetro': IconPickerIcon(
+      name: 'mobileRetro',
+      data: FontAwesomeIcons.mobileRetro,
+      pack: IconPack.fontAwesomeIcons),
+  'mobileScreen': IconPickerIcon(
+      name: 'mobileScreen',
+      data: FontAwesomeIcons.mobileScreen,
+      pack: IconPack.fontAwesomeIcons),
+  'mobileScreenButton': IconPickerIcon(
+      name: 'mobileScreenButton',
+      data: FontAwesomeIcons.mobileScreenButton,
+      pack: IconPack.fontAwesomeIcons),
+  'modx': IconPickerIcon(
+      name: 'modx',
+      data: FontAwesomeIcons.modx,
+      pack: IconPack.fontAwesomeIcons),
+  'monero': IconPickerIcon(
+      name: 'monero',
+      data: FontAwesomeIcons.monero,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBill': IconPickerIcon(
+      name: 'moneyBill',
+      data: FontAwesomeIcons.moneyBill,
+      pack: IconPack.fontAwesomeIcons),
+  'solidMoneyBill1': IconPickerIcon(
+      name: 'solidMoneyBill1',
+      data: FontAwesomeIcons.solidMoneyBill1,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBill1': IconPickerIcon(
+      name: 'moneyBill1',
+      data: FontAwesomeIcons.moneyBill1,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBill1Wave': IconPickerIcon(
+      name: 'moneyBill1Wave',
+      data: FontAwesomeIcons.moneyBill1Wave,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBillTransfer': IconPickerIcon(
+      name: 'moneyBillTransfer',
+      data: FontAwesomeIcons.moneyBillTransfer,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBillTrendUp': IconPickerIcon(
+      name: 'moneyBillTrendUp',
+      data: FontAwesomeIcons.moneyBillTrendUp,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBillWave': IconPickerIcon(
+      name: 'moneyBillWave',
+      data: FontAwesomeIcons.moneyBillWave,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBillWheat': IconPickerIcon(
+      name: 'moneyBillWheat',
+      data: FontAwesomeIcons.moneyBillWheat,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyBills': IconPickerIcon(
+      name: 'moneyBills',
+      data: FontAwesomeIcons.moneyBills,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyCheck': IconPickerIcon(
+      name: 'moneyCheck',
+      data: FontAwesomeIcons.moneyCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'moneyCheckDollar': IconPickerIcon(
+      name: 'moneyCheckDollar',
+      data: FontAwesomeIcons.moneyCheckDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'monument': IconPickerIcon(
+      name: 'monument',
+      data: FontAwesomeIcons.monument,
+      pack: IconPack.fontAwesomeIcons),
+  'solidMoon': IconPickerIcon(
+      name: 'solidMoon',
+      data: FontAwesomeIcons.solidMoon,
+      pack: IconPack.fontAwesomeIcons),
+  'moon': IconPickerIcon(
+      name: 'moon',
+      data: FontAwesomeIcons.moon,
+      pack: IconPack.fontAwesomeIcons),
+  'mortarPestle': IconPickerIcon(
+      name: 'mortarPestle',
+      data: FontAwesomeIcons.mortarPestle,
+      pack: IconPack.fontAwesomeIcons),
+  'mosque': IconPickerIcon(
+      name: 'mosque',
+      data: FontAwesomeIcons.mosque,
+      pack: IconPack.fontAwesomeIcons),
+  'mosquito': IconPickerIcon(
+      name: 'mosquito',
+      data: FontAwesomeIcons.mosquito,
+      pack: IconPack.fontAwesomeIcons),
+  'mosquitoNet': IconPickerIcon(
+      name: 'mosquitoNet',
+      data: FontAwesomeIcons.mosquitoNet,
+      pack: IconPack.fontAwesomeIcons),
+  'motorcycle': IconPickerIcon(
+      name: 'motorcycle',
+      data: FontAwesomeIcons.motorcycle,
+      pack: IconPack.fontAwesomeIcons),
+  'mound': IconPickerIcon(
+      name: 'mound',
+      data: FontAwesomeIcons.mound,
+      pack: IconPack.fontAwesomeIcons),
+  'mountain': IconPickerIcon(
+      name: 'mountain',
+      data: FontAwesomeIcons.mountain,
+      pack: IconPack.fontAwesomeIcons),
+  'mountainCity': IconPickerIcon(
+      name: 'mountainCity',
+      data: FontAwesomeIcons.mountainCity,
+      pack: IconPack.fontAwesomeIcons),
+  'mountainSun': IconPickerIcon(
+      name: 'mountainSun',
+      data: FontAwesomeIcons.mountainSun,
+      pack: IconPack.fontAwesomeIcons),
+  'mugHot': IconPickerIcon(
+      name: 'mugHot',
+      data: FontAwesomeIcons.mugHot,
+      pack: IconPack.fontAwesomeIcons),
+  'mugSaucer': IconPickerIcon(
+      name: 'mugSaucer',
+      data: FontAwesomeIcons.mugSaucer,
+      pack: IconPack.fontAwesomeIcons),
+  'music': IconPickerIcon(
+      name: 'music',
+      data: FontAwesomeIcons.music,
+      pack: IconPack.fontAwesomeIcons),
+  'n': IconPickerIcon(
+      name: 'n', data: FontAwesomeIcons.n, pack: IconPack.fontAwesomeIcons),
+  'nairaSign': IconPickerIcon(
+      name: 'nairaSign',
+      data: FontAwesomeIcons.nairaSign,
+      pack: IconPack.fontAwesomeIcons),
+  'napster': IconPickerIcon(
+      name: 'napster',
+      data: FontAwesomeIcons.napster,
+      pack: IconPack.fontAwesomeIcons),
+  'neos': IconPickerIcon(
+      name: 'neos',
+      data: FontAwesomeIcons.neos,
+      pack: IconPack.fontAwesomeIcons),
+  'networkWired': IconPickerIcon(
+      name: 'networkWired',
+      data: FontAwesomeIcons.networkWired,
+      pack: IconPack.fontAwesomeIcons),
+  'neuter': IconPickerIcon(
+      name: 'neuter',
+      data: FontAwesomeIcons.neuter,
+      pack: IconPack.fontAwesomeIcons),
+  'solidNewspaper': IconPickerIcon(
+      name: 'solidNewspaper',
+      data: FontAwesomeIcons.solidNewspaper,
+      pack: IconPack.fontAwesomeIcons),
+  'newspaper': IconPickerIcon(
+      name: 'newspaper',
+      data: FontAwesomeIcons.newspaper,
+      pack: IconPack.fontAwesomeIcons),
+  'nfcDirectional': IconPickerIcon(
+      name: 'nfcDirectional',
+      data: FontAwesomeIcons.nfcDirectional,
+      pack: IconPack.fontAwesomeIcons),
+  'nfcSymbol': IconPickerIcon(
+      name: 'nfcSymbol',
+      data: FontAwesomeIcons.nfcSymbol,
+      pack: IconPack.fontAwesomeIcons),
+  'nimblr': IconPickerIcon(
+      name: 'nimblr',
+      data: FontAwesomeIcons.nimblr,
+      pack: IconPack.fontAwesomeIcons),
+  'node': IconPickerIcon(
+      name: 'node',
+      data: FontAwesomeIcons.node,
+      pack: IconPack.fontAwesomeIcons),
+  'nodeJs': IconPickerIcon(
+      name: 'nodeJs',
+      data: FontAwesomeIcons.nodeJs,
+      pack: IconPack.fontAwesomeIcons),
+  'notEqual': IconPickerIcon(
+      name: 'notEqual',
+      data: FontAwesomeIcons.notEqual,
+      pack: IconPack.fontAwesomeIcons),
+  'solidNoteSticky': IconPickerIcon(
+      name: 'solidNoteSticky',
+      data: FontAwesomeIcons.solidNoteSticky,
+      pack: IconPack.fontAwesomeIcons),
+  'noteSticky': IconPickerIcon(
+      name: 'noteSticky',
+      data: FontAwesomeIcons.noteSticky,
+      pack: IconPack.fontAwesomeIcons),
+  'notesMedical': IconPickerIcon(
+      name: 'notesMedical',
+      data: FontAwesomeIcons.notesMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'npm': IconPickerIcon(
+      name: 'npm', data: FontAwesomeIcons.npm, pack: IconPack.fontAwesomeIcons),
+  'ns8': IconPickerIcon(
+      name: 'ns8', data: FontAwesomeIcons.ns8, pack: IconPack.fontAwesomeIcons),
+  'nutritionix': IconPickerIcon(
+      name: 'nutritionix',
+      data: FontAwesomeIcons.nutritionix,
+      pack: IconPack.fontAwesomeIcons),
+  'o': IconPickerIcon(
+      name: 'o', data: FontAwesomeIcons.o, pack: IconPack.fontAwesomeIcons),
+  'solidObjectGroup': IconPickerIcon(
+      name: 'solidObjectGroup',
+      data: FontAwesomeIcons.solidObjectGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'objectGroup': IconPickerIcon(
+      name: 'objectGroup',
+      data: FontAwesomeIcons.objectGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'solidObjectUngroup': IconPickerIcon(
+      name: 'solidObjectUngroup',
+      data: FontAwesomeIcons.solidObjectUngroup,
+      pack: IconPack.fontAwesomeIcons),
+  'objectUngroup': IconPickerIcon(
+      name: 'objectUngroup',
+      data: FontAwesomeIcons.objectUngroup,
+      pack: IconPack.fontAwesomeIcons),
+  'octopusDeploy': IconPickerIcon(
+      name: 'octopusDeploy',
+      data: FontAwesomeIcons.octopusDeploy,
+      pack: IconPack.fontAwesomeIcons),
+  'odnoklassniki': IconPickerIcon(
+      name: 'odnoklassniki',
+      data: FontAwesomeIcons.odnoklassniki,
+      pack: IconPack.fontAwesomeIcons),
+  'oilCan': IconPickerIcon(
+      name: 'oilCan',
+      data: FontAwesomeIcons.oilCan,
+      pack: IconPack.fontAwesomeIcons),
+  'oilWell': IconPickerIcon(
+      name: 'oilWell',
+      data: FontAwesomeIcons.oilWell,
+      pack: IconPack.fontAwesomeIcons),
+  'oldRepublic': IconPickerIcon(
+      name: 'oldRepublic',
+      data: FontAwesomeIcons.oldRepublic,
+      pack: IconPack.fontAwesomeIcons),
+  'om': IconPickerIcon(
+      name: 'om', data: FontAwesomeIcons.om, pack: IconPack.fontAwesomeIcons),
+  'opencart': IconPickerIcon(
+      name: 'opencart',
+      data: FontAwesomeIcons.opencart,
+      pack: IconPack.fontAwesomeIcons),
+  'openid': IconPickerIcon(
+      name: 'openid',
+      data: FontAwesomeIcons.openid,
+      pack: IconPack.fontAwesomeIcons),
+  'opera': IconPickerIcon(
+      name: 'opera',
+      data: FontAwesomeIcons.opera,
+      pack: IconPack.fontAwesomeIcons),
+  'optinMonster': IconPickerIcon(
+      name: 'optinMonster',
+      data: FontAwesomeIcons.optinMonster,
+      pack: IconPack.fontAwesomeIcons),
+  'orcid': IconPickerIcon(
+      name: 'orcid',
+      data: FontAwesomeIcons.orcid,
+      pack: IconPack.fontAwesomeIcons),
+  'osi': IconPickerIcon(
+      name: 'osi', data: FontAwesomeIcons.osi, pack: IconPack.fontAwesomeIcons),
+  'otter': IconPickerIcon(
+      name: 'otter',
+      data: FontAwesomeIcons.otter,
+      pack: IconPack.fontAwesomeIcons),
+  'outdent': IconPickerIcon(
+      name: 'outdent',
+      data: FontAwesomeIcons.outdent,
+      pack: IconPack.fontAwesomeIcons),
+  'p': IconPickerIcon(
+      name: 'p', data: FontAwesomeIcons.p, pack: IconPack.fontAwesomeIcons),
+  'padlet': IconPickerIcon(
+      name: 'padlet',
+      data: FontAwesomeIcons.padlet,
+      pack: IconPack.fontAwesomeIcons),
+  'page4': IconPickerIcon(
+      name: 'page4',
+      data: FontAwesomeIcons.page4,
+      pack: IconPack.fontAwesomeIcons),
+  'pagelines': IconPickerIcon(
+      name: 'pagelines',
+      data: FontAwesomeIcons.pagelines,
+      pack: IconPack.fontAwesomeIcons),
+  'pager': IconPickerIcon(
+      name: 'pager',
+      data: FontAwesomeIcons.pager,
+      pack: IconPack.fontAwesomeIcons),
+  'paintRoller': IconPickerIcon(
+      name: 'paintRoller',
+      data: FontAwesomeIcons.paintRoller,
+      pack: IconPack.fontAwesomeIcons),
+  'paintbrush': IconPickerIcon(
+      name: 'paintbrush',
+      data: FontAwesomeIcons.paintbrush,
+      pack: IconPack.fontAwesomeIcons),
+  'palette': IconPickerIcon(
+      name: 'palette',
+      data: FontAwesomeIcons.palette,
+      pack: IconPack.fontAwesomeIcons),
+  'palfed': IconPickerIcon(
+      name: 'palfed',
+      data: FontAwesomeIcons.palfed,
+      pack: IconPack.fontAwesomeIcons),
+  'pallet': IconPickerIcon(
+      name: 'pallet',
+      data: FontAwesomeIcons.pallet,
+      pack: IconPack.fontAwesomeIcons),
+  'panorama': IconPickerIcon(
+      name: 'panorama',
+      data: FontAwesomeIcons.panorama,
+      pack: IconPack.fontAwesomeIcons),
+  'solidPaperPlane': IconPickerIcon(
+      name: 'solidPaperPlane',
+      data: FontAwesomeIcons.solidPaperPlane,
+      pack: IconPack.fontAwesomeIcons),
+  'paperPlane': IconPickerIcon(
+      name: 'paperPlane',
+      data: FontAwesomeIcons.paperPlane,
+      pack: IconPack.fontAwesomeIcons),
+  'paperclip': IconPickerIcon(
+      name: 'paperclip',
+      data: FontAwesomeIcons.paperclip,
+      pack: IconPack.fontAwesomeIcons),
+  'parachuteBox': IconPickerIcon(
+      name: 'parachuteBox',
+      data: FontAwesomeIcons.parachuteBox,
+      pack: IconPack.fontAwesomeIcons),
+  'paragraph': IconPickerIcon(
+      name: 'paragraph',
+      data: FontAwesomeIcons.paragraph,
+      pack: IconPack.fontAwesomeIcons),
+  'passport': IconPickerIcon(
+      name: 'passport',
+      data: FontAwesomeIcons.passport,
+      pack: IconPack.fontAwesomeIcons),
+  'solidPaste': IconPickerIcon(
+      name: 'solidPaste',
+      data: FontAwesomeIcons.solidPaste,
+      pack: IconPack.fontAwesomeIcons),
+  'paste': IconPickerIcon(
+      name: 'paste',
+      data: FontAwesomeIcons.paste,
+      pack: IconPack.fontAwesomeIcons),
+  'patreon': IconPickerIcon(
+      name: 'patreon',
+      data: FontAwesomeIcons.patreon,
+      pack: IconPack.fontAwesomeIcons),
+  'pause': IconPickerIcon(
+      name: 'pause',
+      data: FontAwesomeIcons.pause,
+      pack: IconPack.fontAwesomeIcons),
+  'paw': IconPickerIcon(
+      name: 'paw', data: FontAwesomeIcons.paw, pack: IconPack.fontAwesomeIcons),
+  'paypal': IconPickerIcon(
+      name: 'paypal',
+      data: FontAwesomeIcons.paypal,
+      pack: IconPack.fontAwesomeIcons),
+  'peace': IconPickerIcon(
+      name: 'peace',
+      data: FontAwesomeIcons.peace,
+      pack: IconPack.fontAwesomeIcons),
+  'pen': IconPickerIcon(
+      name: 'pen', data: FontAwesomeIcons.pen, pack: IconPack.fontAwesomeIcons),
+  'penClip': IconPickerIcon(
+      name: 'penClip',
+      data: FontAwesomeIcons.penClip,
+      pack: IconPack.fontAwesomeIcons),
+  'penFancy': IconPickerIcon(
+      name: 'penFancy',
+      data: FontAwesomeIcons.penFancy,
+      pack: IconPack.fontAwesomeIcons),
+  'penNib': IconPickerIcon(
+      name: 'penNib',
+      data: FontAwesomeIcons.penNib,
+      pack: IconPack.fontAwesomeIcons),
+  'penRuler': IconPickerIcon(
+      name: 'penRuler',
+      data: FontAwesomeIcons.penRuler,
+      pack: IconPack.fontAwesomeIcons),
+  'solidPenToSquare': IconPickerIcon(
+      name: 'solidPenToSquare',
+      data: FontAwesomeIcons.solidPenToSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'penToSquare': IconPickerIcon(
+      name: 'penToSquare',
+      data: FontAwesomeIcons.penToSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'pencil': IconPickerIcon(
+      name: 'pencil',
+      data: FontAwesomeIcons.pencil,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleArrows': IconPickerIcon(
+      name: 'peopleArrows',
+      data: FontAwesomeIcons.peopleArrows,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleCarryBox': IconPickerIcon(
+      name: 'peopleCarryBox',
+      data: FontAwesomeIcons.peopleCarryBox,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleGroup': IconPickerIcon(
+      name: 'peopleGroup',
+      data: FontAwesomeIcons.peopleGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleLine': IconPickerIcon(
+      name: 'peopleLine',
+      data: FontAwesomeIcons.peopleLine,
+      pack: IconPack.fontAwesomeIcons),
+  'peoplePulling': IconPickerIcon(
+      name: 'peoplePulling',
+      data: FontAwesomeIcons.peoplePulling,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleRobbery': IconPickerIcon(
+      name: 'peopleRobbery',
+      data: FontAwesomeIcons.peopleRobbery,
+      pack: IconPack.fontAwesomeIcons),
+  'peopleRoof': IconPickerIcon(
+      name: 'peopleRoof',
+      data: FontAwesomeIcons.peopleRoof,
+      pack: IconPack.fontAwesomeIcons),
+  'pepperHot': IconPickerIcon(
+      name: 'pepperHot',
+      data: FontAwesomeIcons.pepperHot,
+      pack: IconPack.fontAwesomeIcons),
+  'perbyte': IconPickerIcon(
+      name: 'perbyte',
+      data: FontAwesomeIcons.perbyte,
+      pack: IconPack.fontAwesomeIcons),
+  'percent': IconPickerIcon(
+      name: 'percent',
+      data: FontAwesomeIcons.percent,
+      pack: IconPack.fontAwesomeIcons),
+  'periscope': IconPickerIcon(
+      name: 'periscope',
+      data: FontAwesomeIcons.periscope,
+      pack: IconPack.fontAwesomeIcons),
+  'person': IconPickerIcon(
+      name: 'person',
+      data: FontAwesomeIcons.person,
+      pack: IconPack.fontAwesomeIcons),
+  'personArrowDownToLine': IconPickerIcon(
+      name: 'personArrowDownToLine',
+      data: FontAwesomeIcons.personArrowDownToLine,
+      pack: IconPack.fontAwesomeIcons),
+  'personArrowUpFromLine': IconPickerIcon(
+      name: 'personArrowUpFromLine',
+      data: FontAwesomeIcons.personArrowUpFromLine,
+      pack: IconPack.fontAwesomeIcons),
+  'personBiking': IconPickerIcon(
+      name: 'personBiking',
+      data: FontAwesomeIcons.personBiking,
+      pack: IconPack.fontAwesomeIcons),
+  'personBooth': IconPickerIcon(
+      name: 'personBooth',
+      data: FontAwesomeIcons.personBooth,
+      pack: IconPack.fontAwesomeIcons),
+  'personBreastfeeding': IconPickerIcon(
+      name: 'personBreastfeeding',
+      data: FontAwesomeIcons.personBreastfeeding,
+      pack: IconPack.fontAwesomeIcons),
+  'personBurst': IconPickerIcon(
+      name: 'personBurst',
+      data: FontAwesomeIcons.personBurst,
+      pack: IconPack.fontAwesomeIcons),
+  'personCane': IconPickerIcon(
+      name: 'personCane',
+      data: FontAwesomeIcons.personCane,
+      pack: IconPack.fontAwesomeIcons),
+  'personChalkboard': IconPickerIcon(
+      name: 'personChalkboard',
+      data: FontAwesomeIcons.personChalkboard,
+      pack: IconPack.fontAwesomeIcons),
+  'personCircleCheck': IconPickerIcon(
+      name: 'personCircleCheck',
+      data: FontAwesomeIcons.personCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'personCircleExclamation': IconPickerIcon(
+      name: 'personCircleExclamation',
+      data: FontAwesomeIcons.personCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'personCircleMinus': IconPickerIcon(
+      name: 'personCircleMinus',
+      data: FontAwesomeIcons.personCircleMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'personCirclePlus': IconPickerIcon(
+      name: 'personCirclePlus',
+      data: FontAwesomeIcons.personCirclePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'personCircleQuestion': IconPickerIcon(
+      name: 'personCircleQuestion',
+      data: FontAwesomeIcons.personCircleQuestion,
+      pack: IconPack.fontAwesomeIcons),
+  'personCircleXmark': IconPickerIcon(
+      name: 'personCircleXmark',
+      data: FontAwesomeIcons.personCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'personDigging': IconPickerIcon(
+      name: 'personDigging',
+      data: FontAwesomeIcons.personDigging,
+      pack: IconPack.fontAwesomeIcons),
+  'personDotsFromLine': IconPickerIcon(
+      name: 'personDotsFromLine',
+      data: FontAwesomeIcons.personDotsFromLine,
+      pack: IconPack.fontAwesomeIcons),
+  'personDress': IconPickerIcon(
+      name: 'personDress',
+      data: FontAwesomeIcons.personDress,
+      pack: IconPack.fontAwesomeIcons),
+  'personDressBurst': IconPickerIcon(
+      name: 'personDressBurst',
+      data: FontAwesomeIcons.personDressBurst,
+      pack: IconPack.fontAwesomeIcons),
+  'personDrowning': IconPickerIcon(
+      name: 'personDrowning',
+      data: FontAwesomeIcons.personDrowning,
+      pack: IconPack.fontAwesomeIcons),
+  'personFalling': IconPickerIcon(
+      name: 'personFalling',
+      data: FontAwesomeIcons.personFalling,
+      pack: IconPack.fontAwesomeIcons),
+  'personFallingBurst': IconPickerIcon(
+      name: 'personFallingBurst',
+      data: FontAwesomeIcons.personFallingBurst,
+      pack: IconPack.fontAwesomeIcons),
+  'personHalfDress': IconPickerIcon(
+      name: 'personHalfDress',
+      data: FontAwesomeIcons.personHalfDress,
+      pack: IconPack.fontAwesomeIcons),
+  'personHarassing': IconPickerIcon(
+      name: 'personHarassing',
+      data: FontAwesomeIcons.personHarassing,
+      pack: IconPack.fontAwesomeIcons),
+  'personHiking': IconPickerIcon(
+      name: 'personHiking',
+      data: FontAwesomeIcons.personHiking,
+      pack: IconPack.fontAwesomeIcons),
+  'personMilitaryPointing': IconPickerIcon(
+      name: 'personMilitaryPointing',
+      data: FontAwesomeIcons.personMilitaryPointing,
+      pack: IconPack.fontAwesomeIcons),
+  'personMilitaryRifle': IconPickerIcon(
+      name: 'personMilitaryRifle',
+      data: FontAwesomeIcons.personMilitaryRifle,
+      pack: IconPack.fontAwesomeIcons),
+  'personMilitaryToPerson': IconPickerIcon(
+      name: 'personMilitaryToPerson',
+      data: FontAwesomeIcons.personMilitaryToPerson,
+      pack: IconPack.fontAwesomeIcons),
+  'personPraying': IconPickerIcon(
+      name: 'personPraying',
+      data: FontAwesomeIcons.personPraying,
+      pack: IconPack.fontAwesomeIcons),
+  'personPregnant': IconPickerIcon(
+      name: 'personPregnant',
+      data: FontAwesomeIcons.personPregnant,
+      pack: IconPack.fontAwesomeIcons),
+  'personRays': IconPickerIcon(
+      name: 'personRays',
+      data: FontAwesomeIcons.personRays,
+      pack: IconPack.fontAwesomeIcons),
+  'personRifle': IconPickerIcon(
+      name: 'personRifle',
+      data: FontAwesomeIcons.personRifle,
+      pack: IconPack.fontAwesomeIcons),
+  'personRunning': IconPickerIcon(
+      name: 'personRunning',
+      data: FontAwesomeIcons.personRunning,
+      pack: IconPack.fontAwesomeIcons),
+  'personShelter': IconPickerIcon(
+      name: 'personShelter',
+      data: FontAwesomeIcons.personShelter,
+      pack: IconPack.fontAwesomeIcons),
+  'personSkating': IconPickerIcon(
+      name: 'personSkating',
+      data: FontAwesomeIcons.personSkating,
+      pack: IconPack.fontAwesomeIcons),
+  'personSkiing': IconPickerIcon(
+      name: 'personSkiing',
+      data: FontAwesomeIcons.personSkiing,
+      pack: IconPack.fontAwesomeIcons),
+  'personSkiingNordic': IconPickerIcon(
+      name: 'personSkiingNordic',
+      data: FontAwesomeIcons.personSkiingNordic,
+      pack: IconPack.fontAwesomeIcons),
+  'personSnowboarding': IconPickerIcon(
+      name: 'personSnowboarding',
+      data: FontAwesomeIcons.personSnowboarding,
+      pack: IconPack.fontAwesomeIcons),
+  'personSwimming': IconPickerIcon(
+      name: 'personSwimming',
+      data: FontAwesomeIcons.personSwimming,
+      pack: IconPack.fontAwesomeIcons),
+  'personThroughWindow': IconPickerIcon(
+      name: 'personThroughWindow',
+      data: FontAwesomeIcons.personThroughWindow,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalking': IconPickerIcon(
+      name: 'personWalking',
+      data: FontAwesomeIcons.personWalking,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalkingArrowLoopLeft': IconPickerIcon(
+      name: 'personWalkingArrowLoopLeft',
+      data: FontAwesomeIcons.personWalkingArrowLoopLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalkingArrowRight': IconPickerIcon(
+      name: 'personWalkingArrowRight',
+      data: FontAwesomeIcons.personWalkingArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalkingDashedLineArrowRight': IconPickerIcon(
+      name: 'personWalkingDashedLineArrowRight',
+      data: FontAwesomeIcons.personWalkingDashedLineArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalkingLuggage': IconPickerIcon(
+      name: 'personWalkingLuggage',
+      data: FontAwesomeIcons.personWalkingLuggage,
+      pack: IconPack.fontAwesomeIcons),
+  'personWalkingWithCane': IconPickerIcon(
+      name: 'personWalkingWithCane',
+      data: FontAwesomeIcons.personWalkingWithCane,
+      pack: IconPack.fontAwesomeIcons),
+  'pesetaSign': IconPickerIcon(
+      name: 'pesetaSign',
+      data: FontAwesomeIcons.pesetaSign,
+      pack: IconPack.fontAwesomeIcons),
+  'pesoSign': IconPickerIcon(
+      name: 'pesoSign',
+      data: FontAwesomeIcons.pesoSign,
+      pack: IconPack.fontAwesomeIcons),
+  'phabricator': IconPickerIcon(
+      name: 'phabricator',
+      data: FontAwesomeIcons.phabricator,
+      pack: IconPack.fontAwesomeIcons),
+  'phoenixFramework': IconPickerIcon(
+      name: 'phoenixFramework',
+      data: FontAwesomeIcons.phoenixFramework,
+      pack: IconPack.fontAwesomeIcons),
+  'phoenixSquadron': IconPickerIcon(
+      name: 'phoenixSquadron',
+      data: FontAwesomeIcons.phoenixSquadron,
+      pack: IconPack.fontAwesomeIcons),
+  'phone': IconPickerIcon(
+      name: 'phone',
+      data: FontAwesomeIcons.phone,
+      pack: IconPack.fontAwesomeIcons),
+  'phoneFlip': IconPickerIcon(
+      name: 'phoneFlip',
+      data: FontAwesomeIcons.phoneFlip,
+      pack: IconPack.fontAwesomeIcons),
+  'phoneSlash': IconPickerIcon(
+      name: 'phoneSlash',
+      data: FontAwesomeIcons.phoneSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'phoneVolume': IconPickerIcon(
+      name: 'phoneVolume',
+      data: FontAwesomeIcons.phoneVolume,
+      pack: IconPack.fontAwesomeIcons),
+  'photoFilm': IconPickerIcon(
+      name: 'photoFilm',
+      data: FontAwesomeIcons.photoFilm,
+      pack: IconPack.fontAwesomeIcons),
+  'php': IconPickerIcon(
+      name: 'php', data: FontAwesomeIcons.php, pack: IconPack.fontAwesomeIcons),
+  'piedPiper': IconPickerIcon(
+      name: 'piedPiper',
+      data: FontAwesomeIcons.piedPiper,
+      pack: IconPack.fontAwesomeIcons),
+  'piedPiperAlt': IconPickerIcon(
+      name: 'piedPiperAlt',
+      data: FontAwesomeIcons.piedPiperAlt,
+      pack: IconPack.fontAwesomeIcons),
+  'piedPiperHat': IconPickerIcon(
+      name: 'piedPiperHat',
+      data: FontAwesomeIcons.piedPiperHat,
+      pack: IconPack.fontAwesomeIcons),
+  'piedPiperPp': IconPickerIcon(
+      name: 'piedPiperPp',
+      data: FontAwesomeIcons.piedPiperPp,
+      pack: IconPack.fontAwesomeIcons),
+  'piggyBank': IconPickerIcon(
+      name: 'piggyBank',
+      data: FontAwesomeIcons.piggyBank,
+      pack: IconPack.fontAwesomeIcons),
+  'pills': IconPickerIcon(
+      name: 'pills',
+      data: FontAwesomeIcons.pills,
+      pack: IconPack.fontAwesomeIcons),
+  'pinterest': IconPickerIcon(
+      name: 'pinterest',
+      data: FontAwesomeIcons.pinterest,
+      pack: IconPack.fontAwesomeIcons),
+  'pinterestP': IconPickerIcon(
+      name: 'pinterestP',
+      data: FontAwesomeIcons.pinterestP,
+      pack: IconPack.fontAwesomeIcons),
+  'pix': IconPickerIcon(
+      name: 'pix', data: FontAwesomeIcons.pix, pack: IconPack.fontAwesomeIcons),
+  'pizzaSlice': IconPickerIcon(
+      name: 'pizzaSlice',
+      data: FontAwesomeIcons.pizzaSlice,
+      pack: IconPack.fontAwesomeIcons),
+  'placeOfWorship': IconPickerIcon(
+      name: 'placeOfWorship',
+      data: FontAwesomeIcons.placeOfWorship,
+      pack: IconPack.fontAwesomeIcons),
+  'plane': IconPickerIcon(
+      name: 'plane',
+      data: FontAwesomeIcons.plane,
+      pack: IconPack.fontAwesomeIcons),
+  'planeArrival': IconPickerIcon(
+      name: 'planeArrival',
+      data: FontAwesomeIcons.planeArrival,
+      pack: IconPack.fontAwesomeIcons),
+  'planeCircleCheck': IconPickerIcon(
+      name: 'planeCircleCheck',
+      data: FontAwesomeIcons.planeCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'planeCircleExclamation': IconPickerIcon(
+      name: 'planeCircleExclamation',
+      data: FontAwesomeIcons.planeCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'planeCircleXmark': IconPickerIcon(
+      name: 'planeCircleXmark',
+      data: FontAwesomeIcons.planeCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'planeDeparture': IconPickerIcon(
+      name: 'planeDeparture',
+      data: FontAwesomeIcons.planeDeparture,
+      pack: IconPack.fontAwesomeIcons),
+  'planeLock': IconPickerIcon(
+      name: 'planeLock',
+      data: FontAwesomeIcons.planeLock,
+      pack: IconPack.fontAwesomeIcons),
+  'planeSlash': IconPickerIcon(
+      name: 'planeSlash',
+      data: FontAwesomeIcons.planeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'planeUp': IconPickerIcon(
+      name: 'planeUp',
+      data: FontAwesomeIcons.planeUp,
+      pack: IconPack.fontAwesomeIcons),
+  'plantWilt': IconPickerIcon(
+      name: 'plantWilt',
+      data: FontAwesomeIcons.plantWilt,
+      pack: IconPack.fontAwesomeIcons),
+  'plateWheat': IconPickerIcon(
+      name: 'plateWheat',
+      data: FontAwesomeIcons.plateWheat,
+      pack: IconPack.fontAwesomeIcons),
+  'play': IconPickerIcon(
+      name: 'play',
+      data: FontAwesomeIcons.play,
+      pack: IconPack.fontAwesomeIcons),
+  'playstation': IconPickerIcon(
+      name: 'playstation',
+      data: FontAwesomeIcons.playstation,
+      pack: IconPack.fontAwesomeIcons),
+  'plug': IconPickerIcon(
+      name: 'plug',
+      data: FontAwesomeIcons.plug,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCircleBolt': IconPickerIcon(
+      name: 'plugCircleBolt',
+      data: FontAwesomeIcons.plugCircleBolt,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCircleCheck': IconPickerIcon(
+      name: 'plugCircleCheck',
+      data: FontAwesomeIcons.plugCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCircleExclamation': IconPickerIcon(
+      name: 'plugCircleExclamation',
+      data: FontAwesomeIcons.plugCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCircleMinus': IconPickerIcon(
+      name: 'plugCircleMinus',
+      data: FontAwesomeIcons.plugCircleMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCirclePlus': IconPickerIcon(
+      name: 'plugCirclePlus',
+      data: FontAwesomeIcons.plugCirclePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'plugCircleXmark': IconPickerIcon(
+      name: 'plugCircleXmark',
+      data: FontAwesomeIcons.plugCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'plus': IconPickerIcon(
+      name: 'plus',
+      data: FontAwesomeIcons.plus,
+      pack: IconPack.fontAwesomeIcons),
+  'plusMinus': IconPickerIcon(
+      name: 'plusMinus',
+      data: FontAwesomeIcons.plusMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'podcast': IconPickerIcon(
+      name: 'podcast',
+      data: FontAwesomeIcons.podcast,
+      pack: IconPack.fontAwesomeIcons),
+  'poo': IconPickerIcon(
+      name: 'poo', data: FontAwesomeIcons.poo, pack: IconPack.fontAwesomeIcons),
+  'pooStorm': IconPickerIcon(
+      name: 'pooStorm',
+      data: FontAwesomeIcons.pooStorm,
+      pack: IconPack.fontAwesomeIcons),
+  'poop': IconPickerIcon(
+      name: 'poop',
+      data: FontAwesomeIcons.poop,
+      pack: IconPack.fontAwesomeIcons),
+  'powerOff': IconPickerIcon(
+      name: 'powerOff',
+      data: FontAwesomeIcons.powerOff,
+      pack: IconPack.fontAwesomeIcons),
+  'prescription': IconPickerIcon(
+      name: 'prescription',
+      data: FontAwesomeIcons.prescription,
+      pack: IconPack.fontAwesomeIcons),
+  'prescriptionBottle': IconPickerIcon(
+      name: 'prescriptionBottle',
+      data: FontAwesomeIcons.prescriptionBottle,
+      pack: IconPack.fontAwesomeIcons),
+  'prescriptionBottleMedical': IconPickerIcon(
+      name: 'prescriptionBottleMedical',
+      data: FontAwesomeIcons.prescriptionBottleMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'print': IconPickerIcon(
+      name: 'print',
+      data: FontAwesomeIcons.print,
+      pack: IconPack.fontAwesomeIcons),
+  'productHunt': IconPickerIcon(
+      name: 'productHunt',
+      data: FontAwesomeIcons.productHunt,
+      pack: IconPack.fontAwesomeIcons),
+  'pumpMedical': IconPickerIcon(
+      name: 'pumpMedical',
+      data: FontAwesomeIcons.pumpMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'pumpSoap': IconPickerIcon(
+      name: 'pumpSoap',
+      data: FontAwesomeIcons.pumpSoap,
+      pack: IconPack.fontAwesomeIcons),
+  'pushed': IconPickerIcon(
+      name: 'pushed',
+      data: FontAwesomeIcons.pushed,
+      pack: IconPack.fontAwesomeIcons),
+  'puzzlePiece': IconPickerIcon(
+      name: 'puzzlePiece',
+      data: FontAwesomeIcons.puzzlePiece,
+      pack: IconPack.fontAwesomeIcons),
+  'python': IconPickerIcon(
+      name: 'python',
+      data: FontAwesomeIcons.python,
+      pack: IconPack.fontAwesomeIcons),
+  'q': IconPickerIcon(
+      name: 'q', data: FontAwesomeIcons.q, pack: IconPack.fontAwesomeIcons),
+  'qq': IconPickerIcon(
+      name: 'qq', data: FontAwesomeIcons.qq, pack: IconPack.fontAwesomeIcons),
+  'qrcode': IconPickerIcon(
+      name: 'qrcode',
+      data: FontAwesomeIcons.qrcode,
+      pack: IconPack.fontAwesomeIcons),
+  'question': IconPickerIcon(
+      name: 'question',
+      data: FontAwesomeIcons.question,
+      pack: IconPack.fontAwesomeIcons),
+  'quinscape': IconPickerIcon(
+      name: 'quinscape',
+      data: FontAwesomeIcons.quinscape,
+      pack: IconPack.fontAwesomeIcons),
+  'quora': IconPickerIcon(
+      name: 'quora',
+      data: FontAwesomeIcons.quora,
+      pack: IconPack.fontAwesomeIcons),
+  'quoteLeft': IconPickerIcon(
+      name: 'quoteLeft',
+      data: FontAwesomeIcons.quoteLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'quoteRight': IconPickerIcon(
+      name: 'quoteRight',
+      data: FontAwesomeIcons.quoteRight,
+      pack: IconPack.fontAwesomeIcons),
+  'r': IconPickerIcon(
+      name: 'r', data: FontAwesomeIcons.r, pack: IconPack.fontAwesomeIcons),
+  'rProject': IconPickerIcon(
+      name: 'rProject',
+      data: FontAwesomeIcons.rProject,
+      pack: IconPack.fontAwesomeIcons),
+  'radiation': IconPickerIcon(
+      name: 'radiation',
+      data: FontAwesomeIcons.radiation,
+      pack: IconPack.fontAwesomeIcons),
+  'radio': IconPickerIcon(
+      name: 'radio',
+      data: FontAwesomeIcons.radio,
+      pack: IconPack.fontAwesomeIcons),
+  'rainbow': IconPickerIcon(
+      name: 'rainbow',
+      data: FontAwesomeIcons.rainbow,
+      pack: IconPack.fontAwesomeIcons),
+  'rankingStar': IconPickerIcon(
+      name: 'rankingStar',
+      data: FontAwesomeIcons.rankingStar,
+      pack: IconPack.fontAwesomeIcons),
+  'raspberryPi': IconPickerIcon(
+      name: 'raspberryPi',
+      data: FontAwesomeIcons.raspberryPi,
+      pack: IconPack.fontAwesomeIcons),
+  'ravelry': IconPickerIcon(
+      name: 'ravelry',
+      data: FontAwesomeIcons.ravelry,
+      pack: IconPack.fontAwesomeIcons),
+  'react': IconPickerIcon(
+      name: 'react',
+      data: FontAwesomeIcons.react,
+      pack: IconPack.fontAwesomeIcons),
+  'reacteurope': IconPickerIcon(
+      name: 'reacteurope',
+      data: FontAwesomeIcons.reacteurope,
+      pack: IconPack.fontAwesomeIcons),
+  'readme': IconPickerIcon(
+      name: 'readme',
+      data: FontAwesomeIcons.readme,
+      pack: IconPack.fontAwesomeIcons),
+  'rebel': IconPickerIcon(
+      name: 'rebel',
+      data: FontAwesomeIcons.rebel,
+      pack: IconPack.fontAwesomeIcons),
+  'receipt': IconPickerIcon(
+      name: 'receipt',
+      data: FontAwesomeIcons.receipt,
+      pack: IconPack.fontAwesomeIcons),
+  'recordVinyl': IconPickerIcon(
+      name: 'recordVinyl',
+      data: FontAwesomeIcons.recordVinyl,
+      pack: IconPack.fontAwesomeIcons),
+  'rectangleAd': IconPickerIcon(
+      name: 'rectangleAd',
+      data: FontAwesomeIcons.rectangleAd,
+      pack: IconPack.fontAwesomeIcons),
+  'solidRectangleList': IconPickerIcon(
+      name: 'solidRectangleList',
+      data: FontAwesomeIcons.solidRectangleList,
+      pack: IconPack.fontAwesomeIcons),
+  'rectangleList': IconPickerIcon(
+      name: 'rectangleList',
+      data: FontAwesomeIcons.rectangleList,
+      pack: IconPack.fontAwesomeIcons),
+  'solidRectangleXmark': IconPickerIcon(
+      name: 'solidRectangleXmark',
+      data: FontAwesomeIcons.solidRectangleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'rectangleXmark': IconPickerIcon(
+      name: 'rectangleXmark',
+      data: FontAwesomeIcons.rectangleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'recycle': IconPickerIcon(
+      name: 'recycle',
+      data: FontAwesomeIcons.recycle,
+      pack: IconPack.fontAwesomeIcons),
+  'redRiver': IconPickerIcon(
+      name: 'redRiver',
+      data: FontAwesomeIcons.redRiver,
+      pack: IconPack.fontAwesomeIcons),
+  'reddit': IconPickerIcon(
+      name: 'reddit',
+      data: FontAwesomeIcons.reddit,
+      pack: IconPack.fontAwesomeIcons),
+  'redditAlien': IconPickerIcon(
+      name: 'redditAlien',
+      data: FontAwesomeIcons.redditAlien,
+      pack: IconPack.fontAwesomeIcons),
+  'redhat': IconPickerIcon(
+      name: 'redhat',
+      data: FontAwesomeIcons.redhat,
+      pack: IconPack.fontAwesomeIcons),
+  'solidRegistered': IconPickerIcon(
+      name: 'solidRegistered',
+      data: FontAwesomeIcons.solidRegistered,
+      pack: IconPack.fontAwesomeIcons),
+  'registered': IconPickerIcon(
+      name: 'registered',
+      data: FontAwesomeIcons.registered,
+      pack: IconPack.fontAwesomeIcons),
+  'renren': IconPickerIcon(
+      name: 'renren',
+      data: FontAwesomeIcons.renren,
+      pack: IconPack.fontAwesomeIcons),
+  'repeat': IconPickerIcon(
+      name: 'repeat',
+      data: FontAwesomeIcons.repeat,
+      pack: IconPack.fontAwesomeIcons),
+  'reply': IconPickerIcon(
+      name: 'reply',
+      data: FontAwesomeIcons.reply,
+      pack: IconPack.fontAwesomeIcons),
+  'replyAll': IconPickerIcon(
+      name: 'replyAll',
+      data: FontAwesomeIcons.replyAll,
+      pack: IconPack.fontAwesomeIcons),
+  'replyd': IconPickerIcon(
+      name: 'replyd',
+      data: FontAwesomeIcons.replyd,
+      pack: IconPack.fontAwesomeIcons),
+  'republican': IconPickerIcon(
+      name: 'republican',
+      data: FontAwesomeIcons.republican,
+      pack: IconPack.fontAwesomeIcons),
+  'researchgate': IconPickerIcon(
+      name: 'researchgate',
+      data: FontAwesomeIcons.researchgate,
+      pack: IconPack.fontAwesomeIcons),
+  'resolving': IconPickerIcon(
+      name: 'resolving',
+      data: FontAwesomeIcons.resolving,
+      pack: IconPack.fontAwesomeIcons),
+  'restroom': IconPickerIcon(
+      name: 'restroom',
+      data: FontAwesomeIcons.restroom,
+      pack: IconPack.fontAwesomeIcons),
+  'retweet': IconPickerIcon(
+      name: 'retweet',
+      data: FontAwesomeIcons.retweet,
+      pack: IconPack.fontAwesomeIcons),
+  'rev': IconPickerIcon(
+      name: 'rev', data: FontAwesomeIcons.rev, pack: IconPack.fontAwesomeIcons),
+  'ribbon': IconPickerIcon(
+      name: 'ribbon',
+      data: FontAwesomeIcons.ribbon,
+      pack: IconPack.fontAwesomeIcons),
+  'rightFromBracket': IconPickerIcon(
+      name: 'rightFromBracket',
+      data: FontAwesomeIcons.rightFromBracket,
+      pack: IconPack.fontAwesomeIcons),
+  'rightLeft': IconPickerIcon(
+      name: 'rightLeft',
+      data: FontAwesomeIcons.rightLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'rightLong': IconPickerIcon(
+      name: 'rightLong',
+      data: FontAwesomeIcons.rightLong,
+      pack: IconPack.fontAwesomeIcons),
+  'rightToBracket': IconPickerIcon(
+      name: 'rightToBracket',
+      data: FontAwesomeIcons.rightToBracket,
+      pack: IconPack.fontAwesomeIcons),
+  'ring': IconPickerIcon(
+      name: 'ring',
+      data: FontAwesomeIcons.ring,
+      pack: IconPack.fontAwesomeIcons),
+  'road': IconPickerIcon(
+      name: 'road',
+      data: FontAwesomeIcons.road,
+      pack: IconPack.fontAwesomeIcons),
+  'roadBarrier': IconPickerIcon(
+      name: 'roadBarrier',
+      data: FontAwesomeIcons.roadBarrier,
+      pack: IconPack.fontAwesomeIcons),
+  'roadBridge': IconPickerIcon(
+      name: 'roadBridge',
+      data: FontAwesomeIcons.roadBridge,
+      pack: IconPack.fontAwesomeIcons),
+  'roadCircleCheck': IconPickerIcon(
+      name: 'roadCircleCheck',
+      data: FontAwesomeIcons.roadCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'roadCircleExclamation': IconPickerIcon(
+      name: 'roadCircleExclamation',
+      data: FontAwesomeIcons.roadCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'roadCircleXmark': IconPickerIcon(
+      name: 'roadCircleXmark',
+      data: FontAwesomeIcons.roadCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'roadLock': IconPickerIcon(
+      name: 'roadLock',
+      data: FontAwesomeIcons.roadLock,
+      pack: IconPack.fontAwesomeIcons),
+  'roadSpikes': IconPickerIcon(
+      name: 'roadSpikes',
+      data: FontAwesomeIcons.roadSpikes,
+      pack: IconPack.fontAwesomeIcons),
+  'robot': IconPickerIcon(
+      name: 'robot',
+      data: FontAwesomeIcons.robot,
+      pack: IconPack.fontAwesomeIcons),
+  'rocket': IconPickerIcon(
+      name: 'rocket',
+      data: FontAwesomeIcons.rocket,
+      pack: IconPack.fontAwesomeIcons),
+  'rocketchat': IconPickerIcon(
+      name: 'rocketchat',
+      data: FontAwesomeIcons.rocketchat,
+      pack: IconPack.fontAwesomeIcons),
+  'rockrms': IconPickerIcon(
+      name: 'rockrms',
+      data: FontAwesomeIcons.rockrms,
+      pack: IconPack.fontAwesomeIcons),
+  'rotate': IconPickerIcon(
+      name: 'rotate',
+      data: FontAwesomeIcons.rotate,
+      pack: IconPack.fontAwesomeIcons),
+  'rotateLeft': IconPickerIcon(
+      name: 'rotateLeft',
+      data: FontAwesomeIcons.rotateLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'rotateRight': IconPickerIcon(
+      name: 'rotateRight',
+      data: FontAwesomeIcons.rotateRight,
+      pack: IconPack.fontAwesomeIcons),
+  'route': IconPickerIcon(
+      name: 'route',
+      data: FontAwesomeIcons.route,
+      pack: IconPack.fontAwesomeIcons),
+  'rss': IconPickerIcon(
+      name: 'rss', data: FontAwesomeIcons.rss, pack: IconPack.fontAwesomeIcons),
+  'rubleSign': IconPickerIcon(
+      name: 'rubleSign',
+      data: FontAwesomeIcons.rubleSign,
+      pack: IconPack.fontAwesomeIcons),
+  'rug': IconPickerIcon(
+      name: 'rug', data: FontAwesomeIcons.rug, pack: IconPack.fontAwesomeIcons),
+  'ruler': IconPickerIcon(
+      name: 'ruler',
+      data: FontAwesomeIcons.ruler,
+      pack: IconPack.fontAwesomeIcons),
+  'rulerCombined': IconPickerIcon(
+      name: 'rulerCombined',
+      data: FontAwesomeIcons.rulerCombined,
+      pack: IconPack.fontAwesomeIcons),
+  'rulerHorizontal': IconPickerIcon(
+      name: 'rulerHorizontal',
+      data: FontAwesomeIcons.rulerHorizontal,
+      pack: IconPack.fontAwesomeIcons),
+  'rulerVertical': IconPickerIcon(
+      name: 'rulerVertical',
+      data: FontAwesomeIcons.rulerVertical,
+      pack: IconPack.fontAwesomeIcons),
+  'rupeeSign': IconPickerIcon(
+      name: 'rupeeSign',
+      data: FontAwesomeIcons.rupeeSign,
+      pack: IconPack.fontAwesomeIcons),
+  'rupiahSign': IconPickerIcon(
+      name: 'rupiahSign',
+      data: FontAwesomeIcons.rupiahSign,
+      pack: IconPack.fontAwesomeIcons),
+  'rust': IconPickerIcon(
+      name: 'rust',
+      data: FontAwesomeIcons.rust,
+      pack: IconPack.fontAwesomeIcons),
+  's': IconPickerIcon(
+      name: 's', data: FontAwesomeIcons.s, pack: IconPack.fontAwesomeIcons),
+  'sackDollar': IconPickerIcon(
+      name: 'sackDollar',
+      data: FontAwesomeIcons.sackDollar,
+      pack: IconPack.fontAwesomeIcons),
+  'sackXmark': IconPickerIcon(
+      name: 'sackXmark',
+      data: FontAwesomeIcons.sackXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'safari': IconPickerIcon(
+      name: 'safari',
+      data: FontAwesomeIcons.safari,
+      pack: IconPack.fontAwesomeIcons),
+  'sailboat': IconPickerIcon(
+      name: 'sailboat',
+      data: FontAwesomeIcons.sailboat,
+      pack: IconPack.fontAwesomeIcons),
+  'salesforce': IconPickerIcon(
+      name: 'salesforce',
+      data: FontAwesomeIcons.salesforce,
+      pack: IconPack.fontAwesomeIcons),
+  'sass': IconPickerIcon(
+      name: 'sass',
+      data: FontAwesomeIcons.sass,
+      pack: IconPack.fontAwesomeIcons),
+  'satellite': IconPickerIcon(
+      name: 'satellite',
+      data: FontAwesomeIcons.satellite,
+      pack: IconPack.fontAwesomeIcons),
+  'satelliteDish': IconPickerIcon(
+      name: 'satelliteDish',
+      data: FontAwesomeIcons.satelliteDish,
+      pack: IconPack.fontAwesomeIcons),
+  'scaleBalanced': IconPickerIcon(
+      name: 'scaleBalanced',
+      data: FontAwesomeIcons.scaleBalanced,
+      pack: IconPack.fontAwesomeIcons),
+  'scaleUnbalanced': IconPickerIcon(
+      name: 'scaleUnbalanced',
+      data: FontAwesomeIcons.scaleUnbalanced,
+      pack: IconPack.fontAwesomeIcons),
+  'scaleUnbalancedFlip': IconPickerIcon(
+      name: 'scaleUnbalancedFlip',
+      data: FontAwesomeIcons.scaleUnbalancedFlip,
+      pack: IconPack.fontAwesomeIcons),
+  'schlix': IconPickerIcon(
+      name: 'schlix',
+      data: FontAwesomeIcons.schlix,
+      pack: IconPack.fontAwesomeIcons),
+  'school': IconPickerIcon(
+      name: 'school',
+      data: FontAwesomeIcons.school,
+      pack: IconPack.fontAwesomeIcons),
+  'schoolCircleCheck': IconPickerIcon(
+      name: 'schoolCircleCheck',
+      data: FontAwesomeIcons.schoolCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'schoolCircleExclamation': IconPickerIcon(
+      name: 'schoolCircleExclamation',
+      data: FontAwesomeIcons.schoolCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'schoolCircleXmark': IconPickerIcon(
+      name: 'schoolCircleXmark',
+      data: FontAwesomeIcons.schoolCircleXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'schoolFlag': IconPickerIcon(
+      name: 'schoolFlag',
+      data: FontAwesomeIcons.schoolFlag,
+      pack: IconPack.fontAwesomeIcons),
+  'schoolLock': IconPickerIcon(
+      name: 'schoolLock',
+      data: FontAwesomeIcons.schoolLock,
+      pack: IconPack.fontAwesomeIcons),
+  'scissors': IconPickerIcon(
+      name: 'scissors',
+      data: FontAwesomeIcons.scissors,
+      pack: IconPack.fontAwesomeIcons),
+  'screenpal': IconPickerIcon(
+      name: 'screenpal',
+      data: FontAwesomeIcons.screenpal,
+      pack: IconPack.fontAwesomeIcons),
+  'screwdriver': IconPickerIcon(
+      name: 'screwdriver',
+      data: FontAwesomeIcons.screwdriver,
+      pack: IconPack.fontAwesomeIcons),
+  'screwdriverWrench': IconPickerIcon(
+      name: 'screwdriverWrench',
+      data: FontAwesomeIcons.screwdriverWrench,
+      pack: IconPack.fontAwesomeIcons),
+  'scribd': IconPickerIcon(
+      name: 'scribd',
+      data: FontAwesomeIcons.scribd,
+      pack: IconPack.fontAwesomeIcons),
+  'scroll': IconPickerIcon(
+      name: 'scroll',
+      data: FontAwesomeIcons.scroll,
+      pack: IconPack.fontAwesomeIcons),
+  'scrollTorah': IconPickerIcon(
+      name: 'scrollTorah',
+      data: FontAwesomeIcons.scrollTorah,
+      pack: IconPack.fontAwesomeIcons),
+  'sdCard': IconPickerIcon(
+      name: 'sdCard',
+      data: FontAwesomeIcons.sdCard,
+      pack: IconPack.fontAwesomeIcons),
+  'searchengin': IconPickerIcon(
+      name: 'searchengin',
+      data: FontAwesomeIcons.searchengin,
+      pack: IconPack.fontAwesomeIcons),
+  'section': IconPickerIcon(
+      name: 'section',
+      data: FontAwesomeIcons.section,
+      pack: IconPack.fontAwesomeIcons),
+  'seedling': IconPickerIcon(
+      name: 'seedling',
+      data: FontAwesomeIcons.seedling,
+      pack: IconPack.fontAwesomeIcons),
+  'sellcast': IconPickerIcon(
+      name: 'sellcast',
+      data: FontAwesomeIcons.sellcast,
+      pack: IconPack.fontAwesomeIcons),
+  'sellsy': IconPickerIcon(
+      name: 'sellsy',
+      data: FontAwesomeIcons.sellsy,
+      pack: IconPack.fontAwesomeIcons),
+  'server': IconPickerIcon(
+      name: 'server',
+      data: FontAwesomeIcons.server,
+      pack: IconPack.fontAwesomeIcons),
+  'servicestack': IconPickerIcon(
+      name: 'servicestack',
+      data: FontAwesomeIcons.servicestack,
+      pack: IconPack.fontAwesomeIcons),
+  'shapes': IconPickerIcon(
+      name: 'shapes',
+      data: FontAwesomeIcons.shapes,
+      pack: IconPack.fontAwesomeIcons),
+  'share': IconPickerIcon(
+      name: 'share',
+      data: FontAwesomeIcons.share,
+      pack: IconPack.fontAwesomeIcons),
+  'solidShareFromSquare': IconPickerIcon(
+      name: 'solidShareFromSquare',
+      data: FontAwesomeIcons.solidShareFromSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'shareFromSquare': IconPickerIcon(
+      name: 'shareFromSquare',
+      data: FontAwesomeIcons.shareFromSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'shareNodes': IconPickerIcon(
+      name: 'shareNodes',
+      data: FontAwesomeIcons.shareNodes,
+      pack: IconPack.fontAwesomeIcons),
+  'sheetPlastic': IconPickerIcon(
+      name: 'sheetPlastic',
+      data: FontAwesomeIcons.sheetPlastic,
+      pack: IconPack.fontAwesomeIcons),
+  'shekelSign': IconPickerIcon(
+      name: 'shekelSign',
+      data: FontAwesomeIcons.shekelSign,
+      pack: IconPack.fontAwesomeIcons),
+  'shield': IconPickerIcon(
+      name: 'shield',
+      data: FontAwesomeIcons.shield,
+      pack: IconPack.fontAwesomeIcons),
+  'shieldCat': IconPickerIcon(
+      name: 'shieldCat',
+      data: FontAwesomeIcons.shieldCat,
+      pack: IconPack.fontAwesomeIcons),
+  'shieldDog': IconPickerIcon(
+      name: 'shieldDog',
+      data: FontAwesomeIcons.shieldDog,
+      pack: IconPack.fontAwesomeIcons),
+  'shieldHalved': IconPickerIcon(
+      name: 'shieldHalved',
+      data: FontAwesomeIcons.shieldHalved,
+      pack: IconPack.fontAwesomeIcons),
+  'shieldHeart': IconPickerIcon(
+      name: 'shieldHeart',
+      data: FontAwesomeIcons.shieldHeart,
+      pack: IconPack.fontAwesomeIcons),
+  'shieldVirus': IconPickerIcon(
+      name: 'shieldVirus',
+      data: FontAwesomeIcons.shieldVirus,
+      pack: IconPack.fontAwesomeIcons),
+  'ship': IconPickerIcon(
+      name: 'ship',
+      data: FontAwesomeIcons.ship,
+      pack: IconPack.fontAwesomeIcons),
+  'shirt': IconPickerIcon(
+      name: 'shirt',
+      data: FontAwesomeIcons.shirt,
+      pack: IconPack.fontAwesomeIcons),
+  'shirtsinbulk': IconPickerIcon(
+      name: 'shirtsinbulk',
+      data: FontAwesomeIcons.shirtsinbulk,
+      pack: IconPack.fontAwesomeIcons),
+  'shoePrints': IconPickerIcon(
+      name: 'shoePrints',
+      data: FontAwesomeIcons.shoePrints,
+      pack: IconPack.fontAwesomeIcons),
+  'shop': IconPickerIcon(
+      name: 'shop',
+      data: FontAwesomeIcons.shop,
+      pack: IconPack.fontAwesomeIcons),
+  'shopLock': IconPickerIcon(
+      name: 'shopLock',
+      data: FontAwesomeIcons.shopLock,
+      pack: IconPack.fontAwesomeIcons),
+  'shopSlash': IconPickerIcon(
+      name: 'shopSlash',
+      data: FontAwesomeIcons.shopSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'shopify': IconPickerIcon(
+      name: 'shopify',
+      data: FontAwesomeIcons.shopify,
+      pack: IconPack.fontAwesomeIcons),
+  'shopware': IconPickerIcon(
+      name: 'shopware',
+      data: FontAwesomeIcons.shopware,
+      pack: IconPack.fontAwesomeIcons),
+  'shower': IconPickerIcon(
+      name: 'shower',
+      data: FontAwesomeIcons.shower,
+      pack: IconPack.fontAwesomeIcons),
+  'shrimp': IconPickerIcon(
+      name: 'shrimp',
+      data: FontAwesomeIcons.shrimp,
+      pack: IconPack.fontAwesomeIcons),
+  'shuffle': IconPickerIcon(
+      name: 'shuffle',
+      data: FontAwesomeIcons.shuffle,
+      pack: IconPack.fontAwesomeIcons),
+  'shuttleSpace': IconPickerIcon(
+      name: 'shuttleSpace',
+      data: FontAwesomeIcons.shuttleSpace,
+      pack: IconPack.fontAwesomeIcons),
+  'signHanging': IconPickerIcon(
+      name: 'signHanging',
+      data: FontAwesomeIcons.signHanging,
+      pack: IconPack.fontAwesomeIcons),
+  'signal': IconPickerIcon(
+      name: 'signal',
+      data: FontAwesomeIcons.signal,
+      pack: IconPack.fontAwesomeIcons),
+  'signature': IconPickerIcon(
+      name: 'signature',
+      data: FontAwesomeIcons.signature,
+      pack: IconPack.fontAwesomeIcons),
+  'signsPost': IconPickerIcon(
+      name: 'signsPost',
+      data: FontAwesomeIcons.signsPost,
+      pack: IconPack.fontAwesomeIcons),
+  'simCard': IconPickerIcon(
+      name: 'simCard',
+      data: FontAwesomeIcons.simCard,
+      pack: IconPack.fontAwesomeIcons),
+  'simplybuilt': IconPickerIcon(
+      name: 'simplybuilt',
+      data: FontAwesomeIcons.simplybuilt,
+      pack: IconPack.fontAwesomeIcons),
+  'sink': IconPickerIcon(
+      name: 'sink',
+      data: FontAwesomeIcons.sink,
+      pack: IconPack.fontAwesomeIcons),
+  'sistrix': IconPickerIcon(
+      name: 'sistrix',
+      data: FontAwesomeIcons.sistrix,
+      pack: IconPack.fontAwesomeIcons),
+  'sitemap': IconPickerIcon(
+      name: 'sitemap',
+      data: FontAwesomeIcons.sitemap,
+      pack: IconPack.fontAwesomeIcons),
+  'sith': IconPickerIcon(
+      name: 'sith',
+      data: FontAwesomeIcons.sith,
+      pack: IconPack.fontAwesomeIcons),
+  'sitrox': IconPickerIcon(
+      name: 'sitrox',
+      data: FontAwesomeIcons.sitrox,
+      pack: IconPack.fontAwesomeIcons),
+  'sketch': IconPickerIcon(
+      name: 'sketch',
+      data: FontAwesomeIcons.sketch,
+      pack: IconPack.fontAwesomeIcons),
+  'skull': IconPickerIcon(
+      name: 'skull',
+      data: FontAwesomeIcons.skull,
+      pack: IconPack.fontAwesomeIcons),
+  'skullCrossbones': IconPickerIcon(
+      name: 'skullCrossbones',
+      data: FontAwesomeIcons.skullCrossbones,
+      pack: IconPack.fontAwesomeIcons),
+  'skyatlas': IconPickerIcon(
+      name: 'skyatlas',
+      data: FontAwesomeIcons.skyatlas,
+      pack: IconPack.fontAwesomeIcons),
+  'skype': IconPickerIcon(
+      name: 'skype',
+      data: FontAwesomeIcons.skype,
+      pack: IconPack.fontAwesomeIcons),
+  'slack': IconPickerIcon(
+      name: 'slack',
+      data: FontAwesomeIcons.slack,
+      pack: IconPack.fontAwesomeIcons),
+  'slash': IconPickerIcon(
+      name: 'slash',
+      data: FontAwesomeIcons.slash,
+      pack: IconPack.fontAwesomeIcons),
+  'sleigh': IconPickerIcon(
+      name: 'sleigh',
+      data: FontAwesomeIcons.sleigh,
+      pack: IconPack.fontAwesomeIcons),
+  'sliders': IconPickerIcon(
+      name: 'sliders',
+      data: FontAwesomeIcons.sliders,
+      pack: IconPack.fontAwesomeIcons),
+  'slideshare': IconPickerIcon(
+      name: 'slideshare',
+      data: FontAwesomeIcons.slideshare,
+      pack: IconPack.fontAwesomeIcons),
+  'smog': IconPickerIcon(
+      name: 'smog',
+      data: FontAwesomeIcons.smog,
+      pack: IconPack.fontAwesomeIcons),
+  'smoking': IconPickerIcon(
+      name: 'smoking',
+      data: FontAwesomeIcons.smoking,
+      pack: IconPack.fontAwesomeIcons),
+  'snapchat': IconPickerIcon(
+      name: 'snapchat',
+      data: FontAwesomeIcons.snapchat,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSnowflake': IconPickerIcon(
+      name: 'solidSnowflake',
+      data: FontAwesomeIcons.solidSnowflake,
+      pack: IconPack.fontAwesomeIcons),
+  'snowflake': IconPickerIcon(
+      name: 'snowflake',
+      data: FontAwesomeIcons.snowflake,
+      pack: IconPack.fontAwesomeIcons),
+  'snowman': IconPickerIcon(
+      name: 'snowman',
+      data: FontAwesomeIcons.snowman,
+      pack: IconPack.fontAwesomeIcons),
+  'snowplow': IconPickerIcon(
+      name: 'snowplow',
+      data: FontAwesomeIcons.snowplow,
+      pack: IconPack.fontAwesomeIcons),
+  'soap': IconPickerIcon(
+      name: 'soap',
+      data: FontAwesomeIcons.soap,
+      pack: IconPack.fontAwesomeIcons),
+  'socks': IconPickerIcon(
+      name: 'socks',
+      data: FontAwesomeIcons.socks,
+      pack: IconPack.fontAwesomeIcons),
+  'solarPanel': IconPickerIcon(
+      name: 'solarPanel',
+      data: FontAwesomeIcons.solarPanel,
+      pack: IconPack.fontAwesomeIcons),
+  'sort': IconPickerIcon(
+      name: 'sort',
+      data: FontAwesomeIcons.sort,
+      pack: IconPack.fontAwesomeIcons),
+  'sortDown': IconPickerIcon(
+      name: 'sortDown',
+      data: FontAwesomeIcons.sortDown,
+      pack: IconPack.fontAwesomeIcons),
+  'sortUp': IconPickerIcon(
+      name: 'sortUp',
+      data: FontAwesomeIcons.sortUp,
+      pack: IconPack.fontAwesomeIcons),
+  'soundcloud': IconPickerIcon(
+      name: 'soundcloud',
+      data: FontAwesomeIcons.soundcloud,
+      pack: IconPack.fontAwesomeIcons),
+  'sourcetree': IconPickerIcon(
+      name: 'sourcetree',
+      data: FontAwesomeIcons.sourcetree,
+      pack: IconPack.fontAwesomeIcons),
+  'spa': IconPickerIcon(
+      name: 'spa', data: FontAwesomeIcons.spa, pack: IconPack.fontAwesomeIcons),
+  'spaceAwesome': IconPickerIcon(
+      name: 'spaceAwesome',
+      data: FontAwesomeIcons.spaceAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'spaghettiMonsterFlying': IconPickerIcon(
+      name: 'spaghettiMonsterFlying',
+      data: FontAwesomeIcons.spaghettiMonsterFlying,
+      pack: IconPack.fontAwesomeIcons),
+  'speakap': IconPickerIcon(
+      name: 'speakap',
+      data: FontAwesomeIcons.speakap,
+      pack: IconPack.fontAwesomeIcons),
+  'speakerDeck': IconPickerIcon(
+      name: 'speakerDeck',
+      data: FontAwesomeIcons.speakerDeck,
+      pack: IconPack.fontAwesomeIcons),
+  'spellCheck': IconPickerIcon(
+      name: 'spellCheck',
+      data: FontAwesomeIcons.spellCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'spider': IconPickerIcon(
+      name: 'spider',
+      data: FontAwesomeIcons.spider,
+      pack: IconPack.fontAwesomeIcons),
+  'spinner': IconPickerIcon(
+      name: 'spinner',
+      data: FontAwesomeIcons.spinner,
+      pack: IconPack.fontAwesomeIcons),
+  'splotch': IconPickerIcon(
+      name: 'splotch',
+      data: FontAwesomeIcons.splotch,
+      pack: IconPack.fontAwesomeIcons),
+  'spoon': IconPickerIcon(
+      name: 'spoon',
+      data: FontAwesomeIcons.spoon,
+      pack: IconPack.fontAwesomeIcons),
+  'spotify': IconPickerIcon(
+      name: 'spotify',
+      data: FontAwesomeIcons.spotify,
+      pack: IconPack.fontAwesomeIcons),
+  'sprayCan': IconPickerIcon(
+      name: 'sprayCan',
+      data: FontAwesomeIcons.sprayCan,
+      pack: IconPack.fontAwesomeIcons),
+  'sprayCanSparkles': IconPickerIcon(
+      name: 'sprayCanSparkles',
+      data: FontAwesomeIcons.sprayCanSparkles,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquare': IconPickerIcon(
+      name: 'solidSquare',
+      data: FontAwesomeIcons.solidSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'square': IconPickerIcon(
+      name: 'square',
+      data: FontAwesomeIcons.square,
+      pack: IconPack.fontAwesomeIcons),
+  'squareArrowUpRight': IconPickerIcon(
+      name: 'squareArrowUpRight',
+      data: FontAwesomeIcons.squareArrowUpRight,
+      pack: IconPack.fontAwesomeIcons),
+  'squareBehance': IconPickerIcon(
+      name: 'squareBehance',
+      data: FontAwesomeIcons.squareBehance,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareCaretDown': IconPickerIcon(
+      name: 'solidSquareCaretDown',
+      data: FontAwesomeIcons.solidSquareCaretDown,
+      pack: IconPack.fontAwesomeIcons),
+  'squareCaretDown': IconPickerIcon(
+      name: 'squareCaretDown',
+      data: FontAwesomeIcons.squareCaretDown,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareCaretLeft': IconPickerIcon(
+      name: 'solidSquareCaretLeft',
+      data: FontAwesomeIcons.solidSquareCaretLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'squareCaretLeft': IconPickerIcon(
+      name: 'squareCaretLeft',
+      data: FontAwesomeIcons.squareCaretLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareCaretRight': IconPickerIcon(
+      name: 'solidSquareCaretRight',
+      data: FontAwesomeIcons.solidSquareCaretRight,
+      pack: IconPack.fontAwesomeIcons),
+  'squareCaretRight': IconPickerIcon(
+      name: 'squareCaretRight',
+      data: FontAwesomeIcons.squareCaretRight,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareCaretUp': IconPickerIcon(
+      name: 'solidSquareCaretUp',
+      data: FontAwesomeIcons.solidSquareCaretUp,
+      pack: IconPack.fontAwesomeIcons),
+  'squareCaretUp': IconPickerIcon(
+      name: 'squareCaretUp',
+      data: FontAwesomeIcons.squareCaretUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareCheck': IconPickerIcon(
+      name: 'solidSquareCheck',
+      data: FontAwesomeIcons.solidSquareCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'squareCheck': IconPickerIcon(
+      name: 'squareCheck',
+      data: FontAwesomeIcons.squareCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'squareDribbble': IconPickerIcon(
+      name: 'squareDribbble',
+      data: FontAwesomeIcons.squareDribbble,
+      pack: IconPack.fontAwesomeIcons),
+  'squareEnvelope': IconPickerIcon(
+      name: 'squareEnvelope',
+      data: FontAwesomeIcons.squareEnvelope,
+      pack: IconPack.fontAwesomeIcons),
+  'squareFacebook': IconPickerIcon(
+      name: 'squareFacebook',
+      data: FontAwesomeIcons.squareFacebook,
+      pack: IconPack.fontAwesomeIcons),
+  'squareFontAwesome': IconPickerIcon(
+      name: 'squareFontAwesome',
+      data: FontAwesomeIcons.squareFontAwesome,
+      pack: IconPack.fontAwesomeIcons),
+  'squareFontAwesomeStroke': IconPickerIcon(
+      name: 'squareFontAwesomeStroke',
+      data: FontAwesomeIcons.squareFontAwesomeStroke,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareFull': IconPickerIcon(
+      name: 'solidSquareFull',
+      data: FontAwesomeIcons.solidSquareFull,
+      pack: IconPack.fontAwesomeIcons),
+  'squareFull': IconPickerIcon(
+      name: 'squareFull',
+      data: FontAwesomeIcons.squareFull,
+      pack: IconPack.fontAwesomeIcons),
+  'squareGit': IconPickerIcon(
+      name: 'squareGit',
+      data: FontAwesomeIcons.squareGit,
+      pack: IconPack.fontAwesomeIcons),
+  'squareGithub': IconPickerIcon(
+      name: 'squareGithub',
+      data: FontAwesomeIcons.squareGithub,
+      pack: IconPack.fontAwesomeIcons),
+  'squareGitlab': IconPickerIcon(
+      name: 'squareGitlab',
+      data: FontAwesomeIcons.squareGitlab,
+      pack: IconPack.fontAwesomeIcons),
+  'squareGooglePlus': IconPickerIcon(
+      name: 'squareGooglePlus',
+      data: FontAwesomeIcons.squareGooglePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'squareH': IconPickerIcon(
+      name: 'squareH',
+      data: FontAwesomeIcons.squareH,
+      pack: IconPack.fontAwesomeIcons),
+  'squareHackerNews': IconPickerIcon(
+      name: 'squareHackerNews',
+      data: FontAwesomeIcons.squareHackerNews,
+      pack: IconPack.fontAwesomeIcons),
+  'squareInstagram': IconPickerIcon(
+      name: 'squareInstagram',
+      data: FontAwesomeIcons.squareInstagram,
+      pack: IconPack.fontAwesomeIcons),
+  'squareJs': IconPickerIcon(
+      name: 'squareJs',
+      data: FontAwesomeIcons.squareJs,
+      pack: IconPack.fontAwesomeIcons),
+  'squareLastfm': IconPickerIcon(
+      name: 'squareLastfm',
+      data: FontAwesomeIcons.squareLastfm,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquareMinus': IconPickerIcon(
+      name: 'solidSquareMinus',
+      data: FontAwesomeIcons.solidSquareMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'squareMinus': IconPickerIcon(
+      name: 'squareMinus',
+      data: FontAwesomeIcons.squareMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'squareNfi': IconPickerIcon(
+      name: 'squareNfi',
+      data: FontAwesomeIcons.squareNfi,
+      pack: IconPack.fontAwesomeIcons),
+  'squareOdnoklassniki': IconPickerIcon(
+      name: 'squareOdnoklassniki',
+      data: FontAwesomeIcons.squareOdnoklassniki,
+      pack: IconPack.fontAwesomeIcons),
+  'squareParking': IconPickerIcon(
+      name: 'squareParking',
+      data: FontAwesomeIcons.squareParking,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePen': IconPickerIcon(
+      name: 'squarePen',
+      data: FontAwesomeIcons.squarePen,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePersonConfined': IconPickerIcon(
+      name: 'squarePersonConfined',
+      data: FontAwesomeIcons.squarePersonConfined,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePhone': IconPickerIcon(
+      name: 'squarePhone',
+      data: FontAwesomeIcons.squarePhone,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePhoneFlip': IconPickerIcon(
+      name: 'squarePhoneFlip',
+      data: FontAwesomeIcons.squarePhoneFlip,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePiedPiper': IconPickerIcon(
+      name: 'squarePiedPiper',
+      data: FontAwesomeIcons.squarePiedPiper,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePinterest': IconPickerIcon(
+      name: 'squarePinterest',
+      data: FontAwesomeIcons.squarePinterest,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSquarePlus': IconPickerIcon(
+      name: 'solidSquarePlus',
+      data: FontAwesomeIcons.solidSquarePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePlus': IconPickerIcon(
+      name: 'squarePlus',
+      data: FontAwesomeIcons.squarePlus,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePollHorizontal': IconPickerIcon(
+      name: 'squarePollHorizontal',
+      data: FontAwesomeIcons.squarePollHorizontal,
+      pack: IconPack.fontAwesomeIcons),
+  'squarePollVertical': IconPickerIcon(
+      name: 'squarePollVertical',
+      data: FontAwesomeIcons.squarePollVertical,
+      pack: IconPack.fontAwesomeIcons),
+  'squareReddit': IconPickerIcon(
+      name: 'squareReddit',
+      data: FontAwesomeIcons.squareReddit,
+      pack: IconPack.fontAwesomeIcons),
+  'squareRootVariable': IconPickerIcon(
+      name: 'squareRootVariable',
+      data: FontAwesomeIcons.squareRootVariable,
+      pack: IconPack.fontAwesomeIcons),
+  'squareRss': IconPickerIcon(
+      name: 'squareRss',
+      data: FontAwesomeIcons.squareRss,
+      pack: IconPack.fontAwesomeIcons),
+  'squareShareNodes': IconPickerIcon(
+      name: 'squareShareNodes',
+      data: FontAwesomeIcons.squareShareNodes,
+      pack: IconPack.fontAwesomeIcons),
+  'squareSnapchat': IconPickerIcon(
+      name: 'squareSnapchat',
+      data: FontAwesomeIcons.squareSnapchat,
+      pack: IconPack.fontAwesomeIcons),
+  'squareSteam': IconPickerIcon(
+      name: 'squareSteam',
+      data: FontAwesomeIcons.squareSteam,
+      pack: IconPack.fontAwesomeIcons),
+  'squareTumblr': IconPickerIcon(
+      name: 'squareTumblr',
+      data: FontAwesomeIcons.squareTumblr,
+      pack: IconPack.fontAwesomeIcons),
+  'squareTwitter': IconPickerIcon(
+      name: 'squareTwitter',
+      data: FontAwesomeIcons.squareTwitter,
+      pack: IconPack.fontAwesomeIcons),
+  'squareUpRight': IconPickerIcon(
+      name: 'squareUpRight',
+      data: FontAwesomeIcons.squareUpRight,
+      pack: IconPack.fontAwesomeIcons),
+  'squareViadeo': IconPickerIcon(
+      name: 'squareViadeo',
+      data: FontAwesomeIcons.squareViadeo,
+      pack: IconPack.fontAwesomeIcons),
+  'squareVimeo': IconPickerIcon(
+      name: 'squareVimeo',
+      data: FontAwesomeIcons.squareVimeo,
+      pack: IconPack.fontAwesomeIcons),
+  'squareVirus': IconPickerIcon(
+      name: 'squareVirus',
+      data: FontAwesomeIcons.squareVirus,
+      pack: IconPack.fontAwesomeIcons),
+  'squareWhatsapp': IconPickerIcon(
+      name: 'squareWhatsapp',
+      data: FontAwesomeIcons.squareWhatsapp,
+      pack: IconPack.fontAwesomeIcons),
+  'squareXing': IconPickerIcon(
+      name: 'squareXing',
+      data: FontAwesomeIcons.squareXing,
+      pack: IconPack.fontAwesomeIcons),
+  'squareXmark': IconPickerIcon(
+      name: 'squareXmark',
+      data: FontAwesomeIcons.squareXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'squareYoutube': IconPickerIcon(
+      name: 'squareYoutube',
+      data: FontAwesomeIcons.squareYoutube,
+      pack: IconPack.fontAwesomeIcons),
+  'squarespace': IconPickerIcon(
+      name: 'squarespace',
+      data: FontAwesomeIcons.squarespace,
+      pack: IconPack.fontAwesomeIcons),
+  'stackExchange': IconPickerIcon(
+      name: 'stackExchange',
+      data: FontAwesomeIcons.stackExchange,
+      pack: IconPack.fontAwesomeIcons),
+  'stackOverflow': IconPickerIcon(
+      name: 'stackOverflow',
+      data: FontAwesomeIcons.stackOverflow,
+      pack: IconPack.fontAwesomeIcons),
+  'stackpath': IconPickerIcon(
+      name: 'stackpath',
+      data: FontAwesomeIcons.stackpath,
+      pack: IconPack.fontAwesomeIcons),
+  'staffSnake': IconPickerIcon(
+      name: 'staffSnake',
+      data: FontAwesomeIcons.staffSnake,
+      pack: IconPack.fontAwesomeIcons),
+  'stairs': IconPickerIcon(
+      name: 'stairs',
+      data: FontAwesomeIcons.stairs,
+      pack: IconPack.fontAwesomeIcons),
+  'stamp': IconPickerIcon(
+      name: 'stamp',
+      data: FontAwesomeIcons.stamp,
+      pack: IconPack.fontAwesomeIcons),
+  'stapler': IconPickerIcon(
+      name: 'stapler',
+      data: FontAwesomeIcons.stapler,
+      pack: IconPack.fontAwesomeIcons),
+  'solidStar': IconPickerIcon(
+      name: 'solidStar',
+      data: FontAwesomeIcons.solidStar,
+      pack: IconPack.fontAwesomeIcons),
+  'star': IconPickerIcon(
+      name: 'star',
+      data: FontAwesomeIcons.star,
+      pack: IconPack.fontAwesomeIcons),
+  'starAndCrescent': IconPickerIcon(
+      name: 'starAndCrescent',
+      data: FontAwesomeIcons.starAndCrescent,
+      pack: IconPack.fontAwesomeIcons),
+  'solidStarHalf': IconPickerIcon(
+      name: 'solidStarHalf',
+      data: FontAwesomeIcons.solidStarHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'starHalf': IconPickerIcon(
+      name: 'starHalf',
+      data: FontAwesomeIcons.starHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'solidStarHalfStroke': IconPickerIcon(
+      name: 'solidStarHalfStroke',
+      data: FontAwesomeIcons.solidStarHalfStroke,
+      pack: IconPack.fontAwesomeIcons),
+  'starHalfStroke': IconPickerIcon(
+      name: 'starHalfStroke',
+      data: FontAwesomeIcons.starHalfStroke,
+      pack: IconPack.fontAwesomeIcons),
+  'starOfDavid': IconPickerIcon(
+      name: 'starOfDavid',
+      data: FontAwesomeIcons.starOfDavid,
+      pack: IconPack.fontAwesomeIcons),
+  'starOfLife': IconPickerIcon(
+      name: 'starOfLife',
+      data: FontAwesomeIcons.starOfLife,
+      pack: IconPack.fontAwesomeIcons),
+  'staylinked': IconPickerIcon(
+      name: 'staylinked',
+      data: FontAwesomeIcons.staylinked,
+      pack: IconPack.fontAwesomeIcons),
+  'steam': IconPickerIcon(
+      name: 'steam',
+      data: FontAwesomeIcons.steam,
+      pack: IconPack.fontAwesomeIcons),
+  'steamSymbol': IconPickerIcon(
+      name: 'steamSymbol',
+      data: FontAwesomeIcons.steamSymbol,
+      pack: IconPack.fontAwesomeIcons),
+  'sterlingSign': IconPickerIcon(
+      name: 'sterlingSign',
+      data: FontAwesomeIcons.sterlingSign,
+      pack: IconPack.fontAwesomeIcons),
+  'stethoscope': IconPickerIcon(
+      name: 'stethoscope',
+      data: FontAwesomeIcons.stethoscope,
+      pack: IconPack.fontAwesomeIcons),
+  'stickerMule': IconPickerIcon(
+      name: 'stickerMule',
+      data: FontAwesomeIcons.stickerMule,
+      pack: IconPack.fontAwesomeIcons),
+  'stop': IconPickerIcon(
+      name: 'stop',
+      data: FontAwesomeIcons.stop,
+      pack: IconPack.fontAwesomeIcons),
+  'stopwatch': IconPickerIcon(
+      name: 'stopwatch',
+      data: FontAwesomeIcons.stopwatch,
+      pack: IconPack.fontAwesomeIcons),
+  'stopwatch20': IconPickerIcon(
+      name: 'stopwatch20',
+      data: FontAwesomeIcons.stopwatch20,
+      pack: IconPack.fontAwesomeIcons),
+  'store': IconPickerIcon(
+      name: 'store',
+      data: FontAwesomeIcons.store,
+      pack: IconPack.fontAwesomeIcons),
+  'storeSlash': IconPickerIcon(
+      name: 'storeSlash',
+      data: FontAwesomeIcons.storeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'strava': IconPickerIcon(
+      name: 'strava',
+      data: FontAwesomeIcons.strava,
+      pack: IconPack.fontAwesomeIcons),
+  'streetView': IconPickerIcon(
+      name: 'streetView',
+      data: FontAwesomeIcons.streetView,
+      pack: IconPack.fontAwesomeIcons),
+  'strikethrough': IconPickerIcon(
+      name: 'strikethrough',
+      data: FontAwesomeIcons.strikethrough,
+      pack: IconPack.fontAwesomeIcons),
+  'stripe': IconPickerIcon(
+      name: 'stripe',
+      data: FontAwesomeIcons.stripe,
+      pack: IconPack.fontAwesomeIcons),
+  'stripeS': IconPickerIcon(
+      name: 'stripeS',
+      data: FontAwesomeIcons.stripeS,
+      pack: IconPack.fontAwesomeIcons),
+  'stroopwafel': IconPickerIcon(
+      name: 'stroopwafel',
+      data: FontAwesomeIcons.stroopwafel,
+      pack: IconPack.fontAwesomeIcons),
+  'studiovinari': IconPickerIcon(
+      name: 'studiovinari',
+      data: FontAwesomeIcons.studiovinari,
+      pack: IconPack.fontAwesomeIcons),
+  'stumbleupon': IconPickerIcon(
+      name: 'stumbleupon',
+      data: FontAwesomeIcons.stumbleupon,
+      pack: IconPack.fontAwesomeIcons),
+  'stumbleuponCircle': IconPickerIcon(
+      name: 'stumbleuponCircle',
+      data: FontAwesomeIcons.stumbleuponCircle,
+      pack: IconPack.fontAwesomeIcons),
+  'subscript': IconPickerIcon(
+      name: 'subscript',
+      data: FontAwesomeIcons.subscript,
+      pack: IconPack.fontAwesomeIcons),
+  'suitcase': IconPickerIcon(
+      name: 'suitcase',
+      data: FontAwesomeIcons.suitcase,
+      pack: IconPack.fontAwesomeIcons),
+  'suitcaseMedical': IconPickerIcon(
+      name: 'suitcaseMedical',
+      data: FontAwesomeIcons.suitcaseMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'suitcaseRolling': IconPickerIcon(
+      name: 'suitcaseRolling',
+      data: FontAwesomeIcons.suitcaseRolling,
+      pack: IconPack.fontAwesomeIcons),
+  'solidSun': IconPickerIcon(
+      name: 'solidSun',
+      data: FontAwesomeIcons.solidSun,
+      pack: IconPack.fontAwesomeIcons),
+  'sun': IconPickerIcon(
+      name: 'sun', data: FontAwesomeIcons.sun, pack: IconPack.fontAwesomeIcons),
+  'sunPlantWilt': IconPickerIcon(
+      name: 'sunPlantWilt',
+      data: FontAwesomeIcons.sunPlantWilt,
+      pack: IconPack.fontAwesomeIcons),
+  'superpowers': IconPickerIcon(
+      name: 'superpowers',
+      data: FontAwesomeIcons.superpowers,
+      pack: IconPack.fontAwesomeIcons),
+  'superscript': IconPickerIcon(
+      name: 'superscript',
+      data: FontAwesomeIcons.superscript,
+      pack: IconPack.fontAwesomeIcons),
+  'supple': IconPickerIcon(
+      name: 'supple',
+      data: FontAwesomeIcons.supple,
+      pack: IconPack.fontAwesomeIcons),
+  'suse': IconPickerIcon(
+      name: 'suse',
+      data: FontAwesomeIcons.suse,
+      pack: IconPack.fontAwesomeIcons),
+  'swatchbook': IconPickerIcon(
+      name: 'swatchbook',
+      data: FontAwesomeIcons.swatchbook,
+      pack: IconPack.fontAwesomeIcons),
+  'swift': IconPickerIcon(
+      name: 'swift',
+      data: FontAwesomeIcons.swift,
+      pack: IconPack.fontAwesomeIcons),
+  'symfony': IconPickerIcon(
+      name: 'symfony',
+      data: FontAwesomeIcons.symfony,
+      pack: IconPack.fontAwesomeIcons),
+  'synagogue': IconPickerIcon(
+      name: 'synagogue',
+      data: FontAwesomeIcons.synagogue,
+      pack: IconPack.fontAwesomeIcons),
+  'syringe': IconPickerIcon(
+      name: 'syringe',
+      data: FontAwesomeIcons.syringe,
+      pack: IconPack.fontAwesomeIcons),
+  't': IconPickerIcon(
+      name: 't', data: FontAwesomeIcons.t, pack: IconPack.fontAwesomeIcons),
+  'table': IconPickerIcon(
+      name: 'table',
+      data: FontAwesomeIcons.table,
+      pack: IconPack.fontAwesomeIcons),
+  'tableCells': IconPickerIcon(
+      name: 'tableCells',
+      data: FontAwesomeIcons.tableCells,
+      pack: IconPack.fontAwesomeIcons),
+  'tableCellsLarge': IconPickerIcon(
+      name: 'tableCellsLarge',
+      data: FontAwesomeIcons.tableCellsLarge,
+      pack: IconPack.fontAwesomeIcons),
+  'tableColumns': IconPickerIcon(
+      name: 'tableColumns',
+      data: FontAwesomeIcons.tableColumns,
+      pack: IconPack.fontAwesomeIcons),
+  'tableList': IconPickerIcon(
+      name: 'tableList',
+      data: FontAwesomeIcons.tableList,
+      pack: IconPack.fontAwesomeIcons),
+  'tableTennisPaddleBall': IconPickerIcon(
+      name: 'tableTennisPaddleBall',
+      data: FontAwesomeIcons.tableTennisPaddleBall,
+      pack: IconPack.fontAwesomeIcons),
+  'tablet': IconPickerIcon(
+      name: 'tablet',
+      data: FontAwesomeIcons.tablet,
+      pack: IconPack.fontAwesomeIcons),
+  'tabletButton': IconPickerIcon(
+      name: 'tabletButton',
+      data: FontAwesomeIcons.tabletButton,
+      pack: IconPack.fontAwesomeIcons),
+  'tabletScreenButton': IconPickerIcon(
+      name: 'tabletScreenButton',
+      data: FontAwesomeIcons.tabletScreenButton,
+      pack: IconPack.fontAwesomeIcons),
+  'tablets': IconPickerIcon(
+      name: 'tablets',
+      data: FontAwesomeIcons.tablets,
+      pack: IconPack.fontAwesomeIcons),
+  'tachographDigital': IconPickerIcon(
+      name: 'tachographDigital',
+      data: FontAwesomeIcons.tachographDigital,
+      pack: IconPack.fontAwesomeIcons),
+  'tag': IconPickerIcon(
+      name: 'tag', data: FontAwesomeIcons.tag, pack: IconPack.fontAwesomeIcons),
+  'tags': IconPickerIcon(
+      name: 'tags',
+      data: FontAwesomeIcons.tags,
+      pack: IconPack.fontAwesomeIcons),
+  'tape': IconPickerIcon(
+      name: 'tape',
+      data: FontAwesomeIcons.tape,
+      pack: IconPack.fontAwesomeIcons),
+  'tarp': IconPickerIcon(
+      name: 'tarp',
+      data: FontAwesomeIcons.tarp,
+      pack: IconPack.fontAwesomeIcons),
+  'tarpDroplet': IconPickerIcon(
+      name: 'tarpDroplet',
+      data: FontAwesomeIcons.tarpDroplet,
+      pack: IconPack.fontAwesomeIcons),
+  'taxi': IconPickerIcon(
+      name: 'taxi',
+      data: FontAwesomeIcons.taxi,
+      pack: IconPack.fontAwesomeIcons),
+  'teamspeak': IconPickerIcon(
+      name: 'teamspeak',
+      data: FontAwesomeIcons.teamspeak,
+      pack: IconPack.fontAwesomeIcons),
+  'teeth': IconPickerIcon(
+      name: 'teeth',
+      data: FontAwesomeIcons.teeth,
+      pack: IconPack.fontAwesomeIcons),
+  'teethOpen': IconPickerIcon(
+      name: 'teethOpen',
+      data: FontAwesomeIcons.teethOpen,
+      pack: IconPack.fontAwesomeIcons),
+  'telegram': IconPickerIcon(
+      name: 'telegram',
+      data: FontAwesomeIcons.telegram,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureArrowDown': IconPickerIcon(
+      name: 'temperatureArrowDown',
+      data: FontAwesomeIcons.temperatureArrowDown,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureArrowUp': IconPickerIcon(
+      name: 'temperatureArrowUp',
+      data: FontAwesomeIcons.temperatureArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureEmpty': IconPickerIcon(
+      name: 'temperatureEmpty',
+      data: FontAwesomeIcons.temperatureEmpty,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureFull': IconPickerIcon(
+      name: 'temperatureFull',
+      data: FontAwesomeIcons.temperatureFull,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureHalf': IconPickerIcon(
+      name: 'temperatureHalf',
+      data: FontAwesomeIcons.temperatureHalf,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureHigh': IconPickerIcon(
+      name: 'temperatureHigh',
+      data: FontAwesomeIcons.temperatureHigh,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureLow': IconPickerIcon(
+      name: 'temperatureLow',
+      data: FontAwesomeIcons.temperatureLow,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureQuarter': IconPickerIcon(
+      name: 'temperatureQuarter',
+      data: FontAwesomeIcons.temperatureQuarter,
+      pack: IconPack.fontAwesomeIcons),
+  'temperatureThreeQuarters': IconPickerIcon(
+      name: 'temperatureThreeQuarters',
+      data: FontAwesomeIcons.temperatureThreeQuarters,
+      pack: IconPack.fontAwesomeIcons),
+  'tencentWeibo': IconPickerIcon(
+      name: 'tencentWeibo',
+      data: FontAwesomeIcons.tencentWeibo,
+      pack: IconPack.fontAwesomeIcons),
+  'tengeSign': IconPickerIcon(
+      name: 'tengeSign',
+      data: FontAwesomeIcons.tengeSign,
+      pack: IconPack.fontAwesomeIcons),
+  'tent': IconPickerIcon(
+      name: 'tent',
+      data: FontAwesomeIcons.tent,
+      pack: IconPack.fontAwesomeIcons),
+  'tentArrowDownToLine': IconPickerIcon(
+      name: 'tentArrowDownToLine',
+      data: FontAwesomeIcons.tentArrowDownToLine,
+      pack: IconPack.fontAwesomeIcons),
+  'tentArrowLeftRight': IconPickerIcon(
+      name: 'tentArrowLeftRight',
+      data: FontAwesomeIcons.tentArrowLeftRight,
+      pack: IconPack.fontAwesomeIcons),
+  'tentArrowTurnLeft': IconPickerIcon(
+      name: 'tentArrowTurnLeft',
+      data: FontAwesomeIcons.tentArrowTurnLeft,
+      pack: IconPack.fontAwesomeIcons),
+  'tentArrowsDown': IconPickerIcon(
+      name: 'tentArrowsDown',
+      data: FontAwesomeIcons.tentArrowsDown,
+      pack: IconPack.fontAwesomeIcons),
+  'tents': IconPickerIcon(
+      name: 'tents',
+      data: FontAwesomeIcons.tents,
+      pack: IconPack.fontAwesomeIcons),
+  'terminal': IconPickerIcon(
+      name: 'terminal',
+      data: FontAwesomeIcons.terminal,
+      pack: IconPack.fontAwesomeIcons),
+  'textHeight': IconPickerIcon(
+      name: 'textHeight',
+      data: FontAwesomeIcons.textHeight,
+      pack: IconPack.fontAwesomeIcons),
+  'textSlash': IconPickerIcon(
+      name: 'textSlash',
+      data: FontAwesomeIcons.textSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'textWidth': IconPickerIcon(
+      name: 'textWidth',
+      data: FontAwesomeIcons.textWidth,
+      pack: IconPack.fontAwesomeIcons),
+  'theRedYeti': IconPickerIcon(
+      name: 'theRedYeti',
+      data: FontAwesomeIcons.theRedYeti,
+      pack: IconPack.fontAwesomeIcons),
+  'themeco': IconPickerIcon(
+      name: 'themeco',
+      data: FontAwesomeIcons.themeco,
+      pack: IconPack.fontAwesomeIcons),
+  'themeisle': IconPickerIcon(
+      name: 'themeisle',
+      data: FontAwesomeIcons.themeisle,
+      pack: IconPack.fontAwesomeIcons),
+  'thermometer': IconPickerIcon(
+      name: 'thermometer',
+      data: FontAwesomeIcons.thermometer,
+      pack: IconPack.fontAwesomeIcons),
+  'thinkPeaks': IconPickerIcon(
+      name: 'thinkPeaks',
+      data: FontAwesomeIcons.thinkPeaks,
+      pack: IconPack.fontAwesomeIcons),
+  'solidThumbsDown': IconPickerIcon(
+      name: 'solidThumbsDown',
+      data: FontAwesomeIcons.solidThumbsDown,
+      pack: IconPack.fontAwesomeIcons),
+  'thumbsDown': IconPickerIcon(
+      name: 'thumbsDown',
+      data: FontAwesomeIcons.thumbsDown,
+      pack: IconPack.fontAwesomeIcons),
+  'solidThumbsUp': IconPickerIcon(
+      name: 'solidThumbsUp',
+      data: FontAwesomeIcons.solidThumbsUp,
+      pack: IconPack.fontAwesomeIcons),
+  'thumbsUp': IconPickerIcon(
+      name: 'thumbsUp',
+      data: FontAwesomeIcons.thumbsUp,
+      pack: IconPack.fontAwesomeIcons),
+  'thumbtack': IconPickerIcon(
+      name: 'thumbtack',
+      data: FontAwesomeIcons.thumbtack,
+      pack: IconPack.fontAwesomeIcons),
+  'ticket': IconPickerIcon(
+      name: 'ticket',
+      data: FontAwesomeIcons.ticket,
+      pack: IconPack.fontAwesomeIcons),
+  'ticketSimple': IconPickerIcon(
+      name: 'ticketSimple',
+      data: FontAwesomeIcons.ticketSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'tiktok': IconPickerIcon(
+      name: 'tiktok',
+      data: FontAwesomeIcons.tiktok,
+      pack: IconPack.fontAwesomeIcons),
+  'timeline': IconPickerIcon(
+      name: 'timeline',
+      data: FontAwesomeIcons.timeline,
+      pack: IconPack.fontAwesomeIcons),
+  'toggleOff': IconPickerIcon(
+      name: 'toggleOff',
+      data: FontAwesomeIcons.toggleOff,
+      pack: IconPack.fontAwesomeIcons),
+  'toggleOn': IconPickerIcon(
+      name: 'toggleOn',
+      data: FontAwesomeIcons.toggleOn,
+      pack: IconPack.fontAwesomeIcons),
+  'toilet': IconPickerIcon(
+      name: 'toilet',
+      data: FontAwesomeIcons.toilet,
+      pack: IconPack.fontAwesomeIcons),
+  'toiletPaper': IconPickerIcon(
+      name: 'toiletPaper',
+      data: FontAwesomeIcons.toiletPaper,
+      pack: IconPack.fontAwesomeIcons),
+  'toiletPaperSlash': IconPickerIcon(
+      name: 'toiletPaperSlash',
+      data: FontAwesomeIcons.toiletPaperSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'toiletPortable': IconPickerIcon(
+      name: 'toiletPortable',
+      data: FontAwesomeIcons.toiletPortable,
+      pack: IconPack.fontAwesomeIcons),
+  'toiletsPortable': IconPickerIcon(
+      name: 'toiletsPortable',
+      data: FontAwesomeIcons.toiletsPortable,
+      pack: IconPack.fontAwesomeIcons),
+  'toolbox': IconPickerIcon(
+      name: 'toolbox',
+      data: FontAwesomeIcons.toolbox,
+      pack: IconPack.fontAwesomeIcons),
+  'tooth': IconPickerIcon(
+      name: 'tooth',
+      data: FontAwesomeIcons.tooth,
+      pack: IconPack.fontAwesomeIcons),
+  'toriiGate': IconPickerIcon(
+      name: 'toriiGate',
+      data: FontAwesomeIcons.toriiGate,
+      pack: IconPack.fontAwesomeIcons),
+  'tornado': IconPickerIcon(
+      name: 'tornado',
+      data: FontAwesomeIcons.tornado,
+      pack: IconPack.fontAwesomeIcons),
+  'towerBroadcast': IconPickerIcon(
+      name: 'towerBroadcast',
+      data: FontAwesomeIcons.towerBroadcast,
+      pack: IconPack.fontAwesomeIcons),
+  'towerCell': IconPickerIcon(
+      name: 'towerCell',
+      data: FontAwesomeIcons.towerCell,
+      pack: IconPack.fontAwesomeIcons),
+  'towerObservation': IconPickerIcon(
+      name: 'towerObservation',
+      data: FontAwesomeIcons.towerObservation,
+      pack: IconPack.fontAwesomeIcons),
+  'tractor': IconPickerIcon(
+      name: 'tractor',
+      data: FontAwesomeIcons.tractor,
+      pack: IconPack.fontAwesomeIcons),
+  'tradeFederation': IconPickerIcon(
+      name: 'tradeFederation',
+      data: FontAwesomeIcons.tradeFederation,
+      pack: IconPack.fontAwesomeIcons),
+  'trademark': IconPickerIcon(
+      name: 'trademark',
+      data: FontAwesomeIcons.trademark,
+      pack: IconPack.fontAwesomeIcons),
+  'trafficLight': IconPickerIcon(
+      name: 'trafficLight',
+      data: FontAwesomeIcons.trafficLight,
+      pack: IconPack.fontAwesomeIcons),
+  'trailer': IconPickerIcon(
+      name: 'trailer',
+      data: FontAwesomeIcons.trailer,
+      pack: IconPack.fontAwesomeIcons),
+  'train': IconPickerIcon(
+      name: 'train',
+      data: FontAwesomeIcons.train,
+      pack: IconPack.fontAwesomeIcons),
+  'trainSubway': IconPickerIcon(
+      name: 'trainSubway',
+      data: FontAwesomeIcons.trainSubway,
+      pack: IconPack.fontAwesomeIcons),
+  'trainTram': IconPickerIcon(
+      name: 'trainTram',
+      data: FontAwesomeIcons.trainTram,
+      pack: IconPack.fontAwesomeIcons),
+  'transgender': IconPickerIcon(
+      name: 'transgender',
+      data: FontAwesomeIcons.transgender,
+      pack: IconPack.fontAwesomeIcons),
+  'trash': IconPickerIcon(
+      name: 'trash',
+      data: FontAwesomeIcons.trash,
+      pack: IconPack.fontAwesomeIcons),
+  'trashArrowUp': IconPickerIcon(
+      name: 'trashArrowUp',
+      data: FontAwesomeIcons.trashArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'solidTrashCan': IconPickerIcon(
+      name: 'solidTrashCan',
+      data: FontAwesomeIcons.solidTrashCan,
+      pack: IconPack.fontAwesomeIcons),
+  'trashCan': IconPickerIcon(
+      name: 'trashCan',
+      data: FontAwesomeIcons.trashCan,
+      pack: IconPack.fontAwesomeIcons),
+  'trashCanArrowUp': IconPickerIcon(
+      name: 'trashCanArrowUp',
+      data: FontAwesomeIcons.trashCanArrowUp,
+      pack: IconPack.fontAwesomeIcons),
+  'tree': IconPickerIcon(
+      name: 'tree',
+      data: FontAwesomeIcons.tree,
+      pack: IconPack.fontAwesomeIcons),
+  'treeCity': IconPickerIcon(
+      name: 'treeCity',
+      data: FontAwesomeIcons.treeCity,
+      pack: IconPack.fontAwesomeIcons),
+  'trello': IconPickerIcon(
+      name: 'trello',
+      data: FontAwesomeIcons.trello,
+      pack: IconPack.fontAwesomeIcons),
+  'triangleExclamation': IconPickerIcon(
+      name: 'triangleExclamation',
+      data: FontAwesomeIcons.triangleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'trophy': IconPickerIcon(
+      name: 'trophy',
+      data: FontAwesomeIcons.trophy,
+      pack: IconPack.fontAwesomeIcons),
+  'trowel': IconPickerIcon(
+      name: 'trowel',
+      data: FontAwesomeIcons.trowel,
+      pack: IconPack.fontAwesomeIcons),
+  'trowelBricks': IconPickerIcon(
+      name: 'trowelBricks',
+      data: FontAwesomeIcons.trowelBricks,
+      pack: IconPack.fontAwesomeIcons),
+  'truck': IconPickerIcon(
+      name: 'truck',
+      data: FontAwesomeIcons.truck,
+      pack: IconPack.fontAwesomeIcons),
+  'truckArrowRight': IconPickerIcon(
+      name: 'truckArrowRight',
+      data: FontAwesomeIcons.truckArrowRight,
+      pack: IconPack.fontAwesomeIcons),
+  'truckDroplet': IconPickerIcon(
+      name: 'truckDroplet',
+      data: FontAwesomeIcons.truckDroplet,
+      pack: IconPack.fontAwesomeIcons),
+  'truckFast': IconPickerIcon(
+      name: 'truckFast',
+      data: FontAwesomeIcons.truckFast,
+      pack: IconPack.fontAwesomeIcons),
+  'truckField': IconPickerIcon(
+      name: 'truckField',
+      data: FontAwesomeIcons.truckField,
+      pack: IconPack.fontAwesomeIcons),
+  'truckFieldUn': IconPickerIcon(
+      name: 'truckFieldUn',
+      data: FontAwesomeIcons.truckFieldUn,
+      pack: IconPack.fontAwesomeIcons),
+  'truckFront': IconPickerIcon(
+      name: 'truckFront',
+      data: FontAwesomeIcons.truckFront,
+      pack: IconPack.fontAwesomeIcons),
+  'truckMedical': IconPickerIcon(
+      name: 'truckMedical',
+      data: FontAwesomeIcons.truckMedical,
+      pack: IconPack.fontAwesomeIcons),
+  'truckMonster': IconPickerIcon(
+      name: 'truckMonster',
+      data: FontAwesomeIcons.truckMonster,
+      pack: IconPack.fontAwesomeIcons),
+  'truckMoving': IconPickerIcon(
+      name: 'truckMoving',
+      data: FontAwesomeIcons.truckMoving,
+      pack: IconPack.fontAwesomeIcons),
+  'truckPickup': IconPickerIcon(
+      name: 'truckPickup',
+      data: FontAwesomeIcons.truckPickup,
+      pack: IconPack.fontAwesomeIcons),
+  'truckPlane': IconPickerIcon(
+      name: 'truckPlane',
+      data: FontAwesomeIcons.truckPlane,
+      pack: IconPack.fontAwesomeIcons),
+  'truckRampBox': IconPickerIcon(
+      name: 'truckRampBox',
+      data: FontAwesomeIcons.truckRampBox,
+      pack: IconPack.fontAwesomeIcons),
+  'tty': IconPickerIcon(
+      name: 'tty', data: FontAwesomeIcons.tty, pack: IconPack.fontAwesomeIcons),
+  'tumblr': IconPickerIcon(
+      name: 'tumblr',
+      data: FontAwesomeIcons.tumblr,
+      pack: IconPack.fontAwesomeIcons),
+  'turkishLiraSign': IconPickerIcon(
+      name: 'turkishLiraSign',
+      data: FontAwesomeIcons.turkishLiraSign,
+      pack: IconPack.fontAwesomeIcons),
+  'turnDown': IconPickerIcon(
+      name: 'turnDown',
+      data: FontAwesomeIcons.turnDown,
+      pack: IconPack.fontAwesomeIcons),
+  'turnUp': IconPickerIcon(
+      name: 'turnUp',
+      data: FontAwesomeIcons.turnUp,
+      pack: IconPack.fontAwesomeIcons),
+  'tv': IconPickerIcon(
+      name: 'tv', data: FontAwesomeIcons.tv, pack: IconPack.fontAwesomeIcons),
+  'twitch': IconPickerIcon(
+      name: 'twitch',
+      data: FontAwesomeIcons.twitch,
+      pack: IconPack.fontAwesomeIcons),
+  'twitter': IconPickerIcon(
+      name: 'twitter',
+      data: FontAwesomeIcons.twitter,
+      pack: IconPack.fontAwesomeIcons),
+  'typo3': IconPickerIcon(
+      name: 'typo3',
+      data: FontAwesomeIcons.typo3,
+      pack: IconPack.fontAwesomeIcons),
+  'u': IconPickerIcon(
+      name: 'u', data: FontAwesomeIcons.u, pack: IconPack.fontAwesomeIcons),
+  'uber': IconPickerIcon(
+      name: 'uber',
+      data: FontAwesomeIcons.uber,
+      pack: IconPack.fontAwesomeIcons),
+  'ubuntu': IconPickerIcon(
+      name: 'ubuntu',
+      data: FontAwesomeIcons.ubuntu,
+      pack: IconPack.fontAwesomeIcons),
+  'uikit': IconPickerIcon(
+      name: 'uikit',
+      data: FontAwesomeIcons.uikit,
+      pack: IconPack.fontAwesomeIcons),
+  'umbraco': IconPickerIcon(
+      name: 'umbraco',
+      data: FontAwesomeIcons.umbraco,
+      pack: IconPack.fontAwesomeIcons),
+  'umbrella': IconPickerIcon(
+      name: 'umbrella',
+      data: FontAwesomeIcons.umbrella,
+      pack: IconPack.fontAwesomeIcons),
+  'umbrellaBeach': IconPickerIcon(
+      name: 'umbrellaBeach',
+      data: FontAwesomeIcons.umbrellaBeach,
+      pack: IconPack.fontAwesomeIcons),
+  'uncharted': IconPickerIcon(
+      name: 'uncharted',
+      data: FontAwesomeIcons.uncharted,
+      pack: IconPack.fontAwesomeIcons),
+  'underline': IconPickerIcon(
+      name: 'underline',
+      data: FontAwesomeIcons.underline,
+      pack: IconPack.fontAwesomeIcons),
+  'uniregistry': IconPickerIcon(
+      name: 'uniregistry',
+      data: FontAwesomeIcons.uniregistry,
+      pack: IconPack.fontAwesomeIcons),
+  'unity': IconPickerIcon(
+      name: 'unity',
+      data: FontAwesomeIcons.unity,
+      pack: IconPack.fontAwesomeIcons),
+  'universalAccess': IconPickerIcon(
+      name: 'universalAccess',
+      data: FontAwesomeIcons.universalAccess,
+      pack: IconPack.fontAwesomeIcons),
+  'unlock': IconPickerIcon(
+      name: 'unlock',
+      data: FontAwesomeIcons.unlock,
+      pack: IconPack.fontAwesomeIcons),
+  'unlockKeyhole': IconPickerIcon(
+      name: 'unlockKeyhole',
+      data: FontAwesomeIcons.unlockKeyhole,
+      pack: IconPack.fontAwesomeIcons),
+  'unsplash': IconPickerIcon(
+      name: 'unsplash',
+      data: FontAwesomeIcons.unsplash,
+      pack: IconPack.fontAwesomeIcons),
+  'untappd': IconPickerIcon(
+      name: 'untappd',
+      data: FontAwesomeIcons.untappd,
+      pack: IconPack.fontAwesomeIcons),
+  'upDown': IconPickerIcon(
+      name: 'upDown',
+      data: FontAwesomeIcons.upDown,
+      pack: IconPack.fontAwesomeIcons),
+  'upDownLeftRight': IconPickerIcon(
+      name: 'upDownLeftRight',
+      data: FontAwesomeIcons.upDownLeftRight,
+      pack: IconPack.fontAwesomeIcons),
+  'upLong': IconPickerIcon(
+      name: 'upLong',
+      data: FontAwesomeIcons.upLong,
+      pack: IconPack.fontAwesomeIcons),
+  'upRightAndDownLeftFromCenter': IconPickerIcon(
+      name: 'upRightAndDownLeftFromCenter',
+      data: FontAwesomeIcons.upRightAndDownLeftFromCenter,
+      pack: IconPack.fontAwesomeIcons),
+  'upRightFromSquare': IconPickerIcon(
+      name: 'upRightFromSquare',
+      data: FontAwesomeIcons.upRightFromSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'upload': IconPickerIcon(
+      name: 'upload',
+      data: FontAwesomeIcons.upload,
+      pack: IconPack.fontAwesomeIcons),
+  'ups': IconPickerIcon(
+      name: 'ups', data: FontAwesomeIcons.ups, pack: IconPack.fontAwesomeIcons),
+  'usb': IconPickerIcon(
+      name: 'usb', data: FontAwesomeIcons.usb, pack: IconPack.fontAwesomeIcons),
+  'solidUser': IconPickerIcon(
+      name: 'solidUser',
+      data: FontAwesomeIcons.solidUser,
+      pack: IconPack.fontAwesomeIcons),
+  'user': IconPickerIcon(
+      name: 'user',
+      data: FontAwesomeIcons.user,
+      pack: IconPack.fontAwesomeIcons),
+  'userAstronaut': IconPickerIcon(
+      name: 'userAstronaut',
+      data: FontAwesomeIcons.userAstronaut,
+      pack: IconPack.fontAwesomeIcons),
+  'userCheck': IconPickerIcon(
+      name: 'userCheck',
+      data: FontAwesomeIcons.userCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'userClock': IconPickerIcon(
+      name: 'userClock',
+      data: FontAwesomeIcons.userClock,
+      pack: IconPack.fontAwesomeIcons),
+  'userDoctor': IconPickerIcon(
+      name: 'userDoctor',
+      data: FontAwesomeIcons.userDoctor,
+      pack: IconPack.fontAwesomeIcons),
+  'userGear': IconPickerIcon(
+      name: 'userGear',
+      data: FontAwesomeIcons.userGear,
+      pack: IconPack.fontAwesomeIcons),
+  'userGraduate': IconPickerIcon(
+      name: 'userGraduate',
+      data: FontAwesomeIcons.userGraduate,
+      pack: IconPack.fontAwesomeIcons),
+  'userGroup': IconPickerIcon(
+      name: 'userGroup',
+      data: FontAwesomeIcons.userGroup,
+      pack: IconPack.fontAwesomeIcons),
+  'userInjured': IconPickerIcon(
+      name: 'userInjured',
+      data: FontAwesomeIcons.userInjured,
+      pack: IconPack.fontAwesomeIcons),
+  'userLarge': IconPickerIcon(
+      name: 'userLarge',
+      data: FontAwesomeIcons.userLarge,
+      pack: IconPack.fontAwesomeIcons),
+  'userLargeSlash': IconPickerIcon(
+      name: 'userLargeSlash',
+      data: FontAwesomeIcons.userLargeSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'userLock': IconPickerIcon(
+      name: 'userLock',
+      data: FontAwesomeIcons.userLock,
+      pack: IconPack.fontAwesomeIcons),
+  'userMinus': IconPickerIcon(
+      name: 'userMinus',
+      data: FontAwesomeIcons.userMinus,
+      pack: IconPack.fontAwesomeIcons),
+  'userNinja': IconPickerIcon(
+      name: 'userNinja',
+      data: FontAwesomeIcons.userNinja,
+      pack: IconPack.fontAwesomeIcons),
+  'userNurse': IconPickerIcon(
+      name: 'userNurse',
+      data: FontAwesomeIcons.userNurse,
+      pack: IconPack.fontAwesomeIcons),
+  'userPen': IconPickerIcon(
+      name: 'userPen',
+      data: FontAwesomeIcons.userPen,
+      pack: IconPack.fontAwesomeIcons),
+  'userPlus': IconPickerIcon(
+      name: 'userPlus',
+      data: FontAwesomeIcons.userPlus,
+      pack: IconPack.fontAwesomeIcons),
+  'userSecret': IconPickerIcon(
+      name: 'userSecret',
+      data: FontAwesomeIcons.userSecret,
+      pack: IconPack.fontAwesomeIcons),
+  'userShield': IconPickerIcon(
+      name: 'userShield',
+      data: FontAwesomeIcons.userShield,
+      pack: IconPack.fontAwesomeIcons),
+  'userSlash': IconPickerIcon(
+      name: 'userSlash',
+      data: FontAwesomeIcons.userSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'userTag': IconPickerIcon(
+      name: 'userTag',
+      data: FontAwesomeIcons.userTag,
+      pack: IconPack.fontAwesomeIcons),
+  'userTie': IconPickerIcon(
+      name: 'userTie',
+      data: FontAwesomeIcons.userTie,
+      pack: IconPack.fontAwesomeIcons),
+  'userXmark': IconPickerIcon(
+      name: 'userXmark',
+      data: FontAwesomeIcons.userXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'users': IconPickerIcon(
+      name: 'users',
+      data: FontAwesomeIcons.users,
+      pack: IconPack.fontAwesomeIcons),
+  'usersBetweenLines': IconPickerIcon(
+      name: 'usersBetweenLines',
+      data: FontAwesomeIcons.usersBetweenLines,
+      pack: IconPack.fontAwesomeIcons),
+  'usersGear': IconPickerIcon(
+      name: 'usersGear',
+      data: FontAwesomeIcons.usersGear,
+      pack: IconPack.fontAwesomeIcons),
+  'usersLine': IconPickerIcon(
+      name: 'usersLine',
+      data: FontAwesomeIcons.usersLine,
+      pack: IconPack.fontAwesomeIcons),
+  'usersRays': IconPickerIcon(
+      name: 'usersRays',
+      data: FontAwesomeIcons.usersRays,
+      pack: IconPack.fontAwesomeIcons),
+  'usersRectangle': IconPickerIcon(
+      name: 'usersRectangle',
+      data: FontAwesomeIcons.usersRectangle,
+      pack: IconPack.fontAwesomeIcons),
+  'usersSlash': IconPickerIcon(
+      name: 'usersSlash',
+      data: FontAwesomeIcons.usersSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'usersViewfinder': IconPickerIcon(
+      name: 'usersViewfinder',
+      data: FontAwesomeIcons.usersViewfinder,
+      pack: IconPack.fontAwesomeIcons),
+  'usps': IconPickerIcon(
+      name: 'usps',
+      data: FontAwesomeIcons.usps,
+      pack: IconPack.fontAwesomeIcons),
+  'ussunnah': IconPickerIcon(
+      name: 'ussunnah',
+      data: FontAwesomeIcons.ussunnah,
+      pack: IconPack.fontAwesomeIcons),
+  'utensils': IconPickerIcon(
+      name: 'utensils',
+      data: FontAwesomeIcons.utensils,
+      pack: IconPack.fontAwesomeIcons),
+  'v': IconPickerIcon(
+      name: 'v', data: FontAwesomeIcons.v, pack: IconPack.fontAwesomeIcons),
+  'vaadin': IconPickerIcon(
+      name: 'vaadin',
+      data: FontAwesomeIcons.vaadin,
+      pack: IconPack.fontAwesomeIcons),
+  'vanShuttle': IconPickerIcon(
+      name: 'vanShuttle',
+      data: FontAwesomeIcons.vanShuttle,
+      pack: IconPack.fontAwesomeIcons),
+  'vault': IconPickerIcon(
+      name: 'vault',
+      data: FontAwesomeIcons.vault,
+      pack: IconPack.fontAwesomeIcons),
+  'vectorSquare': IconPickerIcon(
+      name: 'vectorSquare',
+      data: FontAwesomeIcons.vectorSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'venus': IconPickerIcon(
+      name: 'venus',
+      data: FontAwesomeIcons.venus,
+      pack: IconPack.fontAwesomeIcons),
+  'venusDouble': IconPickerIcon(
+      name: 'venusDouble',
+      data: FontAwesomeIcons.venusDouble,
+      pack: IconPack.fontAwesomeIcons),
+  'venusMars': IconPickerIcon(
+      name: 'venusMars',
+      data: FontAwesomeIcons.venusMars,
+      pack: IconPack.fontAwesomeIcons),
+  'vest': IconPickerIcon(
+      name: 'vest',
+      data: FontAwesomeIcons.vest,
+      pack: IconPack.fontAwesomeIcons),
+  'vestPatches': IconPickerIcon(
+      name: 'vestPatches',
+      data: FontAwesomeIcons.vestPatches,
+      pack: IconPack.fontAwesomeIcons),
+  'viacoin': IconPickerIcon(
+      name: 'viacoin',
+      data: FontAwesomeIcons.viacoin,
+      pack: IconPack.fontAwesomeIcons),
+  'viadeo': IconPickerIcon(
+      name: 'viadeo',
+      data: FontAwesomeIcons.viadeo,
+      pack: IconPack.fontAwesomeIcons),
+  'vial': IconPickerIcon(
+      name: 'vial',
+      data: FontAwesomeIcons.vial,
+      pack: IconPack.fontAwesomeIcons),
+  'vialCircleCheck': IconPickerIcon(
+      name: 'vialCircleCheck',
+      data: FontAwesomeIcons.vialCircleCheck,
+      pack: IconPack.fontAwesomeIcons),
+  'vialVirus': IconPickerIcon(
+      name: 'vialVirus',
+      data: FontAwesomeIcons.vialVirus,
+      pack: IconPack.fontAwesomeIcons),
+  'vials': IconPickerIcon(
+      name: 'vials',
+      data: FontAwesomeIcons.vials,
+      pack: IconPack.fontAwesomeIcons),
+  'viber': IconPickerIcon(
+      name: 'viber',
+      data: FontAwesomeIcons.viber,
+      pack: IconPack.fontAwesomeIcons),
+  'video': IconPickerIcon(
+      name: 'video',
+      data: FontAwesomeIcons.video,
+      pack: IconPack.fontAwesomeIcons),
+  'videoSlash': IconPickerIcon(
+      name: 'videoSlash',
+      data: FontAwesomeIcons.videoSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'vihara': IconPickerIcon(
+      name: 'vihara',
+      data: FontAwesomeIcons.vihara,
+      pack: IconPack.fontAwesomeIcons),
+  'vimeo': IconPickerIcon(
+      name: 'vimeo',
+      data: FontAwesomeIcons.vimeo,
+      pack: IconPack.fontAwesomeIcons),
+  'vimeoV': IconPickerIcon(
+      name: 'vimeoV',
+      data: FontAwesomeIcons.vimeoV,
+      pack: IconPack.fontAwesomeIcons),
+  'vine': IconPickerIcon(
+      name: 'vine',
+      data: FontAwesomeIcons.vine,
+      pack: IconPack.fontAwesomeIcons),
+  'virus': IconPickerIcon(
+      name: 'virus',
+      data: FontAwesomeIcons.virus,
+      pack: IconPack.fontAwesomeIcons),
+  'virusCovid': IconPickerIcon(
+      name: 'virusCovid',
+      data: FontAwesomeIcons.virusCovid,
+      pack: IconPack.fontAwesomeIcons),
+  'virusCovidSlash': IconPickerIcon(
+      name: 'virusCovidSlash',
+      data: FontAwesomeIcons.virusCovidSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'virusSlash': IconPickerIcon(
+      name: 'virusSlash',
+      data: FontAwesomeIcons.virusSlash,
+      pack: IconPack.fontAwesomeIcons),
+  'viruses': IconPickerIcon(
+      name: 'viruses',
+      data: FontAwesomeIcons.viruses,
+      pack: IconPack.fontAwesomeIcons),
+  'vk': IconPickerIcon(
+      name: 'vk', data: FontAwesomeIcons.vk, pack: IconPack.fontAwesomeIcons),
+  'vnv': IconPickerIcon(
+      name: 'vnv', data: FontAwesomeIcons.vnv, pack: IconPack.fontAwesomeIcons),
+  'voicemail': IconPickerIcon(
+      name: 'voicemail',
+      data: FontAwesomeIcons.voicemail,
+      pack: IconPack.fontAwesomeIcons),
+  'volcano': IconPickerIcon(
+      name: 'volcano',
+      data: FontAwesomeIcons.volcano,
+      pack: IconPack.fontAwesomeIcons),
+  'volleyball': IconPickerIcon(
+      name: 'volleyball',
+      data: FontAwesomeIcons.volleyball,
+      pack: IconPack.fontAwesomeIcons),
+  'volumeHigh': IconPickerIcon(
+      name: 'volumeHigh',
+      data: FontAwesomeIcons.volumeHigh,
+      pack: IconPack.fontAwesomeIcons),
+  'volumeLow': IconPickerIcon(
+      name: 'volumeLow',
+      data: FontAwesomeIcons.volumeLow,
+      pack: IconPack.fontAwesomeIcons),
+  'volumeOff': IconPickerIcon(
+      name: 'volumeOff',
+      data: FontAwesomeIcons.volumeOff,
+      pack: IconPack.fontAwesomeIcons),
+  'volumeXmark': IconPickerIcon(
+      name: 'volumeXmark',
+      data: FontAwesomeIcons.volumeXmark,
+      pack: IconPack.fontAwesomeIcons),
+  'vrCardboard': IconPickerIcon(
+      name: 'vrCardboard',
+      data: FontAwesomeIcons.vrCardboard,
+      pack: IconPack.fontAwesomeIcons),
+  'vuejs': IconPickerIcon(
+      name: 'vuejs',
+      data: FontAwesomeIcons.vuejs,
+      pack: IconPack.fontAwesomeIcons),
+  'w': IconPickerIcon(
+      name: 'w', data: FontAwesomeIcons.w, pack: IconPack.fontAwesomeIcons),
+  'walkieTalkie': IconPickerIcon(
+      name: 'walkieTalkie',
+      data: FontAwesomeIcons.walkieTalkie,
+      pack: IconPack.fontAwesomeIcons),
+  'wallet': IconPickerIcon(
+      name: 'wallet',
+      data: FontAwesomeIcons.wallet,
+      pack: IconPack.fontAwesomeIcons),
+  'wandMagic': IconPickerIcon(
+      name: 'wandMagic',
+      data: FontAwesomeIcons.wandMagic,
+      pack: IconPack.fontAwesomeIcons),
+  'wandMagicSparkles': IconPickerIcon(
+      name: 'wandMagicSparkles',
+      data: FontAwesomeIcons.wandMagicSparkles,
+      pack: IconPack.fontAwesomeIcons),
+  'wandSparkles': IconPickerIcon(
+      name: 'wandSparkles',
+      data: FontAwesomeIcons.wandSparkles,
+      pack: IconPack.fontAwesomeIcons),
+  'warehouse': IconPickerIcon(
+      name: 'warehouse',
+      data: FontAwesomeIcons.warehouse,
+      pack: IconPack.fontAwesomeIcons),
+  'watchmanMonitoring': IconPickerIcon(
+      name: 'watchmanMonitoring',
+      data: FontAwesomeIcons.watchmanMonitoring,
+      pack: IconPack.fontAwesomeIcons),
+  'water': IconPickerIcon(
+      name: 'water',
+      data: FontAwesomeIcons.water,
+      pack: IconPack.fontAwesomeIcons),
+  'waterLadder': IconPickerIcon(
+      name: 'waterLadder',
+      data: FontAwesomeIcons.waterLadder,
+      pack: IconPack.fontAwesomeIcons),
+  'waveSquare': IconPickerIcon(
+      name: 'waveSquare',
+      data: FontAwesomeIcons.waveSquare,
+      pack: IconPack.fontAwesomeIcons),
+  'waze': IconPickerIcon(
+      name: 'waze',
+      data: FontAwesomeIcons.waze,
+      pack: IconPack.fontAwesomeIcons),
+  'weebly': IconPickerIcon(
+      name: 'weebly',
+      data: FontAwesomeIcons.weebly,
+      pack: IconPack.fontAwesomeIcons),
+  'weibo': IconPickerIcon(
+      name: 'weibo',
+      data: FontAwesomeIcons.weibo,
+      pack: IconPack.fontAwesomeIcons),
+  'weightHanging': IconPickerIcon(
+      name: 'weightHanging',
+      data: FontAwesomeIcons.weightHanging,
+      pack: IconPack.fontAwesomeIcons),
+  'weightScale': IconPickerIcon(
+      name: 'weightScale',
+      data: FontAwesomeIcons.weightScale,
+      pack: IconPack.fontAwesomeIcons),
+  'weixin': IconPickerIcon(
+      name: 'weixin',
+      data: FontAwesomeIcons.weixin,
+      pack: IconPack.fontAwesomeIcons),
+  'whatsapp': IconPickerIcon(
+      name: 'whatsapp',
+      data: FontAwesomeIcons.whatsapp,
+      pack: IconPack.fontAwesomeIcons),
+  'wheatAwn': IconPickerIcon(
+      name: 'wheatAwn',
+      data: FontAwesomeIcons.wheatAwn,
+      pack: IconPack.fontAwesomeIcons),
+  'wheatAwnCircleExclamation': IconPickerIcon(
+      name: 'wheatAwnCircleExclamation',
+      data: FontAwesomeIcons.wheatAwnCircleExclamation,
+      pack: IconPack.fontAwesomeIcons),
+  'wheelchair': IconPickerIcon(
+      name: 'wheelchair',
+      data: FontAwesomeIcons.wheelchair,
+      pack: IconPack.fontAwesomeIcons),
+  'wheelchairMove': IconPickerIcon(
+      name: 'wheelchairMove',
+      data: FontAwesomeIcons.wheelchairMove,
+      pack: IconPack.fontAwesomeIcons),
+  'whiskeyGlass': IconPickerIcon(
+      name: 'whiskeyGlass',
+      data: FontAwesomeIcons.whiskeyGlass,
+      pack: IconPack.fontAwesomeIcons),
+  'whmcs': IconPickerIcon(
+      name: 'whmcs',
+      data: FontAwesomeIcons.whmcs,
+      pack: IconPack.fontAwesomeIcons),
+  'wifi': IconPickerIcon(
+      name: 'wifi',
+      data: FontAwesomeIcons.wifi,
+      pack: IconPack.fontAwesomeIcons),
+  'wikipediaW': IconPickerIcon(
+      name: 'wikipediaW',
+      data: FontAwesomeIcons.wikipediaW,
+      pack: IconPack.fontAwesomeIcons),
+  'wind': IconPickerIcon(
+      name: 'wind',
+      data: FontAwesomeIcons.wind,
+      pack: IconPack.fontAwesomeIcons),
+  'solidWindowMaximize': IconPickerIcon(
+      name: 'solidWindowMaximize',
+      data: FontAwesomeIcons.solidWindowMaximize,
+      pack: IconPack.fontAwesomeIcons),
+  'windowMaximize': IconPickerIcon(
+      name: 'windowMaximize',
+      data: FontAwesomeIcons.windowMaximize,
+      pack: IconPack.fontAwesomeIcons),
+  'solidWindowMinimize': IconPickerIcon(
+      name: 'solidWindowMinimize',
+      data: FontAwesomeIcons.solidWindowMinimize,
+      pack: IconPack.fontAwesomeIcons),
+  'windowMinimize': IconPickerIcon(
+      name: 'windowMinimize',
+      data: FontAwesomeIcons.windowMinimize,
+      pack: IconPack.fontAwesomeIcons),
+  'solidWindowRestore': IconPickerIcon(
+      name: 'solidWindowRestore',
+      data: FontAwesomeIcons.solidWindowRestore,
+      pack: IconPack.fontAwesomeIcons),
+  'windowRestore': IconPickerIcon(
+      name: 'windowRestore',
+      data: FontAwesomeIcons.windowRestore,
+      pack: IconPack.fontAwesomeIcons),
+  'windows': IconPickerIcon(
+      name: 'windows',
+      data: FontAwesomeIcons.windows,
+      pack: IconPack.fontAwesomeIcons),
+  'wineBottle': IconPickerIcon(
+      name: 'wineBottle',
+      data: FontAwesomeIcons.wineBottle,
+      pack: IconPack.fontAwesomeIcons),
+  'wineGlass': IconPickerIcon(
+      name: 'wineGlass',
+      data: FontAwesomeIcons.wineGlass,
+      pack: IconPack.fontAwesomeIcons),
+  'wineGlassEmpty': IconPickerIcon(
+      name: 'wineGlassEmpty',
+      data: FontAwesomeIcons.wineGlassEmpty,
+      pack: IconPack.fontAwesomeIcons),
+  'wirsindhandwerk': IconPickerIcon(
+      name: 'wirsindhandwerk',
+      data: FontAwesomeIcons.wirsindhandwerk,
+      pack: IconPack.fontAwesomeIcons),
+  'wix': IconPickerIcon(
+      name: 'wix', data: FontAwesomeIcons.wix, pack: IconPack.fontAwesomeIcons),
+  'wizardsOfTheCoast': IconPickerIcon(
+      name: 'wizardsOfTheCoast',
+      data: FontAwesomeIcons.wizardsOfTheCoast,
+      pack: IconPack.fontAwesomeIcons),
+  'wodu': IconPickerIcon(
+      name: 'wodu',
+      data: FontAwesomeIcons.wodu,
+      pack: IconPack.fontAwesomeIcons),
+  'wolfPackBattalion': IconPickerIcon(
+      name: 'wolfPackBattalion',
+      data: FontAwesomeIcons.wolfPackBattalion,
+      pack: IconPack.fontAwesomeIcons),
+  'wonSign': IconPickerIcon(
+      name: 'wonSign',
+      data: FontAwesomeIcons.wonSign,
+      pack: IconPack.fontAwesomeIcons),
+  'wordpress': IconPickerIcon(
+      name: 'wordpress',
+      data: FontAwesomeIcons.wordpress,
+      pack: IconPack.fontAwesomeIcons),
+  'wordpressSimple': IconPickerIcon(
+      name: 'wordpressSimple',
+      data: FontAwesomeIcons.wordpressSimple,
+      pack: IconPack.fontAwesomeIcons),
+  'worm': IconPickerIcon(
+      name: 'worm',
+      data: FontAwesomeIcons.worm,
+      pack: IconPack.fontAwesomeIcons),
+  'wpbeginner': IconPickerIcon(
+      name: 'wpbeginner',
+      data: FontAwesomeIcons.wpbeginner,
+      pack: IconPack.fontAwesomeIcons),
+  'wpexplorer': IconPickerIcon(
+      name: 'wpexplorer',
+      data: FontAwesomeIcons.wpexplorer,
+      pack: IconPack.fontAwesomeIcons),
+  'wpforms': IconPickerIcon(
+      name: 'wpforms',
+      data: FontAwesomeIcons.wpforms,
+      pack: IconPack.fontAwesomeIcons),
+  'wpressr': IconPickerIcon(
+      name: 'wpressr',
+      data: FontAwesomeIcons.wpressr,
+      pack: IconPack.fontAwesomeIcons),
+  'wrench': IconPickerIcon(
+      name: 'wrench',
+      data: FontAwesomeIcons.wrench,
+      pack: IconPack.fontAwesomeIcons),
+  'x': IconPickerIcon(
+      name: 'x', data: FontAwesomeIcons.x, pack: IconPack.fontAwesomeIcons),
+  'xRay': IconPickerIcon(
+      name: 'xRay',
+      data: FontAwesomeIcons.xRay,
+      pack: IconPack.fontAwesomeIcons),
+  'xbox': IconPickerIcon(
+      name: 'xbox',
+      data: FontAwesomeIcons.xbox,
+      pack: IconPack.fontAwesomeIcons),
+  'xing': IconPickerIcon(
+      name: 'xing',
+      data: FontAwesomeIcons.xing,
+      pack: IconPack.fontAwesomeIcons),
+  'xmark': IconPickerIcon(
+      name: 'xmark',
+      data: FontAwesomeIcons.xmark,
+      pack: IconPack.fontAwesomeIcons),
+  'xmarksLines': IconPickerIcon(
+      name: 'xmarksLines',
+      data: FontAwesomeIcons.xmarksLines,
+      pack: IconPack.fontAwesomeIcons),
+  'y': IconPickerIcon(
+      name: 'y', data: FontAwesomeIcons.y, pack: IconPack.fontAwesomeIcons),
+  'yCombinator': IconPickerIcon(
+      name: 'yCombinator',
+      data: FontAwesomeIcons.yCombinator,
+      pack: IconPack.fontAwesomeIcons),
+  'yahoo': IconPickerIcon(
+      name: 'yahoo',
+      data: FontAwesomeIcons.yahoo,
+      pack: IconPack.fontAwesomeIcons),
+  'yammer': IconPickerIcon(
+      name: 'yammer',
+      data: FontAwesomeIcons.yammer,
+      pack: IconPack.fontAwesomeIcons),
+  'yandex': IconPickerIcon(
+      name: 'yandex',
+      data: FontAwesomeIcons.yandex,
+      pack: IconPack.fontAwesomeIcons),
+  'yandexInternational': IconPickerIcon(
+      name: 'yandexInternational',
+      data: FontAwesomeIcons.yandexInternational,
+      pack: IconPack.fontAwesomeIcons),
+  'yarn': IconPickerIcon(
+      name: 'yarn',
+      data: FontAwesomeIcons.yarn,
+      pack: IconPack.fontAwesomeIcons),
+  'yelp': IconPickerIcon(
+      name: 'yelp',
+      data: FontAwesomeIcons.yelp,
+      pack: IconPack.fontAwesomeIcons),
+  'yenSign': IconPickerIcon(
+      name: 'yenSign',
+      data: FontAwesomeIcons.yenSign,
+      pack: IconPack.fontAwesomeIcons),
+  'yinYang': IconPickerIcon(
+      name: 'yinYang',
+      data: FontAwesomeIcons.yinYang,
+      pack: IconPack.fontAwesomeIcons),
+  'yoast': IconPickerIcon(
+      name: 'yoast',
+      data: FontAwesomeIcons.yoast,
+      pack: IconPack.fontAwesomeIcons),
+  'youtube': IconPickerIcon(
+      name: 'youtube',
+      data: FontAwesomeIcons.youtube,
+      pack: IconPack.fontAwesomeIcons),
+  'z': IconPickerIcon(
+      name: 'z', data: FontAwesomeIcons.z, pack: IconPack.fontAwesomeIcons),
+  'zhihu': IconPickerIcon(
+      name: 'zhihu',
+      data: FontAwesomeIcons.zhihu,
+      pack: IconPack.fontAwesomeIcons),
 };
