@@ -4,8 +4,14 @@ import '../Models/icon_picker_icon.dart';
 
 class FIPIconController with ChangeNotifier {
   FIPIconController({
+    required bool shouldScrollToSelectedIcon,
     IconPickerIcon? selectedIcon,
-  }) : _selectedIcon = selectedIcon;
+  })  : _selectedIcon = selectedIcon,
+        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon;
+
+  bool _shouldScrollToSelectedIcon;
+
+  bool get shouldScrollToSelectedIcon => _shouldScrollToSelectedIcon;
 
   IconPickerIcon? _selectedIcon;
 
