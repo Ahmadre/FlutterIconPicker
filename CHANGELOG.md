@@ -1,3 +1,11 @@
+## [3.5.0] - 29.08.2024
+
+* 💡 Add pre-selected Icon when opening the Icon picker by `selectedIcon`
+* 💡 Add pre-selected color for selected icons by `selectedIconBackgroundColor`
+* 💡 [BREAKING CHANGE] Improve returned Icon type
+  * Migrate from `IconData` to `IconPickerIcon` model which holds now the `key`, `data` and `pack` informations. For more see `IconPickerIcon` Model. Raw icon data can still be retrieved by `icon.data`.
+  * Please check this [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to--331-breaking-change) for more information
+
 ## [3.4.7] - 29.08.2024
 
 * ⬆️ Update dependencies to latest Flutter `3.24.*` and Dart SDK `3.5.*`
@@ -57,7 +65,7 @@
 
 ## [3.3.0] - 08.02.2024
 
-* 🔍 Add `searchComparator` to define a custom search function which can be used instead
+* 💡 Add `searchComparator` to define a custom search function which can be used instead
   * Thanks to [xunafay](https://github.com/xunafay) for the hint in [#61](https://github.com/Ahmadre/FlutterIconPicker/issues/61)
 * ⬆️ Update to latest `flutter 3.16.*`
 * ⬆️ Update dependencies
