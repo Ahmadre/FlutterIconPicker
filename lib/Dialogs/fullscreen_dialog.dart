@@ -103,6 +103,7 @@ class FIPFullScreenDialog extends StatelessWidget {
               Expanded(
                 child: FIPIconPicker(
                   iconController: iconController,
+                  selectedIconBackgroundColor: selectedIconBackgroundColor,
                   showTooltips: showTooltips,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,

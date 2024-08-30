@@ -99,6 +99,9 @@ For more see: [flutter/flutter#16311](https://github.com/flutter/flutter/issues/
 | showSearchBar   | `bool`           | `true`      | Shows the search bar above the icons if `true` |
 | iconPackModes   | `List<IconPack>`           | `const <IconPack>[IconPack.material]`      | The modes which Icons to show. |
 | customIconPack   | `Map<String, IconData>`           | `null`      | The customized icons that can be used instead. |
+| selectedIcon   | `IconPickerIcon?`           | `null`      | Pre-selected icon before opening the icon picker. If non-null the icon picker highlights and **scrolls** to the selected icon |
+| shouldScrollToSelectedIcon   | `bool`           | `true`      | Wether the picker should scroll to the selected icon (for bigger lists this could make sense) or not. |
+| selectedIconBackgroundColor   | `Color?`           | `Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]`      | The background color for the [selectedIcon]. If non-null the icon picker highlights and **scrolls** to the selected icon |
 
 ### IconPackMode
 

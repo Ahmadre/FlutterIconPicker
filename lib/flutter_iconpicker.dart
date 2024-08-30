@@ -21,6 +21,9 @@ Future<IconPickerIcon?> showIconPicker(
   /// If non-null the icon picker highlights and scrolls to the selected icon
   IconPickerIcon? selectedIcon,
 
+  /// Wether the picker should scroll to the selected icon (for bigger lists this could make sense) or not.
+  bool shouldScrollToSelectedIcon = true,
+
   /// The background color for the [selectedIcon]
   /// Defaults to `Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]`
   Color? selectedIconBackgroundColor,
