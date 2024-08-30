@@ -1,10 +1,10 @@
 ## [3.5.0] - 29.08.2024
 
-* 💡 Add pre-selected Icon when opening the Icon picker by `selectedIcon`
-* 💡 Add pre-selected color for selected icons by `selectedIconBackgroundColor`
 * 💡 [BREAKING CHANGE] Improve returned Icon type
   * Migrate from `IconData` to `IconPickerIcon` model which holds now the `key`, `data` and `pack` informations. For more see `IconPickerIcon` Model. Raw icon data can still be retrieved by `icon.data`.
   * Please check this [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to--331-breaking-change) for more information
+* 💡 Add pre-selected Icon when opening the Icon picker by `selectedIcon`
+* 💡 Add pre-selected color for selected icons by `selectedIconBackgroundColor`
 
 ## [3.4.7] - 29.08.2024
 

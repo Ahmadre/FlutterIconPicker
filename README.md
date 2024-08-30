@@ -98,7 +98,7 @@ For more see: [flutter/flutter#16311](https://github.com/flutter/flutter/issues/
 | showTooltips   | `bool`           | `false`      | Shows the labels underneeth the proper icon. |
 | showSearchBar   | `bool`           | `true`      | Shows the search bar above the icons if `true` |
 | iconPackModes   | `List<IconPack>`           | `const <IconPack>[IconPack.material]`      | The modes which Icons to show. |
-| customIconPack   | `Map<String, IconData>`           | `null`      | The customized icons that can be used instead. |
+| customIconPack   | `Map<String, IconPickerIcon>`           | `null`      | The customized icons that can be used instead. |
 | selectedIcon   | `IconPickerIcon?`           | `null`      | Pre-selected icon before opening the icon picker. If non-null the icon picker highlights and **scrolls** to the selected icon |
 | shouldScrollToSelectedIcon   | `bool`           | `true`      | Wether the picker should scroll to the selected icon (for bigger lists this could make sense) or not. |
 | selectedIconBackgroundColor   | `Color?`           | `Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]`      | The background color for the [selectedIcon]. If non-null the icon picker highlights and **scrolls** to the selected icon |
@@ -114,13 +114,24 @@ If you don't want to use the default IconPacks, you can also provide your own Ic
 
 ### Result of IconPicker and further usage (saving and retreiving)
 
-The picker is returning (as shown in the example method `_pickIcon()` underneeth) an `IconData` which is nothing else then this class for example:
+The picker is returning (as shown in the example method `_pickIcon()` underneeth) an `IconPickerIcon` which is nothing else then this class for example:
+
+```dart
+  IconPickerIcon(
+      name: 'camera',
+      data: Icons.camera, 
+      pack: IconPack.material,
+  );
+```
+
+- `name`: holds the `key` name like `camera` which is nothing else but the name of the original `Icons.camera` Material Icon.
+- `data`: holds the actual data used to display the icon itself. This looks like this for example:
 
 ```dart
   IconData(0xe3af, fontFamily: 'MaterialIcons');    // Icons.camera
 ```
 
-that's representing an Material icon.
+- `pack`: holds the information about which icon pack this icon belongs to! This is very important for searching and serialization purpases
 
 So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you can use the serialization methods:
 
@@ -129,7 +140,7 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
 **IconData to Map**
 
 ```dart
-  serializeIcon(iconData)
+  serializeIcon(iconPickerIcon, pack: iconPickerIcon.pack)
 ```
 
 2. You can retreive the IconData by passing the mapped IconData:
@@ -137,7 +148,7 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
 **Map to IconData**
 
 ```dart
-  deserializeIcon(map)
+  deserializeIcon(map, pack: )
 ```
 
 ## Migration-Guide when updating to >= 3.3.1 (BREAKING CHANGE)
