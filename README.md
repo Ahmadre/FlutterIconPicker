@@ -16,7 +16,7 @@ This package is maintained regularly, is stable and is used in production by man
 
 So what can we do?:
 
-Simply use custom icons by providing a list of IconData's to the IconPicker (with the correct `codePoint`'s and NOT `Icons.camera`!)
+Simply use custom icons by providing a list of IconPickerIcon's to the IconPicker (with the correct `codePoint`'s and NOT `Icons.camera` for the **data** parameter!)
 
 > Good: `'camera': IconData(0xe3af, fontFamily: 'MaterialIcons')`
 >
@@ -110,18 +110,18 @@ For further usage have a look in the example.
 
 ### You own Icons
 
-If you don't want to use the default IconPacks, you can also provide your own IconPack by creating a `Map<String, IconData>` with the names of your icons and the specific IconData. Just pass it to `customIconPack` and set the iconPackMode: `IconPack.custom`.
+If you don't want to use the default IconPacks, you can also provide your own IconPack by creating a `Map<String, IconPickerIcon>` with the names of your icons and the specific IconData. Just pass it to `customIconPack` and set the iconPackMode: `IconPack.custom`.
 
 ### Result of IconPicker and further usage (saving and retreiving)
 
 The picker is returning (as shown in the example method `_pickIcon()` underneeth) an `IconPickerIcon` which is nothing else then this class for example:
 
 ```dart
-  IconPickerIcon(
-      name: 'camera',
-      data: Icons.camera, 
-      pack: IconPack.material,
-  );
+IconPickerIcon(
+    name: 'camera',
+    data: Icons.camera, 
+    pack: IconPack.material,
+);
 ```
 
 - `name`: holds the `key` name like `camera` which is nothing else but the name of the original `Icons.camera` Material Icon.
@@ -135,25 +135,25 @@ The picker is returning (as shown in the example method `_pickIcon()` underneeth
 
 So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you can use the serialization methods:
 
-1. Call this to convert the picked IconData to a Map:
+1. Call this to convert the picked IconPickerIcon to a Map:
 
-**IconData to Map**
+**IconPickerIcon to Map**
 
 ```dart
-  serializeIcon(iconPickerIcon, pack: iconPickerIcon.pack)
+  serializeIcon(iconPickerIcon)
 ```
 
-2. You can retreive the IconData by passing the mapped IconData:
+2. You can retreive the IconPickerIcon by passing the mapped icon:
 
-**Map to IconData**
+**Map to IconPickerIcon**
 
 ```dart
-  deserializeIcon(map, pack: )
+  deserializeIcon(map)
 ```
 
 ## Migration-Guide when updating to >= 3.3.1 (BREAKING CHANGE)
 
-The IconPicker is now called via `IconData? icon = await showIconPicker(...` and not anymore like: `IconData? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
+The IconPicker is now called via `IconPickerIcon? icon = await showIconPicker(...` and not anymore like: `IconPickerIcon? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
 
 > Material icons are now separated into:
 
@@ -164,27 +164,6 @@ The IconPicker is now called via `IconData? icon = await showIconPicker(...` and
 - Outlined -> Only Outlined Material Icons
 
 ⚠ Use `IconPack.allMaterial` instead, if you still want to display all Material Icons. The old enum value was: `IconPack.material` ⚠ 
-
-If you work with Material Icons please always pass the corresponding IconPack via the optional parameter when serializing:
-
-```dart
-serializeIcon(_iconData, iconPack: IconPack.allMaterial);
-    
-...
-    
-deserializeIcon(
-  Map<String, dynamic>.from(await box.get('iconData')),
-  iconPack: IconPack.allMaterial,
-);
-```
-
-If you display directly using `serializeIcon` function, als consider it:
-
-```dart
-Text(
-  'Database Entry:\n${serializeIcon(_iconData, iconPack: IconPack.allMaterial).toString()}',
-),
-```
 
 ## Example
 
@@ -213,10 +192,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Icon? _icon;
 
   _pickIcon() async {
-    IconData? icon = await FlutterIconPicker.showIconPicker(context,
+    IconPickerIcon? icon = await FlutterIconPicker.showIconPicker(context,
         iconPackModes: [IconPack.cupertino]);
 
-    _icon = Icon(icon);
+    _icon = Icon(icon.data);
     setState(() {});
 
     debugPrint('Picked Icon:  $icon');

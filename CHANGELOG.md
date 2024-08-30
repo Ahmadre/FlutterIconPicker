@@ -1,9 +1,9 @@
 ## [3.5.0] - 29.08.2024
 
 * 💡 [BREAKING CHANGE] Improve returned Icon type
-  * Migrate from `IconData` to `IconPickerIcon` model which holds now the `key`, `data` and `pack` informations. For more see `IconPickerIcon` Model. Raw icon data can still be retrieved by `icon.data`.
-  * Please check this [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to--331-breaking-change) for more information
+  * Migrate from `IconData` to `IconPickerIcon` model which holds now the `key`, `data` and `pack` informations. For more see `IconPickerIcon` Model. Raw icon data can now be accessed by `icon.data`.
 * 💡 Add pre-selected Icon when opening the Icon picker by `selectedIcon`
+* 💡 Add `shouldScrollToSelectedIcon` to control if scrolling to pre-selected Icon when opening the Icon picker should be enabled or disabled
 * 💡 Add pre-selected color for selected icons by `selectedIconBackgroundColor`
 
 ## [3.4.7] - 29.08.2024
