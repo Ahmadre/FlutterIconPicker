@@ -15,8 +15,12 @@ import 'Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/default_dialog.dart';
 
-Future<IconData?> showIconPicker(
+Future<IconPickerIcon?> showIconPicker(
   BuildContext context, {
+  /// Pre-selected icon before opening the icon picker
+  /// If non-null the icon picker highlights and scrolls to the selected icon
+  IconPickerIcon? selectedIcon,
+
   /// Defines if the searchbar will be
   /// shown above the icons
   bool showSearchBar = true,
@@ -129,7 +133,7 @@ Future<IconData?> showIconPicker(
 
   /// Provide here your custom IconPack in a [Map<String, IconData>]
   /// to show your own collection of Icons to pick from
-  Map<String, IconData>? customIconPack,
+  Map<String, IconPickerIcon>? customIconPack,
 }) async {
   if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
   if (constraints == null) {
@@ -148,9 +152,9 @@ Future<IconData?> showIconPicker(
   if (backgroundColor == null)
     backgroundColor = Theme.of(context).dialogBackgroundColor;
 
-  IconData? iconPicked;
+  IconPickerIcon? iconPicked;
 
-  final controller = FIPIconController();
+  final controller = FIPIconController(selectedIcon: selectedIcon);
 
   if (adaptiveDialog) {
     if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
