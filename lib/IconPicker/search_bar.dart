@@ -48,9 +48,10 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
     Map<String, IconPickerIcon> searchResult = Map<String, IconPickerIcon>();
 
     for (var pack in widget.iconPack!) {
-      FIPIconManager.getSelectedPack(pack).forEach((String key, IconPickerIcon val) {
-        if (searchComparator.call(
-            searchValue, IconPickerIcon(name: key, data: val.data, pack: pack))) {
+      FIPIconManager.getSelectedPack(pack)
+          .forEach((String key, IconPickerIcon val) {
+        if (searchComparator.call(searchValue,
+            IconPickerIcon(name: key, data: val.data, pack: pack))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });
@@ -58,8 +59,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
     if (widget.customIconPack != null) {
       widget.customIconPack!.forEach((String key, IconPickerIcon val) {
-        if (searchComparator.call(
-            searchValue, IconPickerIcon(name: key, data: val.data, pack: IconPack.custom))) {
+        if (searchComparator.call(searchValue,
+            IconPickerIcon(name: key, data: val.data, pack: IconPack.custom))) {
           searchResult.putIfAbsent(key, () => val);
         }
       });

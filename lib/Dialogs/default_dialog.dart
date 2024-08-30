@@ -147,7 +147,8 @@ class FIPDefaultDialog extends StatelessWidget {
                     Expanded(
                       child: FIPIconPicker(
                         iconController: controller,
-                        selectedIconBackgroundColor: selectedIconBackgroundColor,
+                        selectedIconBackgroundColor:
+                            selectedIconBackgroundColor,
                         showTooltips: showTooltips,
                         iconPack: iconPackMode,
                         customIconPack: customIconPack,

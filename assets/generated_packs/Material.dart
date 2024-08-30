@@ -3,7 +3,8 @@ import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
 Map<String, IconPickerIcon> allIcons = {
-  'ten_k': IconPickerIcon(name: 'ten_k', data: Icons.ten_k, pack: IconPack.allMaterial),
+  'ten_k': IconPickerIcon(
+      name: 'ten_k', data: Icons.ten_k, pack: IconPack.allMaterial),
   'ten_k_sharp': IconPickerIcon(
       name: 'ten_k_sharp', data: Icons.ten_k_sharp, pack: IconPack.allMaterial),
   'ten_k_rounded': IconPickerIcon(
