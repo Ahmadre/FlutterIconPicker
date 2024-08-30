@@ -6,7 +6,10 @@ import 'package:path_provider/path_provider.dart';
 import 'app_brightness.dart';
 
 class IconNotifier extends ChangeNotifier {
-  static final starterPacks = <IconPack>[IconPack.cupertino];
+  static final starterPacks = <IconPack>[
+    IconPack.outlinedMaterial,
+    IconPack.roundedMaterial
+  ];
 
   IconNotifier._(
     IconPickerIcon? iconData,
@@ -34,10 +37,7 @@ class IconNotifier extends ChangeNotifier {
 
     box.put(
       'iconData',
-      serializeIcon(
-        _icon!,
-        iconPack: pack,
-      ),
+      serializeIcon(_icon!),
     );
     notifyListeners();
   }
@@ -75,10 +75,7 @@ class IconNotifier extends ChangeNotifier {
     }
 
     final icon = await box.get('iconData') != null
-        ? deserializeIcon(
-            Map<String, dynamic>.from(await box.get('iconData')),
-            iconPack: IconNotifier.starterPacks.first,
-          )
+        ? deserializeIcon(Map<String, dynamic>.from(await box.get('iconData')))
         : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));

@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(iconNotifier.icon!, iconPack: iconNotifier.icon?.pack).toString()}',
+                            'Database Entry:\n${serializeIcon(iconNotifier.icon!).toString()}',
                           ),
                         ],
                       )
