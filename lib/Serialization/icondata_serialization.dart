@@ -18,68 +18,58 @@ import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart'
 
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 
-Map<String, dynamic>? serializeIcon(IconData icon, {IconPack? iconPack}) {
-  if (iconPack == null) {
-    if (icon.fontFamily == "MaterialIcons")
-      iconPack = IconPack.material;
-    else if (icon.fontFamily == "CupertinoIcons")
-      iconPack = IconPack.cupertino;
-    else if (icon.fontPackage == "font_awesome_flutter")
-      iconPack = IconPack.fontAwesomeIcons;
-    else if (icon.fontPackage == "line_awesome_flutter")
-      iconPack = IconPack.lineAwesomeIcons;
-    else
-      iconPack = IconPack.custom;
-  }
-  switch (iconPack) {
+import '../Models/icon_picker_icon.dart';
+
+Map<String, dynamic>? serializeIcon(IconPickerIcon icon) {
+  switch (icon.pack) {
     case IconPack.material:
       return {
         'pack': "material",
-        'key': _getIconKey(DefaultMaterial.defaultIcons, icon),
+        'key': _getIconKey(DefaultMaterial.defaultIcons, icon.data),
       };
     case IconPack.allMaterial:
       return {
-        'pack': "material",
-        'key': _getIconKey(AllMaterial.allIcons, icon),
+        'pack': "allMaterial",
+        'key': _getIconKey(AllMaterial.allIcons, icon.data),
       };
     case IconPack.sharpMaterial:
       return {
-        'pack': "material",
-        'key': _getIconKey(SharpMaterial.sharpIcons, icon),
+        'pack': "sharpMaterial",
+        'key': _getIconKey(SharpMaterial.sharpIcons, icon.data),
       };
     case IconPack.roundedMaterial:
       return {
-        'pack': "material",
-        'key': _getIconKey(RoundedMaterial.roundedIcons, icon),
+        'pack': "roundedMaterial",
+        'key': _getIconKey(RoundedMaterial.roundedIcons, icon.data),
       };
     case IconPack.outlinedMaterial:
       return {
-        'pack': "material",
-        'key': _getIconKey(OutlinedMaterial.outlinedIcons, icon),
+        'pack': "outlinedMaterial",
+        'key': _getIconKey(OutlinedMaterial.outlinedIcons, icon.data),
       };
     case IconPack.cupertino:
       return {
         'pack': "cupertino",
-        'key': _getIconKey(Cupertino.cupertinoIcons, icon),
+        'key': _getIconKey(Cupertino.cupertinoIcons, icon.data),
       };
     case IconPack.fontAwesomeIcons:
       return {
         'pack': "fontAwesomeIcons",
-        'key': _getIconKey(FontAwesome.fontAwesomeIcons, icon),
+        'key': _getIconKey(FontAwesome.fontAwesomeIcons, icon.data),
       };
     case IconPack.lineAwesomeIcons:
       return {
         'pack': "lineAwesomeIcons",
-        'key': _getIconKey(LineAwesome.lineAwesomeIcons, icon),
+        'key': _getIconKey(LineAwesome.lineAwesomeIcons, icon.data),
       };
     case IconPack.custom:
       return {
         'pack': "custom",
         'iconData': {
-          'codePoint': icon.codePoint,
-          'fontFamily': icon.fontFamily,
-          'fontPackage': icon.fontPackage,
-          'matchTextDirection': icon.matchTextDirection,
+          'codePoint': icon.data.codePoint,
+          'fontFamily': icon.data.fontFamily,
+          'fontPackage': icon.data.fontPackage,
+          'matchTextDirection': icon.data.matchTextDirection,
         }
       };
     default:
@@ -87,35 +77,22 @@ Map<String, dynamic>? serializeIcon(IconData icon, {IconPack? iconPack}) {
   }
 }
 
-IconData? deserializeIcon(
-  Map<String, dynamic> iconMap, {
-  IconPack? iconPack,
-}) {
+IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
   final pack = iconMap['pack'];
   final iconKey = iconMap['key'];
-
-  if (pack == "material" && iconPack == null) {
-    throw AssertionError(
-        "The argument iconPack is required for material icons in deserializeIcon.");
-  }
 
   try {
     switch (pack) {
       case "material":
-        switch (iconPack) {
-          case IconPack.material:
-            return DefaultMaterial.defaultIcons[iconKey];
-          case IconPack.allMaterial:
-            return AllMaterial.allIcons[iconKey];
-          case IconPack.sharpMaterial:
-            return SharpMaterial.sharpIcons[iconKey];
-          case IconPack.roundedMaterial:
-            return RoundedMaterial.roundedIcons[iconKey];
-          case IconPack.outlinedMaterial:
-            return OutlinedMaterial.outlinedIcons[iconKey];
-          default:
-            return DefaultMaterial.defaultIcons[iconKey];
-        }
+        return DefaultMaterial.defaultIcons[iconKey];
+      case "allMaterial":
+        return AllMaterial.allIcons[iconKey];
+      case "sharpMaterial":
+        return SharpMaterial.sharpIcons[iconKey];
+      case "roundedMaterial":
+        return RoundedMaterial.roundedIcons[iconKey];
+      case "outlinedMaterial":
+        return OutlinedMaterial.outlinedIcons[iconKey];
       case "cupertino":
         return Cupertino.cupertinoIcons[iconKey];
       case "fontAwesomeIcons":
@@ -124,11 +101,15 @@ IconData? deserializeIcon(
         return LineAwesome.lineAwesomeIcons[iconKey];
       case "custom":
         final iconData = iconMap['iconData'];
-        return IconData(
-          iconData['codePoint'],
-          fontFamily: iconData['fontFamily'],
-          fontPackage: iconData['fontPackage'],
-          matchTextDirection: iconData['matchTextDirection'],
+        return IconPickerIcon(
+          name: iconKey,
+          data: IconData(
+            iconData['codePoint'],
+            fontFamily: iconData['fontFamily'],
+            fontPackage: iconData['fontPackage'],
+            matchTextDirection: iconData['matchTextDirection'],
+          ),
+          pack: IconPack.custom,
         );
       default:
         return null;
@@ -138,5 +119,5 @@ IconData? deserializeIcon(
   }
 }
 
-String _getIconKey(Map<String, IconData> icons, IconData icon) =>
-    icons.entries.firstWhere((iconEntry) => iconEntry.value == icon).key;
+String _getIconKey(Map<String, IconPickerIcon> icons, IconData icon) =>
+    icons.entries.firstWhere((iconEntry) => iconEntry.value.data == icon).key;

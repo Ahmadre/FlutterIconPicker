@@ -13,6 +13,7 @@ class FIPDefaultDialog extends StatelessWidget {
   const FIPDefaultDialog({
     Key? key,
     required this.controller,
+    this.selectedIconBackgroundColor,
     this.showSearchBar,
     this.routedView = false,
     this.adaptive = false,
@@ -37,6 +38,7 @@ class FIPDefaultDialog extends StatelessWidget {
   }) : super(key: key);
 
   final FIPIconController controller;
+  final Color? selectedIconBackgroundColor;
   final bool? showSearchBar;
   final bool routedView;
   final bool adaptive;
@@ -57,7 +59,7 @@ class FIPDefaultDialog extends StatelessWidget {
   final SearchComparator? searchComparator;
   final String? noResultsText;
   final List<IconPack>? iconPackMode;
-  final Map<String, IconData>? customIconPack;
+  final Map<String, IconPickerIcon>? customIconPack;
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +70,7 @@ class FIPDefaultDialog extends StatelessWidget {
           if (routedView) {
             return FIPFullScreenDialog(
               iconController: controller,
+              selectedIconBackgroundColor: selectedIconBackgroundColor,
               showSearchBar: showSearchBar,
               showTooltips: showTooltips,
               backgroundColor: backgroundColor,
@@ -144,6 +147,7 @@ class FIPDefaultDialog extends StatelessWidget {
                     Expanded(
                       child: FIPIconPicker(
                         iconController: controller,
+                        selectedIconBackgroundColor: selectedIconBackgroundColor,
                         showTooltips: showTooltips,
                         iconPack: iconPackMode,
                         customIconPack: customIconPack,
@@ -191,6 +195,7 @@ class FIPDefaultDialog extends StatelessWidget {
                   Expanded(
                     child: FIPIconPicker(
                       iconController: controller,
+                      selectedIconBackgroundColor: selectedIconBackgroundColor,
                       showTooltips: showTooltips,
                       iconPack: iconPackMode,
                       customIconPack: customIconPack,

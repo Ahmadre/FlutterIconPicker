@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,41 +9,39 @@ class IconNotifier extends ChangeNotifier {
   static final starterPacks = <IconPack>[IconPack.cupertino];
 
   IconNotifier._(
-    IconData? iconData,
+    IconPickerIcon? iconData,
     AppBrightness brightness,
-  )   : _iconData = iconData,
+  )   : _icon = iconData,
         _brightness = brightness;
 
   static late Box box;
 
-  IconData? _iconData;
+  IconPickerIcon? _icon;
 
   AppBrightness _brightness;
 
-  IconData? get iconData => _iconData;
+  IconPickerIcon? get icon => _icon;
 
   void setIconData(
-    IconData value, {
+    IconPickerIcon value, {
     IconPack? pack,
   }) {
-    if (_iconData == value) {
+    if (_icon == value) {
       return;
     }
 
-    _iconData = value;
+    _icon = value;
 
     box.put(
       'iconData',
-      serializeIcon(
-        _iconData!,
-        iconPack: pack,
-      ),
+      serializeIcon(_icon!),
     );
     notifyListeners();
   }
 
   Future<void> clearIconData() async {
     await box.delete('iconData');
+    _icon = null;
     notifyListeners();
   }
 
@@ -74,17 +71,14 @@ class IconNotifier extends ChangeNotifier {
       box = Hive.box('FLIPBox');
     }
 
-    final iconData = await box.get('iconData') != null
-        ? deserializeIcon(
-            Map<String, dynamic>.from(await box.get('iconData')),
-            iconPack: IconNotifier.starterPacks.first,
-          )
+    final icon = await box.get('iconData') != null
+        ? deserializeIcon(Map<String, dynamic>.from(await box.get('iconData')))
         : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));
 
     return IconNotifier._(
-      iconData,
+      icon,
       brightness,
     );
   }

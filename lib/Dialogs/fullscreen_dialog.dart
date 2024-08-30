@@ -25,15 +25,17 @@ class FIPFullScreenDialog extends StatelessWidget {
     required this.iconSize,
     required this.mainAxisSpacing,
     required this.crossAxisSpacing,
+    this.selectedIconBackgroundColor,
   }) : super(key: key);
 
   final FIPIconController iconController;
+  final Color? selectedIconBackgroundColor;
   final bool? showSearchBar;
   final bool? showTooltips;
   final Color? backgroundColor;
   final Widget? title;
   final List<IconPack>? iconPackMode;
-  final Map<String, IconData>? customIconPack;
+  final Map<String, IconPickerIcon>? customIconPack;
   final Icon? searchIcon;
   final Icon? searchClearIcon;
   final SearchComparator? searchComparator;
@@ -101,6 +103,7 @@ class FIPFullScreenDialog extends StatelessWidget {
               Expanded(
                 child: FIPIconPicker(
                   iconController: iconController,
+                  selectedIconBackgroundColor: selectedIconBackgroundColor,
                   showTooltips: showTooltips,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,

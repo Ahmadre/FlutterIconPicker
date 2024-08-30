@@ -15,8 +15,19 @@ import 'Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/default_dialog.dart';
 
-Future<IconData?> showIconPicker(
+Future<IconPickerIcon?> showIconPicker(
   BuildContext context, {
+  /// Pre-selected icon before opening the icon picker
+  /// If non-null the icon picker highlights and scrolls to the selected icon
+  IconPickerIcon? selectedIcon,
+
+  /// Wether the picker should scroll to the selected icon (for bigger lists this could make sense) or not.
+  bool shouldScrollToSelectedIcon = true,
+
+  /// The background color for the [selectedIcon]
+  /// Defaults to `Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]`
+  Color? selectedIconBackgroundColor,
+
   /// Defines if the searchbar will be
   /// shown above the icons
   bool showSearchBar = true,
@@ -129,7 +140,7 @@ Future<IconData?> showIconPicker(
 
   /// Provide here your custom IconPack in a [Map<String, IconData>]
   /// to show your own collection of Icons to pick from
-  Map<String, IconData>? customIconPack,
+  Map<String, IconPickerIcon>? customIconPack,
 }) async {
   if (iconColor == null) iconColor = Theme.of(context).iconTheme.color;
   if (constraints == null) {
@@ -148,9 +159,12 @@ Future<IconData?> showIconPicker(
   if (backgroundColor == null)
     backgroundColor = Theme.of(context).dialogBackgroundColor;
 
-  IconData? iconPicked;
+  IconPickerIcon? iconPicked;
 
-  final controller = FIPIconController();
+  final controller = FIPIconController(
+    selectedIcon: selectedIcon,
+    shouldScrollToSelectedIcon: shouldScrollToSelectedIcon,
+  );
 
   if (adaptiveDialog) {
     if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
@@ -159,6 +173,7 @@ Future<IconData?> showIconPicker(
         context: context,
         builder: (BuildContext context) => FIPDefaultDialog(
           controller: controller,
+          selectedIconBackgroundColor: selectedIconBackgroundColor,
           showSearchBar: showSearchBar,
           adaptive: adaptiveDialog,
           showTooltips: showTooltips,
@@ -188,6 +203,7 @@ Future<IconData?> showIconPicker(
           fullscreenDialog: true,
           builder: (context) => FIPDefaultDialog(
             controller: controller,
+            selectedIconBackgroundColor: selectedIconBackgroundColor,
             showSearchBar: showSearchBar,
             routedView: true,
             adaptive: adaptiveDialog,
@@ -219,6 +235,7 @@ Future<IconData?> showIconPicker(
       context: context,
       builder: (BuildContext context) => FIPDefaultDialog(
         controller: controller,
+        selectedIconBackgroundColor: selectedIconBackgroundColor,
         showSearchBar: showSearchBar,
         showTooltips: showTooltips,
         barrierDismissible: barrierDismissible,

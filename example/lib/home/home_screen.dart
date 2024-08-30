@@ -15,8 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late IconNotifier notifier;
-
   bool isAdaptive = true;
   bool showTooltips = false;
   bool showSearch = true;
@@ -24,12 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    notifier = Provider.of<IconNotifier>(context, listen: false);
   }
 
   Future<void> _pickIcon() async {
-    IconData? icon = await showIconPicker(
+    IconPickerIcon? icon = await showIconPicker(
       context,
+      selectedIcon: Provider.of<IconNotifier>(context, listen: false).icon,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
       showSearchBar: showSearch,
@@ -44,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (icon != null) {
-      notifier.setIconData(icon, pack: IconNotifier.starterPacks.first);
+      Provider.of<IconNotifier>(context, listen: false)
+          .setIconData(icon, pack: icon.pack);
       setState(() {});
 
       debugPrint(
@@ -58,26 +57,28 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Flutter Icon Picker Demo'),
         actions: [
-          IconButton(
-            icon: Icon(notifier.brightness.icon),
-            onPressed: () {
-              switch (notifier.brightness.mode) {
-                case ThemeMode.dark:
-                  notifier.brightness = AppBrightness.light;
-                  break;
-                case ThemeMode.light:
-                  notifier.brightness = AppBrightness.system;
-                  break;
-                case ThemeMode.system:
-                  notifier.brightness = AppBrightness.dark;
-                  break;
-                default:
-                  break;
-              }
-              setState(() {});
-            },
-            tooltip: 'Switch brightness',
-          ),
+          Consumer<IconNotifier>(builder: (context, notifier, _) {
+            return IconButton(
+              icon: Icon(notifier.brightness.icon),
+              onPressed: () {
+                switch (notifier.brightness.mode) {
+                  case ThemeMode.dark:
+                    notifier.brightness = AppBrightness.light;
+                    break;
+                  case ThemeMode.light:
+                    notifier.brightness = AppBrightness.system;
+                    break;
+                  case ThemeMode.system:
+                    notifier.brightness = AppBrightness.dark;
+                    break;
+                  default:
+                    break;
+                }
+                setState(() {});
+              },
+              tooltip: 'Switch brightness',
+            );
+          }),
           IconButton(
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -94,38 +95,47 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            OverflowBar(
-              alignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _pickIcon,
-                  child: Text(notifier.iconData != null
-                      ? 'Change Icon'
-                      : 'Open IconPicker'),
-                ),
-                if (notifier.iconData != null)
+            Consumer<IconNotifier>(builder: (context, notifier, _) {
+              return OverflowBar(
+                alignment: MainAxisAlignment.center,
+                children: [
                   ElevatedButton(
-                    onPressed: () async {
-                      await notifier.clearIconData();
-                      setState(() {});
-                    },
-                    child: const Text('Clear Icon'),
+                    onPressed: _pickIcon,
+                    child: AnimatedSize(
+                      duration: const Duration(milliseconds: 300),
+                      child: Text(notifier.icon != null
+                          ? 'Change Icon'
+                          : 'Open IconPicker'),
+                    ),
                   ),
-              ],
-            ),
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    child: notifier.icon != null
+                        ? ElevatedButton(
+                            onPressed: () async {
+                              await notifier.clearIconData();
+                              setState(() {});
+                            },
+                            child: const Text('Clear Icon'),
+                          )
+                        : const SizedBox.shrink(),
+                  ),
+                ],
+              );
+            }),
             const SizedBox(height: 10),
             Consumer<IconNotifier>(
               builder: (ctx, iconNotifier, _) => AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: iconNotifier.iconData != null
+                child: iconNotifier.icon != null
                     ? Column(
                         children: [
-                          Icon(iconNotifier.iconData),
+                          Icon(iconNotifier.icon?.data),
                           const SizedBox(
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(iconNotifier.iconData!, iconPack: IconNotifier.starterPacks.first).toString()}',
+                            'Database Entry:\n${serializeIcon(iconNotifier.icon!).toString()}',
                           ),
                         ],
                       )

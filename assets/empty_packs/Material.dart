@@ -1,3 +1,3 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconData> allIcons = {};
+Map<String, IconPickerIcon> allIcons = {};
