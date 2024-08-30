@@ -1,4 +1,8 @@
-## [3.5.0] - 29.08.2024
+## [3.5.1] - 30.08.2024
+
+* 🐛: Fix `key` mapped value for custom icons
+
+## [3.5.0] - 30.08.2024
 
 * 💡 [BREAKING CHANGE] Improve returned Icon type
   * Migrate from `IconData` to `IconPickerIcon` model which holds now the `key`, `data` and `pack` informations. For more see `IconPickerIcon` Model. Raw icon data can now be accessed by `icon.data`.
