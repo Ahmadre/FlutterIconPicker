@@ -161,7 +161,10 @@ Future<IconPickerIcon?> showIconPicker(
 
   IconPickerIcon? iconPicked;
 
-  final controller = FIPIconController(selectedIcon: selectedIcon);
+  final controller = FIPIconController(
+    selectedIcon: selectedIcon,
+    shouldScrollToSelectedIcon: shouldScrollToSelectedIcon,
+  );
 
   if (adaptiveDialog) {
     if (MediaQuery.of(context).size.width >= constraints.maxWidth) {

@@ -72,6 +72,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
         }
         if (mounted &&
             !scrolledToSelectedIcon &&
+            widget.iconController.shouldScrollToSelectedIcon &&
             widget.iconController.isSelectedIconAvailable &&
             widget.iconController.entries.firstWhereOrNull((item) =>
                     widget.iconController.selectedIcon == item.value) !=
