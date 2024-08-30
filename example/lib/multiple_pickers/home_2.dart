@@ -27,7 +27,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   }
 
   _pickIcon() async {
-    IconData? icon = await showIconPicker(
+    IconPickerIcon? icon = await showIconPicker(
       context,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
@@ -84,11 +84,11 @@ class _HomeScreen2State extends State<HomeScreen2> {
               children: [
                 ElevatedButton(
                   onPressed: _pickIcon,
-                  child: Text(notifier.iconData != null
+                  child: Text(notifier.icon != null
                       ? 'Change Icon'
                       : 'Open IconPicker'),
                 ),
-                if (notifier.iconData != null)
+                if (notifier.icon != null)
                   ElevatedButton(
                     onPressed: () async {
                       await notifier.clearIconData();
@@ -103,15 +103,15 @@ class _HomeScreen2State extends State<HomeScreen2> {
               builder: (BuildContext ctx, dynamic d, Widget? w) =>
                   AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: notifier.iconData != null
+                child: notifier.icon != null
                     ? Column(
                         children: [
-                          Icon(notifier.iconData),
+                          Icon(notifier.icon?.data),
                           const SizedBox(
                             height: 15,
                           ),
                           Text(
-                            'Database Entry:\n${serializeIcon(notifier.iconData!, iconPack: IconPack.material).toString()}',
+                            'Database Entry:\n${serializeIcon(notifier.icon!, iconPack: notifier.icon?.pack).toString()}',
                           ),
                         ],
                       )
