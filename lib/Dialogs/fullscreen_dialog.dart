@@ -33,7 +33,7 @@ class FIPFullScreenDialog extends StatelessWidget {
   final Color? backgroundColor;
   final Widget? title;
   final List<IconPack>? iconPackMode;
-  final Map<String, IconData>? customIconPack;
+  final Map<String, IconPickerIcon>? customIconPack;
   final Icon? searchIcon;
   final Icon? searchClearIcon;
   final SearchComparator? searchComparator;

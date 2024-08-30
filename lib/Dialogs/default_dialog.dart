@@ -57,7 +57,7 @@ class FIPDefaultDialog extends StatelessWidget {
   final SearchComparator? searchComparator;
   final String? noResultsText;
   final List<IconPack>? iconPackMode;
-  final Map<String, IconData>? customIconPack;
+  final Map<String, IconPickerIcon>? customIconPack;
 
   @override
   Widget build(BuildContext context) {
