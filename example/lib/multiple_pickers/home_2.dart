@@ -29,6 +29,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
   _pickIcon() async {
     IconPickerIcon? icon = await showIconPicker(
       context,
+      selectedIcon: notifier.icon,
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
       showSearchBar: showSearch,
@@ -38,7 +39,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
     );
 
     if (icon != null) {
-      notifier.setIconData(icon, pack: IconPack.material);
+      notifier.setIconData(icon, pack: icon.pack);
       setState(() {});
 
       debugPrint(
