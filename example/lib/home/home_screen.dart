@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     IconPickerIcon? icon = await showIconPicker(
       context,
       selectedIcon: Provider.of<IconNotifier>(context, listen: false).icon,
+      selectedIconBackgroundColor: Colors.blue.withOpacity(.5),
       adaptiveDialog: isAdaptive,
       showTooltips: showTooltips,
       showSearchBar: showSearch,
