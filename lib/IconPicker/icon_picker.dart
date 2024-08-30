@@ -17,6 +17,7 @@ import '../Helpers/color_brightness.dart';
 
 class FIPIconPicker extends StatefulWidget {
   final FIPIconController iconController;
+  final Color? selectedIconBackgroundColor;
   final List<IconPack>? iconPack;
   final Map<String, IconPickerIcon>? customIconPack;
   final double? iconSize;
@@ -34,6 +35,7 @@ class FIPIconPicker extends StatefulWidget {
     required this.iconSize,
     required this.noResultsText,
     required this.backgroundColor,
+    this.selectedIconBackgroundColor,
     this.mainAxisSpacing,
     this.crossAxisSpacing,
     this.iconColor,
@@ -155,9 +157,10 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                             widget.iconController.selectedIcon! == item.value;
 
                         final selectedIconColor =
-                            Theme.of(context).brightness == Brightness.dark
-                                ? Colors.grey[800]
-                                : Colors.grey[400];
+                            widget.selectedIconBackgroundColor ??
+                                (Theme.of(context).brightness == Brightness.dark
+                                    ? Colors.grey[800]
+                                    : Colors.grey[400]);
 
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(8),

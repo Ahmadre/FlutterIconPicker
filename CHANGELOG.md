@@ -18,7 +18,7 @@
 
 ## [3.4.5] - 27.05.2024
 
-* ⬆️ Update dependencies to latest Flutter 3.22.* and Dart SDK 3.3.*
+* ⬆️ Update dependencies to latest Flutter `3.22.*` and Dart SDK `3.3.*`
 * 📝 Add more hints in documentation
 * 🐛 Fix `generate_packs` command (caused by `dcli` package). Thanks for the hint [#66](https://github.com/Ahmadre/FlutterIconPicker/issues/66)
 

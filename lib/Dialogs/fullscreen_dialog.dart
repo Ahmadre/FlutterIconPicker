@@ -25,9 +25,11 @@ class FIPFullScreenDialog extends StatelessWidget {
     required this.iconSize,
     required this.mainAxisSpacing,
     required this.crossAxisSpacing,
+    this.selectedIconBackgroundColor,
   }) : super(key: key);
 
   final FIPIconController iconController;
+  final Color? selectedIconBackgroundColor;
   final bool? showSearchBar;
   final bool? showTooltips;
   final Color? backgroundColor;
