@@ -145,4 +145,4 @@ IconPickerIcon? deserializeIcon(
 }
 
 String _getIconKey(Map<String, IconPickerIcon> icons, IconData icon) =>
-    icons.entries.firstWhere((iconEntry) => iconEntry.value == icon).key;
+    icons.entries.firstWhere((iconEntry) => iconEntry.value.data == icon).key;
