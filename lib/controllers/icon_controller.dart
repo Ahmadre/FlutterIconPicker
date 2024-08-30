@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 
+import '../Models/icon_picker_icon.dart';
+
 class FIPIconController with ChangeNotifier {
-  FIPIconController();
+  FIPIconController({
+    IconPickerIcon? selectedIcon,
+  }) : _selectedIcon = selectedIcon;
 
-  Map<String, IconData> _icons = {};
+  IconPickerIcon? _selectedIcon;
 
-  Map<String, IconData> get icons => _icons;
+  IconPickerIcon? get selectedIcon => _selectedIcon;
 
-  set icons(Map<String, IconData> val) {
+  set selectedIcon(IconPickerIcon? val) {
+    _selectedIcon = val;
+    notifyListeners();
+  }
+
+  bool get isSelectedIconAvailable => _selectedIcon != null;
+
+  Map<String, IconPickerIcon> _icons = {};
+
+  Map<String, IconPickerIcon> get icons => _icons;
+
+  set icons(Map<String, IconPickerIcon> val) {
     _icons = val;
     notifyListeners();
   }
@@ -21,11 +36,11 @@ class FIPIconController with ChangeNotifier {
     notifyListeners();
   }
 
-  get length => _icons.length;
+  int get length => _icons.length;
 
-  get entries => _icons.entries;
+  Iterable<MapEntry<String, IconPickerIcon>> get entries => _icons.entries;
 
-  void addAll(Map<String, IconData> pack) {
+  void addAll(Map<String, IconPickerIcon> pack) {
     _icons.addAll(pack);
     notifyListeners();
   }
