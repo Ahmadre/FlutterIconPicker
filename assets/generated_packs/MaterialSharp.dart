@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> sharpIcons = {
+const Map<String, IconPickerIcon> sharpIcons = {
   'ten_k_sharp': IconPickerIcon(
       name: 'ten_k_sharp',
       data: Icons.ten_k_sharp,

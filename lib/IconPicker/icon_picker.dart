@@ -29,7 +29,7 @@ class FIPIconPicker extends StatefulWidget {
   final bool? showTooltips;
 
   const FIPIconPicker({
-    Key? key,
+    super.key,
     required this.iconController,
     required this.iconPack,
     required this.iconSize,
@@ -41,7 +41,7 @@ class FIPIconPicker extends StatefulWidget {
     this.iconColor,
     this.showTooltips,
     this.customIconPack,
-  }) : super(key: key);
+  });
 
   @override
   _FIPIconPickerState createState() => _FIPIconPickerState();
@@ -100,10 +100,10 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
   Widget _getListEmptyMsg() => Container(
         alignment: Alignment.topCenter,
         child: Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: RichText(
             text: TextSpan(
-              text: widget.noResultsText! + ' ',
+              text: '${widget.noResultsText!} ',
               style: TextStyle(
                 color: FIPColorBrightness(widget.backgroundColor!).isLight()
                     ? Colors.black
@@ -132,7 +132,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
         padding: const EdgeInsets.only(top: 5),
         child: Stack(
           children: <Widget>[
-            if (controller.icons.length == 0)
+            if (controller.icons.isEmpty)
               _getListEmptyMsg()
             else
               Positioned.fill(
@@ -200,7 +200,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                         widget.backgroundColor!,
                         widget.backgroundColor!.withOpacity(.1),
                       ],
-                      stops: [
+                      stops: const [
                         0.0,
                         1.0
                       ]),
@@ -219,7 +219,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                         widget.backgroundColor!,
                         widget.backgroundColor!.withOpacity(.1),
                       ],
-                      stops: [
+                      stops: const [
                         0.0,
                         1.0
                       ]),

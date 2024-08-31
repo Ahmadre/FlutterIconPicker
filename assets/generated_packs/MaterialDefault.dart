@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> defaultIcons = {
-  'ten_k':
-      IconPickerIcon(name: 'ten_k', data: Icons.ten_k, pack: IconPack.material),
+const Map<String, IconPickerIcon> defaultIcons = {
+  'ten_k': IconPickerIcon(
+      name: 'ten_k', data: Icons.ten_k, pack: IconPack.material),
   'ten_mp': IconPickerIcon(
       name: 'ten_mp', data: Icons.ten_mp, pack: IconPack.material),
   'eleven_mp': IconPickerIcon(
@@ -31,8 +31,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'eighteen_mp', data: Icons.eighteen_mp, pack: IconPack.material),
   'nineteen_mp': IconPickerIcon(
       name: 'nineteen_mp', data: Icons.nineteen_mp, pack: IconPack.material),
-  'one_k':
-      IconPickerIcon(name: 'one_k', data: Icons.one_k, pack: IconPack.material),
+  'one_k': IconPickerIcon(
+      name: 'one_k', data: Icons.one_k, pack: IconPack.material),
   'one_k_plus': IconPickerIcon(
       name: 'one_k_plus', data: Icons.one_k_plus, pack: IconPack.material),
   'one_x_mobiledata': IconPickerIcon(
@@ -57,8 +57,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'twenty_four_mp',
       data: Icons.twenty_four_mp,
       pack: IconPack.material),
-  'two_k':
-      IconPickerIcon(name: 'two_k', data: Icons.two_k, pack: IconPack.material),
+  'two_k': IconPickerIcon(
+      name: 'two_k', data: Icons.two_k, pack: IconPack.material),
   'two_k_plus': IconPickerIcon(
       name: 'two_k_plus', data: Icons.two_k_plus, pack: IconPack.material),
   'two_mp': IconPickerIcon(
@@ -117,8 +117,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'six_ft_apart': IconPickerIcon(
       name: 'six_ft_apart', data: Icons.six_ft_apart, pack: IconPack.material),
-  'six_k':
-      IconPickerIcon(name: 'six_k', data: Icons.six_k, pack: IconPack.material),
+  'six_k': IconPickerIcon(
+      name: 'six_k', data: Icons.six_k, pack: IconPack.material),
   'six_k_plus': IconPickerIcon(
       name: 'six_k_plus', data: Icons.six_k_plus, pack: IconPack.material),
   'six_mp': IconPickerIcon(
@@ -141,7 +141,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'nine_k_plus', data: Icons.nine_k_plus, pack: IconPack.material),
   'nine_mp': IconPickerIcon(
       name: 'nine_mp', data: Icons.nine_mp, pack: IconPack.material),
-  'abc': IconPickerIcon(name: 'abc', data: Icons.abc, pack: IconPack.material),
+  'abc': IconPickerIcon(
+      name: 'abc', data: Icons.abc, pack: IconPack.material),
   'ac_unit': IconPickerIcon(
       name: 'ac_unit', data: Icons.ac_unit, pack: IconPack.material),
   'access_alarm': IconPickerIcon(
@@ -188,8 +189,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'account_tree', data: Icons.account_tree, pack: IconPack.material),
   'ad_units': IconPickerIcon(
       name: 'ad_units', data: Icons.ad_units, pack: IconPack.material),
-  'adb': IconPickerIcon(name: 'adb', data: Icons.adb, pack: IconPack.material),
-  'add': IconPickerIcon(name: 'add', data: Icons.add, pack: IconPack.material),
+  'adb': IconPickerIcon(
+      name: 'adb', data: Icons.adb, pack: IconPack.material),
+  'add': IconPickerIcon(
+      name: 'add', data: Icons.add, pack: IconPack.material),
   'add_a_photo': IconPickerIcon(
       name: 'add_a_photo', data: Icons.add_a_photo, pack: IconPack.material),
   'add_alarm': IconPickerIcon(
@@ -270,13 +273,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'admin_panel_settings',
       data: Icons.admin_panel_settings,
       pack: IconPack.material),
-  'adobe':
-      IconPickerIcon(name: 'adobe', data: Icons.adobe, pack: IconPack.material),
+  'adobe': IconPickerIcon(
+      name: 'adobe', data: Icons.adobe, pack: IconPack.material),
   'ads_click': IconPickerIcon(
       name: 'ads_click', data: Icons.ads_click, pack: IconPack.material),
   'agriculture': IconPickerIcon(
       name: 'agriculture', data: Icons.agriculture, pack: IconPack.material),
-  'air': IconPickerIcon(name: 'air', data: Icons.air, pack: IconPack.material),
+  'air': IconPickerIcon(
+      name: 'air', data: Icons.air, pack: IconPack.material),
   'airline_seat_flat': IconPickerIcon(
       name: 'airline_seat_flat',
       data: Icons.airline_seat_flat,
@@ -341,16 +345,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'airport_shuttle',
       data: Icons.airport_shuttle,
       pack: IconPack.material),
-  'alarm':
-      IconPickerIcon(name: 'alarm', data: Icons.alarm, pack: IconPack.material),
+  'alarm': IconPickerIcon(
+      name: 'alarm', data: Icons.alarm, pack: IconPack.material),
   'alarm_add': IconPickerIcon(
       name: 'alarm_add', data: Icons.alarm_add, pack: IconPack.material),
   'alarm_off': IconPickerIcon(
       name: 'alarm_off', data: Icons.alarm_off, pack: IconPack.material),
   'alarm_on': IconPickerIcon(
       name: 'alarm_on', data: Icons.alarm_on, pack: IconPack.material),
-  'album':
-      IconPickerIcon(name: 'album', data: Icons.album, pack: IconPack.material),
+  'album': IconPickerIcon(
+      name: 'album', data: Icons.album, pack: IconPack.material),
   'align_horizontal_center': IconPickerIcon(
       name: 'align_horizontal_center',
       data: Icons.align_horizontal_center,
@@ -401,10 +405,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'animation', data: Icons.animation, pack: IconPack.material),
   'announcement': IconPickerIcon(
       name: 'announcement', data: Icons.announcement, pack: IconPack.material),
-  'aod': IconPickerIcon(name: 'aod', data: Icons.aod, pack: IconPack.material),
+  'aod': IconPickerIcon(
+      name: 'aod', data: Icons.aod, pack: IconPack.material),
   'apartment': IconPickerIcon(
       name: 'apartment', data: Icons.apartment, pack: IconPack.material),
-  'api': IconPickerIcon(name: 'api', data: Icons.api, pack: IconPack.material),
+  'api': IconPickerIcon(
+      name: 'api', data: Icons.api, pack: IconPack.material),
   'app_blocking': IconPickerIcon(
       name: 'app_blocking', data: Icons.app_blocking, pack: IconPack.material),
   'app_registration': IconPickerIcon(
@@ -417,12 +423,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'app_shortcut': IconPickerIcon(
       name: 'app_shortcut', data: Icons.app_shortcut, pack: IconPack.material),
-  'apple':
-      IconPickerIcon(name: 'apple', data: Icons.apple, pack: IconPack.material),
+  'apple': IconPickerIcon(
+      name: 'apple', data: Icons.apple, pack: IconPack.material),
   'approval': IconPickerIcon(
       name: 'approval', data: Icons.approval, pack: IconPack.material),
-  'apps':
-      IconPickerIcon(name: 'apps', data: Icons.apps, pack: IconPack.material),
+  'apps': IconPickerIcon(
+      name: 'apps', data: Icons.apps, pack: IconPack.material),
   'apps_outage': IconPickerIcon(
       name: 'apps_outage', data: Icons.apps_outage, pack: IconPack.material),
   'architecture': IconPickerIcon(
@@ -551,7 +557,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'assured_workload',
       data: Icons.assured_workload,
       pack: IconPack.material),
-  'atm': IconPickerIcon(name: 'atm', data: Icons.atm, pack: IconPack.material),
+  'atm': IconPickerIcon(
+      name: 'atm', data: Icons.atm, pack: IconPack.material),
   'attach_email': IconPickerIcon(
       name: 'attach_email', data: Icons.attach_email, pack: IconPack.material),
   'attach_file': IconPickerIcon(
@@ -618,8 +625,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'backup', data: Icons.backup, pack: IconPack.material),
   'backup_table': IconPickerIcon(
       name: 'backup_table', data: Icons.backup_table, pack: IconPack.material),
-  'badge':
-      IconPickerIcon(name: 'badge', data: Icons.badge, pack: IconPack.material),
+  'badge': IconPickerIcon(
+      name: 'badge', data: Icons.badge, pack: IconPack.material),
   'bakery_dining': IconPickerIcon(
       name: 'bakery_dining',
       data: Icons.bakery_dining,
@@ -694,7 +701,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'beach_access': IconPickerIcon(
       name: 'beach_access', data: Icons.beach_access, pack: IconPack.material),
-  'bed': IconPickerIcon(name: 'bed', data: Icons.bed, pack: IconPack.material),
+  'bed': IconPickerIcon(
+      name: 'bed', data: Icons.bed, pack: IconPack.material),
   'bedroom_baby': IconPickerIcon(
       name: 'bedroom_baby', data: Icons.bedroom_baby, pack: IconPack.material),
   'bedroom_child': IconPickerIcon(
@@ -711,24 +719,24 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'bedtime_off', data: Icons.bedtime_off, pack: IconPack.material),
   'beenhere': IconPickerIcon(
       name: 'beenhere', data: Icons.beenhere, pack: IconPack.material),
-  'bento':
-      IconPickerIcon(name: 'bento', data: Icons.bento, pack: IconPack.material),
+  'bento': IconPickerIcon(
+      name: 'bento', data: Icons.bento, pack: IconPack.material),
   'bike_scooter': IconPickerIcon(
       name: 'bike_scooter', data: Icons.bike_scooter, pack: IconPack.material),
   'biotech': IconPickerIcon(
       name: 'biotech', data: Icons.biotech, pack: IconPack.material),
   'blender': IconPickerIcon(
       name: 'blender', data: Icons.blender, pack: IconPack.material),
-  'blind':
-      IconPickerIcon(name: 'blind', data: Icons.blind, pack: IconPack.material),
+  'blind': IconPickerIcon(
+      name: 'blind', data: Icons.blind, pack: IconPack.material),
   'blinds': IconPickerIcon(
       name: 'blinds', data: Icons.blinds, pack: IconPack.material),
   'blinds_closed': IconPickerIcon(
       name: 'blinds_closed',
       data: Icons.blinds_closed,
       pack: IconPack.material),
-  'block':
-      IconPickerIcon(name: 'block', data: Icons.block, pack: IconPack.material),
+  'block': IconPickerIcon(
+      name: 'block', data: Icons.block, pack: IconPack.material),
   'block_flipped': IconPickerIcon(
       name: 'block_flipped',
       data: Icons.block_flipped,
@@ -767,10 +775,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'blur_off', data: Icons.blur_off, pack: IconPack.material),
   'blur_on': IconPickerIcon(
       name: 'blur_on', data: Icons.blur_on, pack: IconPack.material),
-  'bolt':
-      IconPickerIcon(name: 'bolt', data: Icons.bolt, pack: IconPack.material),
-  'book':
-      IconPickerIcon(name: 'book', data: Icons.book, pack: IconPack.material),
+  'bolt': IconPickerIcon(
+      name: 'bolt', data: Icons.bolt, pack: IconPack.material),
+  'book': IconPickerIcon(
+      name: 'book', data: Icons.book, pack: IconPack.material),
   'book_online': IconPickerIcon(
       name: 'book_online', data: Icons.book_online, pack: IconPack.material),
   'bookmark': IconPickerIcon(
@@ -825,7 +833,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'border_vertical',
       data: Icons.border_vertical,
       pack: IconPack.material),
-  'boy': IconPickerIcon(name: 'boy', data: Icons.boy, pack: IconPack.material),
+  'boy': IconPickerIcon(
+      name: 'boy', data: Icons.boy, pack: IconPack.material),
   'branding_watermark': IconPickerIcon(
       name: 'branding_watermark',
       data: Icons.branding_watermark,
@@ -890,14 +899,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'brunch_dining',
       data: Icons.brunch_dining,
       pack: IconPack.material),
-  'brush':
-      IconPickerIcon(name: 'brush', data: Icons.brush, pack: IconPack.material),
+  'brush': IconPickerIcon(
+      name: 'brush', data: Icons.brush, pack: IconPack.material),
   'bubble_chart': IconPickerIcon(
       name: 'bubble_chart', data: Icons.bubble_chart, pack: IconPack.material),
   'bug_report': IconPickerIcon(
       name: 'bug_report', data: Icons.bug_report, pack: IconPack.material),
-  'build':
-      IconPickerIcon(name: 'build', data: Icons.build, pack: IconPack.material),
+  'build': IconPickerIcon(
+      name: 'build', data: Icons.build, pack: IconPack.material),
   'build_circle': IconPickerIcon(
       name: 'build_circle', data: Icons.build_circle, pack: IconPack.material),
   'bungalow': IconPickerIcon(
@@ -912,14 +921,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'business_center',
       data: Icons.business_center,
       pack: IconPack.material),
-  'cabin':
-      IconPickerIcon(name: 'cabin', data: Icons.cabin, pack: IconPack.material),
-  'cable':
-      IconPickerIcon(name: 'cable', data: Icons.cable, pack: IconPack.material),
+  'cabin': IconPickerIcon(
+      name: 'cabin', data: Icons.cabin, pack: IconPack.material),
+  'cable': IconPickerIcon(
+      name: 'cable', data: Icons.cable, pack: IconPack.material),
   'cached': IconPickerIcon(
       name: 'cached', data: Icons.cached, pack: IconPack.material),
-  'cake':
-      IconPickerIcon(name: 'cake', data: Icons.cake, pack: IconPack.material),
+  'cake': IconPickerIcon(
+      name: 'cake', data: Icons.cake, pack: IconPack.material),
   'calculate': IconPickerIcon(
       name: 'calculate', data: Icons.calculate, pack: IconPack.material),
   'calendar_month': IconPickerIcon(
@@ -942,8 +951,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'calendar_view_week',
       data: Icons.calendar_view_week,
       pack: IconPack.material),
-  'call':
-      IconPickerIcon(name: 'call', data: Icons.call, pack: IconPack.material),
+  'call': IconPickerIcon(
+      name: 'call', data: Icons.call, pack: IconPack.material),
   'call_end': IconPickerIcon(
       name: 'call_end', data: Icons.call_end, pack: IconPack.material),
   'call_made': IconPickerIcon(
@@ -1024,12 +1033,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'card_travel', data: Icons.card_travel, pack: IconPack.material),
   'carpenter': IconPickerIcon(
       name: 'carpenter', data: Icons.carpenter, pack: IconPack.material),
-  'cases':
-      IconPickerIcon(name: 'cases', data: Icons.cases, pack: IconPack.material),
+  'cases': IconPickerIcon(
+      name: 'cases', data: Icons.cases, pack: IconPack.material),
   'casino': IconPickerIcon(
       name: 'casino', data: Icons.casino, pack: IconPack.material),
-  'cast':
-      IconPickerIcon(name: 'cast', data: Icons.cast, pack: IconPack.material),
+  'cast': IconPickerIcon(
+      name: 'cast', data: Icons.cast, pack: IconPack.material),
   'cast_connected': IconPickerIcon(
       name: 'cast_connected',
       data: Icons.cast_connected,
@@ -1060,8 +1069,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'center_focus_weak',
       data: Icons.center_focus_weak,
       pack: IconPack.material),
-  'chair':
-      IconPickerIcon(name: 'chair', data: Icons.chair, pack: IconPack.material),
+  'chair': IconPickerIcon(
+      name: 'chair', data: Icons.chair, pack: IconPack.material),
   'chair_alt': IconPickerIcon(
       name: 'chair_alt', data: Icons.chair_alt, pack: IconPack.material),
   'chalet': IconPickerIcon(
@@ -1078,16 +1087,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'charging_station',
       data: Icons.charging_station,
       pack: IconPack.material),
-  'chat':
-      IconPickerIcon(name: 'chat', data: Icons.chat, pack: IconPack.material),
+  'chat': IconPickerIcon(
+      name: 'chat', data: Icons.chat, pack: IconPack.material),
   'chat_bubble': IconPickerIcon(
       name: 'chat_bubble', data: Icons.chat_bubble, pack: IconPack.material),
   'chat_bubble_outline': IconPickerIcon(
       name: 'chat_bubble_outline',
       data: Icons.chat_bubble_outline,
       pack: IconPack.material),
-  'check':
-      IconPickerIcon(name: 'check', data: Icons.check, pack: IconPack.material),
+  'check': IconPickerIcon(
+      name: 'check', data: Icons.check, pack: IconPack.material),
   'check_box': IconPickerIcon(
       name: 'check_box', data: Icons.check_box, pack: IconPack.material),
   'check_box_outline_blank': IconPickerIcon(
@@ -1140,12 +1149,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'cleaning_services',
       data: Icons.cleaning_services,
       pack: IconPack.material),
-  'clear':
-      IconPickerIcon(name: 'clear', data: Icons.clear, pack: IconPack.material),
+  'clear': IconPickerIcon(
+      name: 'clear', data: Icons.clear, pack: IconPack.material),
   'clear_all': IconPickerIcon(
       name: 'clear_all', data: Icons.clear_all, pack: IconPack.material),
-  'close':
-      IconPickerIcon(name: 'close', data: Icons.close, pack: IconPack.material),
+  'close': IconPickerIcon(
+      name: 'close', data: Icons.close, pack: IconPack.material),
   'close_fullscreen': IconPickerIcon(
       name: 'close_fullscreen',
       data: Icons.close_fullscreen,
@@ -1162,8 +1171,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'closed_caption_off',
       data: Icons.closed_caption_off,
       pack: IconPack.material),
-  'cloud':
-      IconPickerIcon(name: 'cloud', data: Icons.cloud, pack: IconPack.material),
+  'cloud': IconPickerIcon(
+      name: 'cloud', data: Icons.cloud, pack: IconPack.material),
   'cloud_circle': IconPickerIcon(
       name: 'cloud_circle', data: Icons.cloud_circle, pack: IconPack.material),
   'cloud_done': IconPickerIcon(
@@ -1184,11 +1193,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'cloudy_snowing',
       data: Icons.cloudy_snowing,
       pack: IconPack.material),
-  'co2': IconPickerIcon(name: 'co2', data: Icons.co2, pack: IconPack.material),
+  'co2': IconPickerIcon(
+      name: 'co2', data: Icons.co2, pack: IconPack.material),
   'co_present': IconPickerIcon(
       name: 'co_present', data: Icons.co_present, pack: IconPack.material),
-  'code':
-      IconPickerIcon(name: 'code', data: Icons.code, pack: IconPack.material),
+  'code': IconPickerIcon(
+      name: 'code', data: Icons.code, pack: IconPack.material),
   'code_off': IconPickerIcon(
       name: 'code_off', data: Icons.code_off, pack: IconPack.material),
   'coffee': IconPickerIcon(
@@ -1313,8 +1323,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'cookie': IconPickerIcon(
       name: 'cookie', data: Icons.cookie, pack: IconPack.material),
-  'copy':
-      IconPickerIcon(name: 'copy', data: Icons.copy, pack: IconPack.material),
+  'copy': IconPickerIcon(
+      name: 'copy', data: Icons.copy, pack: IconPack.material),
   'copy_all': IconPickerIcon(
       name: 'copy_all', data: Icons.copy_all, pack: IconPack.material),
   'copyright': IconPickerIcon(
@@ -1343,12 +1353,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'credit_score': IconPickerIcon(
       name: 'credit_score', data: Icons.credit_score, pack: IconPack.material),
-  'crib':
-      IconPickerIcon(name: 'crib', data: Icons.crib, pack: IconPack.material),
+  'crib': IconPickerIcon(
+      name: 'crib', data: Icons.crib, pack: IconPack.material),
   'crisis_alert': IconPickerIcon(
       name: 'crisis_alert', data: Icons.crisis_alert, pack: IconPack.material),
-  'crop':
-      IconPickerIcon(name: 'crop', data: Icons.crop, pack: IconPack.material),
+  'crop': IconPickerIcon(
+      name: 'crop', data: Icons.crop, pack: IconPack.material),
   'crop_16_9': IconPickerIcon(
       name: 'crop_16_9', data: Icons.crop_16_9, pack: IconPack.material),
   'crop_3_2': IconPickerIcon(
@@ -1379,7 +1389,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'crop_square', data: Icons.crop_square, pack: IconPack.material),
   'cruelty_free': IconPickerIcon(
       name: 'cruelty_free', data: Icons.cruelty_free, pack: IconPack.material),
-  'css': IconPickerIcon(name: 'css', data: Icons.css, pack: IconPack.material),
+  'css': IconPickerIcon(
+      name: 'css', data: Icons.css, pack: IconPack.material),
   'currency_bitcoin': IconPickerIcon(
       name: 'currency_bitcoin',
       data: Icons.currency_bitcoin,
@@ -1420,7 +1431,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'curtains_closed',
       data: Icons.curtains_closed,
       pack: IconPack.material),
-  'cut': IconPickerIcon(name: 'cut', data: Icons.cut, pack: IconPack.material),
+  'cut': IconPickerIcon(
+      name: 'cut', data: Icons.cut, pack: IconPack.material),
   'cyclone': IconPickerIcon(
       name: 'cyclone', data: Icons.cyclone, pack: IconPack.material),
   'dangerous': IconPickerIcon(
@@ -1465,8 +1477,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'date_range', data: Icons.date_range, pack: IconPack.material),
   'deblur': IconPickerIcon(
       name: 'deblur', data: Icons.deblur, pack: IconPack.material),
-  'deck':
-      IconPickerIcon(name: 'deck', data: Icons.deck, pack: IconPack.material),
+  'deck': IconPickerIcon(
+      name: 'deck', data: Icons.deck, pack: IconPack.material),
   'dehaze': IconPickerIcon(
       name: 'dehaze', data: Icons.dehaze, pack: IconPack.material),
   'delete': IconPickerIcon(
@@ -1509,8 +1521,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'design_services',
       data: Icons.design_services,
       pack: IconPack.material),
-  'desk':
-      IconPickerIcon(name: 'desk', data: Icons.desk, pack: IconPack.material),
+  'desk': IconPickerIcon(
+      name: 'desk', data: Icons.desk, pack: IconPack.material),
   'desktop_access_disabled': IconPickerIcon(
       name: 'desktop_access_disabled',
       data: Icons.desktop_access_disabled,
@@ -1673,7 +1685,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'dnd_forwardslash',
       data: Icons.dnd_forwardslash,
       pack: IconPack.material),
-  'dns': IconPickerIcon(name: 'dns', data: Icons.dns, pack: IconPack.material),
+  'dns': IconPickerIcon(
+      name: 'dns', data: Icons.dns, pack: IconPack.material),
   'do_disturb': IconPickerIcon(
       name: 'do_disturb', data: Icons.do_disturb, pack: IconPack.material),
   'do_disturb_alt': IconPickerIcon(
@@ -1712,8 +1725,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'do_not_step', data: Icons.do_not_step, pack: IconPack.material),
   'do_not_touch': IconPickerIcon(
       name: 'do_not_touch', data: Icons.do_not_touch, pack: IconPack.material),
-  'dock':
-      IconPickerIcon(name: 'dock', data: Icons.dock, pack: IconPack.material),
+  'dock': IconPickerIcon(
+      name: 'dock', data: Icons.dock, pack: IconPack.material),
   'document_scanner': IconPickerIcon(
       name: 'document_scanner',
       data: Icons.document_scanner,
@@ -1730,8 +1743,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'domain_verification',
       data: Icons.domain_verification,
       pack: IconPack.material),
-  'done':
-      IconPickerIcon(name: 'done', data: Icons.done, pack: IconPack.material),
+  'done': IconPickerIcon(
+      name: 'done', data: Icons.done, pack: IconPack.material),
   'done_all': IconPickerIcon(
       name: 'done_all', data: Icons.done_all, pack: IconPack.material),
   'done_outline': IconPickerIcon(
@@ -1778,8 +1791,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'drag_indicator',
       data: Icons.drag_indicator,
       pack: IconPack.material),
-  'draw':
-      IconPickerIcon(name: 'draw', data: Icons.draw, pack: IconPack.material),
+  'draw': IconPickerIcon(
+      name: 'draw', data: Icons.draw, pack: IconPack.material),
   'drive_eta': IconPickerIcon(
       name: 'drive_eta', data: Icons.drive_eta, pack: IconPack.material),
   'drive_file_move': IconPickerIcon(
@@ -1802,11 +1815,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'drive_folder_upload',
       data: Icons.drive_folder_upload,
       pack: IconPack.material),
-  'dry': IconPickerIcon(name: 'dry', data: Icons.dry, pack: IconPack.material),
+  'dry': IconPickerIcon(
+      name: 'dry', data: Icons.dry, pack: IconPack.material),
   'dry_cleaning': IconPickerIcon(
       name: 'dry_cleaning', data: Icons.dry_cleaning, pack: IconPack.material),
-  'duo': IconPickerIcon(name: 'duo', data: Icons.duo, pack: IconPack.material),
-  'dvr': IconPickerIcon(name: 'dvr', data: Icons.dvr, pack: IconPack.material),
+  'duo': IconPickerIcon(
+      name: 'duo', data: Icons.duo, pack: IconPack.material),
+  'dvr': IconPickerIcon(
+      name: 'dvr', data: Icons.dvr, pack: IconPack.material),
   'dynamic_feed': IconPickerIcon(
       name: 'dynamic_feed', data: Icons.dynamic_feed, pack: IconPack.material),
   'dynamic_form': IconPickerIcon(
@@ -1819,9 +1835,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'earbuds_battery',
       data: Icons.earbuds_battery,
       pack: IconPack.material),
-  'east':
-      IconPickerIcon(name: 'east', data: Icons.east, pack: IconPack.material),
-  'eco': IconPickerIcon(name: 'eco', data: Icons.eco, pack: IconPack.material),
+  'east': IconPickerIcon(
+      name: 'east', data: Icons.east, pack: IconPack.material),
+  'eco': IconPickerIcon(
+      name: 'eco', data: Icons.eco, pack: IconPack.material),
   'edgesensor_high': IconPickerIcon(
       name: 'edgesensor_high',
       data: Icons.edgesensor_high,
@@ -1830,8 +1847,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'edgesensor_low',
       data: Icons.edgesensor_low,
       pack: IconPack.material),
-  'edit':
-      IconPickerIcon(name: 'edit', data: Icons.edit, pack: IconPack.material),
+  'edit': IconPickerIcon(
+      name: 'edit', data: Icons.edit, pack: IconPack.material),
   'edit_attributes': IconPickerIcon(
       name: 'edit_attributes',
       data: Icons.edit_attributes,
@@ -1864,11 +1881,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'edit_road', data: Icons.edit_road, pack: IconPack.material),
   'edit_square': IconPickerIcon(
       name: 'edit_square', data: Icons.edit_square, pack: IconPack.material),
-  'egg': IconPickerIcon(name: 'egg', data: Icons.egg, pack: IconPack.material),
+  'egg': IconPickerIcon(
+      name: 'egg', data: Icons.egg, pack: IconPack.material),
   'egg_alt': IconPickerIcon(
       name: 'egg_alt', data: Icons.egg_alt, pack: IconPack.material),
-  'eject':
-      IconPickerIcon(name: 'eject', data: Icons.eject, pack: IconPack.material),
+  'eject': IconPickerIcon(
+      name: 'eject', data: Icons.eject, pack: IconPack.material),
   'elderly': IconPickerIcon(
       name: 'elderly', data: Icons.elderly, pack: IconPack.material),
   'elderly_woman': IconPickerIcon(
@@ -1907,8 +1925,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'elevator': IconPickerIcon(
       name: 'elevator', data: Icons.elevator, pack: IconPack.material),
-  'email':
-      IconPickerIcon(name: 'email', data: Icons.email, pack: IconPack.material),
+  'email': IconPickerIcon(
+      name: 'email', data: Icons.email, pack: IconPack.material),
   'emergency': IconPickerIcon(
       name: 'emergency', data: Icons.emergency, pack: IconPack.material),
   'emergency_recording': IconPickerIcon(
@@ -1963,8 +1981,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'equalizer': IconPickerIcon(
       name: 'equalizer', data: Icons.equalizer, pack: IconPack.material),
-  'error':
-      IconPickerIcon(name: 'error', data: Icons.error, pack: IconPack.material),
+  'error': IconPickerIcon(
+      name: 'error', data: Icons.error, pack: IconPack.material),
   'error_outline': IconPickerIcon(
       name: 'error_outline',
       data: Icons.error_outline,
@@ -1975,14 +1993,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'escalator_warning',
       data: Icons.escalator_warning,
       pack: IconPack.material),
-  'euro':
-      IconPickerIcon(name: 'euro', data: Icons.euro, pack: IconPack.material),
+  'euro': IconPickerIcon(
+      name: 'euro', data: Icons.euro, pack: IconPack.material),
   'euro_symbol': IconPickerIcon(
       name: 'euro_symbol', data: Icons.euro_symbol, pack: IconPack.material),
   'ev_station': IconPickerIcon(
       name: 'ev_station', data: Icons.ev_station, pack: IconPack.material),
-  'event':
-      IconPickerIcon(name: 'event', data: Icons.event, pack: IconPack.material),
+  'event': IconPickerIcon(
+      name: 'event', data: Icons.event, pack: IconPack.material),
   'event_available': IconPickerIcon(
       name: 'event_available',
       data: Icons.event_available,
@@ -2049,8 +2067,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'extension_off',
       data: Icons.extension_off,
       pack: IconPack.material),
-  'face':
-      IconPickerIcon(name: 'face', data: Icons.face, pack: IconPack.material),
+  'face': IconPickerIcon(
+      name: 'face', data: Icons.face, pack: IconPack.material),
   'face_2': IconPickerIcon(
       name: 'face_2', data: Icons.face_2, pack: IconPack.material),
   'face_3': IconPickerIcon(
@@ -2095,7 +2113,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'favorite_outline',
       data: Icons.favorite_outline,
       pack: IconPack.material),
-  'fax': IconPickerIcon(name: 'fax', data: Icons.fax, pack: IconPack.material),
+  'fax': IconPickerIcon(
+      name: 'fax', data: Icons.fax, pack: IconPack.material),
   'featured_play_list': IconPickerIcon(
       name: 'featured_play_list',
       data: Icons.featured_play_list,
@@ -2104,14 +2123,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'featured_video',
       data: Icons.featured_video,
       pack: IconPack.material),
-  'feed':
-      IconPickerIcon(name: 'feed', data: Icons.feed, pack: IconPack.material),
+  'feed': IconPickerIcon(
+      name: 'feed', data: Icons.feed, pack: IconPack.material),
   'feedback': IconPickerIcon(
       name: 'feedback', data: Icons.feedback, pack: IconPack.material),
   'female': IconPickerIcon(
       name: 'female', data: Icons.female, pack: IconPack.material),
-  'fence':
-      IconPickerIcon(name: 'fence', data: Icons.fence, pack: IconPack.material),
+  'fence': IconPickerIcon(
+      name: 'fence', data: Icons.fence, pack: IconPack.material),
   'festival': IconPickerIcon(
       name: 'festival', data: Icons.festival, pack: IconPack.material),
   'fiber_dvr': IconPickerIcon(
@@ -2248,14 +2267,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'fitness_center',
       data: Icons.fitness_center,
       pack: IconPack.material),
-  'flag':
-      IconPickerIcon(name: 'flag', data: Icons.flag, pack: IconPack.material),
+  'flag': IconPickerIcon(
+      name: 'flag', data: Icons.flag, pack: IconPack.material),
   'flag_circle': IconPickerIcon(
       name: 'flag_circle', data: Icons.flag_circle, pack: IconPack.material),
-  'flaky':
-      IconPickerIcon(name: 'flaky', data: Icons.flaky, pack: IconPack.material),
-  'flare':
-      IconPickerIcon(name: 'flare', data: Icons.flare, pack: IconPack.material),
+  'flaky': IconPickerIcon(
+      name: 'flaky', data: Icons.flaky, pack: IconPack.material),
+  'flare': IconPickerIcon(
+      name: 'flare', data: Icons.flare, pack: IconPack.material),
   'flash_auto': IconPickerIcon(
       name: 'flash_auto', data: Icons.flash_auto, pack: IconPack.material),
   'flash_off': IconPickerIcon(
@@ -2282,8 +2301,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'flight_takeoff',
       data: Icons.flight_takeoff,
       pack: IconPack.material),
-  'flip':
-      IconPickerIcon(name: 'flip', data: Icons.flip, pack: IconPack.material),
+  'flip': IconPickerIcon(
+      name: 'flip', data: Icons.flip, pack: IconPack.material),
   'flip_camera_android': IconPickerIcon(
       name: 'flip_camera_android',
       data: Icons.flip_camera_android,
@@ -2298,8 +2317,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'flip_to_front',
       data: Icons.flip_to_front,
       pack: IconPack.material),
-  'flood':
-      IconPickerIcon(name: 'flood', data: Icons.flood, pack: IconPack.material),
+  'flood': IconPickerIcon(
+      name: 'flood', data: Icons.flood, pack: IconPack.material),
   'flourescent': IconPickerIcon(
       name: 'flourescent', data: Icons.flourescent, pack: IconPack.material),
   'fluorescent': IconPickerIcon(
@@ -2310,8 +2329,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'fmd_bad', data: Icons.fmd_bad, pack: IconPack.material),
   'fmd_good': IconPickerIcon(
       name: 'fmd_good', data: Icons.fmd_good, pack: IconPack.material),
-  'foggy':
-      IconPickerIcon(name: 'foggy', data: Icons.foggy, pack: IconPack.material),
+  'foggy': IconPickerIcon(
+      name: 'foggy', data: Icons.foggy, pack: IconPack.material),
   'folder': IconPickerIcon(
       name: 'folder', data: Icons.folder, pack: IconPack.material),
   'folder_copy': IconPickerIcon(
@@ -2454,10 +2473,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'format_underlined',
       data: Icons.format_underlined,
       pack: IconPack.material),
-  'fort':
-      IconPickerIcon(name: 'fort', data: Icons.fort, pack: IconPack.material),
-  'forum':
-      IconPickerIcon(name: 'forum', data: Icons.forum, pack: IconPack.material),
+  'fort': IconPickerIcon(
+      name: 'fort', data: Icons.fort, pack: IconPack.material),
+  'forum': IconPickerIcon(
+      name: 'forum', data: Icons.forum, pack: IconPack.material),
   'forward': IconPickerIcon(
       name: 'forward', data: Icons.forward, pack: IconPack.material),
   'forward_10': IconPickerIcon(
@@ -2498,14 +2517,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'g_translate', data: Icons.g_translate, pack: IconPack.material),
   'gamepad': IconPickerIcon(
       name: 'gamepad', data: Icons.gamepad, pack: IconPack.material),
-  'games':
-      IconPickerIcon(name: 'games', data: Icons.games, pack: IconPack.material),
+  'games': IconPickerIcon(
+      name: 'games', data: Icons.games, pack: IconPack.material),
   'garage': IconPickerIcon(
       name: 'garage', data: Icons.garage, pack: IconPack.material),
   'gas_meter': IconPickerIcon(
       name: 'gas_meter', data: Icons.gas_meter, pack: IconPack.material),
-  'gavel':
-      IconPickerIcon(name: 'gavel', data: Icons.gavel, pack: IconPack.material),
+  'gavel': IconPickerIcon(
+      name: 'gavel', data: Icons.gavel, pack: IconPack.material),
   'generating_tokens': IconPickerIcon(
       name: 'generating_tokens',
       data: Icons.generating_tokens,
@@ -2514,13 +2533,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'gesture', data: Icons.gesture, pack: IconPack.material),
   'get_app': IconPickerIcon(
       name: 'get_app', data: Icons.get_app, pack: IconPack.material),
-  'gif': IconPickerIcon(name: 'gif', data: Icons.gif, pack: IconPack.material),
+  'gif': IconPickerIcon(
+      name: 'gif', data: Icons.gif, pack: IconPack.material),
   'gif_box': IconPickerIcon(
       name: 'gif_box', data: Icons.gif_box, pack: IconPack.material),
-  'girl':
-      IconPickerIcon(name: 'girl', data: Icons.girl, pack: IconPack.material),
-  'gite':
-      IconPickerIcon(name: 'gite', data: Icons.gite, pack: IconPack.material),
+  'girl': IconPickerIcon(
+      name: 'girl', data: Icons.girl, pack: IconPack.material),
+  'gite': IconPickerIcon(
+      name: 'gite', data: Icons.gite, pack: IconPack.material),
   'golf_course': IconPickerIcon(
       name: 'golf_course', data: Icons.golf_course, pack: IconPack.material),
   'gpp_bad': IconPickerIcon(
@@ -2537,18 +2557,18 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'gps_off': IconPickerIcon(
       name: 'gps_off', data: Icons.gps_off, pack: IconPack.material),
-  'grade':
-      IconPickerIcon(name: 'grade', data: Icons.grade, pack: IconPack.material),
+  'grade': IconPickerIcon(
+      name: 'grade', data: Icons.grade, pack: IconPack.material),
   'gradient': IconPickerIcon(
       name: 'gradient', data: Icons.gradient, pack: IconPack.material),
   'grading': IconPickerIcon(
       name: 'grading', data: Icons.grading, pack: IconPack.material),
-  'grain':
-      IconPickerIcon(name: 'grain', data: Icons.grain, pack: IconPack.material),
+  'grain': IconPickerIcon(
+      name: 'grain', data: Icons.grain, pack: IconPack.material),
   'graphic_eq': IconPickerIcon(
       name: 'graphic_eq', data: Icons.graphic_eq, pack: IconPack.material),
-  'grass':
-      IconPickerIcon(name: 'grass', data: Icons.grass, pack: IconPack.material),
+  'grass': IconPickerIcon(
+      name: 'grass', data: Icons.grass, pack: IconPack.material),
   'grid_3x3': IconPickerIcon(
       name: 'grid_3x3', data: Icons.grid_3x3, pack: IconPack.material),
   'grid_4x4': IconPickerIcon(
@@ -2563,8 +2583,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'grid_on', data: Icons.grid_on, pack: IconPack.material),
   'grid_view': IconPickerIcon(
       name: 'grid_view', data: Icons.grid_view, pack: IconPack.material),
-  'group':
-      IconPickerIcon(name: 'group', data: Icons.group, pack: IconPack.material),
+  'group': IconPickerIcon(
+      name: 'group', data: Icons.group, pack: IconPack.material),
   'group_add': IconPickerIcon(
       name: 'group_add', data: Icons.group_add, pack: IconPack.material),
   'group_off': IconPickerIcon(
@@ -2585,15 +2605,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'h_plus_mobiledata',
       data: Icons.h_plus_mobiledata,
       pack: IconPack.material),
-  'hail':
-      IconPickerIcon(name: 'hail', data: Icons.hail, pack: IconPack.material),
+  'hail': IconPickerIcon(
+      name: 'hail', data: Icons.hail, pack: IconPack.material),
   'handshake': IconPickerIcon(
       name: 'handshake', data: Icons.handshake, pack: IconPack.material),
   'handyman': IconPickerIcon(
       name: 'handyman', data: Icons.handyman, pack: IconPack.material),
   'hardware': IconPickerIcon(
       name: 'hardware', data: Icons.hardware, pack: IconPack.material),
-  'hd': IconPickerIcon(name: 'hd', data: Icons.hd, pack: IconPack.material),
+  'hd':
+      IconPickerIcon(name: 'hd', data: Icons.hd, pack: IconPack.material),
   'hdr_auto': IconPickerIcon(
       name: 'hdr_auto', data: Icons.hdr_auto, pack: IconPack.material),
   'hdr_auto_select': IconPickerIcon(
@@ -2652,14 +2673,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'heat_pump', data: Icons.heat_pump, pack: IconPack.material),
   'height': IconPickerIcon(
       name: 'height', data: Icons.height, pack: IconPack.material),
-  'help':
-      IconPickerIcon(name: 'help', data: Icons.help, pack: IconPack.material),
+  'help': IconPickerIcon(
+      name: 'help', data: Icons.help, pack: IconPack.material),
   'help_center': IconPickerIcon(
       name: 'help_center', data: Icons.help_center, pack: IconPack.material),
   'help_outline': IconPickerIcon(
       name: 'help_outline', data: Icons.help_outline, pack: IconPack.material),
-  'hevc':
-      IconPickerIcon(name: 'hevc', data: Icons.hevc, pack: IconPack.material),
+  'hevc': IconPickerIcon(
+      name: 'hevc', data: Icons.hevc, pack: IconPack.material),
   'hexagon': IconPickerIcon(
       name: 'hexagon', data: Icons.hexagon, pack: IconPack.material),
   'hide_image': IconPickerIcon(
@@ -2692,17 +2713,18 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'history_toggle_off',
       data: Icons.history_toggle_off,
       pack: IconPack.material),
-  'hive':
-      IconPickerIcon(name: 'hive', data: Icons.hive, pack: IconPack.material),
-  'hls': IconPickerIcon(name: 'hls', data: Icons.hls, pack: IconPack.material),
+  'hive': IconPickerIcon(
+      name: 'hive', data: Icons.hive, pack: IconPack.material),
+  'hls': IconPickerIcon(
+      name: 'hls', data: Icons.hls, pack: IconPack.material),
   'hls_off': IconPickerIcon(
       name: 'hls_off', data: Icons.hls_off, pack: IconPack.material),
   'holiday_village': IconPickerIcon(
       name: 'holiday_village',
       data: Icons.holiday_village,
       pack: IconPack.material),
-  'home':
-      IconPickerIcon(name: 'home', data: Icons.home, pack: IconPack.material),
+  'home': IconPickerIcon(
+      name: 'home', data: Icons.home, pack: IconPack.material),
   'home_filled': IconPickerIcon(
       name: 'home_filled', data: Icons.home_filled, pack: IconPack.material),
   'home_max': IconPickerIcon(
@@ -2729,8 +2751,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'hot_tub': IconPickerIcon(
       name: 'hot_tub', data: Icons.hot_tub, pack: IconPack.material),
-  'hotel':
-      IconPickerIcon(name: 'hotel', data: Icons.hotel, pack: IconPack.material),
+  'hotel': IconPickerIcon(
+      name: 'hotel', data: Icons.hotel, pack: IconPack.material),
   'hotel_class': IconPickerIcon(
       name: 'hotel_class', data: Icons.hotel_class, pack: IconPack.material),
   'hourglass_bottom': IconPickerIcon(
@@ -2753,8 +2775,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'hourglass_top',
       data: Icons.hourglass_top,
       pack: IconPack.material),
-  'house':
-      IconPickerIcon(name: 'house', data: Icons.house, pack: IconPack.material),
+  'house': IconPickerIcon(
+      name: 'house', data: Icons.house, pack: IconPack.material),
   'house_siding': IconPickerIcon(
       name: 'house_siding', data: Icons.house_siding, pack: IconPack.material),
   'houseboat': IconPickerIcon(
@@ -2763,21 +2785,22 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'how_to_reg', data: Icons.how_to_reg, pack: IconPack.material),
   'how_to_vote': IconPickerIcon(
       name: 'how_to_vote', data: Icons.how_to_vote, pack: IconPack.material),
-  'html':
-      IconPickerIcon(name: 'html', data: Icons.html, pack: IconPack.material),
-  'http':
-      IconPickerIcon(name: 'http', data: Icons.http, pack: IconPack.material),
-  'https':
-      IconPickerIcon(name: 'https', data: Icons.https, pack: IconPack.material),
-  'hub': IconPickerIcon(name: 'hub', data: Icons.hub, pack: IconPack.material),
-  'hvac':
-      IconPickerIcon(name: 'hvac', data: Icons.hvac, pack: IconPack.material),
+  'html': IconPickerIcon(
+      name: 'html', data: Icons.html, pack: IconPack.material),
+  'http': IconPickerIcon(
+      name: 'http', data: Icons.http, pack: IconPack.material),
+  'https': IconPickerIcon(
+      name: 'https', data: Icons.https, pack: IconPack.material),
+  'hub': IconPickerIcon(
+      name: 'hub', data: Icons.hub, pack: IconPack.material),
+  'hvac': IconPickerIcon(
+      name: 'hvac', data: Icons.hvac, pack: IconPack.material),
   'ice_skating': IconPickerIcon(
       name: 'ice_skating', data: Icons.ice_skating, pack: IconPack.material),
   'icecream': IconPickerIcon(
       name: 'icecream', data: Icons.icecream, pack: IconPack.material),
-  'image':
-      IconPickerIcon(name: 'image', data: Icons.image, pack: IconPack.material),
+  'image': IconPickerIcon(
+      name: 'image', data: Icons.image, pack: IconPack.material),
   'image_aspect_ratio': IconPickerIcon(
       name: 'image_aspect_ratio',
       data: Icons.image_aspect_ratio,
@@ -2804,8 +2827,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'important_devices',
       data: Icons.important_devices,
       pack: IconPack.material),
-  'inbox':
-      IconPickerIcon(name: 'inbox', data: Icons.inbox, pack: IconPack.material),
+  'inbox': IconPickerIcon(
+      name: 'inbox', data: Icons.inbox, pack: IconPack.material),
   'incomplete_circle': IconPickerIcon(
       name: 'incomplete_circle',
       data: Icons.incomplete_circle,
@@ -2814,12 +2837,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'indeterminate_check_box',
       data: Icons.indeterminate_check_box,
       pack: IconPack.material),
-  'info':
-      IconPickerIcon(name: 'info', data: Icons.info, pack: IconPack.material),
+  'info': IconPickerIcon(
+      name: 'info', data: Icons.info, pack: IconPack.material),
   'info_outline': IconPickerIcon(
       name: 'info_outline', data: Icons.info_outline, pack: IconPack.material),
-  'input':
-      IconPickerIcon(name: 'input', data: Icons.input, pack: IconPack.material),
+  'input': IconPickerIcon(
+      name: 'input', data: Icons.input, pack: IconPack.material),
   'insert_chart': IconPickerIcon(
       name: 'insert_chart', data: Icons.insert_chart, pack: IconPack.material),
   'insert_comment': IconPickerIcon(
@@ -2884,9 +2907,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'ios_share': IconPickerIcon(
       name: 'ios_share', data: Icons.ios_share, pack: IconPack.material),
-  'iron':
-      IconPickerIcon(name: 'iron', data: Icons.iron, pack: IconPack.material),
-  'iso': IconPickerIcon(name: 'iso', data: Icons.iso, pack: IconPack.material),
+  'iron': IconPickerIcon(
+      name: 'iron', data: Icons.iron, pack: IconPack.material),
+  'iso': IconPickerIcon(
+      name: 'iso', data: Icons.iso, pack: IconPack.material),
   'javascript': IconPickerIcon(
       name: 'javascript', data: Icons.javascript, pack: IconPack.material),
   'join_full': IconPickerIcon(
@@ -2901,7 +2925,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'kayaking', data: Icons.kayaking, pack: IconPack.material),
   'kebab_dining': IconPickerIcon(
       name: 'kebab_dining', data: Icons.kebab_dining, pack: IconPack.material),
-  'key': IconPickerIcon(name: 'key', data: Icons.key, pack: IconPack.material),
+  'key': IconPickerIcon(
+      name: 'key', data: Icons.key, pack: IconPack.material),
   'key_off': IconPickerIcon(
       name: 'key_off', data: Icons.key_off, pack: IconPack.material),
   'keyboard': IconPickerIcon(
@@ -2984,8 +3009,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'kitchen', data: Icons.kitchen, pack: IconPack.material),
   'kitesurfing': IconPickerIcon(
       name: 'kitesurfing', data: Icons.kitesurfing, pack: IconPack.material),
-  'label':
-      IconPickerIcon(name: 'label', data: Icons.label, pack: IconPack.material),
+  'label': IconPickerIcon(
+      name: 'label', data: Icons.label, pack: IconPack.material),
   'label_important': IconPickerIcon(
       name: 'label_important',
       data: Icons.label_important,
@@ -3000,7 +3025,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'label_outline',
       data: Icons.label_outline,
       pack: IconPack.material),
-  'lan': IconPickerIcon(name: 'lan', data: Icons.lan, pack: IconPack.material),
+  'lan': IconPickerIcon(
+      name: 'lan', data: Icons.lan, pack: IconPack.material),
   'landscape': IconPickerIcon(
       name: 'landscape', data: Icons.landscape, pack: IconPack.material),
   'landslide': IconPickerIcon(
@@ -3041,8 +3067,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'legend_toggle',
       data: Icons.legend_toggle,
       pack: IconPack.material),
-  'lens':
-      IconPickerIcon(name: 'lens', data: Icons.lens, pack: IconPack.material),
+  'lens': IconPickerIcon(
+      name: 'lens', data: Icons.lens, pack: IconPack.material),
   'lens_blur': IconPickerIcon(
       name: 'lens_blur', data: Icons.lens_blur, pack: IconPack.material),
   'library_add': IconPickerIcon(
@@ -3059,8 +3085,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'library_music',
       data: Icons.library_music,
       pack: IconPack.material),
-  'light':
-      IconPickerIcon(name: 'light', data: Icons.light, pack: IconPack.material),
+  'light': IconPickerIcon(
+      name: 'light', data: Icons.light, pack: IconPack.material),
   'light_mode': IconPickerIcon(
       name: 'light_mode', data: Icons.light_mode, pack: IconPack.material),
   'lightbulb': IconPickerIcon(
@@ -3081,8 +3107,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'line_weight', data: Icons.line_weight, pack: IconPack.material),
   'linear_scale': IconPickerIcon(
       name: 'linear_scale', data: Icons.linear_scale, pack: IconPack.material),
-  'link':
-      IconPickerIcon(name: 'link', data: Icons.link, pack: IconPack.material),
+  'link': IconPickerIcon(
+      name: 'link', data: Icons.link, pack: IconPack.material),
   'link_off': IconPickerIcon(
       name: 'link_off', data: Icons.link_off, pack: IconPack.material),
   'linked_camera': IconPickerIcon(
@@ -3091,8 +3117,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'liquor': IconPickerIcon(
       name: 'liquor', data: Icons.liquor, pack: IconPack.material),
-  'list':
-      IconPickerIcon(name: 'list', data: Icons.list, pack: IconPack.material),
+  'list': IconPickerIcon(
+      name: 'list', data: Icons.list, pack: IconPack.material),
   'list_alt': IconPickerIcon(
       name: 'list_alt', data: Icons.list_alt, pack: IconPack.material),
   'live_help': IconPickerIcon(
@@ -3229,8 +3255,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'location_searching',
       data: Icons.location_searching,
       pack: IconPack.material),
-  'lock':
-      IconPickerIcon(name: 'lock', data: Icons.lock, pack: IconPack.material),
+  'lock': IconPickerIcon(
+      name: 'lock', data: Icons.lock, pack: IconPack.material),
   'lock_clock': IconPickerIcon(
       name: 'lock_clock', data: Icons.lock_clock, pack: IconPack.material),
   'lock_open': IconPickerIcon(
@@ -3241,14 +3267,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'lock_person', data: Icons.lock_person, pack: IconPack.material),
   'lock_reset': IconPickerIcon(
       name: 'lock_reset', data: Icons.lock_reset, pack: IconPack.material),
-  'login':
-      IconPickerIcon(name: 'login', data: Icons.login, pack: IconPack.material),
+  'login': IconPickerIcon(
+      name: 'login', data: Icons.login, pack: IconPack.material),
   'logo_dev': IconPickerIcon(
       name: 'logo_dev', data: Icons.logo_dev, pack: IconPack.material),
   'logout': IconPickerIcon(
       name: 'logout', data: Icons.logout, pack: IconPack.material),
-  'looks':
-      IconPickerIcon(name: 'looks', data: Icons.looks, pack: IconPack.material),
+  'looks': IconPickerIcon(
+      name: 'looks', data: Icons.looks, pack: IconPack.material),
   'looks_3': IconPickerIcon(
       name: 'looks_3', data: Icons.looks_3, pack: IconPack.material),
   'looks_4': IconPickerIcon(
@@ -3261,10 +3287,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'looks_one', data: Icons.looks_one, pack: IconPack.material),
   'looks_two': IconPickerIcon(
       name: 'looks_two', data: Icons.looks_two, pack: IconPack.material),
-  'loop':
-      IconPickerIcon(name: 'loop', data: Icons.loop, pack: IconPack.material),
-  'loupe':
-      IconPickerIcon(name: 'loupe', data: Icons.loupe, pack: IconPack.material),
+  'loop': IconPickerIcon(
+      name: 'loop', data: Icons.loop, pack: IconPack.material),
+  'loupe': IconPickerIcon(
+      name: 'loupe', data: Icons.loupe, pack: IconPack.material),
   'low_priority': IconPickerIcon(
       name: 'low_priority', data: Icons.low_priority, pack: IconPack.material),
   'loyalty': IconPickerIcon(
@@ -3285,21 +3311,22 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'lyrics', data: Icons.lyrics, pack: IconPack.material),
   'macro_off': IconPickerIcon(
       name: 'macro_off', data: Icons.macro_off, pack: IconPack.material),
-  'mail':
-      IconPickerIcon(name: 'mail', data: Icons.mail, pack: IconPack.material),
+  'mail': IconPickerIcon(
+      name: 'mail', data: Icons.mail, pack: IconPack.material),
   'mail_lock': IconPickerIcon(
       name: 'mail_lock', data: Icons.mail_lock, pack: IconPack.material),
   'mail_outline': IconPickerIcon(
       name: 'mail_outline', data: Icons.mail_outline, pack: IconPack.material),
-  'male':
-      IconPickerIcon(name: 'male', data: Icons.male, pack: IconPack.material),
-  'man': IconPickerIcon(name: 'man', data: Icons.man, pack: IconPack.material),
-  'man_2':
-      IconPickerIcon(name: 'man_2', data: Icons.man_2, pack: IconPack.material),
-  'man_3':
-      IconPickerIcon(name: 'man_3', data: Icons.man_3, pack: IconPack.material),
-  'man_4':
-      IconPickerIcon(name: 'man_4', data: Icons.man_4, pack: IconPack.material),
+  'male': IconPickerIcon(
+      name: 'male', data: Icons.male, pack: IconPack.material),
+  'man': IconPickerIcon(
+      name: 'man', data: Icons.man, pack: IconPack.material),
+  'man_2': IconPickerIcon(
+      name: 'man_2', data: Icons.man_2, pack: IconPack.material),
+  'man_3': IconPickerIcon(
+      name: 'man_3', data: Icons.man_3, pack: IconPack.material),
+  'man_4': IconPickerIcon(
+      name: 'man_4', data: Icons.man_4, pack: IconPack.material),
   'manage_accounts': IconPickerIcon(
       name: 'manage_accounts',
       data: Icons.manage_accounts,
@@ -3312,7 +3339,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'manage_search',
       data: Icons.manage_search,
       pack: IconPack.material),
-  'map': IconPickerIcon(name: 'map', data: Icons.map, pack: IconPack.material),
+  'map': IconPickerIcon(
+      name: 'map', data: Icons.map, pack: IconPack.material),
   'maps_home_work': IconPickerIcon(
       name: 'maps_home_work',
       data: Icons.maps_home_work,
@@ -3351,8 +3379,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'markunread_mailbox',
       data: Icons.markunread_mailbox,
       pack: IconPack.material),
-  'masks':
-      IconPickerIcon(name: 'masks', data: Icons.masks, pack: IconPack.material),
+  'masks': IconPickerIcon(
+      name: 'masks', data: Icons.masks, pack: IconPack.material),
   'maximize': IconPickerIcon(
       name: 'maximize', data: Icons.maximize, pack: IconPack.material),
   'media_bluetooth_off': IconPickerIcon(
@@ -3383,14 +3411,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'meeting_room', data: Icons.meeting_room, pack: IconPack.material),
   'memory': IconPickerIcon(
       name: 'memory', data: Icons.memory, pack: IconPack.material),
-  'menu':
-      IconPickerIcon(name: 'menu', data: Icons.menu, pack: IconPack.material),
+  'menu': IconPickerIcon(
+      name: 'menu', data: Icons.menu, pack: IconPack.material),
   'menu_book': IconPickerIcon(
       name: 'menu_book', data: Icons.menu_book, pack: IconPack.material),
   'menu_open': IconPickerIcon(
       name: 'menu_open', data: Icons.menu_open, pack: IconPack.material),
-  'merge':
-      IconPickerIcon(name: 'merge', data: Icons.merge, pack: IconPack.material),
+  'merge': IconPickerIcon(
+      name: 'merge', data: Icons.merge, pack: IconPack.material),
   'merge_type': IconPickerIcon(
       name: 'merge_type', data: Icons.merge_type, pack: IconPack.material),
   'message': IconPickerIcon(
@@ -3401,7 +3429,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'messenger_outline',
       data: Icons.messenger_outline,
       pack: IconPack.material),
-  'mic': IconPickerIcon(name: 'mic', data: Icons.mic, pack: IconPack.material),
+  'mic': IconPickerIcon(
+      name: 'mic', data: Icons.mic, pack: IconPack.material),
   'mic_external_off': IconPickerIcon(
       name: 'mic_external_off',
       data: Icons.mic_external_off,
@@ -3432,7 +3461,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'missed_video_call',
       data: Icons.missed_video_call,
       pack: IconPack.material),
-  'mms': IconPickerIcon(name: 'mms', data: Icons.mms, pack: IconPack.material),
+  'mms': IconPickerIcon(
+      name: 'mms', data: Icons.mms, pack: IconPack.material),
   'mobile_friendly': IconPickerIcon(
       name: 'mobile_friendly',
       data: Icons.mobile_friendly,
@@ -3447,8 +3477,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'mobiledata_off',
       data: Icons.mobiledata_off,
       pack: IconPack.material),
-  'mode':
-      IconPickerIcon(name: 'mode', data: Icons.mode, pack: IconPack.material),
+  'mode': IconPickerIcon(
+      name: 'mode', data: Icons.mode, pack: IconPack.material),
   'mode_comment': IconPickerIcon(
       name: 'mode_comment', data: Icons.mode_comment, pack: IconPack.material),
   'mode_edit': IconPickerIcon(
@@ -3475,8 +3505,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'monetization_on',
       data: Icons.monetization_on,
       pack: IconPack.material),
-  'money':
-      IconPickerIcon(name: 'money', data: Icons.money, pack: IconPack.material),
+  'money': IconPickerIcon(
+      name: 'money', data: Icons.money, pack: IconPack.material),
   'money_off': IconPickerIcon(
       name: 'money_off', data: Icons.money_off, pack: IconPack.material),
   'money_off_csred': IconPickerIcon(
@@ -3497,14 +3527,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'monochrome_photos',
       data: Icons.monochrome_photos,
       pack: IconPack.material),
-  'mood':
-      IconPickerIcon(name: 'mood', data: Icons.mood, pack: IconPack.material),
+  'mood': IconPickerIcon(
+      name: 'mood', data: Icons.mood, pack: IconPack.material),
   'mood_bad': IconPickerIcon(
       name: 'mood_bad', data: Icons.mood_bad, pack: IconPack.material),
-  'moped':
-      IconPickerIcon(name: 'moped', data: Icons.moped, pack: IconPack.material),
-  'more':
-      IconPickerIcon(name: 'more', data: Icons.more, pack: IconPack.material),
+  'moped': IconPickerIcon(
+      name: 'moped', data: Icons.moped, pack: IconPack.material),
+  'more': IconPickerIcon(
+      name: 'more', data: Icons.more, pack: IconPack.material),
   'more_horiz': IconPickerIcon(
       name: 'more_horiz', data: Icons.more_horiz, pack: IconPack.material),
   'more_time': IconPickerIcon(
@@ -3535,8 +3565,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'motorcycle': IconPickerIcon(
       name: 'motorcycle', data: Icons.motorcycle, pack: IconPack.material),
-  'mouse':
-      IconPickerIcon(name: 'mouse', data: Icons.mouse, pack: IconPack.material),
+  'mouse': IconPickerIcon(
+      name: 'mouse', data: Icons.mouse, pack: IconPack.material),
   'move_down': IconPickerIcon(
       name: 'move_down', data: Icons.move_down, pack: IconPack.material),
   'move_to_inbox': IconPickerIcon(
@@ -3545,8 +3575,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'move_up': IconPickerIcon(
       name: 'move_up', data: Icons.move_up, pack: IconPack.material),
-  'movie':
-      IconPickerIcon(name: 'movie', data: Icons.movie, pack: IconPack.material),
+  'movie': IconPickerIcon(
+      name: 'movie', data: Icons.movie, pack: IconPack.material),
   'movie_creation': IconPickerIcon(
       name: 'movie_creation',
       data: Icons.movie_creation,
@@ -3557,7 +3587,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'movie_filter', data: Icons.movie_filter, pack: IconPack.material),
   'moving': IconPickerIcon(
       name: 'moving', data: Icons.moving, pack: IconPack.material),
-  'mp': IconPickerIcon(name: 'mp', data: Icons.mp, pack: IconPack.material),
+  'mp':
+      IconPickerIcon(name: 'mp', data: Icons.mp, pack: IconPack.material),
   'multiline_chart': IconPickerIcon(
       name: 'multiline_chart',
       data: Icons.multiline_chart,
@@ -3592,7 +3623,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'my_location': IconPickerIcon(
       name: 'my_location', data: Icons.my_location, pack: IconPack.material),
-  'nat': IconPickerIcon(name: 'nat', data: Icons.nat, pack: IconPack.material),
+  'nat': IconPickerIcon(
+      name: 'nat', data: Icons.nat, pack: IconPack.material),
   'nature': IconPickerIcon(
       name: 'nature', data: Icons.nature, pack: IconPack.material),
   'nature_people': IconPickerIcon(
@@ -3659,7 +3691,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'next_plan', data: Icons.next_plan, pack: IconPack.material),
   'next_week': IconPickerIcon(
       name: 'next_week', data: Icons.next_week, pack: IconPack.material),
-  'nfc': IconPickerIcon(name: 'nfc', data: Icons.nfc, pack: IconPack.material),
+  'nfc': IconPickerIcon(
+      name: 'nfc', data: Icons.nfc, pack: IconPack.material),
   'night_shelter': IconPickerIcon(
       name: 'night_shelter',
       data: Icons.night_shelter,
@@ -3732,8 +3765,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'nordic_walking',
       data: Icons.nordic_walking,
       pack: IconPack.material),
-  'north':
-      IconPickerIcon(name: 'north', data: Icons.north, pack: IconPack.material),
+  'north': IconPickerIcon(
+      name: 'north', data: Icons.north, pack: IconPack.material),
   'north_east': IconPickerIcon(
       name: 'north_east', data: Icons.north_east, pack: IconPack.material),
   'north_west': IconPickerIcon(
@@ -3752,14 +3785,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'not_started': IconPickerIcon(
       name: 'not_started', data: Icons.not_started, pack: IconPack.material),
-  'note':
-      IconPickerIcon(name: 'note', data: Icons.note, pack: IconPack.material),
+  'note': IconPickerIcon(
+      name: 'note', data: Icons.note, pack: IconPack.material),
   'note_add': IconPickerIcon(
       name: 'note_add', data: Icons.note_add, pack: IconPack.material),
   'note_alt': IconPickerIcon(
       name: 'note_alt', data: Icons.note_alt, pack: IconPack.material),
-  'notes':
-      IconPickerIcon(name: 'notes', data: Icons.notes, pack: IconPack.material),
+  'notes': IconPickerIcon(
+      name: 'notes', data: Icons.notes, pack: IconPack.material),
   'notification_add': IconPickerIcon(
       name: 'notification_add',
       data: Icons.notification_add,
@@ -3864,12 +3897,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'output', data: Icons.output, pack: IconPack.material),
   'padding': IconPickerIcon(
       name: 'padding', data: Icons.padding, pack: IconPack.material),
-  'pages':
-      IconPickerIcon(name: 'pages', data: Icons.pages, pack: IconPack.material),
+  'pages': IconPickerIcon(
+      name: 'pages', data: Icons.pages, pack: IconPack.material),
   'pageview': IconPickerIcon(
       name: 'pageview', data: Icons.pageview, pack: IconPack.material),
-  'paid':
-      IconPickerIcon(name: 'paid', data: Icons.paid, pack: IconPack.material),
+  'paid': IconPickerIcon(
+      name: 'paid', data: Icons.paid, pack: IconPack.material),
   'palette': IconPickerIcon(
       name: 'palette', data: Icons.palette, pack: IconPack.material),
   'pallet': IconPickerIcon(
@@ -3922,18 +3955,18 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'paragliding': IconPickerIcon(
       name: 'paragliding', data: Icons.paragliding, pack: IconPack.material),
-  'park':
-      IconPickerIcon(name: 'park', data: Icons.park, pack: IconPack.material),
+  'park': IconPickerIcon(
+      name: 'park', data: Icons.park, pack: IconPack.material),
   'party_mode': IconPickerIcon(
       name: 'party_mode', data: Icons.party_mode, pack: IconPack.material),
   'password': IconPickerIcon(
       name: 'password', data: Icons.password, pack: IconPack.material),
-  'paste':
-      IconPickerIcon(name: 'paste', data: Icons.paste, pack: IconPack.material),
+  'paste': IconPickerIcon(
+      name: 'paste', data: Icons.paste, pack: IconPack.material),
   'pattern': IconPickerIcon(
       name: 'pattern', data: Icons.pattern, pack: IconPack.material),
-  'pause':
-      IconPickerIcon(name: 'pause', data: Icons.pause, pack: IconPack.material),
+  'pause': IconPickerIcon(
+      name: 'pause', data: Icons.pause, pack: IconPack.material),
   'pause_circle': IconPickerIcon(
       name: 'pause_circle', data: Icons.pause_circle, pack: IconPack.material),
   'pause_circle_filled': IconPickerIcon(
@@ -4072,12 +4105,12 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'pest_control_rodent',
       data: Icons.pest_control_rodent,
       pack: IconPack.material),
-  'pets':
-      IconPickerIcon(name: 'pets', data: Icons.pets, pack: IconPack.material),
+  'pets': IconPickerIcon(
+      name: 'pets', data: Icons.pets, pack: IconPack.material),
   'phishing': IconPickerIcon(
       name: 'phishing', data: Icons.phishing, pack: IconPack.material),
-  'phone':
-      IconPickerIcon(name: 'phone', data: Icons.phone, pack: IconPack.material),
+  'phone': IconPickerIcon(
+      name: 'phone', data: Icons.phone, pack: IconPack.material),
   'phone_android': IconPickerIcon(
       name: 'phone_android',
       data: Icons.phone_android,
@@ -4136,8 +4169,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'phonelink_setup',
       data: Icons.phonelink_setup,
       pack: IconPack.material),
-  'photo':
-      IconPickerIcon(name: 'photo', data: Icons.photo, pack: IconPack.material),
+  'photo': IconPickerIcon(
+      name: 'photo', data: Icons.photo, pack: IconPack.material),
   'photo_album': IconPickerIcon(
       name: 'photo_album', data: Icons.photo_album, pack: IconPack.material),
   'photo_camera': IconPickerIcon(
@@ -4168,9 +4201,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'photo_size_select_small',
       data: Icons.photo_size_select_small,
       pack: IconPack.material),
-  'php': IconPickerIcon(name: 'php', data: Icons.php, pack: IconPack.material),
-  'piano':
-      IconPickerIcon(name: 'piano', data: Icons.piano, pack: IconPack.material),
+  'php': IconPickerIcon(
+      name: 'php', data: Icons.php, pack: IconPack.material),
+  'piano': IconPickerIcon(
+      name: 'piano', data: Icons.piano, pack: IconPack.material),
   'piano_off': IconPickerIcon(
       name: 'piano_off', data: Icons.piano_off, pack: IconPack.material),
   'picture_as_pdf': IconPickerIcon(
@@ -4191,22 +4225,24 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'pie_chart_outline',
       data: Icons.pie_chart_outline,
       pack: IconPack.material),
-  'pin': IconPickerIcon(name: 'pin', data: Icons.pin, pack: IconPack.material),
+  'pin': IconPickerIcon(
+      name: 'pin', data: Icons.pin, pack: IconPack.material),
   'pin_drop': IconPickerIcon(
       name: 'pin_drop', data: Icons.pin_drop, pack: IconPack.material),
   'pin_end': IconPickerIcon(
       name: 'pin_end', data: Icons.pin_end, pack: IconPack.material),
   'pin_invoke': IconPickerIcon(
       name: 'pin_invoke', data: Icons.pin_invoke, pack: IconPack.material),
-  'pinch':
-      IconPickerIcon(name: 'pinch', data: Icons.pinch, pack: IconPack.material),
+  'pinch': IconPickerIcon(
+      name: 'pinch', data: Icons.pinch, pack: IconPack.material),
   'pivot_table_chart': IconPickerIcon(
       name: 'pivot_table_chart',
       data: Icons.pivot_table_chart,
       pack: IconPack.material),
-  'pix': IconPickerIcon(name: 'pix', data: Icons.pix, pack: IconPack.material),
-  'place':
-      IconPickerIcon(name: 'place', data: Icons.place, pack: IconPack.material),
+  'pix': IconPickerIcon(
+      name: 'pix', data: Icons.pix, pack: IconPack.material),
+  'place': IconPickerIcon(
+      name: 'place', data: Icons.place, pack: IconPack.material),
   'plagiarism': IconPickerIcon(
       name: 'plagiarism', data: Icons.plagiarism, pack: IconPack.material),
   'play_arrow': IconPickerIcon(
@@ -4269,14 +4305,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'policy': IconPickerIcon(
       name: 'policy', data: Icons.policy, pack: IconPack.material),
-  'poll':
-      IconPickerIcon(name: 'poll', data: Icons.poll, pack: IconPack.material),
+  'poll': IconPickerIcon(
+      name: 'poll', data: Icons.poll, pack: IconPack.material),
   'polyline': IconPickerIcon(
       name: 'polyline', data: Icons.polyline, pack: IconPack.material),
   'polymer': IconPickerIcon(
       name: 'polymer', data: Icons.polymer, pack: IconPack.material),
-  'pool':
-      IconPickerIcon(name: 'pool', data: Icons.pool, pack: IconPack.material),
+  'pool': IconPickerIcon(
+      name: 'pool', data: Icons.pool, pack: IconPack.material),
   'portable_wifi_off': IconPickerIcon(
       name: 'portable_wifi_off',
       data: Icons.portable_wifi_off,
@@ -4285,8 +4321,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'portrait', data: Icons.portrait, pack: IconPack.material),
   'post_add': IconPickerIcon(
       name: 'post_add', data: Icons.post_add, pack: IconPack.material),
-  'power':
-      IconPickerIcon(name: 'power', data: Icons.power, pack: IconPack.material),
+  'power': IconPickerIcon(
+      name: 'power', data: Icons.power, pack: IconPack.material),
   'power_input': IconPickerIcon(
       name: 'power_input', data: Icons.power_input, pack: IconPack.material),
   'power_off': IconPickerIcon(
@@ -4313,8 +4349,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'price_change', data: Icons.price_change, pack: IconPack.material),
   'price_check': IconPickerIcon(
       name: 'price_check', data: Icons.price_check, pack: IconPack.material),
-  'print':
-      IconPickerIcon(name: 'print', data: Icons.print, pack: IconPack.material),
+  'print': IconPickerIcon(
+      name: 'print', data: Icons.print, pack: IconPack.material),
   'print_disabled': IconPickerIcon(
       name: 'print_disabled',
       data: Icons.print_disabled,
@@ -4379,8 +4415,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'question_mark',
       data: Icons.question_mark,
       pack: IconPack.material),
-  'queue':
-      IconPickerIcon(name: 'queue', data: Icons.queue, pack: IconPack.material),
+  'queue': IconPickerIcon(
+      name: 'queue', data: Icons.queue, pack: IconPack.material),
   'queue_music': IconPickerIcon(
       name: 'queue_music', data: Icons.queue_music, pack: IconPack.material),
   'queue_play_next': IconPickerIcon(
@@ -4397,16 +4433,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'quickreply': IconPickerIcon(
       name: 'quickreply', data: Icons.quickreply, pack: IconPack.material),
-  'quiz':
-      IconPickerIcon(name: 'quiz', data: Icons.quiz, pack: IconPack.material),
-  'quora':
-      IconPickerIcon(name: 'quora', data: Icons.quora, pack: IconPack.material),
+  'quiz': IconPickerIcon(
+      name: 'quiz', data: Icons.quiz, pack: IconPack.material),
+  'quora': IconPickerIcon(
+      name: 'quora', data: Icons.quora, pack: IconPack.material),
   'r_mobiledata': IconPickerIcon(
       name: 'r_mobiledata', data: Icons.r_mobiledata, pack: IconPack.material),
-  'radar':
-      IconPickerIcon(name: 'radar', data: Icons.radar, pack: IconPack.material),
-  'radio':
-      IconPickerIcon(name: 'radio', data: Icons.radio, pack: IconPack.material),
+  'radar': IconPickerIcon(
+      name: 'radar', data: Icons.radar, pack: IconPack.material),
+  'radio': IconPickerIcon(
+      name: 'radio', data: Icons.radio, pack: IconPack.material),
   'radio_button_checked': IconPickerIcon(
       name: 'radio_button_checked',
       data: Icons.radio_button_checked,
@@ -4469,8 +4505,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'reddit', data: Icons.reddit, pack: IconPack.material),
   'redeem': IconPickerIcon(
       name: 'redeem', data: Icons.redeem, pack: IconPack.material),
-  'redo':
-      IconPickerIcon(name: 'redo', data: Icons.redo, pack: IconPack.material),
+  'redo': IconPickerIcon(
+      name: 'redo', data: Icons.redo, pack: IconPack.material),
   'reduce_capacity': IconPickerIcon(
       name: 'reduce_capacity',
       data: Icons.reduce_capacity,
@@ -4535,8 +4571,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'replay_circle_filled',
       data: Icons.replay_circle_filled,
       pack: IconPack.material),
-  'reply':
-      IconPickerIcon(name: 'reply', data: Icons.reply, pack: IconPack.material),
+  'reply': IconPickerIcon(
+      name: 'reply', data: Icons.reply, pack: IconPack.material),
   'reply_all': IconPickerIcon(
       name: 'reply_all', data: Icons.reply_all, pack: IconPack.material),
   'report': IconPickerIcon(
@@ -4601,8 +4637,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'roofing': IconPickerIcon(
       name: 'roofing', data: Icons.roofing, pack: IconPack.material),
-  'room':
-      IconPickerIcon(name: 'room', data: Icons.room, pack: IconPack.material),
+  'room': IconPickerIcon(
+      name: 'room', data: Icons.room, pack: IconPack.material),
   'room_preferences': IconPickerIcon(
       name: 'room_preferences',
       data: Icons.room_preferences,
@@ -4633,19 +4669,20 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'rounded_corner',
       data: Icons.rounded_corner,
       pack: IconPack.material),
-  'route':
-      IconPickerIcon(name: 'route', data: Icons.route, pack: IconPack.material),
+  'route': IconPickerIcon(
+      name: 'route', data: Icons.route, pack: IconPack.material),
   'router': IconPickerIcon(
       name: 'router', data: Icons.router, pack: IconPack.material),
   'rowing': IconPickerIcon(
       name: 'rowing', data: Icons.rowing, pack: IconPack.material),
   'rss_feed': IconPickerIcon(
       name: 'rss_feed', data: Icons.rss_feed, pack: IconPack.material),
-  'rsvp':
-      IconPickerIcon(name: 'rsvp', data: Icons.rsvp, pack: IconPack.material),
-  'rtt': IconPickerIcon(name: 'rtt', data: Icons.rtt, pack: IconPack.material),
-  'rule':
-      IconPickerIcon(name: 'rule', data: Icons.rule, pack: IconPack.material),
+  'rsvp': IconPickerIcon(
+      name: 'rsvp', data: Icons.rsvp, pack: IconPack.material),
+  'rtt': IconPickerIcon(
+      name: 'rtt', data: Icons.rtt, pack: IconPack.material),
+  'rule': IconPickerIcon(
+      name: 'rule', data: Icons.rule, pack: IconPack.material),
   'rule_folder': IconPickerIcon(
       name: 'rule_folder', data: Icons.rule_folder, pack: IconPack.material),
   'run_circle': IconPickerIcon(
@@ -4672,8 +4709,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'satellite_alt',
       data: Icons.satellite_alt,
       pack: IconPack.material),
-  'save':
-      IconPickerIcon(name: 'save', data: Icons.save, pack: IconPack.material),
+  'save': IconPickerIcon(
+      name: 'save', data: Icons.save, pack: IconPack.material),
   'save_alt': IconPickerIcon(
       name: 'save_alt', data: Icons.save_alt, pack: IconPack.material),
   'save_as': IconPickerIcon(
@@ -4682,8 +4719,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'saved_search', data: Icons.saved_search, pack: IconPack.material),
   'savings': IconPickerIcon(
       name: 'savings', data: Icons.savings, pack: IconPack.material),
-  'scale':
-      IconPickerIcon(name: 'scale', data: Icons.scale, pack: IconPack.material),
+  'scale': IconPickerIcon(
+      name: 'scale', data: Icons.scale, pack: IconPack.material),
   'scanner': IconPickerIcon(
       name: 'scanner', data: Icons.scanner, pack: IconPack.material),
   'scatter_plot': IconPickerIcon(
@@ -4700,8 +4737,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'school', data: Icons.school, pack: IconPack.material),
   'science': IconPickerIcon(
       name: 'science', data: Icons.science, pack: IconPack.material),
-  'score':
-      IconPickerIcon(name: 'score', data: Icons.score, pack: IconPack.material),
+  'score': IconPickerIcon(
+      name: 'score', data: Icons.score, pack: IconPack.material),
   'scoreboard': IconPickerIcon(
       name: 'scoreboard', data: Icons.scoreboard, pack: IconPack.material),
   'screen_lock_landscape': IconPickerIcon(
@@ -4738,7 +4775,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'scuba_diving': IconPickerIcon(
       name: 'scuba_diving', data: Icons.scuba_diving, pack: IconPack.material),
-  'sd': IconPickerIcon(name: 'sd', data: Icons.sd, pack: IconPack.material),
+  'sd':
+      IconPickerIcon(name: 'sd', data: Icons.sd, pack: IconPack.material),
   'sd_card': IconPickerIcon(
       name: 'sd_card', data: Icons.sd_card, pack: IconPack.material),
   'sd_card_alert': IconPickerIcon(
@@ -4773,10 +4811,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'self_improvement',
       data: Icons.self_improvement,
       pack: IconPack.material),
-  'sell':
-      IconPickerIcon(name: 'sell', data: Icons.sell, pack: IconPack.material),
-  'send':
-      IconPickerIcon(name: 'send', data: Icons.send, pack: IconPack.material),
+  'sell': IconPickerIcon(
+      name: 'sell', data: Icons.sell, pack: IconPack.material),
+  'send': IconPickerIcon(
+      name: 'send', data: Icons.send, pack: IconPack.material),
   'send_and_archive': IconPickerIcon(
       name: 'send_and_archive',
       data: Icons.send_and_archive,
@@ -4915,8 +4953,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'severe_cold', data: Icons.severe_cold, pack: IconPack.material),
   'shape_line': IconPickerIcon(
       name: 'shape_line', data: Icons.shape_line, pack: IconPack.material),
-  'share':
-      IconPickerIcon(name: 'share', data: Icons.share, pack: IconPack.material),
+  'share': IconPickerIcon(
+      name: 'share', data: Icons.share, pack: IconPack.material),
   'share_arrival_time': IconPickerIcon(
       name: 'share_arrival_time',
       data: Icons.share_arrival_time,
@@ -4931,8 +4969,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'shield', data: Icons.shield, pack: IconPack.material),
   'shield_moon': IconPickerIcon(
       name: 'shield_moon', data: Icons.shield_moon, pack: IconPack.material),
-  'shop':
-      IconPickerIcon(name: 'shop', data: Icons.shop, pack: IconPack.material),
+  'shop': IconPickerIcon(
+      name: 'shop', data: Icons.shop, pack: IconPack.material),
   'shop_2': IconPickerIcon(
       name: 'shop_2', data: Icons.shop_2, pack: IconPack.material),
   'shop_two': IconPickerIcon(
@@ -4969,8 +5007,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'shutter_speed',
       data: Icons.shutter_speed,
       pack: IconPack.material),
-  'sick':
-      IconPickerIcon(name: 'sick', data: Icons.sick, pack: IconPack.material),
+  'sick': IconPickerIcon(
+      name: 'sick', data: Icons.sick, pack: IconPack.material),
   'sign_language': IconPickerIcon(
       name: 'sign_language',
       data: Icons.sign_language,
@@ -5069,7 +5107,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'single_bed': IconPickerIcon(
       name: 'single_bed', data: Icons.single_bed, pack: IconPack.material),
-  'sip': IconPickerIcon(name: 'sip', data: Icons.sip, pack: IconPack.material),
+  'sip': IconPickerIcon(
+      name: 'sip', data: Icons.sip, pack: IconPack.material),
   'skateboarding': IconPickerIcon(
       name: 'skateboarding',
       data: Icons.skateboarding,
@@ -5106,7 +5145,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'smoking_rooms',
       data: Icons.smoking_rooms,
       pack: IconPack.material),
-  'sms': IconPickerIcon(name: 'sms', data: Icons.sms, pack: IconPack.material),
+  'sms': IconPickerIcon(
+      name: 'sms', data: Icons.sms, pack: IconPack.material),
   'sms_failed': IconPickerIcon(
       name: 'sms_failed', data: Icons.sms_failed, pack: IconPack.material),
   'snapchat': IconPickerIcon(
@@ -5125,27 +5165,28 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'snowmobile', data: Icons.snowmobile, pack: IconPack.material),
   'snowshoeing': IconPickerIcon(
       name: 'snowshoeing', data: Icons.snowshoeing, pack: IconPack.material),
-  'soap':
-      IconPickerIcon(name: 'soap', data: Icons.soap, pack: IconPack.material),
+  'soap': IconPickerIcon(
+      name: 'soap', data: Icons.soap, pack: IconPack.material),
   'social_distance': IconPickerIcon(
       name: 'social_distance',
       data: Icons.social_distance,
       pack: IconPack.material),
   'solar_power': IconPickerIcon(
       name: 'solar_power', data: Icons.solar_power, pack: IconPack.material),
-  'sort':
-      IconPickerIcon(name: 'sort', data: Icons.sort, pack: IconPack.material),
+  'sort': IconPickerIcon(
+      name: 'sort', data: Icons.sort, pack: IconPack.material),
   'sort_by_alpha': IconPickerIcon(
       name: 'sort_by_alpha',
       data: Icons.sort_by_alpha,
       pack: IconPack.material),
-  'sos': IconPickerIcon(name: 'sos', data: Icons.sos, pack: IconPack.material),
+  'sos': IconPickerIcon(
+      name: 'sos', data: Icons.sos, pack: IconPack.material),
   'soup_kitchen': IconPickerIcon(
       name: 'soup_kitchen', data: Icons.soup_kitchen, pack: IconPack.material),
   'source': IconPickerIcon(
       name: 'source', data: Icons.source, pack: IconPack.material),
-  'south':
-      IconPickerIcon(name: 'south', data: Icons.south, pack: IconPack.material),
+  'south': IconPickerIcon(
+      name: 'south', data: Icons.south, pack: IconPack.material),
   'south_america': IconPickerIcon(
       name: 'south_america',
       data: Icons.south_america,
@@ -5154,7 +5195,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'south_east', data: Icons.south_east, pack: IconPack.material),
   'south_west': IconPickerIcon(
       name: 'south_west', data: Icons.south_west, pack: IconPack.material),
-  'spa': IconPickerIcon(name: 'spa', data: Icons.spa, pack: IconPack.material),
+  'spa': IconPickerIcon(
+      name: 'spa', data: Icons.spa, pack: IconPack.material),
   'space_bar': IconPickerIcon(
       name: 'space_bar', data: Icons.space_bar, pack: IconPack.material),
   'space_dashboard': IconPickerIcon(
@@ -5191,14 +5233,14 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'speaker_phone',
       data: Icons.speaker_phone,
       pack: IconPack.material),
-  'speed':
-      IconPickerIcon(name: 'speed', data: Icons.speed, pack: IconPack.material),
+  'speed': IconPickerIcon(
+      name: 'speed', data: Icons.speed, pack: IconPack.material),
   'spellcheck': IconPickerIcon(
       name: 'spellcheck', data: Icons.spellcheck, pack: IconPack.material),
   'splitscreen': IconPickerIcon(
       name: 'splitscreen', data: Icons.splitscreen, pack: IconPack.material),
-  'spoke':
-      IconPickerIcon(name: 'spoke', data: Icons.spoke, pack: IconPack.material),
+  'spoke': IconPickerIcon(
+      name: 'spoke', data: Icons.spoke, pack: IconPack.material),
   'sports': IconPickerIcon(
       name: 'sports', data: Icons.sports, pack: IconPack.material),
   'sports_bar': IconPickerIcon(
@@ -5285,8 +5327,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'stadium', data: Icons.stadium, pack: IconPack.material),
   'stairs': IconPickerIcon(
       name: 'stairs', data: Icons.stairs, pack: IconPack.material),
-  'star':
-      IconPickerIcon(name: 'star', data: Icons.star, pack: IconPack.material),
+  'star': IconPickerIcon(
+      name: 'star', data: Icons.star, pack: IconPack.material),
   'star_border': IconPickerIcon(
       name: 'star_border', data: Icons.star_border, pack: IconPack.material),
   'star_border_purple500': IconPickerIcon(
@@ -5303,10 +5345,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'star_rate': IconPickerIcon(
       name: 'star_rate', data: Icons.star_rate, pack: IconPack.material),
-  'stars':
-      IconPickerIcon(name: 'stars', data: Icons.stars, pack: IconPack.material),
-  'start':
-      IconPickerIcon(name: 'start', data: Icons.start, pack: IconPack.material),
+  'stars': IconPickerIcon(
+      name: 'stars', data: Icons.stars, pack: IconPack.material),
+  'start': IconPickerIcon(
+      name: 'start', data: Icons.start, pack: IconPack.material),
   'stay_current_landscape': IconPickerIcon(
       name: 'stay_current_landscape',
       data: Icons.stay_current_landscape,
@@ -5327,8 +5369,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'sticky_note_2',
       data: Icons.sticky_note_2,
       pack: IconPack.material),
-  'stop':
-      IconPickerIcon(name: 'stop', data: Icons.stop, pack: IconPack.material),
+  'stop': IconPickerIcon(
+      name: 'stop', data: Icons.stop, pack: IconPack.material),
   'stop_circle': IconPickerIcon(
       name: 'stop_circle', data: Icons.stop_circle, pack: IconPack.material),
   'stop_screen_share': IconPickerIcon(
@@ -5337,16 +5379,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'storage': IconPickerIcon(
       name: 'storage', data: Icons.storage, pack: IconPack.material),
-  'store':
-      IconPickerIcon(name: 'store', data: Icons.store, pack: IconPack.material),
+  'store': IconPickerIcon(
+      name: 'store', data: Icons.store, pack: IconPack.material),
   'store_mall_directory': IconPickerIcon(
       name: 'store_mall_directory',
       data: Icons.store_mall_directory,
       pack: IconPack.material),
   'storefront': IconPickerIcon(
       name: 'storefront', data: Icons.storefront, pack: IconPack.material),
-  'storm':
-      IconPickerIcon(name: 'storm', data: Icons.storm, pack: IconPack.material),
+  'storm': IconPickerIcon(
+      name: 'storm', data: Icons.storm, pack: IconPack.material),
   'straight': IconPickerIcon(
       name: 'straight', data: Icons.straight, pack: IconPack.material),
   'straighten': IconPickerIcon(
@@ -5361,8 +5403,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'stroller': IconPickerIcon(
       name: 'stroller', data: Icons.stroller, pack: IconPack.material),
-  'style':
-      IconPickerIcon(name: 'style', data: Icons.style, pack: IconPack.material),
+  'style': IconPickerIcon(
+      name: 'style', data: Icons.style, pack: IconPack.material),
   'subdirectory_arrow_left': IconPickerIcon(
       name: 'subdirectory_arrow_left',
       data: Icons.subdirectory_arrow_left,
@@ -5389,8 +5431,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'subway', data: Icons.subway, pack: IconPack.material),
   'summarize': IconPickerIcon(
       name: 'summarize', data: Icons.summarize, pack: IconPack.material),
-  'sunny':
-      IconPickerIcon(name: 'sunny', data: Icons.sunny, pack: IconPack.material),
+  'sunny': IconPickerIcon(
+      name: 'sunny', data: Icons.sunny, pack: IconPack.material),
   'sunny_snowing': IconPickerIcon(
       name: 'sunny_snowing',
       data: Icons.sunny_snowing,
@@ -5435,8 +5477,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'swap_vertical_circle',
       data: Icons.swap_vertical_circle,
       pack: IconPack.material),
-  'swipe':
-      IconPickerIcon(name: 'swipe', data: Icons.swipe, pack: IconPack.material),
+  'swipe': IconPickerIcon(
+      name: 'swipe', data: Icons.swipe, pack: IconPack.material),
   'swipe_down': IconPickerIcon(
       name: 'swipe_down', data: Icons.swipe_down, pack: IconPack.material),
   'swipe_down_alt': IconPickerIcon(
@@ -5487,8 +5529,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'switch_video', data: Icons.switch_video, pack: IconPack.material),
   'synagogue': IconPickerIcon(
       name: 'synagogue', data: Icons.synagogue, pack: IconPack.material),
-  'sync':
-      IconPickerIcon(name: 'sync', data: Icons.sync, pack: IconPack.material),
+  'sync': IconPickerIcon(
+      name: 'sync', data: Icons.sync, pack: IconPack.material),
   'sync_alt': IconPickerIcon(
       name: 'sync_alt', data: Icons.sync_alt, pack: IconPack.material),
   'sync_disabled': IconPickerIcon(
@@ -5523,7 +5565,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'system_update_tv',
       data: Icons.system_update_tv,
       pack: IconPack.material),
-  'tab': IconPickerIcon(name: 'tab', data: Icons.tab, pack: IconPack.material),
+  'tab': IconPickerIcon(
+      name: 'tab', data: Icons.tab, pack: IconPack.material),
   'tab_unselected': IconPickerIcon(
       name: 'tab_unselected',
       data: Icons.tab_unselected,
@@ -5548,7 +5591,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'tablet_mac': IconPickerIcon(
       name: 'tablet_mac', data: Icons.tablet_mac, pack: IconPack.material),
-  'tag': IconPickerIcon(name: 'tag', data: Icons.tag, pack: IconPack.material),
+  'tag': IconPickerIcon(
+      name: 'tag', data: Icons.tag, pack: IconPack.material),
   'tag_faces': IconPickerIcon(
       name: 'tag_faces', data: Icons.tag_faces, pack: IconPack.material),
   'takeout_dining': IconPickerIcon(
@@ -5557,10 +5601,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'tap_and_play': IconPickerIcon(
       name: 'tap_and_play', data: Icons.tap_and_play, pack: IconPack.material),
-  'tapas':
-      IconPickerIcon(name: 'tapas', data: Icons.tapas, pack: IconPack.material),
-  'task':
-      IconPickerIcon(name: 'task', data: Icons.task, pack: IconPack.material),
+  'tapas': IconPickerIcon(
+      name: 'tapas', data: Icons.tapas, pack: IconPack.material),
+  'task': IconPickerIcon(
+      name: 'task', data: Icons.task, pack: IconPack.material),
   'task_alt': IconPickerIcon(
       name: 'task_alt', data: Icons.task_alt, pack: IconPack.material),
   'taxi_alert': IconPickerIcon(
@@ -5665,8 +5709,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'timelapse', data: Icons.timelapse, pack: IconPack.material),
   'timeline': IconPickerIcon(
       name: 'timeline', data: Icons.timeline, pack: IconPack.material),
-  'timer':
-      IconPickerIcon(name: 'timer', data: Icons.timer, pack: IconPack.material),
+  'timer': IconPickerIcon(
+      name: 'timer', data: Icons.timer, pack: IconPack.material),
   'timer_10': IconPickerIcon(
       name: 'timer_10', data: Icons.timer_10, pack: IconPack.material),
   'timer_10_select': IconPickerIcon(
@@ -5687,41 +5731,42 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'tire_repair': IconPickerIcon(
       name: 'tire_repair', data: Icons.tire_repair, pack: IconPack.material),
-  'title':
-      IconPickerIcon(name: 'title', data: Icons.title, pack: IconPack.material),
-  'toc': IconPickerIcon(name: 'toc', data: Icons.toc, pack: IconPack.material),
-  'today':
-      IconPickerIcon(name: 'today', data: Icons.today, pack: IconPack.material),
+  'title': IconPickerIcon(
+      name: 'title', data: Icons.title, pack: IconPack.material),
+  'toc': IconPickerIcon(
+      name: 'toc', data: Icons.toc, pack: IconPack.material),
+  'today': IconPickerIcon(
+      name: 'today', data: Icons.today, pack: IconPack.material),
   'toggle_off': IconPickerIcon(
       name: 'toggle_off', data: Icons.toggle_off, pack: IconPack.material),
   'toggle_on': IconPickerIcon(
       name: 'toggle_on', data: Icons.toggle_on, pack: IconPack.material),
-  'token':
-      IconPickerIcon(name: 'token', data: Icons.token, pack: IconPack.material),
-  'toll':
-      IconPickerIcon(name: 'toll', data: Icons.toll, pack: IconPack.material),
+  'token': IconPickerIcon(
+      name: 'token', data: Icons.token, pack: IconPack.material),
+  'toll': IconPickerIcon(
+      name: 'toll', data: Icons.toll, pack: IconPack.material),
   'tonality': IconPickerIcon(
       name: 'tonality', data: Icons.tonality, pack: IconPack.material),
-  'topic':
-      IconPickerIcon(name: 'topic', data: Icons.topic, pack: IconPack.material),
+  'topic': IconPickerIcon(
+      name: 'topic', data: Icons.topic, pack: IconPack.material),
   'tornado': IconPickerIcon(
       name: 'tornado', data: Icons.tornado, pack: IconPack.material),
   'touch_app': IconPickerIcon(
       name: 'touch_app', data: Icons.touch_app, pack: IconPack.material),
-  'tour':
-      IconPickerIcon(name: 'tour', data: Icons.tour, pack: IconPack.material),
-  'toys':
-      IconPickerIcon(name: 'toys', data: Icons.toys, pack: IconPack.material),
+  'tour': IconPickerIcon(
+      name: 'tour', data: Icons.tour, pack: IconPack.material),
+  'toys': IconPickerIcon(
+      name: 'toys', data: Icons.toys, pack: IconPack.material),
   'track_changes': IconPickerIcon(
       name: 'track_changes',
       data: Icons.track_changes,
       pack: IconPack.material),
   'traffic': IconPickerIcon(
       name: 'traffic', data: Icons.traffic, pack: IconPack.material),
-  'train':
-      IconPickerIcon(name: 'train', data: Icons.train, pack: IconPack.material),
-  'tram':
-      IconPickerIcon(name: 'tram', data: Icons.tram, pack: IconPack.material),
+  'train': IconPickerIcon(
+      name: 'train', data: Icons.train, pack: IconPack.material),
+  'tram': IconPickerIcon(
+      name: 'tram', data: Icons.tram, pack: IconPack.material),
   'transcribe': IconPickerIcon(
       name: 'transcribe', data: Icons.transcribe, pack: IconPack.material),
   'transfer_within_a_station': IconPickerIcon(
@@ -5766,9 +5811,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'try_sms_star', data: Icons.try_sms_star, pack: IconPack.material),
   'tsunami': IconPickerIcon(
       name: 'tsunami', data: Icons.tsunami, pack: IconPack.material),
-  'tty': IconPickerIcon(name: 'tty', data: Icons.tty, pack: IconPack.material),
-  'tune':
-      IconPickerIcon(name: 'tune', data: Icons.tune, pack: IconPack.material),
+  'tty': IconPickerIcon(
+      name: 'tty', data: Icons.tty, pack: IconPack.material),
+  'tune': IconPickerIcon(
+      name: 'tune', data: Icons.tune, pack: IconPack.material),
   'tungsten': IconPickerIcon(
       name: 'tungsten', data: Icons.tungsten, pack: IconPack.material),
   'turn_left': IconPickerIcon(
@@ -5797,7 +5843,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'turned_in_not',
       data: Icons.turned_in_not,
       pack: IconPack.material),
-  'tv': IconPickerIcon(name: 'tv', data: Icons.tv, pack: IconPack.material),
+  'tv':
+      IconPickerIcon(name: 'tv', data: Icons.tv, pack: IconPack.material),
   'tv_off': IconPickerIcon(
       name: 'tv_off', data: Icons.tv_off, pack: IconPack.material),
   'two_wheeler': IconPickerIcon(
@@ -5814,8 +5861,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'umbrella', data: Icons.umbrella, pack: IconPack.material),
   'unarchive': IconPickerIcon(
       name: 'unarchive', data: Icons.unarchive, pack: IconPack.material),
-  'undo':
-      IconPickerIcon(name: 'undo', data: Icons.undo, pack: IconPack.material),
+  'undo': IconPickerIcon(
+      name: 'undo', data: Icons.undo, pack: IconPack.material),
   'unfold_less': IconPickerIcon(
       name: 'unfold_less', data: Icons.unfold_less, pack: IconPack.material),
   'unfold_less_double': IconPickerIcon(
@@ -5846,7 +5893,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'upload', data: Icons.upload, pack: IconPack.material),
   'upload_file': IconPickerIcon(
       name: 'upload_file', data: Icons.upload_file, pack: IconPack.material),
-  'usb': IconPickerIcon(name: 'usb', data: Icons.usb, pack: IconPack.material),
+  'usb': IconPickerIcon(
+      name: 'usb', data: Icons.usb, pack: IconPack.material),
   'usb_off': IconPickerIcon(
       name: 'usb_off', data: Icons.usb_off, pack: IconPack.material),
   'vaccines': IconPickerIcon(
@@ -5989,8 +6037,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'view_week', data: Icons.view_week, pack: IconPack.material),
   'vignette': IconPickerIcon(
       name: 'vignette', data: Icons.vignette, pack: IconPack.material),
-  'villa':
-      IconPickerIcon(name: 'villa', data: Icons.villa, pack: IconPack.material),
+  'villa': IconPickerIcon(
+      name: 'villa', data: Icons.villa, pack: IconPack.material),
   'visibility': IconPickerIcon(
       name: 'visibility', data: Icons.visibility, pack: IconPack.material),
   'visibility_off': IconPickerIcon(
@@ -6055,16 +6103,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'warning_amber',
       data: Icons.warning_amber,
       pack: IconPack.material),
-  'wash':
-      IconPickerIcon(name: 'wash', data: Icons.wash, pack: IconPack.material),
-  'watch':
-      IconPickerIcon(name: 'watch', data: Icons.watch, pack: IconPack.material),
+  'wash': IconPickerIcon(
+      name: 'wash', data: Icons.wash, pack: IconPack.material),
+  'watch': IconPickerIcon(
+      name: 'watch', data: Icons.watch, pack: IconPack.material),
   'watch_later': IconPickerIcon(
       name: 'watch_later', data: Icons.watch_later, pack: IconPack.material),
   'watch_off': IconPickerIcon(
       name: 'watch_off', data: Icons.watch_off, pack: IconPack.material),
-  'water':
-      IconPickerIcon(name: 'water', data: Icons.water, pack: IconPack.material),
+  'water': IconPickerIcon(
+      name: 'water', data: Icons.water, pack: IconPack.material),
   'water_damage': IconPickerIcon(
       name: 'water_damage', data: Icons.water_damage, pack: IconPack.material),
   'water_drop': IconPickerIcon(
@@ -6073,8 +6121,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'waterfall_chart',
       data: Icons.waterfall_chart,
       pack: IconPack.material),
-  'waves':
-      IconPickerIcon(name: 'waves', data: Icons.waves, pack: IconPack.material),
+  'waves': IconPickerIcon(
+      name: 'waves', data: Icons.waves, pack: IconPack.material),
   'waving_hand': IconPickerIcon(
       name: 'waving_hand', data: Icons.waving_hand, pack: IconPack.material),
   'wb_auto': IconPickerIcon(
@@ -6099,8 +6147,10 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'wb_twilight': IconPickerIcon(
       name: 'wb_twilight', data: Icons.wb_twilight, pack: IconPack.material),
-  'wc': IconPickerIcon(name: 'wc', data: Icons.wc, pack: IconPack.material),
-  'web': IconPickerIcon(name: 'web', data: Icons.web, pack: IconPack.material),
+  'wc':
+      IconPickerIcon(name: 'wc', data: Icons.wc, pack: IconPack.material),
+  'web': IconPickerIcon(
+      name: 'web', data: Icons.web, pack: IconPack.material),
   'web_asset': IconPickerIcon(
       name: 'web_asset', data: Icons.web_asset, pack: IconPack.material),
   'web_asset_off': IconPickerIcon(
@@ -6115,8 +6165,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'wechat', data: Icons.wechat, pack: IconPack.material),
   'weekend': IconPickerIcon(
       name: 'weekend', data: Icons.weekend, pack: IconPack.material),
-  'west':
-      IconPickerIcon(name: 'west', data: Icons.west, pack: IconPack.material),
+  'west': IconPickerIcon(
+      name: 'west', data: Icons.west, pack: IconPack.material),
   'whatshot': IconPickerIcon(
       name: 'whatshot', data: Icons.whatshot, pack: IconPack.material),
   'wheelchair_pickup': IconPickerIcon(
@@ -6135,8 +6185,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'width_normal', data: Icons.width_normal, pack: IconPack.material),
   'width_wide': IconPickerIcon(
       name: 'width_wide', data: Icons.width_wide, pack: IconPack.material),
-  'wifi':
-      IconPickerIcon(name: 'wifi', data: Icons.wifi, pack: IconPack.material),
+  'wifi': IconPickerIcon(
+      name: 'wifi', data: Icons.wifi, pack: IconPack.material),
   'wifi_1_bar': IconPickerIcon(
       name: 'wifi_1_bar', data: Icons.wifi_1_bar, pack: IconPack.material),
   'wifi_2_bar': IconPickerIcon(
@@ -6181,16 +6231,16 @@ Map<String, IconPickerIcon> defaultIcons = {
       name: 'window', data: Icons.window, pack: IconPack.material),
   'wine_bar': IconPickerIcon(
       name: 'wine_bar', data: Icons.wine_bar, pack: IconPack.material),
-  'woman':
-      IconPickerIcon(name: 'woman', data: Icons.woman, pack: IconPack.material),
+  'woman': IconPickerIcon(
+      name: 'woman', data: Icons.woman, pack: IconPack.material),
   'woman_2': IconPickerIcon(
       name: 'woman_2', data: Icons.woman_2, pack: IconPack.material),
   'woo_commerce': IconPickerIcon(
       name: 'woo_commerce', data: Icons.woo_commerce, pack: IconPack.material),
   'wordpress': IconPickerIcon(
       name: 'wordpress', data: Icons.wordpress, pack: IconPack.material),
-  'work':
-      IconPickerIcon(name: 'work', data: Icons.work, pack: IconPack.material),
+  'work': IconPickerIcon(
+      name: 'work', data: Icons.work, pack: IconPack.material),
   'work_history': IconPickerIcon(
       name: 'work_history', data: Icons.work_history, pack: IconPack.material),
   'work_off': IconPickerIcon(
@@ -6219,8 +6269,8 @@ Map<String, IconPickerIcon> defaultIcons = {
       pack: IconPack.material),
   'wysiwyg': IconPickerIcon(
       name: 'wysiwyg', data: Icons.wysiwyg, pack: IconPack.material),
-  'yard':
-      IconPickerIcon(name: 'yard', data: Icons.yard, pack: IconPack.material),
+  'yard': IconPickerIcon(
+      name: 'yard', data: Icons.yard, pack: IconPack.material),
   'youtube_searched_for': IconPickerIcon(
       name: 'youtube_searched_for',
       data: Icons.youtube_searched_for,

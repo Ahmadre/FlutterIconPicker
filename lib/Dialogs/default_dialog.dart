@@ -11,7 +11,7 @@ import '../Models/icon_pack.dart';
 
 class FIPDefaultDialog extends StatelessWidget {
   const FIPDefaultDialog({
-    Key? key,
+    super.key,
     required this.controller,
     this.selectedIconBackgroundColor,
     this.showSearchBar,
@@ -35,7 +35,7 @@ class FIPDefaultDialog extends StatelessWidget {
     this.noResultsText,
     this.iconPackMode,
     this.customIconPack,
-  }) : super(key: key);
+  });
 
   final FIPIconController controller;
   final Color? selectedIconBackgroundColor;
@@ -94,7 +94,7 @@ class FIPDefaultDialog extends StatelessWidget {
             child: Scaffold(
               backgroundColor: backgroundColor,
               body: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10,
                   bottom: 20,
                   left: 20,
@@ -102,15 +102,14 @@ class FIPDefaultDialog extends StatelessWidget {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Container(
+                    SizedBox(
                       height: kToolbarHeight,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(left: 6),
+                            padding: const EdgeInsets.only(left: 6),
                             child: DefaultTextStyle(
-                              child: title!,
                               style: TextStyle(
                                 color: FIPColorBrightness(backgroundColor!)
                                         .isLight()
@@ -118,6 +117,7 @@ class FIPDefaultDialog extends StatelessWidget {
                                     : Colors.white,
                                 fontSize: 20,
                               ),
+                              child: title!,
                             ),
                           ),
                           IconButton(
@@ -170,13 +170,13 @@ class FIPDefaultDialog extends StatelessWidget {
             backgroundColor: backgroundColor,
             shape: iconPickerShape,
             title: DefaultTextStyle(
-              child: title!,
               style: TextStyle(
                 color: FIPColorBrightness(backgroundColor!).isLight()
                     ? Colors.black
                     : Colors.white,
                 fontSize: 20,
               ),
+              child: title!,
             ),
             content: Container(
               constraints: constraints,
@@ -215,7 +215,7 @@ class FIPDefaultDialog extends StatelessWidget {
               TextButton(
                 style: ButtonStyle(
                   padding: WidgetStateProperty.all(
-                    EdgeInsets.symmetric(horizontal: 20),
+                    const EdgeInsets.symmetric(horizontal: 20),
                   ),
                 ),
                 onPressed: () => Navigator.of(context).pop(),

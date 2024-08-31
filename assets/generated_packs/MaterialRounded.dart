@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> roundedIcons = {
+const Map<String, IconPickerIcon> roundedIcons = {
   'ten_k_rounded': IconPickerIcon(
       name: 'ten_k_rounded',
       data: Icons.ten_k_rounded,

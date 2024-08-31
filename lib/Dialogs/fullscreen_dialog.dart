@@ -8,7 +8,7 @@ import '../Models/icon_picker_icon.dart';
 
 class FIPFullScreenDialog extends StatelessWidget {
   const FIPFullScreenDialog({
-    Key? key,
+    super.key,
     required this.iconController,
     required this.showSearchBar,
     required this.showTooltips,
@@ -26,7 +26,7 @@ class FIPFullScreenDialog extends StatelessWidget {
     required this.mainAxisSpacing,
     required this.crossAxisSpacing,
     this.selectedIconBackgroundColor,
-  }) : super(key: key);
+  });
 
   final FIPIconController iconController;
   final Color? selectedIconBackgroundColor;
@@ -52,7 +52,7 @@ class FIPFullScreenDialog extends StatelessWidget {
       backgroundColor: backgroundColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 10,
             bottom: 20,
             left: 20,
@@ -60,21 +60,21 @@ class FIPFullScreenDialog extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: kToolbarHeight,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 6),
+                      padding: const EdgeInsets.only(left: 6),
                       child: DefaultTextStyle(
-                        child: title!,
                         style: TextStyle(
                           color: FIPColorBrightness(backgroundColor!).isLight()
                               ? Colors.black
                               : Colors.white,
                           fontSize: 20,
                         ),
+                        child: title!,
                       ),
                     ),
                     IconButton(

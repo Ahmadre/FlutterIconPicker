@@ -48,7 +48,7 @@ class FIPIconController with ChangeNotifier {
     notifyListeners();
   }
 
-  TextEditingController _searchTextController = TextEditingController();
+  final TextEditingController _searchTextController = TextEditingController();
 
   TextEditingController get searchTextController => _searchTextController;
 
