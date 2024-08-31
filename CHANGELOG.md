@@ -1,3 +1,9 @@
+## [3.6.0] - 31.08.2024
+
+* 💡 Add support for selecting multiple icons by `showIconPicker.multiple` which returns `List<IconPickerIcon>`
+* 💡 Add support for pre-selected icons by `selectedIcons` which consumes `List<IconPickerIcon>`
+* 💡 Update serialization helpers to support multiple icons to serialize
+
 ## [3.5.2] - 31.08.2024
 
 * 🐛: Fix update `scrollview_observer` web support
