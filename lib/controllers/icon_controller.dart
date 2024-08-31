@@ -9,7 +9,13 @@ class FIPIconController with ChangeNotifier {
   })  : _selectedIcon = selectedIcon,
         _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon;
 
-  bool _shouldScrollToSelectedIcon;
+  FIPIconController.multiple({
+    required bool shouldScrollToSelectedIcon,
+    List<IconPickerIcon>? selectedIcons,
+  })  : _selectedIcons = selectedIcons,
+        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon;
+
+  final bool _shouldScrollToSelectedIcon;
 
   bool get shouldScrollToSelectedIcon => _shouldScrollToSelectedIcon;
 
@@ -19,6 +25,15 @@ class FIPIconController with ChangeNotifier {
 
   set selectedIcon(IconPickerIcon? val) {
     _selectedIcon = val;
+    notifyListeners();
+  }
+
+  List<IconPickerIcon>? _selectedIcons;
+
+  List<IconPickerIcon>? get selectedIcons => _selectedIcons;
+
+  set selectedIcons(List<IconPickerIcon>? val) {
+    _selectedIcons = val;
     notifyListeners();
   }
 
