@@ -1,3 +1,7 @@
+## [3.5.2] - 31.08.2024
+
+* 🐛: Fix update `scrollview_observer` web support
+
 ## [3.5.1] - 30.08.2024
 
 * 🐛: Fix `key` mapped value for custom icons
