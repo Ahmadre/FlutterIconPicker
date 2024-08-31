@@ -19,7 +19,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   path: ^1.9.0
   provider: ^6.1.2
-  scrollview_observer: ^1.21.1
+  scrollview_observer: ^1.21.2
 
 flutter:
   uses-material-design: true
