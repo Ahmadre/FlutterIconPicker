@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
+import '../IconPicker/multiple_icon_picker.dart';
 import '../IconPicker/search_bar.dart';
 import '../Models/icon_pack.dart';
 import '../Models/icon_picker_icon.dart';
@@ -101,19 +102,35 @@ class FIPFullScreenDialog extends StatelessWidget {
                   searchComparator: searchComparator,
                 ),
               Expanded(
-                child: FIPIconPicker(
-                  iconController: iconController,
-                  selectedIconBackgroundColor: selectedIconBackgroundColor,
-                  showTooltips: showTooltips,
-                  iconPack: iconPackMode,
-                  customIconPack: customIconPack,
-                  iconColor: iconColor,
-                  backgroundColor: backgroundColor,
-                  noResultsText: noResultsText,
-                  iconSize: iconSize,
-                  mainAxisSpacing: mainAxisSpacing,
-                  crossAxisSpacing: crossAxisSpacing,
-                ),
+                child: iconController.isMultiple
+                    ? FIPMultipleIconPicker(
+                        iconController: iconController,
+                        selectedIconBackgroundColor:
+                            selectedIconBackgroundColor,
+                        showTooltips: showTooltips,
+                        iconPack: iconPackMode,
+                        customIconPack: customIconPack,
+                        iconColor: iconColor,
+                        backgroundColor: backgroundColor,
+                        noResultsText: noResultsText,
+                        iconSize: iconSize,
+                        mainAxisSpacing: mainAxisSpacing,
+                        crossAxisSpacing: crossAxisSpacing,
+                      )
+                    : FIPIconPicker(
+                        iconController: iconController,
+                        selectedIconBackgroundColor:
+                            selectedIconBackgroundColor,
+                        showTooltips: showTooltips,
+                        iconPack: iconPackMode,
+                        customIconPack: customIconPack,
+                        iconColor: iconColor,
+                        backgroundColor: backgroundColor,
+                        noResultsText: noResultsText,
+                        iconSize: iconSize,
+                        mainAxisSpacing: mainAxisSpacing,
+                        crossAxisSpacing: crossAxisSpacing,
+                      ),
               ),
             ],
           ),

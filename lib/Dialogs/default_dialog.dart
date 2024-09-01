@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
+import '../IconPicker/multiple_icon_picker.dart';
 import '../Models/icon_picker_icon.dart';
 import 'fullscreen_dialog.dart';
 import 'adaptive_dialog.dart';
@@ -145,20 +146,35 @@ class FIPDefaultDialog extends StatelessWidget {
                         searchComparator: searchComparator,
                       ),
                     Expanded(
-                      child: FIPIconPicker(
-                        iconController: controller,
-                        selectedIconBackgroundColor:
-                            selectedIconBackgroundColor,
-                        showTooltips: showTooltips,
-                        iconPack: iconPackMode,
-                        customIconPack: customIconPack,
-                        iconColor: iconColor,
-                        backgroundColor: backgroundColor,
-                        noResultsText: noResultsText,
-                        iconSize: iconSize,
-                        mainAxisSpacing: mainAxisSpacing,
-                        crossAxisSpacing: crossAxisSpacing,
-                      ),
+                      child: controller.isMultiple
+                          ? FIPMultipleIconPicker(
+                              iconController: controller,
+                              selectedIconBackgroundColor:
+                                  selectedIconBackgroundColor,
+                              showTooltips: showTooltips,
+                              iconPack: iconPackMode,
+                              customIconPack: customIconPack,
+                              iconColor: iconColor,
+                              backgroundColor: backgroundColor,
+                              noResultsText: noResultsText,
+                              iconSize: iconSize,
+                              mainAxisSpacing: mainAxisSpacing,
+                              crossAxisSpacing: crossAxisSpacing,
+                            )
+                          : FIPIconPicker(
+                              iconController: controller,
+                              selectedIconBackgroundColor:
+                                  selectedIconBackgroundColor,
+                              showTooltips: showTooltips,
+                              iconPack: iconPackMode,
+                              customIconPack: customIconPack,
+                              iconColor: iconColor,
+                              backgroundColor: backgroundColor,
+                              noResultsText: noResultsText,
+                              iconSize: iconSize,
+                              mainAxisSpacing: mainAxisSpacing,
+                              crossAxisSpacing: crossAxisSpacing,
+                            ),
                     ),
                   ],
                 ),
@@ -194,19 +210,35 @@ class FIPDefaultDialog extends StatelessWidget {
                       searchComparator: searchComparator,
                     ),
                   Expanded(
-                    child: FIPIconPicker(
-                      iconController: controller,
-                      selectedIconBackgroundColor: selectedIconBackgroundColor,
-                      showTooltips: showTooltips,
-                      iconPack: iconPackMode,
-                      customIconPack: customIconPack,
-                      iconColor: iconColor,
-                      backgroundColor: backgroundColor,
-                      noResultsText: noResultsText,
-                      iconSize: iconSize,
-                      mainAxisSpacing: mainAxisSpacing,
-                      crossAxisSpacing: crossAxisSpacing,
-                    ),
+                    child: controller.isMultiple
+                        ? FIPMultipleIconPicker(
+                            iconController: controller,
+                            selectedIconBackgroundColor:
+                                selectedIconBackgroundColor,
+                            showTooltips: showTooltips,
+                            iconPack: iconPackMode,
+                            customIconPack: customIconPack,
+                            iconColor: iconColor,
+                            backgroundColor: backgroundColor,
+                            noResultsText: noResultsText,
+                            iconSize: iconSize,
+                            mainAxisSpacing: mainAxisSpacing,
+                            crossAxisSpacing: crossAxisSpacing,
+                          )
+                        : FIPIconPicker(
+                            iconController: controller,
+                            selectedIconBackgroundColor:
+                                selectedIconBackgroundColor,
+                            showTooltips: showTooltips,
+                            iconPack: iconPackMode,
+                            customIconPack: customIconPack,
+                            iconColor: iconColor,
+                            backgroundColor: backgroundColor,
+                            noResultsText: noResultsText,
+                            iconSize: iconSize,
+                            mainAxisSpacing: mainAxisSpacing,
+                            crossAxisSpacing: crossAxisSpacing,
+                          ),
                   ),
                 ],
               ),
