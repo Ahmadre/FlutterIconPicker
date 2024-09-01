@@ -13,8 +13,10 @@ class FIPIconController with ChangeNotifier {
 
   FIPIconController.multiple({
     required bool shouldScrollToSelectedIcon,
-    List<IconPickerIcon>? selectedIcons,
-  })  : _selectedIcons = selectedIcons,
+    List<IconPickerIcon> selectedIcons = const [],
+  })  : _selectedIcon =
+            selectedIcons.isNotNullOrEmpty ? selectedIcons.first : null,
+        _selectedIcons = selectedIcons,
         _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon,
         _isMultiple = true;
 
@@ -35,30 +37,37 @@ class FIPIconController with ChangeNotifier {
     notifyListeners();
   }
 
-  List<IconPickerIcon>? _selectedIcons;
+  List<IconPickerIcon> _selectedIcons = [];
 
-  List<IconPickerIcon>? get selectedIcons => _selectedIcons;
+  List<IconPickerIcon> get selectedIcons => _selectedIcons;
 
-  set selectedIcons(List<IconPickerIcon>? val) {
+  set selectedIcons(List<IconPickerIcon> val) {
     _selectedIcons = val;
     notifyListeners();
   }
 
-  void addSelectedIcon(IconPickerIcon val) {
-    checkSelectedIconsList();
-    if (!_selectedIcons!.contains(val)) {
-      _selectedIcons?.add(val);
+  void onTapIcon(IconPickerIcon val, {VoidCallback? externalInvocation}) {
+    if (!_isMultiple) {
+      externalInvocation?.call();
+    } else {
+      toggleSelectedIcon(val);
     }
     notifyListeners();
   }
 
-  void removeSelectedIcon(IconPickerIcon val) {
+  void toggleSelectedIcon(IconPickerIcon val) {
     checkSelectedIconsList();
-    if (_selectedIcons!.contains(val)) {
-      _selectedIcons?.remove(val);
+
+    if (!_selectedIcons.contains(val)) {
+      _addSelectedIcon(val);
+    } else {
+      _removeSelectedIcon(val);
     }
-    notifyListeners();
   }
+
+  void _addSelectedIcon(IconPickerIcon val) => _selectedIcons.add(val);
+
+  void _removeSelectedIcon(IconPickerIcon val) => _selectedIcons.remove(val);
 
   void checkSelectedIconsList() {
     if (_selectedIcons.isNullOrEmpty) {
