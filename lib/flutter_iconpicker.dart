@@ -265,7 +265,7 @@ Future<IconPickerIcon?> showIconPicker(
   return null;
 }
 
-Future<List<IconPickerIcon>?> showIconPickerMultiple(
+Future<List<IconPickerIcon>?> showMultipleIconPicker(
   BuildContext context, {
   /// Pre-selected icon before opening the icon picker
   /// If non-null the icon picker highlights and scrolls to the selected icon
