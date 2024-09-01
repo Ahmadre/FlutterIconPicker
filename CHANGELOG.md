@@ -1,8 +1,10 @@
 ## [3.6.0] - 31.08.2024
 
-* 💡 Add support for selecting multiple icons by `showIconPicker.multiple` which returns `List<IconPickerIcon>`
+* 💡 **[BREAKING CHANGE]** `showIconPicker` and `showMultipleIconPicker` use now the optional parameter: `SinglePickerConfiguration` and `MultiplePickerConfiguration` to configure the picker.
+* 💡 Add support for selecting multiple icons by `showMultipleIconPicker` which returns `List<IconPickerIcon>`
 * 💡 Add support for pre-selected icons by `selectedIcons` which consumes `List<IconPickerIcon>`
 * 💡 Update serialization helpers to support multiple icons to serialize
+  * Use new helpers `serializeIcons` and `deserializeIcons`
 
 ## [3.5.2] - 31.08.2024
 
