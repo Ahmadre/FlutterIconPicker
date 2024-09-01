@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/extensions/list_extensions.dart';
 
 import '../Models/icon_picker_icon.dart';
 
@@ -7,13 +8,19 @@ class FIPIconController with ChangeNotifier {
     required bool shouldScrollToSelectedIcon,
     IconPickerIcon? selectedIcon,
   })  : _selectedIcon = selectedIcon,
-        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon;
+        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon,
+        _isMultiple = false;
 
   FIPIconController.multiple({
     required bool shouldScrollToSelectedIcon,
     List<IconPickerIcon>? selectedIcons,
   })  : _selectedIcons = selectedIcons,
-        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon;
+        _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon,
+        _isMultiple = true;
+
+  final bool _isMultiple;
+
+  bool get isMultiple => _isMultiple;
 
   final bool _shouldScrollToSelectedIcon;
 
@@ -35,6 +42,28 @@ class FIPIconController with ChangeNotifier {
   set selectedIcons(List<IconPickerIcon>? val) {
     _selectedIcons = val;
     notifyListeners();
+  }
+
+  void addSelectedIcon(IconPickerIcon val) {
+    checkSelectedIconsList();
+    if (!_selectedIcons!.contains(val)) {
+      _selectedIcons?.add(val);
+    }
+    notifyListeners();
+  }
+
+  void removeSelectedIcon(IconPickerIcon val) {
+    checkSelectedIconsList();
+    if (_selectedIcons!.contains(val)) {
+      _selectedIcons?.remove(val);
+    }
+    notifyListeners();
+  }
+
+  void checkSelectedIconsList() {
+    if (_selectedIcons.isNullOrEmpty) {
+      selectedIcons = [];
+    }
   }
 
   bool get isSelectedIconAvailable => _selectedIcon != null;
