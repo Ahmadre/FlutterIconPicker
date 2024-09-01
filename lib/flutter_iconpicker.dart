@@ -154,7 +154,8 @@ Future<IconPickerIcon?> showIconPicker(
 
 Future<List<IconPickerIcon>?> showMultipleIconPicker(
   BuildContext context, {
-  MultiplePickerConfiguration configuration = const MultiplePickerConfiguration(),
+  MultiplePickerConfiguration configuration =
+      const MultiplePickerConfiguration(),
 }) async {
   if (configuration.constraints == null) {
     if (configuration.adaptiveDialog) {
@@ -178,8 +179,6 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
         Theme.of(context).dialogBackgroundColor,
   );
 
-  List<IconPickerIcon>? iconPicked;
-
   final controller = FIPIconController.multiple(
     selectedIcons: configuration.preSelected ?? [],
     shouldScrollToSelectedIcon: configuration.shouldScrollToSelectedIcon,
@@ -188,7 +187,7 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
   if (configuration.adaptiveDialog) {
     if (MediaQuery.of(context).size.width >=
         configuration.constraints!.maxWidth) {
-      iconPicked = await showDialog(
+      await showDialog(
         barrierDismissible: configuration.barrierDismissible,
         context: context,
         builder: (BuildContext context) => FIPDefaultDialog(
@@ -218,7 +217,7 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
         ),
       );
     } else {
-      iconPicked = await Navigator.push(
+      await Navigator.push(
         context,
         MaterialPageRoute(
           fullscreenDialog: true,
@@ -252,7 +251,7 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
       );
     }
   } else {
-    iconPicked = await showDialog(
+    await showDialog(
       barrierDismissible: configuration.barrierDismissible,
       context: context,
       builder: (BuildContext context) => FIPDefaultDialog(
