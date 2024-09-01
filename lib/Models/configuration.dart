@@ -179,7 +179,8 @@ sealed class IconPickerConfiguration<T> {
     String? noResultsText,
     List<IconPack>? iconPackModes,
     Map<String, IconPickerIcon>? customIconPack,
-  }) => throw UnimplementedError();
+  }) =>
+      throw UnimplementedError();
 }
 
 class SinglePickerConfiguration

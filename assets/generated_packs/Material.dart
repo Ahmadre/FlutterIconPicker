@@ -827,8 +827,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'nine_mp_outlined',
       data: Icons.nine_mp_outlined,
       pack: IconPack.allMaterial),
-  'abc': IconPickerIcon(
-      name: 'abc', data: Icons.abc, pack: IconPack.allMaterial),
+  'abc':
+      IconPickerIcon(name: 'abc', data: Icons.abc, pack: IconPack.allMaterial),
   'abc_sharp': IconPickerIcon(
       name: 'abc_sharp', data: Icons.abc_sharp, pack: IconPack.allMaterial),
   'abc_rounded': IconPickerIcon(
@@ -1067,8 +1067,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'ad_units_outlined',
       data: Icons.ad_units_outlined,
       pack: IconPack.allMaterial),
-  'adb': IconPickerIcon(
-      name: 'adb', data: Icons.adb, pack: IconPack.allMaterial),
+  'adb':
+      IconPickerIcon(name: 'adb', data: Icons.adb, pack: IconPack.allMaterial),
   'adb_sharp': IconPickerIcon(
       name: 'adb_sharp', data: Icons.adb_sharp, pack: IconPack.allMaterial),
   'adb_rounded': IconPickerIcon(
@@ -1077,8 +1077,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'adb_outlined',
       data: Icons.adb_outlined,
       pack: IconPack.allMaterial),
-  'add': IconPickerIcon(
-      name: 'add', data: Icons.add, pack: IconPack.allMaterial),
+  'add':
+      IconPickerIcon(name: 'add', data: Icons.add, pack: IconPack.allMaterial),
   'add_sharp': IconPickerIcon(
       name: 'add_sharp', data: Icons.add_sharp, pack: IconPack.allMaterial),
   'add_rounded': IconPickerIcon(
@@ -1577,8 +1577,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'agriculture_outlined',
       data: Icons.agriculture_outlined,
       pack: IconPack.allMaterial),
-  'air': IconPickerIcon(
-      name: 'air', data: Icons.air, pack: IconPack.allMaterial),
+  'air':
+      IconPickerIcon(name: 'air', data: Icons.air, pack: IconPack.allMaterial),
   'air_sharp': IconPickerIcon(
       name: 'air_sharp', data: Icons.air_sharp, pack: IconPack.allMaterial),
   'air_rounded': IconPickerIcon(
@@ -2177,8 +2177,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'announcement_outlined',
       data: Icons.announcement_outlined,
       pack: IconPack.allMaterial),
-  'aod': IconPickerIcon(
-      name: 'aod', data: Icons.aod, pack: IconPack.allMaterial),
+  'aod':
+      IconPickerIcon(name: 'aod', data: Icons.aod, pack: IconPack.allMaterial),
   'aod_sharp': IconPickerIcon(
       name: 'aod_sharp', data: Icons.aod_sharp, pack: IconPack.allMaterial),
   'aod_rounded': IconPickerIcon(
@@ -2201,8 +2201,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'apartment_outlined',
       data: Icons.apartment_outlined,
       pack: IconPack.allMaterial),
-  'api': IconPickerIcon(
-      name: 'api', data: Icons.api, pack: IconPack.allMaterial),
+  'api':
+      IconPickerIcon(name: 'api', data: Icons.api, pack: IconPack.allMaterial),
   'api_sharp': IconPickerIcon(
       name: 'api_sharp', data: Icons.api_sharp, pack: IconPack.allMaterial),
   'api_rounded': IconPickerIcon(
@@ -2891,8 +2891,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'assured_workload_outlined',
       data: Icons.assured_workload_outlined,
       pack: IconPack.allMaterial),
-  'atm': IconPickerIcon(
-      name: 'atm', data: Icons.atm, pack: IconPack.allMaterial),
+  'atm':
+      IconPickerIcon(name: 'atm', data: Icons.atm, pack: IconPack.allMaterial),
   'atm_sharp': IconPickerIcon(
       name: 'atm_sharp', data: Icons.atm_sharp, pack: IconPack.allMaterial),
   'atm_rounded': IconPickerIcon(
@@ -3657,8 +3657,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'beach_access_outlined',
       data: Icons.beach_access_outlined,
       pack: IconPack.allMaterial),
-  'bed': IconPickerIcon(
-      name: 'bed', data: Icons.bed, pack: IconPack.allMaterial),
+  'bed':
+      IconPickerIcon(name: 'bed', data: Icons.bed, pack: IconPack.allMaterial),
   'bed_sharp': IconPickerIcon(
       name: 'bed_sharp', data: Icons.bed_sharp, pack: IconPack.allMaterial),
   'bed_rounded': IconPickerIcon(
@@ -4369,8 +4369,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'border_vertical_outlined',
       data: Icons.border_vertical_outlined,
       pack: IconPack.allMaterial),
-  'boy': IconPickerIcon(
-      name: 'boy', data: Icons.boy, pack: IconPack.allMaterial),
+  'boy':
+      IconPickerIcon(name: 'boy', data: Icons.boy, pack: IconPack.allMaterial),
   'boy_sharp': IconPickerIcon(
       name: 'boy_sharp', data: Icons.boy_sharp, pack: IconPack.allMaterial),
   'boy_rounded': IconPickerIcon(
@@ -6251,8 +6251,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'cloudy_snowing',
       data: Icons.cloudy_snowing,
       pack: IconPack.allMaterial),
-  'co2': IconPickerIcon(
-      name: 'co2', data: Icons.co2, pack: IconPack.allMaterial),
+  'co2':
+      IconPickerIcon(name: 'co2', data: Icons.co2, pack: IconPack.allMaterial),
   'co2_sharp': IconPickerIcon(
       name: 'co2_sharp', data: Icons.co2_sharp, pack: IconPack.allMaterial),
   'co2_rounded': IconPickerIcon(
@@ -7319,8 +7319,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'cruelty_free_outlined',
       data: Icons.cruelty_free_outlined,
       pack: IconPack.allMaterial),
-  'css': IconPickerIcon(
-      name: 'css', data: Icons.css, pack: IconPack.allMaterial),
+  'css':
+      IconPickerIcon(name: 'css', data: Icons.css, pack: IconPack.allMaterial),
   'css_sharp': IconPickerIcon(
       name: 'css_sharp', data: Icons.css_sharp, pack: IconPack.allMaterial),
   'css_rounded': IconPickerIcon(
@@ -7503,8 +7503,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'curtains_closed_outlined',
       data: Icons.curtains_closed_outlined,
       pack: IconPack.allMaterial),
-  'cut': IconPickerIcon(
-      name: 'cut', data: Icons.cut, pack: IconPack.allMaterial),
+  'cut':
+      IconPickerIcon(name: 'cut', data: Icons.cut, pack: IconPack.allMaterial),
   'cut_sharp': IconPickerIcon(
       name: 'cut_sharp', data: Icons.cut_sharp, pack: IconPack.allMaterial),
   'cut_rounded': IconPickerIcon(
@@ -8725,8 +8725,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'dnd_forwardslash_outlined',
       data: Icons.dnd_forwardslash_outlined,
       pack: IconPack.allMaterial),
-  'dns': IconPickerIcon(
-      name: 'dns', data: Icons.dns, pack: IconPack.allMaterial),
+  'dns':
+      IconPickerIcon(name: 'dns', data: Icons.dns, pack: IconPack.allMaterial),
   'dns_sharp': IconPickerIcon(
       name: 'dns_sharp', data: Icons.dns_sharp, pack: IconPack.allMaterial),
   'dns_rounded': IconPickerIcon(
@@ -9357,8 +9357,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'drive_folder_upload_outlined',
       data: Icons.drive_folder_upload_outlined,
       pack: IconPack.allMaterial),
-  'dry': IconPickerIcon(
-      name: 'dry', data: Icons.dry, pack: IconPack.allMaterial),
+  'dry':
+      IconPickerIcon(name: 'dry', data: Icons.dry, pack: IconPack.allMaterial),
   'dry_sharp': IconPickerIcon(
       name: 'dry_sharp', data: Icons.dry_sharp, pack: IconPack.allMaterial),
   'dry_rounded': IconPickerIcon(
@@ -9383,8 +9383,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'dry_cleaning_outlined',
       data: Icons.dry_cleaning_outlined,
       pack: IconPack.allMaterial),
-  'duo': IconPickerIcon(
-      name: 'duo', data: Icons.duo, pack: IconPack.allMaterial),
+  'duo':
+      IconPickerIcon(name: 'duo', data: Icons.duo, pack: IconPack.allMaterial),
   'duo_sharp': IconPickerIcon(
       name: 'duo_sharp', data: Icons.duo_sharp, pack: IconPack.allMaterial),
   'duo_rounded': IconPickerIcon(
@@ -9393,8 +9393,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'duo_outlined',
       data: Icons.duo_outlined,
       pack: IconPack.allMaterial),
-  'dvr': IconPickerIcon(
-      name: 'dvr', data: Icons.dvr, pack: IconPack.allMaterial),
+  'dvr':
+      IconPickerIcon(name: 'dvr', data: Icons.dvr, pack: IconPack.allMaterial),
   'dvr_sharp': IconPickerIcon(
       name: 'dvr_sharp', data: Icons.dvr_sharp, pack: IconPack.allMaterial),
   'dvr_rounded': IconPickerIcon(
@@ -9493,8 +9493,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'east_outlined',
       data: Icons.east_outlined,
       pack: IconPack.allMaterial),
-  'eco': IconPickerIcon(
-      name: 'eco', data: Icons.eco, pack: IconPack.allMaterial),
+  'eco':
+      IconPickerIcon(name: 'eco', data: Icons.eco, pack: IconPack.allMaterial),
   'eco_sharp': IconPickerIcon(
       name: 'eco_sharp', data: Icons.eco_sharp, pack: IconPack.allMaterial),
   'eco_rounded': IconPickerIcon(
@@ -9675,8 +9675,8 @@ const Map<String, IconPickerIcon> allIcons = {
       pack: IconPack.allMaterial),
   'edit_square': IconPickerIcon(
       name: 'edit_square', data: Icons.edit_square, pack: IconPack.allMaterial),
-  'egg': IconPickerIcon(
-      name: 'egg', data: Icons.egg, pack: IconPack.allMaterial),
+  'egg':
+      IconPickerIcon(name: 'egg', data: Icons.egg, pack: IconPack.allMaterial),
   'egg_sharp': IconPickerIcon(
       name: 'egg_sharp', data: Icons.egg_sharp, pack: IconPack.allMaterial),
   'egg_rounded': IconPickerIcon(
@@ -10887,8 +10887,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'favorite_outline_outlined',
       data: Icons.favorite_outline_outlined,
       pack: IconPack.allMaterial),
-  'fax': IconPickerIcon(
-      name: 'fax', data: Icons.fax, pack: IconPack.allMaterial),
+  'fax':
+      IconPickerIcon(name: 'fax', data: Icons.fax, pack: IconPack.allMaterial),
   'fax_sharp': IconPickerIcon(
       name: 'fax_sharp', data: Icons.fax_sharp, pack: IconPack.allMaterial),
   'fax_rounded': IconPickerIcon(
@@ -13035,8 +13035,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'get_app_outlined',
       data: Icons.get_app_outlined,
       pack: IconPack.allMaterial),
-  'gif': IconPickerIcon(
-      name: 'gif', data: Icons.gif, pack: IconPack.allMaterial),
+  'gif':
+      IconPickerIcon(name: 'gif', data: Icons.gif, pack: IconPack.allMaterial),
   'gif_sharp': IconPickerIcon(
       name: 'gif_sharp', data: Icons.gif_sharp, pack: IconPack.allMaterial),
   'gif_rounded': IconPickerIcon(
@@ -13545,8 +13545,7 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'hardware_outlined',
       data: Icons.hardware_outlined,
       pack: IconPack.allMaterial),
-  'hd': IconPickerIcon(
-      name: 'hd', data: Icons.hd, pack: IconPack.allMaterial),
+  'hd': IconPickerIcon(name: 'hd', data: Icons.hd, pack: IconPack.allMaterial),
   'hd_sharp': IconPickerIcon(
       name: 'hd_sharp', data: Icons.hd_sharp, pack: IconPack.allMaterial),
   'hd_rounded': IconPickerIcon(
@@ -14121,8 +14120,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'hive_outlined',
       data: Icons.hive_outlined,
       pack: IconPack.allMaterial),
-  'hls': IconPickerIcon(
-      name: 'hls', data: Icons.hls, pack: IconPack.allMaterial),
+  'hls':
+      IconPickerIcon(name: 'hls', data: Icons.hls, pack: IconPack.allMaterial),
   'hls_sharp': IconPickerIcon(
       name: 'hls_sharp', data: Icons.hls_sharp, pack: IconPack.allMaterial),
   'hls_rounded': IconPickerIcon(
@@ -14507,8 +14506,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'https_outlined',
       data: Icons.https_outlined,
       pack: IconPack.allMaterial),
-  'hub': IconPickerIcon(
-      name: 'hub', data: Icons.hub, pack: IconPack.allMaterial),
+  'hub':
+      IconPickerIcon(name: 'hub', data: Icons.hub, pack: IconPack.allMaterial),
   'hub_sharp': IconPickerIcon(
       name: 'hub_sharp', data: Icons.hub_sharp, pack: IconPack.allMaterial),
   'hub_rounded': IconPickerIcon(
@@ -15093,8 +15092,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'iron_outlined',
       data: Icons.iron_outlined,
       pack: IconPack.allMaterial),
-  'iso': IconPickerIcon(
-      name: 'iso', data: Icons.iso, pack: IconPack.allMaterial),
+  'iso':
+      IconPickerIcon(name: 'iso', data: Icons.iso, pack: IconPack.allMaterial),
   'iso_sharp': IconPickerIcon(
       name: 'iso_sharp', data: Icons.iso_sharp, pack: IconPack.allMaterial),
   'iso_rounded': IconPickerIcon(
@@ -15203,8 +15202,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'kebab_dining_outlined',
       data: Icons.kebab_dining_outlined,
       pack: IconPack.allMaterial),
-  'key': IconPickerIcon(
-      name: 'key', data: Icons.key, pack: IconPack.allMaterial),
+  'key':
+      IconPickerIcon(name: 'key', data: Icons.key, pack: IconPack.allMaterial),
   'key_sharp': IconPickerIcon(
       name: 'key_sharp', data: Icons.key_sharp, pack: IconPack.allMaterial),
   'key_rounded': IconPickerIcon(
@@ -15653,8 +15652,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'label_outline_rounded',
       data: Icons.label_outline_rounded,
       pack: IconPack.allMaterial),
-  'lan': IconPickerIcon(
-      name: 'lan', data: Icons.lan, pack: IconPack.allMaterial),
+  'lan':
+      IconPickerIcon(name: 'lan', data: Icons.lan, pack: IconPack.allMaterial),
   'lan_sharp': IconPickerIcon(
       name: 'lan_sharp', data: Icons.lan_sharp, pack: IconPack.allMaterial),
   'lan_rounded': IconPickerIcon(
@@ -17267,8 +17266,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'male_outlined',
       data: Icons.male_outlined,
       pack: IconPack.allMaterial),
-  'man': IconPickerIcon(
-      name: 'man', data: Icons.man, pack: IconPack.allMaterial),
+  'man':
+      IconPickerIcon(name: 'man', data: Icons.man, pack: IconPack.allMaterial),
   'man_sharp': IconPickerIcon(
       name: 'man_sharp', data: Icons.man_sharp, pack: IconPack.allMaterial),
   'man_rounded': IconPickerIcon(
@@ -17361,8 +17360,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'manage_search_outlined',
       data: Icons.manage_search_outlined,
       pack: IconPack.allMaterial),
-  'map': IconPickerIcon(
-      name: 'map', data: Icons.map, pack: IconPack.allMaterial),
+  'map':
+      IconPickerIcon(name: 'map', data: Icons.map, pack: IconPack.allMaterial),
   'map_sharp': IconPickerIcon(
       name: 'map_sharp', data: Icons.map_sharp, pack: IconPack.allMaterial),
   'map_rounded': IconPickerIcon(
@@ -17815,8 +17814,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'messenger_outline_outlined',
       data: Icons.messenger_outline_outlined,
       pack: IconPack.allMaterial),
-  'mic': IconPickerIcon(
-      name: 'mic', data: Icons.mic, pack: IconPack.allMaterial),
+  'mic':
+      IconPickerIcon(name: 'mic', data: Icons.mic, pack: IconPack.allMaterial),
   'mic_sharp': IconPickerIcon(
       name: 'mic_sharp', data: Icons.mic_sharp, pack: IconPack.allMaterial),
   'mic_rounded': IconPickerIcon(
@@ -17975,8 +17974,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'missed_video_call_outlined',
       data: Icons.missed_video_call_outlined,
       pack: IconPack.allMaterial),
-  'mms': IconPickerIcon(
-      name: 'mms', data: Icons.mms, pack: IconPack.allMaterial),
+  'mms':
+      IconPickerIcon(name: 'mms', data: Icons.mms, pack: IconPack.allMaterial),
   'mms_sharp': IconPickerIcon(
       name: 'mms_sharp', data: Icons.mms_sharp, pack: IconPack.allMaterial),
   'mms_rounded': IconPickerIcon(
@@ -18619,8 +18618,7 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'moving_outlined',
       data: Icons.moving_outlined,
       pack: IconPack.allMaterial),
-  'mp': IconPickerIcon(
-      name: 'mp', data: Icons.mp, pack: IconPack.allMaterial),
+  'mp': IconPickerIcon(name: 'mp', data: Icons.mp, pack: IconPack.allMaterial),
   'mp_sharp': IconPickerIcon(
       name: 'mp_sharp', data: Icons.mp_sharp, pack: IconPack.allMaterial),
   'mp_rounded': IconPickerIcon(
@@ -18793,8 +18791,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'my_location_outlined',
       data: Icons.my_location_outlined,
       pack: IconPack.allMaterial),
-  'nat': IconPickerIcon(
-      name: 'nat', data: Icons.nat, pack: IconPack.allMaterial),
+  'nat':
+      IconPickerIcon(name: 'nat', data: Icons.nat, pack: IconPack.allMaterial),
   'nat_sharp': IconPickerIcon(
       name: 'nat_sharp', data: Icons.nat_sharp, pack: IconPack.allMaterial),
   'nat_rounded': IconPickerIcon(
@@ -19155,8 +19153,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'next_week_outlined',
       data: Icons.next_week_outlined,
       pack: IconPack.allMaterial),
-  'nfc': IconPickerIcon(
-      name: 'nfc', data: Icons.nfc, pack: IconPack.allMaterial),
+  'nfc':
+      IconPickerIcon(name: 'nfc', data: Icons.nfc, pack: IconPack.allMaterial),
   'nfc_sharp': IconPickerIcon(
       name: 'nfc_sharp', data: Icons.nfc_sharp, pack: IconPack.allMaterial),
   'nfc_rounded': IconPickerIcon(
@@ -21679,8 +21677,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'photo_size_select_small_outlined',
       data: Icons.photo_size_select_small_outlined,
       pack: IconPack.allMaterial),
-  'php': IconPickerIcon(
-      name: 'php', data: Icons.php, pack: IconPack.allMaterial),
+  'php':
+      IconPickerIcon(name: 'php', data: Icons.php, pack: IconPack.allMaterial),
   'php_sharp': IconPickerIcon(
       name: 'php_sharp', data: Icons.php_sharp, pack: IconPack.allMaterial),
   'php_rounded': IconPickerIcon(
@@ -21789,8 +21787,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'pie_chart_outline_outlined',
       data: Icons.pie_chart_outline_outlined,
       pack: IconPack.allMaterial),
-  'pin': IconPickerIcon(
-      name: 'pin', data: Icons.pin, pack: IconPack.allMaterial),
+  'pin':
+      IconPickerIcon(name: 'pin', data: Icons.pin, pack: IconPack.allMaterial),
   'pin_sharp': IconPickerIcon(
       name: 'pin_sharp', data: Icons.pin_sharp, pack: IconPack.allMaterial),
   'pin_rounded': IconPickerIcon(
@@ -21869,8 +21867,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'pivot_table_chart_outlined',
       data: Icons.pivot_table_chart_outlined,
       pack: IconPack.allMaterial),
-  'pix': IconPickerIcon(
-      name: 'pix', data: Icons.pix, pack: IconPack.allMaterial),
+  'pix':
+      IconPickerIcon(name: 'pix', data: Icons.pix, pack: IconPack.allMaterial),
   'pix_sharp': IconPickerIcon(
       name: 'pix_sharp', data: Icons.pix_sharp, pack: IconPack.allMaterial),
   'pix_rounded': IconPickerIcon(
@@ -24191,8 +24189,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'rsvp_outlined',
       data: Icons.rsvp_outlined,
       pack: IconPack.allMaterial),
-  'rtt': IconPickerIcon(
-      name: 'rtt', data: Icons.rtt, pack: IconPack.allMaterial),
+  'rtt':
+      IconPickerIcon(name: 'rtt', data: Icons.rtt, pack: IconPack.allMaterial),
   'rtt_sharp': IconPickerIcon(
       name: 'rtt_sharp', data: Icons.rtt_sharp, pack: IconPack.allMaterial),
   'rtt_rounded': IconPickerIcon(
@@ -24729,8 +24727,7 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'scuba_diving_outlined',
       data: Icons.scuba_diving_outlined,
       pack: IconPack.allMaterial),
-  'sd': IconPickerIcon(
-      name: 'sd', data: Icons.sd, pack: IconPack.allMaterial),
+  'sd': IconPickerIcon(name: 'sd', data: Icons.sd, pack: IconPack.allMaterial),
   'sd_sharp': IconPickerIcon(
       name: 'sd_sharp', data: Icons.sd_sharp, pack: IconPack.allMaterial),
   'sd_rounded': IconPickerIcon(
@@ -26153,11 +26150,10 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'signal_wifi_statusbar_connected_no_internet_4_rounded',
       data: Icons.signal_wifi_statusbar_connected_no_internet_4_rounded,
       pack: IconPack.allMaterial),
-  'signal_wifi_statusbar_connected_no_internet_4_outlined':
-      IconPickerIcon(
-          name: 'signal_wifi_statusbar_connected_no_internet_4_outlined',
-          data: Icons.signal_wifi_statusbar_connected_no_internet_4_outlined,
-          pack: IconPack.allMaterial),
+  'signal_wifi_statusbar_connected_no_internet_4_outlined': IconPickerIcon(
+      name: 'signal_wifi_statusbar_connected_no_internet_4_outlined',
+      data: Icons.signal_wifi_statusbar_connected_no_internet_4_outlined,
+      pack: IconPack.allMaterial),
   'signal_wifi_statusbar_null': IconPickerIcon(
       name: 'signal_wifi_statusbar_null',
       data: Icons.signal_wifi_statusbar_null,
@@ -26248,8 +26244,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'single_bed_outlined',
       data: Icons.single_bed_outlined,
       pack: IconPack.allMaterial),
-  'sip': IconPickerIcon(
-      name: 'sip', data: Icons.sip, pack: IconPack.allMaterial),
+  'sip':
+      IconPickerIcon(name: 'sip', data: Icons.sip, pack: IconPack.allMaterial),
   'sip_sharp': IconPickerIcon(
       name: 'sip_sharp', data: Icons.sip_sharp, pack: IconPack.allMaterial),
   'sip_rounded': IconPickerIcon(
@@ -26454,8 +26450,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'smoking_rooms_outlined',
       data: Icons.smoking_rooms_outlined,
       pack: IconPack.allMaterial),
-  'sms': IconPickerIcon(
-      name: 'sms', data: Icons.sms, pack: IconPack.allMaterial),
+  'sms':
+      IconPickerIcon(name: 'sms', data: Icons.sms, pack: IconPack.allMaterial),
   'sms_sharp': IconPickerIcon(
       name: 'sms_sharp', data: Icons.sms_sharp, pack: IconPack.allMaterial),
   'sms_rounded': IconPickerIcon(
@@ -26638,8 +26634,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'sort_by_alpha_outlined',
       data: Icons.sort_by_alpha_outlined,
       pack: IconPack.allMaterial),
-  'sos': IconPickerIcon(
-      name: 'sos', data: Icons.sos, pack: IconPack.allMaterial),
+  'sos':
+      IconPickerIcon(name: 'sos', data: Icons.sos, pack: IconPack.allMaterial),
   'sos_sharp': IconPickerIcon(
       name: 'sos_sharp', data: Icons.sos_sharp, pack: IconPack.allMaterial),
   'sos_rounded': IconPickerIcon(
@@ -26734,8 +26730,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'south_west_outlined',
       data: Icons.south_west_outlined,
       pack: IconPack.allMaterial),
-  'spa': IconPickerIcon(
-      name: 'spa', data: Icons.spa, pack: IconPack.allMaterial),
+  'spa':
+      IconPickerIcon(name: 'spa', data: Icons.spa, pack: IconPack.allMaterial),
   'spa_sharp': IconPickerIcon(
       name: 'spa_sharp', data: Icons.spa_sharp, pack: IconPack.allMaterial),
   'spa_rounded': IconPickerIcon(
@@ -28556,8 +28552,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'system_update_tv_outlined',
       data: Icons.system_update_tv_outlined,
       pack: IconPack.allMaterial),
-  'tab': IconPickerIcon(
-      name: 'tab', data: Icons.tab, pack: IconPack.allMaterial),
+  'tab':
+      IconPickerIcon(name: 'tab', data: Icons.tab, pack: IconPack.allMaterial),
   'tab_sharp': IconPickerIcon(
       name: 'tab_sharp', data: Icons.tab_sharp, pack: IconPack.allMaterial),
   'tab_rounded': IconPickerIcon(
@@ -28698,8 +28694,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'tablet_mac_outlined',
       data: Icons.tablet_mac_outlined,
       pack: IconPack.allMaterial),
-  'tag': IconPickerIcon(
-      name: 'tag', data: Icons.tag, pack: IconPack.allMaterial),
+  'tag':
+      IconPickerIcon(name: 'tag', data: Icons.tag, pack: IconPack.allMaterial),
   'tag_sharp': IconPickerIcon(
       name: 'tag_sharp', data: Icons.tag_sharp, pack: IconPack.allMaterial),
   'tag_rounded': IconPickerIcon(
@@ -29450,8 +29446,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'title_outlined',
       data: Icons.title_outlined,
       pack: IconPack.allMaterial),
-  'toc': IconPickerIcon(
-      name: 'toc', data: Icons.toc, pack: IconPack.allMaterial),
+  'toc':
+      IconPickerIcon(name: 'toc', data: Icons.toc, pack: IconPack.allMaterial),
   'toc_sharp': IconPickerIcon(
       name: 'toc_sharp', data: Icons.toc_sharp, pack: IconPack.allMaterial),
   'toc_rounded': IconPickerIcon(
@@ -29884,8 +29880,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'tsunami_outlined',
       data: Icons.tsunami_outlined,
       pack: IconPack.allMaterial),
-  'tty': IconPickerIcon(
-      name: 'tty', data: Icons.tty, pack: IconPack.allMaterial),
+  'tty':
+      IconPickerIcon(name: 'tty', data: Icons.tty, pack: IconPack.allMaterial),
   'tty_sharp': IconPickerIcon(
       name: 'tty_sharp', data: Icons.tty_sharp, pack: IconPack.allMaterial),
   'tty_rounded': IconPickerIcon(
@@ -30042,8 +30038,7 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'turned_in_not_outlined',
       data: Icons.turned_in_not_outlined,
       pack: IconPack.allMaterial),
-  'tv': IconPickerIcon(
-      name: 'tv', data: Icons.tv, pack: IconPack.allMaterial),
+  'tv': IconPickerIcon(name: 'tv', data: Icons.tv, pack: IconPack.allMaterial),
   'tv_sharp': IconPickerIcon(
       name: 'tv_sharp', data: Icons.tv_sharp, pack: IconPack.allMaterial),
   'tv_rounded': IconPickerIcon(
@@ -30338,8 +30333,8 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'upload_file_outlined',
       data: Icons.upload_file_outlined,
       pack: IconPack.allMaterial),
-  'usb': IconPickerIcon(
-      name: 'usb', data: Icons.usb, pack: IconPack.allMaterial),
+  'usb':
+      IconPickerIcon(name: 'usb', data: Icons.usb, pack: IconPack.allMaterial),
   'usb_sharp': IconPickerIcon(
       name: 'usb_sharp', data: Icons.usb_sharp, pack: IconPack.allMaterial),
   'usb_rounded': IconPickerIcon(
@@ -31694,16 +31689,15 @@ const Map<String, IconPickerIcon> allIcons = {
       name: 'wb_twilight_outlined',
       data: Icons.wb_twilight_outlined,
       pack: IconPack.allMaterial),
-  'wc': IconPickerIcon(
-      name: 'wc', data: Icons.wc, pack: IconPack.allMaterial),
+  'wc': IconPickerIcon(name: 'wc', data: Icons.wc, pack: IconPack.allMaterial),
   'wc_sharp': IconPickerIcon(
       name: 'wc_sharp', data: Icons.wc_sharp, pack: IconPack.allMaterial),
   'wc_rounded': IconPickerIcon(
       name: 'wc_rounded', data: Icons.wc_rounded, pack: IconPack.allMaterial),
   'wc_outlined': IconPickerIcon(
       name: 'wc_outlined', data: Icons.wc_outlined, pack: IconPack.allMaterial),
-  'web': IconPickerIcon(
-      name: 'web', data: Icons.web, pack: IconPack.allMaterial),
+  'web':
+      IconPickerIcon(name: 'web', data: Icons.web, pack: IconPack.allMaterial),
   'web_sharp': IconPickerIcon(
       name: 'web_sharp', data: Icons.web_sharp, pack: IconPack.allMaterial),
   'web_rounded': IconPickerIcon(
