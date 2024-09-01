@@ -56,7 +56,7 @@ class IconNotifier extends ChangeNotifier {
 
     box.put(
       'iconsData',
-      _icons.map((item) => serializeIcon(item)).toList(),
+      serializeIcons(_icons),
     );
     notifyListeners();
   }
@@ -98,10 +98,7 @@ class IconNotifier extends ChangeNotifier {
         : null;
 
     final cachedIcons = await box.get('iconsData') != null
-        ? List.from(await box.get('iconsData'))
-            .map((map) => deserializeIcon(Map<String, dynamic>.from(map)))
-            .cast<IconPickerIcon>()
-            .toList()
+        ? deserializeIcons(await box.get('iconsData'))
         : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));
