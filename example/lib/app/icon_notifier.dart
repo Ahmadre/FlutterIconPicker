@@ -10,11 +10,15 @@ class IconNotifier extends ChangeNotifier {
 
   IconNotifier._(
     IconPickerIcon? iconData,
+    List<IconPickerIcon>? iconsData,
     AppBrightness brightness,
   )   : _icon = iconData,
+        _icons = iconsData ?? [],
         _brightness = brightness;
 
   static late Box box;
+
+  List<IconPickerIcon> _icons = [];
 
   IconPickerIcon? _icon;
 
@@ -45,6 +49,24 @@ class IconNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  List<IconPickerIcon> get icons => _icons;
+
+  void setIconsData(List<IconPickerIcon> value) {
+    _icons = value;
+
+    box.put(
+      'iconsData',
+      _icons.map((item) => serializeIcon(item)).toList(),
+    );
+    notifyListeners();
+  }
+
+  Future<void> clearIconsData() async {
+    await box.delete('iconsData');
+    _icons = [];
+    notifyListeners();
+  }
+
   AppBrightness get brightness => _brightness;
 
   set brightness(AppBrightness value) {
@@ -71,14 +93,22 @@ class IconNotifier extends ChangeNotifier {
       box = Hive.box('FLIPBox');
     }
 
-    final icon = await box.get('iconData') != null
+    final cachedIcon = await box.get('iconData') != null
         ? deserializeIcon(Map<String, dynamic>.from(await box.get('iconData')))
+        : null;
+
+    final cachedIcons = await box.get('iconsData') != null
+        ? List.from(await box.get('iconsData'))
+            .map((map) => deserializeIcon(Map<String, dynamic>.from(map)))
+            .cast<IconPickerIcon>()
+            .toList()
         : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));
 
     return IconNotifier._(
-      icon,
+      cachedIcon,
+      cachedIcons,
       brightness,
     );
   }
