@@ -94,18 +94,25 @@ class _HomeScreen2State extends State<HomeScreen2> {
               children: [
                 ElevatedButton(
                   onPressed: _pickIcon,
-                  child: Text(notifier.icons.isNotNullOrEmpty
-                      ? 'Change Icons'
-                      : 'Open Multiple IconPicker'),
-                ),
-                if (notifier.icons.isNotNullOrEmpty)
-                  ElevatedButton(
-                    onPressed: () async {
-                      await notifier.clearIconsData();
-                      setState(() {});
-                    },
-                    child: const Text('Clear Icons'),
+                  child: AnimatedSize(
+                    duration: const Duration(milliseconds: 300),
+                    child: Text(notifier.icons.isNotNullOrEmpty
+                        ? 'Change Icons'
+                        : 'Open Multiple IconPicker'),
                   ),
+                ),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: notifier.icons.isNotNullOrEmpty
+                      ? ElevatedButton(
+                          onPressed: () async {
+                            await notifier.clearIconsData();
+                            setState(() {});
+                          },
+                          child: const Text('Clear Icons'),
+                        )
+                      : const SizedBox.shrink(),
+                ),
               ],
             ),
             const SizedBox(height: 10),
@@ -113,23 +120,26 @@ class _HomeScreen2State extends State<HomeScreen2> {
               builder: (BuildContext ctx, dynamic d, Widget? w) =>
                   AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: notifier.icons.isNotNullOrEmpty
-                    ? Column(
-                        children: [
-                          Wrap(
-                            children: notifier.icons
-                                .map((item) => Icon(item.data))
-                                .toList(),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            'Database Entries:\n${notifier.icons.map((item) => serializeIcon(item)).toString()}',
-                          ),
-                        ],
-                      )
-                    : Container(),
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: notifier.icons.isNotNullOrEmpty
+                      ? Column(
+                          children: [
+                            Wrap(
+                              children: notifier.icons
+                                  .map((item) => Icon(item.data))
+                                  .toList(),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Text(
+                              'Database Entries:\n${notifier.icons.map((item) => serializeIcon(item)).toString()}',
+                            ),
+                          ],
+                        )
+                      : Container(),
+                ),
               ),
             ),
           ],
