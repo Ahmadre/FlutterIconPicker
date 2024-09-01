@@ -153,9 +153,8 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                         final MapEntry<String, IconPickerIcon> item =
                             controller.entries.elementAt(index);
 
-                        final isSelectedIcon = widget
-                                .iconController.isSelectedIconAvailable &&
-                            widget.iconController.selectedIcon! == item.value;
+                        final isSelected = widget.iconController.selectedIcons
+                            .contains(item.value);
 
                         final selectedIconColor =
                             widget.selectedIconBackgroundColor ??
@@ -166,9 +165,9 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Container(
-                            color: isSelectedIcon ? selectedIconColor : null,
+                            color: isSelected ? selectedIconColor : null,
                             child: GestureDetector(
-                              onTap: () => Navigator.pop(context, item.value),
+                              onTap: () => controller.onTapIcon(item.value),
                               child: widget.showTooltips!
                                   ? Tooltip(
                                       message: item.key,

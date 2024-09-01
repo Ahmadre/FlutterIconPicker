@@ -168,7 +168,11 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                           child: Container(
                             color: isSelectedIcon ? selectedIconColor : null,
                             child: GestureDetector(
-                              onTap: () => Navigator.pop(context, item.value),
+                              onTap: () => controller.onTapIcon(
+                                item.value,
+                                externalInvocation: () =>
+                                    Navigator.pop(context, item.value),
+                              ),
                               child: widget.showTooltips!
                                   ? Tooltip(
                                       message: item.key,
