@@ -1,3 +1,7 @@
+## [3.6.1] - 01.09.2024
+
+* 📝 Add hints to picker modes
+
 ## [3.6.0] - 31.08.2024
 
 * 💡 **[BREAKING CHANGE]** `showIconPicker` and `showMultipleIconPicker` use now the optional parameter: `SinglePickerConfiguration` and `MultiplePickerConfiguration` to configure the picker. Also the parameter `selectedIcon` is now called: `preSelected`.

@@ -24,7 +24,9 @@ Simply use custom icons by providing a list of IconPickerIcon's to the IconPicke
 
 For example if you want to provide `material` icons, copy the actual icons from here: [icons.dart](https://raw.githubusercontent.com/flutter/flutter/master/packages/flutter/lib/src/material/icons.dart) and provide them to the IconPicker as custom icons.
 
-## Supported IconPacks
+## Support
+
+## Packs
 
 |     IconPack        | Supported |
 | :-----------------: | :-------: |
@@ -35,6 +37,13 @@ For example if you want to provide `material` icons, copy the actual icons from 
 |    Cupertino        |    ✅     |
 |   FontAwesome       |    ✅     |
 |   LineAwesome       |    ✅     |
+
+## Picker-Modes
+
+|     Type             | Supported |
+| :-----------------:  | :-------: |
+|     Single Icon      |    ✅     |
+|   Multiple Icons     |    ✅     |
 
 ## Usage
 
