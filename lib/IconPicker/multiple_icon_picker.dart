@@ -15,7 +15,7 @@ import 'icons.dart';
 import '../Models/icon_pack.dart';
 import '../Helpers/color_brightness.dart';
 
-class FIPIconPicker extends StatefulWidget {
+class FIPMultipleIconPicker extends StatefulWidget {
   final FIPIconController iconController;
   final Color? selectedIconBackgroundColor;
   final List<IconPack>? iconPack;
@@ -28,7 +28,7 @@ class FIPIconPicker extends StatefulWidget {
   final Color? backgroundColor;
   final bool? showTooltips;
 
-  const FIPIconPicker({
+  const FIPMultipleIconPicker({
     super.key,
     required this.iconController,
     required this.iconPack,
@@ -44,10 +44,10 @@ class FIPIconPicker extends StatefulWidget {
   });
 
   @override
-  _FIPIconPickerState createState() => _FIPIconPickerState();
+  FIPMultipleIconPickerState createState() => FIPMultipleIconPickerState();
 }
 
-class _FIPIconPickerState extends State<FIPIconPicker> {
+class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
   ScrollController scrollController = ScrollController();
   late GridObserverController observerController =
       GridObserverController(controller: scrollController);
@@ -153,9 +153,8 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                         final MapEntry<String, IconPickerIcon> item =
                             controller.entries.elementAt(index);
 
-                        final isSelectedIcon = widget
-                                .iconController.isSelectedIconAvailable &&
-                            widget.iconController.selectedIcon! == item.value;
+                        final isSelected = widget.iconController.selectedIcons
+                            .contains(item.value);
 
                         final selectedIconColor =
                             widget.selectedIconBackgroundColor ??
@@ -166,13 +165,9 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Container(
-                            color: isSelectedIcon ? selectedIconColor : null,
+                            color: isSelected ? selectedIconColor : null,
                             child: GestureDetector(
-                              onTap: () => controller.onTapIcon(
-                                item.value,
-                                externalInvocation: () =>
-                                    Navigator.pop(context, item.value),
-                              ),
+                              onTap: () => controller.onTapIcon(item.value),
                               child: widget.showTooltips!
                                   ? Tooltip(
                                       message: item.key,

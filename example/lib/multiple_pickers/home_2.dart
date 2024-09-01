@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Models/configuration.dart';
+import 'package:flutter_iconpicker/extensions/list_extensions.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:fluttericonpickerexample/app/app_brightness.dart';
 import 'package:fluttericonpickerexample/app/icon_notifier.dart';
@@ -6,8 +8,8 @@ import 'package:provider/provider.dart';
 
 class HomeScreen2 extends StatefulWidget {
   const HomeScreen2({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _HomeScreen2State createState() => _HomeScreen2State();
@@ -27,23 +29,30 @@ class _HomeScreen2State extends State<HomeScreen2> {
   }
 
   _pickIcon() async {
-    IconPickerIcon? icon = await showIconPicker(
+    List<IconPickerIcon>? icons = await showMultipleIconPicker(
       context,
-      selectedIcon: notifier.icon,
-      adaptiveDialog: isAdaptive,
-      showTooltips: showTooltips,
-      showSearchBar: showSearch,
-      iconPickerShape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      iconPackModes: [IconPack.material],
+      configuration: MultiplePickerConfiguration(
+        preSelected: Provider.of<IconNotifier>(context, listen: false).icons,
+        adaptiveDialog: isAdaptive,
+        showTooltips: showTooltips,
+        showSearchBar: showSearch,
+        iconPickerShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        iconPackModes: IconNotifier.starterPacks,
+        searchComparator: (String search, IconPickerIcon icon) =>
+            search
+                .toLowerCase()
+                .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+            icon.name.toLowerCase().contains(search.toLowerCase()),
+      ),
     );
 
-    if (icon != null) {
-      notifier.setIconData(icon, pack: icon.pack);
+    if (icons != null) {
+      notifier.setIconsData(icons);
       setState(() {});
 
       debugPrint(
-          'Picked Icon:  $icon and saved it successfully in local hive db.');
+          'Picked Icons: $icons and saved it successfully in local hive db.');
     }
   }
 
@@ -85,18 +94,25 @@ class _HomeScreen2State extends State<HomeScreen2> {
               children: [
                 ElevatedButton(
                   onPressed: _pickIcon,
-                  child: Text(notifier.icon != null
-                      ? 'Change Icon'
-                      : 'Open IconPicker'),
-                ),
-                if (notifier.icon != null)
-                  ElevatedButton(
-                    onPressed: () async {
-                      await notifier.clearIconData();
-                      setState(() {});
-                    },
-                    child: const Text('Clear Icon'),
+                  child: AnimatedSize(
+                    duration: const Duration(milliseconds: 300),
+                    child: Text(notifier.icons.isNotNullOrEmpty
+                        ? 'Change Icons'
+                        : 'Open Multiple IconPicker'),
                   ),
+                ),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: notifier.icons.isNotNullOrEmpty
+                      ? ElevatedButton(
+                          onPressed: () async {
+                            await notifier.clearIconsData();
+                            setState(() {});
+                          },
+                          child: const Text('Clear Icons'),
+                        )
+                      : const SizedBox.shrink(),
+                ),
               ],
             ),
             const SizedBox(height: 10),
@@ -104,19 +120,26 @@ class _HomeScreen2State extends State<HomeScreen2> {
               builder: (BuildContext ctx, dynamic d, Widget? w) =>
                   AnimatedSwitcher(
                 duration: const Duration(milliseconds: 300),
-                child: notifier.icon != null
-                    ? Column(
-                        children: [
-                          Icon(notifier.icon?.data),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            'Database Entry:\n${serializeIcon(notifier.icon!).toString()}',
-                          ),
-                        ],
-                      )
-                    : Container(),
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: notifier.icons.isNotNullOrEmpty
+                      ? Column(
+                          children: [
+                            Wrap(
+                              children: notifier.icons
+                                  .map((item) => Icon(item.data))
+                                  .toList(),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Text(
+                              'Database Entries:\n${notifier.icons.map((item) => serializeIcon(item)).toString()}',
+                            ),
+                          ],
+                        )
+                      : Container(),
+                ),
               ),
             ),
           ],

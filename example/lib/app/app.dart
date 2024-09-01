@@ -5,18 +5,18 @@ import 'package:provider/provider.dart';
 
 class FlutterIconPickerExample extends StatefulWidget {
   const FlutterIconPickerExample({
-    Key? key,
+    super.key,
     this.notifier,
-  }) : super(key: key);
+  });
 
   final IconNotifier? notifier;
 
   @override
-  _FlutterIconPickerExampleState createState() =>
-      _FlutterIconPickerExampleState();
+  FlutterIconPickerExampleState createState() =>
+      FlutterIconPickerExampleState();
 }
 
-class _FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
+class FlutterIconPickerExampleState extends State<FlutterIconPickerExample> {
   bool isDarkTheme = false;
 
   @override

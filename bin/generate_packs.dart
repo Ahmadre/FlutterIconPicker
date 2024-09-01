@@ -62,9 +62,9 @@ Future<void> main(List<String> arguments) async {
         parseIconPacks((argResults[packs] as String).split(','));
 
     /// 3. Generate Icons which the developer needs
-    requiredPacks.forEach(
-      (pack) => generateIconPack(packagePath: basePackagePath, pack: pack),
-    );
+    for (var pack in requiredPacks) {
+      generateIconPack(packagePath: basePackagePath, pack: pack);
+    }
   }
 
   print('✅ Finished generating Packs');
@@ -114,11 +114,11 @@ List<IconPack> parseIconPacks(List<String> rawPacks) {
   List<String> inputPacks =
       rawPacks.map((name) => name.toLowerCase().trim()).toList();
 
-  IconPack.values.forEach((pack) {
+  for (var pack in IconPack.values) {
     if (inputPacks.contains(pack.name.toLowerCase().trim())) {
       result.add(pack);
     }
-  });
+  }
 
   return result;
 }

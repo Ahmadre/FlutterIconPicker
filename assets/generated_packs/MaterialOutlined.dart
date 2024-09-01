@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> outlinedIcons = {
+const Map<String, IconPickerIcon> outlinedIcons = {
   'ten_k_outlined': IconPickerIcon(
       name: 'ten_k_outlined',
       data: Icons.ten_k_outlined,
@@ -7071,10 +7071,11 @@ Map<String, IconPickerIcon> outlinedIcons = {
       name: 'signal_wifi_statusbar_4_bar_outlined',
       data: Icons.signal_wifi_statusbar_4_bar_outlined,
       pack: IconPack.outlinedMaterial),
-  'signal_wifi_statusbar_connected_no_internet_4_outlined': IconPickerIcon(
-      name: 'signal_wifi_statusbar_connected_no_internet_4_outlined',
-      data: Icons.signal_wifi_statusbar_connected_no_internet_4_outlined,
-      pack: IconPack.outlinedMaterial),
+  'signal_wifi_statusbar_connected_no_internet_4_outlined':
+      IconPickerIcon(
+          name: 'signal_wifi_statusbar_connected_no_internet_4_outlined',
+          data: Icons.signal_wifi_statusbar_connected_no_internet_4_outlined,
+          pack: IconPack.outlinedMaterial),
   'signal_wifi_statusbar_null_outlined': IconPickerIcon(
       name: 'signal_wifi_statusbar_null_outlined',
       data: Icons.signal_wifi_statusbar_null_outlined,

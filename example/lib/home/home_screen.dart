@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Models/configuration.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:fluttericonpickerexample/app/app_brightness.dart';
 import 'package:fluttericonpickerexample/app/icon_notifier.dart';
@@ -7,8 +8,8 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -27,18 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _pickIcon() async {
     IconPickerIcon? icon = await showIconPicker(
       context,
-      selectedIcon: Provider.of<IconNotifier>(context, listen: false).icon,
-      adaptiveDialog: isAdaptive,
-      showTooltips: showTooltips,
-      showSearchBar: showSearch,
-      iconPickerShape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      iconPackModes: IconNotifier.starterPacks,
-      searchComparator: (String search, IconPickerIcon icon) =>
-          search
-              .toLowerCase()
-              .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
-          icon.name.toLowerCase().contains(search.toLowerCase()),
+      configuration: SinglePickerConfiguration(
+        preSelected: Provider.of<IconNotifier>(context, listen: false).icon,
+        adaptiveDialog: isAdaptive,
+        showTooltips: showTooltips,
+        showSearchBar: showSearch,
+        iconPickerShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        iconPackModes: IconNotifier.starterPacks,
+        searchComparator: (String search, IconPickerIcon icon) =>
+            search
+                .toLowerCase()
+                .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+            icon.name.toLowerCase().contains(search.toLowerCase()),
+      ),
     );
 
     if (icon != null) {

@@ -1,3 +1,12 @@
+## [3.6.0] - 31.08.2024
+
+* 💡 **[BREAKING CHANGE]** `showIconPicker` and `showMultipleIconPicker` use now the optional parameter: `SinglePickerConfiguration` and `MultiplePickerConfiguration` to configure the picker. Also the parameter `selectedIcon` is now called: `preSelected`.
+  * Follow this guide for more: [Migration Guide](https://github.com/Ahmadre/FlutterIconPicker/tree/master?tab=readme-ov-file#migration-guide-when-updating-to--360-breaking-change)
+* 💡 Add support for selecting multiple icons by `showMultipleIconPicker` which returns `List<IconPickerIcon>`
+* 💡 Add support for pre-selected icons by `selectedIcons` which consumes `List<IconPickerIcon>`
+* 💡 Update serialization helpers to support multiple icons to serialize
+  * Use new helpers `serializeIcons` and `deserializeIcons`
+
 ## [3.5.2] - 31.08.2024
 
 * 🐛: Fix update `scrollview_observer` web support
