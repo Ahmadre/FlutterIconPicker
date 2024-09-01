@@ -143,6 +143,12 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   serializeIcon(iconPickerIcon)
 ```
 
+**List\<IconPickerIcon> to JSON List**
+
+```dart
+  serializeIcons(icons)
+```
+
 2. You can retreive the IconPickerIcon by passing the mapped icon:
 
 **Map to IconPickerIcon**
@@ -151,9 +157,63 @@ So if you plan to save the picked icon anywhere (sqflite, firebase, etc.), you c
   deserializeIcon(map)
 ```
 
+**JSON List to List\<IconPickerIcon>**
+
+```dart
+  deserializeIcons(json)
+```
+
+## Migration-Guide when updating to >= 3.6.0 (BREAKING CHANGE)
+
+The IconPicker now supports `IconPickerIcon? icon = await showIconPicker(...` to select a single icon and `List<IconPickerIcon>? icons = await showMultipleIconPicker(...` to select multiple icons at once. If the multiple picker gets dismissed by any action (barrier tap or close button) the result will be the selected icons.
+
+The parameters of your single or multiple pickers were moved to `SinglePickerConfiguration` for `showIconPicker` and `MultiplePickerConfiguration` for `showMultipleIconPicker`. Please use these `configuration` parameter to setup your picker now! For more see example below or have a look into the example folder.
+
+### **Before 3.6.0**
+
+```dart
+IconPickerIcon? icon = await showIconPicker(
+  context,
+  selectedIcon: Provider.of<IconNotifier>(context, listen: false).icon,
+  adaptiveDialog: isAdaptive,
+  showTooltips: showTooltips,
+  showSearchBar: showSearch,
+  iconPickerShape:
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+  iconPackModes: IconNotifier.starterPacks,
+  searchComparator: (String search, IconPickerIcon icon) =>
+      search
+          .toLowerCase()
+          .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+      icon.name.toLowerCase().contains(search.toLowerCase()),
+);
+```
+
+### **After 3.6.0**
+
+```dart
+IconPickerIcon? icon = await showIconPicker(
+  context,
+  configuration: SinglePickerConfiguration(
+    preSelected: Provider.of<IconNotifier>(context, listen: false).icon,
+    adaptiveDialog: isAdaptive,
+    showTooltips: showTooltips,
+    showSearchBar: showSearch,
+    iconPickerShape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    iconPackModes: IconNotifier.starterPacks,
+    searchComparator: (String search, IconPickerIcon icon) =>
+        search
+            .toLowerCase()
+            .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+        icon.name.toLowerCase().contains(search.toLowerCase()),
+  ),
+);
+```
+
 ## Migration-Guide when updating to >= 3.3.1 (BREAKING CHANGE)
 
-The IconPicker is now called via `IconPickerIcon? icon = await showIconPicker(...` and not anymore like: `IconPickerIcon? icon = await FlutterIconPicker.showIconPicker(...`. Please update your code accordingly!
+The IconPicker is now called via `IconPickerIcon? icon = await showIconPicker(...` and not anymore like: `IconPickerIcon? icon = await showIconPicker(...`. Please update your code accordingly!
 
 > Material icons are now separated into:
 
@@ -192,8 +252,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Icon? _icon;
 
   _pickIcon() async {
-    IconPickerIcon? icon = await FlutterIconPicker.showIconPicker(context,
-        iconPackModes: [IconPack.cupertino]);
+    IconPickerIcon? icon = await showIconPicker(
+        context,
+        configuration: SinglePickerConfiguration(
+          iconPackModes: [IconPack.cupertino],
+        ),
+    );
 
     _icon = Icon(icon.data);
     setState(() {});
