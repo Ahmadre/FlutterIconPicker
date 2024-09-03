@@ -9,7 +9,7 @@ const Map<String, IconPickerIcon> cupertinoIcons = {
   'left_chevron': IconPickerIcon(
       name: 'left_chevron',
       data: CupertinoIcons.left_chevron,
-      pack: IconPack.fontAwesomeIcons),
+      pack: IconPack.cupertino),
   'right_chevron': IconPickerIcon(
       name: 'right_chevron',
       data: CupertinoIcons.right_chevron,
