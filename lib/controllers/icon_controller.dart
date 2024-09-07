@@ -55,9 +55,9 @@ class FIPIconController with ChangeNotifier {
     notifyListeners();
   }
 
-  void onTapIcon(IconPickerIcon val, {VoidCallback? externalInvocation}) {
+  void onTapIcon(IconPickerIcon val, {VoidCallback? onSelected}) {
     if (!_isMultiple) {
-      externalInvocation?.call();
+      onSelected?.call();
     } else {
       toggleSelectedIcon(val);
     }
