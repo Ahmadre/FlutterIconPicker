@@ -1,3 +1,7 @@
+## [3.6.5] - 07.09.2024
+
+* 🐛 Fix `generate_packs` `--packs` allowed packs parameter
+
 ## [3.6.4] - 07.09.2024
 
 * 📝 Update `generate_packs` `--help` documentation to show allowed packs parameter
