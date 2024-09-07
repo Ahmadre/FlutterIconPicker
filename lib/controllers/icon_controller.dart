@@ -77,11 +77,11 @@ class FIPIconController with ChangeNotifier {
 
   bool get isSelectedIconAvailable => _selectedIcon != null;
 
-  Map<String, IconPickerIcon> _icons = {};
+  List<MapEntry<String, IconPickerIcon>> _icons = [];
 
-  Map<String, IconPickerIcon> get icons => _icons;
+  List<MapEntry<String, IconPickerIcon>> get icons => _icons;
 
-  set icons(Map<String, IconPickerIcon> val) {
+  set icons(List<MapEntry<String, IconPickerIcon>> val) {
     _icons = val;
     notifyListeners();
   }
@@ -97,10 +97,10 @@ class FIPIconController with ChangeNotifier {
 
   int get length => _icons.length;
 
-  Iterable<MapEntry<String, IconPickerIcon>> get entries => _icons.entries;
+  Iterable<MapEntry<String, IconPickerIcon>> get entries => _icons;
 
   void addAll(Map<String, IconPickerIcon> pack) {
-    _icons.addAll(pack);
+    _icons.addAll(pack.entries);
     notifyListeners();
   }
 
