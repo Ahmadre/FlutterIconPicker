@@ -1,3 +1,7 @@
+## [3.6.6] - 07.09.2024
+
+* 🐛 [Hotfix]: Fix mutually exclusive icons while searching (flatten results)
+
 ## [3.6.5] - 07.09.2024
 
 * 🐛 Fix `generate_packs` `--packs` allowed packs parameter
