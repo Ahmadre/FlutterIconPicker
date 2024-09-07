@@ -88,6 +88,7 @@ For more see: [flutter/flutter#16311](https://github.com/flutter/flutter/issues/
 | **Parameter**           | **Type**           | **Default** | **Short description**                |
 | ----------------------- | ------------------ | ----------- | ------------------------------------- |
 | context (only required) | `BuildContext`     | `-`         | Required due to `AlertDialog`'s base. |
+| iconBuilder          | `IconWidgetBuilder`             | `null`     | Builder Function to create your own Widget for each icon. **WARNING**: This builder provides you your own logic to handle onTap in Single and Multiple Pickers! So you as the developer are responsible for handling onTap! Also parameters like: `showTooltips` obviously has not effect if you create your own icon widget. |
 | adaptiveDialog          | `bool`             | `false`     | If `true`, IconPicker will adapt depending on the screen size. If `false`, IconPicker will show itself inside an AlertDialog. |
 | barrierDismissible      | `bool`             | `true`      | Defines if the user can dismiss the dialog by tapping on the outside barrier. |
 | iconSize                | `double`           | `40.0`      | Defines the size for the all icons, that can be picked. |
