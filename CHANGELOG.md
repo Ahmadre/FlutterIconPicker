@@ -1,3 +1,8 @@
+## [3.6.3] - 07.09.2024
+
+* 🐛 Fix mutually exclusive icons while searching
+  * Thanks to [programotuojes](https://github.com/programotuojes) for the hint in [#80](https://github.com/Ahmadre/FlutterIconPicker/issues/80)
+
 ## [3.6.2] - 03.09.2024
 
 * 🐛 Fix typo in `Cupertino.dart` icons
