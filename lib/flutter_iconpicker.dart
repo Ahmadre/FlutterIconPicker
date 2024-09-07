@@ -46,6 +46,7 @@ Future<IconPickerIcon?> showIconPicker(
   final controller = FIPIconController(
     selectedIcon: configuration.preSelected,
     shouldScrollToSelectedIcon: configuration.shouldScrollToSelectedIcon,
+    iconBuilder: configuration.iconBuilder,
   );
 
   if (configuration.adaptiveDialog) {
@@ -182,6 +183,7 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
   final controller = FIPIconController.multiple(
     selectedIcons: configuration.preSelected ?? [],
     shouldScrollToSelectedIcon: configuration.shouldScrollToSelectedIcon,
+    iconBuilder: configuration.iconBuilder,
   );
 
   if (configuration.adaptiveDialog) {

@@ -1,3 +1,7 @@
+## [4.0.0] - 07.09.2024
+
+* 💡 Add `iconBuilder`: `IconWidgetBuilder` to create your own custom widgets for your displayed icons
+
 ## [3.6.6] - 07.09.2024
 
 * 🐛 [Hotfix]: Fix mutually exclusive icons while searching (flatten results)

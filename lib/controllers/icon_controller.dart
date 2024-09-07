@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Models/configuration.dart';
 import 'package:flutter_iconpicker/extensions/list_extensions.dart';
 
 import '../Models/icon_picker_icon.dart';
@@ -7,18 +8,22 @@ class FIPIconController with ChangeNotifier {
   FIPIconController({
     required bool shouldScrollToSelectedIcon,
     IconPickerIcon? selectedIcon,
+    IconWidgetBuilder? iconBuilder,
   })  : _selectedIcon = selectedIcon,
         _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon,
-        _isMultiple = false;
+        _isMultiple = false,
+        _iconBuilder = iconBuilder;
 
   FIPIconController.multiple({
     required bool shouldScrollToSelectedIcon,
     List<IconPickerIcon> selectedIcons = const [],
+    IconWidgetBuilder? iconBuilder,
   })  : _selectedIcon =
             selectedIcons.isNotNullOrEmpty ? selectedIcons.first : null,
         _selectedIcons = selectedIcons,
         _shouldScrollToSelectedIcon = shouldScrollToSelectedIcon,
-        _isMultiple = true;
+        _isMultiple = true,
+        _iconBuilder = iconBuilder;
 
   final bool _isMultiple;
 
@@ -27,6 +32,10 @@ class FIPIconController with ChangeNotifier {
   final bool _shouldScrollToSelectedIcon;
 
   bool get shouldScrollToSelectedIcon => _shouldScrollToSelectedIcon;
+
+  IconWidgetBuilder? _iconBuilder;
+
+  IconWidgetBuilder? get iconBuilder => _iconBuilder;
 
   IconPickerIcon? _selectedIcon;
 
@@ -46,9 +55,9 @@ class FIPIconController with ChangeNotifier {
     notifyListeners();
   }
 
-  void onTapIcon(IconPickerIcon val, {VoidCallback? externalInvocation}) {
+  void onTapIcon(IconPickerIcon val, {VoidCallback? onSelected}) {
     if (!_isMultiple) {
-      externalInvocation?.call();
+      onSelected?.call();
     } else {
       toggleSelectedIcon(val);
     }

@@ -3,8 +3,25 @@ import 'package:flutter/material.dart';
 import 'icon_pack.dart';
 import 'icon_picker_icon.dart';
 
+/// The IconWidgetBuilder is a function that builds a widget for the IconPicker
+///
+/// [context] The current BuildContext
+///
+/// [icon] The IconPickerIcon to build the widget for
+///
+/// [isSelected] If the icon is selected
+///
+/// [onTap] The function to call when the icon is tapped
+typedef IconWidgetBuilder = Widget Function(
+  BuildContext context,
+  IconPickerIcon icon,
+  bool isSelected,
+  void Function(IconPickerIcon, {VoidCallback? onSelected}) onTap,
+);
+
 sealed class IconPickerConfiguration<T> {
   const IconPickerConfiguration({
+    this.iconBuilder,
     this.preSelected,
     this.shouldScrollToSelectedIcon = true,
     this.selectedIconBackgroundColor,
@@ -32,6 +49,9 @@ sealed class IconPickerConfiguration<T> {
     this.iconPackModes = const <IconPack>[IconPack.material],
     this.customIconPack,
   });
+
+  /// The IconWidgetBuilder is a function that builds a widget for the IconPicker
+  final IconWidgetBuilder? iconBuilder;
 
   /// Pre-selected icon before opening the icon picker
   /// If non-null the icon picker highlights and scrolls to the selected icon
@@ -156,6 +176,7 @@ sealed class IconPickerConfiguration<T> {
   final Map<String, IconPickerIcon>? customIconPack;
 
   IconPickerConfiguration copyWith({
+    IconWidgetBuilder? iconBuilder,
     T? preSelected,
     bool? shouldScrollToSelectedIcon,
     Color? selectedIconsBackgroundColor,
@@ -186,6 +207,7 @@ sealed class IconPickerConfiguration<T> {
 class SinglePickerConfiguration
     extends IconPickerConfiguration<IconPickerIcon> {
   const SinglePickerConfiguration({
+    super.iconBuilder,
     super.preSelected,
     super.shouldScrollToSelectedIcon = true,
     super.selectedIconBackgroundColor,
@@ -216,6 +238,7 @@ class SinglePickerConfiguration
 
   @override
   SinglePickerConfiguration copyWith({
+    IconWidgetBuilder? iconBuilder,
     IconPickerIcon? preSelected,
     bool? shouldScrollToSelectedIcon,
     Color? selectedIconsBackgroundColor,
@@ -241,6 +264,7 @@ class SinglePickerConfiguration
     Map<String, IconPickerIcon>? customIconPack,
   }) =>
       SinglePickerConfiguration(
+        iconBuilder: iconBuilder ?? super.iconBuilder,
         preSelected: preSelected ?? super.preSelected,
         shouldScrollToSelectedIcon:
             shouldScrollToSelectedIcon ?? super.shouldScrollToSelectedIcon,
@@ -272,6 +296,7 @@ class SinglePickerConfiguration
 class MultiplePickerConfiguration
     extends IconPickerConfiguration<List<IconPickerIcon>> {
   const MultiplePickerConfiguration({
+    super.iconBuilder,
     super.preSelected,
     super.shouldScrollToSelectedIcon = true,
     super.selectedIconBackgroundColor,
@@ -302,6 +327,7 @@ class MultiplePickerConfiguration
 
   @override
   MultiplePickerConfiguration copyWith({
+    IconWidgetBuilder? iconBuilder,
     List<IconPickerIcon>? preSelected,
     bool? shouldScrollToSelectedIcon,
     Color? selectedIconsBackgroundColor,
@@ -327,6 +353,7 @@ class MultiplePickerConfiguration
     Map<String, IconPickerIcon>? customIconPack,
   }) =>
       MultiplePickerConfiguration(
+        iconBuilder: iconBuilder ?? super.iconBuilder,
         preSelected: preSelected ?? super.preSelected,
         shouldScrollToSelectedIcon:
             shouldScrollToSelectedIcon ?? super.shouldScrollToSelectedIcon,

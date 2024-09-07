@@ -156,6 +156,15 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                         final isSelected = widget.iconController.selectedIcons
                             .contains(item.value);
 
+                        if (controller.iconBuilder != null) {
+                          return controller.iconBuilder!(
+                            context,
+                            item.value,
+                            isSelected,
+                            controller.onTapIcon,
+                          );
+                        }
+
                         final selectedIconColor =
                             widget.selectedIconBackgroundColor ??
                                 (Theme.of(context).brightness == Brightness.dark
