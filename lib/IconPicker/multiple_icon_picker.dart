@@ -157,7 +157,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                             .contains(item.value);
 
                         if (controller.iconBuilder != null) {
-                          return controller.iconBuilder!(context, item.value, isSelected);
+                          return controller.iconBuilder!(context, item.value, isSelected, controller.onTapIcon);
                         }
 
                         final selectedIconColor =

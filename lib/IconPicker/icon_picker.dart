@@ -151,14 +151,15 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                       ),
                       itemBuilder: (context, index) {
                         final MapEntry<String, IconPickerIcon> item =
-                            controller.entries.elementAt(index);                        
+                            controller.entries.elementAt(index);
 
                         final isSelected = widget
                                 .iconController.isSelectedIconAvailable &&
                             widget.iconController.selectedIcon! == item.value;
 
                         if (controller.iconBuilder != null) {
-                          return controller.iconBuilder!(context, item.value, isSelected);
+                          return controller.iconBuilder!(context, item.value,
+                              isSelected, controller.onTapIcon);
                         }
 
                         final selectedIconColor =
@@ -174,7 +175,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                             child: GestureDetector(
                               onTap: () => controller.onTapIcon(
                                 item.value,
-                                externalInvocation: () =>
+                                onSelected: () =>
                                     Navigator.pop(context, item.value),
                               ),
                               child: widget.showTooltips!
