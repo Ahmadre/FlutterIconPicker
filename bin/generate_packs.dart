@@ -34,9 +34,6 @@ Future<void> main(List<String> arguments) async {
         'fontAwesomeIcons': 'Font Awesome Icons',
         'lineAwesomeIcons': 'Line Awesome Icons',
       },
-      allowed: IconPack.values
-          .where((p) => p.path.isNotNullOrBlank)
-          .map((e) => e.name),
       valueHelp: 'material,cupertino,...',
       defaultsTo: 'material',
       abbr: 'p',
