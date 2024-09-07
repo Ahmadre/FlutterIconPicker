@@ -52,7 +52,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
           .forEach((String key, IconPickerIcon val) {
         if (searchComparator.call(searchValue,
             IconPickerIcon(name: key, data: val.data, pack: pack))) {
-          searchResult.putIfAbsent(key, () => val);
+          searchResult[key] = val;
         }
       });
     }
@@ -61,7 +61,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
       widget.customIconPack!.forEach((String key, IconPickerIcon val) {
         if (searchComparator.call(searchValue,
             IconPickerIcon(name: key, data: val.data, pack: IconPack.custom))) {
-          searchResult.putIfAbsent(key, () => val);
+          searchResult[key] = val;
         }
       });
     }
