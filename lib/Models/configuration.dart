@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 import 'icon_pack.dart';
 import 'icon_picker_icon.dart';
 
+/// The IconWidgetBuilder is a function that builds a widget for the IconPicker
+/// 
+/// [context] The current BuildContext
+/// 
+/// [icon] The IconPickerIcon to build the widget for
+/// 
+/// [isSelected] If the icon is selected
+/// 
+/// [onTap] The function to call when the icon is tapped
 typedef IconWidgetBuilder = Widget Function(
   BuildContext context,
   IconPickerIcon icon,
@@ -41,6 +50,7 @@ sealed class IconPickerConfiguration<T> {
     this.customIconPack,
   });
 
+  /// The IconWidgetBuilder is a function that builds a widget for the IconPicker
   final IconWidgetBuilder? iconBuilder;
 
   /// Pre-selected icon before opening the icon picker
