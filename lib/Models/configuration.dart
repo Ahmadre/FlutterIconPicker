@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'icon_pack.dart';
 import 'icon_picker_icon.dart';
 
-typedef IconWidgetBuilder = Widget Function(BuildContext context, IconPickerIcon icon, bool isSelected, void Function(IconPickerIcon, {VoidCallback? onSelected}) onTap);
+typedef IconWidgetBuilder = Widget Function(
+    BuildContext context,
+    IconPickerIcon icon,
+    bool isSelected,
+    void Function(IconPickerIcon, {VoidCallback? onSelected}) onTap);
 
 sealed class IconPickerConfiguration<T> {
   const IconPickerConfiguration({
