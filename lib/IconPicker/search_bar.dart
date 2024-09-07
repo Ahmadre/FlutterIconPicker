@@ -45,25 +45,29 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
       widget.searchComparator ?? _defaultSearchComparator;
 
   void _search(String searchValue) {
-    Map<String, IconPickerIcon> searchResult = <String, IconPickerIcon>{};
+    List<MapEntry<String, IconPickerIcon>> searchResult = [];
 
-    for (var pack in widget.iconPack!) {
-      FIPIconManager.getSelectedPack(pack)
-          .forEach((String key, IconPickerIcon val) {
-        if (searchComparator.call(searchValue,
-            IconPickerIcon(name: key, data: val.data, pack: pack))) {
-          searchResult[key] = val;
-        }
-      });
+    final flatFIPPacks = widget.iconPack
+            ?.expand((pack) => FIPIconManager.getSelectedPack(pack).entries) ??
+        [];
+    final flatCustomPacks = widget.customIconPack?.entries ?? [];
+
+    for (var item in flatFIPPacks) {
+      if (searchComparator.call(
+          searchValue,
+          IconPickerIcon(
+              name: item.key, data: item.value.data, pack: item.value.pack))) {
+        searchResult.add(item);
+      }
     }
 
-    if (widget.customIconPack != null) {
-      widget.customIconPack!.forEach((String key, IconPickerIcon val) {
-        if (searchComparator.call(searchValue,
-            IconPickerIcon(name: key, data: val.data, pack: IconPack.custom))) {
-          searchResult[key] = val;
-        }
-      });
+    for (var item in flatCustomPacks) {
+      if (searchComparator.call(
+          searchValue,
+          IconPickerIcon(
+              name: item.key, data: item.value.data, pack: IconPack.custom))) {
+        searchResult.add(item);
+      }
     }
 
     setState(() {
