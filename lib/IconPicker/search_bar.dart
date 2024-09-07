@@ -44,7 +44,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
   late final searchComparator =
       widget.searchComparator ?? _defaultSearchComparator;
 
-  _search(String searchValue) {
+  void _search(String searchValue) {
     Map<String, IconPickerIcon> searchResult = <String, IconPickerIcon>{};
 
     for (var pack in widget.iconPack!) {
