@@ -1,3 +1,7 @@
+## [3.6.4] - 07.09.2024
+
+* 📝 Update `generate_packs` `--help` documentation to show allowed packs parameter
+
 ## [3.6.3] - 07.09.2024
 
 * 🐛 Fix mutually exclusive icons while searching

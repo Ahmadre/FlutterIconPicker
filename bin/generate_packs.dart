@@ -22,7 +22,21 @@ Future<void> main(List<String> arguments) async {
     ..addOption(
       packs,
       help:
-          'Defines which packs to generate for your project with --packs or -p followed by the pack name/s.\n❗custom icons are not allowed❗',
+          'Defines which packs to generate for your project (comma separated)',
+      allowedHelp: {
+        'material': 'Material Icons',
+        'allMaterial':
+            'All Material Icons (including rounded, outlined or sharp icons)',
+        'sharpMaterial': 'Material Sharp Icons',
+        'roundedMaterial': 'Material Rounded Icons',
+        'outlinedMaterial': 'Material Outlined Icons',
+        'cupertino': 'Cupertino Icons',
+        'fontAwesomeIcons': 'Font Awesome Icons',
+        'lineAwesomeIcons': 'Line Awesome Icons',
+      },
+      allowed: IconPack.values
+          .where((p) => p.path.isNotNullOrBlank)
+          .map((e) => e.name),
       valueHelp: 'material,cupertino,...',
       defaultsTo: 'material',
       abbr: 'p',
