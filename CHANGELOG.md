@@ -1,3 +1,9 @@
+## [4.0.1] - 26.09.2024
+
+* 🐛 Fixed iOS 18 requirements on FontAwesome Icons.
+  * Thanks to [SethuSenthil](https://github.com/SethuSenthil): [#86](https://github.com/Ahmadre/FlutterIconPicker/pull/86)
+* ⬆️ Update FontAwesome Icons (6.5.1)
+
 ## [4.0.0] - 07.09.2024
 
 * 💡 Add `iconBuilder`: `IconWidgetBuilder` to create your own custom widgets for your displayed icons
