@@ -1,0 +1,2 @@
+analyzer:
+  exclude: [build/**, lib/**.freezed.dart, lib/**.g.dart, assets/**]
