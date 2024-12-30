@@ -49,8 +49,7 @@ class FIPIconPicker extends StatefulWidget {
 
 class _FIPIconPickerState extends State<FIPIconPicker> {
   ScrollController scrollController = ScrollController();
-  late GridObserverController observerController =
-      GridObserverController(controller: scrollController);
+  late GridObserverController observerController = GridObserverController(controller: scrollController);
 
   bool scrolledToSelectedIcon = false;
   int selectedIconIndex = -1;
@@ -67,23 +66,22 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
       if (widget.iconPack != null) {
         for (var pack in widget.iconPack!) {
           if (mounted) {
-            widget.iconController.addAll(IconPackManager.getIcons(pack));
+            widget.iconController.addAll(pack.data ?? {});
           }
         }
         if (mounted &&
             !scrolledToSelectedIcon &&
             widget.iconController.shouldScrollToSelectedIcon &&
             widget.iconController.isSelectedIconAvailable &&
-            widget.iconController.entries.firstWhereOrNull((item) =>
-                    widget.iconController.selectedIcon == item.value) !=
+            widget.iconController.entries
+                    .firstWhereOrNull((item) => widget.iconController.selectedIcon == item.value) !=
                 null) {
           Timer.periodic(const Duration(milliseconds: 100), (timer) async {
             if (scrollController.hasClients) {
               scrolledToSelectedIcon = true;
               selectedIconIndex = widget.iconController.entries
                   .toList()
-                  .indexWhere((item) =>
-                      widget.iconController.selectedIcon == item.value);
+                  .indexWhere((item) => widget.iconController.selectedIcon == item.value);
               setState(() {});
               await observerController.jumpTo(
                 index: selectedIconIndex,
@@ -105,22 +103,14 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
             text: TextSpan(
               text: '${widget.noResultsText!} ',
               style: TextStyle(
-                color: widget.backgroundColor != null
-                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white
-                    : null,
+                color: FIPColorBrightness(widget.backgroundColor!).isLight() ? Colors.black : Colors.white,
               ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: widget.backgroundColor != null
-                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                            ? Colors.black
-                            : Colors.white
-                        : null,
+                    color: FIPColorBrightness(widget.backgroundColor!).isLight() ? Colors.black : Colors.white,
                   ),
                 ),
               ],
@@ -149,16 +139,12 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                         childAspectRatio: 1 / 1,
                         mainAxisSpacing: widget.mainAxisSpacing ?? 5,
                         crossAxisSpacing: widget.crossAxisSpacing ?? 5,
-                        maxCrossAxisExtent: widget.iconSize != null
-                            ? widget.iconSize! + 10
-                            : 50,
+                        maxCrossAxisExtent: widget.iconSize != null ? widget.iconSize! + 10 : 50,
                       ),
                       itemBuilder: (context, index) {
-                        final MapEntry<String, IconPickerIcon> item =
-                            controller.entries.elementAt(index);
+                        final MapEntry<String, IconPickerIcon> item = controller.entries.elementAt(index);
 
-                        final isSelected = widget
-                                .iconController.isSelectedIconAvailable &&
+                        final isSelected = widget.iconController.isSelectedIconAvailable &&
                             widget.iconController.selectedIcon! == item.value;
 
                         if (controller.iconBuilder != null) {
@@ -170,11 +156,8 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                           );
                         }
 
-                        final selectedIconColor =
-                            widget.selectedIconBackgroundColor ??
-                                (Theme.of(context).brightness == Brightness.dark
-                                    ? Colors.grey[800]
-                                    : Colors.grey[400]);
+                        final selectedIconColor = widget.selectedIconBackgroundColor ??
+                            (Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]);
 
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(8),
@@ -183,8 +166,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                             child: GestureDetector(
                               onTap: () => controller.onTapIcon(
                                 item.value,
-                                onSelected: () =>
-                                    Navigator.pop(context, item.value),
+                                onSelected: () => Navigator.pop(context, item.value),
                               ),
                               child: widget.showTooltips!
                                   ? Tooltip(
@@ -211,8 +193,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
-                      end: Alignment.lerp(
-                          Alignment.topCenter, Alignment.center, .05)!,
+                      end: Alignment.lerp(Alignment.topCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor ??
                             Theme.of(context).dialogTheme.backgroundColor ??
@@ -235,8 +216,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
-                      end: Alignment.lerp(
-                          Alignment.bottomCenter, Alignment.center, .05)!,
+                      end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor ??
                             Theme.of(context).dialogTheme.backgroundColor ??
