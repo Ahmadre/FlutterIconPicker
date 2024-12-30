@@ -9,17 +9,17 @@ environment:
   sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
-  args: ^2.5.0
+  args: ^2.6.0
   collection: ^1.19.0
   cupertino_icons: ^1.0.8
   dcli: ^6.1.0
-  equatable: ^2.0.5
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.7.0
-  path: ^1.9.0
+  font_awesome_flutter: ^10.8.0
+  path: ^1.9.1
   provider: ^6.1.2
-  scrollview_observer: ^1.24.0 
+  scrollview_observer: ^1.24.0
 
 dev_dependencies:
   flutter_lints: '>=4.0.0 <6.0.0'
