@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
+import 'package:flutter_iconpicker/IconPicker/Packs/Cupertino.dart' as Cupertino;
+import 'package:flutter_iconpicker/IconPicker/Packs/FontAwesome.dart' as FontAwesome;
+import 'package:flutter_iconpicker/IconPicker/Packs/LineIcons.dart' as LineAwesome;
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialDefault.dart' as DefaultMaterial;
+import 'package:flutter_iconpicker/IconPicker/Packs/Material.dart' as AllMaterial;
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialSharp.dart' as SharpMaterial;
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialRounded.dart' as RoundedMaterial;
+import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart' as OutlinedMaterial;
+
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
+
+import '../Models/icon_picker_icon.dart';
 
 Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
   if (icon.pack == IconPack.custom) {
     return {
-      'pack': icon.pack,
+      'pack': icon.pack.name,
       'key': icon.name,
       'iconData': {
         'codePoint': icon.data.codePoint,
@@ -18,7 +28,7 @@ Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
   }
 
   return {
-    'pack': icon.pack,
+    'pack': icon.pack.name,
     'key': icon.name,
   };
 }
@@ -50,8 +60,5 @@ List<Map<String, dynamic>?> serializeIcons(List<IconPickerIcon> icons) =>
     icons.map((item) => serializeIcon(item)).toList();
 
 List<IconPickerIcon>? deserializeIcons(dynamic json) => json != null
-    ? List.from(json)
-        .map((map) => deserializeIcon(Map<String, dynamic>.from(map)))
-        .cast<IconPickerIcon>()
-        .toList()
+    ? List.from(json).map((map) => deserializeIcon(Map<String, dynamic>.from(map))).cast<IconPickerIcon>().toList()
     : null;
