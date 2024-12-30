@@ -51,6 +51,12 @@ enum IconPack {
     description: 'Line Awesome Icons',
   ),
 
+  /// The official Eva Icons Fill by Akveo
+  evaIconsFill(path: 'EvaIconsFill'),
+
+  /// The official Eva Icons Outline by Akveo
+  evaIconsOutline(path: 'EvaIconsOutline'),
+
   /// Use this to show your own custom provided IconPack
   custom;
 
