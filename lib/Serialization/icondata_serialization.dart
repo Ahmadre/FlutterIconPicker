@@ -1,13 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconpicker/IconPicker/Packs/Cupertino.dart' as Cupertino;
-import 'package:flutter_iconpicker/IconPicker/Packs/FontAwesome.dart' as FontAwesome;
-import 'package:flutter_iconpicker/IconPicker/Packs/LineIcons.dart' as LineAwesome;
-import 'package:flutter_iconpicker/IconPicker/Packs/MaterialDefault.dart' as DefaultMaterial;
-import 'package:flutter_iconpicker/IconPicker/Packs/Material.dart' as AllMaterial;
-import 'package:flutter_iconpicker/IconPicker/Packs/MaterialSharp.dart' as SharpMaterial;
-import 'package:flutter_iconpicker/IconPicker/Packs/MaterialRounded.dart' as RoundedMaterial;
-import 'package:flutter_iconpicker/IconPicker/Packs/MaterialOutlined.dart' as OutlinedMaterial;
-
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
@@ -49,11 +40,11 @@ IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
         fontPackage: iconData['fontPackage'],
         matchTextDirection: iconData['matchTextDirection'],
       ),
-      pack: IconPack.custom.name,
+      pack: IconPack.custom,
     );
   }
 
-  return IconPackManager.getIcons(IconPack.byName(pack))[iconKey];
+  return IconPack.byName(pack)?.data?[iconKey];
 }
 
 List<Map<String, dynamic>?> serializeIcons(List<IconPickerIcon> icons) =>
