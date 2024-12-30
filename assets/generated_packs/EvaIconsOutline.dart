@@ -5,7 +5,7 @@ import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 const _evaIconsOutlineFontFamily = 'EvaIconsOutline';
 const _evaIconsOutlineFontPackage = 'EvaIconsOutline';
 
-const Map<String, IconPickerIcon> evaIconsOutline = {
+const Map<String, IconPickerIcon> evaIconsOutlined = {
   'thermometerminusoutline': IconPickerIcon(
       name: 'thermometerminusoutline',
       data: IconData(0xe000, fontFamily: _evaIconsOutlineFontFamily, fontPackage: _evaIconsOutlineFontPackage),

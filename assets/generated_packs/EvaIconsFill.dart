@@ -5,7 +5,7 @@ import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 const _evaIconsFillFontFamily = 'EvaIconsFill';
 const _evaIconsFillFontPackage = 'EvaIconsFill';
 
-const Map<String, IconPickerIcon> evaIconsFill = {
+const Map<String, IconPickerIcon> evaIconsFilled = {
   'grid': IconPickerIcon(
       name: 'grid',
       data: IconData(0xe000, fontFamily: _evaIconsFillFontFamily, fontPackage: _evaIconsFillFontPackage),
