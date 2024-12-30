@@ -11,8 +11,7 @@ enum IconPack {
   /// The official Material Icons by Flutter (including rounded, outlined or sharp icons)
   allMaterial(
     path: 'Material',
-    description:
-        'All Material Icons (including rounded, outlined or sharp icons)',
+    description: 'All Material Icons (including rounded, outlined or sharp icons)',
   ),
 
   /// The official Material Sharp Icons by Flutter
@@ -52,26 +51,22 @@ enum IconPack {
   ),
 
   /// The official Eva Icons Fill by Akveo
-  evaIconsFill(path: 'EvaIconsFill'),
+  evaIconsFill(
+    path: 'EvaIconsFill',
+    description: 'Eva Icons Filled',
+  ),
 
   /// The official Eva Icons Outline by Akveo
-  evaIconsOutline(path: 'EvaIconsOutline'),
+  evaIconsOutline(
+    path: 'EvaIconsOutline',
+    description: 'Eva Icons Outlined',
+  ),
 
   /// Use this to show your own custom provided IconPack
   custom;
 
-  const IconPack({
-    this.path,
-    this.description,
-  });
+  const IconPack({this.path, this.description});
 
   final String? path;
   final String? description;
-
-  /// Get the IconPack by its name
-  static IconPack? byName(String? pack) {
-    if (pack == null) return null;
-
-    return IconPack.values.firstWhereOrNull((p) => p.name == pack);
-  }
 }
