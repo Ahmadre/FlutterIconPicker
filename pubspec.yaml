@@ -6,8 +6,7 @@ homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 
 environment:
-  sdk: ">=3.4.0 <4.0.0"
-  flutter: ">=3.27.0"
+  sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
   args: ^2.5.0
@@ -23,24 +22,33 @@ dependencies:
   scrollview_observer: ^1.24.0 
 
 dev_dependencies:
-  flutter_lints: ">=4.0.0 <6.0.0"
+  flutter_lints: '>=4.0.0 <6.0.0'
+  icon_font_generator: ^4.0.0
 
 flutter:
   uses-material-design: true
   fonts:
+    - family: EvaIconsFill
+      fonts:
+        - asset: fonts/eva_icons/eva_icons_fill.otf
+          style: normal
+    - family: EvaIconsOutline
+      fonts:
+        - asset: fonts/eva_icons/eva_icons_outline.otf
+          style: normal
     - family: LineAwesomeIcons
       fonts:
-        - asset: fonts/LineAwesome.ttf
+        - asset: fonts/line_awesome/LineAwesome.ttf
           style: normal
     - family: FontAwesomeBrands
       fonts:
-        - asset: fonts/fa-brands-400.ttf
+        - asset: fonts/font_awesome/fa-brands-400.ttf
           style: normal
     - family: FontAwesomeSolid
       fonts:
-        - asset: fonts/fa-solid-900.ttf
+        - asset: fonts/font_awesome/fa-solid-900.ttf
           style: normal
     - family: FontAwesomeRegular
       fonts:
-        - asset: fonts/fa-regular-400.ttf
+        - asset: fonts/font_awesome/fa-regular-400.ttf
           style: normal
