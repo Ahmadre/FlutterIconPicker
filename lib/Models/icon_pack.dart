@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+
 import '../IconPicker/Packs/Cupertino.dart';
 import '../IconPicker/Packs/EvaIconsFill.dart';
 import '../IconPicker/Packs/EvaIconsOutline.dart';
@@ -94,4 +96,7 @@ enum IconPack {
   final String? path;
   final String? description;
   final Map<String, IconPickerIcon>? data;
+
+  /// Get the IconPack by its name
+  static IconPack? byName(String? pack) => IconPack.values.firstWhereOrNull((p) => p.name == pack);
 }
