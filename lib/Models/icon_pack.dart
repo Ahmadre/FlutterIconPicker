@@ -1,8 +1,6 @@
 import 'package:collection/collection.dart';
 
 import '../IconPicker/Packs/Cupertino.dart';
-import '../IconPicker/Packs/EvaIconsFill.dart';
-import '../IconPicker/Packs/EvaIconsOutline.dart';
 import '../IconPicker/Packs/Material.dart';
 import '../IconPicker/Packs/MaterialDefault.dart';
 import '../IconPicker/Packs/MaterialOutlined.dart';
@@ -10,6 +8,7 @@ import '../IconPicker/Packs/MaterialRounded.dart';
 import '../IconPicker/Packs/MaterialSharp.dart';
 import '../IconPicker/Packs/FontAwesome.dart' as FA;
 import '../IconPicker/Packs/LineIcons.dart' as LI;
+import '../IconPicker/Packs/EvaIcons.dart' as EI;
 import 'icon_picker_icon.dart';
 
 /// The IconPack defines which Icons are gonna be loaded
@@ -71,17 +70,10 @@ enum IconPack {
   ),
 
   /// The official Eva Icons Fill by Akveo
-  evaFilled(
-    path: 'EvaIconsFill',
-    description: 'Eva Icons Filled',
-    data: evaIconsFilled,
-  ),
-
-  /// The official Eva Icons Outline by Akveo
-  evaOutlined(
-    path: 'EvaIconsOutline',
-    description: 'Eva Icons Outlined',
-    data: evaIconsOutlined,
+  evaIcons(
+    path: 'EvaIcons',
+    description: 'Eva Icons Filled and Outlined',
+    data: EI.evaIcons,
   ),
 
   /// Use this to show your own custom provided IconPack

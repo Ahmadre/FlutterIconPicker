@@ -28,14 +28,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: EvaIconsFill
+    - family: EvaIcons
       fonts:
-        - asset: fonts/eva_icons/eva_icons_fill.otf
-          style: normal
-    - family: EvaIconsOutline
-      fonts:
-        - asset: fonts/eva_icons/eva_icons_outline.otf
-          style: normal
+        - asset: fonts/eva_icons/Eva-Icons.ttf
     - family: LineAwesomeIcons
       fonts:
         - asset: fonts/line_awesome/LineAwesome.ttf

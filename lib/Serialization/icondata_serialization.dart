@@ -7,7 +7,7 @@ import '../Models/icon_picker_icon.dart';
 Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
   if (icon.pack == IconPack.custom) {
     return {
-      'pack': icon.pack.name,
+      'pack': icon.pack,
       'key': icon.name,
       'iconData': {
         'codePoint': icon.data.codePoint,
@@ -19,7 +19,7 @@ Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
   }
 
   return {
-    'pack': icon.pack.name,
+    'pack': icon.pack,
     'key': icon.name,
   };
 }
@@ -40,7 +40,7 @@ IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
         fontPackage: iconData['fontPackage'],
         matchTextDirection: iconData['matchTextDirection'],
       ),
-      pack: IconPack.custom,
+      pack: IconPack.custom.name,
     );
   }
 

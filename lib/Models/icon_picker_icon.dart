@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// The SearchComparator is a function that is used to compare the search value with the icon
 typedef SearchComparator = bool Function(String search, IconPickerIcon icon);

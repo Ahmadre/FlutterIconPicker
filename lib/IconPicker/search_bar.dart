@@ -59,7 +59,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
     for (var item in flatCustomPacks) {
       if (searchComparator.call(
-          searchValue, IconPickerIcon(name: item.key, data: item.value.data, pack: IconPack.custom))) {
+          searchValue, IconPickerIcon(name: item.key, data: item.value.data, pack: IconPack.custom.name))) {
         searchResult.add(item);
       }
     }
