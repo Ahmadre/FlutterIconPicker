@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> defaultIcons = {
+const Map<String, IconPickerIcon> defaultIcons = {
   'ten_k': IconPickerIcon(name: 'ten_k', data: Icons.ten_k, pack: 'material'),
   'ten_mp': IconPickerIcon(name: 'ten_mp', data: Icons.ten_mp, pack: 'material'),
   'eleven_mp': IconPickerIcon(name: 'eleven_mp', data: Icons.eleven_mp, pack: 'material'),
