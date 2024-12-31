@@ -13,8 +13,6 @@ const help = 'help';
 const clear = 'clear';
 
 Future<void> main(List<String> arguments) async {
-  exitCode = 0; // Presume success
-
   final parser = ArgParser()
     ..addFlag(help, help: 'Shows how to use generate_packs command', abbr: 'h')
     ..addFlag(clear, help: 'Clears all generated packs', abbr: 'c')

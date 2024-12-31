@@ -33,13 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
         adaptiveDialog: isAdaptive,
         showTooltips: showTooltips,
         showSearchBar: showSearch,
-        iconPickerShape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        iconPickerShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         iconPackModes: IconNotifier.starterPacks,
         searchComparator: (String search, IconPickerIcon icon) =>
-            search
-                .toLowerCase()
-                .contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
+            search.toLowerCase().contains(icon.name.replaceAll('_', ' ').toLowerCase()) ||
             icon.name.toLowerCase().contains(search.toLowerCase()),
       ),
     );
@@ -48,8 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Provider.of<IconNotifier>(context, listen: false).setIconData(icon);
       setState(() {});
 
-      debugPrint(
-          'Picked Icon:  $icon and saved it successfully in local hive db.');
+      debugPrint('Picked Icon:  $icon and saved it successfully in local hive db.');
     }
   }
 
@@ -103,9 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: _pickIcon,
                     child: AnimatedSize(
                       duration: const Duration(milliseconds: 300),
-                      child: Text(notifier.icon != null
-                          ? 'Change Icon'
-                          : 'Open IconPicker'),
+                      child: Text(notifier.icon != null ? 'Change Icon' : 'Open IconPicker'),
                     ),
                   ),
                   AnimatedSwitcher(
@@ -151,24 +145,21 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Flexible(
               child: SwitchListTile.adaptive(
-                title: const Text('Show search-bar',
-                    style: TextStyle(color: Colors.white)),
+                title: const Text('Show search-bar', style: TextStyle(color: Colors.white)),
                 value: showSearch,
                 onChanged: (val) => setState(() => showSearch = val),
               ),
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: const Text('Show tooltips',
-                    style: TextStyle(color: Colors.white)),
+                title: const Text('Show tooltips', style: TextStyle(color: Colors.white)),
                 value: showTooltips,
                 onChanged: (val) => setState(() => showTooltips = val),
               ),
             ),
             Flexible(
               child: SwitchListTile.adaptive(
-                title: const Text('Adaptive dialog',
-                    style: TextStyle(color: Colors.white)),
+                title: const Text('Adaptive dialog', style: TextStyle(color: Colors.white)),
                 value: isAdaptive,
                 onChanged: (val) => setState(() => isAdaptive = val),
               ),

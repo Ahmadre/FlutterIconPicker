@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'app_brightness.dart';
 
 class IconNotifier extends ChangeNotifier {
-  static final starterPacks = <IconPack>[IconPack.cupertino];
+  static final starterPacks = <IconPack>[IconPack.evaIcons];
 
   IconNotifier._(
     IconPickerIcon? iconData,
@@ -80,8 +80,7 @@ class IconNotifier extends ChangeNotifier {
     try {
       if (!kIsWeb) Hive.init((await getApplicationDocumentsDirectory()).path);
     } catch (e) {
-      debugPrint(
-          'Hive has already been initialized. Skipping this step for now.');
+      debugPrint('Hive has already been initialized. Skipping this step for now.');
     }
 
     if (!Hive.isBoxOpen('FLIPBox')) {
@@ -94,9 +93,7 @@ class IconNotifier extends ChangeNotifier {
         ? deserializeIcon(Map<String, dynamic>.from(await box.get('iconData')))
         : null;
 
-    final cachedIcons = await box.get('iconsData') != null
-        ? deserializeIcons(await box.get('iconsData'))
-        : null;
+    final cachedIcons = await box.get('iconsData') != null ? deserializeIcons(await box.get('iconsData')) : null;
 
     final brightness = AppBrightness.from(await box.get('app.brightness'));
 
