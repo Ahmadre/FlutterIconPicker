@@ -7,7 +7,7 @@ class EvaIconData extends IconData {
   const EvaIconData(int codePoint)
       : super(
           codePoint,
-          fontFamily: 'EvaIcons',
+          fontFamily: 'Eva-Icons',
           fontPackage: 'eva_icons_flutter',
         );
 }
