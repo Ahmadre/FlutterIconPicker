@@ -4,6 +4,7 @@
 /// rebar.ahmad@gmail.com
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
@@ -46,8 +47,10 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
   void _search(String searchValue) {
     List<MapEntry<String, IconPickerIcon>> searchResult = [];
 
-    final Iterable<MapEntry<String, IconPickerIcon>> flatFIPPacks =
-        widget.iconPack?.expand((pack) => pack.data?.entries ?? []) ?? [];
+    final Iterable<MapEntry<String, IconPickerIcon>> flatFIPPacks = widget
+            .iconPack
+            ?.expand((pack) => IconPackManager.getIcons(pack).entries) ??
+        [];
     final flatCustomPacks = widget.customIconPack?.entries ?? [];
 
     for (MapEntry<String, IconPickerIcon> item in flatFIPPacks) {
@@ -112,7 +115,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
                       if (widget.iconPack != null) {
                         for (var pack in widget.iconPack!) {
-                          controller.addAll(pack.data ?? {});
+                          controller.addAll(IconPackManager.getIcons(pack));
                         }
                       }
                     }),

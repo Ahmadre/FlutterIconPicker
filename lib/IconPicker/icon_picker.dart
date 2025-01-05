@@ -7,6 +7,7 @@ import 'dart:async';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
@@ -66,7 +67,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
       if (widget.iconPack != null) {
         for (var pack in widget.iconPack!) {
           if (mounted) {
-            widget.iconController.addAll(pack.data ?? {});
+            widget.iconController.addAll(IconPackManager.getIcons(pack));
           }
         }
         if (mounted &&
