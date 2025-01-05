@@ -36,7 +36,8 @@ sealed class IconPickerConfiguration<T> {
     this.iconPickerShape,
     this.backgroundColor,
     this.constraints,
-    this.title = const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
+    this.title =
+        const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
     this.closeChild = const Text(
       'Close',
       textScaler: TextScaler.linear(1.25),
@@ -222,7 +223,8 @@ class SinglePickerConfiguration
     super.iconPickerShape,
     super.backgroundColor,
     super.constraints,
-    super.title = const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
+    super.title =
+        const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
     super.closeChild = const Text(
       'Close',
       textScaler: TextScaler.linear(1.25),
@@ -311,7 +313,8 @@ class MultiplePickerConfiguration
     super.iconPickerShape,
     super.backgroundColor,
     super.constraints,
-    super.title = const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
+    super.title =
+        const Text('Pick an icon', textScaler: TextScaler.linear(1.25)),
     super.closeChild = const Text(
       'Close',
       textScaler: TextScaler.linear(1.25),

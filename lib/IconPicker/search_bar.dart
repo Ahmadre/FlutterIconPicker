@@ -9,7 +9,6 @@ import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import '../Models/icon_pack.dart';
-import '../Helpers/color_brightness.dart';
 
 class FIPSearchBar extends StatefulWidget {
   const FIPSearchBar({

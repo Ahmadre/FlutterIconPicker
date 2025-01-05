@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
-import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
 import '../IconPicker/multiple_icon_picker.dart';
 import '../IconPicker/search_bar.dart';
