@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import '../Models/icon_picker_icon.dart';
 import '../Models/icon_pack.dart';
-import '../Helpers/color_brightness.dart';
 
 class FIPIconPicker extends StatefulWidget {
   final FIPIconController iconController;
@@ -104,23 +103,11 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
           child: RichText(
             text: TextSpan(
               text: '${widget.noResultsText!} ',
-              style: TextStyle(
-                color: widget.backgroundColor != null
-                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white
-                    : null,
-              ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: widget.backgroundColor != null
-                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                            ? Colors.black
-                            : Colors.white
-                        : null,
                   ),
                 ),
               ],

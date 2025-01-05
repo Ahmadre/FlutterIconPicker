@@ -46,9 +46,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
   void _search(String searchValue) {
     List<MapEntry<String, IconPickerIcon>> searchResult = [];
 
-    final Iterable<MapEntry<String, IconPickerIcon>> flatFIPPacks = widget
-            .iconPack
-            ?.expand((pack) => IconPackManager.getIcons(pack).entries) ??
+    final flatFIPPacks = widget.iconPack
+            ?.expand((pack) => (IconPackManager.getIcons(pack)).entries) ??
         [];
     final flatCustomPacks = widget.customIconPack?.entries ?? [];
 

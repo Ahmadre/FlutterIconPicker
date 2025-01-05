@@ -6,41 +6,45 @@ homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 
 environment:
-  sdk: ">=3.4.0 <4.0.0"
-  flutter: ">=3.27.0"
+  sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
-  args: ^2.5.0
+  args: ^2.6.0
   collection: ^1.19.0
   cupertino_icons: ^1.0.8
   dcli: ^6.1.0
-  equatable: ^2.0.5
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
-  font_awesome_flutter: ^10.7.0
+  font_awesome_flutter: ^10.8.0
   path: ^1.9.0
   provider: ^6.1.2
-  scrollview_observer: ^1.24.0 
+  scrollview_observer: ^1.24.0
 
 dev_dependencies:
-  flutter_lints: ">=4.0.0 <6.0.0"
+  flutter_lints: '>=4.0.0 <6.0.0'
+  icon_font_generator: ^4.0.0
 
 flutter:
   uses-material-design: true
   fonts:
+    - family: Eva-Icons
+      fonts:
+        - asset: fonts/eva_icons/Eva-Icons.ttf
+          style: normal
     - family: LineAwesomeIcons
       fonts:
-        - asset: fonts/LineAwesome.ttf
+        - asset: fonts/line_awesome/LineAwesome.ttf
           style: normal
     - family: FontAwesomeBrands
       fonts:
-        - asset: fonts/fa-brands-400.ttf
+        - asset: fonts/font_awesome/fa-brands-400.ttf
           style: normal
     - family: FontAwesomeSolid
       fonts:
-        - asset: fonts/fa-solid-900.ttf
+        - asset: fonts/font_awesome/fa-solid-900.ttf
           style: normal
     - family: FontAwesomeRegular
       fonts:
-        - asset: fonts/fa-regular-400.ttf
+        - asset: fonts/font_awesome/fa-regular-400.ttf
           style: normal

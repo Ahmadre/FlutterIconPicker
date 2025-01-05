@@ -1,3 +1,4 @@
+import '../IconPicker/Packs/EvaIcons.dart';
 import '../Models/icon_pack.dart';
 import '../Models/icon_picker_icon.dart';
 import '../IconPicker/Packs/Cupertino.dart';
@@ -28,6 +29,8 @@ class IconPackManager {
         return roundedIcons;
       case IconPack.cupertino:
         return cupertinoIcons;
+      case IconPack.evaIcons:
+        return evaIcons;
       default:
         return {};
     }

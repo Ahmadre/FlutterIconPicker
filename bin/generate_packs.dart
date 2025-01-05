@@ -13,16 +13,13 @@ const help = 'help';
 const clear = 'clear';
 
 Future<void> main(List<String> arguments) async {
-  exitCode = 0; // Presume success
-
   final parser = ArgParser()
     ..addFlag(help, help: 'Shows how to use generate_packs command', abbr: 'h')
     ..addFlag(clear, help: 'Clears all generated packs', abbr: 'c')
     ..addFlag(all, help: 'Generates all icon packs', abbr: 'a')
     ..addOption(
       packs,
-      help:
-          'Defines which packs to generate for your project (comma separated)',
+      help: 'Defines which packs to generate for your project (comma separated)',
       allowedHelp: IconPack.values
           .where((p) => p.description.isNotNullOrBlank)
           .toList()
@@ -63,8 +60,7 @@ Future<void> main(List<String> arguments) async {
     generateAllIconPacks(packagePath: basePackagePath);
   } else {
     /// 2. Get requiredPacks as List<IconPack> from CLI
-    final requiredPacks =
-        parseIconPacks((argResults[packs] as String).split(','));
+    final requiredPacks = parseIconPacks((argResults[packs] as String).split(','));
 
     /// 3. Generate Icons which the developer needs
     for (var pack in requiredPacks) {
@@ -88,8 +84,7 @@ void generateIconPack({
   required String packagePath,
   required IconPack pack,
 }) {
-  assert(pack.path.isNotNullOrBlank,
-      'Path must be specified if you want to generate ${pack.name} IconPack');
+  assert(pack.path.isNotNullOrBlank, 'Path must be specified if you want to generate ${pack.name} IconPack');
 
   copy(
     '$packagePath/assets/generated_packs/${pack.path}.dart',
@@ -101,23 +96,18 @@ void generateIconPack({
 }
 
 Future<String> getBasePackagePath() async {
-  final packageUri =
-      Uri.parse('package:flutter_iconpicker/flutter_iconpicker.dart');
+  final packageUri = Uri.parse('package:flutter_iconpicker/flutter_iconpicker.dart');
   final packagePath = (await Isolate.resolvePackageUri(packageUri));
   String resultPath = path.dirname(packagePath!.path.replaceAll('lib', ''));
   if (Platform.isWindows) {
-    resultPath = resultPath
-        .replaceAll(Platform.pathSeparator, '/')
-        .replaceFirst('/', '')
-        .replaceAll('%20', ' ');
+    resultPath = resultPath.replaceAll(Platform.pathSeparator, '/').replaceFirst('/', '').replaceAll('%20', ' ');
   }
   return resultPath;
 }
 
 List<IconPack> parseIconPacks(List<String> rawPacks) {
   List<IconPack> result = <IconPack>[];
-  List<String> inputPacks =
-      rawPacks.map((name) => name.toLowerCase().trim()).toList();
+  List<String> inputPacks = rawPacks.map((name) => name.toLowerCase().trim()).toList();
 
   for (var pack in IconPack.values) {
     if (inputPacks.contains(pack.name.toLowerCase().trim())) {
