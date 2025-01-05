@@ -45,8 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (icon != null) {
-      Provider.of<IconNotifier>(context, listen: false)
-          .setIconData(icon);
+      Provider.of<IconNotifier>(context, listen: false).setIconData(icon);
       setState(() {});
 
       debugPrint(

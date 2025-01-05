@@ -206,7 +206,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                           Alignment.topCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
-                        widget.backgroundColor!.withOpacity(.1),
+                        widget.backgroundColor!.withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,
@@ -225,7 +225,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                           Alignment.bottomCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
-                        widget.backgroundColor!.withOpacity(.1),
+                        widget.backgroundColor!.withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,

@@ -1,6 +1,5 @@
 import 'package:collection/collection.dart';
 
-
 /// The IconPack defines which Icons are gonna be loaded
 enum IconPack {
   /// The official Material Icons by Flutter (without rounded, outlined or sharp icons)
@@ -12,7 +11,8 @@ enum IconPack {
   /// The official Material Icons by Flutter (including rounded, outlined or sharp icons)
   allMaterial(
     path: 'Material',
-    description: 'All Material Icons (including rounded, outlined or sharp icons)',
+    description:
+        'All Material Icons (including rounded, outlined or sharp icons)',
   ),
 
   /// The official Material Sharp Icons by Flutter

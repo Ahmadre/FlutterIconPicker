@@ -50,5 +50,8 @@ List<Map<String, dynamic>?> serializeIcons(List<IconPickerIcon> icons) =>
     icons.map((item) => serializeIcon(item)).toList();
 
 List<IconPickerIcon>? deserializeIcons(dynamic json) => json != null
-    ? List.from(json).map((map) => deserializeIcon(Map<String, dynamic>.from(map))).cast<IconPickerIcon>().toList()
+    ? List.from(json)
+        .map((map) => deserializeIcon(Map<String, dynamic>.from(map)))
+        .cast<IconPickerIcon>()
+        .toList()
     : null;
