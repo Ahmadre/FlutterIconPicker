@@ -113,9 +113,7 @@ class FIPDefaultDialog extends StatelessWidget {
                             child: title!,
                           ),
                           IconButton(
-                            icon: Icon(
-                              Icons.close,
-                            ),
+                            icon: Icon(Icons.close),
                             onPressed: () => Navigator.pop(context),
                           ),
                         ],
