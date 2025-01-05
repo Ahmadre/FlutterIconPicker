@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import '../Models/icon_picker_icon.dart';
 import '../Models/icon_pack.dart';
-import '../Helpers/color_brightness.dart';
 
 class FIPIconPicker extends StatefulWidget {
   final FIPIconController iconController;
