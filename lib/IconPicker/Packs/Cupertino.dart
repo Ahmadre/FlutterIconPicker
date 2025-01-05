@@ -4,7 +4,4 @@
 
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-const String iconFont = 'CupertinoIcons';
-const String iconFontPackage = 'cupertino_icons';
-
 const Map<String, IconPickerIcon> cupertinoIcons = {};

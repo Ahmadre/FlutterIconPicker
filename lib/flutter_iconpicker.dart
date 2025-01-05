@@ -38,7 +38,8 @@ Future<IconPickerIcon?> showIconPicker(
     iconPickerShape: configuration.iconPickerShape ??
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
     backgroundColor: configuration.backgroundColor ??
-        Theme.of(context).dialogBackgroundColor,
+        Theme.of(context).dialogTheme.backgroundColor ??
+        Theme.of(context).scaffoldBackgroundColor,
   );
 
   IconPickerIcon? iconPicked;
@@ -177,7 +178,8 @@ Future<List<IconPickerIcon>?> showMultipleIconPicker(
     iconPickerShape: configuration.iconPickerShape ??
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
     backgroundColor: configuration.backgroundColor ??
-        Theme.of(context).dialogBackgroundColor,
+        Theme.of(context).dialogTheme.backgroundColor ??
+        Theme.of(context).scaffoldBackgroundColor,
   );
 
   final controller = FIPIconController.multiple(

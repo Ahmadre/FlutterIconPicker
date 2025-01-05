@@ -1,3 +1,9 @@
+## [4.0.2] - 05.01.2025
+
+* ⬆️ Update Dependencies (based on Flutter 3.27.*, Dart 3.6.*)
+* 💻 Major refactoring
+* ❗ [BREAKING CHANGE]: Generated Icons has been changed! Please regenerate your Icons to get the updated Models!
+
 ## [4.0.1] - 26.09.2024
 
 * 🐛 Fixed iOS 18 requirements on FontAwesome Icons.

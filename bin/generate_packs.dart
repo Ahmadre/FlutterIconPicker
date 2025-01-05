@@ -23,17 +23,11 @@ Future<void> main(List<String> arguments) async {
       packs,
       help:
           'Defines which packs to generate for your project (comma separated)',
-      allowedHelp: {
-        'material': 'Material Icons',
-        'allMaterial':
-            'All Material Icons (including rounded, outlined or sharp icons)',
-        'sharpMaterial': 'Material Sharp Icons',
-        'roundedMaterial': 'Material Rounded Icons',
-        'outlinedMaterial': 'Material Outlined Icons',
-        'cupertino': 'Cupertino Icons',
-        'fontAwesomeIcons': 'Font Awesome Icons',
-        'lineAwesomeIcons': 'Line Awesome Icons',
-      },
+      allowedHelp: IconPack.values
+          .where((p) => p.description.isNotNullOrBlank)
+          .toList()
+          .asMap()
+          .map((key, value) => MapEntry(value.name, value.description!)),
       valueHelp: 'material,cupertino,...',
       defaultsTo: 'material',
       abbr: 'p',

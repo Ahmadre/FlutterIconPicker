@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
-import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
 import '../IconPicker/multiple_icon_picker.dart';
 import '../IconPicker/search_bar.dart';
@@ -68,23 +67,10 @@ class FIPFullScreenDialog extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 6),
-                      child: DefaultTextStyle(
-                        style: TextStyle(
-                          color: FIPColorBrightness(backgroundColor!).isLight()
-                              ? Colors.black
-                              : Colors.white,
-                          fontSize: 20,
-                        ),
-                        child: title!,
-                      ),
+                      child: title!,
                     ),
                     IconButton(
-                      icon: Icon(
-                        Icons.close,
-                        color: FIPColorBrightness(backgroundColor!).isLight()
-                            ? Colors.black
-                            : Colors.white,
-                      ),
+                      icon: Icon(Icons.close),
                       onPressed: () => Navigator.pop(context),
                     ),
                   ],

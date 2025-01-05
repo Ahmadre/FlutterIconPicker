@@ -7,11 +7,11 @@ import 'dart:async';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import '../Models/icon_picker_icon.dart';
-import 'icons.dart';
 import '../Models/icon_pack.dart';
 import '../Helpers/color_brightness.dart';
 
@@ -67,7 +67,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
       if (widget.iconPack != null) {
         for (var pack in widget.iconPack!) {
           if (mounted) {
-            widget.iconController.addAll(FIPIconManager.getSelectedPack(pack));
+            widget.iconController.addAll(IconPackManager.getIcons(pack));
           }
         }
         if (mounted &&
@@ -105,18 +105,22 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
             text: TextSpan(
               text: '${widget.noResultsText!} ',
               style: TextStyle(
-                color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                    ? Colors.black
-                    : Colors.white,
+                color: widget.backgroundColor != null
+                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                        ? Colors.black
+                        : Colors.white
+                    : null,
               ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white,
+                    color: widget.backgroundColor != null
+                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                            ? Colors.black
+                            : Colors.white
+                        : null,
                   ),
                 ),
               ],
@@ -206,7 +210,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                           Alignment.topCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
-                        widget.backgroundColor!.withOpacity(.1),
+                        widget.backgroundColor!.withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,
@@ -225,7 +229,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                           Alignment.bottomCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
-                        widget.backgroundColor!.withOpacity(.1),
+                        widget.backgroundColor!.withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,

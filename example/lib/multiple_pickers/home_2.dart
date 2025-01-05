@@ -75,8 +75,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 case ThemeMode.system:
                   notifier.brightness = AppBrightness.dark;
                   break;
-                default:
-                  break;
               }
               setState(() {});
             },
