@@ -88,22 +88,8 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
       return TextField(
         onChanged: (val) => _search(val),
         controller: controller.searchTextController,
-        style: TextStyle(
-          color: widget.backgroundColor != null
-              ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                  ? Colors.black
-                  : Colors.white
-              : null,
-        ),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(top: 15),
-          hintStyle: TextStyle(
-            color: widget.backgroundColor != null
-                ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                    ? Colors.black
-                    : Colors.white
-                : null,
-          ),
           hintText: widget.searchHintText,
           prefixIcon: widget.searchIcon,
           suffixIcon: AnimatedSwitcher(

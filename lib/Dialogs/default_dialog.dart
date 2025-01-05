@@ -110,28 +110,11 @@ class FIPDefaultDialog extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 6),
-                            child: DefaultTextStyle(
-                              style: TextStyle(
-                                color: backgroundColor != null
-                                    ? FIPColorBrightness(backgroundColor!)
-                                            .isLight()
-                                        ? Colors.black
-                                        : Colors.white
-                                    : null,
-                                fontSize: 20,
-                              ),
-                              child: title!,
-                            ),
+                            child: title!,
                           ),
                           IconButton(
                             icon: Icon(
                               Icons.close,
-                              color: backgroundColor != null
-                                  ? FIPColorBrightness(backgroundColor!)
-                                          .isLight()
-                                      ? Colors.black
-                                      : Colors.white
-                                  : null,
                             ),
                             onPressed: () => Navigator.pop(context),
                           ),
