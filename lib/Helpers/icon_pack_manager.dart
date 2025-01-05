@@ -10,7 +10,7 @@ import '../IconPicker/Packs/FontAwesome.dart';
 import '../IconPicker/Packs/LineIcons.dart';
 
 class IconPackManager {
-  static Map<String, IconPickerIcon> getIcons(IconPack pack) {
+  static Map<String, IconPickerIcon> getIcons(IconPack? pack) {
     switch (pack) {
       case IconPack.material:
         return defaultIcons;

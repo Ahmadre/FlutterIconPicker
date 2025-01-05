@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
@@ -23,8 +24,8 @@ Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
 }
 
 IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
-  final pack = iconMap['pack'];
-  final iconKey = iconMap['key'];
+  final String? pack = iconMap['pack'];
+  final String? iconKey = iconMap['key'];
 
   if (pack == null || iconKey == null) return null;
 
@@ -42,9 +43,7 @@ IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
     );
   }
 
-  return null;
-
-  // return IconPack.byName(pack)?.data?[iconKey];
+  return IconPackManager.getIcons(IconPack.byName(pack))[iconKey];
 }
 
 List<Map<String, dynamic>?> serializeIcons(List<IconPickerIcon> icons) =>
