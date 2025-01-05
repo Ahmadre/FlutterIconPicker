@@ -66,7 +66,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
       if (widget.iconPack != null) {
         for (var pack in widget.iconPack!) {
           if (mounted) {
-            widget.iconController.addAll(pack.data ?? {});
+            widget.iconController.addAll(IconPackManager.getIcons(pack));
           }
         }
         if (mounted &&

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/Models/icon_pack.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
-
-import '../Models/icon_picker_icon.dart';
 
 Map<String, dynamic> serializeIcon(IconPickerIcon icon) {
   if (icon.pack == IconPack.custom) {
@@ -44,12 +43,15 @@ IconPickerIcon? deserializeIcon(Map<String, dynamic> iconMap) {
     );
   }
 
-  return IconPack.byName(pack)?.data?[iconKey];
+  return IconPackManager.getIcons(IconPack.byName(pack))[iconKey];
 }
 
 List<Map<String, dynamic>?> serializeIcons(List<IconPickerIcon> icons) =>
     icons.map((item) => serializeIcon(item)).toList();
 
 List<IconPickerIcon>? deserializeIcons(dynamic json) => json != null
-    ? List.from(json).map((map) => deserializeIcon(Map<String, dynamic>.from(map))).cast<IconPickerIcon>().toList()
+    ? List.from(json)
+        .map((map) => deserializeIcon(Map<String, dynamic>.from(map)))
+        .cast<IconPickerIcon>()
+        .toList()
     : null;

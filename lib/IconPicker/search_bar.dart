@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Helpers/icon_pack_manager.dart';
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
-import 'package:flutter_iconpicker/extensions/map_extensions.dart';
 import 'package:provider/provider.dart';
 import '../Models/icon_pack.dart';
 import '../Helpers/color_brightness.dart';
@@ -40,26 +39,35 @@ class FIPSearchBar extends StatefulWidget {
 
 class _FIPSearchBarState extends State<FIPSearchBar> {
   final SearchComparator _defaultSearchComparator =
-      (String searchValue, IconPickerIcon icon) => icon.name.toLowerCase().contains(searchValue.toLowerCase());
-  late final searchComparator = widget.searchComparator ?? _defaultSearchComparator;
+      (String searchValue, IconPickerIcon icon) =>
+          icon.name.toLowerCase().contains(searchValue.toLowerCase());
+  late final searchComparator =
+      widget.searchComparator ?? _defaultSearchComparator;
 
   void _search(String searchValue) {
     List<MapEntry<String, IconPickerIcon>> searchResult = [];
 
-    final flatFIPPacks =
-        widget.iconPack?.where((p) => p.data.isNotNullOrEmpty).expand((pack) => pack.data!.entries) ?? [];
+    final flatFIPPacks = widget.iconPack
+            ?.expand((pack) => (IconPackManager.getIcons(pack)).entries) ??
+        [];
     final flatCustomPacks = widget.customIconPack?.entries ?? [];
 
     for (MapEntry<String, IconPickerIcon> item in flatFIPPacks) {
       if (searchComparator.call(
-          searchValue, IconPickerIcon(name: item.key, data: item.value.data, pack: item.value.pack))) {
+          searchValue,
+          IconPickerIcon(
+              name: item.key, data: item.value.data, pack: item.value.pack))) {
         searchResult.add(item);
       }
     }
 
     for (var item in flatCustomPacks) {
       if (searchComparator.call(
-          searchValue, IconPickerIcon(name: item.key, data: item.value.data, pack: IconPack.custom.name))) {
+          searchValue,
+          IconPickerIcon(
+              name: item.key,
+              data: item.value.data,
+              pack: IconPack.custom.name))) {
         searchResult.add(item);
       }
     }
@@ -80,12 +88,16 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
         onChanged: (val) => _search(val),
         controller: controller.searchTextController,
         style: TextStyle(
-          color: FIPColorBrightness(widget.backgroundColor!).isLight() ? Colors.black : Colors.white,
+          color: FIPColorBrightness(widget.backgroundColor!).isLight()
+              ? Colors.black
+              : Colors.white,
         ),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.only(top: 15),
           hintStyle: TextStyle(
-            color: FIPColorBrightness(widget.backgroundColor!).isLight() ? Colors.black54 : Colors.white54,
+            color: FIPColorBrightness(widget.backgroundColor!).isLight()
+                ? Colors.black54
+                : Colors.white54,
           ),
           hintText: widget.searchHintText,
           prefixIcon: widget.searchIcon,
@@ -102,7 +114,7 @@ class _FIPSearchBarState extends State<FIPSearchBar> {
 
                       if (widget.iconPack != null) {
                         for (var pack in widget.iconPack!) {
-                          controller.addAll(pack.data ?? {});
+                          controller.addAll(IconPackManager.getIcons(pack));
                         }
                       }
                     }),
