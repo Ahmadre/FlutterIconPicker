@@ -5,7 +5,6 @@ import '../IconPicker/multiple_icon_picker.dart';
 import '../Models/icon_picker_icon.dart';
 import 'fullscreen_dialog.dart';
 import 'adaptive_dialog.dart';
-import '../Helpers/color_brightness.dart';
 import '../IconPicker/icon_picker.dart';
 import '../IconPicker/search_bar.dart';
 import '../Models/icon_pack.dart';
@@ -170,17 +169,7 @@ class FIPDefaultDialog extends StatelessWidget {
           return AlertDialog(
             backgroundColor: backgroundColor,
             shape: iconPickerShape,
-            title: DefaultTextStyle(
-              style: TextStyle(
-                color: backgroundColor != null
-                    ? FIPColorBrightness(backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white
-                    : null,
-                fontSize: 20,
-              ),
-              child: title!,
-            ),
+            title: title!,
             content: Container(
               constraints: constraints,
               child: Column(
