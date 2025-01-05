@@ -105,18 +105,22 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
             text: TextSpan(
               text: '${widget.noResultsText!} ',
               style: TextStyle(
-                color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                    ? Colors.black
-                    : Colors.white,
+                color: widget.backgroundColor != null
+                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                        ? Colors.black
+                        : Colors.white
+                    : null,
               ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white,
+                    color: widget.backgroundColor != null
+                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                            ? Colors.black
+                            : Colors.white
+                        : null,
                   ),
                 ),
               ],

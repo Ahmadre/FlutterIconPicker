@@ -112,10 +112,12 @@ class FIPDefaultDialog extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 6),
                             child: DefaultTextStyle(
                               style: TextStyle(
-                                color: FIPColorBrightness(backgroundColor!)
-                                        .isLight()
-                                    ? Colors.black
-                                    : Colors.white,
+                                color: backgroundColor != null
+                                    ? FIPColorBrightness(backgroundColor!)
+                                            .isLight()
+                                        ? Colors.black
+                                        : Colors.white
+                                    : null,
                                 fontSize: 20,
                               ),
                               child: title!,
@@ -124,10 +126,12 @@ class FIPDefaultDialog extends StatelessWidget {
                           IconButton(
                             icon: Icon(
                               Icons.close,
-                              color:
-                                  FIPColorBrightness(backgroundColor!).isLight()
+                              color: backgroundColor != null
+                                  ? FIPColorBrightness(backgroundColor!)
+                                          .isLight()
                                       ? Colors.black
-                                      : Colors.white,
+                                      : Colors.white
+                                  : null,
                             ),
                             onPressed: () => Navigator.pop(context),
                           ),
@@ -187,9 +191,11 @@ class FIPDefaultDialog extends StatelessWidget {
             shape: iconPickerShape,
             title: DefaultTextStyle(
               style: TextStyle(
-                color: FIPColorBrightness(backgroundColor!).isLight()
-                    ? Colors.black
-                    : Colors.white,
+                color: backgroundColor != null
+                    ? FIPColorBrightness(backgroundColor!).isLight()
+                        ? Colors.black
+                        : Colors.white
+                    : null,
                 fontSize: 20,
               ),
               child: title!,

@@ -105,18 +105,22 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
             text: TextSpan(
               text: '${widget.noResultsText!} ',
               style: TextStyle(
-                color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                    ? Colors.black
-                    : Colors.white,
+                color: widget.backgroundColor != null
+                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                        ? Colors.black
+                        : Colors.white
+                    : null,
               ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white,
+                    color: widget.backgroundColor != null
+                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
+                            ? Colors.black
+                            : Colors.white
+                        : null,
                   ),
                 ),
               ],
@@ -210,8 +214,13 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                       end: Alignment.lerp(
                           Alignment.topCenter, Alignment.center, .05)!,
                       colors: [
-                        widget.backgroundColor!,
-                        widget.backgroundColor!.withValues(alpha: .1),
+                        widget.backgroundColor ??
+                            Theme.of(context).dialogTheme.backgroundColor ??
+                            Theme.of(context).scaffoldBackgroundColor,
+                        (widget.backgroundColor ??
+                                Theme.of(context).dialogTheme.backgroundColor ??
+                                Theme.of(context).scaffoldBackgroundColor)
+                            .withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,
@@ -229,8 +238,13 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
                       end: Alignment.lerp(
                           Alignment.bottomCenter, Alignment.center, .05)!,
                       colors: [
-                        widget.backgroundColor!,
-                        widget.backgroundColor!.withValues(alpha: .1),
+                        widget.backgroundColor ??
+                            Theme.of(context).dialogTheme.backgroundColor ??
+                            Theme.of(context).scaffoldBackgroundColor,
+                        (widget.backgroundColor ??
+                                Theme.of(context).dialogTheme.backgroundColor ??
+                                Theme.of(context).scaffoldBackgroundColor)
+                            .withValues(alpha: .1),
                       ],
                       stops: const [
                         0.0,
