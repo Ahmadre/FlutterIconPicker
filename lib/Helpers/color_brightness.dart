@@ -51,7 +51,8 @@ class FIPColorBrightness {
   late Color _color;
 
   FIPColorBrightness(Color color) {
-    _color = Color.fromARGB(color.alpha, color.red, color.green, color.blue);
+    _color = Color.fromARGB(
+        color.a as int, color.r as int, color.g as int, color.b as int);
   }
 
   bool isDark() {
@@ -63,6 +64,6 @@ class FIPColorBrightness {
   }
 
   double getBrightness() {
-    return (_color.red * 299 + _color.green * 587 + _color.blue * 114) / 1000;
+    return (_color.r * 299 + _color.g * 587 + _color.b * 114) / 1000;
   }
 }

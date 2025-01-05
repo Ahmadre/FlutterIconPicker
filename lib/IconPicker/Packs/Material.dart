@@ -1,3 +1,3 @@
 import 'package:flutter_iconpicker/Models/icon_picker_icon.dart';
 
-Map<String, IconPickerIcon> allIcons = {};
+const Map<String, IconPickerIcon> allIcons = {};

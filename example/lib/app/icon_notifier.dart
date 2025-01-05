@@ -26,10 +26,7 @@ class IconNotifier extends ChangeNotifier {
 
   IconPickerIcon? get icon => _icon;
 
-  void setIconData(
-    IconPickerIcon value, {
-    IconPack? pack,
-  }) {
+  void setIconData(IconPickerIcon value) {
     if (_icon == value) {
       return;
     }

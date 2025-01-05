@@ -45,8 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (icon != null) {
-      Provider.of<IconNotifier>(context, listen: false)
-          .setIconData(icon, pack: icon.pack);
+      Provider.of<IconNotifier>(context, listen: false).setIconData(icon);
       setState(() {});
 
       debugPrint(
@@ -73,8 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     break;
                   case ThemeMode.system:
                     notifier.brightness = AppBrightness.dark;
-                    break;
-                  default:
                     break;
                 }
                 setState(() {});
