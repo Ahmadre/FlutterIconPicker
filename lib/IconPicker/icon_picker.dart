@@ -11,7 +11,6 @@ import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import '../Models/icon_picker_icon.dart';
-import 'icons.dart';
 import '../Models/icon_pack.dart';
 import '../Helpers/color_brightness.dart';
 
@@ -67,7 +66,7 @@ class _FIPIconPickerState extends State<FIPIconPicker> {
       if (widget.iconPack != null) {
         for (var pack in widget.iconPack!) {
           if (mounted) {
-            widget.iconController.addAll(FIPIconManager.getSelectedPack(pack));
+            widget.iconController.addAll(pack.data ?? {});
           }
         }
         if (mounted &&

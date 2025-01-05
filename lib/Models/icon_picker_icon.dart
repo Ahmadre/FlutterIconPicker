@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'icon_pack.dart';
+import 'package:flutter/widgets.dart';
 
 /// The SearchComparator is a function that is used to compare the search value with the icon
 typedef SearchComparator = bool Function(String search, IconPickerIcon icon);
@@ -19,7 +18,7 @@ class IconPickerIcon extends Equatable {
   final IconData data;
 
   /// The IconData of the icon like `codePoint`, `fontFamily`, `fontPackage`, `matchTextDirection`
-  final IconPack pack;
+  final String pack;
 
   const IconPickerIcon({
     required this.name,
@@ -30,7 +29,7 @@ class IconPickerIcon extends Equatable {
   IconPickerIcon copyWith({
     String? name,
     IconData? data,
-    IconPack? pack,
+    String? pack,
   }) {
     return IconPickerIcon(
       name: name ?? this.name,
