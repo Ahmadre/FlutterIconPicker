@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import '../Models/icon_picker_icon.dart';
 import '../Models/icon_pack.dart';
-import '../Helpers/color_brightness.dart';
 
 class FIPMultipleIconPicker extends StatefulWidget {
   final FIPIconController iconController;
@@ -49,8 +48,7 @@ class FIPMultipleIconPicker extends StatefulWidget {
 
 class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
   ScrollController scrollController = ScrollController();
-  late GridObserverController observerController =
-      GridObserverController(controller: scrollController);
+  late GridObserverController observerController = GridObserverController(controller: scrollController);
 
   bool scrolledToSelectedIcon = false;
   int selectedIconIndex = -1;
@@ -74,16 +72,15 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
             !scrolledToSelectedIcon &&
             widget.iconController.shouldScrollToSelectedIcon &&
             widget.iconController.isSelectedIconAvailable &&
-            widget.iconController.entries.firstWhereOrNull((item) =>
-                    widget.iconController.selectedIcon == item.value) !=
+            widget.iconController.entries
+                    .firstWhereOrNull((item) => widget.iconController.selectedIcon == item.value) !=
                 null) {
           Timer.periodic(const Duration(milliseconds: 100), (timer) async {
             if (scrollController.hasClients) {
               scrolledToSelectedIcon = true;
               selectedIconIndex = widget.iconController.entries
                   .toList()
-                  .indexWhere((item) =>
-                      widget.iconController.selectedIcon == item.value);
+                  .indexWhere((item) => widget.iconController.selectedIcon == item.value);
               setState(() {});
               await observerController.jumpTo(
                 index: selectedIconIndex,
@@ -104,23 +101,11 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
           child: RichText(
             text: TextSpan(
               text: '${widget.noResultsText!} ',
-              style: TextStyle(
-                color: widget.backgroundColor != null
-                    ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                        ? Colors.black
-                        : Colors.white
-                    : null,
-              ),
               children: [
                 TextSpan(
                   text: widget.iconController.searchTextController.text,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: widget.backgroundColor != null
-                        ? FIPColorBrightness(widget.backgroundColor!).isLight()
-                            ? Colors.black
-                            : Colors.white
-                        : null,
                   ),
                 ),
               ],
@@ -149,16 +134,12 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                         childAspectRatio: 1 / 1,
                         mainAxisSpacing: widget.mainAxisSpacing ?? 5,
                         crossAxisSpacing: widget.crossAxisSpacing ?? 5,
-                        maxCrossAxisExtent: widget.iconSize != null
-                            ? widget.iconSize! + 10
-                            : 50,
+                        maxCrossAxisExtent: widget.iconSize != null ? widget.iconSize! + 10 : 50,
                       ),
                       itemBuilder: (context, index) {
-                        final MapEntry<String, IconPickerIcon> item =
-                            controller.entries.elementAt(index);
+                        final MapEntry<String, IconPickerIcon> item = controller.entries.elementAt(index);
 
-                        final isSelected = widget.iconController.selectedIcons
-                            .contains(item.value);
+                        final isSelected = widget.iconController.selectedIcons.contains(item.value);
 
                         if (controller.iconBuilder != null) {
                           return controller.iconBuilder!(
@@ -169,11 +150,8 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                           );
                         }
 
-                        final selectedIconColor =
-                            widget.selectedIconBackgroundColor ??
-                                (Theme.of(context).brightness == Brightness.dark
-                                    ? Colors.grey[800]
-                                    : Colors.grey[400]);
+                        final selectedIconColor = widget.selectedIconBackgroundColor ??
+                            (Theme.of(context).brightness == Brightness.dark ? Colors.grey[800] : Colors.grey[400]);
 
                         return ClipRRect(
                           borderRadius: BorderRadius.circular(8),
@@ -206,8 +184,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
-                      end: Alignment.lerp(
-                          Alignment.topCenter, Alignment.center, .05)!,
+                      end: Alignment.lerp(Alignment.topCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
                         widget.backgroundColor!.withValues(alpha: .1),
@@ -225,8 +202,7 @@ class FIPMultipleIconPickerState extends State<FIPMultipleIconPicker> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
-                      end: Alignment.lerp(
-                          Alignment.bottomCenter, Alignment.center, .05)!,
+                      end: Alignment.lerp(Alignment.bottomCenter, Alignment.center, .05)!,
                       colors: [
                         widget.backgroundColor!,
                         widget.backgroundColor!.withValues(alpha: .1),
