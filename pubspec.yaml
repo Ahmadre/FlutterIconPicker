@@ -13,7 +13,7 @@ dependencies:
   args: ^2.5.0
   collection: ^1.19.0
   cupertino_icons: ^1.0.8
-  dcli: ^6.1.0
+  dcli: ">=6.1.0 <8.0.0"
   equatable: ^2.0.5
   flutter:
     sdk: flutter
