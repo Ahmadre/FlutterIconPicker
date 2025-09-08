@@ -11,7 +11,7 @@ export 'Serialization/iconDataSerialization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import 'Dialogs/DefaultDialog.dart';
-import 'IconPicker/searchBar.dart';
+import 'IconPicker/searchBar.dart' as ip;
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
@@ -71,7 +71,7 @@ class FlutterIconPicker {
     BoxConstraints? constraints,
 
     /// The title for the Picker.
-    /// Sits above the [SearchBar] and [Icons].
+    /// Sits above the [ip.SearchBar] and [Icons].
     /// Defaults to:
     /// ```dart
     ///   const Text('Pick an icon')

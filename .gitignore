@@ -29,7 +29,6 @@
 .pub-cache/
 .pub/
 build/
-.fvm
 example/.fvm
 
 # Android related
@@ -78,3 +77,6 @@ example/.fvm
 example/pubspec.lock
 pubspec.lock
 example/pubspec.lock
+
+# FVM Version Cache
+.fvm/

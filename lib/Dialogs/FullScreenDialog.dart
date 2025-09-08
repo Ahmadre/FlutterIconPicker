@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/controllers/icon_controller.dart';
 import '../Helpers/ColorBrightness.dart';
 import '../IconPicker/iconPicker.dart';
-import '../IconPicker/searchBar.dart';
+import '../IconPicker/searchBar.dart' as ip;
 import '../Models/IconPack.dart';
 
 class FullScreenDialog extends StatelessWidget {
@@ -85,7 +85,7 @@ class FullScreenDialog extends StatelessWidget {
                 ),
               ),
               if (showSearchBar!)
-                SearchBar(
+                ip.SearchBar(
                   iconController: iconController,
                   iconPack: iconPackMode,
                   customIconPack: customIconPack,
