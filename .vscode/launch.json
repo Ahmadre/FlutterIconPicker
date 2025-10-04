@@ -15,14 +15,17 @@
       "cwd": "example",
       "request": "launch",
       "type": "dart",
-      "args": ["-d", "chrome"]
+      "args": ["-d", "web-server"]
     },
     {
       "name": "Test generate icon packs",
       "request": "launch",
       "type": "dart",
       "program": "bin/generate_packs.dart",
-      "args": ["-p", "cupertino"]
+      "args": [
+        "-p",
+        "cupertino"
+      ]
     },
   ]
 }
