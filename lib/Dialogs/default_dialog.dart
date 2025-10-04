@@ -133,7 +133,8 @@ class FIPDefaultDialog extends StatelessWidget {
                       child: controller.isMultiple
                           ? FIPMultipleIconPicker(
                               iconController: controller,
-                              selectedIconBackgroundColor: selectedIconBackgroundColor,
+                              selectedIconBackgroundColor:
+                                  selectedIconBackgroundColor,
                               showTooltips: showTooltips,
                               iconPack: iconPackMode,
                               customIconPack: customIconPack,
@@ -146,7 +147,8 @@ class FIPDefaultDialog extends StatelessWidget {
                             )
                           : FIPIconPicker(
                               iconController: controller,
-                              selectedIconBackgroundColor: selectedIconBackgroundColor,
+                              selectedIconBackgroundColor:
+                                  selectedIconBackgroundColor,
                               showTooltips: showTooltips,
                               iconPack: iconPackMode,
                               customIconPack: customIconPack,
@@ -187,7 +189,8 @@ class FIPDefaultDialog extends StatelessWidget {
                     child: controller.isMultiple
                         ? FIPMultipleIconPicker(
                             iconController: controller,
-                            selectedIconBackgroundColor: selectedIconBackgroundColor,
+                            selectedIconBackgroundColor:
+                                selectedIconBackgroundColor,
                             showTooltips: showTooltips,
                             iconPack: iconPackMode,
                             customIconPack: customIconPack,
@@ -200,7 +203,8 @@ class FIPDefaultDialog extends StatelessWidget {
                           )
                         : FIPIconPicker(
                             iconController: controller,
-                            selectedIconBackgroundColor: selectedIconBackgroundColor,
+                            selectedIconBackgroundColor:
+                                selectedIconBackgroundColor,
                             showTooltips: showTooltips,
                             iconPack: iconPackMode,
                             customIconPack: customIconPack,
