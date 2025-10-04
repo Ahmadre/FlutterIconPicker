@@ -12951,11 +12951,6 @@ const Map<String, IconPickerIcon> fontAwesomeIcons = {
     data: FontAwesomeIcons.vault,
     pack: 'fontAwesomeIcons',
   ),
-  'vectorSquare': IconPickerIcon(
-    name: 'vectorSquare',
-    data: FontAwesomeIcons.vectorSquare,
-    pack: 'fontAwesomeIcons',
-  ),
   'venus': IconPickerIcon(
     name: 'venus',
     data: FontAwesomeIcons.venus,

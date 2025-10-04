@@ -1,7 +1,7 @@
 name: flutter_iconpicker
 description: A Dialog for picking Icons in Flutter and use them anywhere. Can be
   used as a default Dialog or as a Adaptive Dialog.
-version: 4.0.2
+version: 4.0.3
 homepage: https://github.com/Ahmadre
 repository: https://github.com/Ahmadre/FlutterIconPicker
 
@@ -20,7 +20,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   path: ^1.9.0
   provider: ^6.1.2
-  scrollview_observer: ^1.24.0 
+  scrollview_observer: ^1.24.0
 
 dev_dependencies:
   flutter_lints: ">=4.0.0 <6.0.0"
