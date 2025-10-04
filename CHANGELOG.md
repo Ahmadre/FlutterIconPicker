@@ -1,3 +1,9 @@
+## [4.0.3] - 04.10.2025
+
+* 🐛 Fix invalid FontAwesomeIcon reference `vectorSquare`
+  * Thanks to [BenPoell](https://github.com/BenPoell): [#106](https://github.com/Ahmadre/FlutterIconPicker/pull/106)
+* 🐛 Fix Color Brightness
+
 ## [4.0.2] - 05.01.2025
 
 * ⬆️ Update Dependencies (based on Flutter 3.27.*, Dart 3.6.*)
