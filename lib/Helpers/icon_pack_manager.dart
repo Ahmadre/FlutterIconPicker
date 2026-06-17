@@ -8,6 +8,7 @@ import '../IconPicker/Packs/MaterialRounded.dart';
 import '../IconPicker/Packs/MaterialSharp.dart';
 import '../IconPicker/Packs/FontAwesome.dart';
 import '../IconPicker/Packs/LineIcons.dart';
+import '../IconPicker/Packs/MaterialDesignIcons.dart';
 
 class IconPackManager {
   static Map<String, IconPickerIcon> getIcons(IconPack? pack) {
@@ -28,6 +29,8 @@ class IconPackManager {
         return roundedIcons;
       case IconPack.cupertino:
         return cupertinoIcons;
+      case IconPack.flutter_material_design_icons:
+        return materialDesignIcons;
       default:
         return {};
     }

@@ -50,6 +50,10 @@ enum IconPack {
     path: 'LineIcons',
     description: 'Line Awesome Icons',
   ),
+  flutter_material_design_icons(
+    path: 'MaterialDesignIcons',
+    description: 'Material Design Icons',
+  ),
 
   /// Use this to show your own custom provided IconPack
   custom;
